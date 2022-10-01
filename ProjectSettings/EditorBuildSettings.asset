@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MinijuegoFlores.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/PantallaInicial.unity
+    guid: 47b2eccce7a7d9b4881fed16d25b90de
+  - enabled: 1
+    path: Assets/Scenes/VisualNovel.unity
+    guid: a24ca05a81a4e8644898b3b5e1348e35
+  m_configObjects: {}
