@@ -1,20 +1,21 @@
 ﻿title: DialogoPrueba
 tags: 
-colorID: 0
-position: 0,0
+position: -297.5,-148
 ---
-
 // sets background image to sprite called "bg_office"
 <<Scene bg_office>>
 // start playing audioclip "ambient_birds" at 50% volume, loop forever
 <<PlayAudio ambient_birds 0.5 loop>>
 
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 A VISUAL NOVEL EXAMPLE
 
 // adds actor named as player selected using sprite "cool-girl", placed in left-half + center of screen, with green text label
-<<Act {get_player_name()} cool-girl left center green>>
+<<Act {$name} cool-girl left center green>>
 
-{get_player_name()}: Finally, a quiet day at the office. Maybe I'll be able to get some work done.
+
+{$name}: Hola Pietro, [select value={$gender} M="encantado" F="encantada" NB="encantade" /] de conocerte
 
 // adds actor "Adam" with sprite "biz-guy" off-screen right, with blue-ish text label
 <<Act Adam biz-guy 1.25 center #226677>>
@@ -23,21 +24,21 @@ A VISUAL NOVEL EXAMPLE
 <<Move Adam right center 0.5>>
 <<PlayAudio music_funny 1.0 loop>>
 
-Adam: Hey {get_player_name()}! I have a question!
-{get_player_name()}: Oh no...
+Adam: Hola {$name}! Tengo una pregunta para ti!
+{$name}: Oh no...
 
-// horizontally flips {get_player_name()} actor to face Adam
-<<Flip {get_player_name()}>>
+// horizontally flips {$name} actor to face Adam
+<<Flip {$name}>>
 
 // Yarn shortcut choices, an easy way to make branching options
--> {get_player_name()} gets upset with Adam
-	<<Shake {get_player_name()} 1.0>>
-	{get_player_name()}: WHAT DO YOU WANT???
+-> {$name} gets upset with Adam
+	<<Shake {$name} 1.0>>
+	{$name}: WHAT DO YOU WANT???
 	Adam: I just wanted to see if you liked using Yarn Spinner.
-	{get_player_name()}: ... It's fine. Thanks. Now leave me alone.
--> Adam asks {get_player_name()} a question
+	{$name}: ... It's fine. Thanks. Now leave me alone.
+-> Adam asks {$name} a question
 	Adam: Do you think Yarn Spinner is easy to use?
-	{get_player_name()}: Not when you're bothering me.
+	{$name}: Not when you're bothering me.
 	Adam: Oh, I didn't realize you were busy. Sorry.
 
 // hide Adam actor and remove from the scene
@@ -45,25 +46,24 @@ Adam: Hey {get_player_name()}! I have a question!
 // Stop all sound playback
 <<StopAudioAll>>
 
-{get_player_name()}: Ok, now to finally write that visual novel.
-<<Flip {get_player_name()}>>
+{$name}: Ok, now to finally write that visual novel.
+<<Flip {$name}>>
 <<PlayAudio music_romantic>>
-{get_player_name()}: I can finally write my epic romance about -
+{$name}: I can finally write my epic romance about -
 <<StopAudioAll>>
-<<Flip {get_player_name()}>>
+<<Flip {$name}>>
 <<wait 1.5>>
-<<Flip {get_player_name()}>>
-{get_player_name()}: Wait... where's my laptop? It's not here.
-<<Shake {get_player_name()}>>
-{get_player_name()}: Adam! Have you seen my laptop???
+<<Flip {$name}>>
+{$name}: Wait... where's my laptop? It's not here.
+<<Shake {$name}>>
+{$name}: Adam! Have you seen my laptop???
 
 <<PlayAudio music_funny>>
-<<Flip {get_player_name()}>>
-<<Move {get_player_name()} 1.25 center 1.0>>
-{get_player_name()}: ADDDDAAAMMMMMMM!!!
+<<Flip {$name}>>
+<<Move {$name} 1.25 center 1.0>>
+{$name}: ADDDDAAAMMMMMMM!!!
 
 // fade to black, from 0% opacity to 100% opacity, in 2.0 seconds
 <<Fade black 0.0 1.0 2.0>>
 THE END.
-
 ===
