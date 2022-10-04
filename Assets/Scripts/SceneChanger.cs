@@ -9,4 +9,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("VisualNovel");
     }
+
+    //Cambio de escena genérico
+    public void changeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
