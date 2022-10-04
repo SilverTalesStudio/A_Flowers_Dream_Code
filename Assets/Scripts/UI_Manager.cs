@@ -6,13 +6,18 @@ public class UI_Manager : MonoBehaviour
 {
     public Transform dropdownMenu;
 
-    //find the selected index
+
+    //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
+    // y lo guarda en PlayerPrefs
     public void ReadNameInput(string inputText)
     {
        var _name = inputText;
         Debug.Log(_name);
         PlayerPrefs.SetString("PlayerName", _name);
     }
+
+    //Lee la seleccion de género del DropDown menu
+    // y lo guarda en PlayerPrefs
     public void ReadGenderInput(int value)
     {
         Debug.Log(value);

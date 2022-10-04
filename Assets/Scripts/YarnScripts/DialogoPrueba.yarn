@@ -17,8 +17,8 @@ A VISUAL NOVEL EXAMPLE
 
 {$name}: Hola Pietro, [select value={$gender} M="encantado" F="encantada" NB="encantade" /] de conocerte
 
-// adds actor "Adam" with sprite "biz-guy" off-screen right, with blue-ish text label
-<<Act Adam biz-guy 1.25 center #226677>>
+// adds actor "Adam" with sprite "spt_pietro_neutral" off-screen right, with blue-ish text label
+<<Act Adam spt_pietro_neutral 1.25 center #226677>>
 
 // animate Adam into new position in right-half + center, within 0.5 seconds
 <<Move Adam right center 0.5>>
