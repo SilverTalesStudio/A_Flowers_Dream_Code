@@ -5,6 +5,90 @@ using TMPro;
 
 public class Orders_Manager : MonoBehaviour
 {
+    #region variables
+
+    //Variable del pedido
+    int order;
+
+    //Variable del texto
+    private string text_order;
+    private string text_orderSummary;
+
+    public TMP_Text Order;
+    public TMP_Text Summary;
+
+    #endregion
+
+    #region Awake
+    private void Awake()
+    {
+        order = Random.Range(1, 11);
+        CustomOrder(order);
+    }
+    #endregion
+
+    #region Funciones
+    private void CustomOrder(int order)
+    {
+        order = 1;
+        switch (order)
+        {
+            case 1:
+                text_order = "Pedido1 askhnaibasbdsbdsadbsdasdjsadjsadsjadjasdjasdjsajdjsjdjjsjjdjsjdjasjdjjsadjjsajdjsajdjsajdjasdsjadjasjdjasjdjqhwqkwhlqhwlajkhkahdkasfhdlsrfegvhdsifhdsfkasfsafhaskfhaskfhakshgashdkhgsdkghsdkhgsdhgksdghksdhgksdhkghsdkghkdshgksdhgksdhgksdhgksdhkghksdhgskdghsk";
+                text_orderSummary = "Resumen1";
+                break;
+
+            case 2:
+                text_order = "Pedido2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+                text_orderSummary = "Resumen2";
+                break;
+
+            case 3:
+                text_order = "Pedido3";
+                text_orderSummary = "Resumen3";
+                break;
+
+            case 4:
+                text_order = "Pedido4";
+                text_orderSummary = "Resumen4";
+                break;
+
+            case 5:
+                text_order = "Pedido5";
+                text_orderSummary = "Resumen5";
+                break;
+
+            case 6:
+                text_order = "Pedido6";
+                text_orderSummary = "Resumen6";
+                break;
+
+            case 7:
+                text_order = "Pedido7";
+                text_orderSummary = "Resumen7";
+                break;
+
+            case 8:
+                text_order = "Pedido8";
+                text_orderSummary = "Resumen8";
+                break;
+
+            case 9:
+                text_order = "Pedido9";
+                text_orderSummary = "Resumen9";
+                break;
+
+            case 10:
+                text_order = "Pedido10";
+                text_orderSummary = "Resumen10";
+                break;
+        }
+
+        Order.text = text_order;
+        Summary.text = text_orderSummary;
+    }
+    #endregion
+    /*
     #region Variables
 
     //Variables flores
@@ -187,7 +271,7 @@ public class Orders_Manager : MonoBehaviour
         Feeling.text = text_feeling;
     }
     #endregion
-
+    */
 
 
 }
