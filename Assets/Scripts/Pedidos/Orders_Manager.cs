@@ -7,8 +7,11 @@ public class Orders_Manager : MonoBehaviour
 {
     #region variables
 
+    //Variable del personaje que hace el pedido
+    private string character;
+
     //Variable del pedido
-    int order;
+    private int order;
 
     //Variable del texto
     private string text_order;
@@ -22,71 +25,337 @@ public class Orders_Manager : MonoBehaviour
     #region Awake
     private void Awake()
     {
+        character = "Pietro";
         order = Random.Range(1, 11);
-        CustomOrder(order);
+
+        if (character == "Sophie")
+        {
+            SophieOrder(order);
+        }
+        else if(character == "Ligon")
+        {
+            LigonOrder(order);
+        }
+        else if(character == "Cachopan")
+        {
+            CachopanOrder(order);
+        }
+        else if(character == "Pietro")
+        {
+            PietroOrder(order);
+        }
+        else if(character == "Abuelaentrañable")
+        {
+            AbuelaOrder(order);
+        }
+        else
+        {
+            Debug.Log("Error al pasar el personaje en el pedido");
+        }
+        
     }
     #endregion
 
     #region Funciones
-    private void CustomOrder(int order)
+    private void SophieOrder(int order)
     {
-        order = 1;
         switch (order)
         {
             case 1:
-                text_order = "Pedido1 askhnaibasbdsbdsadbsdasdjsadjsadsjadjasdjasdjsajdjsjdjjsjjdjsjdjasjdjjsadjjsajdjsajdjsajdjasdsjadjasjdjasjdjqhwqkwhlqhwlajkhkahdkasfhdlsrfegvhdsifhdsfkasfsafhaskfhaskfhakshgashdkhgsdkghsdkhgsdhgksdghksdhgksdhkghsdkghkdshgksdhgksdhgksdhgksdhkghksdhgskdghsk";
-                text_orderSummary = "Resumen1";
+                text_order = "Pedido1 Sophie";
+                text_orderSummary = "ResumenSophie1";
                 break;
 
             case 2:
-                text_order = "Pedido2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-                text_orderSummary = "Resumen2";
+                text_order = "Pedido2 Sophie";
+                text_orderSummary = "ResumenSophie2";
                 break;
 
             case 3:
-                text_order = "Pedido3";
-                text_orderSummary = "Resumen3";
+                text_order = "Pedido3 Sophie";
+                text_orderSummary = "ResumenSophie3";
                 break;
 
             case 4:
-                text_order = "Pedido4";
-                text_orderSummary = "Resumen4";
+                text_order = "Pedido4 Sophie";
+                text_orderSummary = "ResumenSophie4";
                 break;
 
             case 5:
-                text_order = "Pedido5";
-                text_orderSummary = "Resumen5";
+                text_order = "Pedido5 Sophie";
+                text_orderSummary = "ResumenSophie5";
                 break;
 
             case 6:
-                text_order = "Pedido6";
-                text_orderSummary = "Resumen6";
+                text_order = "Pedido6 Sophie";
+                text_orderSummary = "ResumenSophie6";
                 break;
 
             case 7:
-                text_order = "Pedido7";
-                text_orderSummary = "Resumen7";
+                text_order = "Pedido7 Sophie";
+                text_orderSummary = "ResumenSophie7";
                 break;
 
             case 8:
-                text_order = "Pedido8";
-                text_orderSummary = "Resumen8";
+                text_order = "Pedido8 Sophie";
+                text_orderSummary = "ResumenSophie8";
                 break;
 
             case 9:
-                text_order = "Pedido9";
-                text_orderSummary = "Resumen9";
+                text_order = "Pedido9 Sophie";
+                text_orderSummary = "ResumenSophie9";
                 break;
 
             case 10:
-                text_order = "Pedido10";
-                text_orderSummary = "Resumen10";
+                text_order = "Pedido10 Sophie";
+                text_orderSummary = "ResumenSophie10";
                 break;
         }
 
         Order.text = text_order;
         Summary.text = text_orderSummary;
     }
+
+
+    private void LigonOrder(int order)
+    {
+        switch (order)
+        {
+            case 1:
+                text_order = "Pedido1 Ligon";
+                text_orderSummary = "ResumenLigon1";
+                break;
+
+            case 2:
+                text_order = "Pedido2 Ligon";
+                text_orderSummary = "ResumenLigon2";
+                break;
+
+            case 3:
+                text_order = "Pedido3 Ligon";
+                text_orderSummary = "ResumenLigon3";
+                break;
+
+            case 4:
+                text_order = "Pedido4 Ligon";
+                text_orderSummary = "ResumenLigon4";
+                break;
+
+            case 5:
+                text_order = "Pedido5 Ligon";
+                text_orderSummary = "ResumenLigon5";
+                break;
+
+            case 6:
+                text_order = "Pedido6 Ligon";
+                text_orderSummary = "ResumenLigon6";
+                break;
+
+            case 7:
+                text_order = "Pedido7 Ligon";
+                text_orderSummary = "ResumenLigon7";
+                break;
+
+            case 8:
+                text_order = "Pedido8 Ligon";
+                text_orderSummary = "ResumenLigon8";
+                break;
+
+            case 9:
+                text_order = "Pedido9 Ligon";
+                text_orderSummary = "ResumenLigon9";
+                break;
+
+            case 10:
+                text_order = "Pedido10 Ligon";
+                text_orderSummary = "ResumenLigon10";
+                break;
+        }
+
+        Order.text = text_order;
+        Summary.text = text_orderSummary;
+    }
+
+
+    private void CachopanOrder(int order)
+    {
+        switch (order)
+        {
+            case 1:
+                text_order = "Pedido1 Cachopan";
+                text_orderSummary = "ResumenCachopan1";
+                break;
+
+            case 2:
+                text_order = "Pedido2 Cachopan";
+                text_orderSummary = "ResumenCachopan2";
+                break;
+
+            case 3:
+                text_order = "Pedido3 Cachopan";
+                text_orderSummary = "ResumenCachopan3";
+                break;
+
+            case 4:
+                text_order = "Pedido4 Cachopan";
+                text_orderSummary = "ResumenCachopan4";
+                break;
+
+            case 5:
+                text_order = "Pedido5 Cachopan";
+                text_orderSummary = "ResumenCachopan5";
+                break;
+
+            case 6:
+                text_order = "Pedido6 Cachopan";
+                text_orderSummary = "ResumenCachopan6";
+                break;
+
+            case 7:
+                text_order = "Pedido7 Cachopan";
+                text_orderSummary = "ResumenCachopan7";
+                break;
+
+            case 8:
+                text_order = "Pedido8 Cachopan";
+                text_orderSummary = "ResumenCachopan8";
+                break;
+
+            case 9:
+                text_order = "Pedido9 Cachopan";
+                text_orderSummary = "ResumenCachopan9";
+                break;
+
+            case 10:
+                text_order = "Pedido10 Cachopan";
+                text_orderSummary = "ResumenCahopan10";
+                break;
+        }
+
+        Order.text = text_order;
+        Summary.text = text_orderSummary;
+    }
+
+
+    private void PietroOrder(int order)
+    {
+        switch (order)
+        {
+            case 1:
+                text_order = "Pedido1 Pietro";
+                text_orderSummary = "ResumenPietro1";
+                break;
+
+            case 2:
+                text_order = "Pedido2 Pietro";
+                text_orderSummary = "ResumenPietro2";
+                break;
+
+            case 3:
+                text_order = "Pedido3 Pietro";
+                text_orderSummary = "ResumenPietro3";
+                break;
+
+            case 4:
+                text_order = "Pedido4 Pietro";
+                text_orderSummary = "ResumenPietro4";
+                break;
+
+            case 5:
+                text_order = "Pedido5 Pietro";
+                text_orderSummary = "ResumenPietro5";
+                break;
+
+            case 6:
+                text_order = "Pedido6 Pietro";
+                text_orderSummary = "ResumenPietro6";
+                break;
+
+            case 7:
+                text_order = "Pedido7 Pietro";
+                text_orderSummary = "ResumenPietro7";
+                break;
+
+            case 8:
+                text_order = "Pedido8 Pietro";
+                text_orderSummary = "ResumenPietro8";
+                break;
+
+            case 9:
+                text_order = "Pedido9 Pietro";
+                text_orderSummary = "ResumenPietro9";
+                break;
+
+            case 10:
+                text_order = "Pedido10 Pietro";
+                text_orderSummary = "ResumenPietro10";
+                break;
+        }
+
+        Order.text = text_order;
+        Summary.text = text_orderSummary;
+    }
+
+
+    private void AbuelaOrder(int order)
+    {
+        switch (order)
+        {
+            case 1:
+                text_order = "Pedido1 Abuela";
+                text_orderSummary = "ResumenAbuela1";
+                break;
+
+            case 2:
+                text_order = "Pedido2 Abuela";
+                text_orderSummary = "ResumenAbuela2";
+                break;
+
+            case 3:
+                text_order = "Pedido3 Abuela";
+                text_orderSummary = "ResumenAbuela3";
+                break;
+
+            case 4:
+                text_order = "Pedido4 Abuela";
+                text_orderSummary = "ResumenAbuela4";
+                break;
+
+            case 5:
+                text_order = "Pedido5 Abuela";
+                text_orderSummary = "ResumenAbuela5";
+                break;
+
+            case 6:
+                text_order = "Pedido6 Abuela";
+                text_orderSummary = "ResumenAbuela6";
+                break;
+
+            case 7:
+                text_order = "Pedido7 Abuela";
+                text_orderSummary = "ResumenAbuela7";
+                break;
+
+            case 8:
+                text_order = "Pedido8 Abuela";
+                text_orderSummary = "ResumenAbuela8";
+                break;
+
+            case 9:
+                text_order = "Pedido9 Abuela";
+                text_orderSummary = "ResumenAbuela9";
+                break;
+
+            case 10:
+                text_order = "Pedido10 Abuela";
+                text_orderSummary = "ResumenAbuela10";
+                break;
+        }
+
+        Order.text = text_order;
+        Summary.text = text_orderSummary;
+    }
+
     #endregion
     /*
     #region Variables
