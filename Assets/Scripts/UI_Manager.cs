@@ -6,7 +6,10 @@ public class UI_Manager : MonoBehaviour
 {
     public Transform dropdownMenu;
 
-
+    private void Start()
+    {
+        createNPCs();
+    }
     //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
     // y lo guarda en PlayerPrefs
     public void ReadNameInput(string inputText)
@@ -25,6 +28,16 @@ public class UI_Manager : MonoBehaviour
         var _gender = options[value].text;
         Debug.Log(_gender);
         PlayerPrefs.SetString("PlayerGender", _gender);
+
+    }
+    public void createNPCs()
+    {
+        new NPC_stats("NPC_abuela","Abuela",0);
+        new NPC_stats("NPC_ethan", "Ethan", 0);
+        new NPC_stats("NPC_allan", "Allan", 0);
+        new NPC_stats("NPC_sophie", "Sopie", 0);
+        new NPC_stats("NPC_pietro", "Pietro", 0);
+
 
     }
 }

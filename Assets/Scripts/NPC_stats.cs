@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class NPC_stats : MonoBehaviour
+public class NPC_stats
 {
-    public string name;
-    public int hate;
-    public int neutral;
-    public int _love;
+   public string name;
+    public int likeability;
+    public string keyVar;
 
-
-    public NPC_stats(string name, int hate, int neutral, int love)
+    public NPC_stats(string keyVar_, string name_, int likeability_)
     {
-        this.name = name;
-        this.hate = hate;
-        this.neutral = neutral;
-        this._love = love;
+        this.keyVar = keyVar_;
+        this.name = name_;
+        this.likeability = likeability_;
+        createNPCData();
     }
+    
+
 
     //Crea las stats de un npc que se van a usar en la visual novel, se almacenan sus datos en playerPrefs con un json
-    public void createNPCData(string keyVar, string name)
+    public void createNPCData()
     {
-        NPC_stats newCharacter = new NPC_stats(name, 0, 0, 0);
-        string json = JsonUtility.ToJson(newCharacter);
+       // NPC_stats newCharacter = new NPC_stats(name, 0);
+        string json = JsonUtility.ToJson(this);
         PlayerPrefs.SetString(keyVar, json);
     }
+
+
+    //Crea todos los npcs del juego
+
 
     /// <summary>
     /// Consultas las stats de los npcs para tenerlas en cuenta en la VN
@@ -33,36 +37,14 @@ public class NPC_stats : MonoBehaviour
     /// <param name="keyVar">Key para consultar el personaje correspondiente</param>
     /// <returns>Se devuelve el int del stat</returns>
     /// 
-    [YarnFunction("get_npc_hate")]
-    public int getNPC_hate(string keyVar)
+    [YarnFunction("get_npc_likeability")]
+    public static int getNPC_likeability(string keyVar)
     {
         string json = PlayerPrefs.GetString(keyVar);
         NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        return npc.hate;
+        return npc.likeability;
     }
 
-    [YarnFunction("get_npc_neutral")]
-    public int getNPC_neutral(string keyVar)
-    {
-        string json = PlayerPrefs.GetString(keyVar);
-        NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        return npc.neutral;
-    }
-
-    [YarnFunction("get_npc_love")]
-    public int getNPC_love(string keyVar)
-    {
-        string json = PlayerPrefs.GetString(keyVar);
-        NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        return npc._love;
-    }
-
-    public NPC_stats getNPC_stats(string keyVar)
-    {
-        string json = PlayerPrefs.GetString(keyVar);
-        NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        return npc;
-    }
 
     /// <summary>
     /// Primero se obtiene los datos del npc, se le cambia el valor correspondiente, y se vuelve a guardar.
@@ -70,38 +52,18 @@ public class NPC_stats : MonoBehaviour
     /// </summary>
     /// <param name="keyVar">Key para encontrar al personaje en los PlayerPrefs</param>
     /// <param name="sumValue">Dato positivo o negativo para sumarlo al valor de un determinado stat</param>
-    [YarnFunction("add_npc_hate")]
-    public void addToHate(string keyVar, int sumValue)
+   /* [YarnCommand("Add_npc_likeability")]
+    public void addToLikeability(string keyVar, int sumValue)
     {
+        Debug.Log("Entra al add likeability");
         string json = PlayerPrefs.GetString(keyVar);
         NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        npc.hate -= sumValue;
+        npc.likeability -= sumValue;
 
         json = JsonUtility.ToJson(npc);
         PlayerPrefs.SetString(keyVar, json);
-    }
+    }*/
     
-    [YarnFunction("add_npc_neutral")]
 
-    public void addToNeutral(string keyVar, int sumValue)
-    {
-        string json = PlayerPrefs.GetString(keyVar);
-        NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        npc.neutral -= sumValue;
-
-        json = JsonUtility.ToJson(npc);
-        PlayerPrefs.SetString(keyVar, json);
-    }
-
-    [YarnFunction("add_npc_love")]
-    public void addToLove(string keyVar, int sumValue)
-    {
-        string json = PlayerPrefs.GetString(keyVar);
-        NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        npc._love -= sumValue;
-
-        json = JsonUtility.ToJson(npc);
-        PlayerPrefs.SetString(keyVar, json);
-    }
 
 }
