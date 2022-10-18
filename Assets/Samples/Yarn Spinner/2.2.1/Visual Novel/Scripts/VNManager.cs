@@ -46,6 +46,7 @@ namespace Yarn.Unity.Example {
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
+			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
 			runner.AddCommandHandler<string,string,string>("Draw", SetSpriteYarn );
@@ -79,6 +80,19 @@ namespace Yarn.Unity.Example {
 		}
 
 		#region YarnCommands
+
+		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
+
+		public void AddToLikeability(string keyVar, int sumValue)
+		{
+			Debug.Log("Entra al add likeability");
+			string json = PlayerPrefs.GetString(keyVar);
+			NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
+			npc.likeability += sumValue;
+
+			json = JsonUtility.ToJson(npc);
+			PlayerPrefs.SetString(keyVar, json);
+		}
 
 		/// <summary>changes background image</summary>
 		public void DoSceneChange(string spriteName) {

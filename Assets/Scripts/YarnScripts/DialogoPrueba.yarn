@@ -1,6 +1,6 @@
 ﻿title: DialogoPrueba
 tags: 
-position: -297.5,-148
+position: -276.8234100341797,-89.41638660430908
 ---
 // sets background image to sprite called "bg_office"
 <<Scene bg_office>>
@@ -17,15 +17,15 @@ A VISUAL NOVEL EXAMPLE
 
 {$name}: Hola Pietro, [select value={$gender} M="encantado" F="encantada" NB="encantade" /] de conocerte
 
-// adds actor "Adam" with sprite "biz-guy" off-screen right, with blue-ish text label
-<<Act Adam biz-guy 1.25 center #226677>>
-
+// adds actor "Adam" with sprite "spt_pietro_neutral" off-screen right, with blue-ish text label
+<<Act Adam spt_pietro_neutral 1.25 center #226677>>
+<<Add_npc_likeability NPC_abuela -2>>
 // animate Adam into new position in right-half + center, within 0.5 seconds
 <<Move Adam right center 0.5>>
 <<PlayAudio music_funny 1.0 loop>>
 
 Adam: Hola {$name}! Tengo una pregunta para ti!
-{$name}: Oh no...
+{$name}: Oh no... Mi simpatia con abuela es {get_npc_likeability("NPC_abuela")}
 
 // horizontally flips {$name} actor to face Adam
 <<Flip {$name}>>
