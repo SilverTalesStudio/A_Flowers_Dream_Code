@@ -12,6 +12,8 @@ namespace Yarn.Unity.Example {
     {
 		[SerializeField] DialogueRunner runner;
 
+		public SceneChanger SceneChanger;
+
 		[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
 		public List<Sprite> loadSprites = new List<Sprite>();
 		public List<AudioClip> loadAudio = new List<AudioClip>();
@@ -46,7 +48,12 @@ namespace Yarn.Unity.Example {
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
+
+
+			//Propios
 			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
+			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
+
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
 			runner.AddCommandHandler<string,string,string>("Draw", SetSpriteYarn );
@@ -93,7 +100,14 @@ namespace Yarn.Unity.Example {
 			json = JsonUtility.ToJson(npc);
 			PlayerPrefs.SetString(keyVar, json);
 		}
-
+		public void GoToMinigame(string nombreCliente)
+		{
+			Debug.Log("Entra en go to minigame");
+			Debug.Log(nombreCliente);
+			PlayerPrefs.SetString ("clienteActual", nombreCliente);
+			//Se llama con PlayerPrefs.GetString("clienteActual");
+			SceneChanger.changeScene("MinijuegoFlores");
+		}
 		/// <summary>changes background image</summary>
 		public void DoSceneChange(string spriteName) {
 			bgImage.sprite = FetchAsset<Sprite>( spriteName );
