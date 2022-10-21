@@ -44,7 +44,25 @@ namespace Yarn.Unity.Example {
 
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
 
+		string startNodeManually;
+
 		void Awake () {
+
+			//Inicializa el startNode
+			if (PlayerPrefs.GetString("nodeSaved").Length>1) {
+				Debug.Log("entra en el getstring");
+				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+				startNodeManually = PlayerPrefs.GetString("nodeSaved");
+            
+			}
+            else
+            {
+				Debug.Log("entra en el else");
+				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+
+				startNodeManually = "Semana1";
+			}
+
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
@@ -53,7 +71,9 @@ namespace Yarn.Unity.Example {
 			//Propios
 			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
 			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
+			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
 
+			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
 			runner.AddCommandHandler<string,string,string>("Draw", SetSpriteYarn );
@@ -85,12 +105,17 @@ namespace Yarn.Unity.Example {
 				loadAudio.AddRange( allAudioInResources );
 			}
 		}
+        private void Start()
+        {
+			Debug.Log(startNodeManually);
+			runner.StartDialogue(startNodeManually);
+        }
 
-		#region YarnCommands
+        #region YarnCommands
 
-		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
+        ///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
 
-		public void AddToLikeability(string keyVar, int sumValue)
+        public void AddToLikeability(string keyVar, int sumValue)
 		{
 			Debug.Log("Entra al add likeability");
 			string json = PlayerPrefs.GetString(keyVar);
@@ -111,6 +136,16 @@ namespace Yarn.Unity.Example {
 
            // SceneChanger.changeScene("MinijuegoFlores");
 		}
+
+		public void SaveNextNodeToJumpBack(string nextNode)
+        {
+			Debug.Log("Entra en SaveNextNodeToJumpBack");
+			Debug.Log (startNodeManually);
+			startNodeManually = nextNode;
+			Debug.Log(startNodeManually);
+			PlayerPrefs.SetString("nodeSaved", nextNode);
+		}
+
 		/// <summary>changes background image</summary>
 		public void DoSceneChange(string spriteName) {
 			bgImage.sprite = FetchAsset<Sprite>( spriteName );

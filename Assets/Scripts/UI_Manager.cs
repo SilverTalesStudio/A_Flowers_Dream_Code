@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         createNPCs();
+        PlayerPrefs.SetString("nodeSaved", "Semana1");
     }
     //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
     // y lo guarda en PlayerPrefs

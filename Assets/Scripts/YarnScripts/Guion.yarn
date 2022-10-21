@@ -193,7 +193,7 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     <<Add_npc_likeability NPC_ethan -1>>
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. Al mismo tiempo, la figura misteriosa que se encontraba escondida detrás del mostrador sale dando un brinco y se gira hacia mí para señalarme con un dedo acusatorio.  
     <<Act Ethan spt_pietro_neutral 1.25 center #226677>>
-   Ethan: “¡Noooooo! ¿¡Por qué me delataste!? ¡No esperaba esto de una preciosidad como tú!”  
+    Ethan: “¡Noooooo! ¿¡Por qué me delataste!? ¡No esperaba esto de una preciosidad como tú!”  
     Por auto reflejo, levanto las manos en señal de rendición. ¡Yo no quería tener nada que ver con esto! Solo quería tener un primer día de trabajo tranquilo y satisfactorio, sin este tipo de escándalos. Con los nervios por el miedo todavía en mi interior, le contesto al chico sin ningún tipo de filtro.   
     {$name}: “¡Fuiste tú el que entraste a mi tienda como un tornado! No me culpes por actuar de esta forma después del susto que me diste. ¡Por poco y llamo a la policía!” 
     Al escapar estas palabras de mi boca siento un inmenso alivio. Mi corazón se tranquiliza y poco a poco va abandonando ese ritmo frenético que tenía por el miedo. A pesar de ello, sigo sintiéndome muy confundida, no sé cómo gestionar esta situación tan extraña. Al menos no parece que sea ningún ladrón.  
@@ -265,6 +265,9 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
 ===
 title: Minijuego_Ethan_lunes_sem1
 ---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Ethan_lunes_sem1>>
+
 //Funcion de salto a minijuego
 <<Go_to_minigame Ethan>>
 ===
