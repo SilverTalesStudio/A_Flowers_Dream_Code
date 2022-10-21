@@ -47,11 +47,11 @@ Sacudo la cabeza para dejar de pensar en el pasado y centrarme en el presente. A
 Me tambaleo del impacto y doy un paso atrás consiguiendo mantener el equilibrio. Palpo brevemente mis pertenencias para comprobar que no se me ha caído nada mientras alzo la mirada rápidamente para disculparme. 
 
 // Añade a la escena al protagonista
-<<Act {$name} cool-girl left center green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
 {$name}: “Perd-” 
 //Añade a Sophie
-<<Act Sophie spt_pietro_neutral right center #226677>>
-
+<<Act Sophie sprt_sophie_placeholder right bottom015 #226677>>
+//<<Move Sophie right center 0.15>>
 Sophie: “¡¿Es que no miras por dónde vas?!” 
 
 Ante mí me encuentro una chica Descripcion_cuando_tengamos_dibujo. Pero también es un rostro enfadado, el cual no parece que vaya a cambiar si me quedo mirándola mientras ella espera una reacción de mí. 
@@ -133,7 +133,7 @@ Decisiones...
 
 Mi mirada se posa sobre un pequeño diente de león. Durante años pensé que había tenido control sobre mi vida, pero solo era una falsa ilusión. Me había rendido. Ahora soy libre y tengo que luchar por cumplir mis deseos. Cojo el pequeño diente de león y, mientras sujeto su tallo delicadamente, cierro los ojos y pido un deseo.  
 
-<<Act {$name} cool-girl left center green>>
+<<Act {$name} sprt_she_neutral_final left bottom green>>
 
 {$name}: “Deseo...” 
 
@@ -179,12 +179,13 @@ Miro el mostrador. ¡Ahí es donde se encuentra! Con el temor creciendo en mi in
 
 Como un rayo, giro mi cabeza hacia la puerta haciendo que un ligero dolor recorra mi cuello. Con los ojos como platos, observo como una mujer despampanante espera en la entrada con expresión de intensa molestia. Parece que está buscando algo. 
 
-<<Act Desconocida cool-girl 1.25 center #226677>>
+<<Act Desconocida sprt_she_neutral_placeholder 1.25 bottom #226677>>
+//<<Move Desconocida right center 0.5>>
 Desconocida: “Tsk. ¿Dónde se habrá metido ese tipo?”  
 
 Su mirada intensa enseguida se posa sobre mi figura y, con paso decidido, se acerca a mí.  
 
-<<Act {$name} cool-girl left center green>>
+//<<Act {$name} cool-girl left center green>>
 Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamos diseño muy descarado y sin vergüenza?”  
 
 ¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... Ligeramente decidida, asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
@@ -192,7 +193,8 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
 -> {$name}: “No sé si puede ser la persona a quien buscas, pero alguien ha entrado y se ha escondido detrás del mostrador” 
     <<Add_npc_likeability NPC_ethan -1>>
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. Al mismo tiempo, la figura misteriosa que se encontraba escondida detrás del mostrador sale dando un brinco y se gira hacia mí para señalarme con un dedo acusatorio.  
-    <<Act Ethan spt_pietro_neutral 1.25 center #226677>>
+    <<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+    //<<Move Ethan right center 0.5>>
     Ethan: “¡Noooooo! ¿¡Por qué me delataste!? ¡No esperaba esto de una preciosidad como tú!”  
     Por auto reflejo, levanto las manos en señal de rendición. ¡Yo no quería tener nada que ver con esto! Solo quería tener un primer día de trabajo tranquilo y satisfactorio, sin este tipo de escándalos. Con los nervios por el miedo todavía en mi interior, le contesto al chico sin ningún tipo de filtro.   
     {$name}: “¡Fuiste tú el que entraste a mi tienda como un tornado! No me culpes por actuar de esta forma después del susto que me diste. ¡Por poco y llamo a la policía!” 
@@ -243,7 +245,8 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     Un momento... ¿¡Cómo se me ha podido olvidar!? ¡Si todavía queda otra persona en la tienda! Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
     //[SHAKE Y GRITO]  
     No puedo evitar gritar del susto. Me zarandeo intentando separarme de la persona que me tiene atrapada en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
-    <<Act Ethan spt_pietro_neutral 1.25 center #226677>>
+    <<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+   // <<Move Ethan right center 0.5>>
     Ethan: “Tranquila, tranquila, no voy a hacerte nada. No era mi intención asustarte de esa manera”  
     Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. Lo primero en lo que reparo es que, efectivamente, este chico es la persona que esa mujer estaba buscando. Lo segundo que más me llama la atención es el puchero que se encuentra en estos instantes en su cara. A pesar de este, su mirada tiene cierto toque burlesco.  
     Ethan: “Yo solo quería darte las gracias por ayudarme. Y eso que no me conoces de nada. Debes de tener un corazón muy grande. Podría decir que eres mi dama/caballero de brillante armadura”  

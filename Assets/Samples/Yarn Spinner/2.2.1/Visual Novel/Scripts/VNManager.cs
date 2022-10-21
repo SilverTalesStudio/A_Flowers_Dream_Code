@@ -584,7 +584,7 @@ namespace Yarn.Unity.Example {
 			if ( actors.ContainsKey(coordinate) ) {
 				return actors[coordinate].rectTransform.anchoredPosition.x / screenSize.x;
 			}
-
+			Debug.Log(coordinate);
 			// next, let's see if they used a position keyword
 			var labelCoordinate = coordinate.ToLower().Replace(" ", "").Replace("_", "").Replace("-", "");
 			switch ( labelCoordinate ) {
@@ -592,6 +592,12 @@ namespace Yarn.Unity.Example {
 				case "bottomedge":
 				case "loweredge":
 					return 0f;
+				case "bottom010":
+					return 0.10f;
+				case "bottom015":
+					return 0.15f;
+				case "bottom020":
+					return 0.20f;
 				case "left":
 				case "bottom":
 				case "lower":
