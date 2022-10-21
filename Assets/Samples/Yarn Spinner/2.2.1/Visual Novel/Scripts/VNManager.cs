@@ -105,8 +105,11 @@ namespace Yarn.Unity.Example {
 			Debug.Log("Entra en go to minigame");
 			Debug.Log(nombreCliente);
 			PlayerPrefs.SetString ("clienteActual", nombreCliente);
-			//Se llama con PlayerPrefs.GetString("clienteActual");
-			SceneChanger.changeScene("MinijuegoFlores");
+			SceneChanger.nextOrder = nombreCliente;
+            //Se llama con PlayerPrefs.GetString("clienteActual");
+
+
+           // SceneChanger.changeScene("MinijuegoFlores");
 		}
 		/// <summary>changes background image</summary>
 		public void DoSceneChange(string spriteName) {

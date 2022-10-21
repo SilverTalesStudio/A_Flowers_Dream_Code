@@ -25,18 +25,18 @@ public class Orders_Manager : MonoBehaviour
     #region Awake
     private void Awake()
     {
-        character = "Pietro";
+        character = PlayerPrefs.GetString("clienteActual");
         order = Random.Range(1, 11);
 
         if (character == "Sophie")
         {
             SophieOrder(order);
         }
-        else if(character == "Ligon")
+        else if(character == "Ethan")
         {
             LigonOrder(order);
         }
-        else if(character == "Cachopan")
+        else if(character == "Allan")
         {
             CachopanOrder(order);
         }
