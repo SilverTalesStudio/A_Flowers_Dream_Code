@@ -29,6 +29,8 @@ public class Orders_Manager : MonoBehaviour
     #region Awake
     private void Awake()
     {
+        //Longitud máxima de los pedidos 288 caracteres con espacios incluidos
+
         string cliente = PlayerPrefs.GetString("clienteActual");
         character = cliente;
 
@@ -90,7 +92,7 @@ public class Orders_Manager : MonoBehaviour
                 text_orderSummary = "ResumenSophie3";
                 clienteDelPedido = "Sophie";
                 colorDelPedido = "Algo";
-                sentimientoDelPedido = "Algo"
+                sentimientoDelPedido = "Algo";
 
                 break;
 
@@ -168,7 +170,7 @@ public class Orders_Manager : MonoBehaviour
         switch (order)
         {
             case 1:
-                text_order = "Pedido1 Ligon";
+                text_order = "PedidoEthan1";
                 text_orderSummary = "ResumenLigon1";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
