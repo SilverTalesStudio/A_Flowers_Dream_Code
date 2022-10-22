@@ -44,7 +44,7 @@ public class Orders_Manager : MonoBehaviour
         {
             PietroOrder(order);
         }
-        else if(character == "Abuelaentrañable")
+        else if(character == "Sagrario")
         {
             AbuelaOrder(order);
         }

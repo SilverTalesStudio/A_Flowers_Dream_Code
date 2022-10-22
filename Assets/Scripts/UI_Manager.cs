@@ -33,7 +33,7 @@ public class UI_Manager : MonoBehaviour
     }
     public void createNPCs()
     {
-        new NPC_stats("NPC_abuela","Abuela",0);
+        new NPC_stats("NPC_sagrario","Sagrario",0);
         new NPC_stats("NPC_ethan", "Ethan", 0);
         new NPC_stats("NPC_allan", "Allan", 0);
         new NPC_stats("NPC_sophie", "Sopie", 0);

@@ -1,6 +1,6 @@
 ﻿title: Semana1
 tags:
-position: -148,-302
+position: -154,-370
 ---
 //declarar variables que se vayan globales q se vayan a repetir durante toda la historia
 <<set $gender to get_player_gender()>>
@@ -8,7 +8,7 @@ position: -148,-302
 <<jump Lunes_sem1>>
 ===
 title: Lunes_sem1
-position: -150,-189
+position: -155,-271
 ---
 // set fondo de CALLE
 <<Scene bg_office>>
@@ -63,7 +63,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Sophie: “¡Jah! Ahora será culpa mía que te creas que la calle es solo tuya para recorrer. ¿Quién te crees que eres? ¿[select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /]” Sonríe sarcásticamente. 
     ¿[select value={$gender} M="Príncipe" F="Princesa" NB="Noble" /]? Escuchar el mote me descoloca, pero rápidamente me recompongo. Ahora más enfadada que antes. ¿Quién es así de borde con desconocidos? ¡Y encima solo por chocarnos! 
     Me cruzo de brazos para mostrarme firme. Sé que no está sirviendo para nada porque la chica en frente mía no muestra ninguna reacción que demuestre lo contrario. Pero eso no me va a acobardar. 
-    {$name}: “No soy [select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /], en todo caso lo serías tú saliendo de golpe de una tienda sin prestar atención a tu alrededor”  
+    {$name}: “No soy [select value={$gender} M="un príncipe" F="una princesa" NB="une noble" /], en todo caso lo serías tú saliendo de golpe de una tienda sin prestar atención a tu alrededor”  
     Su postura imponente se rompe brevemente por un tic en su ceño fruncido. Ahora sé que no es tan impenetrable como se cree. Eso me da confianza para seguir. 
     {$name}: “Esta es una calle concurrida por si no te habías fijado. Te podía haber pasado con cualquiera que pasara por aquí justo cuando estabas saliendo. Así que culpa tuya, no mía.” Esta vez le sonrío yo. 
     La chica deja de sonreír, vuelve el enfado a su rostro. Da un paso hacia adelante para acercarse a mí, pero yo no me amedrento. Ni un paso atrás. 
@@ -179,7 +179,7 @@ Miro el mostrador. ¡Ahí es donde se encuentra! Con el temor creciendo en mi in
 
 Como un rayo, giro mi cabeza hacia la puerta haciendo que un ligero dolor recorra mi cuello. Con los ojos como platos, observo como una mujer despampanante espera en la entrada con expresión de intensa molestia. Parece que está buscando algo. 
 
-<<Act Desconocida sprt_she_neutral_placeholder 1.25 bottom #226677>>
+<<Act Desconocida sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
 //<<Move Desconocida right center 0.5>>
 Desconocida: “Tsk. ¿Dónde se habrá metido ese tipo?”  
 
@@ -188,7 +188,7 @@ Su mirada intensa enseguida se posa sobre mi figura y, con paso decidido, se ace
 //<<Act {$name} cool-girl left center green>>
 Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamos diseño muy descarado y sin vergüenza?”  
 
-¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... Ligeramente decidida, asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
+¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
 
 -> {$name}: “No sé si puede ser la persona a quien buscas, pero alguien ha entrado y se ha escondido detrás del mostrador” 
     <<Add_npc_likeability NPC_ethan -1>>
@@ -201,7 +201,7 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     Al escapar estas palabras de mi boca siento un inmenso alivio. Mi corazón se tranquiliza y poco a poco va abandonando ese ritmo frenético que tenía por el miedo. A pesar de ello, sigo sintiéndome muy confundida, no sé cómo gestionar esta situación tan extraña. Al menos no parece que sea ningún ladrón.  
     Mi vista se centra de nuevo en el chico. Sus ojos me observan con molestia, aunque podría jurar que cuando mencione mi temor y la posible llamada a la policía, estos me miraban con culpa. Con un carraspeo de garganta, se recompone y me contesta.  
     Ethan: “Solo buscaba un lugar en el que refugiarme de esta fiera. De casualidad miré por las ventanas de tu tienda y te vi. Pensé que un ángel como tú me ayudaría, pero parece que estaba equivocado. Todo lo que tienes de belleza externa te falta en el interior”  
-    Con un suspiro de resignación, se coloca su perfecto flequillo y me mira con arrogancia. ¿¡Pero qué se ha creído!? ¿¡Es que en esta ciudad no hay nadie normal!? Abro la boca enfadada para decirle lo que pienso cuando la mujer da un golpe en el mostrador. Había olvidado por un momento que se encontraba aquí.  
+    Con un suspiro de resignación, se coloca su perfecto flequillo y me mira con arrogancia. ¿¡Pero qué se ha creído!? ¿¡Es que en esta ciudad no hay nadie normal!? Abro la boca [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/] para decirle lo que pienso cuando la mujer da un golpe en el mostrador. Había olvidado por un momento que se encontraba aquí.  
     Desconocida: “Entonces admites que estabas huyendo de mí, ¿no?”  
     El chico abre los ojos como platos al darse cuenta de su error. Una sonrisa nerviosa ocupa su rostro mientras intenta escapar de la situación.  
     Ethan: “¿Yo he dicho eso? Me refería a que quería separarme de ti durante unos instantes para poder comprarte una bonita flor, nada más”  
@@ -218,12 +218,12 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     {$name}: “¿Te encuentras bien?”  
     Levanta la vista y me mira con sorpresa. Enseguida su expresión cambia a una de extrema confianza.  
     Ethan: “Estoy genial y ahora mejor que una belleza como tú se encuentra aquí preocupándose por mí”  
-    Cruzo los brazos ante su respuesta indignada. ¿Cómo puede comportarse así después de la que ha montado y las palabras que me dijo?  
+    Cruzo los brazos ante su respuesta [select value={$gender} M="indignado" F="indignada" NB="indignade"/]. ¿Cómo puede comportarse así después de la que ha montado y las palabras que me dijo?  
     {$name}: “Bueno, pues si te encuentras bien es mejor que te vayas. Yo tengo mucho trabajo que hacer”  
     Me mira con un puchero.  
     Ethan: “¿Te comportas así conmigo después de tu traición? Debería ser yo el molesto. Además, por lo que puedo ver no tienes mucho trabajo que hacer, más bien deberías de agradecer mi compañía”  
     Mi ceño se frunce más. Al ver que no me retracto, suelta un suspiro y sale del mostrador para dejarme pasar.  
-    Ethan: “Suspiro. No te pongas así guapa. Venga, ya que estoy aquí dame un [PEDIDO] para la próxima cita” 
+    Ethan: “Suspiro. No te pongas así [select value={$gender} M="guapo" F="guapa" NB="guape"/]. Venga, ya que estoy aquí dame un ramo para la próxima cita” 
     No puedo evitar suspirar de cansancio ante su actitud, pero a pesar de todo sigue siendo mi primer cliente y debo atenderle.  
     {$name}: “Suspiro. Dime, ¿qué te puedo poner?”  
     //Minijuego
@@ -232,42 +232,54 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     <<Add_npc_likeability NPC_ethan 2>>
     Ante mi declaración, la mujer me mira con desconfianza. Vuelve a inspeccionar con ojo crítico la floristería.  
     //[RUIDO DE ALGO CAYÉNDOSE]  
-    Otro ruido como el que llamó mi atención con anterioridad suena desde detrás del mostrador. Al escucharlo me tenso como un palo. La mujer mira el mostrador por encima de mi hombro y vuelve a mirarme entrecerrando todavía más los ojos. Ante su intensa mirada siento como una gota fría cae por mi sien.  
-    Desconocida: “¿Estás segura de que no lo has visto?”  
-    Noto su duda, no confía en mí. Con una sonrisa nerviosa intento pensar rápidamente una excusa. Si este chico se está escondiendo de ella tiene que ser por alguna razón importante. A mí también me habría venido bien una ayuda en mi situación. Con decisión, le digo lo primero que me viene a la mente.  
+    Otro ruido como el que llamó mi atención con anterioridad suena desde detrás del mostrador. Al escucharlo me tenso como un palo.
+    La mujer mira el mostrador por encima de mi hombro y vuelve a mirarme entrecerrando todavía más los ojos. Ante su intensa mirada siento como una gota fría cae por mi sien.  
+    Desconocida: “¿Estás [select value={$gender} M="seguro" F="segura" NB="segure"/] de que no lo has visto?”  
+    Noto su duda, no confía en mí. Con una sonrisa nerviosa intento pensar rápidamente una excusa. Si este chico se está escondiendo de ella tiene que ser por alguna razón importante. 
+    A mí también me habría venido bien una ayuda en mi situación. Con decisión, le digo lo primero que me viene a la mente.  
     {$name}: “Claro que no. Si lo hubiera visto te lo diría. ¿Qué gano yo ocultando esa información? Además, tengo muchas cosas por colocar todavía, agradecería que fueras a investigar a otra parte”  
     Con una mirada de odio por mis modales, la mujer se da la vuelta tras varios minutos y resignada procede a abandonar la floristería.  
     Desconocida: “No sé qué hago perdiendo el tiempo en esta floristería tan cutre y fea. No me extraña que nadie entre aquí”  
     Se va sin decir adiós.  
     //[CAMPANITAS FLORISTERÍA] 
-    Al escuchar las campanas de la puerta, suelto un suspiro de alivio que no sabía que había estado conteniendo. No pensé que me iba a alegrar de estar sola de nuevo.  
+    Al escuchar las campanas de la puerta, suelto un suspiro de alivio que no sabía que había estado conteniendo. No pensé que me iba a alegrar de estar [select value={$gender} M="solo" F="sola" NB="sole"/] de nuevo.  
     ...  
-    Un momento... ¿¡Cómo se me ha podido olvidar!? ¡Si todavía queda otra persona en la tienda! Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
+    Un momento... ¿¡Cómo se me ha podido olvidar!? ¡Si todavía queda otra persona en la tienda!
+    Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
     //[SHAKE Y GRITO]  
-    No puedo evitar gritar del susto. Me zarandeo intentando separarme de la persona que me tiene atrapada en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
+    No puedo evitar gritar del susto. Me zarandeo intentando separarme de la persona que me tiene [select value={$gender} M="atrapado" F="atrapada" NB="atrapade"/] en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
     <<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
    // <<Move Ethan right center 0.5>>
-    Ethan: “Tranquila, tranquila, no voy a hacerte nada. No era mi intención asustarte de esa manera”  
-    Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. Lo primero en lo que reparo es que, efectivamente, este chico es la persona que esa mujer estaba buscando. Lo segundo que más me llama la atención es el puchero que se encuentra en estos instantes en su cara. A pesar de este, su mirada tiene cierto toque burlesco.  
-    Ethan: “Yo solo quería darte las gracias por ayudarme. Y eso que no me conoces de nada. Debes de tener un corazón muy grande. Podría decir que eres mi dama/caballero de brillante armadura”  
+    Ethan: “[select value={$gender} M="Tranquilo, tranquilo" F="Tranquila, tranquila" NB="Tranquile, tranquile"/], no voy a hacerte nada. No era mi intención asustarte de esa manera”  
+    Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. 
+    Lo primero en lo que reparo es que, efectivamente, este chico es la persona que esa mujer estaba buscando. 
+    Lo segundo que más me llama la atención es el puchero que se encuentra en estos instantes en su cara. A pesar de este, su mirada tiene cierto toque burlesco.  
+    Ethan: “Yo solo quería darte las gracias por ayudarme. Y eso que no me conoces de nada. Debes de tener un corazón muy grande. Podría decir que eres mi [select value={$gender} M="caballero" F="dama" NB="aristócrata"/] de brillante armadura”  
     Su carácter me descoloca, no sé qué partes son sinceras y cuáles son sarcásticas. Sin mencionar la rara metáfora que acaba de hacer. Sonrío con nerviosismo.  
     {$name}: “¿No hay nada que agradecer?” 
     Al salir estas palabras de mi boca, sonríe con tanta intensidad que por poco podría decir que el brillo de sus perlados dientes casi me ciega. Tengo que reprimir las ganas de poner una mueca por la confusión.  
-    Silencio. Ambos nos miramos sin saber que decir. Por unos breves instantes aprecio en su mirada nerviosismo y pena. Al ver que no digo nada, se lleva una mano al cuello y observa las flores que se encuentran a su izquierda, dalia malva. Sale del mostrador y se acerca a estas para observarlas más de cerca.  
+    Silencio. Ambos nos miramos sin saber que decir. Por unos breves instantes aprecio en su mirada nerviosismo y pena.
+    Al ver que no digo nada, se lleva una mano al cuello y observa las flores que se encuentran a su izquierda, dalia malva. Sale del mostrador y se acerca a estas para observarlas más de cerca.  
     Ethan: “¡Qué bonita es esta flor! Una vez escuche que las flores tienen significado, ¿esta tiene alguno?”  
-    Se gira para mirarme con interés todavía agazapado sobre la flor. Puedo notar que está esperando pacientemente a mi respuesta. Todavía nerviosa y procesando lo que está pasando le contesto.  
+    Se gira para mirarme con interés todavía agazapado sobre la flor. Puedo notar que está esperando pacientemente a mi respuesta. Todavía [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] y procesando lo que está pasando le contesto.  
     {$name}: “Agradecimiento”  
-    Entonces se vuelve a poner derecho y me mira. Por un momento pierde ese toque coqueto que le caracteriza, pero el cambio es tan rápido que pienso que es imaginación mía. Su vista se posa en mis manos las cuales se encuentran todavía temblando ligeramente por el susto previo. Ante su mirada inquisitiva, no puedo evitar ocultarlas detrás de mi espalda. Vuelve a mirarme con cierta culpabilidad.  
+    Entonces se vuelve a poner derecho y me mira. Por un momento pierde ese toque coqueto que le caracteriza, pero el cambio es tan rápido que pienso que es imaginación mía. 
+    Su vista se posa en mis manos las cuales se encuentran todavía temblando ligeramente por el susto previo. Ante su mirada inquisitiva, no puedo evitar ocultarlas detrás de mi espalda. 
+    Vuelve a mirarme con cierta culpabilidad.  
     Ethan: “Lo siento. He debido de darte tremendo susto. No era mi intención”  
     Baja la mirada al suelo.  
     Ethan: “Creo que lo mínimo que puedo hacer para compensarte es comprarte un ramo”   
-    Sin decir nada, paso a su lado mirándole de soslayo y me sitúo detrás del mostrador para poder atenderle. Antes de poder preguntarle por su pedido, se pone delante mía y con una mirada sincera, la primera que veo en sus ojos desde su llegada me dice:  
+    Sin decir nada, paso a su lado mirándole de soslayo y me sitúo detrás del mostrador para poder atenderle.
+    Antes de poder preguntarle por su pedido, se pone delante mía y con una mirada sincera, la primera que veo en sus ojos desde su llegada me dice:  
     Ethan: “Gracias por ayudarme. Significa mucho para mí”  
-    Me sonríe con timidez y rápidamente desvía la mirada. No puedo evitar mi incredulidad. No esperaba este agradecimiento tan sincero. No se parece nada al anterior, cuando me ha abrazado por sorpresa. Sin embargo, tan rápido como llegó, esa sinceridad abandona su rostro y es sustituida por su carácter romántico. Apoyando su brazo en el mostrador y acercándose a mi cara coquetamente, realiza su pedido
+    Me sonríe con timidez y rápidamente desvía la mirada. No puedo evitar mi incredulidad. No esperaba este agradecimiento tan sincero. No se parece nada al anterior, cuando me ha abrazado por sorpresa.
+    Sin embargo, tan rápido como llegó, esa sinceridad abandona su rostro y es sustituida por su carácter romántico. Apoyando su brazo en el mostrador y acercándose a mi cara coquetamente, realiza su pedido.
     <<jump Minijuego_Ethan_lunes_sem1>>
 ===
 title: Minijuego_Ethan_lunes_sem1
+position: -157,-210
 ---
+
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Ethan_lunes_sem1>>
 
@@ -275,14 +287,500 @@ title: Minijuego_Ethan_lunes_sem1
 <<Go_to_minigame Ethan>>
 ===
 title: Salida_minijuego_Ethan_lunes_sem1
+position: -161,-123
 ---
-
-FIN MINIJUEGO
-
+<<set $resultado to "bien">>
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+"Aquí tienes"
 //Saltos a las diferentes ramas
-Bien hecho 
 
-Regular 
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Ethan_lunes_sem1>>
+<<endif>>
 
-Mal 
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Ethan_lunes_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Ethan_lunes_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Ethan_lunes_sem1
+position: 51,-49
+---
+<<Add_npc_likeability NPC_ethan 3>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+Ethan: “¡Son preciosas! A Elizabeth le van a encantar” 
+Suelto un suspiro de alivio al ver que mi primer pedido ha sido un éxito. No tenía por qué estar tan nerviosa. 
+{$name}: “Me alegro de que sean de tu agrado”  
+Ethan: “¡Has hecho un trabajo de diez, pero no esperaba menos de ti! Algo tan bonito solo puede crearlo otra belleza”  
+No puedo evitar hacer una ligera mueca ante su insistencia. 
+{$name}: “¿Quieres algo más?” 
+Con una amplia sonrisa se dirige hacia mí.  
+Ethan: “¡No, muchas gracias! Voy a tener mucho éxito con estas flores. Definitivamente volveré a verte” 
+Con el pedido en las manos, me da el dinero y se dispone a irse cuando... 
+<<jump Fin_ramas_minijuego_Ethan_lunes_sem1>>
+===
+title: Minijuego_regular_Ethan_lunes_sem1
+position: -158,-50
+---
+<<Add_npc_likeability NPC_ethan 1>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+Ethan: “Son muy bonitas, aunque debo admitir que esperaba algo más de ti”  
+Me gustaría sentirme ofendida por sus palabras, pero sé que tiene razón. No es mi mejor ramo, pero cumple su función.  
+Ethan: “No pongas esa cara, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Volveré a por más flores y sé que la próxima vez lo harás de 10.”  
+Sonrío tímidamente ante sus palabras. Siempre habrá una próxima vez y eso significa que tengo un nuevo cliente habitual. Con el pedido en las manos, me da el dinero y se dispone a irse cuando... 
+<<jump Fin_ramas_minijuego_Ethan_lunes_sem1>>
+===
+title: Minijuego_mal_Ethan_lunes_sem1
+position: -372,-49
+---
+<<Add_npc_likeability NPC_ethan -3>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+...  
+Ethan: “Esperaba no tener que decirte esto, pero creo que este ramo no me va a ayudar a conquistar a mi próxima cita. Menos mal que dispongo de mi amplia belleza”  
+Ante sus palabras no puedo evitar sentir como mi ilusión es aplastada por los suelos. Es mi primer día y parece que de momento nada quiere salir bien.  
+{$name}: “Lo siento, no estoy teniendo mi mejor día”  
+Ethan: “Suspiro. Que se le va a hacer, espero que al menos mi magnífica presencia te haya alegrado la tarde. Ya me pasaré por aquí en unos días y espero que tus habilidades hayan mejorado”  
+Con cierta decepción, cojo el dinero del pedido. Está a punto de darse la vuelta para irse cuando... 
+
+<<jump Fin_ramas_minijuego_Ethan_lunes_sem1>>
+===
+title: Fin_ramas_minijuego_Ethan_lunes_sem1
+position: -158,37
+---ocid
+Ethan: “¡Ah! Antes de irme. No he podido evitar fijarme en que tienes aquí el móvil” 
+Con el dedo señala el móvil que se encuentra encima del mostrador y que antes estaba intentando conseguir con tanta ansía. Asiento con la cabeza mientras le miro con desconfianza. Creo que sé lo que va a pasar.  
+Antes de que pueda decir nada, coge el móvil y comienza a escribir algo en él.  
+Ethan: “..54. ¡Y ya estaría!” 
+//[SONIDO NOTIFICACION MOVIL] 
+Ethan: “Así ya podemos estar en contacto” 
+Ninguna palabra es capaz de formarse en mi boca al estar intentando procesar lo que acaba de pasar. ¿Me acaba de dar su número de teléfono? De nuevo, antes de que pueda articular palabra se despide de mí guiñándome un ojo y se va.  
+Ethan: “No te olvides de mí [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Espero que la próxima vez podamos hablar más sin este tipo de problemas”  
+//[CAMPANITAS FLORISTERÍA] 
+{$name}: “¿Adiós?” 
+<<HideAll>>
+<<jump Lunes_calle_noche_sem1>>
+===
+title: Lunes_calle_noche_sem1
+position: -159,115
+---
+// set fondo de CALLE - NOCHE
+//<<Scene bg_office>>
+Mientras recorro la calle de vuelta a casa, siento el dolor de mis pies por las continuas horas de trabajo.  
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+{$name}: “Suspiro. Mira que hoy no ha sido un día muy concurrido, pero estoy cansadísima. No he podido parar de limpiar y retocar la floristería para dejarla en el mejor estado posible.”  
+Encima ya no es solo que hayan venido pocos clientes, sino los extraños acontecimientos que han tenido lugar. El choque con esa mujer por la mañana y el encuentro bizarro en la floristería por la tarde. Vuelvo a suspirar mientras miro el cielo estrellado.  
+{$name}: “Solo espero que estos siguientes días sean mejor y que más clientes vengan a la tienda”  
+<<HideAll>>
+<<Fade black 0.0 1.0 4.0>>
+<<jump Miercoles_sem1>>
+===
+title: Miercoles_sem1
+position: -158,197
+---
+<<Fade black 1.0 0.0 4.0>>
+// set fondo de CALLE - MÑN
+//<<Scene bg_office>>
+Es pronto en la mañana y aun así la calle comercial ya está ajetreada. 
+Llena de trabajadores que al igual que yo están preparando sus puestos y tiendas para hoy, esperando sacar provecho al día. En cambio, yo no creo que vaya a tener esa suerte.  
+Anteayer fue un desastre, llegué tarde y no pude abrir todo el día como quería, y ayer no vino casi gente a comprar. 
+Sé que han sido solo los primeros días y que no debería enfrascarme en eso, pero quiero que esto salga bien.  
+No, necesito que esto salga bien. 
+Me paro frente a la puerta de mi floristería, y el reflejo me devuelve una mirada derrotada. Eso no puede ser. 
+//[SLAP] 
+Mis manos golpean ambos mofletes a la vez, no con mucha fuerza, solo la suficiente para sacarme de esa espiral de pensamiento. 
+Nada de venirse abajo ya, hoy es un nuevo día así que a por él. 
+//[CAMPANITAS FLORISTERÍA]  
+//FLORISTERÍA - MAÑANA 
+Mientras preparo el mostrador oigo a alguien abrir la puerta y pasar. Eso sí que es raro, nadie antes había entrado a primera hora. Debe ser algo urgente si ha esperado a que justo abriera para entrar. 
+Cruzo al otro lado del mostrador, para poder atenderle. Desde este lado, miro el escaparate y observo imperfecciones por la falta de tiempo para colocarlo todo. 
+Frunzo el ceño y hago una mueca pensativa mientras tomo nota mental de lo que me queda por hacer cuando termine con el cliente, pero no debo lamentarme ahora por eso. 
+Dejo de mirar al fondo y me centro en el cliente sonriéndole. Descripción del Allan
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+{$name}: “¡Buenos días! ¿En qué puedo ayudarle?” 
+<<Act Allan sprt_allan_placeholder right bottom015 green>>
+Allan: “¡Hola, buenos días a ti también! Siento haber entrado tan pronto, desde fuera no se te veía bien así que no sabía que aún estabas preparando la tienda, sino me habría esperado, de verdad que no quería molestar” 
+Será un chico grande, pero se comporta como si quisiera ocupar el mínimo espacio posible.
+Entrelaza sus manos y juegan entre sí nerviosas, sin saber muy bien qué hacer con ellas, pero siendo incapaz de dejarlas quietas. 
+{$name}: “No te preocupes, en serio. Es más, agradezco que hayas entrado tan pronto porque me sirve para empezar ya el día con buen pie”
+Se alegra de escuchar mis palabras y relaja los hombros. Es contagioso, siento calidez en mi interior y me siento más [select value={$gender} M="cómodo" F="cómoda" NB="cómode"/].
+No quiero que por una tontería así nadie se sienta tenso. Mi floristería es un lugar de tranquilidad y alegría en el que todo el mundo es bienvenido.
+Allan: “¿Seguro? ¡Entonces genial! La verdad es que quería entrar pronto por si me quedaba sin ellas.”
+Allan: “Sé que es difícil que en una floristería se acaben las flores, pero aun así para estas cosas soy muy impaciente así quería tenerlas cuanto antes.”
+Allan: “Además de que ya tengo el sitio perfecto en el salón para ponerlas y llevo esperando una semana para comprarlas, pero no me había podido pasar antes. Así que aquí estoy” 
+No esperaba que alguien que había comenzado tan tímido se abriera tanto un segundo después. Sin embargo, lo aprecio, significa que ahora se siente seguro para expresarse. 
+Pero... No ha dicho que quería, ¿verdad?
+{$name}: “Perfecto, pero, ¿qué flores quieres exactamente? Creo que se te ha pasado decírmelo” 
+Allan: “Cierto, cierto, que cuando me pongo a hablar no paro y se me olvida siempre decir lo importante”
+Allan: “Pues quería un ramo con Lirios de sapo y Passifloras, sé que son un poco raras, pero tengo otras en casa con las que la combinación de colores y olores es perfecta para juntarlas.”
+Allan: “¿Sabías que los Lirios de sapo se llaman en realidad Tricyrtis hirta, y Tricyrtis viene del griego y significa tres jorobas?”
+Allan: “Porque suele tener los nectarios tan hinchados que se parecen a eso. Siempre me hacen este tipo de nombres. En español queda extraño, pero como es en griego pues queda bien ¿no?”
+Mientras habla de plantas toda su cara se ilumina y sus ojos brillan. Es una sensación que conozco bien. Una actitud que aparece cuando hablas de algo que te encanta con alguien que te va a escuchar. 
+Y cuando toca hablar de flores, no pienso decepcionar.
+{$name}: “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda. Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda”
+Allan: “Exacto, suficiente con decir Lirio de sapo. No he querido decir el nombre en griego por si no lo conocías, pero claro que lo sabes, eres florista después de todo.” 
+{$name}: “Claro y además me apasionan, no solo porque trabaje de ello, siempre fueron hobby para mí.”
+Allan: “¡Yo igual! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño. La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” 
+{$name}: “Te entiendo perfectamente. Antes no podía tener rienda suelta para comprar todas las macetas que quería, pero ahora que no tengo límites estoy aprovechando a tener las que siempre quise”
+Por mi comentario la conversación se amarga y el ambiente se incomoda un poco. No debería haber dicho algo negativo con lo alegre que estaba siendo la charla. 
+Sintiéndome [select value={$gender} M="encerrado" F="encerrada" NB="encerrade"/] continúo la conversación cambiando de tema antes de que él hable. No tengo ni fuerza ni ganas de responder a lo que sé que me va a preguntar. 
+{$name}: “Respecto a las flores que decías, lamentablemente no las tengo ahora mismo.”
+{$name}: “Sé que son increíbles, pero he abierto hace poco y esas solo se suelen pedir para encargos muy concretos, por lo que al no ser tan rentables para el día a día no me puedo permitir tenerlas siempre disponibles.”
+{$name}: “Lo siento mucho.”
+La mala noticia le entristece, pero no tanto como pensaba. Es una decepción controlada, como si hubiera sabido que esto iba a pasar.
+Aun así, siendo su cara tan expresiva, algo dentro mi se retuerce también de tristeza por verle perder la ilusión.
+Allan: “Ay, debí suponerlo, no es la primera vez que me pasa, así que no te preocupes, no es culpa tuya.”
+{$name}: “A lo mejor más adelante las tengo o las puedo pedir, pero no puedo asegurarte nada. Lo dicho, acabo de empezar y aunque ponga todo mi parte, el futuro nunca se sabe”
+Se dice que la esperanza no es lo último que se pierde. Con expectativas renovadas, el chico cierra los puños y los agita conteniéndose las ganas de hacer algo más extra.
+Allan: “¿En serio? Lo agradecería mucho si me avisaras, ¿te digo mi número y me escribes si lo tienes?”
+Saca su móvil y observo que su funda está decorada con un estampado de zinnias rojas y blancas. Así que bondad y constancia ¿eh? Le pega bastante.
+Apunto su teléfono baje el nombre de Chico Lirios de Sapo. Me río internamente del nombre y vuelvo mi atención al cliente.
+Allan: “Muchas gracias de verdad.”
+Allan: “¿Sabes qué? Me acabo de acordar de otras flores que también quería, no eran tan urgentes, pero ya que estoy aquí te las pido ya”
+{$name}: “¿Sí? Pues dime que te lo preparo en un santiamén”
+<<jump Minijuego_Allan_miercoles_sem1>>
+===
+title: Minijuego_Allan_miercoles_sem1
+position: -156,258
+---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Allan_miercoles_sem1>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Allan>>
+===
+title: Salida_minijuego_Allan_miercoles_sem1
+position: -158,332
+---
+<<set $resultado to "bien">>
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+{$name}: "Aquí tienes."
+<<Act Allan sprt_allan_placeholder right bottom015 green>>
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Allan_miercoles_sem1>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Allan_miercoles_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Allan_miercoles_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Allan_miercoles_sem1
+position: -158,420
+---
+<<Add_npc_likeability NPC_allan 3>>
+
+Allan: “¡Es perfecto! Me encanta.” 
+¡Genial! Ha acertado de lleno. 
+{$name}: “Me alegro de que te guste” 
+Allan: “Seguro que otro día vengo a comprar más, aunque ahora me tengo que ir para llegar a trabajar” 
+Me paga, recoge el ramo, lo huele y se queda unos segundos observándolo feliz. Verle tan feliz gracias a algo que he hecho yo me enorgullece mucho.
+Justo lo que necesitaba para retomar el optimismo que perdí por los días anteriores. 
+Player:“Entonces ya nos veremos.” 
+Allan: “Sí, hasta la próxima.” 
+Player: “Adiós.” 
+<<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
+===
+title: Minijuego_regular_Allan_miercoles_sem1
+position: 39,428
+---
+<<Add_npc_likeability NPC_allan 1>>
+Allan: “Está bien. Gracias” 
+{$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
+Le cojo el dinero y le doy el ramo. 
+Allan: “Otro día me pasaré, que he visto que tienes mucha variedad de flores” 
+{$name}: "Genial entonces. Hasta la próxima.” 
+Allan: “¡Adiós!” 
+<<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
+===
+title: Minijuego_mal_Allan_miercoles_sem1
+position: -369,421
+---
+<<Add_npc_likeability NPC_allan -3>>
+Claramente no es mi día, no me ha quedado el ramo nada bien para lo que tenía pensado. Me da tanta vergüenza que le entrego el ramo sin mirarle directamente a los ojos. 
+Allan: “Ah sí, gracias...” 
+Intenta ocultarlo, pero es incapaz. No le ha gustado nada. Espero que otro día vuelva para demostrarle que no lo hago así de mal de normal. 
+Le cobro y le doy el ramo a cambio con desgana. 
+Allan: “Hey, no te preocupes, todos podemos tener un mal día.” 
+{$name}: “Ya, pero aun así... Bueno, la próxima te haré uno mejor.” 
+Allan: “Esa es la actitud” 
+Allan: “Yo me tengo que ir ya pero ya, así que no te quito más tiempo.” 
+{$name}: “Adiós.” 
+<<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
+===
+title: Fin_ramas_minijuego_Allan_miercoles_sem1
+position: -160,530
+---
+<<Move Allan offright bottom015 2.0>>
+<<Hide Allan>>
+<<jump Sagrario_miercoles_sem1>>
+===
+title: Sagrario_miercoles_sem1
+position: -159,626
+---
+//Campanitas
+Primer cliente del día terminado. Ha sido muy majo la verdad, no pensé que fuera a encontrar a otro fan de las flores por aquí, no es un hobby muy común que digamos. 
+Bueno, voy a ponerme terminar de colocar la recepción antes de que entre otro cliente 
+...
+{$name}: “Ufff, parece que no, pero esto cansa. Al menos ya terminé” 
+Vuelvo a poner tras el mostrador para esperar al próximo cliente. Me dispongo a sacar el móvil para hacer tiempo, pero no me da ni tiempo a eso. 
+-> {$name}: “¡Hola, buenos días! ¿Puedo ayudarle en algo?” 
+    <<Add_npc_likeability NPC_sagrario -1>>
+    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+    La anciana se sobresalta. Estaba entretenida curioseando por la tienda. Se gira hacia mí y se acerca al mostrador con paso lento. 
+-> No le voy a decir nada para no molestarle. Que me hable cuando quiera. 
+    <<Add_npc_likeability NPC_sagrario 1>>
+    La anciana comienza a dar un paseo observando las macetas. Se para un instante delante de los tulipanes dubitativa. Agita la cabeza en negación y sigue caminando. 
+    Cuando termina de dar una vuelta completa a la floristería se dirige hacia mí a paso lento. 
+    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+    Anciana: “Buenos días” 
+    {$name}: “¡Hola buenos días! ¿Necesita ayuda con algo?”  
+Anciana: “Sí, hola. La verdad es que no sé mucho de este tema... Así que no sé muy bien que pedir” 
+{$name}: “No se preocupe, yo me ocupo. ¿Qué tal si me dice para qué quiere el ramo y yo le hago un ramo acorde a su situación?” 
+Anciana: “Mmm... Vale está bien”
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Minijuego_Sagrario_miercoles_sem1>>
+===
+title: Minijuego_Sagrario_miercoles_sem1
+position: -160,703
+---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Sagrario_miercoles_sem1>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Sagrario>>
+===
+title: Salida_minijuego_Sagrario_miercoles_sem1
+position: -161,788
+---
+<<set $resultado to "bien">>
+<<Fade black 1.0 0.0 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+//Saltos a las diferentes ramas
+
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Sagrario_miercoles_sem1>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Sagrario_miercoles_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Sagrario_miercoles_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Sagrario_miercoles_sem1
+position: 24,884
+---
+<<Add_npc_likeability NPC_sagrario 3>>
+No me ha dado mucha información. Es más, lo que me ha dicho parecía que fuera para enmascar el motivo real. Pero bueno creo que lo he hecho muy para la información que tenía. 
+Le muestro el resultado con toda mi ilusión. 
+{$name}: “Aquí tiene. ¿Qué le parece?” 
+Anciana: “Es... perfecto... No sé cómo lo has hecho para darme justo lo que necesitaba solo con lo que te he dicho” 
+Un subidón de alegría me recorre el cuerpo. Sí, acerté de lleno. La señora coje el ramo entre sus delicadas manos y su mirada se enternece al ver el ramo. ¿Para qué será realmente? 
+{$name}: “Me alegro de que le guste tanto” Sonrío ampliamente 
+Anciana: “Aquí tienes el pago” 
+Tras darme el dinero, vuelve a quedarse ensimismada con el ramo y se detiene a olerlo. Mientras tanto me echo la cuenta del cobro para ver que está todo bien y veo que me ha pagado de más. 
+{$name}: “Uy, casi se me pasa darle las vueltas. Deme un segundo” 
+Anciana: “No hace falta, ha sido a propósito.” 
+{$name}: “¿Está usted segura?” 
+Anciana: “Sí, sí, [select value={$gender} M="niño" F="niña" NB="niñe"/]. No esperaba que se pudieran crear algo tan bonito con flores, y eso se merece un extra” 
+{$name}: “Muchas gracias entonces” 
+Anciana: “No, muchas gracias a ti por esto” Señala el ramo. 
+Felices [select value={$gender} M="ambos" F="ambas" NB="ambos"/], la anciana se aleja del mostrador y se despide con la mano desocupada. 
+Anciana:“Adiós y mucha suerte para el resto del día” 
+{$name}: “Adiós, y que tenga un buen día” 
+<<Move Anciana offright bottom015 2.0>>
+<<Hide Anciana>>
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem1>>
+===
+title: Minijuego_regular_Sagrario_miercoles_sem1
+position: -348,885
+---
+<<Add_npc_likeability NPC_sagrario 1>>
+El pedido era un poco ambiguo, como si no me quisiera contar el motivo real, pero creo que he conseguido juntar un ramo decente. 
+Sonriente y con esperanza de cumplir, le entrego el ramo. 
+{$name}: “Aquí está” 
+Anciana: “Son bonitas” 
+Parece que no era exactamente lo que quería, pero tampoco lo disgusta. No está decepcionada, es consciente de que no me ha dado toda información que necesitaba para que le hiciera justo lo que necesitaba. ¿Para qué será realmente el ramo? 
+Anciana: “Aquí tienes el pago” 
+{$name}: “Sí, ahora le doy el cambio” 
+Tras darme el dinero, se detiene a olerlo. Sonríe. El olor también le gusta, menos mal. Aunque no haya acertado del todo, no ha sido un desastre así que lo contaré como una victoria. 
+{$name}: “Ahí tiene las vueltas” 
+Anciana: “Gracias” 
+{$name}: “De nada, gracias a usted por venir” 
+Anciana: “Vendré otro día, creo que le tienes buena mano a esto [select value={$gender} M="niño" F="niña" NB="niñe"/]”  
+{$name}: "La estaré esperando entonces. Hasta otro día” 
+Anciana: “Adiós” 
+<<Move Anciana offright bottom015 2.0>>
+<<Hide Anciana>>
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem1>>
+===
+title: Minijuego_mal_Sagrario_miercoles_sem1
+position: -156,881
+---
+<<Add_npc_likeability NPC_sagrario -3>>
+La información que me ha dado era bastante genérica así que puede que no le guste en absoluto, espero tener suerte y que sea lo que esperaba. 
+Extiendo mi mano con el ramo para acercárselo.  
+Anciana: “Mmm... Gracias” 
+Pues no, la suerte no está de mi parte. No he acertado en absoluto con el ramo. Su cara solo muestra decepción. 
+La anciana suspira mientras niega con la cabeza. 
+{$name}: “Lo siento, veo que no es lo que esperaba” 
+Anciana: “No te disculpes no es culpa tuya, sé que era un pedido demasiado ambiguo. Es mi culpa” Sonríe con tristeza.
+Su tristeza se me contagia. Aunque diga que es su culpa, sé que tenía la esperanza de que hubiera leído bien entre líneas para darle lo que necesitaba realmente. 
+Decepcionar a una anciana que confiaba en mí sienta peor de lo que hubiera imaginado. Me quedo callada sin saber que responderle. 
+Anciana:“Bueno, aquí tienes el dinero” 
+{$name}: “Ah sí, le doy el cambio ahora mismo” 
+Rebusco nerviosa las vueltas en la caja. Quiero salir de esta situación ya. 
+{$name}: “Ahí tiene” 
+Anciana: “Gracias, ten un buen día [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+{$name}: “Adiós e igualmente, tenga un buen día usted también” 
+Despido a la señora y en cuanto sale de la tienda me llevo las manos la cara. 
+<<Move Anciana offright bottom015 2.0>>
+<<Hide Anciana>>
+{$name}: “Ahgg no debería haberla pifiado con este pedido” 
+Deslizo mis manos por la cara y después las planto en la repisa. Miro abajo y suelto un gran suspiro.
+{$name}: “Dios, espero que no me vuelva a pasar” 
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem1>>
+===
+title: Fin_ramas_minijuego_Sagrario_miercoles_sem1
+position: -153,973
+---
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Pietro_miercoles_sem1>>
+===
+title: Pietro_miercoles_sem1
+position: -145,1065
+---
+<<Fade black 1.0 0.0 2.0>>
+Las campanillas de la floristería suenan mientras despido con la mano al último cliente que acabo de atender. Cuando la puerta se cierra, todo el cansancio cae sobre mí.  
+Suspiro. 
+Por suerte parece que hoy unas cuantas personas más se han animado a entrar en la floristería. Incluso al iniciar el turno de tarde ha habido un momento en el que han coincidido varios clientes.
+Debido a ello, he tenido que aumentar el ritmo de trabajo para que el tiempo de espera fuera el menor posible. Quería darles un buen servicio con la esperanza de que la reputación de mi tienda mejore.
+El cliente que acaba de marcharse era la última persona esperando en la cola. No puedo evitar sonreír orgullosa y sentir cierto cosquilleo en mi estómago por mi desempeño en el día de hoy.
+Especialmente teniendo en cuenta como los dos días anteriores la situación no había sido muy buena.
+Si bien el flujo de clientes podría ser mejor, me alegro de que poco a poco más personas vayan descubriendo mi tienda.
+Ya no es tanto por ganar dinero, pero por la necesidad que siento de alegrar a la gente con mis arreglos florales.  
+Con las energías renovadas por estos pensamientos y aprovechando que no hay clientes que atender, saco de mi mochila un pequeño aperitivo que había preparado y no había tenido la oportunidad de comer.
+Miro la hora en mí móvil. Las siete de la tarde.
+Puede que ya sea un poco tarde para la comida, pero necesito algo para calmar el ruido de mi estómago. Además, no quiero desaprovechar comida y más teniendo en cuenta lo que es.  
+<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+{$name}: “Ummm. Que rico, sándwich vegetal”  
+Estoy a punto de pegar el primer bocado cuando la puerta de la floristería se abre con su característico tintineo.  
+//[CAMPANITAS FLORISTERÍA] 
+Suelto el sándwich del susto, que cae sobre el mostrador. Con rapidez y pánico lo recojo y lo vuelvo a guardar para poder atender al nuevo cliente.  
+{$name}: “¡Buenas! Bienvenido a A Flower's Dream”  
+<<Act Pintor spt_pietro_neutral 1.25 bottom015 #226677>>
+Miro al cliente con una sonrisa. Es un chico joven de unos 20 años. Tiene la piel oscura llena de tatuajes. Me llama mucho la atención un tatuaje de las distintas fases de la luna que se encuentra en su antebrazo.
+Su largo pelo café con mechas blancas se encuentra recogido en una trenza desenfadada que cae sobre su hombro. En general se le ve muy cómodo.
+Parece un chico majo y amante de las artes por el cuaderno y estuche que porta en sus brazos. También lo delatan las distintas manchas de pintura que cubren partes de su ropa y piel.
+Veo como este se acerca a las diversas flores distribuidas por la tienda. Las contempla durante un rato, pero termina negando.
+Puede que a lo mejor requiera de asistencia para encontrar un tipo de flor específico como el chico que vino esta mañana al abrir la tienda. Solo espero que esta vez pueda ayudarle.
+Me aclaro la garganta y levanto la voz para llamar su atención.  
+{$name}: “¿Puedo ayudarte en algo?”  
+Por un instante el chico para de examinar las flores como si me hubiera escuchado, pero tras varios segundos continúa su tarea.
+Confundida por este acto, carraspeo con mayor intensidad para intentar de nuevo llamar su atención. ¿Puede que no me haya oído?  
+{$name}: “¡BUENAS! ¿Puedo ayudarte en algo?”  
+Puede que me haya pasado al levantar tanto la voz, pero estoy segura de que esta vez me ha tenido que escuchar. Expectante observo su próxima acción y no puedo evitar alegrarme al ver que se gira hacia mí. Sonrío.  
+{$name}: “Como te comentaba, me gustaría ayudarte si tienes alguna flor específica en mente...”  
+A medida que hablo, mi voz se va apagando por la confusión que siento ante sus acciones.
+Para mi incredulidad, el joven asiente y abre su cuaderno para comenzar a dibujar lo que entiendo que es la flor que estaba observando.
+En esencia, no se había girado a mirarme a mí, sino a la flor que capta su atención. ¿Qué es lo que está pasando?  
+El joven sigue pintando absorto en su labor como si esta fuera su tienda y no la mía. Por unos instantes me siento fuera de lugar, como si por estar cerca de él le estuviera importunando.
+Tras varios minutos de duda en los que me remuevo en el sitio por la incomodidad, me dispongo a acercarme a él para preguntarle por su tarea.  
+-> {$name}: “¿Puedo saber qué estás haciendo? Por si no te has dado cuenta esta es una tienda de flores y no un estudio de arte” 
+    <<Add_npc_likeability NPC_pietro -2>>
+    Le doy un golpecito con el dedo en el hombro, pero el joven ni se inmuta. ¿Acaso me está ignorando? Esto no puede ser ya una mera coincidencia. Frunzo el ceño con molestia.  
+    {$name}: “Perdona, ¿es qué no me has escuchado?”  
+    Estoy a punto de volver a golpearle en el hombro cuando el joven pintor suelta un suspiro de exasperación.  
+    Pintor: “Suspiro. ¿Podrías dejar de hacer tanto ruido? No me puedo concentrar.”  
+    ...
+    ¿Cómo? ¿Qué acaba de pasar? ¿Me ha pedido que me calle en mi propia floristería? Cierro los puños con fuerza. Esto no se va a quedar así.  
+    {$name}: “Esta es una floristería, no un lugar para dibujar. Hay clientes y tengo que trabajar”  
+    El chico vuelve a exhalar con molestia.  
+    Pintor: “Ains. Ya te he escuchado la primera vez. Además, no veo ningún cliente. Cuanto antes me dejes terminar, antes me voy.”  
+    Sin levantar la vista del cuaderno, mueve la mano como si estuviera intentando apartar una mosca y sigue dibujando. Abro la boca indignada ante su actitud. Esta forma tan seca y borde de hablar me recuerda a...  
+    Las suaves rasgaduras del lápiz sobre el papel y el golpeteo inquieto de mi pie inundan el tenso ambiente. Por un momento me pierdo en mis pensamientos, en el pasado.   
+    Por lo que puedo ver no voy a ganar nada intentando hablar con él y no quiero gastar energías ni montar ninguna escena en la floristería ahora que empieza a ir bien. No creo que vaya a comprar nada.
+    Será mejor que regrese a comerme mi sándwich y le deje en su pequeño mundo no solo por su bien sino también por el mío.  
+    Antes de irme me fijo en la flor que le tiene tan cautivado, una amapola del Himalaya. Me sorprendo. Qué curioso que haya decidido pintar esta flor siendo él un pintor y representando esta la imaginación.
+    Sonrío tenuemente. No puedo evitar que parte de mi enfado se esfume por mi amor hacia las flores.  
+    Por mera curiosidad le pregunto su nombre.  
+    {$name}: “¿Al menos puedo saber cómo te llamas?” 
+    <<Act Pietro spt_pietro_neutral 1.25 bottom015 #226677>>
+    <<Hide Pintor>>
+    Pietro: “Tsk. Me llamo Pietro” 
+    {$name}: “...Encantada” 
+    Vuelvo a sentirme indignada ante su clara molestia. Por lo menos ahora tengo un nombre que asociar a este pintor tan peculiar.  
+-> {$name}: "Disculpa... No puedo evitar sentir curiosidad por lo que estás haciendo” 
+    <<Add_npc_likeability NPC_pietro 2>>
+    Al posar con delicadeza mi mano sobre su hombro, el chico sale de su ensimismamiento y me mira con desconcierto.  
+    Pintor: “¿Quién eres tú?”  
+    Su pregunta me descoloca. Vale, puede que no me conozca personalmente, pero ¿no reconoce que soy la dueña de la floristería? Con una sonrisa conciliadora e intentando aplacar mis nervios me presento.  
+    {$name}: “Yo soy {$name} y esta es mi floristería. Te he saludado varias veces, pero no me has escuchado”  
+    El joven pintor me mira durante unos instantes parpadeando lentamente como si estuviera procesando mis palabras. Después de unos minutos asiente y reacciona.  
+    Pintor: “Lo siento, tienes tantos tipos de flores diferentes. No sabía cuál sería la indicada para dibujar hasta que encontré esta”  
+    Sonrío. Aunque su actitud puede que me resulte algo extraña, debo admitir que tiene una voz muy suave y tranquilizadora.
+    Señala con el dedo la flor que tiene delante y que por el rabillo del ojo veo como está tomando forma en su cuaderno.  
+    Al reconocer la flor, mi lado amante de las flores se libera.  
+    {$name}: “¡Ah! Esta flor es una amapola azul. También conocida como amapola del Himalaya. Dicen que representa la imaginación y el éxito.”
+    {$name}: “Es difícil hacerla crecer, pero su belleza merece todo el esfuerzo y cariño, ¿no crees?”  
+    Veo como el chico ladea ligeramente la cabeza y me observa con lo que supongo que es interés. Sin embargo, su cara es tan inexpresiva que no estoy segura de ello.
+    Mi sonrisa decae levemente. ¿Puede que le haya aburrido? Estoy a punto de disculparme cuando el chico habla.  
+    Pintor: “No tenía ni idea sobre ello. Realmente estoy pintándola porque he sentido que era la adecuada”  
+    Ante su respuesta, suelto un suspiro de alivio que no sabía que había estado conteniendo. El silencio se había tornado algo incómodo, por lo menos en mi caso.
+    Sin saber que más decir espero nerviosa dando leves golpecitos con la punta del pie en el suelo a que el pintor diga algo más, pero este simplemente parpadea con lentitud y vuelve a centrar su vista en su cuaderno.
+    Las suaves rasgaduras del lápiz sobre el papel y el golpeteo inquieto de mi pie inundan el tenso ambiente. Parece que el joven pintor no es muy hablador.  
+    Me desinflo ante su actitud algo decepcionada por esperar algo más por su parte. Es una persona a la que no conozco de nada, tampoco puedo crearme expectativas.
+    Parece que no tiene intención de comprar nada, pero al menos la flor le ha gustado. Será mejor que regrese a comerme mi sándwich y le deje en su pequeño mundo.  
+    Pintor: “Ummm, supongo que tendré que investigar más sobre este mundo de las flores. Todo es un gran misterio.”  
+    Al escuchar como su suave voz corta el incómodo aire, doy media vuelta con rapidez. ¿¡Ha hablado!? ¡Y encima ha dicho que le interesan las flores! Siento como una profunda alegría inunda mi pecho.  
+    {$name}: “¡Te sorprenderías! A mí me fascina todo lo que puedes expresar con una simple flor o color”  
+    Antes de comenzar a escupir datos sobre plantas y flores sin control, me paro a mí misma. No quiero tentar mi suerte. Pero...
+    ¿A lo mejor podría ofrecerle mi conocimiento en caso de que tenga dudas sobre este mundillo? Asiento con seguridad. 
+    {$name}: “Si al final decides investigar sobre ello y tienes alguna duda puedes venir a consultarme sin problema”  
+    El joven pintor me mira, parpadea y asiente. Después regresa a su dibujo.  
+    {$name}: “Por cierto, no me has dicho tu nombre”  
+    Sin levantar la vista del papel, el chico contesta.  
+    <<Act Pietro spt_pietro_neutral 1.25 bottom015 #226677>>
+    <<Hide Pintor>>
+    Pietro: “Me llamo Pietro” 
+    Me alegro de por fin poder tener un nombre que asociar a este pintor tan enigmático.  
+    {$name}: “Es un placer conocerte”  
+
+Pietro asiente mientras sigue concentrado en su arte. Al verle tan absorto en el dibujo de la amapola del Himalaya, no puedo evitar sentir curiosidad por ver cómo está quedando.
+Con cierto disimulo, me inclino tenuemente sobre su hombro para ver el contenido del cuaderno, pero antes de poder vislumbrar algo por mínimo que sea, Pietro cierra de golpe la libreta.
+No puedo evitar sobresaltarme por su acción abrupta. ¿Se habrá dado cuenta de lo que iba a hacer?
+Con cierta vergüenza, le miro de reojo para intentar detectar molestia o enfado en su expresión, pero esta es indiferente. Entonces Pietro se da la vuelta y marcha hacia la puerta de la floristería sin decir nada.  
+Con la puerta ya abierta de par en par, gira la cabeza y mirándome directamente a los ojos se despide asintiendo. La puerta se cierra y veo por la ventana como se marcha con la vista en el cielo. 
+<<Move Pietro offright bottom015 2.0>>
+<<Hide Pietro>>
+Regreso al mostrador con paso lento. Debo admitir que me siento algo decepcionada por el hecho de que al final no decidió comprar la amapola. Sin embargo, la curiosidad por este pintor tan misterioso es mayor.   
+{$name}: “Que chico más peculiar”  
+Me pregunto si volverá a venir. ¿Comprará algo en ese caso?  
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Jueves_sem1>>
+===
+title: Jueves_sem1
+position: 410,-261
+---
+===
+title: Viernes_sem1
+position: 833,-254
+---
+===
+title: Finde_sem1
+position: 1127,-245
+---
 ===
