@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 141446801}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[0]
@@ -344,6 +344,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 9568c406d408b1a49a3929f5b3334442, type: 3}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b740b9a3bc9e3d4d9c110c2f6abb439, type: 3}
+    - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: 77d8f11e4af00594c8aaf1784c1dd7a8, type: 3}
     m_RemovedComponents: []
