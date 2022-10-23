@@ -72,7 +72,7 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
 			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
 			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
-
+			runner.AddCommandHandler("DeHighlight", DeHighlightAllCharacters);
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
@@ -111,11 +111,17 @@ namespace Yarn.Unity.Example {
 			runner.StartDialogue(startNodeManually);
         }
 
-        #region YarnCommands
+		#region YarnCommands
 
-        ///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
 
-        public void AddToLikeability(string keyVar, int sumValue)
+		public void DeHighlightAllCharacters()
+		{
+			DeHighlightSprite();
+		}
+
+		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
+
+		public void AddToLikeability(string keyVar, int sumValue)
 		{
 			Debug.Log("Entra al add likeability");
 			string json = PlayerPrefs.GetString(keyVar);
@@ -460,7 +466,11 @@ namespace Yarn.Unity.Example {
 			StopCoroutine( "HighlightSpriteCoroutine" ); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
 			StartCoroutine( "HighlightSpriteCoroutine", sprite );
 		}
-
+		public void DeHighlightSprite()
+		{
+			StopCoroutine("DeHighlightSpriteCoroutine"); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
+			StartCoroutine("DeHighlightSpriteCoroutine");
+		}
 		// called by HighlightSprite
 		IEnumerator HighlightSpriteCoroutine (Image highlightedSprite) {
 			float t = 0f;
@@ -478,6 +488,26 @@ namespace Yarn.Unity.Example {
 						spr.color = Color.Lerp( spr.color, highlightTint, Time.deltaTime * 5f );
 						spr.transform.SetAsLastSibling();
 					}
+				}
+				yield return 0;
+			}
+		}
+		IEnumerator DeHighlightSpriteCoroutine()
+		{
+			float t = 0f;
+			// over time, gradually change sprites to be "normal" or
+			// "highlighted"
+			while (t < 1f)
+			{
+				t += Time.deltaTime / 2f;
+				foreach (var spr in sprites)
+				{
+					Vector3 regularScalePreserveXFlip = new Vector3(Mathf.Sign(spr.transform.localScale.x), 1f, 1f);
+					 // set back to normal
+						spr.transform.localScale = Vector3.MoveTowards(spr.transform.localScale, regularScalePreserveXFlip, Time.deltaTime);
+						spr.color = Color.Lerp(spr.color, defaultTint, Time.deltaTime * 5f);
+					
+					
 				}
 				yield return 0;
 			}

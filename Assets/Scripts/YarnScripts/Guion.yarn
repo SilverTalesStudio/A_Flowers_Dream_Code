@@ -47,13 +47,13 @@ Sacudo la cabeza para dejar de pensar en el pasado y centrarme en el presente. A
 Me tambaleo del impacto y doy un paso atrás consiguiendo mantener el equilibrio. Palpo brevemente mis pertenencias para comprobar que no se me ha caído nada mientras alzo la mirada rápidamente para disculparme. 
 
 // Añade a la escena al protagonista
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Perd-” 
 //Añade a Sophie
-<<Act Sophie sprt_sophie_placeholder right bottom015 #226677>>
+<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
 //<<Move Sophie right center 0.15>>
 Sophie: “¡¿Es que no miras por dónde vas?!” 
-
+<<DeHighlight>>
 Ante mí me encuentro una chica Descripcion_cuando_tengamos_dibujo. Pero también es un rostro enfadado, el cual no parece que vaya a cambiar si me quedo mirándola mientras ella espera una reacción de mí. 
 
 Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
@@ -61,6 +61,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
 -> {$name}: “¡Ey! No ha sido culpa mía, tú te has chocado conmigo”
     <<Add_npc_likeability NPC_sophie -2>>
     Sophie: “¡Jah! Ahora será culpa mía que te creas que la calle es solo tuya para recorrer. ¿Quién te crees que eres? ¿[select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /]” Sonríe sarcásticamente. 
+    <<DeHighlight>>
     ¿[select value={$gender} M="Príncipe" F="Princesa" NB="Noble" /]? Escuchar el mote me descoloca, pero rápidamente me recompongo. Ahora más enfadada que antes. ¿Quién es así de borde con desconocidos? ¡Y encima solo por chocarnos! 
     Me cruzo de brazos para mostrarme firme. Sé que no está sirviendo para nada porque la chica en frente mía no muestra ninguna reacción que demuestre lo contrario. Pero eso no me va a acobardar. 
     {$name}: “No soy [select value={$gender} M="un príncipe" F="una princesa" NB="une noble" /], en todo caso lo serías tú saliendo de golpe de una tienda sin prestar atención a tu alrededor”  
@@ -133,7 +134,7 @@ Decisiones...
 
 Mi mirada se posa sobre un pequeño diente de león. Durante años pensé que había tenido control sobre mi vida, pero solo era una falsa ilusión. Me había rendido. Ahora soy libre y tengo que luchar por cumplir mis deseos. Cojo el pequeño diente de león y, mientras sujeto su tallo delicadamente, cierro los ojos y pido un deseo.  
 
-<<Act {$name} sprt_she_neutral_final left bottom green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 
 {$name}: “Deseo...” 
 
@@ -179,7 +180,7 @@ Miro el mostrador. ¡Ahí es donde se encuentra! Con el temor creciendo en mi in
 
 Como un rayo, giro mi cabeza hacia la puerta haciendo que un ligero dolor recorra mi cuello. Con los ojos como platos, observo como una mujer despampanante espera en la entrada con expresión de intensa molestia. Parece que está buscando algo. 
 
-<<Act Desconocida sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+<<Act Desconocida sprt_exethan_placeholder 1.25 bottom015 white>>
 //<<Move Desconocida right center 0.5>>
 Desconocida: “Tsk. ¿Dónde se habrá metido ese tipo?”  
 
@@ -193,7 +194,7 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
 -> {$name}: “No sé si puede ser la persona a quien buscas, pero alguien ha entrado y se ha escondido detrás del mostrador” 
     <<Add_npc_likeability NPC_ethan -1>>
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. Al mismo tiempo, la figura misteriosa que se encontraba escondida detrás del mostrador sale dando un brinco y se gira hacia mí para señalarme con un dedo acusatorio.  
-    <<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+    <<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
     //<<Move Ethan right center 0.5>>
     Ethan: “¡Noooooo! ¿¡Por qué me delataste!? ¡No esperaba esto de una preciosidad como tú!”  
     Por auto reflejo, levanto las manos en señal de rendición. ¡Yo no quería tener nada que ver con esto! Solo quería tener un primer día de trabajo tranquilo y satisfactorio, sin este tipo de escándalos. Con los nervios por el miedo todavía en mi interior, le contesto al chico sin ningún tipo de filtro.   
@@ -248,7 +249,7 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico descripción cuando tengamo
     Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
     //[SHAKE Y GRITO]  
     No puedo evitar gritar del susto. Me zarandeo intentando separarme de la persona que me tiene [select value={$gender} M="atrapado" F="atrapada" NB="atrapade"/] en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
-    <<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+    <<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
    // <<Move Ethan right center 0.5>>
     Ethan: “[select value={$gender} M="Tranquilo, tranquilo" F="Tranquila, tranquila" NB="Tranquile, tranquile"/], no voy a hacerte nada. No era mi intención asustarte de esa manera”  
     Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. 
@@ -290,7 +291,7 @@ title: Salida_minijuego_Ethan_lunes_sem1
 position: -161,-123
 ---
 <<set $resultado to "bien">>
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 "Aquí tienes"
 //Saltos a las diferentes ramas
 
@@ -310,7 +311,7 @@ title: Minijuego_bien_Ethan_lunes_sem1
 position: 51,-49
 ---
 <<Add_npc_likeability NPC_ethan 3>>
-<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
 Ethan: “¡Son preciosas! A Elizabeth le van a encantar” 
 Suelto un suspiro de alivio al ver que mi primer pedido ha sido un éxito. No tenía por qué estar tan nerviosa. 
 {$name}: “Me alegro de que sean de tu agrado”  
@@ -326,7 +327,7 @@ title: Minijuego_regular_Ethan_lunes_sem1
 position: -158,-50
 ---
 <<Add_npc_likeability NPC_ethan 1>>
-<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
 Ethan: “Son muy bonitas, aunque debo admitir que esperaba algo más de ti”  
 Me gustaría sentirme ofendida por sus palabras, pero sé que tiene razón. No es mi mejor ramo, pero cumple su función.  
 Ethan: “No pongas esa cara, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Volveré a por más flores y sé que la próxima vez lo harás de 10.”  
@@ -337,7 +338,7 @@ title: Minijuego_mal_Ethan_lunes_sem1
 position: -372,-49
 ---
 <<Add_npc_likeability NPC_ethan -3>>
-<<Act Ethan spt_pietro_neutral 1.25 bottom #226677>>
+<<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
 ...  
 Ethan: “Esperaba no tener que decirte esto, pero creo que este ramo no me va a ayudar a conquistar a mi próxima cita. Menos mal que dispongo de mi amplia belleza”  
 Ante sus palabras no puedo evitar sentir como mi ilusión es aplastada por los suelos. Es mi primer día y parece que de momento nada quiere salir bien.  
@@ -369,7 +370,7 @@ position: -159,115
 // set fondo de CALLE - NOCHE
 //<<Scene bg_office>>
 Mientras recorro la calle de vuelta a casa, siento el dolor de mis pies por las continuas horas de trabajo.  
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Suspiro. Mira que hoy no ha sido un día muy concurrido, pero estoy cansadísima. No he podido parar de limpiar y retocar la floristería para dejarla en el mejor estado posible.”  
 Encima ya no es solo que hayan venido pocos clientes, sino los extraños acontecimientos que han tenido lugar. El choque con esa mujer por la mañana y el encuentro bizarro en la floristería por la tarde. Vuelvo a suspirar mientras miro el cielo estrellado.  
 {$name}: “Solo espero que estos siguientes días sean mejor y que más clientes vengan a la tienda”  
@@ -398,31 +399,31 @@ Mientras preparo el mostrador oigo a alguien abrir la puerta y pasar. Eso sí qu
 Cruzo al otro lado del mostrador, para poder atenderle. Desde este lado, miro el escaparate y observo imperfecciones por la falta de tiempo para colocarlo todo. 
 Frunzo el ceño y hago una mueca pensativa mientras tomo nota mental de lo que me queda por hacer cuando termine con el cliente, pero no debo lamentarme ahora por eso. 
 Dejo de mirar al fondo y me centro en el cliente sonriéndole. Descripción del Allan
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “¡Buenos días! ¿En qué puedo ayudarle?” 
-<<Act Allan sprt_allan_placeholder right bottom015 green>>
-Allan: “¡Hola, buenos días a ti también! Siento haber entrado tan pronto, desde fuera no se te veía bien así que no sabía que aún estabas preparando la tienda, sino me habría esperado, de verdad que no quería molestar” 
+<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+Cliente: “¡Hola, buenos días a ti también! Siento haber entrado tan pronto, desde fuera no se te veía bien así que no sabía que aún estabas preparando la tienda, sino me habría esperado, de verdad que no quería molestar” 
 Será un chico grande, pero se comporta como si quisiera ocupar el mínimo espacio posible.
 Entrelaza sus manos y juegan entre sí nerviosas, sin saber muy bien qué hacer con ellas, pero siendo incapaz de dejarlas quietas. 
 {$name}: “No te preocupes, en serio. Es más, agradezco que hayas entrado tan pronto porque me sirve para empezar ya el día con buen pie”
 Se alegra de escuchar mis palabras y relaja los hombros. Es contagioso, siento calidez en mi interior y me siento más [select value={$gender} M="cómodo" F="cómoda" NB="cómode"/].
 No quiero que por una tontería así nadie se sienta tenso. Mi floristería es un lugar de tranquilidad y alegría en el que todo el mundo es bienvenido.
-Allan: “¿Seguro? ¡Entonces genial! La verdad es que quería entrar pronto por si me quedaba sin ellas.”
-Allan: “Sé que es difícil que en una floristería se acaben las flores, pero aun así para estas cosas soy muy impaciente así quería tenerlas cuanto antes.”
-Allan: “Además de que ya tengo el sitio perfecto en el salón para ponerlas y llevo esperando una semana para comprarlas, pero no me había podido pasar antes. Así que aquí estoy” 
+Cliente: “¿Seguro? ¡Entonces genial! La verdad es que quería entrar pronto por si me quedaba sin ellas.”
+Cliente: “Sé que es difícil que en una floristería se acaben las flores, pero aun así para estas cosas soy muy impaciente así quería tenerlas cuanto antes.”
+Cliente: “Además de que ya tengo el sitio perfecto en el salón para ponerlas y llevo esperando una semana para comprarlas, pero no me había podido pasar antes. Así que aquí estoy” 
 No esperaba que alguien que había comenzado tan tímido se abriera tanto un segundo después. Sin embargo, lo aprecio, significa que ahora se siente seguro para expresarse. 
 Pero... No ha dicho que quería, ¿verdad?
 {$name}: “Perfecto, pero, ¿qué flores quieres exactamente? Creo que se te ha pasado decírmelo” 
-Allan: “Cierto, cierto, que cuando me pongo a hablar no paro y se me olvida siempre decir lo importante”
-Allan: “Pues quería un ramo con Lirios de sapo y Passifloras, sé que son un poco raras, pero tengo otras en casa con las que la combinación de colores y olores es perfecta para juntarlas.”
-Allan: “¿Sabías que los Lirios de sapo se llaman en realidad Tricyrtis hirta, y Tricyrtis viene del griego y significa tres jorobas?”
-Allan: “Porque suele tener los nectarios tan hinchados que se parecen a eso. Siempre me hacen este tipo de nombres. En español queda extraño, pero como es en griego pues queda bien ¿no?”
+Cliente: “Cierto, cierto, que cuando me pongo a hablar no paro y se me olvida siempre decir lo importante”
+Cliente: “Pues quería un ramo con Lirios de sapo y Passifloras, sé que son un poco raras, pero tengo otras en casa con las que la combinación de colores y olores es perfecta para juntarlas.”
+Cliente: “¿Sabías que los Lirios de sapo se llaman en realidad Tricyrtis hirta, y Tricyrtis viene del griego y significa tres jorobas?”
+Cliente: “Porque suele tener los nectarios tan hinchados que se parecen a eso. Siempre me hacen este tipo de nombres. En español queda extraño, pero como es en griego pues queda bien ¿no?”
 Mientras habla de plantas toda su cara se ilumina y sus ojos brillan. Es una sensación que conozco bien. Una actitud que aparece cuando hablas de algo que te encanta con alguien que te va a escuchar. 
 Y cuando toca hablar de flores, no pienso decepcionar.
 {$name}: “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda. Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda”
-Allan: “Exacto, suficiente con decir Lirio de sapo. No he querido decir el nombre en griego por si no lo conocías, pero claro que lo sabes, eres florista después de todo.” 
+Cliente: “Exacto, suficiente con decir Lirio de sapo. No he querido decir el nombre en griego por si no lo conocías, pero claro que lo sabes, eres florista después de todo.” 
 {$name}: “Claro y además me apasionan, no solo porque trabaje de ello, siempre fueron hobby para mí.”
-Allan: “¡Yo igual! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño. La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” 
+Cliente: “¡Yo igual! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño. La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” 
 {$name}: “Te entiendo perfectamente. Antes no podía tener rienda suelta para comprar todas las macetas que quería, pero ahora que no tengo límites estoy aprovechando a tener las que siempre quise”
 Por mi comentario la conversación se amarga y el ambiente se incomoda un poco. No debería haber dicho algo negativo con lo alegre que estaba siendo la charla. 
 Sintiéndome [select value={$gender} M="encerrado" F="encerrada" NB="encerrade"/] continúo la conversación cambiando de tema antes de que él hable. No tengo ni fuerza ni ganas de responder a lo que sé que me va a preguntar. 
@@ -431,14 +432,14 @@ Sintiéndome [select value={$gender} M="encerrado" F="encerrada" NB="encerrade"/
 {$name}: “Lo siento mucho.”
 La mala noticia le entristece, pero no tanto como pensaba. Es una decepción controlada, como si hubiera sabido que esto iba a pasar.
 Aun así, siendo su cara tan expresiva, algo dentro mi se retuerce también de tristeza por verle perder la ilusión.
-Allan: “Ay, debí suponerlo, no es la primera vez que me pasa, así que no te preocupes, no es culpa tuya.”
+Cliente: “Ay, debí suponerlo, no es la primera vez que me pasa, así que no te preocupes, no es culpa tuya.”
 {$name}: “A lo mejor más adelante las tengo o las puedo pedir, pero no puedo asegurarte nada. Lo dicho, acabo de empezar y aunque ponga todo mi parte, el futuro nunca se sabe”
 Se dice que la esperanza no es lo último que se pierde. Con expectativas renovadas, el chico cierra los puños y los agita conteniéndose las ganas de hacer algo más extra.
-Allan: “¿En serio? Lo agradecería mucho si me avisaras, ¿te digo mi número y me escribes si lo tienes?”
+Cliente: “¿En serio? Lo agradecería mucho si me avisaras, ¿te digo mi número y me escribes si lo tienes?”
 Saca su móvil y observo que su funda está decorada con un estampado de zinnias rojas y blancas. Así que bondad y constancia ¿eh? Le pega bastante.
 Apunto su teléfono baje el nombre de Chico Lirios de Sapo. Me río internamente del nombre y vuelvo mi atención al cliente.
-Allan: “Muchas gracias de verdad.”
-Allan: “¿Sabes qué? Me acabo de acordar de otras flores que también quería, no eran tan urgentes, pero ya que estoy aquí te las pido ya”
+Cliente: “Muchas gracias de verdad.”
+Cliente: “¿Sabes qué? Me acabo de acordar de otras flores que también quería, no eran tan urgentes, pero ya que estoy aquí te las pido ya”
 {$name}: “¿Sí? Pues dime que te lo preparo en un santiamén”
 <<jump Minijuego_Allan_miercoles_sem1>>
 ===
@@ -455,9 +456,9 @@ title: Salida_minijuego_Allan_miercoles_sem1
 position: -158,332
 ---
 <<set $resultado to "bien">>
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
-<<Act Allan sprt_allan_placeholder right bottom015 green>>
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
 <<jump Minijuego_bien_Allan_miercoles_sem1>>
@@ -476,14 +477,14 @@ position: -158,420
 ---
 <<Add_npc_likeability NPC_allan 3>>
 
-Allan: “¡Es perfecto! Me encanta.” 
+Cliente: “¡Es perfecto! Me encanta.” 
 ¡Genial! Ha acertado de lleno. 
 {$name}: “Me alegro de que te guste” 
-Allan: “Seguro que otro día vengo a comprar más, aunque ahora me tengo que ir para llegar a trabajar” 
+Cliente: “Seguro que otro día vengo a comprar más, aunque ahora me tengo que ir para llegar a trabajar” 
 Me paga, recoge el ramo, lo huele y se queda unos segundos observándolo feliz. Verle tan feliz gracias a algo que he hecho yo me enorgullece mucho.
 Justo lo que necesitaba para retomar el optimismo que perdí por los días anteriores. 
 Player:“Entonces ya nos veremos.” 
-Allan: “Sí, hasta la próxima.” 
+Cliente: “Sí, hasta la próxima.” 
 Player: “Adiós.” 
 <<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
 ===
@@ -491,12 +492,12 @@ title: Minijuego_regular_Allan_miercoles_sem1
 position: 39,428
 ---
 <<Add_npc_likeability NPC_allan 1>>
-Allan: “Está bien. Gracias” 
+Cliente: “Está bien. Gracias” 
 {$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
 Le cojo el dinero y le doy el ramo. 
-Allan: “Otro día me pasaré, que he visto que tienes mucha variedad de flores” 
+Cliente: “Otro día me pasaré, que he visto que tienes mucha variedad de flores” 
 {$name}: "Genial entonces. Hasta la próxima.” 
-Allan: “¡Adiós!” 
+Cliente: “¡Adiós!” 
 <<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
 ===
 title: Minijuego_mal_Allan_miercoles_sem1
@@ -504,13 +505,13 @@ position: -369,421
 ---
 <<Add_npc_likeability NPC_allan -3>>
 Claramente no es mi día, no me ha quedado el ramo nada bien para lo que tenía pensado. Me da tanta vergüenza que le entrego el ramo sin mirarle directamente a los ojos. 
-Allan: “Ah sí, gracias...” 
+Cliente: “Ah sí, gracias...” 
 Intenta ocultarlo, pero es incapaz. No le ha gustado nada. Espero que otro día vuelva para demostrarle que no lo hago así de mal de normal. 
 Le cobro y le doy el ramo a cambio con desgana. 
-Allan: “Hey, no te preocupes, todos podemos tener un mal día.” 
+Cliente: “Hey, no te preocupes, todos podemos tener un mal día.” 
 {$name}: “Ya, pero aun así... Bueno, la próxima te haré uno mejor.” 
-Allan: “Esa es la actitud” 
-Allan: “Yo me tengo que ir ya pero ya, así que no te quito más tiempo.” 
+Cliente: “Esa es la actitud” 
+Cliente: “Yo me tengo que ir ya pero ya, así que no te quito más tiempo.” 
 {$name}: “Adiós.” 
 <<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
 ===
@@ -532,13 +533,13 @@ Bueno, voy a ponerme terminar de colocar la recepción antes de que entre otro c
 Vuelvo a poner tras el mostrador para esperar al próximo cliente. Me dispongo a sacar el móvil para hacer tiempo, pero no me da ni tiempo a eso. 
 -> {$name}: “¡Hola, buenos días! ¿Puedo ayudarle en algo?” 
     <<Add_npc_likeability NPC_sagrario -1>>
-    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 white>>
     La anciana se sobresalta. Estaba entretenida curioseando por la tienda. Se gira hacia mí y se acerca al mostrador con paso lento. 
 -> No le voy a decir nada para no molestarle. Que me hable cuando quiera. 
     <<Add_npc_likeability NPC_sagrario 1>>
     La anciana comienza a dar un paseo observando las macetas. Se para un instante delante de los tulipanes dubitativa. Agita la cabeza en negación y sigue caminando. 
     Cuando termina de dar una vuelta completa a la floristería se dirige hacia mí a paso lento. 
-    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+    <<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 white>>
     Anciana: “Buenos días” 
     {$name}: “¡Hola buenos días! ¿Necesita ayuda con algo?”  
 Anciana: “Sí, hola. La verdad es que no sé mucho de este tema... Así que no sé muy bien que pedir” 
@@ -562,8 +563,8 @@ position: -161,788
 ---
 <<set $resultado to "bien">>
 <<Fade black 1.0 0.0 2.0>>
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
-<<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 #226677>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Anciana sprt_she_neutral_placeholder 1.25 bottom015 white>>
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -674,13 +675,13 @@ Ya no es tanto por ganar dinero, pero por la necesidad que siento de alegrar a l
 Con las energías renovadas por estos pensamientos y aprovechando que no hay clientes que atender, saco de mi mochila un pequeño aperitivo que había preparado y no había tenido la oportunidad de comer.
 Miro la hora en mí móvil. Las siete de la tarde.
 Puede que ya sea un poco tarde para la comida, pero necesito algo para calmar el ruido de mi estómago. Además, no quiero desaprovechar comida y más teniendo en cuenta lo que es.  
-<<Act {$name} sprt_she_neutral_final left bottom015 green>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Ummm. Que rico, sándwich vegetal”  
 Estoy a punto de pegar el primer bocado cuando la puerta de la floristería se abre con su característico tintineo.  
 //[CAMPANITAS FLORISTERÍA] 
 Suelto el sándwich del susto, que cae sobre el mostrador. Con rapidez y pánico lo recojo y lo vuelvo a guardar para poder atender al nuevo cliente.  
 {$name}: “¡Buenas! Bienvenido a A Flower's Dream”  
-<<Act Pintor spt_pietro_neutral 1.25 bottom015 #226677>>
+<<Act Pintor spt_pietro_neutral 1.25 bottom015 white>>
 Miro al cliente con una sonrisa. Es un chico joven de unos 20 años. Tiene la piel oscura llena de tatuajes. Me llama mucho la atención un tatuaje de las distintas fases de la luna que se encuentra en su antebrazo.
 Su largo pelo café con mechas blancas se encuentra recogido en una trenza desenfadada que cae sobre su hombro. En general se le ve muy cómodo.
 Parece un chico majo y amante de las artes por el cuaderno y estuche que porta en sus brazos. También lo delatan las distintas manchas de pintura que cubren partes de su ropa y piel.
@@ -717,7 +718,7 @@ Tras varios minutos de duda en los que me remuevo en el sitio por la incomodidad
     Sonrío tenuemente. No puedo evitar que parte de mi enfado se esfume por mi amor hacia las flores.  
     Por mera curiosidad le pregunto su nombre.  
     {$name}: “¿Al menos puedo saber cómo te llamas?” 
-    <<Act Pietro spt_pietro_neutral 1.25 bottom015 #226677>>
+    <<Act Pietro spt_pietro_neutral 1.25 bottom015 white>>
     <<Hide Pintor>>
     Pietro: “Tsk. Me llamo Pietro” 
     {$name}: “...Encantada” 
@@ -752,7 +753,7 @@ Tras varios minutos de duda en los que me remuevo en el sitio por la incomodidad
     El joven pintor me mira, parpadea y asiente. Después regresa a su dibujo.  
     {$name}: “Por cierto, no me has dicho tu nombre”  
     Sin levantar la vista del papel, el chico contesta.  
-    <<Act Pietro spt_pietro_neutral 1.25 bottom015 #226677>>
+    <<Act Pietro spt_pietro_neutral 1.25 bottom015 white>>
     <<Hide Pintor>>
     Pietro: “Me llamo Pietro” 
     Me alegro de por fin poder tener un nombre que asociar a este pintor tan enigmático.  
@@ -775,6 +776,315 @@ Me pregunto si volverá a venir. ¿Comprará algo en ese caso?
 title: Jueves_sem1
 position: 410,-261
 ---
+//CALLE
+Después de varios días yendo deprisa y corriendo  se agradece una mañana tranquila. Paseo por la calle mientras recuerdo los cruces y curvas que estoy atravesando para la próxima vez que tenga que hacer el mismo recorrido. 
+Mi objetivo de hoy es ir al super. No sabes lo que te falta hasta que lo necesitas. Ayer me di cuenta de que me faltan objetos básicos de papelería para tener a mano en la floristería.  
+Estresada por tener todo lo necesario para el tratamiento de flores y plantas, no me fije en nada más y solo cogí los instrumentos específicos de florista. 
+No pasa nada, este paseo me viene bien. Entre la mudanza y el trabajo no he podido disfrutar del motivo por el que me mudé aquí. La ciudad.  
+Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo suficiente para estar bien comunicada en cuanto a medios de transporte, y lo más importante: 
+Muchas calles peatonales y bien cuidadas, por lo que no hay ajetreo de ruido por coches además de lo que contaminan. 
+Doy la vuelta a la esquina y tras la terraza de la primera cafetería de la calle, diviso el reconocible logo de la cadena de supermercados. Esquivo las mesas del establecimiento y accedo a mi destino. 
+<<jump Allan_jueves_sem1>>
+===
+title: Allan_jueves_sem1
+position: 410,-261
+---
+//SUPERMERCADO - MAÑANA 
+
+Las puertas automáticas me permiten el paso y me golpea un sentimiento que jamás pensé que se daría en este tipo de tiendas. Una sensación de cálida bienvenida me abraza. 
+
+Mire a donde mire siento que conozco este sitio desde siempre, no es para menos, estos establecimientos suelen tener siempre la misma distribución. Aun sabiendo que es por eso, me reconforta saber que, a pesar de estar en una ciudad nueva y forastera, siempre habrá sitio para los viejos conocidos. 
+
+Saco del bolsillo un pequeño papel doblado. Lo estiro y ya puedo acceder a la lista de la compra. Menos mal que me apunto estas cosas porque se me olvidarían la mayoría. 
+
+Leo el primer elemento de la lista, y ya sé lo primero que tengo que hacer. Objetivo, rotuladores. 
+
+Ando con conocimiento al pasillo Papelería. Me paro frente al estante de rotuladores. Para mi sorpresa hay muchísimos tipos, dependen de su grosor, color, penetración de la tinta, densidad de la misma... Un lío, en definitiva. 
+
+La confusión y duda deben estar escritas en mi rostro porque tras un minuto quieta observando descripciones de características con los cinco sentidos, alguien me da unos toquecitos en el hombro. 
+
+Me giro para ver al captor de mi atención y percibo una cara conocida. A pesar del uniforme de manga larga, es imposible no darse cuenta de que tras él se esconde un cuerpo ancho y musculado. La tensión de la tela donde botones y ojales se conocen lo confirma. 
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+-> {$name}: “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?” 
+    <<Add_npc_likeability NPC_allan 2>>
+    Cliente: “Ese soy ya jajaja” 
+-> {$name}: “Te conozco de algo, ¿cierto?” 
+    <<Add_npc_likeability NPC_allan -2>>
+    Cliente: “El chico de los Lirios de sapo, ¿recuerdas?” 
+    {$name}: “Ahhh sí, es verdad” 
+{$name}: “Creo que no me quedé con tu nombre ayer” 
+Cliente: “¡AH! Es verdad, entre los nervios y las prisas se me pasó completamente. Me llamo Allan.” 
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Hide Cliente>>
+{$name}: “[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/] de saber por fin tu nombre jajaja, ya te puedo cambiar en el contacto. Yo me llamo {$name}.” 
+Allan: “¿Cómo me tenías apuntado? Espera no me lo digas. Es algo relacionado con los Lirios de sapo ¿no? ”
+-> {$name}: “Tin tin tin, acertaste” 
+-> {$name}: “Podría decirte que es sobre las Pasifloras, pero te estaría mintiendo” 
+Allan: “Lo suponía, es un nombre muy característico la verdad, así que te entiendo” 
+Allan: “Por cierto, ¿necesitas ayuda? Es que te he visto dudando mucho con los rotuladores” 
+{$name}: “Pues sí, yo venía buscando algo polivalente que me sirviera para escribir en tarjetas, folios, cartulinas... Y tampoco quería gastarme mucho dinero, pero estoy viendo que me va a tocar comprar varios diferentes” 
+Allan: “Si quieres una recomendación, yo cogería estos dos” 
+Allan: “Coger uno que sirva para todo es imposible, y si te lo venden como tal no solo te están mintiendo, sino que además te estarán cobrando a precio de oro algo que no es verdad. Estos dos en cambio, abarcan juntos todas las necesidades que vas a tener, y te sigue saliendo mucho más barato que el otro, aun siendo dos.” 
+-> {$name}: “Creo que, aun así, voy a coger el primero que he visto” 
+    <<Add_npc_likeability NPC_allan -2>>
+    {$name}: “Entiendo lo que dices, pero aun así prefiero uno para todo. Lo voy a llevar siempre encima, y así no tengo que andar pensando en nada más” 
+    Allan: “Bueno, eres tú la que se va a gastar el dinero así que coge el que prefieras” 
+-> {$name}: “¡Tienes razón! Se nota que sabes de esto, muchas gracias” 
+    <<Add_npc_likeability NPC_allan 2>>
+    Allan: “Ya verás como no te arrepentirás” 
+{$name}: “Bueno, voy a seguir con la lista que esto solo era lo primero que tenía que comprar” 
+Allan: “Si quieres pued-” 
+Voz: “______. ¿Dónde estás? ¡¿Ven aquí?!” 
+Allan: Suspira. “Parece que me llaman” 
+{$name}: “No te entretengo más, no quiero que te echen la bronca por mí” 
+Allan: “No te preocupes, si no fuera por esto mi jefe buscaría cualquier excusa para echármela jaja...” 
+Allan: “Ah, cierto, antes de que se me olvide” 
+Allan: “Llevo un tiempo con entradas para ir al jardín botánico, pero nunca he encontrado a alguien que le guste lo suficiente para ir. Era por si te apetecía ir este fin de semana. Solo si quieres y puedes, sino no pasa nada de verdad. Bueno, sabes que no tenía que haber dicho nada, seguro que estás muy liada, o tienes ya otros planes o -” 
+Le cojo del brazo para que para de hablar. 
+{$name}: “Hey hey para, no pasa nada, es un buen plan.” 
+-> {$name}: “Me encantaría ir”
+    //[1][plan lockeado ++] 
+    <<Add_npc_likeability NPC_allan 2>>
+    Allan: “¡Genial! Entonces te veo el finde. Acordamos los detalles por el móvil, ¿vale?” 
+    {$name}: “¡Perfecto!” 
+-> {$name}: “Quiero ir, pero aún no te puedo confirmar nada, el viernes te aviso ¿vale?” 
+    //[2][plan desbloqueado +]
+    <<Add_npc_likeability NPC_allan 1>>
+    Allan: “Vale, pues avisame cuando lo sepas” 
+    {$name}: “Claro, no te preocupes” 
+-> {$name}: “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado” 
+    //[3][plan rechazado -] 
+    <<Add_npc_likeability NPC_allan -1>>
+    Allan: “Ah... Bueno entonces nada...” 
+Voz: ¡¡ALLAN!! ¡¿Quieres venir de una vez?!”
+Allan: “Se ve que ya no puedo retrasarlo más. Mucha suerte con tus compras y vamos hablando.” 
+Se despide mientras corre a donde le llaman 
+Allan: “¡Mucha suerte con tu turno!” 
+<<Move Allan offright bottom015 2.0>>
+<<Hide Allan>>
+Como se aleja creo que no me escuchó. 
+Tras este encuentro termino la compra sin problemas y vuelvo a la floristería.
+<<Fade black 0.0 1.0 2.0>>
+<<Hide All>> 
+<<jump Sophie_jueves_sem1>>
+===
+title: Sophie_jueves_sem1
+---
+<<Fade black 1.0 0.0 2.0>>
+Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. Se me olvidó colocar un aviso en la puerta, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
+
+No puede ser .
+
+-> {$name}: “Ejem, si quieres que te atienda vas a tener que apartarte para que pueda abrir” 
+-> {$name}: “Perdón, si te apartas un segundo puedo abrir y te atiendo” 
+
+<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+Borde: “¿En serio? ¿Tú de nuevo? Ya entiendo por qué estaba cerrada la tienda a estas horas. Horario de princesas supongo” 
+-> {$name}: “Oye, simplemente tenía cosas que hacer antes y se me olvidó poner un aviso” 
+-> {$name}: “El que me dé a mí la gana que para eso soy la propietaria” 
+-> {$name}: “Si vas a estar así todo el rato puedes ir yéndote a buscar otra floristería por la ciudad” 
+Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor” 
+
+//[CAMPANITAS] 
+<<DeHighlight>>
+Tras apartarse, entro y me coloco tras el mostrador para atenderla. Un cliente es un cliente, si pienso en el dinero puedo obviar su actitud. 
+
+Resoplo y muestro una sonrisa forzada. Claramente practicada para utilizar con clientes molestos. 
+
+{$name}: “Bienvenida a Flower's Dream, ¿cuál es tu pedido?” 
+
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Minijuego_Sophie_jueves_sem1>>
+===
+title: Minijuego_Sophie_jueves_sem1
+---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Sophie_jueves_sem1>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Sophie>>
+===
+title: Salida_minijuego_Sophie_jueves_sem1
+---
+<<set $resultado to "bien">>
+<<Fade black 1.0 0.0 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+"Aquí tienes."
+//Saltos a las diferentes ramas
+
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Sophie_jueves_sem1>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Sophie_jueves_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Sophie_jueves_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Sophie_jueves_sem1
+---
+<<Add_npc_likeability NPC_sophie 3>>
+<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+Borde: “...” 
+{$name}: “¿No te gusta?” 
+Borde: “Al contrario, no tenía muchas expectativas y aun así me ha sorprendido” 
+Ni para decir que algo le gusta lo puede decir sin faltar 
+{$name}: “Bien entonces supongo” 
+<<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
+===
+title: Minijuego_regular_Sophie_jueves_sem1
+---
+<<Add_npc_likeability NPC_sophie 1>>
+<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+Borde: “Está decente al menos” 
+{$name}: Sé que no es perfecto, pero tampoco hacía falta ponerse así. Bueno, el caso es terminar con esto. 
+<<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
+===
+title: Minijuego_mal_Sophie_jueves_sem1
+---
+<<Add_npc_likeability NPC_sophie -3>>
+<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+Borde: “Agh no sé ni que pensar. ¿Y se supone que eres una florista de verdad? 
+{$name}: “Lo s-” 
+Borde: “Déjalo, mejor no digas nada.” 
+Borde: Refunfuñando por lo bajo “Uff, que tenga que pagar por esto” 
+<<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
+===
+title: Fin_ramas_minijuego_Sophie_jueves_sem1
+---
+Borde: “Toma, es el dinero justo así que no me des vueltas” 
+<<Move Borde offright bottom015 2.0>>
+<<Hide Borde>>
+Se aleja con prisas antes de que pueda decirle nada. 
+
+{$name}: “Adiós...” No creo que lo haya escuchado. 
+
+Si esto siempre va a ser así, espero que no vuelva. 
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+...
+ <<jump Pietro_jueves_sem1>>
+===
+title: Pietro_jueves_sem1
+---
+<<Fade black 1.0 0.0 2.0>>
+Un par de personas más entras después de la tormenta que ha sido la chica borde, pero ahora estoy sola de nuevo, así que me pongo con el móvil para pasar el rato. 
+
+Ventajas de ser mi propia jefa, no tengo a nadie que se vaya a enfadar porque vaguee si no hay clientela.   
+
+Tampoco me da tiempo a estar mucho con él porque en cuanto escucho las campanas de la entrada, guardo el teléfono y sonrío para atender al nuevo comprador. 
+//[CAMPANITAS]  
+<<Act Pietro spt_pietro_neutral 1.25 bottom015 white>>
+Para mi amplia sorpresa, la persona que acaba de entrar en la floristería es un reciente conocido mío. Un “cliente” muy artístico que vino ayer mismo a la tienda, aunque no sé si debería de llamarle así. El enigmático y peculiar artista, Pietro. Al igual que ayer, viene con su característica ropa holgada y sus zuecos. Un momento... ¿Eso que trae bajo su brazo es un taburete plegable?  
+
+Sin poder evitarlo, llamo su atención con un gesto exagerado.  
+
+-> {$name}:  “¿¡Tú otra vez aquí!? Espero que esta vez hayas venido a comprar algo y no a dibujar” 
+    <<Add_npc_likeability NPC_pietro -1>>
+    Ante mis palabras acusadoras, Pietro me dirige una breve mirada de fastidio y, sin decir nada, se dirige a la sección en la que se encuentra la amapola del Himalaya, abre el taburete que trae bajo su brazo y procede a sentarse en este para lo que supongo que es continuar su dibujo.  
+    Pietro: ...
+    Pietro: Suspiro. “He venido a terminar lo que empecé ayer.” 
+    Sin dirigirme ni una mirada ni palabra más, continúa pintando.  
+    <<DeHighlight>>
+    Me sorprende lo mucho que le gusta suspirar a Pietro. No ha dicho prácticamente nada, pero me siento muy ofendida. Parece como si se estuviera burlando de mí siendo esta mi floristería.  
+    Pietro se adentra en su burbuja y olvida su entorno.
+-> {$name}:  “Hola Pietro. No esperaba volver a verte tan pronto. ¿Qué tal?” 
+    <<Add_npc_likeability NPC_pietro 1>>
+    Con su característico paso sosegado, Pietro se acerca a la sección en la que se encuentran expuestas las amapolas del Himalaya. Su voz sedosa invade la floristería.  
+    Pietro: “Buenas. He venido a continuar mi dibujo de la amapola. Espero que no te importe...”  
+    Durante unos segundos se queda callado. Parece que está pensando algo. Decido no decir nada para darle su tiempo hasta que noto como su mirada penetrante se posa sobre mí expectante.  
+    {$name}:  “¿Eh? ¿Pasa algo?”  
+    Pietro: “Se me ha olvidado tu nombre, ¿podrías repetirlo?”  
+    Aliviada, sonrío. ¡Con que era eso!  
+    {$name}:  “Soy {$name}. No te preocupes, yo también soy muy mala recordando nombres jajaja”  
+    Para mi sorpresa, veo como la comisura de su boca se eleva ligeramente. ¿Está sonriendo? Parpadeo varias veces sin creérmelo. Creo que es la mayor expresividad que le he visto mostrar en todo este tiempo, aunque tampoco es que le conozca mucho. Con cara de estupefacción le observo mientras abre su taburete y se sienta para continuar el dibujo del otro día.
+{$name}: “¿De verdad se va a pasar toda la tarde en ese rinconcito dibujando?”  
+
+-> {$name}: “¡Oye! Lo siento, pero no te puedes quedar aquí pintando todo el día. Será mejor que te marches, gracias” 
+    <<Add_npc_likeability NPC_pietro -2>>
+    Como esperaba, Pietro no me hace caso. No sé si es por error o intencionado, aunque una ligera voz en mi cabeza me dice que es lo último. Agh, ¿es que no puedo tener un día normal? Con pasos fuertes, me acerco a Pietro y le vuelvo a dar golpecitos insistentes en el hombro como el día anterior.  
+    {$name}: “Tierra llamando a Pietro... Es hora de que regreses a casa, tengo que trabajar. Regresa cuando hayas aprendido a pedir las cosas”  
+    Con una mirada complaciente y la cabeza ligeramente erguida, veo como mis palabras tienen un efecto inmediato en Pietro. En un instante, Pietro se pone en pie, recoge todas sus pertenencias y con grandes zancadas avanza a la puerta de la floristería. Antes de salir, para dramáticamente.  
+    Pietro: “Volveré y la próxima vez tendrás que aceptarme. La belleza es del mundo y no tiene dueño. Las cadenas que impones sobre ella solo me producen tristeza”  
+    //[CAMPANITAS]  
+    Me quedo perpleja ante sus palabras tan profundas. Definitivamente es un hombre de artes.  
+-> {$name}: “Ánimo con el dibujo Pietro.” Espero poder ver cómo ha quedado cuando termine.”
+    <<Add_npc_likeability NPC_pietro 2>>
+    Como esperaba, Pietro no articula palabra completamente dedicado y entregado a su amado arte. Me encojo de hombros. No sé qué más podría hacer para gestionar esta situación. Supongo que mientras se quede ahí dibujando y yo pueda trabajar sin problemas no pasa nada. Siento algo de empatía hacia Pietro. Al final los dos estamos dedicando nuestro tiempo a aquello que amamos, yo a las flores y él al arte. Debería de sentirme orgullosa de que ha escogido mis flores para ello. Suspiro agotada mientras consulto la hora.  
+    {$name}:“Todavía queda mucho día por delante”  
+    //Fades para indicar cambio de dia a tarde
+    //FLORISTERIA – TARDE  
+    //[CAMPANITAS]  
+    <<DeHighlight>>
+    La puerta de la floristería se cierra tras el último cliente del día. Me reclino sobre el mostrador mientras intento retomar el aire.  
+    Desde que llegó Pietro esta mañana, no han parado de venir clientes de forma intermitente. En todo este rato, yo he estado dedicándome plenamente a mi trabajo mientras Pietro seguía absorto en su pequeño mundo. Incluso cuando varios clientes se han acercado para cotillear sobre lo que estaba haciendo o simplemente para ver más de cerca las plantas de dicho rincón, Pietro ni se ha inmutado. Ni siquiera ha parado ni un solo momento para beber, comer o tomarse un descanso, algo que debo admitir me ha llegado a preocupar en algún momento. Me parece asombrosa la capacidad de concentración que puede llegar a tener, aunque cuando alguien saca el tema de las flores yo tampoco puedo parar de hablar sobre ello.  
+    Con la esperanza de poder dar el día de hoy por terminado y regresar a mi casa para descansar, salgo del mostrador y me acerco a Pietro para avisarle de que voy a cerrar. Además, él también se merece un descanso después de todo el trabajo duro.  
+    -> {$name}: “Oye, es hora de cerrar así que tienes que ir abandonando este sitio. Venga” 
+        <<Add_npc_likeability NPC_pietro -1>>
+    -> {$name}: “Disculpa Pietro, pero ya es muy tarde y tengo que cerrar. Creo que los dos nos merecemos un descanso” 
+        <<Add_npc_likeability NPC_pietro 1>>
+    Antes de que pueda dar un paso más para comenzar a recoger mis pertenencias e irme, Pietro me agarra ligeramente del antebrazo.  
+   Pietro: “Antes de que te vayas, ¿podrías atenderme? Me gustaría llevarme unas flores para continuar dibujando en casa”  
+    Sonrío extasiada. Parece que mis flores al final han tenido cierto efecto en él, ¿eh?  
+    {$name}: “¿Qué es lo que quieres exactamente?”  
+    <<Fade black 0.0 1.0 2.0>>
+    <<HideAll>>
+    <<jump Minijuego_Pietro_jueves_sem1>>
+===
+title: Minijuego_Pietro_jueves_sem1
+---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Pietro_jueves_sem1>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Pietro>>
+===
+title: Salida_minijuego_Pietro_jueves_sem1
+---
+<<set $resultado to "bien">>
+<<Fade black 1.0 0.0 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+"Aquí tienes."
+//Saltos a las diferentes ramas
+
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Pietro_jueves_sem1>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Pietro_jueves_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Pietro_jueves_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Pietro_jueves_sem1
+---
+<<Add_npc_likeability NPC_pietro 3>>
+
+<<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
+===
+title: Minijuego_regular_Pietro_jueves_sem1
+---
+<<Add_npc_likeability NPC_pietro 1>>
+
+<<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
+===
+title: Minijuego_mal_Pietro_jueves_sem1
+---
+<<Add_npc_likeability NPC_pietro -3>>
+
+<<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
+===
+title: Fin_ramas_minijuego_Pietro_jueves_sem1
+---
+
 ===
 title: Viernes_sem1
 position: 833,-254
