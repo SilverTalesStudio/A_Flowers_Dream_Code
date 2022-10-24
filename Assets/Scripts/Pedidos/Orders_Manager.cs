@@ -32,9 +32,11 @@ public class Orders_Manager : MonoBehaviour
         //Longitud máxima de los pedidos 288 caracteres con espacios incluidos
 
         string cliente = PlayerPrefs.GetString("clienteActual");
-        character = cliente;
+        character = "Ethan";
 
         order = Random.Range(1, 11);
+
+        order = 1;
 
         if (character == "Sophie")
         {
@@ -170,7 +172,7 @@ public class Orders_Manager : MonoBehaviour
         switch (order)
         {
             case 1:
-                text_order = "PedidoEthan1";
+                text_order = "Quiero un ramo con el que poder conquistar a una chica. Es la primera cita y quiero impresionarla. Creo que su color favorito era el rojo. No, era el morado. ¿O era el amarillo? Bueno da igual, pon alguna flor roja.";
                 text_orderSummary = "ResumenLigon1";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -179,7 +181,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 2:
-                text_order = "Pedido2 Ligon";
+                text_order = "Tengo una cita y necesito un ramo. Si no recuerdo mal, uno de los colores que más le gustan es el morado. ¿Tienes alguna flor morada? También me gustaría que el ramo fuera espectacular para poder impresionarla.";
                 text_orderSummary = "ResumenLigon2";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -188,7 +190,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 3:
-                text_order = "Pedido3 Ligon";
+                text_order = "Hay una chica que no para de perseguirme, pero a mí no me gusta. ¿Se te ocurre algo para decirle que solo quiero ser su amigo? Si puede ser me gustaría que el ramo también incluyera alguna flor de color rosa, ¿me harías ese favor?";
                 text_orderSummary = "ResumenLigon3";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -197,7 +199,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 4:
-                text_order = "Pedido4 Ligon";
+                text_order = "Hoy tengo una cita, pero en verdad me gustaría cortar con la chica. ¿Conoces alguna flor que me sirva? Además, creo recordar que el color que menos le gusta es el azul. ¡Seguro que si le llevo un ramo con una flor de ese color ya no querrá salir conmigo! ¿Puedes crear un ramo así?";
                 text_orderSummary = "ResumenLigon4";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -206,7 +208,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 5:
-                text_order = "Pedido5 Ligon";
+                text_order = "Hoy tengo una cita y necesito un ramo. Tienes alguna flor que sirva para decir “¿No te dolió cuando caíste del cielo?”. Es que me gustaría sorprenderla, pero está cansada de escuchar mis piropos. También querría que el ramo incluyera alguna flor de un color poco habitual.";
                 text_orderSummary = "ResumenLigon5";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -215,7 +217,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 6:
-                text_order = "Pedido6 Ligon";
+                text_order = "Necesito un ramo urgentemente. La chica con la que estoy saliendo no cree que lo que digo sea cierto y necesito un ramo que demuestre lo contrario. ¿Podrías incluir también alguna flor blanca?";
                 text_orderSummary = "ResumenLigon6";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
@@ -224,7 +226,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 7:
-                text_order = "Pedido7 Ligon";
+                text_order = "";
                 text_orderSummary = "ResumenLigon7";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Algo";
