@@ -53,7 +53,7 @@ Me tambaleo del impacto y doy un paso atrás consiguiendo mantener el equilibrio
 <<Act Sophie sprt_sophie_placeholder right bottom015 white>>
 //<<Move Sophie right center 0.15>>
 Sophie: “¡¿Es que no miras por dónde vas?!” 
-<<DeHighlight>>
+//<<DeHighlight>>
 Ante mí me encuentro una chica Descripcion_cuando_tengamos_dibujo. Pero también es un rostro enfadado, el cual no parece que vaya a cambiar si me quedo mirándola mientras ella espera una reacción de mí. 
 
 Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
@@ -61,7 +61,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
 -> {$name}: “¡Ey! No ha sido culpa mía, tú te has chocado conmigo”
     <<Add_npc_likeability NPC_sophie -2>>
     Sophie: “¡Jah! Ahora será culpa mía que te creas que la calle es solo tuya para recorrer. ¿Quién te crees que eres? ¿[select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /]” Sonríe sarcásticamente. 
-    <<DeHighlight>>
+    //<<DeHighlight>>
     ¿[select value={$gender} M="Príncipe" F="Princesa" NB="Noble" /]? Escuchar el mote me descoloca, pero rápidamente me recompongo. Ahora más enfadada que antes. ¿Quién es así de borde con desconocidos? ¡Y encima solo por chocarnos! 
     Me cruzo de brazos para mostrarme firme. Sé que no está sirviendo para nada porque la chica en frente mía no muestra ninguna reacción que demuestre lo contrario. Pero eso no me va a acobardar. 
     {$name}: “No soy [select value={$gender} M="un príncipe" F="una princesa" NB="une noble" /], en todo caso lo serías tú saliendo de golpe de una tienda sin prestar atención a tu alrededor”  
@@ -100,7 +100,6 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Antes de que le pueda responder, empieza a andar y me pasa de largo. Me volteo y veo su espalda desaparecer entre la multitud. Al volver a mirar al frente, vuelvo a ver en la distancia el letrero de mi floristería.  
     En ese momento, un escalofrío me recorre el cuerpo solo de pensar el tiempo perdido en este encuentro. Cojo aire, aguanto la respiración y echo un vistazo a la hora con miedo. Tras ver la posición de las agujas, suelto el aire que estaba conteniendo suspirando con alivio. 
     No ha sido para tanto dentro de lo malo, pero ya es suficiente. Retorno al paso rápido que llevaba y por fin llego a mi destino.  
-
 <<Fade black 0.0 1.0 2.0>>
 // Audio [CAMPANITAS FLORISTERÍA] 
 <<Hide {$name}>>
@@ -308,7 +307,7 @@ position: -161,-123
 <<endif>>
 ===
 title: Minijuego_bien_Ethan_lunes_sem1
-position: 51,-49
+position: 32,-46
 ---
 <<Add_npc_likeability NPC_ethan 3>>
 <<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
@@ -774,7 +773,7 @@ Me pregunto si volverá a venir. ¿Comprará algo en ese caso?
 <<jump Jueves_sem1>>
 ===
 title: Jueves_sem1
-position: 410,-261
+position: 432,-314
 ---
 //CALLE
 Después de varios días yendo deprisa y corriendo  se agradece una mañana tranquila. Paseo por la calle mientras recuerdo los cruces y curvas que estoy atravesando para la próxima vez que tenga que hacer el mismo recorrido. 
@@ -787,7 +786,7 @@ Doy la vuelta a la esquina y tras la terraza de la primera cafetería de la call
 <<jump Allan_jueves_sem1>>
 ===
 title: Allan_jueves_sem1
-position: 410,-261
+position: 432,-267
 ---
 //SUPERMERCADO - MAÑANA 
 
@@ -870,6 +869,7 @@ Tras este encuentro termino la compra sin problemas y vuelvo a la floristería.
 <<jump Sophie_jueves_sem1>>
 ===
 title: Sophie_jueves_sem1
+position: 433,-187
 ---
 <<Fade black 1.0 0.0 2.0>>
 Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. Se me olvidó colocar un aviso en la puerta, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
@@ -887,7 +887,7 @@ Borde: “¿En serio? ¿Tú de nuevo? Ya entiendo por qué estaba cerrada la tie
 Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor” 
 
 //[CAMPANITAS] 
-<<DeHighlight>>
+//<<DeHighlight>>
 Tras apartarse, entro y me coloco tras el mostrador para atenderla. Un cliente es un cliente, si pienso en el dinero puedo obviar su actitud. 
 
 Resoplo y muestro una sonrisa forzada. Claramente practicada para utilizar con clientes molestos. 
@@ -899,6 +899,7 @@ Resoplo y muestro una sonrisa forzada. Claramente practicada para utilizar con c
 <<jump Minijuego_Sophie_jueves_sem1>>
 ===
 title: Minijuego_Sophie_jueves_sem1
+position: 430,-112
 ---
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sophie_jueves_sem1>>
@@ -907,6 +908,7 @@ title: Minijuego_Sophie_jueves_sem1
 <<Go_to_minigame Sophie>>
 ===
 title: Salida_minijuego_Sophie_jueves_sem1
+position: 426,-38
 ---
 <<set $resultado to "bien">>
 <<Fade black 1.0 0.0 2.0>>
@@ -927,6 +929,7 @@ title: Salida_minijuego_Sophie_jueves_sem1
 <<endif>>
 ===
 title: Minijuego_bien_Sophie_jueves_sem1
+position: 238,44
 ---
 <<Add_npc_likeability NPC_sophie 3>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
@@ -938,6 +941,7 @@ Ni para decir que algo le gusta lo puede decir sin faltar
 <<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
 ===
 title: Minijuego_regular_Sophie_jueves_sem1
+position: 427,41
 ---
 <<Add_npc_likeability NPC_sophie 1>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
@@ -946,6 +950,7 @@ Borde: “Está decente al menos”
 <<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
 ===
 title: Minijuego_mal_Sophie_jueves_sem1
+position: 620,46
 ---
 <<Add_npc_likeability NPC_sophie -3>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
@@ -956,6 +961,7 @@ Borde: Refunfuñando por lo bajo “Uff, que tenga que pagar por esto”
 <<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
 ===
 title: Fin_ramas_minijuego_Sophie_jueves_sem1
+position: 423,125
 ---
 Borde: “Toma, es el dinero justo así que no me des vueltas” 
 <<Move Borde offright bottom015 2.0>>
@@ -971,6 +977,7 @@ Si esto siempre va a ser así, espero que no vuelva.
  <<jump Pietro_jueves_sem1>>
 ===
 title: Pietro_jueves_sem1
+position: 422,203
 ---
 <<Fade black 1.0 0.0 2.0>>
 Un par de personas más entras después de la tormenta que ha sido la chica borde, pero ahora estoy sola de nuevo, así que me pongo con el móvil para pasar el rato. 
@@ -990,7 +997,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Pietro: ...
     Pietro: Suspiro. “He venido a terminar lo que empecé ayer.” 
     Sin dirigirme ni una mirada ni palabra más, continúa pintando.  
-    <<DeHighlight>>
+    //<<DeHighlight>>
     Me sorprende lo mucho que le gusta suspirar a Pietro. No ha dicho prácticamente nada, pero me siento muy ofendida. Parece como si se estuviera burlando de mí siendo esta mi floristería.  
     Pietro se adentra en su burbuja y olvida su entorno.
 -> {$name}:  “Hola Pietro. No esperaba volver a verte tan pronto. ¿Qué tal?” 
@@ -1020,7 +1027,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     //Fades para indicar cambio de dia a tarde
     //FLORISTERIA – TARDE  
     //[CAMPANITAS]  
-    <<DeHighlight>>
+    //<<DeHighlight>>
     La puerta de la floristería se cierra tras el último cliente del día. Me reclino sobre el mostrador mientras intento retomar el aire.  
     Desde que llegó Pietro esta mañana, no han parado de venir clientes de forma intermitente. En todo este rato, yo he estado dedicándome plenamente a mi trabajo mientras Pietro seguía absorto en su pequeño mundo. Incluso cuando varios clientes se han acercado para cotillear sobre lo que estaba haciendo o simplemente para ver más de cerca las plantas de dicho rincón, Pietro ni se ha inmutado. Ni siquiera ha parado ni un solo momento para beber, comer o tomarse un descanso, algo que debo admitir me ha llegado a preocupar en algún momento. Me parece asombrosa la capacidad de concentración que puede llegar a tener, aunque cuando alguien saca el tema de las flores yo tampoco puedo parar de hablar sobre ello.  
     Con la esperanza de poder dar el día de hoy por terminado y regresar a mi casa para descansar, salgo del mostrador y me acerco a Pietro para avisarle de que voy a cerrar. Además, él también se merece un descanso después de todo el trabajo duro.  
@@ -1029,7 +1036,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     -> {$name}: “Disculpa Pietro, pero ya es muy tarde y tengo que cerrar. Creo que los dos nos merecemos un descanso” 
         <<Add_npc_likeability NPC_pietro 1>>
     Antes de que pueda dar un paso más para comenzar a recoger mis pertenencias e irme, Pietro me agarra ligeramente del antebrazo.  
-   Pietro: “Antes de que te vayas, ¿podrías atenderme? Me gustaría llevarme unas flores para continuar dibujando en casa”  
+    Pietro: “Antes de que te vayas, ¿podrías atenderme? Me gustaría llevarme unas flores para continuar dibujando en casa”  
     Sonrío extasiada. Parece que mis flores al final han tenido cierto efecto en él, ¿eh?  
     {$name}: “¿Qué es lo que quieres exactamente?”  
     <<Fade black 0.0 1.0 2.0>>
@@ -1037,6 +1044,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     <<jump Minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_Pietro_jueves_sem1
+position: 422,273
 ---
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Pietro_jueves_sem1>>
@@ -1045,6 +1053,7 @@ title: Minijuego_Pietro_jueves_sem1
 <<Go_to_minigame Pietro>>
 ===
 title: Salida_minijuego_Pietro_jueves_sem1
+position: 424,345
 ---
 <<set $resultado to "bien">>
 <<Fade black 1.0 0.0 2.0>>
@@ -1065,24 +1074,28 @@ title: Salida_minijuego_Pietro_jueves_sem1
 <<endif>>
 ===
 title: Minijuego_bien_Pietro_jueves_sem1
+position: 427,423
 ---
 <<Add_npc_likeability NPC_pietro 3>>
 
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_regular_Pietro_jueves_sem1
+position: 617,431
 ---
 <<Add_npc_likeability NPC_pietro 1>>
 
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_mal_Pietro_jueves_sem1
+position: 238,423
 ---
 <<Add_npc_likeability NPC_pietro -3>>
 
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Fin_ramas_minijuego_Pietro_jueves_sem1
+position: 424,514
 ---
 
 ===

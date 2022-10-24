@@ -457,17 +457,21 @@ namespace Yarn.Unity.Example {
                 nameplateBG.gameObject.SetActive(true);
             } else {
                 nameplateBG.gameObject.SetActive(false);
-            }
+				DeHighlightSprite();
+
+			}
 
             onDialogueLineFinished();
         }
 
 		public void HighlightSprite (Image sprite) {
+			StopCoroutine("DeHighlightSpriteCoroutine");
 			StopCoroutine( "HighlightSpriteCoroutine" ); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
 			StartCoroutine( "HighlightSpriteCoroutine", sprite );
 		}
 		public void DeHighlightSprite()
 		{
+			StopCoroutine("HighlightSpriteCoroutine");
 			StopCoroutine("DeHighlightSpriteCoroutine"); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
 			StartCoroutine("DeHighlightSpriteCoroutine");
 		}

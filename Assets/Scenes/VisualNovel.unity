@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114179111827540416, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114716998665554330, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_Type
       value: 0
@@ -466,6 +470,10 @@ PrefabInstance:
       propertyPath: startAutomatically
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3242124984676812919, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4115915426429293206, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: showUnavailableOptions
       value: 0
@@ -532,11 +540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894275030868808514, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -31.7972
+      value: -31.797241
       objectReference: {fileID: 0}
     - target: {fileID: 7894275030868808514, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7.605
+      value: 7.605011
       objectReference: {fileID: 0}
     - target: {fileID: 9184206409336196516, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontColor.b
