@@ -5,13 +5,12 @@ using UnityEngine;
 public class ActivateBook : MonoBehaviour
 {
     public GameObject book;
-    //public Book book1;
+
 
     public void ActivateFlowersBook()
     {
         book.SetActive(true);
-        //book1 = FindObjectOfType<Book>();
-        //book1.Start();
+       
 
         Time.timeScale = 0;
     }
