@@ -8,8 +8,15 @@ namespace Yarn.Unity.Example {
 	/// <summary>
 	/// runs Yarn commands and manages sprites for the Visual Novel example
 	/// </summary>
-    public class VNManager : DialogueViewBase
+	/// 
+	public enum NPCsDateable
+	{
+		Sophie, Allan, Ethan, None
+	}
+
+	public class VNManager : DialogueViewBase
     {
+		
 		[SerializeField] DialogueRunner runner;
 
 		public SceneChanger SceneChanger;
@@ -72,7 +79,8 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
 			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
 			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
-			runner.AddCommandHandler("DeHighlight", DeHighlightAllCharacters);
+			runner.AddCommandHandler("Plans_To_Zero", PlansToZero);
+			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
@@ -113,12 +121,77 @@ namespace Yarn.Unity.Example {
 
 		#region YarnCommands
 
-
-		public void DeHighlightAllCharacters()
+		public void PlansToZero()
 		{
-			DeHighlightSprite();
+
+			string json = PlayerPrefs.GetString("Planes");
+			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
+			obj.Plan_Sophie = (false,false);
+			obj.Plan_Allan = (false, false);
+			obj.Plan_Ethan = (false, false);
+			json = JsonUtility.ToJson(obj);
+			PlayerPrefs.SetString("Planes", json);
 		}
 
+		public void UpdatePlans(string name, bool isPlan, bool isLocked)
+		{
+			string json = PlayerPrefs.GetString("Planes");
+			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
+			NPCsDateable enumerator= NPCsDateable.None;
+			switch (enumerator)
+			{
+				case NPCsDateable.Sophie:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Sophie = (true, true);
+
+						}
+						else
+						{
+							obj.Plan_Sophie = (true, false);
+						}
+					}
+					break;
+				case NPCsDateable.Allan:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Allan = (true, true);
+
+						}
+						else
+						{
+							obj.Plan_Allan = (true, false);
+						}
+					}
+					break;
+				case NPCsDateable.Ethan:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Ethan = (true, true);
+
+						}
+						else
+						{
+							obj.Plan_Ethan = (true, false);
+						}
+					}
+					break;
+				case NPCsDateable.None:
+					break;
+				default:
+					break;
+			}
+			
+		
+			json = JsonUtility.ToJson(obj);
+			PlayerPrefs.SetString("Planes", json);
+		}
 		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
 
 		public void AddToLikeability(string keyVar, int sumValue)

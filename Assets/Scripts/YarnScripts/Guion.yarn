@@ -845,11 +845,13 @@ Le cojo del brazo para que para de hablar.
 -> {$name}: “Me encantaría ir”
     //[1][plan lockeado ++] 
     <<Add_npc_likeability NPC_allan 2>>
+    <<Update_Plans Allan, true, true>>
     Allan: “¡Genial! Entonces te veo el finde. Acordamos los detalles por el móvil, ¿vale?” 
     {$name}: “¡Perfecto!” 
 -> {$name}: “Quiero ir, pero aún no te puedo confirmar nada, el viernes te aviso ¿vale?” 
     //[2][plan desbloqueado +]
     <<Add_npc_likeability NPC_allan 1>>
+    <<Add_npc_likeability  Allan, true, false>>
     Allan: “Vale, pues avisame cuando lo sepas” 
     {$name}: “Claro, no te preocupes” 
 -> {$name}: “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado” 
@@ -1011,15 +1013,19 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     {$name}:  “Soy {$name}. No te preocupes, yo también soy muy mala recordando nombres jajaja”  
     Para mi sorpresa, veo como la comisura de su boca se eleva ligeramente. ¿Está sonriendo? Parpadeo varias veces sin creérmelo. Creo que es la mayor expresividad que le he visto mostrar en todo este tiempo, aunque tampoco es que le conozca mucho. Con cara de estupefacción le observo mientras abre su taburete y se sienta para continuar el dibujo del otro día.
 {$name}: “¿De verdad se va a pasar toda la tarde en ese rinconcito dibujando?”  
-
 -> {$name}: “¡Oye! Lo siento, pero no te puedes quedar aquí pintando todo el día. Será mejor que te marches, gracias” 
     <<Add_npc_likeability NPC_pietro -2>>
     Como esperaba, Pietro no me hace caso. No sé si es por error o intencionado, aunque una ligera voz en mi cabeza me dice que es lo último. Agh, ¿es que no puedo tener un día normal? Con pasos fuertes, me acerco a Pietro y le vuelvo a dar golpecitos insistentes en el hombro como el día anterior.  
     {$name}: “Tierra llamando a Pietro... Es hora de que regreses a casa, tengo que trabajar. Regresa cuando hayas aprendido a pedir las cosas”  
     Con una mirada complaciente y la cabeza ligeramente erguida, veo como mis palabras tienen un efecto inmediato en Pietro. En un instante, Pietro se pone en pie, recoge todas sus pertenencias y con grandes zancadas avanza a la puerta de la floristería. Antes de salir, para dramáticamente.  
     Pietro: “Volveré y la próxima vez tendrás que aceptarme. La belleza es del mundo y no tiene dueño. Las cadenas que impones sobre ella solo me producen tristeza”  
+    <<Move Pietro offright bottom015 2.0>>
+    <<Hide Pietro>>
     //[CAMPANITAS]  
     Me quedo perpleja ante sus palabras tan profundas. Definitivamente es un hombre de artes.  
+    <<Fade black 0.0 1.0 2.0>>
+    <<HideAll>>
+    <<jump Viernes_sem1>>
 -> {$name}: “Ánimo con el dibujo Pietro.” Espero poder ver cómo ha quedado cuando termine.”
     <<Add_npc_likeability NPC_pietro 2>>
     Como esperaba, Pietro no articula palabra completamente dedicado y entregado a su amado arte. Me encojo de hombros. No sé qué más podría hacer para gestionar esta situación. Supongo que mientras se quede ahí dibujando y yo pueda trabajar sin problemas no pasa nada. Siento algo de empatía hacia Pietro. Al final los dos estamos dedicando nuestro tiempo a aquello que amamos, yo a las flores y él al arte. Debería de sentirme orgullosa de que ha escogido mis flores para ello. Suspiro agotada mientras consulto la hora.  
@@ -1058,6 +1064,7 @@ position: 424,345
 <<set $resultado to "bien">>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral 1.25 bottom015 white>>
 "Aquí tienes."
 //Saltos a las diferentes ramas
 
@@ -1078,31 +1085,339 @@ position: 427,423
 ---
 <<Add_npc_likeability NPC_pietro 3>>
 
+Pietro: “Estoy sorprendido por la magnífica combinación de colores que has logrado. No puedo esperar por llegar a mi casa para pintarlas”  
+¡No me puedo creer que le haya encantado de esta manera! Tenía miedo por el pedido al ver la dureza con la que evaluaba las flores Pietro el otro día. Me siento tremendamente orgullosa.  
+{$name}: “Me alegro de que te haya gustado. Espero poder ver en algún momento el dibujo”  
+Pietro: “Ummm, lo pensaré” Sonríe ligeramente.  
+Pietro: “Volveré. Espero que me vuelvas a dejar pintar tus flores”  
+{$name}: “¡Claro!”  
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_regular_Pietro_jueves_sem1
 position: 617,431
 ---
 <<Add_npc_likeability NPC_pietro 1>>
+{$name}: “¿Qué te parece?”  
 
+Siento algo de miedo, no puedo saber por su expresión qué es lo que está pensando. Me aprieto las manos con fuerza.  
+Pietro: “...Está bien. Tendré que mejorar su apariencia en la pintura, pero es un buen punto de partida”  
+Suspiro de alivio. No ha sido un éxito, pero ha pasado el corte. Me esforzaré más la próxima vez para cumplir sus expectativas.  
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_mal_Pietro_jueves_sem1
 position: 238,423
 ---
 <<Add_npc_likeability NPC_pietro -3>>
+...  
 
+Pietro: “Esperaba mucho más. Suspiro. Ya veré que puedo hacer para arreglarlo en casa, habrá que retocar la paleta de color”  
+
+¡Agh! ¡Que palabras tan directas! Con una expresión de tristeza en la cara me disculpo.  
+
+{$name}: “Lo siento mucho, la próxima vez intentaré hacerlo mejor”  
+
+Pietro: “No pasa nada, esto es como el arte. Hay que experimentar para descubrir cosas nuevas”  
+
+Sus palabras me reconfortan un poco.
 <<jump Fin_ramas_minijuego_Pietro_jueves_sem1>>
 ===
 title: Fin_ramas_minijuego_Pietro_jueves_sem1
 position: 424,514
 ---
+Con todas sus pertenencias guardadas, Pietro se despide amablemente y abandona la floristería.  
 
+{$name}: “Gracias por todo. ¡Hasta otro día!” 
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Viernes_sem1>>
 ===
 title: Viernes_sem1
 position: 833,-254
 ---
+<<Fade black 1.0 0.0 2.0>>
+//CALLE - DÍA  
+
+¡Ya es viernes! No sé por qué, pero esta semana se me hizo extrañamente corta. Mientras recorro el camino hacia la floristería por última vez esta semana, no puedo evitar que mi mente piense en todos los acontecimientos que tuvieron lugar en estos cinco días. Mis pies toman las decisiones por mí. Ya conocen el camino a su destino. Saludo a los dueños del resto de locales que, al igual que yo, inician el último día de trabajo con algo de pereza.  
+
+Alex: “¡Buenos días! Mucho ánimo hoy que ya nos queda poco”  
+
+{$name}: “¡Igualmente Alex! Que tengas un buen día”  
+
+Es cierto que amo mi trabajo en la floristería y alegrar a los clientes, pero noto que necesito un merecido descanso después de todo el ajetreo de esta semana: la mudanza, la apertura,…  
+
+Ay. Parece mentira lo rápido que me he acostumbrado a esta ciudad y no solo eso, también a la rutina. Mas no me resulta raro, a fin de cuentas, cuando te sientes a gusto y haces lo que te gusta todo se vuelve más ameno. Y esto es lo que más valoro, poder sentirme cómoda y llamar a esta ciudad mi hogar. Es como si hubiera estado viviendo aquí todos estos últimos años.  
+
+Tampoco me puedo quejar del estado de la floristería. En estos días, he podido terminar de prepararla y decorarla. Los clientes que he tenido hasta la fecha han sido muy majos y noto que se ha ido extendiendo la voz de mi local.
+
+Al pensar en mis clientes, me vienen a la mente algunas caras más habituales. Aquellas personas con las que siento cierta conexión especial. Ummm, ¿me visitará alguno de ellos hoy?  
+
+Suspiro. En verdad tengo muchas ganas de que sea sábado para poder llamar a mi amiga Leah y contarle todas las cosas nuevas que me han pasado desde que llegue aquí. Sé que se preocupó mucho por mí cuando pasé por toda aquella situación. Por mucho tiempo me sentí mal por ello, pero lo único que puedo hacer es agradecerla por haberme ayudado con todo.
+
+Mis ojos cristalinos se posan por inercia en el cielo despejado. Los echo a todos mucho de menos, pero sé que necesitaba alejarme durante un tiempo. ¿Qué tal estará Leah? ¿Cómo se encontrarán todos en casa? Acelero el paso con la esperanza de que llegar a la floristería me libere de esta tristeza y melancolía.  
+<<Fade black 0.0 1.0 2.0>>
+<<HideAll>>
+<<jump Ethan_viernes_sem1>>
 ===
+title: Ethan_viernes_sem1
+position: 1127,-245
+---
+<<Fade black 1.0 0.0 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “¡Adiós! Que tenga un buen día”  
+
+Suspiro. Por fin el turno de mañana está casi completado. Se me está haciendo este día muy largo. Miro de reojo la hora en mi reloj. ¿Estaría mal si hoy inicio el descanso quince minutos antes? Me muerdo el labio indecisa. Umm, creo que no pasa nada por ello, a fin de cuentas, hoy es viernes y esta semana he dado todo de mi parte por la floristería. ¡Decidido! Asintiendo feliz y dando pequeños brincos me acerco a la puerta para poner el cartel de “Cerrado por descanso. Vuelvo en quince minutos”.  
+
+{$name}: “Ohhh, y encima hoy tengo poke. Creo que he tomado una muy buena decisión jajaja”  
+
+//[GOLPE Y GRITO]  
+<<Shake {$name}>>
+{$name}: “AHHHH”  
+<<Fade black 0.0 1.0 2.0>>
+Una terrible punzada de dolor me golpea la cabeza, no puedo ver nada, solo puntos negros que invaden mi borrosa visión. Siento como mi cuerpo se tambalea y comienza su descenso al suelo, pero me encuentro tan desorientada que no puedo hacer nada. Mi cuerpo no responde. Estiro el brazo con la esperanza de poder agarrar algo que detenga mi caída. Cuando creo que va a llegar lo inevitable y que más dolor va a golpear sin piedad mi cuerpo, alguien me ayuda. Unos brazos fuertes y decididos rodean mi cintura y me estabilizan.  
+
+????: “¡Te tengo! ¿¡Te encuentras bien...!?”  
+
+Esa voz...  
+
+Agarro inconscientemente con fuerza la camisa de mi salvador por temor a volver a caer. Intento pensar, ubicar la voz que ha llegado a mis oídos. Juraría que la he oído antes. Parpadeo lentamente para tratar de recuperar mi visión y enfocar la cara que se encuentra ante mí.  
+
+???? :“¿Puedes escucharme? ¿¡Hola!?”  
+
+Puedo notar la preocupación de la figura misteriosa. Levanta la voz para poder alcanzarme, pero lo único que hace es aumentar mi angustia. Entrecierro más los ojos con el mismo objetivo en mente. Creo que estoy consiguiendo verlo. Ese pelo /añadir una pequeña descripción/.  
+<<Fade black 1.0 0.0 2.0>>
+¡Ya lo tengo! ¡Es ETHAN! ¿Pero qué hace aquí? ¡Claro! Debe de querer un pedido. Necesito atenderle.  
+
+<<Act Ethan spt_pietro_neutral 1.25 bottom015 white>>
+Completamente desorientada por el golpe, pero con la acuciante necesidad de atenderle como florista, trato de incorporarme de golpe para cumplir mi deber.  
+
+{$name}: “Perdón... Dame...un...segundo. ¡Ya te atiendo!”  
+
+Todo comienza a dar vueltas y siento que en cualquier momento podría volver a desplomarme. ¿Por qué me está costando tanto moverme y comunicarme? Antes de poder dar un paso hacia el mostrador, ETHAN se acerca.  
+
+Ethan: “Ey, ey. ¿Qué estas tratando de hacer? Necesitas descansar después de ese golpe preciosa”  
+
+¿Golpe? ¿Por qué siento que he olvidado algo? Mientras frunzo el ceño pensando, ETHAN pasa uno de mis brazos sobre sus hombros y con el otro me sostiene de la cintura.  
+
+Ethan: “Tranquila, solo necesitas descansar un rato”  
+
+Poco a poco, me ayuda a alcanzar el mostrador y me ayuda a apoyarme en este.  
+
+Ethan: “Y ya estaríamos. Apóyate aquí”  
+
+Algo relajada al encontrarme por fin estable y descansando, me llevo una mano a mi frente, al origen del dolor. Al tocar la zona ligeramente inflamada, siseo.  
+
+{$name}: “Aghhh”  
+
+Al menos poco a poco voy recuperando los sentidos.   
+
+Ethan: “Suspiro. Menudo golpe. Espero no haber estropeado tu linda carita.”  
+
+Ethan acerca su rostro al mío. ¿Qué está haciendo? Por reflejo me echo hacia atrás. Su mirada se posa inquisitivamente en mi frente. Antes de poder decirle nada, suspira de alivio y se endereza.  
+
+Ethan: “Uff. Menos mal que no te he roto nada. Parece que solo te va a salir un chichón, aunque bastante grande je je je...”  
+
+Esa risita... No suena muy convencida. De hecho, parece que se siente culpable de algo, pero ¿qué...?  
+
+<<wait 2.0>>  
+
+¡Un momento!  
+
+<<Shake {$name}>>
+{$name}: “¡Pero si fuiste tú el que me golpeaste!”  
+
+Ignorando el latigazo de dolor que sacude de nuevo mi cabeza, acuso a Ethan con el dedo. ¡Ya recuerdo lo que ha pasado! Miro de nuevo a la puerta, nuestra antigua posición, y puedo ver la prueba del delito. El cartel de aviso de descanso se encuentra olvidado en el suelo. ¡Es cierto! Iba a descansar antes y a comer algo, pero entre el accidente y el dolor ya no tengo ni hambre. Miro a Ethan irritada. En el fondo sé que él no tiene la culpa de todo, pero las punzadas que siento nublan mi sentido.  
+
+Ethan ríe nerviosamente y sus ojos revolotean por la tienda con el fin de evitar mi mirada penetrante. Se rasca la nuca sin saber qué hacer.  
+
+Ethan: “Je je, bueno...”  
+
+Antes de que pueda reñirle más por su falta de cuidado, ETHAN hace algo que no esperaba. Sus ojos brillan con picardía. Frunzo el ceño, desconfiada. ¿Qué estará planeando?  
+
+Es entonces cuando ETHAN se acerca a mí con cara coqueta y toma en su dedo uno de mis mechones con el que comienza a jugar. 
+
+Ethan: “¿No te dolió cuando caíste del cielo?”  
+
+...
+
+¿Cómo? Ahora soy yo la que se encuentra sin palabras. Le miro con la boca completamente abierta mientras sigue sujetando mi pelo. ¿En serio acaba de...? Ya está, definitivamente desde este momento le voy a llamar “Eros” como el dios griego del amor. Creo que le queda que ni pintado.   
+
+-> {$name}: “¿Es en serio? Agradecería que dejarás de intentar ligar conmigo y te tomarás en serio la conversación”  
+    <<Add_npc_likeability NPC_ethan -2>>
+    Ante mis palabras cortantes, Ethan se queda estático. Claramente no sabe cómo tomar mi reacción, pero entre el dolor y su insistencia no he podido evitarlo. Entiendo que ese es su carácter, pero ¿no puede dejar de coquetear ni en esta situación? De nuevo, sin ningún tipo de filtro le digo lo que pienso. 
+    {$name}: “Me duele muchísimo la cabeza por el golpe y lo único que se te ocurre es soltar una frase “romántica” para arreglarlo” 
+    {$name}: “En verdad valoraría mucho más tu sinceridad Ethan” 
+    ... 
+    Ethan no dice nada claramente procesando mis palabras. Es como si le hubiera tirado un jarro de agua fría. Su mirada perdida y triste se posa en el suelo. Antes de que pueda descifrar lo que está pensando, agita la cabeza y me vuelve a mirar con su típica sonrisa pícara. Sin embargo, esta no llega a sus ojos. 
+-> {$name}: Te ríes a carcajadas. “Puff. JAJAJA. ¿Eso es lo más ingenioso que se te ha ocurrido?”
+    <<Add_npc_likeability NPC_ethan 2>>
+    No puedo parar de reír. Estas cosas solo se le pueden ocurrir a ETHAN. En una situación normal habría reaccionado con indiferencia o cansada ante sus intentos, pero está claro que el golpe me ha dejado sin fuerzas. ¡Ha sido demasiado gracioso! 
+    ETHAN me mira extrañado, como si me hubiera vuelto loca. 
+    Ethan: “¿Te estas riendo de mí?” 
+    Indignado, se cruza de brazos. 
+    Ethan: “Deberías saber que es una de mis frases más populares entre mis citas”
+    Esa revelación hace que me ría aún más. Me duele el estómago y la cabeza de tanta risa. 
+    {$name}: “Eso sí que no me lo puedo creer, jajaja.” 
+    {$name}: “Uff, hacia que no me reía así muchísimo tiempo. Muchas gracias” 
+    Ya calmada, intento recuperar las fuerzas. Cierro brevemente los ojos y se me escapa una gran sonrisa. Ha hecho que se me haya olvidado por unos instantes el punzante dolor de la cabeza. 
+    Oigo como Ethan coge aire con fuerza. Como si se hubiera sorprendido.  
+    Ethan: “¡Ah!”
+    Al abrir los ojos ante su ruido, veo con confusión como Ethan se ha cubierto la boca con una mano y mira nervioso al lado. ¿Es eso un sonrojo? 
+{$name}: “Bueno, volviendo al tema en cuestión. ¿Qué hacías viniendo a la floristería con tanta prisa, Ethan? ¿Pasó algo?”
+¿Tendré algo frío que poder ponerme sobre la inflamación de la frente? Mientras busco entre mis pertenencias, veo por el rabillo del ojo como Ethan se cruza de brazos y se coloca con un movimiento suave de cabeza el flequillo. Ummm, debe ser un tic que tiene. 
+Ethan: “¿Es que no puedo venir simplemente a ver a una de mis personas favoritas?” 
+<<wait 2.0>>
+Ethan:“Un momento, ¿cómo es que sabes mi nombre? ¿¡Me has estado espiando!?” 
+Se acerca a mí y me apunta acusatoriamente a la cara como hice yo con él hace solo unos instantes. Por poco y me mete el dedo en el ojo. Por reflejo, lo aparto con un golpecito. 
+{$name}: “Suspiro. Primero: no es por nada, pero apenas nos conocemos. Segundo: tú mismo me diste tu nombre al ponerlo en el contacto cuando metiste tú teléfono en mi móvil sin mi permiso”. 
+No puedo evitar cruzarme de brazos. ¿Y encima me mira con ese puchero como si el indignado aquí fuera él? Tsk. 
+Ethan: “Bueno, no es como si no lo hubiera intentado. Yo diría que eres tú la que no quieres conocerme a mí” 
+
+Su respuesta genera un silencio incómodo en la floristería. Desvío la mirada. Es verdad que no he contestado a la mayoría de los mensajes. La culpabilidad inunda mi pecho. Por alguna razón al ver los mensajes que me enviaba Ethan siempre sentía que no eran del todo sinceros. Algo que también siento al hablar con él en persona. De alguna manera, ver esos mensajes me recordaba a mi antiguo yo y terminaba ignorándolos. Puede que me equivoque, pues de momento no hemos tenido muchas interacciones en persona, pero solo el tiempo podrá confirmarlo. Solo espero que, si nuestra relación va a más, confíe en mí lo suficiente para ser él mismo. 
+A pesar de que mis pensamientos son un caos, no sé si sacarlos a la luz. ¿Qué debería de hacer? Debo de tardar mucho en contestar porque Ethan se adelanta. 
+Ethan: “¿Te he incomodado de alguna manera?” 
+PLAYER
+-> {$name}: “Sí, si te parece no me incomoda que cada vez que intentas hablar conmigo sea para ligar o coquetear” 
+    <<Add_npc_likeability NPC_ethan -2>>
+    Ethan hace una mueca ante mis palabras. Parece que he sido demasiado dura con él, pero es cierto que puede llegar a ser demasiado insistente. 
+    Como he podido observar que hace al sentirse acorralado, oculta sus verdaderos sentimientos e intenta no darle importancia. 
+    Ethan: “Es difícil no decir lo que siento ante una belleza como tú”
+    Suspiro exhausta. 
+    {$name}: “Mira, no me siento del todo cómoda con los mensajes que me mandas. Insistes mucho y no paras de intentar coquetear conmigo y no nos conocemos casi nada” 
+    Sigue sonriendo, pero su sonrisa se va torciendo como si quisiera desaparecer y no se lo permitieran. 
+    {$name}: “Lo que es más, las dos veces que hemos coincidido ha sido por accidentes extraños” 
+    {$name}: “Siento que no puedas entenderlo, pero así soy yo” 
+    Ethan: “En ningún momento era mi intención hacerte sentir así, lo siento. Intentaré limitar mis mensajes y darte tu espacio” 
+-> {$name}: Te sinceras con él. “No es eso, es que... siento como si no fueras del todo sincero” 
+    <<Add_npc_likeability NPC_ethan 2>>
+    Una vez las palabras que han brotado de mi boca como una cascada se funden en el aire, todo lo que queda es un silencio cargante. Pasan unos segundos hasta que proceso lo que acabo de decir. ¡No! ¿En serio acabo de decir eso? Alarmada trato de disculparme con rapidez. 
+    {$name}: “¡Perdón si te ha incomodado! No debería de haber dicho eso, es demasiado personal” 
+    Ethan se encuentra completamente tenso. Me mira incómodo. Claramente no quiere hablar del tema. Reconozco las señales como si me estuviera mirando en un espejo. Sus manos se retuercen nerviosas sobre el mostrador. Qué vergüenza... Sin poder soportarlo, desvío la atención al suelo. 
+    {$name}: “Es solo que... me recuerdas un poco a mí. Yo tampoco decía lo que pensaba y al final esconderte en ti mismo...” 
+    Oigo un ruido y levanto la cabeza para ver que ha pasado. ETHAN se ha dado la vuelta bruscamente y solo veo su espalda. Está claro que la he liado. Sacudo la cabeza ¿Por qué sigo insistiendo? Está claro que no quiere hablar más de ello. Obviamente ha sido un error, debería de cambiar de tema.
+    {$name}: “Perdón, ha sido una falta de educación por mi parte asumir estas cosas cuando apenas nos conocemos. Espero que me perdones”
+    Un suspiro corta el aire. Ethan se gira y coge la primera flor que se encuentra a su lado: una Agrimonia. Agradecimiento, gratitud. ¿Querrá decir algo? 
+    Ethan: “Es un tema delicado, prefiero no hablar sobre ello” 
+    {$name}: “Tranquilo, lo compren...” 
+    Ethan: “Espero que tengas paciencia conmigo, sé que soy una persona complicada, pero...” 
+    Me mira con decisión y… Sinceridad. 
+    Ethan: “Espero que me des una oportunidad para conocerme mejor.” 
+    Sonrío con timidez. Sus palabras son una invitación, una oportunidad en el tiempo. Parece que al final no me he equivocado en seguir mi corazón. 
+Aclaro la garganta y me enderezo en mi posición detrás del mostrador. 
+{$name}: “Al final nos hemos puesto a hablar y no me has dicho para qué habías venido” 
+Los ojos de Ethan se iluminan como si se le acabara de encender una bombilla sobre la cabeza. Rápidamente, saca el móvil y consulta en este la hora. 
+Ethan: “¡Ostras! Menos mal que me lo has recordado. Tengo ahora una cita y creo que voy a llegar con el tiempo justo” 
+Ethan: “¿Es que siempre me tienes que entretener de estas maneras florecita?” 
+¿Florecita? Ruedo los ojos por su estupidez, aunque debo admitir que me ha resultado algo adorable. Toso para no reírme. 
+{$name}: “Anda, anda. Dime ya que es lo que quieres antes de que me marchite y no solo yo, también tu “cita” ” 
+Ethan: “No digas eso. Tú eres la flor más bella del jardín con diferencia” 
+Me río ante sus palabras. No puedo evitar soltar una pequeña broma, pero... 
+{$name}: “Si fuese verdad ya me habrías invitado a salir” 
+Parece que Ethan se lo ha tomado completamente en serio. 
+Con un movimiento exagerado, toma mi mano y hace una ligera reverencia.  
+Ethan: “¡Entonces decidido! Mi bella flor, ¿te gustaría ir a tomar algo conmigo este finde para conocernos mejor?” 
+PLAYER
+-> {$name}: “Por supuesto que me encantaría querido Eros, pero como amigos eh”
+    <<Update_Plans Ethan, true, true>>
+    <<Add_npc_likeability NPC_ethan 2>>
+    Le sigo el juego y con una inclinación de cabeza acepto su invitación. Al verme, se le iluminan los ojos y siento como su presión en mi mano aumenta. Está tan extasiado que no ha reparado ni en el apodo que le he puesto. 
+    Ethan: “¡Estupendo! ¡No te vas a arrepentir {$name}! Te mandaré los detalles del sitio y la hora por mensaje. No me dejes en visto, ¿vale?” 
+    Me da un golpecito amistoso en el hombro. ¿Me ha llamado por mi nombre? 
+
+-> {$name}: “Ummm, me lo voy a pensar. ¿Te puedo confirmar por mensaje?”
+    <<Update_Plans Ethan, true, false>>
+    <<Add_npc_likeability NPC_ethan 1>>
+    Veo que mis palabras le han afectado, pero rápidamente se recompone y me mira haciendo un puchero juguetón. 
+    Ethan: “Vale, sin problema, pero no te olvides de mí florecita. Espero que al final te animes a quedar conmigo” 
+    Suelto una risita ante su actitud. 
+    {$name}: “Me lo pensaré si dejas de poner esa cara de bebé” 
+    Indignado me saca la lengua. 
+-> {$name}: “Lo siento, pero este fin de semana no voy a poder. Otra vez será”
+    <<Add_npc_likeability NPC_ethan -1>>
+    Ante mis palabras sus hombros se encogen. Parece que no esperaba esta respuesta. 
+    Ethan: “Que se le va a hacer. Tendremos que dejarlo para otro momento. Asegúrate de guardarme un hueco de tu preciado tiempo para la próxima vez” 
+    {$name}: Asiento. “Lo intentaré”
+{$name}: “Bueno y ahora que ya está todo resuelto, ¿cuál es tu pedido?” 
+Ethan: “Cierto, es que siempre me entretienes ¿eh? Ja ja. Quiero un...” 
+<<Fade black 0.0 1.0 2.0>>
+//<<HideAll>>
+<<jump Minijuego_Ethan_viernes_sem1>>
+===
+title: Minijuego_Ethan_viernes_sem1
+---
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Ethan_viernes_sem1>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Ethan>>
+===
+title: Salida_minijuego_Ethan_viernes_sem1
+---
+<<set $resultado to "bien">>
+<<Fade black 1.0 0.0 2.0>>
+//<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: "Aquí tienes."
+//Saltos a las diferentes ramas
+
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Ethan_viernes_sem1>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Ethan_viernes_sem1>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Ethan_viernes_sem1>>
+<<endif>>
+===
+title: Minijuego_bien_Ethan_viernes_sem1
+---
+<<Add_npc_likeability NPC_allan 3>>
+Ethan: “¡Está estupendo! Está claro que tengo que venir a verte para poder tener éxito en las citas” 
+Me río por su comentario internamente orgullosa por haberle entregado otro ramo perfecto. 
+{$name}: “¿Es que soy tu amuleto de la suerte?”
+Ethan: “¡Definitivamente! Gracias a ti me van a perdonar la tardanza. Toma el dinero” 
+<<jump Fin_ramas_minijuego_Ethan_viernes_sem1>>
+===
+title: Minijuego_regular_Ethan_viernes_sem1
+---
+<<Add_npc_likeability NPC_allan 1>>
+
+Ethan: “Está bien. Creo que a mi cita le va a gustar, pero no va a ser suficiente para que me perdone” 
+Inflo los mofletes con algo de decepción. Podría haberlo hecho mejor, pero después de lo que ha pasado hoy no ha salido tan mal como esperaba. 
+Ethan: “No te preocupes preciosa. Esa cabecita tuya ha hecho lo que podía. Toma el dinero”
+
+<<jump Fin_ramas_minijuego_Ethan_viernes_sem1>>
+===
+title: Minijuego_mal_Ethan_viernes_sem1
+---
+<<Add_npc_likeability NPC_allan -3>>
+Ethan: “Ummm” 
+Ethan: “Parece que el golpe ha afectado a tu talento” 
+Me siento completamente decepcionada. Con el dolor del golpe no me he podido concentrar y ha salido un ramo horrible. Solo espero que el resto del día no pase nada más. 
+{$name}: “Lo siento” 
+Ethan: “Suspiro. Que se le va a hacer, es parte culpa mía” 
+Ethan: “Aquí tienes el dinero”
+
+<<jump Fin_ramas_minijuego_Ethan_viernes_sem1>>
+===
+title: Fin_ramas_minijuego_Ethan_viernes_sem1
+---
+Ethan: “Ahora sí que me voy a mi cita. ¡Deséame suerte!” 
+Ethan: “Espero que la próxima vez no se produzca ningún accidente” 
+Mi mano inconscientemente se mueve hacia el chichón. 
+{$name}: “Suspiro. Eso espero yo también”
+{$name}: “¡Hasta otro día!”
+<<Move Ethan offright bottom015 2.0>>
+<<Hide Ethan>>
+<<Fade black 0.0 1.0 2.0>>
+<<jump Sophie_viernes_sem1>>
+===
+title: Sophie_viernes_sem1
+position: 1127,-245
+---
+===
+
 title: Finde_sem1
 position: 1127,-245
 ---
