@@ -45,8 +45,5 @@ public class FlowerMenu : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
-    private void OnMouseExit()
-    {
-        GetComponent<SpriteRenderer>().color = Color.white;
-    }
+
 }
