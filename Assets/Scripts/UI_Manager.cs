@@ -11,6 +11,9 @@ public class UI_Manager : MonoBehaviour
         createNPCs();
         new Planes_Finde(false, false, false, false, false, false);
         PlayerPrefs.SetString("nodeSaved", "Semana1");
+        PlayerPrefs.SetString("currentMinigame", "none");
+        PlayerPrefs.SetString("PlayerName", "Lucía");
+        PlayerPrefs.SetString("PlayerGender", "F");
     }
     //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
     // y lo guarda en PlayerPrefs

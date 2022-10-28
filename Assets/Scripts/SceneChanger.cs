@@ -15,7 +15,13 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("VisualNovel");
     }
 
-
+    public void loadStartedVN()
+    {
+        if (PlayerPrefs.HasKey("nodeSaved"))
+        {
+           playVN();
+        }
+    }
 
     //Cambio de escena genérico
     public void changeScene(string scene)
