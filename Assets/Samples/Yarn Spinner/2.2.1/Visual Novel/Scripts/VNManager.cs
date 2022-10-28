@@ -81,6 +81,7 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
 			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
 			runner.AddCommandHandler("Plans_To_Zero", PlansToZero);
+			runner.AddCommandHandler("the_end", TheEnd);
 			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
@@ -133,15 +134,22 @@ public class VNManager : DialogueViewBase
 			
 		}
 		#region YarnCommands
+		public void TheEnd()
+		{
 
+			SceneChanger.changeScene("Menu");
+		}
 		public void PlansToZero()
 		{
 
 			string json = PlayerPrefs.GetString("Planes");
 			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
-			obj.Plan_Sophie = (false, false);
-			obj.Plan_Allan = (false, false);
-			obj.Plan_Ethan = (false, false);
+			obj.Plan_Ethan_isTherePlan = false;
+			obj.Plan_Ethan_isLocked = false;
+			obj.Plan_Sophie_isTherePlan = false;
+			obj.Plan_Sophie_isLocked = false;
+			obj.Plan_Allan_isTherePlan = false;
+			obj.Plan_Allan_isLocked = false;
 			json = JsonUtility.ToJson(obj);
 			PlayerPrefs.SetString("Planes", json);
 		}
@@ -150,7 +158,7 @@ public class VNManager : DialogueViewBase
 		{
 			string json = PlayerPrefs.GetString("Planes");
 			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
-			NPCsDateable enumerator = NPCsDateable.None;
+			NPCsDateable enumerator = System.Enum.Parse<NPCsDateable>(name);
 			switch (enumerator)
 			{
 				case NPCsDateable.Sophie:
@@ -158,12 +166,14 @@ public class VNManager : DialogueViewBase
 					{
 						if (isLocked)
 						{
-							obj.Plan_Sophie = (true, true);
+							obj.Plan_Sophie_isTherePlan=true;
+							obj.Plan_Sophie_isLocked=true;
 
 						}
 						else
 						{
-							obj.Plan_Sophie = (true, false);
+							obj.Plan_Sophie_isTherePlan = true;
+							obj.Plan_Sophie_isLocked = false;
 						}
 					}
 					break;
@@ -172,12 +182,14 @@ public class VNManager : DialogueViewBase
 					{
 						if (isLocked)
 						{
-							obj.Plan_Allan = (true, true);
+							obj.Plan_Allan_isTherePlan = true;
+							obj.Plan_Allan_isLocked = true;
 
 						}
 						else
 						{
-							obj.Plan_Allan = (true, false);
+							obj.Plan_Allan_isTherePlan = true;
+							obj.Plan_Allan_isLocked = false;
 						}
 					}
 					break;
@@ -186,12 +198,14 @@ public class VNManager : DialogueViewBase
 					{
 						if (isLocked)
 						{
-							obj.Plan_Ethan = (true, true);
+							obj.Plan_Ethan_isTherePlan = true;
+							obj.Plan_Ethan_isLocked = true;
 
 						}
 						else
 						{
-							obj.Plan_Ethan = (true, false);
+							obj.Plan_Ethan_isTherePlan = true;
+							obj.Plan_Ethan_isLocked = false;
 						}
 					}
 					break;
@@ -201,9 +215,9 @@ public class VNManager : DialogueViewBase
 					break;
 			}
 
-
-			json = JsonUtility.ToJson(obj);
-			PlayerPrefs.SetString("Planes", json);
+			Debug.Log(obj.Plan_Allan_isTherePlan);
+			string json2 = JsonUtility.ToJson(obj);
+			PlayerPrefs.SetString("Planes", json2);
 		}
 		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
 
