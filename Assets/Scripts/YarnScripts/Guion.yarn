@@ -289,15 +289,13 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<Move Desconocida offright bottom015 1.0>>
     <<wait 1.0>>
     //[CAMPANITAS FLORISTERÍA] 
-    <<Move Chico right bottom015 1.0>>
-    //[CAMPANITAS FLORISTERÍA] 
     Al escuchar las campanas de la puerta, suelto un suspiro de alivio que no sabía que había estado conteniendo. No pensé que me iba a alegrar de estar [select value={$gender} M="solo" F="sola" NB="sole"/] de nuevo.  
     ...  
     Un momento... ¿¡Cómo se me ha podido olvidar!? ¡Si todavía queda otra persona en la tienda!
     Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
     //[SHAKE Y GRITO]  
     No puedo evitar gritar del susto. Me retuerzo intentando separarme de la persona que me tiene [select value={$gender} M="atrapado" F="atrapada" NB="atrapade"/] en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
-    <<Act Chico sprt_ethan_placeholder center bottom015 white>>
+    <<Act Chico sprt_ethan_placeholder right bottom015 white>>
    // <<Move Ethan right center 0.5>>
     Chico: “[select value={$gender} M="Tranquilo, tranquilo" F="Tranquila, tranquila" NB="Tranquile, tranquile"/], no voy a hacerte nada. No era mi intención asustarte de esa manera”  
     Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. 
@@ -338,8 +336,12 @@ position: -679,-228
 title: Salida_minijuego_Ethan_lunes_sem1
 position: -688,-141
 ---
-<<set $resultado to "bien">>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Scene floristeria_placeholder>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<set $resultado to "bien">>
+
 {$name}: "Aquí tienes"
 //Saltos a las diferentes ramas
 
@@ -358,6 +360,8 @@ position: -688,-141
 title: Minijuego_bien_Ethan_lunes_sem1
 position: -521,-42
 ---
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan 3>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 Chico: “¡Son preciosas! A Elizabeth le van a encantar” 
@@ -374,6 +378,8 @@ Con el pedido en las manos, me da el dinero y se dispone a irse cuando...
 title: Minijuego_regular_Ethan_lunes_sem1
 position: -705,-48
 ---
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan 1>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 Chico: “Son muy bonitas, aunque debo admitir que esperaba algo más de ti”  
@@ -385,6 +391,8 @@ Sonrío tímidamente ante sus palabras. Siempre habrá una próxima vez y eso si
 title: Minijuego_mal_Ethan_lunes_sem1
 position: -885,-51
 ---
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan -3>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 ...  
@@ -398,7 +406,7 @@ Con cierta decepción, cojo el dinero del pedido. Está a punto de darse la vuel
 ===
 title: Fin_ramas_minijuego_Ethan_lunes_sem1
 position: -684,46
----ocid
+---
 Chico: “¡Ah! Antes de irme. No he podido evitar fijarme en que tienes aquí el móvil” 
 Con el dedo señala el móvil que se encuentra encima del mostrador y que antes estaba intentando conseguir con tanta desesperación. 
 Asiento con la cabeza mientras le miro con desconfianza. Creo que sé lo que va a pasar.  
@@ -432,6 +440,8 @@ El choque con esa mujer por la mañana y la extraña situación producida en la 
 title: Miercoles_sem1
 position: -120,-314
 ---
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 3.0>>
 // set fondo de CALLE - MÑN
 <<Scene bg_calle_placeholder>>

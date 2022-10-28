@@ -602,7 +602,6 @@ GameObject:
   - component: {fileID: 131891480}
   - component: {fileID: 131891479}
   - component: {fileID: 131891481}
-  - component: {fileID: 131891482}
   m_Layer: 0
   m_Name: IntroManagement
   m_TagString: Untagged
@@ -637,6 +636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc7bce54ca37a4a92546b69432e77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextOrder: 
+  listenOrder:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &131891480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,20 +665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdownMenu: {fileID: 1568026100}
---- !u!114 &131891482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131891477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccc1bbb63a1ac84499757db3520ac73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  likeability: 0
 --- !u!1 &144606861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1195,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 131891481}
         m_TargetAssemblyTypeName: UI_Manager, Assembly-CSharp
         m_MethodName: ReadNameInput
         m_Mode: 0
