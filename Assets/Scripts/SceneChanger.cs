@@ -8,7 +8,8 @@ public class SceneChanger : MonoBehaviour
 {
     public string nextOrder;
     public UnityEvent listenOrder;
-    string currentScene;
+    string curretScene;
+
     public void playVN()
     {
         SceneManager.LoadScene("VisualNovel");
@@ -27,16 +28,18 @@ public class SceneChanger : MonoBehaviour
         nextOrder = "NaN";
         listenOrder.AddListener(GoToOrderManagment);
     }
+
     private void FixedUpdate()
     {
         if (nextOrder == PlayerPrefs.GetString("clienteActual"))
         {
             listenOrder.Invoke();
-
-        }   
+        }
     }
+
     void GoToOrderManagment()
     {
         changeScene("MinijuegoFlores");
     }
+
 }

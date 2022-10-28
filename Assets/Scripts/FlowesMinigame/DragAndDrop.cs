@@ -9,17 +9,33 @@ public class DragAndDrop : MonoBehaviour
     public Collider2D ramoCol;
     public Transform FlowersList;
     public GameObject panel;
-
+    public GameObject Flist;
+    public GameObject FlowersManager;
+    public string fname;
+    public string fcolor;
+    public string ffeeling;
+    public bool isActivated = true;
     private Quaternion startRotation;
     private Vector3 startScale;
     private Vector3 mousePos;
     private GameObject resetPos;
+
+    private void Awake()
+    {
+        ramoCol = GameObject.Find("Bouquet").GetComponent<BoxCollider2D>();
+        FlowersList = GameObject.Find("FlowersList").GetComponent<Transform>();
+        panel = GameObject.Find("FlowersPanel");
+        Flist = GameObject.Find("FlowersList");
+        FlowersManager = GameObject.Find("FlowersManager");
+        gameObject.transform.SetParent(FlowersList);
+    }
 
     private void Start()
     {
         //Resetea la posición de la flor:
 
         //Se crea objeto solo con componente transform que almacena la posición inicial de la flor (El transform peta si no hago esto)
+        
         resetPos = new GameObject();
         resetPos.transform.SetParent(FlowersList);
         resetPos.transform.position = transform.position;
@@ -29,46 +45,92 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
-             
-        //Mueve la flor seleccionada con el ratón    
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePos.x, mousePos.y,transform.position.z);
-        
+
+            //Mueve la flor seleccionada con el ratón    
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
+ 
     }
 
     private void OnMouseDown()
     {
-        //Desactiva el scroll de la lista de flores
-        panel.GetComponent<ScrollRect>().enabled = false;
 
-        //La flor deja de pertenecer a la lista de flores para poder hacer transformaciones globales sin dependencias
-        transform.parent = null;
+            //Desactiva el scroll de la lista de flores
+            panel.GetComponent<ScrollRect>().enabled = false;
 
-        //Agranda la flor para colocarla en el ramo
-        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
-        transform.localScale = new Vector3(2, 2, 2);
-        
+            //La flor deja de pertenecer a la lista de flores para poder hacer transformaciones globales sin dependencias
+            transform.parent = null;
+
+            //Agranda la flor para colocarla en el ramo
+            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
+            transform.localScale = new Vector3(2, 2, 2);
+
     }
     private void OnMouseUp()
     {
-        //Activa el scroll de la lista de flores al soltar la flor
-        panel.GetComponent<ScrollRect>().enabled = true;
 
-        //Si la flor no está dentro del ramo
-        if (!(Physics2D.IsTouching(flowerCol, ramoCol))){
+            //Activa el scroll de la lista de flores al soltar la flor
+            panel.GetComponent<ScrollRect>().enabled = true;
 
-            //vuelve a pertenecer a la lista de flores y tiene transformaciones con dependencias
-            transform.parent = FlowersList;
+            //Si la flor no está dentro del ramo
+            if (!(Physics2D.IsTouching(flowerCol, ramoCol)))
+            {
+                if (FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet.Contains(gameObject.name))
+                {
+                    FlowersManager.GetComponent<FlowersManager>().DeleteFlowers(gameObject.name);
+                }
 
-            //Resetea la posición de la flor con los valores iniciales en la lista de flores
-            transform.position = resetPos.transform.position;
-            transform.rotation = startRotation;
-            transform.localScale = startScale;
+                //vuelve a pertenecer a la lista de flores y tiene transformaciones con dependencias
+                transform.parent = FlowersList;
+
+                //Resetea la posición de la flor con los valores iniciales en la lista de flores
+                transform.position = resetPos.transform.position;
+                transform.rotation = startRotation;
+                transform.localScale = startScale;
+
+                //Restar a la variable comunicada con VN
+            }
+            else
+            {
+                if (!FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet.Contains(gameObject.name))
+                {
+                    FlowersManager.GetComponent<FlowersManager>().AddFlowers(gameObject.name);
+                }
+
+                // ENVIO DE VARIABLES A VN
+
+                //FLOR FAVORITA U ODIADA
+                if (fname == "FavPersonajePedido")
+                {
+                    //Sumar a la variable comunicada con VN
+                }
+                else if (fname == "HatePersonajePedido")
+                {
+                    //Restar a la variable comunicada con VN
+                }
+
+                //COLOR AFIN O NO
+                if (fcolor == "ColorAfinFlorPedido1" || fcolor == "ColorAfinFlorPedido2")
+                {
+                    //Sumar a la variable comunicada con VN
+                }
+                else if (fcolor == "ColorNoAfinPedido")
+                {
+                    //Restar a la variable comunicada con VN
+                }
+
+                //SENTIMIENTO AFIN O NO
+                if (ffeeling == "SentimientoFlorPedido1" || ffeeling == "SentimientoFlorPedido2")
+                {
+                    //Sumar a la variable comunicada con VN
+                }
+                else if (ffeeling == "SentimientoNoAfinPedido")
+                {
+                    //Restar a la variable comunicada con VN
+                }
+
+            }
         }
-        
-    }
-
-            
-        
+      
 }
 

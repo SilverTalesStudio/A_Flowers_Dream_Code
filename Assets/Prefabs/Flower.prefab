@@ -126,3 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerCol: {fileID: 2894779766467977316}
   ramoCol: {fileID: 0}
+  FlowersList: {fileID: 0}
+  panel: {fileID: 0}
+  Flist: {fileID: 0}
+  FlowersManager: {fileID: 0}
+  fname: Gardenia
+  fcolor: Blanca
+  ffeeling: Sinceridad
+  isActivated: 0
