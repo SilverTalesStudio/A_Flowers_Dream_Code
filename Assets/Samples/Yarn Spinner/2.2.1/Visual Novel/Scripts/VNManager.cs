@@ -17,7 +17,7 @@ namespace Yarn.Unity.Example
 public class VNManager : DialogueViewBase
     {
 		[SerializeField] DialogueRunner runner;
-
+		//public YarnProject yarnProject;
 		public SceneChanger SceneChanger;
 
 		[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
@@ -50,8 +50,9 @@ public class VNManager : DialogueViewBase
 
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
 		string startNodeManually;
+		bool YarnProjectLoaded;
 		void Awake () {
-
+			YarnProjectLoaded = false;
 
 			//Inicializa el startNode
 			if (PlayerPrefs.GetString("nodeSaved").Length > 1)
@@ -59,7 +60,7 @@ public class VNManager : DialogueViewBase
 				Debug.Log("entra en el getstring");
 				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
 				startNodeManually = PlayerPrefs.GetString("nodeSaved");
-
+				
 			}
 			else
 			{
@@ -113,10 +114,23 @@ public class VNManager : DialogueViewBase
 				loadAudio.AddRange( allAudioInResources );
 			}
 		}
-		private void Start()
+		private void Update()
+		{
+			if (YarnProjectLoaded == false) 
+			{
+				if (runner.yarnProject != null)
+				{
+					YarnProjectLoaded=true;
+					runner.StartDialogue(startNodeManually);
+				}
+
+			}
+			
+		}
+        private void Start()
 		{
 			Debug.Log(startNodeManually);
-			runner.StartDialogue(startNodeManually);
+			
 		}
 		#region YarnCommands
 
@@ -207,7 +221,9 @@ public class VNManager : DialogueViewBase
 		{
 			Debug.Log("Entra en go to minigame");
 			Debug.Log(nombreCliente);
-			PlayerPrefs.SetString("clienteActual", nombreCliente);
+			PlayerPrefs.SetString("clienteActual", nombreCliente); 
+			Debug.Log(runner.CurrentNodeName);
+			PlayerPrefs.SetString("currentMinigame", runner.CurrentNodeName);
 			SceneChanger.nextOrder = nombreCliente;
 			//Se llama con PlayerPrefs.GetString("clienteActual");
 

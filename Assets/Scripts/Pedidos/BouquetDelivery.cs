@@ -9,7 +9,6 @@ public class BouquetDelivery : MonoBehaviour
 
     [Header("PopUp")]
     public GameObject PopUp;
-
     public GameObject FlowersManager;    
     public GameObject OrdersManager;
     public int puntos = 0;
@@ -88,7 +87,8 @@ public class BouquetDelivery : MonoBehaviour
             {
                 PlayerPrefs.SetString("resultadoMinijuego", "bien");
             }
-            
+            //Debug.Log(puntos);
+            OrdersManager.GetComponent<SceneChanger>().changeScene("VisualNovel");
         }
     }
 

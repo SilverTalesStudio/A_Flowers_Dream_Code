@@ -5,9 +5,9 @@ position: -612,-485
 //declarar variables que se vayan globales q se vayan a repetir durante toda la historia
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<jump Lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
-title: Lunes_sem1
+title: Sophie_lunes_sem1
 position: -678,-304
 ---
 // set fondo de CALLE
@@ -111,9 +111,16 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
 // Audio [CAMPANITAS FLORISTERÍA] 
 <<Hide {$name}>>
 <<wait 2.0>>
-<<Fade black 1.0 0.0 2.0>>
+<<jump Ethan_lunes_sem1>>
+===
+title: Ethan_lunes_sem1
+position: -678,-304
+---
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene floristeria_placeholder>>
+<<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 
 El olor a polvo y a cerrado es lo primero que me golpea al cruzar la puerta. Los antiguos propietarios me dijeron que llevaba un par de meses cerrada antes de que me la vendieran.
@@ -340,7 +347,7 @@ position: -688,-141
 <<set $name to get_player_name()>>
 <<Scene floristeria_placeholder>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 
 {$name}: "Aquí tienes"
 //Saltos a las diferentes ramas
@@ -521,7 +528,7 @@ position: -125,-234
 title: Salida_minijuego_Allan_miercoles_sem1
 position: -118,-144
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
 <<Act Allan sprt_allan_placeholder right bottom015 white>>
@@ -629,7 +636,7 @@ position: -139,238
 title: Salida_minijuego_Sagrario_miercoles_sem1
 position: -138,341
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
@@ -999,7 +1006,7 @@ position: 430,-112
 title: Salida_minijuego_Sophie_jueves_sem1
 position: 426,-38
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 "Aquí tienes."
@@ -1162,7 +1169,7 @@ position: 422,273
 title: Salida_minijuego_Pietro_jueves_sem1
 position: 424,345
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1481,7 +1488,7 @@ position: 976,-214
 title: Salida_minijuego_Ethan_viernes_sem1
 position: 975,-140
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 //<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
@@ -1662,7 +1669,7 @@ position: 976,205
 title: Salida_minijuego_Sophie_viernes_sem1
 position: 978,287
 ---
-<<set $resultado to "bien">>
+<<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Sophie sprt_sophie_placeholder right bottom015 white>>
