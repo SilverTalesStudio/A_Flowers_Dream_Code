@@ -14,7 +14,8 @@ public class DragAndDrop : MonoBehaviour
     public string fname;
     public string fcolor;
     public string ffeeling;
-    public bool isActivated = true;
+    public string fav;
+    public string hate;
     private Quaternion startRotation;
     private Vector3 startScale;
     private Vector3 mousePos;
@@ -96,39 +97,6 @@ public class DragAndDrop : MonoBehaviour
                 {
                     FlowersManager.GetComponent<FlowersManager>().AddFlowers(gameObject.name);
                 }
-
-                // ENVIO DE VARIABLES A VN
-
-                //FLOR FAVORITA U ODIADA
-                if (fname == "FavPersonajePedido")
-                {
-                    //Sumar a la variable comunicada con VN
-                }
-                else if (fname == "HatePersonajePedido")
-                {
-                    //Restar a la variable comunicada con VN
-                }
-
-                //COLOR AFIN O NO
-                if (fcolor == "ColorAfinFlorPedido1" || fcolor == "ColorAfinFlorPedido2")
-                {
-                    //Sumar a la variable comunicada con VN
-                }
-                else if (fcolor == "ColorNoAfinPedido")
-                {
-                    //Restar a la variable comunicada con VN
-                }
-
-                //SENTIMIENTO AFIN O NO
-                if (ffeeling == "SentimientoFlorPedido1" || ffeeling == "SentimientoFlorPedido2")
-                {
-                    //Sumar a la variable comunicada con VN
-                }
-                else if (ffeeling == "SentimientoNoAfinPedido")
-                {
-                    //Restar a la variable comunicada con VN
-                }
-
             }
         }
       
