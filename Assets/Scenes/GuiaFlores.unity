@@ -883,6 +883,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerCol: {fileID: 1303634109}
   ramoCol: {fileID: 2026381930}
+  FlowersList: {fileID: 0}
+  panel: {fileID: 0}
+  Flist: {fileID: 0}
+  FlowersManager: {fileID: 0}
+  fname: 
+  fcolor: 
+  ffeeling: 
+  isActivated: 1
 --- !u!61 &1303634109
 BoxCollider2D:
   m_ObjectHideFlags: 0
