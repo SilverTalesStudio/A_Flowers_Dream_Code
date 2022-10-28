@@ -6,16 +6,23 @@ using Yarn.Unity;
 public class Planes_Finde
 {
     
-    public (bool isTherePlan, bool isLocked) Plan_Ethan;
-    public (bool isTherePlan, bool isLocked) Plan_Sophie;
-    public (bool isTherePlan, bool isLocked) Plan_Allan;
+    public bool Plan_Ethan_isTherePlan;
+    public bool Plan_Ethan_isLocked;
+    public bool Plan_Sophie_isTherePlan;
+    public bool Plan_Sophie_isLocked;
+    public bool Plan_Allan_isTherePlan;
+    public bool Plan_Allan_isLocked;
 
-    public Planes_Finde(bool isP_E, bool isP_E_Locked, bool isP_S, bool isP_S_Locked, bool isA_E, bool isA_E_Locked)
+    public Planes_Finde(bool isP_E, bool isP_E_Locked, bool isP_S, bool isP_S_Locked, bool isP_A, bool isP_A_Locked)
     {
+        this.Plan_Ethan_isTherePlan=isP_E;
+        this.Plan_Ethan_isLocked=isP_E_Locked;
+        this.Plan_Sophie_isTherePlan = isP_S;
+        this.Plan_Sophie_isLocked = isP_S_Locked;
+        this.Plan_Allan_isTherePlan = isP_A;
+        this.Plan_Allan_isLocked = isP_A_Locked;
 
-        this.Plan_Ethan = (isP_E , isP_E_Locked);
-        this.Plan_Sophie = (isP_S, isP_S_Locked);
-        this.Plan_Allan = (isA_E, isA_E_Locked);
+
         createJSONPlanes();
     }
 
@@ -31,14 +38,14 @@ public class Planes_Finde
     {
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Sophie.isTherePlan;
+        return planes.Plan_Sophie_isTherePlan;
     }
     [YarnFunction("is_Sophie_Plan_Locked")]
     public static bool isSophiePlanLocked()
     {
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Sophie.isLocked;
+        return planes.Plan_Sophie_isLocked;
     }
 
     //Allan
@@ -47,14 +54,17 @@ public class Planes_Finde
     {
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Allan.isTherePlan;
+        Debug.Log(planes.Plan_Allan_isTherePlan);
+        return planes.Plan_Allan_isTherePlan;
     }
     [YarnFunction("is_Allan_Plan_Locked")]
     public static bool isAllanPlanLocked()
     {
+
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Allan.isLocked;
+        Debug.Log(planes.Plan_Allan_isLocked);
+        return planes.Plan_Allan_isLocked;
     }
 
     //Ethan
@@ -63,13 +73,15 @@ public class Planes_Finde
     {
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Ethan.isTherePlan;
+        Debug.Log(planes.Plan_Allan_isTherePlan);
+        return planes.Plan_Ethan_isTherePlan;
     }
     [YarnFunction("is_Ethan_Plan_Locked")]
     public static bool isEthanPlanLocked()
     {
         string json = PlayerPrefs.GetString("Planes");
         Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Plan_Ethan.isLocked;
+        Debug.Log(planes.Plan_Allan_isLocked);
+        return planes.Plan_Ethan_isLocked;
     }
 }

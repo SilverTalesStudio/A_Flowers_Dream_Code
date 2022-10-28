@@ -2,6 +2,7 @@
 tags:
 position: -612,-485
 ---
+<<HideAll>>
 //declarar variables que se vayan globales q se vayan a repetir durante toda la historia
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -10,6 +11,7 @@ position: -612,-485
 title: Sophie_lunes_sem1
 position: -678,-304
 ---
+<<HideAll>>
 // set fondo de CALLE
 <<Scene bg_calle_placeholder>>
 
@@ -72,7 +74,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Cuando termina de escribir mira una última vez la pantalla y lo guarda en su pantalón. Nuevamente, fija su mirada en la mía. 
     Sophie: Suspira. “¿Sabes qué? No debería estar perdiendo el tiempo en estas tonterías y por las prisas que llevabas, supongo que tú tampoco.” 
     <<Move Sophie offright bottom015 1.0>>
-    <<wait 2.0>>
+    <<wait 1.5>>
     <<Hide Sophie>>
     ¿Prisas yo?... 
     ¡Es verdad, tengo que abrir la floristería! Si ya iba tarde por dormirme, después de esto no quiero ni mirar qué hora es.  
@@ -100,7 +102,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Cuando termina de escribir mira una última vez la pantalla y lo guarda en su pantalón. Nuevamente, fija su mirada en la mía. 
     Sophie: Suspira. “Mira, yo me tengo que ir ya, que suficiente tiempo ya he perdido aquí. Además, tenías prisa para ir a algún sitio o algo así ¿no?, pues eso.”
     <<Move Sophie offright bottom015 1.0>>
-    <<wait 1.0>>
+    <<<wait 1.5>>
     <<Hide Sophie>>
     Antes de que le pueda responder, empieza a andar y me pasa de largo. Me volteo y veo su espalda desaparecer entre la multitud. 
     Al volver a mirar al frente, vuelvo a ver en la distancia el letrero de mi floristería.  
@@ -116,6 +118,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
 title: Ethan_lunes_sem1
 position: -678,-304
 ---
+<<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 // set Escenario FLORISTERÍA - MAÑANA 
@@ -138,7 +141,7 @@ Una alegría hoy para compensar el desastre de mañana que llevo.
 Vale, ahora toca ponerse manos a la obra. Tengo que tener la floristería lista para la tarde, así que ¡allá voy!  
 
 <<Fade black 0.0 1.0 2.0>>
-
+<<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 
 // set FLORISTERÍA - TARDE  
@@ -324,7 +327,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     Baja la mirada al suelo.  
     Chico: “Creo que lo mínimo que puedo hacer para compensarte es comprarte un ramo”   
     Sin decir nada, paso a su lado mirándole de soslayo y me sitúo detrás del mostrador para poder atenderle.
-    Antes de poder preguntarlequé quiere, se pone delante mía y con una mirada sincera, la primera que veo en sus ojos desde su llegada me dice:  
+    Antes de poder preguntarlequé quiere, se pone delante mía y con una mirada sincera, la primera que veo en sus ojos desde su llegada me dice  
     Chico: “Gracias por ayudarme. Significa mucho para mí”  
     Me sonríe con timidez y rápidamente desvía la mirada. No puedo evitar mi incredulidad. No esperaba este agradecimiento tan sincero. No se parece nada al anterior, cuando me ha abrazado por sorpresa.
     Sin embargo, tan rápido como llegó, esa sinceridad abandona su rostro y es sustituida por su carácter romántico. Apoyando su brazo en el mostrador y acercándose a mi cara coquetamente, realiza su pedido.
@@ -333,6 +336,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
 title: Minijuego_Ethan_lunes_sem1
 position: -679,-228
 ---
+<<HideAll>>
 
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Ethan_lunes_sem1>>
@@ -343,6 +347,7 @@ position: -679,-228
 title: Salida_minijuego_Ethan_lunes_sem1
 position: -688,-141
 ---
+<<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene floristeria_placeholder>>
@@ -367,9 +372,12 @@ position: -688,-141
 title: Minijuego_bien_Ethan_lunes_sem1
 position: -521,-42
 ---
+<<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Scene floristeria_placeholder>>
 <<Add_npc_likeability NPC_ethan 3>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 Chico: “¡Son preciosas! A Elizabeth le van a encantar” 
 Suelto un suspiro de alivio al ver que mi primer pedido ha sido un éxito. No tenía por qué estar tan [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/]. 
@@ -385,8 +393,11 @@ Con el pedido en las manos, me da el dinero y se dispone a irse cuando...
 title: Minijuego_regular_Ethan_lunes_sem1
 position: -705,-48
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Add_npc_likeability NPC_ethan 1>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 Chico: “Son muy bonitas, aunque debo admitir que esperaba algo más de ti”  
@@ -398,9 +409,12 @@ Sonrío tímidamente ante sus palabras. Siempre habrá una próxima vez y eso si
 title: Minijuego_mal_Ethan_lunes_sem1
 position: -885,-51
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan -3>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Chico sprt_ethan_placeholder right bottom015 white>>
 ...  
 Chico: “Esperaba no tener que decirte esto, pero creo que este ramo no me va a ayudar a conquistar a mi próxima cita. Menos mal que dispongo de mi amplia belleza”  
@@ -414,6 +428,12 @@ Con cierta decepción, cojo el dinero del pedido. Está a punto de darse la vuel
 title: Fin_ramas_minijuego_Ethan_lunes_sem1
 position: -684,46
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Chico sprt_ethan_placeholder right bottom015 white>>
 Chico: “¡Ah! Antes de irme. No he podido evitar fijarme en que tienes aquí el móvil” 
 Con el dedo señala el móvil que se encuentra encima del mostrador y que antes estaba intentando conseguir con tanta desesperación. 
 Asiento con la cabeza mientras le miro con desconfianza. Creo que sé lo que va a pasar.  
@@ -427,13 +447,20 @@ Chico: “No te olvides de mí [select value={$gender} M="precioso" F="preciosa"
 //[CAMPANITAS FLORISTERÍA] 
 {$name}: “¿Adiós?” 
 <<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<jump Lunes_calle_noche_sem1>>
 ===
 title: Lunes_calle_noche_sem1
 position: -693,141
 ---
-// set fondo de CALLE - NOCHE
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle_noche_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+
 Mientras recorro la calle de vuelta a casa, siento el dolor de mis pies por las continuas horas de trabajo.  
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Suspiro. Mira que hoy no ha sido un día muy concurrido, pero estoy [select value={$gender} M="cansadísimo" F="cansadísima" NB="cansadísime"/]. No he podido parar de limpiar y retocar la floristería para dejarla en el mejor estado posible.”  
@@ -441,17 +468,19 @@ Encima ya no es solo que hayan venido pocos clientes, sino los extraños acontec
 El choque con esa mujer por la mañana y la extraña situación producida en la floristería por la tarde. Vuelvo a suspirar mientras miro el cielo estrellado.  
 {$name}: “Solo espero que estos siguientes días sean mejor y que más clientes vengan a la tienda”  
 <<HideAll>>
-<<Fade black 0.0 1.0 3.0>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<jump Miercoles_sem1>>
 ===
 title: Miercoles_sem1
 position: -120,-314
 ---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Fade black 1.0 0.0 3.0>>
-// set fondo de CALLE - MÑN
-<<Scene bg_calle_placeholder>>
+
 Es temprano y aun así la calle comercial ya está ajetreada. 
 Llena de trabajadores que al igual que yo están preparando sus puestos y tiendas para hoy, esperando sacar provecho al día. En cambio, yo no creo que vaya a tener esa suerte.  
 Anteayer fue un desastre, llegué tarde y no pude abrir todo el día como quería, y ayer no vino casi gente a comprar. 
@@ -462,6 +491,7 @@ Me paro frente a la puerta de mi floristería, y el reflejo me devuelve una mira
 Mis manos golpean ambos mofletes a la vez, no con mucha fuerza, solo la suficiente para sacarme de esa espiral de pensamiento. 
 Nada de venirse abajo ya, hoy es un nuevo día así que a por él. 
 <<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
 //[CAMPANITAS FLORISTERÍA]  
 //FLORISTERÍA - MAÑANA 
 
@@ -519,6 +549,7 @@ Cliente: “¿Sabes qué? Me acabo de acordar de otras flores que también quer�
 title: Minijuego_Allan_miercoles_sem1
 position: -125,-234
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Allan_miercoles_sem1>>
 
@@ -528,10 +559,14 @@ position: -125,-234
 title: Salida_minijuego_Allan_miercoles_sem1
 position: -118,-144
 ---
+<<HideAll>>
 <<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+//<<Act Cliente sprt_allan_placeholder right bottom015 white>>
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
 <<jump Minijuego_bien_Allan_miercoles_sem1>>
@@ -548,6 +583,13 @@ position: -118,-144
 title: Minijuego_bien_Allan_miercoles_sem1
 position: -123,-48
 ---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Cliente sprt_allan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
 
 Cliente: “¡Es perfecto! Me encanta.” 
@@ -564,6 +606,13 @@ Player: “Adiós.”
 title: Minijuego_regular_Allan_miercoles_sem1
 position: 45,-49
 ---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Cliente sprt_allan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 Cliente: “Está bien. Gracias” 
 {$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
@@ -576,6 +625,12 @@ Cliente: “¡Adiós!”
 title: Minijuego_mal_Allan_miercoles_sem1
 position: -289,-54
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Cliente sprt_allan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
 Claramente no es mi día, no me ha quedado el ramo nada bien para lo que tenía pensado. Me da tanta vergüenza que le entrego el ramo sin mirarle directamente a los ojos. 
 Cliente: “Ah sí, gracias...” 
@@ -591,13 +646,20 @@ Cliente: “Yo me tengo que ir ya pero ya, así que no te quito más tiempo.”
 title: Fin_ramas_minijuego_Allan_miercoles_sem1
 position: -120,41
 ---
-<<Move Cliente off right bottom015 2.0>>
-<<Hide Cliente>>
+<<HideAll>>
+
 <<jump Sagrario_miercoles_sem1>>
 ===
 title: Sagrario_miercoles_sem1
 position: -129,149
 ---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
 //Campanitas
 Primer cliente del día terminado. Ha sido muy majo la verdad, no pensé que fuera a encontrar a otro fan de las flores por aquí, no es un hobby muy común que digamos. 
 Bueno, voy a ponerme terminar de colocar la recepción antes de que entre otro cliente. 
@@ -621,12 +683,14 @@ Anciana: “Sí, hola. La verdad es que no sé mucho de este tema... Así que no
 {$name}: “No se preocupe, yo me ocupo. ¿Qué tal si me dice para qué quiere el ramo y yo le hago un ramo acorde a su situación?” 
 Anciana: “Mmm... Vale está bien”
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Minijuego_Sagrario_miercoles_sem1>>
 ===
 title: Minijuego_Sagrario_miercoles_sem1
 position: -139,238
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sagrario_miercoles_sem1>>
 
@@ -636,10 +700,11 @@ position: -139,238
 title: Salida_minijuego_Sagrario_miercoles_sem1
 position: -138,341
 ---
+<<HideAll>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-<<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+//<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+//<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -657,6 +722,14 @@ position: -138,341
 title: Minijuego_bien_Sagrario_miercoles_sem1
 position: 38,445
 ---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 3>>
 No me ha dado mucha información. Es más, lo que me ha dicho parecía que fuera para enmascarar el motivo real. Pero bueno creo que lo he hecho muy bien para la información que tenía. 
 Le muestro el resultado con toda mi ilusión. 
@@ -675,13 +748,21 @@ Anciana: “No, muchas gracias a ti por esto” Señala el ramo.
 Felices [select value={$gender} M="ambos" F="ambas" NB="ambos"/], la anciana se aleja del mostrador y se despide con la mano desocupada. 
 Anciana:“Adiós y mucha suerte para el resto del día” 
 {$name}: “Adiós, y que tenga un buen día” 
-<<Move Anciana offright bottom015 2.0>>
+<<Move Anciana offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Anciana>>
 <<jump Fin_ramas_minijuego_Sagrario_miercoles_sem1>>
 ===
 title: Minijuego_regular_Sagrario_miercoles_sem1
 position: -321,449
 ---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 1>>
 El pedido era un poco ambiguo, como si no me quisiera contar el motivo real, pero creo que he conseguido hacer un ramo decente. 
 Sonriente y con esperanza de cumplir sus expectativas, le entrego el ramo. 
@@ -698,13 +779,21 @@ Anciana: “Gracias”
 Anciana: “Vendré otro día, creo que le tienes buena mano a esto [select value={$gender} M="niño" F="niña" NB="niñe"/]”  
 {$name}: "La estaré esperando entonces. Hasta otro día” 
 Anciana: “Adiós” 
-<<Move Anciana offright bottom015 2.0>>
+<<Move Anciana offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Anciana>>
 <<jump Fin_ramas_minijuego_Sagrario_miercoles_sem1>>
 ===
 title: Minijuego_mal_Sagrario_miercoles_sem1
 position: -140,446
 ---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario -3>>
 La información que me ha dado era bastante genérica así que puede que no le guste en absoluto, espero tener suerte y que sea lo que esperaba. 
 Extiendo mi mano con el ramo para acercárselo.  
@@ -722,7 +811,8 @@ Rebusco [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] las vu
 Anciana: “Gracias, ten un buen día [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 {$name}: “Adiós e igualmente, tenga un buen día usted también” 
 Despido a la señora y en cuanto sale de la tienda me llevo las manos la cara. 
-<<Move Anciana offright bottom015 2.0>>
+<<Move Anciana offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Anciana>>
 {$name}: “Ahgg no debería haberla pifiado con este pedido” 
 Deslizo mis manos por la cara y después las planto en la repisa. Miro abajo y suelto un gran suspiro.
@@ -732,14 +822,20 @@ Deslizo mis manos por la cara y después las planto en la repisa. Miro abajo y s
 title: Fin_ramas_minijuego_Sagrario_miercoles_sem1
 position: -135,547
 ---
-<<Fade black 0.0 1.0 2.0>>
 <<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<jump Pietro_miercoles_sem1>>
 ===
 title: Pietro_miercoles_sem1
 position: -143,644
 ---
+<<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
 Las campanillas de la floristería suenan mientras despido con la mano al último cliente que acabo de atender. Cuando la puerta se cierra, todo el cansancio cae sobre mí.  
 Suspiro. 
 Por suerte parece que hoy unas cuantas personas más se han animado a entrar en la floristería. Incluso al inicio de la tarde ha habido un momento en el que han coincidido varios clientes.
@@ -841,19 +937,24 @@ No puedo evitar sobresaltarme por su acción abrupta. ¿Se habrá dado cuenta de
 Con cierta vergüenza, le miro de reojo para intentar detectar molestia o enfado en su expresión, pero esta es indiferente. 
 Entonces Pietro se da la vuelta y marcha hacia la puerta de la floristería sin decir nada.  
 Con la puerta ya abierta de par en par, gira la cabeza y mirándome directamente a los ojos se despide asintiendo. La puerta se cierra y veo por la ventana como se marcha con la vista en el cielo. 
-<<Move Pietro offright bottom015 2.0>>
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Pietro>>
 Regreso al mostrador con paso lento. Debo admitir que me siento algo [select value={$gender} M="decepcionado" F="decepcionada" NB="decepcionade"/] por el hecho de que al final no decidió comprar la amapola. Sin embargo, la curiosidad por este pintor tan misterioso es mayor.   
 {$name}: “Que chico más peculiar”  
 Me pregunto si volverá a venir. ¿Comprará algo en ese caso?  
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Jueves_sem1>>
 ===
 title: Jueves_sem1
 position: 432,-314
 ---
+<<HideAll>>
 //CALLE
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Scene bg_calle_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 Después de varios días yendo deprisa y corriendo se agradece una mañana tranquila. 
@@ -865,12 +966,16 @@ Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo
 Muchas calles peatonales y bien cuidadas, por lo que no hay ajetreo de ruido por coches además de lo que contaminan. 
 Doy la vuelta a la esquina y tras la terraza de la primera cafetería de la calle, diviso el reconocible logo de la cadena de supermercados. Esquivo las mesas del establecimiento y accedo a mi destino. 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<jump Allan_jueves_sem1>>
 ===
 title: Allan_jueves_sem1
 position: 432,-267
 ---
+<<HideAll>>
 //SUPERMERCADO - MAÑANA 
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Scene tienda_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 Las puertas automáticas me permiten el paso y me golpea un sentimiento que jamás pensé que se daría en este tipo de tiendas. Una sensación de cálida bienvenida me abraza. 
@@ -934,13 +1039,13 @@ Le cojo del brazo para que para de hablar.
 -> {$name}: “Me encantaría ir”
     //[1][plan lockeado ++] 
     <<Add_npc_likeability NPC_allan 2>>
-    <<Update_Plans Allan, true, true>>
+    <<Update_Plans Allan true true>>
     Allan: “¡Genial! Entonces te veo el finde. Acordamos los detalles por el móvil, ¿vale?” 
     {$name}: “¡Perfecto!” 
 -> {$name}: “Quiero ir, pero aún no te puedo confirmar nada, el viernes te aviso ¿vale?” 
     //[2][plan desbloqueado +]
     <<Add_npc_likeability NPC_allan 1>>
-    <<Add_npc_likeability  Allan, true, false>>
+    <<Update_Plans Allan true false>>
     Allan: “Vale, pues avisame cuando lo sepas” 
     {$name}: “Claro, no te preocupes” 
 -> {$name}: “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado” 
@@ -951,23 +1056,29 @@ Voz: ¡¡ALLAN!! ¡¿Quieres venir de una vez?!”
 Allan: “Se ve que ya no puedo retrasarlo más. Mucha suerte con tus compras y vamos hablando.” 
 Se despide mientras corre a donde le llaman 
 Allan: “¡Mucha suerte con tu turno!” 
-<<Move Allan offright bottom015 2.0>>
+<<Move Allan offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Allan>>
 Como se aleja creo que no me escuchó. 
 Tras este encuentro termino la compra sin problemas y vuelvo a la floristería.
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<Hide All>> 
 <<jump Sophie_jueves_sem1>>
 ===
 title: Sophie_jueves_sem1
 position: 433,-187
 ---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Scene bg_calle_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. 
 Se me olvidó colocar un aviso, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
 
 No puede ser .
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 
 -> {$name}: “Ejem, si quieres que te atienda vas a tener que apartarte para que pueda abrir” 
 -> {$name}: “Perdón, si te apartas un segundo puedo abrir y te atiendo” 
@@ -980,6 +1091,7 @@ Borde: “¿En serio? ¿Tú de nuevo? Ya entiendo por qué estaba cerrada la tie
 Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor” 
 
 <<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
 //[CAMPANITAS] 
 <<Scene floristeria_placeholder>>
 <<Fade black 1.0 0.0 1.0>>
@@ -991,12 +1103,14 @@ Resoplo y muestro una sonrisa forzada. Claramente practicada para utilizar con c
 {$name}: “Bienvenida a Flower's Dream, ¿cuál es tu pedido?” 
 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Minijuego_Sophie_jueves_sem1>>
 ===
 title: Minijuego_Sophie_jueves_sem1
 position: 430,-112
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sophie_jueves_sem1>>
 
@@ -1006,7 +1120,11 @@ position: 430,-112
 title: Salida_minijuego_Sophie_jueves_sem1
 position: 426,-38
 ---
+<<HideAll>>
 <<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 "Aquí tienes."
@@ -1027,7 +1145,12 @@ position: 426,-38
 title: Minijuego_bien_Sophie_jueves_sem1
 position: 238,44
 ---
+<<HideAll>>
 <<Add_npc_likeability NPC_sophie 3>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
 Borde: “...” 
 {$name}: “¿No te gusta?” 
@@ -1039,7 +1162,12 @@ Ni para decir que algo le gusta lo puede decir sin faltar
 title: Minijuego_regular_Sophie_jueves_sem1
 position: 427,41
 ---
+<<HideAll>>
 <<Add_npc_likeability NPC_sophie 1>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
 Borde: “Está decente al menos” 
 {$name}: Sé que no es perfecto, pero tampoco hacía falta ponerse así. Bueno, el caso es terminar con esto. 
@@ -1048,7 +1176,12 @@ Borde: “Está decente al menos”
 title: Minijuego_mal_Sophie_jueves_sem1
 position: 625,42
 ---
+<<HideAll>>
 <<Add_npc_likeability NPC_sophie -3>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Borde sprt_sophie_placeholder right bottom015 white>>
 Borde: “Agh no sé ni que pensar. ¿Y se supone que eres una florista de verdad? 
 {$name}: “Lo s-” 
@@ -1059,8 +1192,15 @@ Borde: Refunfuñando por lo bajo “Uff, que tenga que pagar por esto”
 title: Fin_ramas_minijuego_Sophie_jueves_sem1
 position: 423,125
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Borde sprt_sophie_placeholder right bottom015 white>>
 Borde: “Toma, es el dinero justo así que no me des vueltas” 
-<<Move Borde offright bottom015 2.0>>
+<<Move Borde offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Borde>>
 Se aleja con prisas antes de que pueda decirle nada. 
 
@@ -1068,6 +1208,7 @@ Se aleja con prisas antes de que pueda decirle nada.
 
 Si esto siempre va a ser así, espero que no vuelva. 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 ...
 <<jump Pietro_jueves_sem1>>
@@ -1075,6 +1216,10 @@ Si esto siempre va a ser así, espero que no vuelva.
 title: Pietro_jueves_sem1
 position: 422,203
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
 Un par de personas más entran después de la tormenta que ha sido la chica borde, pero ahora estoy [select value={$gender} M="solo" F="sola" NB="sole"/] de nuevo, así que me pongo con el móvil para pasar el rato. 
 
@@ -1082,6 +1227,7 @@ Ventajas de ser mi [select value={$gender} M="propio jefe" F="propia jefa" NB="p
 
 Tampoco me da tiempo a estar mucho con él porque en cuanto escucho las campanas de la entrada, guardo el teléfono y sonrío para atender al nuevo comprador. 
 //[CAMPANITAS]  
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 Para mi gran sorpresa, la persona que acaba de entrar en la floristería es un reciente conocido. Un “cliente” muy artístico que vino ayer mismo a la tienda, aunque no sé si debería de llamarle así. 
 El enigmático y peculiar artista, Pietro. Al igual que ayer, viene con su característica ropa holgada y sus zuecos. Un momento... ¿Eso que trae bajo su brazo es un taburete plegable?  
@@ -1118,11 +1264,13 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Con una mirada complaciente y la cabeza ligeramente erguida, veo como mis palabras tienen un efecto inmediato en Pietro. 
     En un instante, Pietro se pone en pie, recoge todas sus pertenencias y con grandes zancadas avanza a la puerta de la floristería. Antes de salir, para dramáticamente.  
     Pietro: “Volveré y la próxima vez tendrás que aceptarme. La belleza es del mundo y no tiene dueño. Las cadenas que impones sobre ella solo me producen tristeza”  
-    <<Move Pietro offright bottom015 2.0>>
+    <<Move Pietro offright bottom015 1.0>>
+    <<wait 1.5>>
     <<Hide Pietro>>
     //[CAMPANITAS]  
     Me quedo [select value={$gender} M="perplejo" F="perpleja" NB="perpleje"/] ante sus palabras tan profundas. Definitivamente es un hombre de artes.  
     <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
     <<HideAll>>
     <<jump Viernes_sem1>>
 -> {$name}: “Ánimo con el dibujo Pietro.” Espero poder ver cómo ha quedado cuando termine.”
@@ -1133,6 +1281,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Suspiro [select value={$gender} M="agotado" F="agotada" NB="agotade"/] mientras consulto la hora.  
     {$name}: “Todavía queda mucho día por delante”  
     <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
     <<Fade black 1.0 0.0 2.0>>
     //Fades para indicar cambio de dia a tarde
     //FLORISTERIA – TARDE  
@@ -1154,12 +1303,14 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Sonrío [select value={$gender} M="extasiado" F="extasiada" NB="extasiade"/]. Parece que mis flores al final han tenido cierto efecto en él, ¿eh?  
     {$name}: “¿Qué es lo que quieres exactamente?”  
     <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
     <<HideAll>>
     <<jump Minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_Pietro_jueves_sem1
 position: 422,273
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Pietro_jueves_sem1>>
 
@@ -1169,8 +1320,12 @@ position: 422,273
 title: Salida_minijuego_Pietro_jueves_sem1
 position: 424,345
 ---
+<<HideAll>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 {$name}: "Aquí tienes."
@@ -1191,6 +1346,12 @@ position: 424,345
 title: Minijuego_bien_Pietro_jueves_sem1
 position: 427,423
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro 3>>
 
 Pietro: “Estoy sorprendido por la magnífica combinación de colores que has logrado. No puedo esperar a llegar a mi casa para pintarlas”  
@@ -1204,6 +1365,12 @@ Pietro: “Volveré. Espero que me vuelvas a dejar pintar tus flores”
 title: Minijuego_regular_Pietro_jueves_sem1
 position: 617,431
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro 1>>
 {$name}: “¿Qué te parece?”  
 
@@ -1215,6 +1382,12 @@ Suspiro de alivio. No ha sido un éxito, pero ha pasado el corte. Me esforzaré 
 title: Minijuego_mal_Pietro_jueves_sem1
 position: 238,423
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro -3>>
 ...  
 
@@ -1232,16 +1405,28 @@ Sus palabras me reconfortan un poco.
 title: Fin_ramas_minijuego_Pietro_jueves_sem1
 position: 424,514
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
 Con todas sus pertenencias guardadas, Pietro se despide amablemente y abandona la floristería.  
 
 {$name}: “Gracias por todo. ¡Hasta otro día!” 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Viernes_sem1>>
 ===
 title: Viernes_sem1
 position: 977,-368
 ---
+<<HideAll>>
+
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
 <<Fade black 1.0 0.0 2.0>>
 //CALLE - DÍA  
 <<Scene bg_calle_placeholder>>
@@ -1253,7 +1438,7 @@ Mis pies toman las decisiones por mí. Ya conocen el camino a su destino. Saludo
 
 Dueño: “¡Igualmente {$name}! Que tengas un buen día”  
 
-Es cierto que amo mi trabajo en la floristería y alegrar a los clientes, pero noto que necesito un merecido descanso después de todo el ajetreo de esta semana/:/ la mudanza, la apertura,…  
+Es cierto que amo mi trabajo en la floristería y alegrar a los clientes, pero noto que necesito un merecido descanso después de todo el ajetreo de esta semana, la mudanza, la apertura,…  
 
 Ay. Parece mentira lo rápido que me he acostumbrado a esta ciudad y no solo eso, también a la rutina. 
 Mas no me resulta raro, a fin de cuentas, cuando te sientes a gusto y haces lo que te gusta todo se vuelve más ameno. 
@@ -1270,14 +1455,18 @@ Sé que se preocupó mucho por mí cuando pasé por toda aquella situación. Dur
 Mis ojos cristalinos se posan por inercia en el cielo despejado. Los echo a todos mucho de menos, pero sé que necesitaba alejarme durante un tiempo. 
 ¿Qué tal estará Leah? ¿Cómo se encontrarán todos en casa? Acelero el paso con la esperanza de que llegar a la floristería me libere de esta tristeza y melancolía.  
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Ethan_viernes_sem1>>
 ===
 title: Ethan_viernes_sem1
 position: 977,-297
 ---
-<<Scene floristeria_placeholder>>
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “¡Adiós! Que tenga un buen día”  
 
@@ -1291,6 +1480,7 @@ Me muerdo el labio [select value={$gender} M="indeciso" F="indecisa" NB="indecis
 <<Shake {$name}>>
 {$name}: “AHHHH”  
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 Una terrible punzada de dolor me golpea la cabeza, no puedo ver nada, solo puntos negros que imposibilitan mi visión. 
 Siento como mi cuerpo se tambalea y comienza su descenso al suelo, pero me encuentro tan [select value={$gender} M="desorientado" F="desorientada" NB="desorientade"/] que no puedo hacer nada. Mi cuerpo no responde. 
 Estiro el brazo con la esperanza de poder agarrar algo que detenga mi caída. Cuando creo que va a llegar lo inevitable y que más dolor va a golpear sin piedad mi cuerpo, alguien me ayuda. 
@@ -1341,7 +1531,7 @@ Ethan: “Uff. Menos mal que no te he roto nada. Parece que solo te va a salir u
 
 Esa risita... No suena muy convencida. De hecho, parece que se siente culpable de algo, pero ¿qué...?  
 
-<<wait 2.0>>  
+<<wait 1.0>>  
 
 ¡Un momento!  
 
@@ -1392,7 +1582,7 @@ Ya está, definitivamente desde este momento le voy a llamar “Eros” como el 
 ¿Tendré algo frío que poder ponerme sobre la inflamación de la frente? 
 Mientras busco entre mis pertenencias, veo por el rabillo del ojo como Ethan se cruza de brazos y se coloca con un movimiento suave de cabeza el flequillo. Ummm, debe ser un tic que tiene. 
 Ethan: “¿Es que no puedo venir simplemente a ver a una de mis personas favoritas?” 
-<<wait 2.0>>
+<<wait 1.0>>
 Ethan:“Un momento, ¿cómo es que sabes mi nombre? ¿¡Me has estado espiando!?” 
 Se acerca a mí y me apunta acusatoriamente a la cara como hice yo con él hace solo unos instantes. Por poco me mete el dedo en el ojo. Por reflejo, lo aparto con un golpecito. 
 {$name}: “Suspiro. Primero: no es por nada, pero apenas nos conocemos. Segundo: tú mismo me diste tu nombre al ponerlo en el contacto cuando metiste tú teléfono en mi móvil sin mi permiso”. 
@@ -1406,7 +1596,7 @@ Puede que me equivoque, pues de momento no hemos tenido muchas interacciones en 
 Espero que, si nuestra relación va a más, confíe en mí lo suficiente para ser él mismo. 
 A pesar de que mis pensamientos son un caos, no sé si sacarlos a la luz. ¿Qué debería de hacer? Debo de tardar mucho en contestar porque Ethan se adelanta. 
 Ethan: “¿Te he incomodado de alguna manera?” 
-PLAYER
+
 -> {$name}: “Sí, si te parece no me incomoda que cada vez que intentas hablar conmigo sea para ligar o coquetear” 
     <<Add_npc_likeability NPC_ethan -2>>
     Ethan hace una mueca ante mis palabras. Parece que he sido demasiado [select value={$gender} M="duro" F="dura" NB="dure"/] con él, pero es cierto que puede llegar a ser demasiado insistente. 
@@ -1426,7 +1616,8 @@ PLAYER
     Ethan se encuentra completamente tenso. Me mira incómodo. Claramente no quiere hablar del tema. 
     Reconozco las señales como si me estuviera mirando en un espejo. Sus manos se retuercen nerviosas sobre el mostrador. Qué vergüenza... Sin poder soportarlo, desvío la atención al suelo. 
     {$name}: “Es solo que... me recuerdas un poco a mí. Yo tampoco decía lo que pensaba y al final esconderte en ti mismo...” 
-    Oigo un ruido y levanto la cabeza para ver que ha pasado. ETHAN se ha dado la vuelta bruscamente y solo veo su espalda. Está claro que la he liado. Sacudo la cabeza ¿Por qué sigo insistiendo? Está claro que no quiere hablar más de ello. Obviamente ha sido un error, debería de cambiar de tema.
+    Oigo un ruido y levanto la cabeza para ver que ha pasado. ETHAN se ha dado la vuelta bruscamente y solo veo su espalda. Está claro que la he liado. Sacudo la cabeza ¿Por qué sigo insistiendo? 
+    Está claro que no quiere hablar más de ello. Obviamente ha sido un error, debería de cambiar de tema.
     {$name}: “Perdón, ha sido una falta de educación por mi parte asumir estas cosas cuando apenas nos conocemos. Espero que me perdones”
     Un suspiro corta el aire. Ethan se gira y coge la primera flor que se encuentra a su lado: una Agrimonia. Agradecimiento, gratitud. ¿Querrá decir algo? 
     Ethan: “Es un tema delicado, prefiero no hablar sobre ello” 
@@ -1448,9 +1639,8 @@ Me río ante sus palabras. No puedo evitar soltar una pequeña broma, pero...
 Parece que Ethan se lo ha tomado completamente en serio. 
 Con un movimiento exagerado, toma mi mano y hace una ligera reverencia.  
 Ethan: “¡Entonces decidido! Mi bella flor, ¿te gustaría ir a tomar algo conmigo este finde para conocernos mejor?” 
-PLAYER
 -> {$name}: “Por supuesto que me encantaría querido Eros, pero como amigos eh”
-    <<Update_Plans Ethan, true, true>>
+    <<Update_Plans Ethan true true>>
     <<Add_npc_likeability NPC_ethan 2>>
     Le sigo el juego y con una inclinación de cabeza acepto su invitación. Al verme, se le iluminan los ojos y siento como su presión en mi mano aumenta. 
     Está tan extasiado que no ha reparado ni en el apodo que le he puesto. 
@@ -1458,7 +1648,7 @@ PLAYER
     Me da un golpecito amistoso en el hombro. ¿Me ha llamado por mi nombre? 
 
 -> {$name}: “Ummm, me lo voy a pensar. ¿Te puedo confirmar por mensaje?”
-    <<Update_Plans Ethan, true, false>>
+    <<Update_Plans Ethan true false>>
     <<Add_npc_likeability NPC_ethan 1>>
     Veo que mis palabras le han afectado, pero rápidamente se recompone y me mira haciendo un puchero juguetón. 
     Ethan: “Vale, sin problema, pero no te olvides de mí florecita. Espero que al final te animes a quedar conmigo” 
@@ -1473,12 +1663,14 @@ PLAYER
 {$name}: “Bueno y ahora que ya está todo resuelto, ¿cuál es tu pedido?” 
 Ethan: “Cierto, es que siempre me entretienes ¿eh? Ja ja. Quiero un...” 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 //<<HideAll>>
 <<jump Minijuego_Ethan_viernes_sem1>>
 ===
 title: Minijuego_Ethan_viernes_sem1
 position: 976,-214
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Ethan_viernes_sem1>>
 
@@ -1488,9 +1680,13 @@ position: 976,-214
 title: Salida_minijuego_Ethan_viernes_sem1
 position: 975,-140
 ---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-//<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Scene floristeria_placeholder>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
 //Saltos a las diferentes ramas
 
@@ -1509,7 +1705,14 @@ position: 975,-140
 title: Minijuego_bien_Ethan_viernes_sem1
 position: 775,-57
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
+
 Ethan: “¡Está estupendo! Está claro que tengo que venir a verte para poder tener éxito en las citas” 
 Me río por su comentario internamente orgullosa por haberle entregado otro ramo perfecto. 
 {$name}: “¿Es que soy tu amuleto de la suerte?”
@@ -1519,6 +1722,12 @@ Ethan: “¡Definitivamente! Gracias a ti me van a perdonar la tardanza. Toma el
 title: Minijuego_regular_Ethan_viernes_sem1
 position: 975,-59
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 
 Ethan: “Está bien. Creo que a mi cita le va a gustar, pero no va a ser suficiente para que me perdone” 
@@ -1530,6 +1739,12 @@ Ethan: “No te preocupes [select value={$gender} M="guapo" F="preciosa" NB="gua
 title: Minijuego_mal_Ethan_viernes_sem1
 position: 1172,-63
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
 Ethan: “Ummm” 
 Ethan: “Parece que el golpe ha afectado a tu talento” 
@@ -1543,21 +1758,34 @@ Ethan: “Aquí tienes el dinero”
 title: Fin_ramas_minijuego_Ethan_viernes_sem1
 position: 975,38
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 Ethan: “Ahora sí que me voy a mi cita. ¡Deséame suerte!” 
 Ethan: “Espero que la próxima vez no se produzca ningún accidente” 
 Mi mano inconscientemente se mueve hacia el chichón. 
 {$name}: “Suspiro. Eso espero yo también”
 {$name}: “¡Hasta otro día!”
-<<Move Ethan offright bottom015 2.0>>
+<<Move Ethan offright bottom015 1.0>>
+<<wait 1.5>>
 <<Hide Ethan>>
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Sophie_viernes_sem1>>
 ===
 title: Sophie_viernes_sem1
 position: 974,125
 ---
+<<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
 Miro el reloj y veo que se acerca la hora de cerrar. Echo un vistazo bajo la repisa del mostrador y veo mi mochila, esperando a que llegue el momento de entrar en acción.
 Me palpo la frente y al tacto me duele, no tanto como antes, pero persiste. 
 En cuanto llegue a casa me voy a poner hielo en el chichón mientras veo la tele [select value={$gender} M="tumbado" F="tumbada" NB="tumbade"/] en el sofá, no tengo ganas de hacer nada más. 
@@ -1654,12 +1882,14 @@ Sigue callada, con la mirada perdida. En sus ojos se ve que están pasando mil c
     Miente. Ni siquiera intenta disimularlo.
     {$name}: “Claro, claro. Pues dime ya si quieres qué necesitas para el ramo de hoy”
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Minijuego_Sophie_viernes_sem1>>
 ===
 title: Minijuego_Sophie_viernes_sem1
 position: 976,205
 ---
+<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sophie_viernes_sem1>>
 
@@ -1669,6 +1899,8 @@ position: 976,205
 title: Salida_minijuego_Sophie_viernes_sem1
 position: 978,287
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1691,6 +1923,12 @@ position: 978,287
 title: Minijuego_bien_Sophie_viernes_sem1
 position: 981,377
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 3>>
 Sophie: “Entiendo porque a mi hermana le gustan tanto tus ramos. Son preciosos”
 {$name}: “Entonces, ¿te gusta a ti también? Sé que es para tu hermana, pero si os gusta a las dos siempre es mejor.”
@@ -1702,11 +1940,20 @@ Sophie: “No, no, así está bien lo he hecho aposta.”
 No sé muy bien que responderle así que me quedo callada. No me deja mucho tiempo para pensar porque enseguida se despide.
 Sophie: “Entonces... Ya me pasaré otro día”
 {$name}: “Sí, em claro. Hasta el próximo día entonces”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sophie>>
 <<jump Fin_ramas_minijuego_Sophie_viernes_sem1>>
 ===
 title: Minijuego_regular_Sophie_viernes_sem1
 position: 1169,378
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 1>>
 Sophie: “Está bien. ¿Es el mismo precio?”
 {$name}: “Este sí”
@@ -1718,11 +1965,20 @@ Sophie: “Sí, así que no me des nada”
 {$name}: “Eh... De acuerdo entonces”
 Sophie: “Me voy ya, pero otro día volveré a encargarte otro ramo. Hasta la próxima”
 {$name}: “Ya te veré entonces. Adiós”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sophie>>
 <<jump Fin_ramas_minijuego_Sophie_viernes_sem1>>
 ===
 title: Minijuego_mal_Sophie_viernes_sem1
 position: 797,379
 ---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
 <<Add_npc_likeability NPC_sophie -3>>
 Sophie: “Sigo sin saber que ve mi hermana en estos ramos, pero bueno, al final a quien le tiene que gustar es a ella no a mí. Cuesta lo mismo que el de ayer ¿no? Ahí te va.”
 PLAYER
@@ -1735,27 +1991,41 @@ Hago oídos sordos y acepto la propina.
 Sophie: “Mientras a mi hermana le sigan gustando, lo más posible es que así sea.”
 {$name}: “Genial, entonces ya nos veremos”
 Sophie: “Sí, hasta la próxima”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sophie>>
 <<jump Fin_ramas_minijuego_Sophie_viernes_sem1>>
 ===
 title: Fin_ramas_minijuego_Sophie_viernes_sem1
 position: 983,470
 ---
-<<Move Sophie offright bottom015 2.0>>
-<<Hide Sophie>>
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+
+
 Última cliente del día por fin. Una vez la veo alejarse lo suficiente de mi local, me apresuro a la puerta y cambio el cartel a cerrado. Recojo la floristería para el lunes, hago conteo de la caja y observo los frutos de mi primera semana.
 No es un resultado astronómicamente bueno, pero está dentro de las franjas de beneficios que tuve en cuenta. Por lo que lo tomaré como una victoria.
 Salgo de la tienda, echo la llave, bajo el cierre. Y por fin puedo dar por terminada la semana.
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<jump Finde_sem1>>
 ===
 
 title: Finde_sem1
 position: 1504,-358
 ---
-SÁBADO
+<<HideAll>>
+
 <<declare $HayCita = false as bool>>
 <<Scene bg_casa_placeholder>>
+<<Fade black 0.0 1.0 0.5>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 //ojos cerrados
+SÁBADO
 ???:  “...”
 Mmm... ¿Está sonando algo? No será nada, hoy no tengo que trabajar, así que no voy a perder la oportunidad de dormir más por una paranoia
 ???: “¡M...!”
@@ -1792,6 +2062,7 @@ Limón: “¡Miauuu, miauu!”
 {$name}: “Tú también quieres desayunar ¿eh?”
 
 Es terminar de rellenarlo y ya está Limón devorando, ni un segundo tarda. Es todo un comilón. Preparo un desayuno ligero para mí, busco un capítulo de una serie para ver, y comienzo a comer yo también.
+<<Hide Limón>>
 Tras una primera semana intensa de trabajo, aprovecho para tomarme la mañana con calma. Decido limpiar la casa y en el proceso escucho una tonadilla emitirse desde mi móvil. 
 Lo saco del bolsillo y al ver el nombre que aparece en pantalla sonrío, descuelgo inmediatamente.
 <<Act Leah sprt_Leah_mobile right center white>>
@@ -1888,6 +2159,7 @@ Leah: “¡Igualmente!”
         {$name}: “Pfff, esto que es.”
         Es una tontería, pero me hace ilusión, se ve que le tiene ganas al plan y yo también. Estoy deseando que llegue.
         <<Fade black 0.0 1.0 2.0>>
+        <<wait 2.0>>
         <<HideAll>>
         <<jump Cita_Allan_sem1>>
     -> Quedar con Ethan. <<if has_Ethan_Plan() == true>>
@@ -1895,6 +2167,7 @@ Leah: “¡Igualmente!”
         Escribo a Ethan para confirmar que quedamos y me responde afirmativamente junto con corazones con destellos. Incluso por teléfono sigue erre que erre. Es un poco mono ver como lo intenta tanto.
         Espero con ganas que llegue la tarde, por fin voy a salir a algo que no sea ir al trabajo o a hacer un recado.
         <<Fade black 0.0 1.0 2.0>>
+        <<wait 2.0>>
         <<HideAll>>
         <<jump Cita_Ethan_sem1>>
 <<else>>  
@@ -1903,6 +2176,7 @@ Leah: “¡Igualmente!”
     {$name}: “¡Vale! Lo tengo libre”
     Leah: “Genial, lo hablamos por mensaje”
     <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
     <<HideAll>>
     <<jump Semana2>>
 <<endif>>
@@ -1910,8 +2184,11 @@ Leah: “¡Igualmente!”
 title: Cita_Allan_sem1
 position: 1597,-205
 ---
+<<HideAll>>
 //scene calle
 <<Scene bg_calle_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 Ay, no sé por qué, pero estoy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] por el encuentro que se avecina. Miro a través de la ventana del autobús, me fijo en las señales de la carretera, ya queda poco para llegar al jardín botánico. 
 Bajo la vista a mi muñeca y la giro para ver la hora. Genial, voy bien de tiempo, incluso voy a llegar un poco antes.
 Por si acaso voy a revisar que llevo todo una vez más. Abro la mochilita que tengo en mi regazo y compruebo su interior. 
@@ -1958,7 +2235,6 @@ No aguantaba más, verle liarse intentando arreglar un malentendido que no ha oc
     Acerca su mano hacia mí con ímpetu, en ella tiene dos entradas.
     {$name}: “Perfecto, entonces démonos prisa que he leído que es muy amplio”
     Empezamos a andar al interior de la edificación con paso parejo.
-
 -> {$name}: “Tú dándole mil vueltas, y te entendí a la primera. No te preocupes, está todo bien”
     <<Add_npc_likeability NPC_allan 1>>
     Allan: “Gracias, gracias por pararme, muchas veces me lío yo solo y me enrollo tanto y no sé ni lo que digo”
@@ -1977,11 +2253,12 @@ Allan: “Y que lo digas. ¡Más de 5500 especies tienen! No todas son flores cl
     <<Add_npc_likeability NPC_allan 2>>
     No sabía que los mofletes podían sonrojarse tanto, sonrío por lo que he conseguido y antes de que pueda decir algo al respecto le adelanto para llegar antes a la recepción.
 -> Mejor no comento nada
-
+    <<Add_npc_likeability NPC_allan 0>>
 Allan entrega ambas entradas y a cambio nos dan a cada uno una tarjeta del botánico decorada, además cojo un panfleto que tienen en la repisa, guardo ambas cosas en la mochila para tenerlas de recuerdo. 
 ¡Por fin voy a ver el botánico de aquí!
 
 <<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
 <<Scene botanico_placeholder>>
 <<Fade black 1.0 0.0 1.0>>
 //cambiar a escenario botanico
@@ -2104,15 +2381,19 @@ Allan: “Nos vemos entonces”
 {$name}: “¡Hasta la semana que viene!”
 Allan: “Adiós”
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Semana2>>
 ===
 title: Cita_Ethan_sem1
 position: 1419,-206
 ---
+<<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 //fondo casa
 <<Scene bg_casa_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 Ummm, ¿debería ponerme estos pendientes en forma de rombo o los que tienen forma de girasol? 
 Me miro en el espejo mientras levanto a cada lado de mi cara los pendientes.
@@ -2171,6 +2452,7 @@ A quien quiero engañar. En el fondo me resulta gracioso y adorable. Le envío m
     {$name}: “Espero que te gusten los girasoles. ¡Ahora nos vemos!”
 //bar - noche
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<Scene bg_calle_noche_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 A medida que me acerco al bar mis nervios crecen y con ello de nuevo las inseguridades. Me muerdo el labio inconscientemente.
@@ -2268,7 +2550,6 @@ Bajo la mesa, mi pie comienza a dar golpes produciendo un repiqueteo continuo. A
 Uff, todavía me encuentro algo [select value={$gender} M="alterado" F="alterada" NB="alterade"/] por lo que acaba de pasar. Espero que no se me note mucho.
 Con el dedo índice, Ethan da un toque sobre la mesa para llamar mi atención. Al sentir mi atención sobre él, este apoya los codos sobre la mesa y se inclina hacia mí sonriendo. 
 Ethan: “Bueno, [select value={$gender} M="flor" F="florecita" NB="flor"/]. ¿Quieres tomar algo? Invito yo.”
-
 -> {$name}: “¿Eh? Pues...La verdad es que agradecería  mucho un refresco ahora, pero... No tienes por qué invitarme de verdad.”
     <<Add_npc_likeability NPC_ethan 2>>
 -> {$name}: “Vale, pero no hace falta que me invites. Puedo pagarme yo el refresco sin problema.”
@@ -2324,6 +2605,7 @@ Ethan: “¡Marchando ese refresco para mi [select value={$gender} M="amigo" F="
 Ethan se ríe ante mi insistencia y mis intentos fallidos de pararlo. 
 Y aunque por fuera parezco molesta, en el fondo solo siento felicidad. Amigos...  
 <<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
 Ha pasado una hora y media desde que Ethan me invitó forzosamente, debo añadir, a un refresco y comenzamos a hablar sobre temas varios. 
 
@@ -2384,12 +2666,15 @@ Ethan: “¿Nos vemos el próximo día en la floristería?”
 Ethan: “¡Genial! Nos vemos.”  
 {$name}: “Adiós, y gracias de nuevo por invitarme.” 
 <<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 <<HideAll>>
 <<jump Semana2>>
 ===
 title: Semana2
 position: 2078,-585
 ---
+<<HideAll>>
 <<set $HayCita to false>>
 Gracias por jugar al primer Capítulo de A Flower's Dream, The Beginning.
+<<the_end>>
 ===

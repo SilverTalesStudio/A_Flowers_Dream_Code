@@ -10,7 +10,7 @@ public class UI_Manager : MonoBehaviour
     {
         createNPCs();
         new Planes_Finde(false, false, false, false, false, false);
-        PlayerPrefs.SetString("nodeSaved", "Semana1");
+        PlayerPrefs.SetString("nodeSaved", "Finde_sem1");
         PlayerPrefs.SetString("currentMinigame", "none");
         PlayerPrefs.SetString("PlayerName", "Lucía");
         PlayerPrefs.SetString("PlayerGender", "F");
