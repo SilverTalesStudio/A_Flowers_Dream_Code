@@ -8,6 +8,7 @@ public class PauseVN_Manager : MonoBehaviour
     [SerializeField] DialogueRunner runner;
     public GameObject pause;
     public SceneChanger changer;
+    public GameObject popUp;
     public void ActivatePause()
     {
         pause.SetActive(true);
@@ -16,7 +17,16 @@ public class PauseVN_Manager : MonoBehaviour
     {
         pause.SetActive(false);
     }
-
+    public void ActivatePopUp()
+    {
+        popUp.SetActive(true);
+        DeactivatePause();
+    }
+    public void DeactivatePopUp()
+    {
+        popUp.SetActive(false);
+        ActivatePause();
+    }
     public void Guardar()
     {
         PlayerPrefs.SetString("nodeSaved", runner.CurrentNodeName);

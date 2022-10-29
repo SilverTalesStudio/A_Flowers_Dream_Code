@@ -2029,7 +2029,7 @@ SÁBADO
 ???:  “...”
 Mmm... ¿Está sonando algo? No será nada, hoy no tengo que trabajar, así que no voy a perder la oportunidad de dormir más por una paranoia
 ???: “¡M...!”
-No, no me voy a levantar. Ya estoy más despierta que dormida, pero por pura cabezonería me quedo en la cama. Me doy media vuelta, y el ruido para. Sea lo que sea ha comprendido que voy a seguir durmiendo. 
+No, no me voy a levantar. Ya estoy más [select value={$gender} M="despierto" F="despierta" NB="despierte"/] que [select value={$gender} M="dormido" F="dormida" NB="dormide"/], pero por pura cabezonería me quedo en la cama. Me doy media vuelta, y el ruido para. Sea lo que sea ha comprendido que voy a seguir durmiendo. 
 //[MAULLIDO]
 //[POM – Golpe sobre la cama, es el gato subiéndose]
 <<Fade black 1.0 0.0 2.0>>
@@ -2044,7 +2044,7 @@ Limón: “¡Miauuuu!”
 Extiendo mi mano para acariciarle la cabeza, y antes de que entre en contacto, ya se encarga él de cerrar la distancia acercando su cabeza. 
 Se frota con mi mano mientras la muevo realizando el mismo patrón que sé que le gusta.
 
-{$name}: “Ahh, para esto me querías despierta, para darte mimo desde primera hora ¿no?”
+{$name}: “Ahh, para esto me querías [select value={$gender} M="despierto" F="despierta" NB="despierte"/], para darte mimo desde primera hora ¿no?”
 
 Limón: “Mrrrr”
 
