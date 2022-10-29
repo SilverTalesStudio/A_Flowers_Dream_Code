@@ -50,9 +50,9 @@ public class VNManager : DialogueViewBase
 
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
 		string startNodeManually;
-		bool YarnProjectLoaded;
+		//bool YarnProjectLoaded;
 		void Awake () {
-			YarnProjectLoaded = false;
+			//YarnProjectLoaded = false;
 
 			//Inicializa el startNode
 			if (PlayerPrefs.GetString("nodeSaved").Length > 1)
@@ -69,7 +69,7 @@ public class VNManager : DialogueViewBase
 
 				startNodeManually = "Semana1";
 			}
-
+			runner.startNode = startNodeManually;
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
@@ -115,7 +115,7 @@ public class VNManager : DialogueViewBase
 				loadAudio.AddRange( allAudioInResources );
 			}
 		}
-		private void Update()
+		/*private void Update()
 		{
 			if (YarnProjectLoaded == false) 
 			{
@@ -127,12 +127,11 @@ public class VNManager : DialogueViewBase
 
 			}
 			
-		}
-        private void Start()
+		}*/
+      /*  private void Start()
 		{
-			Debug.Log(startNodeManually);
-			
-		}
+			runner.startNode = startNodeManually;
+		}*/
 		#region YarnCommands
 		public void TheEnd()
 		{
