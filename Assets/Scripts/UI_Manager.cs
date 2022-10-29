@@ -8,6 +8,10 @@ public class UI_Manager : MonoBehaviour
    // public Transform dropdownMenu;
     public ToggleGroup toggleGroup;
 
+    private void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     private void Start()
     {
         createNPCs();

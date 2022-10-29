@@ -1170,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2678071618908635071, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: Ethan_lunes_sem1
+      value: Semana1
       objectReference: {fileID: 0}
     - target: {fileID: 2678071618908635071, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: yarnProject
@@ -1178,7 +1178,7 @@ PrefabInstance:
       objectReference: {fileID: 7545569452688597077, guid: 2e12862044594324c87565072d4298d4, type: 3}
     - target: {fileID: 2678071618908635071, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startAutomatically
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3242124984676812919, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_Sprite
