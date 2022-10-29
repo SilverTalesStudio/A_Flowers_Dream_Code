@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
-    public Transform dropdownMenu;
+   // public Transform dropdownMenu;
+    public ToggleGroup toggleGroup;
 
     private void Start()
     {
         createNPCs();
         new Planes_Finde(false, false, false, false, false, false);
-        PlayerPrefs.SetString("nodeSaved", "Finde_sem1");
+        PlayerPrefs.SetString("nodeSaved", "Semana1");
         PlayerPrefs.SetString("currentMinigame", "none");
         PlayerPrefs.SetString("PlayerName", "Lucía");
         PlayerPrefs.SetString("PlayerGender", "F");
@@ -26,13 +28,24 @@ public class UI_Manager : MonoBehaviour
 
     //Lee la seleccion de género del DropDown menu
     // y lo guarda en PlayerPrefs
-    public void ReadGenderInput(int value)
+    public void ReadGenderInput(bool value)
     {
-        Debug.Log(value);
-        List<TMPro.TMP_Dropdown.OptionData> options = dropdownMenu.GetComponent<TMPro.TMP_Dropdown>().options;
-        var _gender = options[value].text;
-        Debug.Log(_gender);
-        PlayerPrefs.SetString("PlayerGender", _gender);
+        string gender= toggleGroup.GetFirstActiveToggle().name;
+        string savedGender = "F";
+        if (gender=="Él")
+        {
+            savedGender = "M";
+        }
+        else if (gender == "Elle")
+        {
+            savedGender = "NB";
+        }
+        else
+        {
+            savedGender = "F";
+        }
+        Debug.Log(savedGender);
+        PlayerPrefs.SetString("PlayerGender", savedGender);
 
     }
     public void createNPCs()
@@ -45,4 +58,5 @@ public class UI_Manager : MonoBehaviour
 
 
     }
+   
 }
