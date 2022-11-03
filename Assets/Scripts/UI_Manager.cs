@@ -15,7 +15,7 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         createNPCs();
-        new Planes_Finde(false, false, false, false, false, false);
+        new Planes_Finde(false, false, false, false, false, false,"null");
         PlayerPrefs.SetString("nodeSaved", "Semana1");
         PlayerPrefs.SetString("currentMinigame", "none");
         PlayerPrefs.SetString("PlayerName", "Lucía");

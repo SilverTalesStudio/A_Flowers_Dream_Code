@@ -6,7 +6,10 @@ position: -612,-485
 //declarar variables que se vayan globales q se vayan a repetir durante toda la historia
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<jump Sophie_lunes_sem1>>
+
+<<set $cita to "Ethan">> //--> para probar si funciona la variable cita
+<<jump Sagrario_martes_sem2>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -334,7 +337,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<jump Minijuego_Ethan_lunes_sem1>>
 ===
 title: Minijuego_Ethan_lunes_sem1
-position: -679,-228
+position: -675,-215
 ---
 <<HideAll>>
 
@@ -370,7 +373,7 @@ position: -688,-141
 <<endif>>
 ===
 title: Minijuego_bien_Ethan_lunes_sem1
-position: -521,-42
+position: -502,-57
 ---
 <<HideAll>>
 <<set $gender to get_player_gender()>>
@@ -2189,6 +2192,7 @@ position: 1597,-205
 <<Scene bg_calle_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<set $cita to "Allan">>
 Ay, no sé por qué, pero estoy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] por el encuentro que se avecina. Miro a través de la ventana del autobús, me fijo en las señales de la carretera, ya queda poco para llegar al jardín botánico. 
 Bajo la vista a mi muñeca y la giro para ver la hora. Genial, voy bien de tiempo, incluso voy a llegar un poco antes.
 Por si acaso voy a revisar que llevo todo una vez más. Abro la mochilita que tengo en mi regazo y compruebo su interior. 
@@ -2394,6 +2398,7 @@ position: 1419,-206
 <<Scene bg_casa_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<set $cita to "Ethan">>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 Ummm, ¿debería ponerme estos pendientes en forma de rombo o los que tienen forma de girasol? 
 Me miro en el espejo mientras levanto a cada lado de mi cara los pendientes.
@@ -2677,4 +2682,62 @@ position: 2078,-585
 <<set $HayCita to false>>
 Gracias por jugar al primer Capítulo de A Flower's Dream, The Beginning.
 <<the_end>>
+===
+
+title: Sagrario_martes_sem2
+position: -678,-304
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+Ya se acabó el fin de semana así que toca volver al trabajo. Al menos no está siendo una mañana muy ajetreada, me da tiempo a recordar este sábado. 
+Me lo pasé muy bien y era justo lo que necesitaba, la semana anterior no pude disfrutarlo porque estuve con la mudanza y la decoración de la floristería así que este lo he sentido como un oasis en el desierto.
+Espero que a partir de ahora pueda gozar de más ocasiones como esta.
+Sin nada que hacer sigo divagando en mi mente, rememorando los buenos momentos del fin de semana.
+
+//Sonido campanitas
+Ensimismada no me doy cuenta de que una persona pasa adentro de la floristería. No deambula por el interior, si no que viene directamente al mostrador con determinación.
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+Sagrario: “Buenos días niña”
+Es cuando interactúa conmigo que vuelvo en mí. Qué embarazoso, en horario de trabajo y yo con la cabeza en las nubes.
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “Eh, sí, buenos días. Bienvenida a Flower’s Dream”
+Tomo una postura recta para recomponerme y tener la actitud profesional que debería. La anciana, que no se le pasa ni una, se da cuenta de este cambio por mi parte y sonría como quien pilla a un niño haciendo una trastada.
+Sagrario: “Parece que alguien tiene su mente en otro sitio” //se rie
+-> Pedir perdón
+    {$name}: “Lo sie-”
+-> Justificarte
+    {$name}: “Bueno, es que estaba pensando en unas cosas y-”
+Antes de que pueda terminar, la anciana me mira con ternura y me interrumpe.
+Sagrario: “No, no, no lo decía para echarte la bronca, no te preocupes” 
+Vuelve a sonreírme.
+{$name}: “Aun así, debería estar más [select value={$gender} M="atento" F="atenta" NB="atente"/] ”
+Sagrario: “No hace falta ser tan [select value={$gender} M="duro con uno mismo" F="dura con una misma" NB="dure con une misme"/]”
+Sagrario: “De hecho, si esos recuerdos del fin de semana te provocan volver a ellos sin tu quererlo, para visitar de nuevo esa felicidad pasada, significa que son vivencias que merece la pena atesorar”
+La señora entrecierra los ojos y sonríe. No es simplemente un consejo sabio de un mayor a la juventud. Hay una motivación más profunda detrás. Creo que de alguna manera se ve reflejada en mí, quiere que su mensaje me llegue.
+Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónite"/] y después de procesar la observación ya soy capaz de responder.
+->Un momento, cómo sabe que pensaba en el fin de semana. 
+    <<Add_npc_likeability NPC_sagrario 1>>
+    {$name}: “Espere, cómo sabe que estaba pensando en el fin de semana. No le había dicho nada.”
+    <<wait 1.0>>
+    {$name}: “¿Me está siguiendo?”
+    El miedo y enfado empiezan a surgir en mi interior. Pero antes de que llegue a más la señora niega con la cabeza.
+    Sagrario: “No, no, nada de eso”
+<<if $cita=="Ethan">>
+    Sagrario: “Paseando por la ciudad te vi tomando algo con un joven. Parecía que lo estabas disfrutando mucho, ambos os reíais y lucíais muy atentos el uno del otro”
+<<elseif $cita=="Allan">> 
+    Sagrario: “Paseando por la ciudad te vi a ti y otro joven frente la entrada del jardín botánico. Los dos juntos bajo el mismo paraguas, parecía que os los estabais pasando bien a pesar de la lluvia”
+<<endif>>
+    /////////////////////MIRAR IFS///////////////////
+->Agradecerla por el comentario
+    <<Add_npc_likeability NPC_sagrario 2>>
+->Preguntarla ya sobre su encargo. 
+    <<Add_npc_likeability NPC_sagrario -3>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 ===
