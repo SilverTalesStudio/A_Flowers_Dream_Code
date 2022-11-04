@@ -93,10 +93,10 @@ public class Planes_Finde
 
     public string citaFinal()
     {
-        //string json = PlayerPrefs.GetString("cita");
-        //Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        //return planes.Cita_Final;
-        string cita = PlayerPrefs.GetString("citaFin");
-        return cita;
+        string json = PlayerPrefs.GetString("citaFin");
+        Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
+        return planes.Cita_Final;
+        //string cita = PlayerPrefs.GetString("citaFin");
+        //return cita;
     }
 }

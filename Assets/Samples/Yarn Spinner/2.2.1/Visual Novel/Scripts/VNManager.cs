@@ -83,7 +83,7 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler("Plans_To_Zero", PlansToZero);
 			runner.AddCommandHandler("the_end", TheEnd);
 			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
-			runner.AddCommandHandler<string>("cita", AddCitaFinal);
+			runner.AddCommandHandler<string>("citaFin", AddCitaFinal);
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
@@ -150,7 +150,7 @@ public class VNManager : DialogueViewBase
 			obj.Plan_Sophie_isLocked = false;
 			obj.Plan_Allan_isTherePlan = false;
 			obj.Plan_Allan_isLocked = false;
-			obj.Cita_Final = "null";
+			//obj.Cita_Final = "null";
 			json = JsonUtility.ToJson(obj);
 			PlayerPrefs.SetString("Planes", json);
 		}
