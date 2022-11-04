@@ -2703,23 +2703,23 @@ Sin nada que hacer sigo divagando en mi mente, rememorando los buenos momentos d
 Ensimismada no me doy cuenta de que una persona pasa adentro de la floristería. No deambula por el interior, si no que viene directamente al mostrador con determinación.
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
-Sagrario: “Buenos días [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+Anciana: “Buenos días [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 Es cuando interactúa conmigo que vuelvo en mí. Qué embarazoso, en horario de trabajo y yo con la cabeza en las nubes.
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Eh, sí, buenos días. Bienvenida a Flower’s Dream”
 Tomo una postura recta para recomponerme y tener la actitud profesional que debería. La anciana, que no se le pasa ni una, se da cuenta de este cambio por mi parte y sonría como quien pilla a un niño haciendo una trastada.
-Sagrario: “Parece que alguien tiene su mente en otro sitio” //se rie
+Anciana: “Parece que alguien tiene su mente en otro sitio” //se rie
 -> Pedir perdón
     {$name}: “Lo sie-”
 -> Justificarte
     {$name}: “Bueno, es que estaba pensando en unas cosas y-”
 Antes de que pueda terminar, la anciana me mira con ternura y me interrumpe.
-Sagrario: “No, no, no lo decía para echarte la bronca, no te preocupes” 
-Vuelve a sonreírme.
-{$name}: “Aun así, debería estar más [select value={$gender} M="atento" F="atenta" NB="atente"/] ”
-Sagrario: “No hace falta ser tan [select value={$gender} M="duro con uno mismo" F="dura con una misma" NB="dure con une misme"/]”
+Anciana: “No, no, no lo decía para echarte la bronca, no te preocupes” Vuelve a sonreírme.
+{$name}: “Aun así, debería estar más [select value={$gender} M="atento" F="atenta" NB="atente"/]. Perdone señora”
+Anciana: “No hace falta ser tan [select value={$gender} M="duro con uno mismo" F="dura con una misma" NB="dure con une misme"/]. Y no me llames señora, me puedes llamar Sagrario.”
+Asiento firme, pero antes de que pueda decir nada continua ella.
 Sagrario: “De hecho, si esos recuerdos del fin de semana te provocan volver a ellos sin tu quererlo, para visitar de nuevo esa felicidad pasada, significa que son vivencias que merece la pena atesorar”
-La señora entrecierra los ojos y sonríe. No es simplemente un consejo sabio de un mayor a la juventud. Hay una motivación más profunda detrás. Creo que de alguna manera se ve reflejada en mí, quiere que su mensaje me llegue.
+Sagrario entrecierra los ojos y sonríe. No es simplemente un consejo sabio de un mayor a la juventud. Hay una motivación más profunda detrás. Creo que de alguna manera se ve reflejada en mí, quiere que su mensaje me llegue.
 Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónite"/] y después de procesar la observación ya soy capaz de responder.
 ->Un momento, cómo sabe que pensaba en el fin de semana. 
     <<Add_npc_likeability NPC_sagrario 1>>
