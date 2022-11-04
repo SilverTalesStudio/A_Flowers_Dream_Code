@@ -2734,6 +2734,7 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
         {$name}: “¿Me está siguiendo?”
         El miedo y enfado empiezan a surgir en mi interior. Pero antes de que llegue a más la señora niega con la cabeza.
         Sagrario: “No, no, nada de eso”
+    <<jump Sagrario_martes_sem2_Ramificacion1y2>>
     /////////////////////MIRAR IFS///////////////////
 ->Agradecerla por el comentario
     <<Add_npc_likeability NPC_sagrario 2>>
@@ -2744,9 +2745,19 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
     {$name}: “¿Por qué siento como si usted supiera exactamente en qué recuerdo estoy pensando?”
     Sagrario: “Porque lo sé, [select value={$gender} M="niño" F="niña" NB="niñe"/]” Sonríe misteriosamente.
     {$name}: “¿Cómo?”
+    <<jump Sagrario_martes_sem2_Ramificacion1y2>>
 ->Preguntarla ya sobre su encargo. 
     <<Add_npc_likeability NPC_sagrario -3>>
+===
+title: Sagrario_martes_sem2_Ramificacion1y2
+position: -678,-304
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
 
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 /////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
@@ -2767,8 +2778,12 @@ Sagrario: “Es que no pude evitar fijarme... Me diste mucha envidia la verdad�
 {$name}: “¿Envidia?”
 Sagrario: “Sí, niña. Tener una cita-”
 ->Corregirla
+    {$name}: “No era una cita”
+    Quiero corregirla rápidamente. Aún no se si estoy lista para considerar lo que pasó el fin de semana como una cita.
+    Sagrario: “Ejem”
+    Tose para ajustar su voz y continuar hablando después de cortarla.
 ->Sonrojarse
+    Me ruborizo y veo como la anciana se divierte con mi reacción. Parece que al menos no quiere hacerme sufrir más así que encamina la frase en otra dirección.
 ->No decir nada
-<<Fade black 1.0 0.0 2.0>>
-<<wait 2.0>>
+Sagrario:
 ===
