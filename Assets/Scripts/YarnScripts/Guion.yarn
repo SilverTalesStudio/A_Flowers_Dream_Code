@@ -2703,7 +2703,7 @@ Sin nada que hacer sigo divagando en mi mente, rememorando los buenos momentos d
 Ensimismada no me doy cuenta de que una persona pasa adentro de la floristería. No deambula por el interior, si no que viene directamente al mostrador con determinación.
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
-Sagrario: “Buenos días niña”
+Sagrario: “Buenos días [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 Es cuando interactúa conmigo que vuelvo en mí. Qué embarazoso, en horario de trabajo y yo con la cabeza en las nubes.
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Eh, sí, buenos días. Bienvenida a Flower’s Dream”
@@ -2724,20 +2724,38 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
 ->Un momento, cómo sabe que pensaba en el fin de semana. 
     <<Add_npc_likeability NPC_sagrario 1>>
     {$name}: “Espere, cómo sabe que estaba pensando en el fin de semana. No le había dicho nada.”
-    <<wait 1.0>>
-    {$name}: “¿Me está siguiendo?”
-    El miedo y enfado empiezan a surgir en mi interior. Pero antes de que llegue a más la señora niega con la cabeza.
-    Sagrario: “No, no, nada de eso”
+    Sagrario: “Ah, ¿no te lo había dicho? Soy una vidente [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+    ->“¿En serio?”
+        Mi respuesta inociente le provoca una gran carcajada.
+        Sagrario: “Que va, me estoy quedando contigo”
+        {$name}: “¿Entonces cómo?”
+        Sagrario: “Simplemente usando mis ojos, [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+    ->“Eso no puede ser”
+        {$name}: “¿Me está siguiendo?”
+        El miedo y enfado empiezan a surgir en mi interior. Pero antes de que llegue a más la señora niega con la cabeza.
+        Sagrario: “No, no, nada de eso”
+    /////////////////////MIRAR IFS///////////////////
+->Agradecerla por el comentario
+    <<Add_npc_likeability NPC_sagrario 2>>
+    {$name}: “Gracias por el consejo, nunca lo había pensado de esa manera”
+    Sagrario: “Es algo que aprendí con los años, y de esos ya tengo muchos jajajaja”
+    Sagrario: “Además, los buenos momentos que pasamos con otros son los más fáciles de guardar”
+    Ya es la segunda vez que habla como si me hubiera leído la mente. Cómo es posible que sepa lo que hice el fin de semana. No puedo dejar esto así, tengo que llegar al fondo de esto.
+    {$name}: “¿Por qué siento como si usted supiera exactamente en qué recuerdo estoy pensando?”
+    Sagrario: “Porque lo sé, [select value={$gender} M="niño" F="niña" NB="niñe"/]” Sonríe misteriosamente.
+    {$name}: “¿Cómo?”
+->Preguntarla ya sobre su encargo. 
+    <<Add_npc_likeability NPC_sagrario -3>>
 <<if $cita=="Ethan">>
     Sagrario: “Paseando por la ciudad te vi tomando algo con un joven. Parecía que lo estabas disfrutando mucho, ambos os reíais y lucíais muy atentos el uno del otro”
 <<elseif $cita=="Allan">> 
     Sagrario: “Paseando por la ciudad te vi a ti y otro joven frente la entrada del jardín botánico. Los dos juntos bajo el mismo paraguas, parecía que os los estabais pasando bien a pesar de la lluvia”
+<<elseif $cita=="null">>
+    Sagrario: “Paseando por la ciudad te vi de tiendas con una chica. Parecía que os lo estabais pasando muy bien”
 <<endif>>
-    /////////////////////MIRAR IFS///////////////////
-->Agradecerla por el comentario
-    <<Add_npc_likeability NPC_sagrario 2>>
-->Preguntarla ya sobre su encargo. 
-    <<Add_npc_likeability NPC_sagrario -3>>
+Suspiro [select value={$gender} M="aliviado" F="aliviada" NB="aliviade"/]
+{$name}: “Así que al final era eso”
+Sagrario:
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 ===
