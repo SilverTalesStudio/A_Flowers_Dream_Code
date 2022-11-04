@@ -84,6 +84,7 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler("the_end", TheEnd);
 			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
 			runner.AddCommandHandler<string>("citaFin", AddCitaFinal);
+			
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
