@@ -2814,7 +2814,7 @@ Cuando comprendo la situación de la mujer, se me transmite su tristeza.
     Sagrario: “De hecho, tú me ayudas a tenerla de cerca, aunque sólo sea durante un rato”
 {$name}: “¿Sí? Pero si yo no hago nada, soy [select value={$gender} M="un" F="una" NB="une"/] simple florista”
 Sagrario: “Y eso es precisamente lo que más necesito”
-Sagrario: “Todas las semanas le mando cartas, y a NOMBREABUELA2 le encantan las flores. Por ello decoro todos mis textos con flores”
+Sagrario: “Todas las semanas le mando cartas, y a Minerva le encantan las flores. Por ello decoro todos mis textos con flores”
 Sagrario: “Ese es mi momento favorito del día. Cuando puedo dedicar mi tiempo a hablar con ella mediante mi escritura y a procesar las flores meticulosamente para que queden prensadas en el papel. Haciendo que no sólo mis palabras, sino que mis sentimientos también estén almacenados en la carta”
 Sagrario: “Por eso eres tan importante, porque eres capaz de plasmar mis pensamientos en un ramo”
 Me sonríe ampliamente y cierra los ojos continuando el feliz gesto.
@@ -3026,5 +3026,183 @@ position: -135,547
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//Siguiente jump
+<<jump Pietro_martes_sem2>>
+===
+
+title: Pietro_martes_sem2
+position: -368,-504
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+//Sonido campanas
+
+Mientras me despido de Sagrario, el leve tintineo de las campanas inunda la floristería. 
+Todavía con una sonrisa en la cara, miro ligeramente por encima de su hombro para ver al nuevo cliente.
+Un tenue sonido de sorpresa se escapa de mi boca.
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “¡Pietro!”
+Al ver sus próximas acciones, suelto un suspiro de cansancio que enseguida se entremezcla con una pequeña risa resignada.
+Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
+De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////////METER SE HA DEJADO PINTAR A PIETRO////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
+Puedo ver cómo, al igual que la última vez que vino a la tienda, este abre su taburete y se sienta delante de la amapola del Himalaya para continuar con su dibujo.
+Umm... ¿Le quedará mucho para terminarlo? Me pregunto si algún día podré verlo.
+Me haría mucha ilusión teniendo en cuenta que su “musa” es una de mis flores.
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+Sagrario: “-la? ¿Hola?”
+Una mano fina y arrugada por la edad inunda mi visión y me saca de mi ensimismamiento.
+Madre mía, ¡menudo día llevo hoy! Mi mente no para de regresar a las nubes.
+Con la cabeza algo agachada y las mejillas encendidas, me disculpo ante Sagrario.
+{$name}: “Lo siento mucho Sagrario, parece que mi mente todavía no se ha despertado del todo.”
+La regañina que anticipaba no llega y una risa entrecortada alcanza mis oídos.
+Sagrario: “Jajaja. Anda, no hay de que disculparse [select value={$gender} M="niño" F="niña" NB="niñe"/].”
+Sagrario: “La verdad es que estás consiguiendo que esta señora tenga una mañana de lo más entretenida.”
+Sagrario: “Aunque...”
+Sagrario se gira para mirar a Pietro. Sus ojos se entrecierran y sus labios se fruncen.
+Sagrario: “Parece que ese jovencito no te va a dejar tener una mañana tranquila.”
+Sagrario: “Ya es la segunda vez que le veo aquí haciendo esto.”
+Mis ojos siguen su mirada y se vuelven a posar en la serena figura de Pietro.
+Antes de que pueda contestar a Sagrario, esta levanta la voz.
+
+//Shake
+Sagrario: “¿¡Otra vez vienes aquí a dar más trabajo a {$name}, jovencito!?”
+Doy un pequeño brinco por la sorpresa. No esperaba tanta energía de su parte.
+Pietro como era de esperar no se entera. Ladea ligeramente la cabeza en nuestra dirección, pero tras varios segundos se encoge de hombros y continúa dibujando.
+Ahhh, no esperaba menos de él.
+Sin embargo, parece que Sagrario no contaba con esto. Por el rabillo del ojo veo como aprieta los puños con fuerza sobre el mostrador.
+Está frunciendo tanto el ceño que se marca una vena en su frente. 
+->”No pasa nada Sagrario. No me importa que pinte mientras yo trabajo, pero gracias por preocuparte.”
+    <<Add_npc_likeability NPC_pietro +2>>
+    Poso mi mano suavemente sobre su brazo con la esperanza de calmarla.
+    Parece que funciona porque sus puños y cara se relajan. Sonrío para animarla.
+    Sagrario: Suspiro. “Nada niña. Será mejor que te deje continuar con tu día entonces. Nos vemos.”
+    <<Move Sagrario offright bottom015 1.0>>
+    <<wait 1.5>>
+    <<Hide Sagrario>>
+->“Eso Pietro, al menos podrías pedir permiso antes de ponerte a pintar de esa manera.”
+    <<Add_npc_likeability NPC_pietro -2>>
+    Sagrario asiente con fuerza mientras se cruza de brazos dándome la razón.
+    Sagrario: “Cierto, ¿no te enseñaron modales, jovencito?”
+    Pietro no dice nada ante nuestras palabras. A simple vista parece que no nos ha escuchado como la primera vez que Sagrario le ha hablado, pero sé que no es así.
+    Su cuerpo se encoge más sobre el bloc. El sonido del lápiz sobre el papel se vuelve más intenso y fuerte como si estuviera agarrándolo con fuerza.
+    Sagrario suspira exhausta. Parece que la interacción le está afectando.
+    Sagrario: “Nada [select value={$gender} M="niño" F="niña" NB="niñe"/], como si no hubiera nadie más aquí. Me voy antes de que me arrepienta de lo que pueda decir.
+    Sagrario: “Espero que no te dé más trabajo {$name}. Hasta luego.”
+    <<Move Sagrario offright bottom015 1.0>>
+    <<wait 1.5>>
+    <<Hide Sagrario>>
+->No decir nada.
+    No digo nada. Prefiero no echar más leña al fuego ni meterme en este tipo de problemas.
+    He aprendido a las malas que no me conviene meterme donde no me llaman.
+    Sagrario suspira exhausta.
+    Sagrario: “Bueno, será mejor que me vaya. Espero que no te dé más trabajo. Nos vemos.”
+    <<Move Sagrario offright bottom015 1.0>>
+    <<wait 1.5>>
+    <<Hide Sagrario>>
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+////////////METER NO SE HA DEJADO PINTAR A PIETRO/////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+Veo como Pietro se acerca al mostrador donde nos encontramos y se sitúa detrás de Sagrario.
+Esta se gira para mirarle sorprendida. Luego muy lentamente se vuelve de nuevo hacia mí y se despide.
+Sagrario: “Bueno... Supongo que nos veremos en otro momento.”
+No puedo evitar reírme ligeramente ante su cara de asombro. Toso para enmascararlo.
+Sagrario: “¡Claro! Hasta la próxima Sagrario”
+<<Move Sagrario offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sagrario>>
+Sagrario se retira del mostrador, da unos pasos hacia atrás y se queda parada en mitad de la floristería.
+Se nota que tiene curiosidad por lo que pueda pasar.
+Sacudiendo la cabeza divertida por su actitud, me dirijo a Pietro para atenderle.
+En verdad yo también estoy [select value={$gender} M="sorprendido" F="sorprendida" NB="sorprendide"/]. Creo que es la primera vez que viene a comprar.
+{$name}: “Buenas, ¿en qué te puedo ayudar?”
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+Pietro: “He venido a liberar aquello que tienes encadenado.”
+¿Eh? ¿Qué acaba de decir?
+{$name}: “¿Perdona?
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Pietro>>
+Ante mi confusión, Sagrario levanta la voz y me ayuda.
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+Sagrario: “Creo que quiere comprar algo [select value={$gender} M="niño" F="niña" NB="niñe"/].”
+<<Move Sagrario offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sagrario>>
+Ahhhh. ¡Claro! Tiene sentido ahora que recuerdo la despedida de la última vez que estuvo aquí.
+{$name}: “¿Y qué es lo que quieres exactamente?”
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+Pietro: “Una Orquídea cara de mono.”
+Vaya, justo la primera vez que viene a comprar y la flor que quiere no la tengo. Que mal.
+{$name}: “No tengo, lo siento mucho. Es una flor extremadamente difícil de conseguir.”
+Pietro: “Una parra de jade.”
+{$name}: “Tampoco teng-”
+Pietro: “¿Cosmos astrosanguineus?”
+{$name}: “N-”
+Pietro: Suspiro. “Tsk, como no.”
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Pietro>>
+Cierro la boca y [select value={$gender} M="estupefacto" F="estupefacta" NB="estupefacte"/] veo como Pietro avanza resignado a su rincón y abre el taburete para continuar su dibujo de la amapola del Himalaya.
+Tardo unos segundos en procesar lo que acaba de pasar. ¿¡En serio se indigna de esa manera por eso!?
+Con la boca abierta y el ceño fruncido, miro a Pietro [select value={$gender} M="molesto" F="molesta" NB="moleste"/]. Una risa entrecortada invade la floristería.
+Es Sagrario que parece ser la única que ha disfrutado de este intercambio.
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+Sagrario: “Sabía que me tenía que quedar a ver esto.”
+Sus palabras hacen que mi molestia aumente ligeramente.
+Sagrario: “Anda no te enfades {$name}. Mucho ánimo, lo vas a necesitar.”
+<<Move Sagrario offright bottom015 1.0>>
+<<wait 1.5>>
+<<Hide Sagrario>>
+Todavía [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/], asiento con la cabeza y veo por el rabillo del ojo como Sagrario finalmente abandona la floristería.
+
+//Campanas
+La puerta se cierra y veo como Sagrario huele el ramo que me acaba de comprar mientras avanza por la calle. Sonrío.
+Estiro mis brazos agarrotados de realizar tantos pedidos tan pronto en la mañana y cierro sin darme cuenta los ojos por el alivio.
+El suave sonido del lápiz sobre papel hace que mi mente se relaje todavía más. Y encima el sol de hora punta entra por la ventana y hace que el ambiente se sienta cálido.
+Ahh... Podría dormirme ahora mismo.
+¡No {$name}! Abro los ojos y me enderezo con rapidez. Venga que cada vez queda menos.
+Con envidia veo como Pietro continua su dibujo con diligencia. ¡Yo también tengo que seguir!
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla de la tenue capa de sudor que ha aparecido por el continuo trabajo.
+Como se nota que es la hora punta. Las voces de la gente en la calle me dan la razón.
+Y no solo yo he estado trabajando sin parar, Pietro tampoco se ha despegado del taburete en ningún momento.
+Umm, ¿me pregunto si debería decirle lo que pienso?
+->”Hola Pietro, ¿podría ver qué estas pintando?”
+    <<Add_npc_likeability NPC_pietro +2>>
+    Tan rápido como un rayo Pietro cubre con su cuerpo el contenido del bloc. 
+    Me siento realmente confundida. 
+->“Creo que he tenido demasiada paciencia contigo. Es hora de que te marches ya.” 
+    <<Add_npc_likeability NPC_pietro -2>>
+    Sin decir nada, Pietro se levanta y el golpe seco del bloc que acaba de cerrar recorre la floristería como un eco.
+    Antes de que pueda pensar de nuevo en mis palabras, Pietro pasa a mi lado a toda velocidad no sin antes dirigirme una mirada helada.
+    Me quedo [select value={$gender} M="congelado" F="congelada" NB="congelade"/] en el sitio ante tal intensidad. Un escalofrío recorre mi espalda.
+    Siento como si me hubieran regañado y eso que todavía no ha abierto la boca en ningún momento.
+    Pero no hace falta que diga nada.
+    Sin moverme del sitio, con la espalda hacia la puerta, oigo el portazo que da al irse.
+    Durante unos minutos me encuentro inmóvil, hasta que la sorpresa abandona mi cuerpo.
+    Me muevo con lentitud, como [select value={$gender} M="dormido" F="dormida" NB="dormide"/] y al llegar a la mitad de la floristería mi mirada se posa en algo que se encuentra en el suelo.
+    Un papel. Se le debe de haber caído a Pietro con las prisas. 
+    Con una mano algo temblorosa lo recojo y abro mis ojos ante lo que encuentro. Un clavel amarillo. 
+    Decepción y...
+    Desprecio.
+    No quiero pensar en la razón de este dibujo, aunque en el fondo mi corazón lo sepa. 
+    //Salto
 ===
