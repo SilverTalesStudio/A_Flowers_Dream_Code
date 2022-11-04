@@ -2746,6 +2746,12 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
     {$name}: “¿Cómo?”
 ->Preguntarla ya sobre su encargo. 
     <<Add_npc_likeability NPC_sagrario -3>>
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+/////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 <<if $cita=="Ethan">>
     Sagrario: “Paseando por la ciudad te vi tomando algo con un joven. Parecía que lo estabas disfrutando mucho, ambos os reíais y lucíais muy atentos el uno del otro”
 <<elseif $cita=="Allan">> 
@@ -2755,7 +2761,14 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
 <<endif>>
 Suspiro [select value={$gender} M="aliviado" F="aliviada" NB="aliviade"/]
 {$name}: “Así que al final era eso”
-Sagrario:
+Sagrario:“Perdona si te ha incomodado el comentario”
+{$name}: “No, no, simplemente me sorprendió nada más”
+Sagrario: “Es que no pude evitar fijarme... Me diste mucha envidia la verdad”
+{$name}: “¿Envidia?”
+Sagrario: “Sí, niña. Tener una cita-”
+->Corregirla
+->Sonrojarse
+->No decir nada
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 ===
