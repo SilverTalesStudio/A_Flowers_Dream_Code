@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
+
 public class Planes_Finde
 {
     
@@ -13,9 +14,9 @@ public class Planes_Finde
     public bool Plan_Allan_isTherePlan;
     public bool Plan_Allan_isLocked;
 
-    public string Cita_Final;
 
-    public Planes_Finde(bool isP_E, bool isP_E_Locked, bool isP_S, bool isP_S_Locked, bool isP_A, bool isP_A_Locked, string C_Final)
+
+    public Planes_Finde(bool isP_E, bool isP_E_Locked, bool isP_S, bool isP_S_Locked, bool isP_A, bool isP_A_Locked)
     {
         this.Plan_Ethan_isTherePlan=isP_E;
         this.Plan_Ethan_isLocked=isP_E_Locked;
@@ -23,7 +24,6 @@ public class Planes_Finde
         this.Plan_Sophie_isLocked = isP_S_Locked;
         this.Plan_Allan_isTherePlan = isP_A;
         this.Plan_Allan_isLocked = isP_A_Locked;
-        this.Cita_Final = C_Final;
 
 
         createJSONPlanes();
@@ -88,15 +88,4 @@ public class Planes_Finde
         return planes.Plan_Ethan_isLocked;
     }
 
-    //Cita final
-    [YarnFunction("citaFinal")]
-
-    public string citaFinal()
-    {
-        string json = PlayerPrefs.GetString("citaFin");
-        Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-        return planes.Cita_Final;
-        //string cita = PlayerPrefs.GetString("citaFin");
-        //return cita;
-    }
 }

@@ -150,7 +150,6 @@ public class VNManager : DialogueViewBase
 			obj.Plan_Sophie_isLocked = false;
 			obj.Plan_Allan_isTherePlan = false;
 			obj.Plan_Allan_isLocked = false;
-			//obj.Cita_Final = "null";
 			json = JsonUtility.ToJson(obj);
 			PlayerPrefs.SetString("Planes", json);
 		}
@@ -252,6 +251,15 @@ public class VNManager : DialogueViewBase
 			Debug.Log("Entra en AddCitaFinal");
 			PlayerPrefs.SetString("citaFin", cita);
         }
+
+		public string citaFinal()
+		{
+			//string json = PlayerPrefs.GetString("citaFin");
+			//Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
+			//return planes.Cita_Final;
+			string cita = PlayerPrefs.GetString("citaFin");
+			return cita;
+		}
 
 
 		public void SaveNextNodeToJumpBack(string nextNode)

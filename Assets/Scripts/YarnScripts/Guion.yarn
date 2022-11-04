@@ -2685,7 +2685,7 @@ Gracias por jugar al primer Capítulo de A Flower's Dream, The Beginning.
 ===
 
 title: Sagrario_martes_sem2
-position: -678,-304
+position: -368,-504
 ---
 <<HideAll>>
 <<set $gender to get_player_gender()>>
@@ -2750,7 +2750,7 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
     <<Add_npc_likeability NPC_sagrario -3>>
 ===
 title: Sagrario_martes_sem2_Ramificacion1y2
-position: -678,-304
+position: -136,-594
 ---
 <<HideAll>>
 <<set $gender to get_player_gender()>>
@@ -2758,6 +2758,9 @@ position: -678,-304
 
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene floristeria_placeholder>>
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 /////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
@@ -2785,5 +2788,141 @@ Sagrario: “Sí, niña. Tener una cita-”
 ->Sonrojarse
     Me ruborizo y veo como la anciana se divierte con mi reacción. Parece que al menos no quiere hacerme sufrir más así que encamina la frase en otra dirección.
 ->No decir nada
-Sagrario:
+Sagrario: “O bueno, más que una cita, el hecho de poder pasar el tiempo con una persona que aprecias”
+Sonríe triste, entrelaza sus manos y baja su mirada. Sigo su gesto y observo sus manos yo también. Sus dedos juguetean con su anillo del dedo anular.
+Ah, echa de menos su pareja.
+Cuando comprendo la situación de la mujer, se me transmite su tristeza.
+->Preguntar sobre su pareja
+    <<Add_npc_likeability NPC_sagrario 2>>
+    “¿No puede ver a su pareja?”
+    {$name}: “¿No puede ver a su pareja?”
+    Vuelve a centrar su mirada en mí y ve mi semblante triste. Suspira ante mi pregunta. Parece que acerté.
+    Sagrario: “Diste en el clavo, [select value={$gender} M="hijo" F="hija" NB="hije"/]”
+    Sagrario: “Pero no pienses en nada grave. Seremos mayores, pero aún seguimos fuertes”
+    {$name}: “¿Entonces por qué no la puede ver? Si no le molesta que pregunte”
+    Sagrario: “No vive aquí. No siempre fue así, pero llevamos unos años en esta situación. Uno pensaría que te acabas acostumbrando, pero no es verdad...”
+    Sagrario: “La echo de menos cada día”
+    Sagrario: “Al menos, tú me ayudas a tenerla cerca, aunque sea sólo durante un rato”
+->No decir nada
+    Alza la mirada y al ver mi semblante triste, enmascara su expresión para que no me sienta mal.
+    Sagrario: “No te preocupes, no es nada grave. Es sólo que no está aquí...”
+    Sagrario: “No quisiera arruinarte el feliz día que llevas con mis historias”
+    Sagrario: “...”
+    Sagrario: “De hecho, tú me ayudas a tenerla de cerca, aunque sólo sea durante un rato”
+{$name}: “¿Sí? Pero si yo no hago nada, soy [select value={$gender} M="un" F="una" NB="une"/] simple florista”
+Sagrario: “Y eso es precisamente lo que más necesito”
+Sagrario: “Todas las semanas le mando cartas, y a NOMBREABUELA2 le encantan las flores. Por ello decoro todos mis textos con flores”
+Sagrario: “Ese es mi momento favorito del día. Cuando puedo dedicar mi tiempo a hablar con ella mediante mi escritura y a procesar las flores meticulosamente para que queden prensadas en el papel. Haciendo que no sólo mis palabras, sino que mis sentimientos también estén almacenados en la carta”
+Sagrario: “Por eso eres tan importante, porque eres capaz de plasmar mis pensamientos en un ramo”
+Me sonríe ampliamente y cierra los ojos continuando el feliz gesto.
+Escuchar a alguien hablar así de mi trabajo hace que me hinche de orgullo y alegría. No puedo fallar a esta mujer, debo esforzarme al máximo.
+Le devuelvo la sonrisa con energías renovadas.
+{$name}: “Entonces me aseguraré de no fallarla”
+{$name}: “¿Tenía algo pensado en mente?”
+Sagrario: “Pues sí, se me había ocurrido esto”
+<<jump Minijuego_Sagrario_martes_sem2>>
+===
+
+title: Sagrario_martes_sem2_Ramificacion3
+position: -136,-594
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+/////////METER SAGRARIO NO TE CUENTA SOBRE SU PAREJA//////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+{$name}: “Ya...”
+La verdad es que no sé muy bien qué quiere de mí la anciana. Tan sólo soy una florista con un local en la calle comercial, así que continuo la conversación con lo que mejor sé hacer.
+{$name}: “Bueno, no quiero hacerla perder más el tiempo. ¿Tenía algún ramo en mente?”
+Su cara se entristece, parece que quería seguir hablando. Pero el trabajo es el trabajo.
+Sagrario: “Sí... Claro...”
+Sagrario: “Estaba pensando en algo así...”
+<<jump Minijuego_Sagrario_martes_sem2>>
+===
+
+title: Minijuego_Sagrario_martes_sem2
+position: 976,205
+---
+<<HideAll>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Sagrario_martes_sem2>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Sagrario>>
+===
+
+title: Salida_minijuego_Sagrario_martes_sem2
+position: 978,287
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $resultado to get_minigame_result()>>
+<<Fade black 1.0 0.0 2.0>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+{$name}: “Aquí tiene su ramo”
+//Saltos a las diferentes ramas
+
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Sagrario_martes_sem2>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Sagrario_martes_sem2>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Sagrario_martes_sem2>>
+<<endif>>
+===
+
+title: Minijuego_bien_Sagrario_martes_sem2
+position: -136,-594
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+===
+
+title: Minijuego_regular_Sagrario_martes_sem2
+position: -136,-594
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+===
+
+title: Minijuego_mal_Sagrario_martes_sem2
+position: -136,-594
+---
+<<HideAll>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+// set Escenario FLORISTERÍA - MAÑANA 
+<<Scene floristeria_placeholder>>
+
+<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 ===
