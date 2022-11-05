@@ -7,7 +7,8 @@ position: -612,-485
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<set $cita to "Ethan">> //--> para probar si funciona la variable cita
+
+<<citaFin Ethan>> //--> se guarda la cita
 
 <<jump Sagrario_martes_sem2>>
 //<<jump Sophie_lunes_sem1>>
@@ -2769,6 +2770,7 @@ position: -136,-594
 /////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+<<set $cita to get_date()>>
 <<if $cita=="Ethan">>
     Sagrario: “Paseando por la ciudad te vi tomando algo con un joven. Parecía que lo estabas disfrutando mucho, ambos os reíais y lucíais muy atentos el uno del otro”
 <<elseif $cita=="Allan">> 

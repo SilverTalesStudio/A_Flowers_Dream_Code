@@ -84,6 +84,8 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler("the_end", TheEnd);
 			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
 			runner.AddCommandHandler<string>("citaFin", AddCitaFinal);
+
+			
 			
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
@@ -250,17 +252,10 @@ public class VNManager : DialogueViewBase
 		public void AddCitaFinal(string cita)
         {
 			Debug.Log("Entra en AddCitaFinal");
-			PlayerPrefs.SetString("citaFin", cita);
+			PlayerPrefs.SetString("citafinal", cita);
+			Debug.Log(cita);
         }
 
-		public string citaFinal()
-		{
-			//string json = PlayerPrefs.GetString("citaFin");
-			//Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-			//return planes.Cita_Final;
-			string cita = PlayerPrefs.GetString("citaFin");
-			return cita;
-		}
 
 
 		public void SaveNextNodeToJumpBack(string nextNode)
