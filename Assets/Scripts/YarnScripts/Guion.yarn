@@ -3179,6 +3179,7 @@ Y no solo yo he estado trabajando sin parar, Pietro tampoco se ha despegado del 
 Umm, ¿me pregunto si debería decirle lo que pienso?
 ->”Hola Pietro, ¿podría ver qué estás pintando?”
     <<Add_npc_likeability NPC_pietro +2>>
+    <<Act Pietro spt_pietro_neutral right bottom015 white>>
     Tan rápido como un rayo Pietro cubre con su cuerpo el contenido del bloc. 
     Me siento realmente confundida. No habría esperado esta reacción teniendo en cuenta su personalidad.
     Me inclino para poder ver sus ojos tras la cortina de flequillo que los oculta.  
@@ -3201,7 +3202,37 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
         //////////Poner sprite de pietro sonrojado/////////////////////////
         ///////////////////////////////////////////////////////////////////
         Sonrío ante su muestra sincera.  
-    //Aquí va lo de yo no creo que su perfeccion sea la adecuada
+    Pietro: “Yo... No creo que su perfección sea la adecuada todavía.” 
+    Pietro: “No me gustaría que tus ojos vieran algo inacabado, con defectos.”
+    Pietro: “Bueno ni tú ni nadie.”
+    Vaya... Que palabras tan duras. He tenido suerte de escuchar su última frase gracias al silencio actual de la tienda.
+    Para lo mucho que parece que Pietro ama el arte no parece que disfrute en su proceso. 
+    No puedo evitar entristecerme. 
+    ->{$name}: “Entiendo cómo te sientes, a mí me pasa algo parecido con mis ramos.”
+        {$name}: “Siempre quiero dar lo mejor de mí para ver la sonrisa de mis clientes.”
+        {$name}: “Si logro hacerlos mínimamente felices ya me siento [select value={$gender} M="ganador" F="ganadora" NB="ganadore"/].”
+        {$name}:  “Y puede que el ramo a veces no sea perfecto, pero lo importante es entender sus sentimientos y transmitirles mi esfuerzo.”
+        A medida que mis palabras fluyen de mi boca, los ojos de Pietro se van agrandando cada vez más.
+        Vaya, parece que he logrado tener un efecto en él, aunque no sabría si bueno o malo.
+        Pietro: “La felicidad de los demás, eh...”
+        Con una mano en la barbilla, Pietro entra en su característico estado pensativo. 
+        Sí, definitivamente parece que le han afectado esas palabras. No quiero interrumpir sus pensamientos, pero está comenzando a preocuparme. 
+        {$name}: “Entonces Pietro...” 
+        Pietro: “¡Tal vez sea eso!” 
+        Completamente vigorizado por la conclusión que haya alcanzado, Pietro vuelve a concentrarse en su dibujo pintando con trazos rápidos y precisos. 
+        No sé por qué, pero esta vez no me siento [select value={$gender} M="molesto" F="molesta" NB="moleste"/] ante su concentración. 
+    ->{$name}: “No te preocupes Pietro, todo es un proceso.
+        {$name}: “No es necesario que sea perfecto ahora. Lo importante es que te estas esforzando al máximo y al final llegarás.”
+        Pietro sonríe cerrando los ojos.
+        Pietro: “Gracias por tu consejo, {$name}” 
+        Sonrío ante su gratitud, pero hay algo que me impide sentirme completamente [select value={$gender} M="satisfecho" F="satisfecha" NB="satisfeche"/].
+        Es como si no hubiera dicho todo lo que de verdad siente. Como si estuviera intentando ocultarlo tras esos párpados cerrados.
+    No han pasado muchos minutos tras la conversación cuando Pietro se levanta y comienza a recoger sus cosas.
+    Pietro: “Creo que es hora de que me vaya. Tengo un sitio al que acudir. Mis disculpas.” 
+    {$name}: “No es necesario que te disculpes Pietro. No pasa nada.”
+    Pietro: “Antes de irme me gustaría comprar algo.”
+    {$name}: “¡Claro, para eso estamos! Vamos al mostrador y me dices lo que quieres.”
+    <<jump Minijuego_Pietro_martes_sem2>>
 ->“Creo que he tenido demasiada paciencia contigo. Es hora de que te marches ya.” 
     <<Add_npc_likeability NPC_pietro -10>>
     Sin decir nada, Pietro se levanta y el golpe seco del bloc que acaba de cerrar recorre la floristería como un eco.
@@ -3217,5 +3248,148 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
     Decepción y...
     Desprecio.
     No quiero pensar en la razón de este dibujo, aunque en el fondo mi corazón lo sepa. 
-    //Salto
+    <<jump Cita_martes_sem2>>
+===
+
+title: Minijuego_Pietro_martes_sem2
+position: -125,-234
+---
+<<HideAll>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Pietro_martes_sem2>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Pietro>>
+===
+
+title: Salida_minijuego_Pietro_martes_sem2
+position: -118,-144
+---
+<<HideAll>>
+<<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “Aquí tienes el ramo”
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Pietro_martes_sem2>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Pietro_martes_sem2>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Pietro_martes_sem2>>
+<<endif>>
+===
+
+title: Minijuego_bien_Pietro_martes_sem2
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro 3>>
+
+Pietro: “Creo que el equilibrio de color y formas es simplemente maravilloso. Perfecto.” 
+Otra vez con el tema de la perfección... 
+{$name}: “¡Gracias! Simplemente me he inspirado en lo que me habías dicho y en lo que conozco de ti.” 
+{$name}: “Me alegro de que te guste." 
+Pietro: “Toma el dinero.”
+Calculo lo que le debo de cambio mientras Pietro sigue admirando el arreglo. 
+{$name}: “Aquí tienes Pietro.” 
+Pietro: “¿Qué es esto?” 
+{$name}: “La vuelta.” 
+Pietro: “No es necesario. Simplemente te he dado aquello que considero que merecen estas bellas flores.” 
+{$name}: “Pues muchas gracias, Pietro.” 
+
+<<jump Fin_ramas_minijuego_Pietro_martes_sem2>>
+===
+title: Minijuego_regular_Pietro_martes_sem2
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro 1>>
+
+Pietro: “Umm...” 
+Pietro: “Está bien, aunque creo que se podría mejorar el contraste de colores para que la combinación fuera más interesante.” 
+Vaya, no he acertado del todo.
+Pietro: “No pasa nada, la próxima vez te traeré unos apuntes de teoría de color para que sea perfecto.” 
+Otra vez con el tema de la perfección... 
+¿Y a qué vienen las clases de arte?
+Pietro: “Aquí tienes el dinero.” 
+{$name}: “Gracias Pietro, todo correcto.” 
+
+<<jump Fin_ramas_minijuego_Pietro_martes_sem2>>
+===
+
+title: Minijuego_mal_Pietro_martes_sem2
+position: -289,-54
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro -3>>
+
+Pietro: “...”
+Pietro: Suspiro. “No se puede lograr nada más imperfecto ni queriendo.” 
+¿¡Tan mal está!? 
+Pietro tan crítico como siempre.
+Pietro: “Qué se le va a hacer, tendré que ver cómo mejorarlo en casa.” 
+Pietro: “Toma el dinero, va justo.” 
+{$name}: “... Gracias.”
+
+<<jump Fin_ramas_minijuego_Pietro_martes_sem2>>
+===
+
+title: Fin_ramas_minijuego_Pietro_martes_sem2
+position: -120,41
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+
+Pietro consulta la hora en su teléfono con la mano libre. 
+Pietro: “Será mejor que me vaya si no quiero llegar tarde.” 
+Pietro: “Nos volveremos a ver {$name}. Que tengas un plácido día.” 
+{$name}: “¡Igualmente Pietro!”
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Pietro>>
+No dejará de llamar mi atención el hecho de que me llame por mi nombre.
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Cita_martes_sem2>>
+===
+
+title: Cita_martes_sem2
+position: -120,41
+---
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
 ===
