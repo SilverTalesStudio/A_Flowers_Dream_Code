@@ -10,7 +10,7 @@ position: -612,-485
 
 <<citaFin Ethan>> //--> se guarda la cita
 
-<<jump Sagrario_martes_sem2>>
+<<jump Pietro_martes_sem2>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -2739,7 +2739,6 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
         El miedo y enfado empiezan a surgir en mi interior.
         Sagrario: “No, no, nada de eso”
     <<jump Sagrario_martes_sem2_Ramificacion1y2>>
-    /////////////////////MIRAR IFS///////////////////
 ->Agradecerla por el comentario
     <<Add_npc_likeability NPC_sagrario 2>>
     {$name}: “Gracias por el consejo, nunca lo había pensado de esa manera”
@@ -2752,6 +2751,7 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
     <<jump Sagrario_martes_sem2_Ramificacion1y2>>
 ->Preguntarla ya sobre su encargo. 
     <<Add_npc_likeability NPC_sagrario -3>>
+    <<jump Sagrario_martes_sem2_Ramificacion3>>
 ===
 title: Sagrario_martes_sem2_Ramificacion1y2
 position: -136,-594
@@ -2765,11 +2765,10 @@ position: -136,-594
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-/////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+
+//Sagrario te cuenta sobre Minerva
+<<sobreMinerva yes>>
+
 <<set $cita to get_date()>>
 <<if $cita=="Ethan">>
     Sagrario: “Paseando por la ciudad te vi tomando algo con un joven. Parecía que lo estabas disfrutando mucho, ambos os reíais y lucíais muy atentos el uno del otro”
@@ -2840,30 +2839,25 @@ position: -136,-594
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-/////////METER SAGRARIO NO TE CUENTA SOBRE SU PAREJA//////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+
+<<sobreMinerva no>>
 {$name}: “Ya...”
 La verdad es que no sé muy bien qué quiere de mí la anciana. Tan sólo soy [select value={$gender} M="un" F="una" NB="une"/] florista con un local en la calle comercial, así que continuo la conversación con lo que mejor sé hacer.
 {$name}: “Bueno, no quiero hacerle perder más el tiempo. ¿Tenía algún ramo en mente?”
 Su cara se entristece, parece que quería seguir hablando. Pero el trabajo es el trabajo.
 Sagrario: “Sí... Claro...”
 Sagrario: “Estaba pensando en algo así...”
-<<Fade black 0.0 1.0 2.0>>
-<<wait 2.0>>
-<<HideAll>>
 <<jump Minijuego_Sagrario_martes_sem2>>
 ===
 
 title: Minijuego_Sagrario_martes_sem2
 position: 976,205
 ---
-<<HideAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sagrario_martes_sem2>>
-
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<HideAll>>
 //Funcion de salto a minijuego
 <<Go_to_minigame Sagrario>>
 ===
@@ -2871,9 +2865,10 @@ position: 976,205
 title: Salida_minijuego_Sagrario_martes_sem2
 position: 978,287
 ---
-<<HideAll>>
+<<Scene floristeria_placeholder>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -2892,9 +2887,6 @@ position: 978,287
 title: Minijuego_bien_Sagrario_martes_sem2
 position: -136,-594
 ---
-<<HideAll>>
-<<Fade black 1.0 0.0 2.0>>
-<<wait 2.0>>
 <<Scene floristeria_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -2903,12 +2895,9 @@ position: -136,-594
 
 <<Add_npc_likeability NPC_sagrario 4>>
 
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-/////////METER SAGRARIO TE CUENTA SOBRE SU PAREJA/////////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+<<set $Minerva to get_infoMinerva()>>
 
+<<if $Minerva == "yes">>
 Al acercarle el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
 Se quita las gafas y se frota los ojos con el revés de la mano.
 Sagrario: “Perdona, no quería ponerme así”
@@ -2935,12 +2924,7 @@ Saca la cartera y pone el dinero sobre el mostrador.
 Sagrario: “Ahora quiero llegar ya a casa para poder empezar a escribir la carta”
 {$name}: “Pues no le detengo más, que pase una buena tarde”
 Sagrario: “Gracias a ti por tu trabajo. Adiós”
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-/////////METER SAGRARIO NO TE CUENTA SOBRE SU PAREJA//////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+<<elseif $Minerva == "no">>
 Al acercarle el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
 Se quita las gafas y se frota los ojos con el revés de la mano.
 Sagrario: “Perdona, no quería ponerme así”
@@ -2950,6 +2934,7 @@ Sagrario: “Es que, sin decirte yo nada, has puesto su flor favorita. Y no solo
 Sagrario: “De eso que no te quepa duda” Sonríe.
 Paga el ramo y se acerca a la puerta de salida. Le sonrío de vuelta.
 {$name}: “¡Que tenga un buen día!”
+<<endif>>
 
 <<Move Sagrario offright bottom015 1.0>>
 <<wait 1.5>>
@@ -3024,10 +3009,6 @@ Le despido con una sonrisa cordial. Al menos creo que he conseguido salvarlo al 
 title: Fin_ramas_minijuego_Sagrario_martes_sem2
 position: -135,547
 ---
-<<HideAll>>
-<<Fade black 0.0 1.0 2.0>>
-<<wait 2.0>>
-
 <<jump Pietro_martes_sem2>>
 ===
 
@@ -3041,6 +3022,12 @@ position: -368,-504
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene floristeria_placeholder>>
 
+////////////////////////////////////////////////////
+///////////////Hay que cambiarlo a la semana 1///////
+/////////////////////////////////////////////////////
+
+<<seDejaPintaraPietro yes>>
+
 //Sonido campanas
 
 Mientras me despido de Sagrario, el leve tintineo de las campanas inunda la floristería. 
@@ -3053,11 +3040,8 @@ Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
 De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
 Ya parece más suya que mía. 
 
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-////////////METER SE HA DEJADO PINTAR A PIETRO////////////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+<<set $PietroPinta to get_pintarPietro()>>
+<<if $PietroPinta == "yes">>
 Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
 Puedo ver cómo, al igual que la última vez que vino a la tienda, este abre su taburete y se sienta delante de la amapola del Himalaya para continuar con su dibujo.
 Umm... ¿Le quedará mucho para terminarlo? Me pregunto si algún día podré verlo.
@@ -3118,13 +3102,7 @@ Está frunciendo tanto el ceño que se marca una vena en su frente.
     <<Move Sagrario offright bottom015 1.0>>
     <<wait 1.5>>
     <<Hide Sagrario>>
-
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-////////////METER NO SE HA DEJADO PINTAR A PIETRO/////////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-
+<<elseif $PietroPinta == "no">>
 Veo como Pietro se acerca al mostrador donde nos encontramos y se sitúa detrás de Sagrario.
 Esta se gira para mirarle sorprendida. Luego muy lentamente se vuelve de nuevo hacia mí y se despide.
 Sagrario: “Bueno... Supongo que nos veremos en otro momento.”
@@ -3178,6 +3156,7 @@ Sagrario: “Anda no te enfades {$name}. Mucho ánimo, lo vas a necesitar.”
 <<wait 1.5>>
 <<Hide Sagrario>>
 Todavía [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/], asiento con la cabeza y veo por el rabillo del ojo como Sagrario finalmente abandona la floristería.
+<<endif>>
 
 //Campanas
 La puerta se cierra y veo como Sagrario huele el ramo que me acaba de comprar mientras avanza por la calle. Sonrío.
@@ -3190,6 +3169,9 @@ Asiento y preparo nuevos envoltorios para los próximos ramos.
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+<<Scene floristeria_placeholder>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla de la tenue capa de sudor que ha aparecido por el continuo trabajo.
 Como se nota que es la hora punta. Las voces de la gente en la calle me dan la razón.
@@ -3219,6 +3201,7 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
         //////////Poner sprite de pietro sonrojado/////////////////////////
         ///////////////////////////////////////////////////////////////////
         Sonrío ante su muestra sincera.  
+    //Aquí va lo de yo no creo que su perfeccion sea la adecuada
 ->“Creo que he tenido demasiada paciencia contigo. Es hora de que te marches ya.” 
     <<Add_npc_likeability NPC_pietro -10>>
     Sin decir nada, Pietro se levanta y el golpe seco del bloc que acaba de cerrar recorre la floristería como un eco.
