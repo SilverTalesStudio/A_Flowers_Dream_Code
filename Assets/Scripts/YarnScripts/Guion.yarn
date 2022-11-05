@@ -2735,7 +2735,7 @@ Tras unos segundos [select value={$gender} M="atónito" F="atónita" NB="atónit
         Sagrario: “Simplemente usando mis ojos, [select value={$gender} M="niño" F="niña" NB="niñe"/]”
     ->“Eso no puede ser”
         {$name}: “¿Me está siguiendo?”
-        El miedo y enfado empiezan a surgir en mi interior. Pero antes de que llegue a más la señora niega con la cabeza.
+        El miedo y enfado empiezan a surgir en mi interior.
         Sagrario: “No, no, nada de eso”
     <<jump Sagrario_martes_sem2_Ramificacion1y2>>
     /////////////////////MIRAR IFS///////////////////
@@ -2787,7 +2787,7 @@ Sagrario: “Sí, [select value={$gender} M="niño" F="niña" NB="niñe"/]. Tene
     {$name}: “No era una cita”
     Quiero corregirla rápidamente. Aún no se si estoy lista para considerar lo que pasó el fin de semana como una cita.
     Sagrario: “Ejem”
-    Tose para ajustar su voz y continuar hablando después de cortarla.
+    Tose para ajustar su voz y continuar hablando después de cortarle.
 ->Sonrojarse
     Me ruborizo y veo como la anciana se divierte con mi reacción. Parece que al menos no quiere hacerme sufrir más así que encamina la frase en otra dirección.
 ->No decir nada
@@ -2805,13 +2805,13 @@ Cuando comprendo la situación de la mujer, se me transmite su tristeza.
     {$name}: “¿Entonces por qué no la puede ver? Si no le molesta que pregunte”
     Sagrario: “No vive aquí. No siempre fue así, pero llevamos unos años en esta situación. Uno pensaría que te acabas acostumbrando, pero no es verdad...”
     Sagrario: “La echo de menos cada día”
-    Sagrario: “Al menos, tú me ayudas a tenerla cerca, aunque sea sólo durante un rato”
+    Sagrario: “Al menos, tú me ayudas a sentirle cerca, aunque sea sólo durante un rato” 
 ->No decir nada
     Alza la mirada y al ver mi semblante triste, enmascara su expresión para que no me sienta mal.
     Sagrario: “No te preocupes, no es nada grave. Es sólo que no está aquí...”
     Sagrario: “No quisiera arruinarte el feliz día que llevas con mis historias”
     Sagrario: “...”
-    Sagrario: “De hecho, tú me ayudas a tenerla de cerca, aunque sólo sea durante un rato”
+    Sagrario: “De hecho, tú me ayudas a sentirle cerca, aunque sólo sea durante un rato” 
 {$name}: “¿Sí? Pero si yo no hago nada, soy [select value={$gender} M="un" F="una" NB="une"/] simple florista”
 Sagrario: “Y eso es precisamente lo que más necesito”
 Sagrario: “Todas las semanas le mando cartas, y a Minerva le encantan las flores. Por ello decoro todos mis textos con flores”
@@ -2820,7 +2820,7 @@ Sagrario: “Por eso eres tan importante, porque eres capaz de plasmar mis pensa
 Me sonríe ampliamente y cierra los ojos continuando el feliz gesto.
 Escuchar a alguien hablar así de mi trabajo hace que me hinche de orgullo y alegría. No puedo fallar a esta mujer, debo esforzarme al máximo.
 Le devuelvo la sonrisa con energías renovadas.
-{$name}: “Entonces me aseguraré de no fallarla”
+{$name}: “Entonces me aseguraré de no fallarle”
 {$name}: “¿Tenía algo pensado en mente?”
 Sagrario: “Pues sí, se me había ocurrido esto”
 <<jump Minijuego_Sagrario_martes_sem2>>
@@ -2845,7 +2845,7 @@ position: -136,-594
 //////////////////////////////////////////////////////////////////////
 {$name}: “Ya...”
 La verdad es que no sé muy bien qué quiere de mí la anciana. Tan sólo soy [select value={$gender} M="un" F="una" NB="une"/] florista con un local en la calle comercial, así que continuo la conversación con lo que mejor sé hacer.
-{$name}: “Bueno, no quiero hacerla perder más el tiempo. ¿Tenía algún ramo en mente?”
+{$name}: “Bueno, no quiero hacerle perder más el tiempo. ¿Tenía algún ramo en mente?”
 Su cara se entristece, parece que quería seguir hablando. Pero el trabajo es el trabajo.
 Sagrario: “Sí... Claro...”
 Sagrario: “Estaba pensando en algo así...”
@@ -2907,7 +2907,7 @@ position: -136,-594
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Al acercarla el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
+Al acercarle el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
 Se quita las gafas y se frota los ojos con el revés de la mano.
 Sagrario: “Perdona, no quería ponerme así”
 Sagrario: “Es que, sin decirte yo nada, has puesto su flor favorita. Y no solo eso, todo el ramo en sí es perfecto”
@@ -2920,7 +2920,7 @@ Sagrario: “Eh, claro. Ella ahora está viviendo en Argentina. ¿Por qué lo pr
 En cuanto obtengo su respuesta me agacho para rebuscar en los cajones bajo el mostrador. ¿Dónde está? Juraría que la última vez las dejé aquí.
 Ajá, por fin encuentro lo que estaba buscando.
 Me levanto enérgicamente con un paquete en las manos.
-{$name}: “¡Aquí está! Su mujer se está ahora en el hemisferio sur ¿no?”
+{$name}: “¡Aquí está! Su mujer está ahora en el hemisferio sur ¿no?”
 Sagrario: “Así es”
 {$name}: “Y viendo el tipo de flores que le gustan por lo que me has dicho, creo que estas semillas pueden ser perfectas para ella y para el tiempo que hace allí”
 Mientras estaba hablando, saqué unas cuantas semillas del paquete, las envolví formando un pequeño sobre y escribí en él unas pequeñas instrucciones sobre su riego. Al terminar extiendo mi mano y se lo entrego.
@@ -2931,7 +2931,7 @@ Sagrario: “Muchas gracias por el detalle”
 Sagrario: “Pero el ramo no te vas a librar de que te lo pague”
 Saca la cartera y pone el dinero sobre el mostrador.
 Sagrario: “Ahora quiero llegar ya a casa para poder empezar a escribir la carta”
-{$name}: “Pues no la detengo más, que pase una buena tarde”
+{$name}: “Pues no le detengo más, que pase una buena tarde”
 Sagrario: “Gracias a ti por tu trabajo. Adiós”
 
 //////////////////////////////////////////////////////////////////////
@@ -2939,14 +2939,14 @@ Sagrario: “Gracias a ti por tu trabajo. Adiós”
 /////////METER SAGRARIO NO TE CUENTA SOBRE SU PAREJA//////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-Al acercarla el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
+Al acercarle el ramo y dárselo me fijo en sus ojos, tras las gafas puedo ver que están llorosos. Mis ojos se agrandan al descubrirlo y se da cuenta.
 Se quita las gafas y se frota los ojos con el revés de la mano.
 Sagrario: “Perdona, no quería ponerme así”
 Sagrario: “Es que, sin decirte yo nada, has puesto su flor favorita. Y no solo eso, todo el ramo en sí es perfecto”
 ¿La flor favorita de quién? Debe ser alguien importante para que se ponga así. Bueno, tampoco voy a ser una cotilla.
 {$name}: “Me alegro de que le guste. Espero que eso signifique que la veré más por aquí”
 Sagrario: “De eso que no te quepa duda” Sonríe.
-Paga el ramo y acerca a la puerta de salida. Le sonrío de vuelta.
+Paga el ramo y se acerca a la puerta de salida. Le sonrío de vuelta.
 {$name}: “¡Que tenga un buen día!”
 
 <<Move Sagrario offright bottom015 1.0>>
@@ -2975,7 +2975,7 @@ Sagrario: “Te voy a ser sincera, me esperaba otra cosa. No creo que esto capte
 Sagrario: “No está mal, pero me da la sensación de que podría ser mejor”
 Sagrario: “Aunque ya sabes dicho, “Más fácil es la obra juzgar que en ella trabajar”. Se nota que trabajo le has puesto a pesar de no ser totalmente acertado”
 Me duele fallar en algo que hago todos los días y que debería dárseme bien. Poco puedo hacer ahora, lo hecho, hecho está.
-{$name}: “Si vuelve otra vez, le prometo que no la fallaré”
+{$name}: “Si vuelve otra vez, le prometo que no le fallaré”
 Sagrario: “Esa es la actitud [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 Sagrario: “Que te sea leve el resto de la jornada”
 {$name}: “¡Muchas gracias! Tenga usted un buen día”
@@ -3003,7 +3003,7 @@ position: -136,-594
 Sagrario: “No sé ni que decir”
 Sagrario: “Es horrible. No es para nada como lo quería”
 Es verdad que mientras lo hacía estaba un poco [select value={$gender} M="perdido" F="perdida" NB="perdide"/], pero no creía que fuera para tanto.
-{$name}: “Perdone, parece que he tenido algún tipo de malentendido con encargo. Tal vez se expresó de una manera un tanto confusa”
+{$name}: “Perdone, parece que he tenido algún tipo de malentendido con su encargo. Tal vez se expresó de una manera un tanto confusa”
 Sagrario: “Ah que encima la culpa es mía. ¡Será posible!”
 Agh que he hecho, no debo echarle la culpa al cliente por fallos míos. Así lo único que haré es que dejen de venir.
 {$name}: “Tiene razón, no quería decir eso. Debí prestar más atención”
@@ -3012,7 +3012,7 @@ Sagrario: “Hmm... No voy a echar más leña al fuego por lo que espero que hay
 Sagrario: “Pero deberías prestar atención siempre mientras estés trabajando”
 Sagrario: “Te dejo ya en paz [select value={$gender} M="chiquillo" F="chiquilla" NB="chiquille"/]. Adiós”
 {$name}: “Adiós. Pase un buen día”
-La despido con una sonrisa cordial. Al menos creo que he conseguido salvarlo al final. Confío en que haya posibilidades de que siga volviendo en el futuro.
+Le despido con una sonrisa cordial. Al menos creo que he conseguido salvarlo al final. Confío en que haya posibilidades de que siga volviendo en el futuro.
 <<Move Sagrario offright bottom015 1.0>>
 <<wait 1.5>>
 <<Hide Sagrario>>
@@ -3049,6 +3049,7 @@ Un tenue sonido de sorpresa se escapa de mi boca.
 Al ver sus próximas acciones, suelto un suspiro de cansancio que enseguida se entremezcla con una pequeña risa resignada.
 Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
 De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
+Ya parece más suya que mía. 
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -3063,7 +3064,9 @@ Me haría mucha ilusión teniendo en cuenta que su “musa” es una de mis flor
 Sagrario: “-la? ¿Hola?”
 Una mano fina y arrugada por la edad inunda mi visión y me saca de mi ensimismamiento.
 Madre mía, ¡menudo día llevo hoy! Mi mente no para de regresar a las nubes.
-Con la cabeza algo agachada y las mejillas encendidas, me disculpo ante Sagrario.
+//////////////////////////////////////////////////////////////////////////////
+////////////////////Cambiar sprite protagonista a sonrojado///////////////////
+//////////////////////////////////////////////////////////////////////////////
 {$name}: “Lo siento mucho Sagrario, parece que mi mente todavía no se ha despertado del todo.”
 La regañina que anticipaba no llega y una risa entrecortada alcanza mis oídos.
 Sagrario: “Jajaja. Anda, no hay de que disculparse [select value={$gender} M="niño" F="niña" NB="niñe"/].”
@@ -3075,7 +3078,10 @@ Sagrario: “Ya es la segunda vez que le veo aquí haciendo esto.”
 Mis ojos siguen su mirada y se vuelven a posar en la serena figura de Pietro.
 Antes de que pueda contestar a Sagrario, esta levanta la voz.
 
-//Shake
+////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////Shake/////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
 Sagrario: “¿¡Otra vez vienes aquí a dar más trabajo a {$name}, jovencito!?”
 Doy un pequeño brinco por la sorpresa. No esperaba tanta energía de su parte.
 Pietro como era de esperar no se entera. Ladea ligeramente la cabeza en nuestra dirección, pero tras varios segundos se encoge de hombros y continúa dibujando.
@@ -3159,6 +3165,7 @@ Pietro: Suspiro. “Tsk, como no.”
 <<Hide Pietro>>
 Cierro la boca y [select value={$gender} M="estupefacto" F="estupefacta" NB="estupefacte"/] veo como Pietro avanza resignado a su rincón y abre el taburete para continuar su dibujo de la amapola del Himalaya.
 Tardo unos segundos en procesar lo que acaba de pasar. ¿¡En serio se indigna de esa manera por eso!?
+¡Si todas las flores que me ha pedido son especímenes rarísimos y no me ha dejado ni justificarme! 
 Con la boca abierta y el ceño fruncido, miro a Pietro [select value={$gender} M="molesto" F="molesta" NB="moleste"/]. Una risa entrecortada invade la floristería.
 Es Sagrario que parece ser la única que ha disfrutado de este intercambio.
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
@@ -3177,6 +3184,7 @@ El suave sonido del lápiz sobre papel hace que mi mente se relaje todavía más
 Ahh... Podría dormirme ahora mismo.
 ¡No {$name}! Abro los ojos y me enderezo con rapidez. Venga que cada vez queda menos.
 Con envidia veo como Pietro continua su dibujo con diligencia. ¡Yo también tengo que seguir!
+Asiento y preparo nuevos envoltorios para los próximos ramos.  
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -3185,12 +3193,32 @@ Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla 
 Como se nota que es la hora punta. Las voces de la gente en la calle me dan la razón.
 Y no solo yo he estado trabajando sin parar, Pietro tampoco se ha despegado del taburete en ningún momento.
 Umm, ¿me pregunto si debería decirle lo que pienso?
-->”Hola Pietro, ¿podría ver qué estas pintando?”
+->”Hola Pietro, ¿podría ver qué estás pintando?”
     <<Add_npc_likeability NPC_pietro +2>>
     Tan rápido como un rayo Pietro cubre con su cuerpo el contenido del bloc. 
-    Me siento realmente confundida. 
+    Me siento realmente confundida. No habría esperado esta reacción teniendo en cuenta su personalidad.
+    Me inclino para poder ver sus ojos tras la cortina de flequillo que los oculta.  
+    ->Insistes. “Anda Pietro, no seas tímido, seguro que está genial.”
+        <<Add_npc_likeability NPC_pietro -2>>
+        Pietro: “...” 
+        Mis hombros caen por el peso que se ha generado en el ambiente.
+        Parece que mis palabras no han tenido el efecto que esperaba.  
+        Observo con tristeza como Pietro levanta la cabeza y adquiere un semblante pensativo con la vista clavada en un punto de la pared. 
+        Su cara es completamente inexpresiva. 
+    ->“Lo siento Pietro, no era mi intención presionarte. Olvídalo.”
+        <<Add_npc_likeability NPC_pietro +2>>
+        Cuanto silencio... 
+        ¿¡Por qué siempre tengo que meter las narices dónde no me llaman!? 
+        Jugueteo con los dedos de mis manos mientras espero a que Pietro rompa el silencio. 
+        ¡Por favor, di algo! 
+        Pietro: “No... No pasa nada {$name}.” 
+        Esas simples palabras junto con su melodiosa voz me tranquilizan.  
+        ///////////////////////////////////////////////////////////////////
+        //////////Poner sprite de pietro sonrojado/////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        Sonrío ante su muestra sincera.  
 ->“Creo que he tenido demasiada paciencia contigo. Es hora de que te marches ya.” 
-    <<Add_npc_likeability NPC_pietro -2>>
+    <<Add_npc_likeability NPC_pietro -10>>
     Sin decir nada, Pietro se levanta y el golpe seco del bloc que acaba de cerrar recorre la floristería como un eco.
     Antes de que pueda pensar de nuevo en mis palabras, Pietro pasa a mi lado a toda velocidad no sin antes dirigirme una mirada helada.
     Me quedo [select value={$gender} M="congelado" F="congelada" NB="congelade"/] en el sitio ante tal intensidad. Un escalofrío recorre mi espalda.
