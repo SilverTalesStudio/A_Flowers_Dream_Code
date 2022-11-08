@@ -49,7 +49,7 @@ public class Orders_Manager : MonoBehaviour
 
         string cliente = PlayerPrefs.GetString("clienteActual");
         character = cliente;
-
+       
         ActivateCharacterImage(character);
 
         order = Random.Range(1, 11);
