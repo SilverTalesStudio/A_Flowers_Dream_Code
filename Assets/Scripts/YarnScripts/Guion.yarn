@@ -48,17 +48,17 @@ Me tambaleo del impacto y doy un paso atrás consiguiendo mantener el equilibrio
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Perd-” 
 //Añade a Sophie
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Chica sprt_sophie_neutral right bottom015 white>>
 //<<Move Sophie right center 0.15>>
-Sophie: “¡¿Es que no miras por dónde vas?!” 
+Chica: “¡¿Es que no miras por dónde vas?!” 
 //<<DeHighlight>>
 Ante mí me encuentro una chica muy guapa. Pero también tiene un rostro enfadado, el cual no parece que vaya a cambiar si me quedo mirándola mientras ella espera una reacción de mí. 
 
-Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
+Chica: "¿Te vas a quedar ahí sin disculparte ni nada?"
 
 -> {$name}: “¡Ey! No ha sido culpa mía, tú te has chocado conmigo”
     <<Add_npc_likeability NPC_sophie -2>>
-    Sophie: “¡Jah! Ahora será culpa mía que te creas que la calle es solo tuya para recorrer. ¿Quién te crees que eres? ¿[select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /]” Sonríe sarcásticamente. 
+    Chica: “¡Jah! Ahora será culpa mía que te creas que la calle es solo tuya para recorrer. ¿Quién te crees que eres? ¿[select value={$gender} M="Un príncipe" F="Una princesa" NB="Une noble" /]” Sonríe sarcásticamente. 
     //<<DeHighlight>>
     ¿[select value={$gender} M="Príncipe" F="Princesa" NB="Noble" /]? Escuchar el término me descoloca, pero rápidamente me recompongo. Ahora más enfadada que antes. ¿Quién es así de borde con desconocidos? ¡Y encima solo por chocarnos! 
     Me cruzo de brazos para mostrarme firme. Sé que no está sirviendo para nada porque la chica en frente mía no muestra ninguna reacción que demuestre lo contrario. Pero eso no me va a acobardar. 
@@ -66,13 +66,13 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Su postura imponente se rompe brevemente por un tic en su ceño fruncido. Ahora sé que no es tan impenetrable como se cree. Eso me da confianza para seguir. 
     {$name}: “Esta es una calle concurrida por si no te habías fijado. Te podía haber pasado con cualquiera que pasara por aquí justo cuando estabas saliendo. Así que culpa tuya, no mía.” Esta vez le sonrío yo. 
     La chica deja de sonreír, vuelve el enfado a su rostro. Da un paso hacia adelante para acercarse a mí, pero yo no me amedrento. Ni un paso atrás. 
-    Sophie: “Mira, no sé qué pret-” 
+    Chica: “Mira, no sé qué pret-” 
     //Audio notificacion movil
     La chica saca con prisas su móvil del bolsillo y lo mira atentamente. Sea lo que sea que haya recibido debe ser importante porque es como si no estuviera en discusión conmigo en este preciso momento.  
     Su cara se torna preocupada y comienza a escribir en el teléfono. Este cambio de actitud hace que me tranquilice yo también, la conversación ha escalado muy rápidamente y yo tampoco quería eso.
     Solo quería unas disculpas mutuas, nada más. Me descruzo de brazos para soltar la tensión acumulada. 
     Cuando termina de escribir mira una última vez la pantalla y lo guarda en su pantalón. Nuevamente, fija su mirada en la mía. 
-    Sophie: Suspira. “¿Sabes qué? No debería estar perdiendo el tiempo en estas tonterías y por las prisas que llevabas, supongo que tú tampoco.” 
+    Chica: Suspira. “¿Sabes qué? No debería estar perdiendo el tiempo en estas tonterías y por las prisas que llevabas, supongo que tú tampoco.” 
     <<Move Sophie offright bottom015 1.0>>
     <<wait 1.5>>
     <<Hide Sophie>>
@@ -83,7 +83,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Suficiente tiempo perdido. Retomo el paso rápido que llevaba y por fin llego a mi destino. 
 -> {$name}: “Lo siento mucho, tenía la cabeza en otro lado”
     <<Add_npc_likeability NPC_sophie 2>>
-    Sophie: “Ya me he dado cuenta ya” 
+    Chica: “Ya me he dado cuenta ya” 
     Parece que mi respuesta la apacigua. Su rostro se relaja, sigue molesta pero no tan enfadada como antes. 
     No sé muy bien cómo ha sido el golpe, pero por el leve dolor que noto en la frente, seguramente también haya podido hacerla daño. 
     Solo espero que no haya sido mucho, la primera persona con la que hablo de aquí y empiezo así de mal. 
@@ -91,7 +91,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Mi muestra de preocupación no debe ser lo que estaba esperando, porque sus ojos se agrandan y durante un instante expone lo claramente perpleja que le ha dejado mi comentario. 
     No entiendo muy bien por qué, es normal preocuparte por la persona con la que te acabas de chocar ¿no? 
     La chica se da cuenta de su propio cambio de actitud, cierra los ojos y cuando los abre vuelve a su expresión molesta, como queriendo ocultar su reacción de hace un momento. 
-    Sophie: “Estoy bien, [select value={$gender} M="tranquilo" F="tranquila" NB="tranquile" /], tampoco hace falta que te pongas así. Simplemente presta más atención por donde vayas para otra vez” 
+    Chica: “Estoy bien, [select value={$gender} M="tranquilo" F="tranquila" NB="tranquile" /], tampoco hace falta que te pongas así. Simplemente presta más atención por donde vayas para otra vez” 
     {$name}: “Ya, es que justo hoy estoy a mil cosas. Es mi primer día de trabajo, encima voy tarde y cuando acelero justo pasa esto. Como ves no estoy teniendo el mejor inicio” 
     Suelto una risa desganada para aligerar la conversación, pero no funciona. Además de molesta, ahora luce incómoda porque le haya contado todos mis problemas de hoy.
     Seguro que no esperaba que [select value={$gender} M="un desconocido" F="una desconocida" NB="un desconocide" /] se pusiera a contarle su vida. 
@@ -100,7 +100,7 @@ Sophie: "¿Te vas a quedar ahí sin disculparte ni nada?"
     Rompe su mirada conmigo y busca con prisa en el bolsillo de su pantalón el teléfono. Su cara se torna preocupada y comienza a escribir.
     Este cambio de actitud hace que me preocupe un poco yo también, pero si ya la he incomodado antes, estoy [select value={$gender} M="seguro" F="segura" NB="segure" /] de que no va a querer que le pregunte. 
     Cuando termina de escribir mira una última vez la pantalla y lo guarda en su pantalón. Nuevamente, fija su mirada en la mía. 
-    Sophie: Suspira. “Mira, yo me tengo que ir ya, que suficiente tiempo ya he perdido aquí. Además, tenías prisa para ir a algún sitio o algo así ¿no?, pues eso.”
+    Chica: Suspira. “Mira, yo me tengo que ir ya, que suficiente tiempo ya he perdido aquí. Además, tenías prisa para ir a algún sitio o algo así ¿no?, pues eso.”
     <<Move Sophie offright bottom015 1.0>>
     <<<wait 1.5>>
     <<Hide Sophie>>
@@ -1083,7 +1083,7 @@ No puede ser .
 -> {$name}: “Ejem, si quieres que te atienda vas a tener que apartarte para que pueda abrir” 
 -> {$name}: “Perdón, si te apartas un segundo puedo abrir y te atiendo” 
 
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 Borde: “¿En serio? ¿Tú de nuevo? Ya entiendo por qué estaba cerrada la tienda a estas horas. Horario de [select value={$gender} M="príncipes" F="princesas" NB="nobles"/] supongo” 
 -> {$name}: “Oye, simplemente tenía cosas que hacer antes y se me olvidó poner un aviso” 
 -> {$name}: “El que me dé a mí la gana que para eso soy [select value={$gender} M="el propietario" F="la propietaria" NB="el propietarie"/]” 
@@ -1151,7 +1151,7 @@ position: 238,44
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 Borde: “...” 
 {$name}: “¿No te gusta?” 
 Borde: “Al contrario, no tenía muchas expectativas y aun así me ha sorprendido” 
@@ -1168,7 +1168,7 @@ position: 427,41
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 Borde: “Está decente al menos” 
 {$name}: Sé que no es perfecto, pero tampoco hacía falta ponerse así. Bueno, el caso es terminar con esto. 
 <<jump Fin_ramas_minijuego_Sophie_jueves_sem1>>
@@ -1182,7 +1182,7 @@ position: 625,42
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 Borde: “Agh no sé ni que pensar. ¿Y se supone que eres una florista de verdad? 
 {$name}: “Lo s-” 
 Borde: “Déjalo, mejor no digas nada.” 
@@ -1197,7 +1197,7 @@ position: 423,125
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 Borde: “Toma, es el dinero justo así que no me des vueltas” 
 <<Move Borde offright bottom015 1.0>>
 <<wait 1.5>>
@@ -1794,7 +1794,7 @@ Se me ha hecho el día muy largo, y el golpe no ayuda. Si no viene ningún clien
 Antes lo pienso, antes el mundo decide de llevarme la contraria. Suspiro para mis adentros, separo la mirada del mostrador y la dirijo a la puerta.
 No me lo puedo creer, otra vez no.
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Borde sprt_sophie_placeholder right bottom015 white>>
+<<Act Borde sprt_sophie_neutral right bottom015 white>>
 La chica borde ha venido de nuevo a mi floristería. ¿Qué querrá ahora? ¿Habrá venido para quejarse dos días consecutivos?
 Borde: “Hola, buenas tardes”
 Percibo que sus ojos recaen brevemente en mi frente, sobre el bulto. Sin embargo, no parece que vaya a comentar nada al respecto, todo lo contrario, me sonríe incómodamente. 
@@ -1839,7 +1839,7 @@ Por supuesto que no se lo voy a decir, aprecio mi vida, pero a lo mejor en un fu
 {$name}: “¿Qué tal si comenzamos de nuevo con mejor pie? Hola, yo soy {$name}”
 Le extiendo la mano con firmeza. Si vamos a empezar esto bien no puedo acobardarme ni mostrar indecisión.
 Borde: “Yo me llamo Sophie”
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Hide Borde>>
 -> No comentar nada
     <<Add_npc_likeability NPC_sophie 0>>
@@ -1904,7 +1904,7 @@ position: 978,287
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 {$name}: “Ya tengo el ramo listo, aquí está”
 //Saltos a las diferentes ramas
 
@@ -1928,7 +1928,7 @@ position: 981,377
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 3>>
 Sophie: “Entiendo porque a mi hermana le gustan tanto tus ramos. Son preciosos”
 {$name}: “Entonces, ¿te gusta a ti también? Sé que es para tu hermana, pero si os gusta a las dos siempre es mejor.”
@@ -1953,7 +1953,7 @@ position: 1169,378
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 1>>
 Sophie: “Está bien. ¿Es el mismo precio?”
 {$name}: “Este sí”
@@ -1978,7 +1978,7 @@ position: 797,379
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sophie -3>>
 Sophie: “Sigo sin saber que ve mi hermana en estos ramos, pero bueno, al final a quien le tiene que gustar es a ella no a mí. Cuesta lo mismo que el de ayer ¿no? Ahí te va.”
 PLAYER
