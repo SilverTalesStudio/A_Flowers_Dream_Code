@@ -3391,5 +3391,326 @@ position: -120,41
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Entrelazo los dedos y empujo las manos hacia delante para estirar los brazos y la espalda. A pesar de que me haya acostumbrado ya la rutina de trabajo no quita que siga siendo dura.
+Bajo la mirada y giro la muñeca para ver la hora. Genial, queda poco para cerrar. En cuanto llegue a casa voy a tumbarme en el sofá y veré los capítulos que me faltan de la Casa del Basilisco.
+Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el táper con tortilla sin terminar. Pues ya está, ya tengo cena. Mejor, así cuando me apetezca solo tengo que calentarla y darle de comer a Limón. 
 
+<<set $cita to get_date()>>
+<<if $cita=="null">>
+    Tras un rato de esperar a que llegue un último cliente, nadie hace acto de presencia. El reloj marca el fin de la jornada y me pongo manos a la obra a recoger el local.
+    <<Hide floristeria_placeholder>>
+    <<Scene bg_calle_noche_placeholder>>
+    Termino en poco rato, echo el cierre y me pongo en marcha, vuelta a casa. En el trayecto voy repasando lo ocurrido en los capítulos anteriores de la serie. ¡Qué ganas de saber lo que ocurre!
+<<elseif $cita=="Allan">> 
+    Mientras planeo mi tarde-noche suenan las campanitas de la entrada. ¿Quién viene tan tarde a una floristería? ¿Tenía que venir justo ahora cuando estoy a punto de cerrar? 
+    Suspiro con resignación y me giro para atender al nuevo cliente.
+    En cuanto veo quién es mis ojos se iluminan y una energía renovada inunda mi cuerpo. Me levanto de la silla corriendo, apoyo mis manos en el mostrador y echo el cuerpo hacia delante para verle mejor. Alzo una mano y le saludo alegremente.
+    <<Act Allan sprt_allan_placeholder right bottom015 white>>
+    {$name}: “¡Hola Allan!”
+    Allan: “¡Hola {$name}!”
+    Allan se acerca a mí con una sonrisa radiante. Transmite felicidad pura.
+    ->“¿Qué haces tú por aquí a estas horas?”
+        <<Add_npc_likeability NPC_allan 1>>
+        {$name}: “Pensaba que solo podías pasarte por las mañanas a primera hora”
+        Allan: “Y así es de normal, pero hoy he conseguido salir un poco antes y he pensado en pasarme”
+        ////////////////////////////////////////////////////////////////////
+        ////////METER SPRITE DE ALLAN RUBORIZADO///////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        Se ruboriza con una sonrisa nerviosa.
+    ->“Te gusta venir aquí con la hora pillada ¿eh?”
+        <<Add_npc_likeability NPC_allan -2>>
+        Allan: “Bueno, ya te comenté que odio llegar tarde a los sitios. Pero es que hoy no podía pasarme antes, justo acabo de terminar mi turno”
+        Su rostro se entristece al ver que no me acordé de eso. Qué cabeza tengo, si hace sólo dos días desde que me lo contó.
+    {$name}: “Me alegro de que hayas venido, la verdad es que también me apetecía verte, pero no sabía a qué hora acababas. Y pensé que tal vez preguntarte directamente era demasiado intrusivo”
+    Me sonrojo tras confesarle lo que llevo pensando todo el día.
+    Allan: “Yo pensé lo mismo, pero el lunes yendo a la tienda me fijé de que tenías el horario en el escaparate. A diferencia del mío, el tuyo es fijo y pensé en venir por estas horas porque supuse que ya no tendrías ningún cliente”
+    Allan: “No quería molestar mientras estuvieras trabajando”
+    ¿Puede dejar Allan de ser un amor de persona? No creo que sea posible para él. Siempre está atento a las pequeñas cosas y se esfuerza en hacer que los demás estén siempre cómodos.
+    ->“Sí, eso hubiera sido problemático”
+        <<Add_npc_likeability NPC_allan -1>>
+        Allan: “Ya...”
+        Se lleva la mano a la nuca y mira a otro lado incómodo.
+    ->“Es muy considerado por tu parte”
+        <<Add_npc_likeability NPC_allan +2>>
+        Mis palabras le reconfortan y deja de estar tan nervioso. Baja su mano, ahora cuelga tranquilamente a la par que la otra.
+        Allan: “Es lo mínimo”
+        Asiento y le sonrío cálidamente para reforzar mi mensaje. No todo el mundo se comporta así, y nunca está de más tener en cuenta las buenas acciones de las personas.
+    ->“Tú nunca serías una molestia”
+        <<Add_npc_likeability NPC_allan +3>>
+        //////////////////////////////////////////////////////////////////////////////
+        /////////////////////////METER SPRITE DE ALLAN MUY ROJO///////////////////////
+        /////////////////////////////////////////////////////////////////////////////
+        Se queda perplejo, sus ojos se agrandan y sus mofletes se tornan rojos como un tomate.  
+        Allan: “Eh... Gra-Gracias"
+        No se esperaba un cumplido tan sincero, su cerebro ha cortocircuitado. Me río internamente con su reacción. Es imposible no quererle así.
+    {$name}: “Entonces no te importa que hablemos mientras recojo y cierro, ¿no?”
+    Allan: “Qué va, te puedo ayudar incluso, si quieres”
+    {$name}: “No, gracias, que tú ya llevas todo el día trabajando y ya acabaste, yo en cambio aún sigo. Además, ya estoy acostumbrada”
+    Antes de que haga nada, le saco una silla para que se siente y me remango para empezar a recoger. Con mi iniciativa acepta que no a poder hacer nada así que se sienta.
+    {$name}: “Estos días he estado pensando en el sábado a menudo. Me lo pasé muy bien”
+    Allan: “Sí, yo he estado igual. De hecho, he reordenado las plantas de mi casa tras ver cómo las tenían expuestas allí”
+    {$name}: “No me extraña, yo también he cogido ideas para nuevos ramos”
+    Ambos continuamos hablando sobre el sábado y las consecuencias del mismo. Nunca se me había pasado tan rápido el tiempo limpiando.
+    Termino de barrer, a su vez la conversación decae y llega el silencio. Pero no quiero que la conversación acabe.
+    {$name}: “Fue una experiencia inolvidable”
+    {$name}: “De hecho, estaba pensando subir esta foto a las redes”
+    Me acerco a Allan con la pantalla hacia arriba para mostrarle la imagen. Nuestros brazos entran en contacto, pero ninguno de los dos se aparta.
+    {$name}: “¿A que es bonita?”
+    Es una foto que eché a los rosales del jardín, la especialidad del mismo.
+    Allan: “Es preciosa”
+    {$name}: “Sabía que ibas a pensar como yo”
+    {$name}: “...”
+    {$name}: “Por cierto, ¿te importa si te etiqueto en la foto?”
+    Deja de mirar el móvil para mirarme a mi directamente a los ojos sorprendido. Intento aligerar el asunto rápidamente.
+    {$name}: “Para que la veas tú también digo, solo si quieres”
+    Allan: “Sí claro, me encantaría”
+    Pensé que iba a dudar más, o a responder más nervioso, pero este rato junto hablando relajadamente ha hecho que se suelte más. Ahora está más determinado.
+    {$name}: “Pues aquí tienes, escribe tu arroba”
+    Le ofrezco el móvil para que se etiquete y mientras lo hace miro su bello perfil. Tras unos segundos me lo devuelve.
+    Allan: “Listo”
+    Dejo de mirarlo a él rápidamente para cambiar mi vista al móvil y cogerlo. Espero que no le haya molestado que me haya quedado mirándole así.
+    {$name}: “¡Genial!”
+    Miro el reloj para ver la hora y es mucho más tarde de lo que esperaba. Se me ha pasado el tiempo volando.
+    {$name}: “Al final se nos ha hecho tarde sin darnos cuenta”
+    Allan: “¡Ay, tienes razón!”
+    Salimos de la floristería, echo la llave y bajo el cierro. La tienda ya está oficialmente cerrada por hoy.
+    <<Scene bg_calle_noche_placeholder>>
+    {$name}: “Me lo he pasado muy bien hablando hoy, espero no haberte retrasado mucho en volver a casa”
+    A pesar de estar feliz frunzo el ceño, [select value={$gender} M="preocupado" F="preocupada" NB="preocupade"/]. Quién sabe a cuánto está de su casa, por quedarse aquí es posible que llegue tardísimo y ya es de noche.
+    Allan: “Yo también lo pasé bien, y no te preocupes por eso. Vivo cerca”
+    Gesticula con sus manos para calmar mis preocupaciones. Mi preocupación desaparece y en mi cara aparece una sonrisa. La suya se ensalza aún más.
+    {$name}: “Otro día nos vemos entonces”
+    Allan: “¡Sí! Hasta la próxima”
+    {$name}: “¡Adiós!”
+    <<Move Allan offright bottom015 1.0>>
+    <<wait 1.0>>
+    <<Hide Allan>>
+    Mientras nos alejamos el uno del otro, cada uno siguiendo caminos opuestos, me giro para ver su inconfundible espalda perderse en la lejanía.
+    Vuelvo a mirar al frente y retomo el paso veloz de vuelta a casa.
+<<elseif $cita=="Ethan">>
+    Bueno, será mejor que me ponga manos a la obra si quiero llegar lo antes posible a casa.
+    Pero hoy vengo [select value={$gender} M="preparado" F="preparada" NB="preparade"/]. Para que la tarea de recoger sea algo más amena...
+    ¡Me he traído los auriculares y una playlist con los mejores éxitos de Useless Misfits! 
+    Asiento mientras activo la primera canción: “Ally”. Mi cabeza comienza a moverse con el ritmo de la música.
+    ¡Ahora sí! Con estos temazos voy a terminar en un periquete.
+    Guardo el teléfono en el bolsillo de mi camisa y me agacho para recoger la parte trasera del mostrador.
+    Tengo que sacar nuevos envoltorios y cintas de las cajas para el próximo día porque ya no me quedan suficientes.
+    Mientras realizo la tarea de forma mecánica no puedo evitar bailar y cantar algunas estrofas.
+    ¡No puede ser! ¡Mi canción favorita!
+    Mis movimientos se intensifican y comienzo a cantar con más intensidad.
+    Estoy tan [select value={$gender} M="metido" F="metida" NB="metide"/] en la música que no me doy cuenta de lo que se encuentra detrás de mí hasta que...
+    ///////////////////////////////////////////////////////////////////////////
+    //////////////////////////METER SHAKE//////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    {$name}: “¡AHHHHHHHHHHHHHH!”
+    Siento como unas manos se posan sobre mis hombros.
+    Me giro de golpe y con lo primero que ha logrado tomar mi mano, una botella de agua medio vacía, golpeo aquello que se encuentra frente a mí repetidamente con los ojos cerrados.
+    <<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+    Ethan: “¡EH! ¡Tranquila {$name} que soy yo! ¡Para!”
+    La persona misteriosa agarra con fuerza mi brazo para parar los continuos golpes.
+    Intento forcejear y del movimiento uno de los auriculares cae de mi oído.
+    Ethan: “¡{$name}!”
+    En ese momento, abro los ojos y veo que mi “asaltante” es Ethan.
+    ¿Cómo?
+    Poco a poco mis movimientos bruscos se ralentizan hasta parar. Mi respiración agitada por el susto.
+    {$name}: “¿Eh?”
+    Al ver que no voy a intentar golpearle más, Ethan me suelta y se palpa la zona golpeada para aliviar el dolor.
+    Ethan: “Menudos golpes das [select value={$gender} M="flor" F="florecita" NB="flor"/].”
+    “¿Se puede saber qué he hecho para merecer esto?”
+    ->”¡Lo siento mucho Ethan! Me has asustado y te he golpeado por auto reflejo.”
+        <<Add_npc_likeability NPC_ethan 1>>
+        Ante mi clara angustia, Ethan rápidamente deja a un lado su carácter sarcástico y se acerca a mí para consolarme.
+        Ethan: “No pasa nada {$name}. Ha sido culpa mía.”
+        Avergonzado, se lleva una mano al cuello y aparta la mirada.
+        Ethan: “No debería haberte asustado, pero te vi tan [select value={$gender} M="concentrado" F="concentrada" NB="concentrade"/] recogiendo que no pude evitarlo.”
+        Sus palabras me reconfortan y más teniendo en cuenta que no ha utilizado ningún mote.
+        Sé que cuando utiliza mi nombre es porque está siendo completamente sincero.
+        {$name}: “No te preocupes Ethan.”
+        {$name}: “Creo que después de los golpes que te di ya estamos en paz jajaja.”
+        Ethan: “Sí, menuda fuerza que tienes.”
+        Ambos nos reímos.
+        Ethan: “Y bueno tampoco me puedo quejar.”
+        Ethan: “He podido ver tus maravillosos pasos de baile y escuchar tu bella voz.”
+        Tardo unos segundos en procesar sus palabras, pero cuando lo consigo mi cara se convierte en un tomate.
+        ¿¡Ha visto eso!?
+        Ethan: “Anda no te sonrojes [select value={$gender} M="flor" F="florecita" NB="flor"/]. Estabas espectacular.”
+        {$name}: “¡Ethaaaan!”
+    ->“¿¡Te parece poco después del susto que me diste!?”
+        <<Add_npc_likeability NPC_ethan -2>>
+        Ante mi reacción, Ethan abre los ojos como platos y mira al suelo como un niño al que acaban de regañar.
+        Ethan: “Lo siento, no era mi intención.”
+        Ethan: “Solo quería gastarte una pequeña broma.”
+        {$name}: “¿Solo una broma? Pues casi acabas conmigo.”
+        Ethan: “Lo siento...”
+        Parece que Ethan no sabe qué más decir.
+        No puedo evitar sentirme mal al ver su cara triste.
+        Creo que me he pasado, a fin de cuentas, yo también le he pegado con una botella de plástico en la cabeza.
+        Con los nervios y el miedo todavía haciendo efecto no he podido evitar atacar a Ethan.
+        {$name}: Suspiro. “Lo siento yo Ethan, no debería haber dicho eso.”
+        {$name}: “Todavía me estoy recuperando del susto.”
+        Ethan sonríe débilmente ante mi disculpa, pero esta no alcanza sus ojos.
+        Parece que no esperaba que le incriminara de esa manera.
+        Ethan: “Nada, lo comprendo.”
+        Suspiro. Muy bien hecho {$name}, ya estás haciendo sentir mal a los demás.
+    Será mejor que cambie de tema. A ver si con eso consigo que Ethan olvide lo que ha pasado.
+    Y no solo él, yo también.
+    {$name}: “¿Por qué siempre tenemos que encontrarnos de esta manera?”
+    {$name}: “¿En algún momento podremos saludarnos como personas normales?”
+    Ethan: “Bueno [select value={$gender} M="príncipe" F="princesa" NB="Une noble"/], yo no diría siempre jajaja...”
+    La risa nerviosa de Ethan termina en silencio rápidamente. En el fondo sabe que tengo razón.
+    Me cruzo de brazos y levanto una ceja divertida.
+    Creo que después de ese susto yo también me merezco chincharle un rato.
+    {$name}: “Esta ya es la segunda vez que te confundo con un ladrón.”
+    {$name}: “¿Va a haber una tercera? Me gustaría saberlo para prepararme.”
+    Ethan arquea una ceja sintiéndose curioso. Parece que ambos estamos en la misma onda ahora mismo.
+    Ethan: “¿Oh? ¿Y cómo es que te vas a preparar?”
+    {$name}: “Umm. Déjame que piense...”
+    Me llevo un dedo a la barbilla mientras miro al techo para dar la impresión de que estoy pensando intensamente.
+    ¿Qué podría decirle que le sorprenda?
+    ->“¿A lo mejor poniendo un cartel de “prohibido el paso a Ethans”?”
+        <<Add_npc_likeability NPC_ethan 1>>
+        Ethan se lleva una mano al pecho como si le hubieran disparado.
+        Sacudo la cabeza divertida. Él siempre tan exagerado.
+        Ethan: “¡Agh! Esas palabras me han dolido [select value={$gender} M="flor" F="florecita" NB="flor"/]. No esperaba esto de ti.”
+        En un abrir y cerrar de ojos, Ethan se recompone y me guiña un ojo como si me estuviera retando.
+        Ethan: “Me temo que eso no va a ser suficiente para pararme, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/].”
+    ->“¿A lo mejor debería de regalarte un cascabel para poder reconocerte cuando te encuentres cerca?”
+        <<Add_npc_likeability NPC_ethan 2>>
+        Ethan: “¿Y eso [select value={$gender} M="flor" F="florecilla" NB="flor"/]? ¿Es que ahora quieres que sea tu mascota?” 
+        Ethan se acerca lentamente a mí, como si yo fuera su presa.
+        Levanta la mano y sostiene uno de mis mechones mientras acerca su cara a la mía.
+        ¿¡Qué está pasando!? ¿¡Cómo ha podido contratacar tan rápido de esa manera!?
+        Mi cara comienza a calentarse. Siento como si mi mente hubiera dejado de funcionar ante la proximidad.
+        {$name}: “E-esto...”
+        Ante mi intento vergonzoso de arreglar la situación, Ethan comienza a reírse a carcajadas.
+        Ethan: “Tranquila [select value={$gender} M="flor" F="florecilla" NB="flor"/]. Solo era una broma jajaja.”
+        Ethan se apiada de mí y da un paso hacia atrás dejando caer mi mechón.
+        Me llevo una mano al pecho.
+        Uff, menos mal...
+    {$name}: “¿Y qué estás haciendo aquí tan tarde?”
+    {$name}: “Estaba terminando de recoger para cerrar hasta que me has interrumpido.”
+    Ethan se rasca el cuello soltando una risita nerviosa. Aparta la mirada de mi cara con un ligero rubor en sus mejillas.
+    Ethan: “Bueno...”
+    Ethan: “Simplemente quería verte.”
+    ¿Quería verme? Me llevo una mano al pecho [select value={$gender} M="ruborizado" F="ruborizada" NB="ruborizade"/] ante su revelación.
+    No esperaba esto la verdad.
+    Ethan: “El otro día... Lo pasé muy bien cuando quedamos.”
+    Ethan: “Quería haber venido a verte ayer, pero no pude por un compromiso.”
+    ¿Un compromiso?
+    No sé por qué, pero siento que ese “compromiso” está relacionado con su vida amorosa.
+    Noto una imperceptible punzada en el pecho. ¿Pero qué...?
+    Sacudo la cabeza con fuerza para dejar de preocuparme. Seguro que es algo sin importancia {$name}.
+    Tengo que centrarme en él ahora.
+    ¿Um? ¿Por qué está Ethan mirándome nervioso? ¿Está esperando algo?
+    ¡Claro! ¡Estábamos hablando de la quedada!
+    {$name}: “¡Sí, yo también lo pasé genial!”
+    {$name}: “Hablamos un montón, pero siento como si hubieran quedado muchas cosas por decir.”
+    La sonrisa que me devuelve Ethan al escuchar mis palabras es deslumbrante, pero diferente a las que me suele dirigir habitualmente.
+    Esta es honesta, como si se sintiera verdaderamente feliz.
+    ////////////////////////////////////////////////////////////////////////
+    //////////////////CAMBIAR SPRITE PROTAGONISTA A RUBORIZADO//////////////
+    ////////////////////////////////////////////////////////////////////////
+    Vaya, que sonrisa más bonita tiene Ethan. No me había dado cuenta antes. 
+    Ethan: “Sí, yo pienso lo mismo, deberíamos de repetir en algún momento.”
+    ////////////////////////////////////////////////////////////////////////
+    //////////////////CAMBIAR SORITE PROTAGONISTA A SONRIENDO///////////////
+    ////////////////////////////////////////////////////////////////////////
+    {$name}: “Claro, me parece bien.” 
+    Continúo recogiendo para poder cerrar la tienda, pero me doy cuenta de que Ethan sigue mirándome.
+    Parece que todavía quiere decirme algo, aunque se le nota indeciso.
+    Su vista se despega y vuelve a mi figura incesantemente y no deja de dar golpecitos en el mostrador con el dedo.
+    Ladeo la cabeza confusa.
+    Ethan: “¿Pasa algo Ethan?”
+    ¿Puede que haya venido a la tienda en busca de un pedido?
+    ¡Claro, seguro que es eso!
+    {$name}: “¿Quieres un pedido? Como nos hemos puesto a hablar no me he dado cuenta de que querías que te atendiera y ...”
+    Ethan: “No es eso {$name}.”
+    Dejo de hablar inmediatamente al escuchar mi nombre. Debe ser algo serio entonces.
+    Ante mi mirada preocupada, Ethan se decide y comienza a rebuscar en su mochila.
+    Vaya, en todo este tiempo no me había dado cuenta de que hoy traía una.
+    No pasan ni cinco segundos cuando saca de esta un libro bastante gordo y desgastado por el uso.
+    Con una mano ligeramente temblorosa lo tiende en mi dirección.
+    Ethan: “En realidad... Había venido a traerte esto.”
+    Ethan: “El otro día me dijiste que te gustaban mucho los libros de fantasía y pensé en prestarte este. Es mi favorito.”
+    Lo sostengo con sumo cuidado.
+    ->”Muchas gracias, Ethan. La verdad es que tenía muchas ganas de leerlo.”
+        <<Add_npc_likeability NPC_ethan 2>>
+        {$name}: “Lo tengo en mi lista de deseos desde hace varios meses, pero no conseguía encontrarlo en ningún sitio.”
+        Por el rabillo del ojo veo como el tenue temblor de sus manos cesa e infla el pecho orgulloso.
+        Parece que el haber compartido este libro conmigo es algo muy importante para él.
+        Ethan: “Sí, es que se descatalogo hace varios años y ahora mismo solo se puede conseguir en subastas online y a muy alto precio.”
+        Ethan: “Yo tuve suerte de hacerme con esta edición especial.”
+        ¿¡Cómo ha dicho!? Miro el libro con asombro y temor.
+        {$name}: “¿¡Es la edición especial!?”
+        Menuda responsabilidad. Esta edición debe de costar una fortuna ahora mismo.
+        {$name}: “Me siento como si tuviera un tesoro muy preciado en mis manos.”
+        {$name}: “¡Te aseguro que lo cuidaré como si fuese Limón!” 
+        Ethan ríe mientras se rasca la mejilla.
+        Ethan: “No es nada de verdad. Me alegro de poder compartir esto contigo.”
+        Ethan: “Ya me contaras qué te ha parecido.”
+        {$name}: “Por supuesto, espera mi llamada jajaja.”
+    ->“Gracias, aunque debo admitir que ya lo he leído.”
+        <<Add_npc_likeability NPC_ethan -2>>
+        Como si le acabara de echar una jarra de agua fría por la cabeza, Ethan se desinfla.
+        Sus hombros caen y su expresión se vuelve triste, aunque intenta ocultarlo tras una sonrisa.
+        Ethan: “Vaya... Que faena entonces.”
+        Ethan: “Al menos he podido verte.”
+        Parece que no debería de haber admitido eso. Se nota que este libro es muy importante para Ethan.
+        {$name}: “No pasa nada Ethan, me gustaría volver a leerlo en verdad.”
+        {$name}: “A mí también me gusta mucho.”
+        {$name}: “A lo mejor podríamos quedar un día para hablar de nuestras partes favoritas.”
+        Sonrío con la intención de animarle.
+        Parece que funciona porque enseguida Ethan se recompone y sonríe de par en par.
+        Ethan: “¡Me encantaría!”
+    Guardando la última de mis pertenencias en mi mochila, cojo la llave para cerrar la floristería.
+    {$name}: “¿Nos vamos?”
+    Ethan: “Claro [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
+    Ethan me contagia su sonrisa. La verdad es que me hace muy feliz que haya venido a verme y haya decidido compartir conmigo algo tan preciado para él.
+    No puedo esperar a ver cómo evoluciona esta relación.
+<<endif>>
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Sophie_miercoles_sem2>>
+===
+
+title: Sophie_miercoles_sem2
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+Otro día más de trabajo y, por lo tanto, otro día de tener que ganarse el sueldo. Al menos ya es mitad de semana.
+He de decir que ayer se me pasó bastante rápido y eso que vino bastante gente. Eso son buenas noticias, porque espero que cada vez vengan más así que tendré que ser capaz de mantener el ritmo.
+Ver en primera línea como está despegando mi proyecto... Es una felicidad que no puedo describir.
+
+//Campanitas
+Justo llega el primer cliente, ahora sí que sí. Manos a la obra.
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+Ufff, ha sido un no parar. Es como si todos se hubieran puesto de acuerdo para venir a la vez, uno tras otro.
+
+//Campanitas
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Tsk, no tiene pinta de que vayan a parar de llegar, ni un rato de descanso me dejan. 
+Sin embargo, la clienta que entra por la puerta no es una cualquiera, es más, la podría considerar ya una habitual.
+
+->Saludar primero.
+    <<Add_npc_likeability NPC_sophie 1>>
+    {$name}: “Buenos días, Sophie”
+    Alzo la mano para saludarle, sin mucha energía. Creo que por cómo es ella, le abrumaría una actitud tan intensa.
+    <<Act Sophie sprt_sophie_placeholder right bottom015 white>>
+    Sophie: “Buenos días {$name}”
+    Me saluda con un gesto con la cabeza y hago lo mismo. Al final sí que es cierto lo de cambiar su actitud hacia mí. 
+    {$name}: “Hola Sophie”
+->Esperar a que inicie ella.
+Según se acerca a la recepción me fijo en que lleva una bolsa de papel.
+{$name}: “Ey, parece que has ido de compras. ¿Aprovechando la nueva temporada?”
+Sophie: “¿Qué?”
+Se sorprende, pero acto seguido observa mi mirada y se fija en que estoy mirando a la bolsa
 ===
