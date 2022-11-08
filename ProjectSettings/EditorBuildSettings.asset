@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gallery.unity
     guid: 713e389d3bfc9b34995f79c38cb859fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GuiaFlores.unity
     guid: a53bb8c6da901fb4690ecf0e838705ae
   - enabled: 1

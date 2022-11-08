@@ -4,14 +4,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Yarn.Unity.Example {
+namespace Yarn.Unity.Example
+{
 	/// <summary>
 	/// runs Yarn commands and manages sprites for the Visual Novel example
 	/// </summary>
-    public class VNManager : DialogueViewBase
+	 public enum NPCsDateable
+	{
+		Sophie, Allan, Ethan, None
+	}
+
+public class VNManager : DialogueViewBase
     {
 		[SerializeField] DialogueRunner runner;
-
+		//public YarnProject yarnProject;
 		public SceneChanger SceneChanger;
 
 		[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
@@ -43,17 +49,41 @@ namespace Yarn.Unity.Example {
 		[HideInInspector] public Dictionary<string, VNActor> actors = new Dictionary<string, VNActor>(); // tracks names to sprites
 
 		static Vector2 screenSize = new Vector2( 1280f, 720f); // needed for position calcuations, e.g. what does "left" mean?
-
+		string startNodeManually;
+		//bool YarnProjectLoaded;
 		void Awake () {
+			//YarnProjectLoaded = false;
+
+			//Inicializa el startNode
+			if (PlayerPrefs.GetString("nodeSaved").Length > 1)
+			{
+				Debug.Log("entra en el getstring");
+				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+				startNodeManually = PlayerPrefs.GetString("nodeSaved");
+				
+			}
+			else
+			{
+				Debug.Log("entra en el else");
+				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+
+				startNodeManually = "Semana1";
+			}
+			runner.startNode = startNodeManually;
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
 
 
 			//Propios
-			runner.AddCommandHandler<string,int>("Add_npc_likeability", AddToLikeability);
+			//Propios
+			runner.AddCommandHandler<string, int>("Add_npc_likeability", AddToLikeability);
 			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
-
+			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
+			runner.AddCommandHandler("Plans_To_Zero", PlansToZero);
+			runner.AddCommandHandler("the_end", TheEnd);
+			runner.AddCommandHandler<string, bool, bool>("Update_Plans", UpdatePlans);
+			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
 			runner.AddCommandHandler<string,string,string>("Draw", SetSpriteYarn );
@@ -85,9 +115,109 @@ namespace Yarn.Unity.Example {
 				loadAudio.AddRange( allAudioInResources );
 			}
 		}
+		/*private void Update()
+		{
+			if (YarnProjectLoaded == false) 
+			{
+				if (runner.yarnProject != null)
+				{
+					YarnProjectLoaded=true;
+					runner.StartDialogue(startNodeManually);
+				}
 
+			}
+			
+		}*/
+      /*  private void Start()
+		{
+			runner.startNode = startNodeManually;
+		}*/
 		#region YarnCommands
+		public void TheEnd()
+		{
 
+			SceneChanger.changeScene("Menu");
+		}
+		public void PlansToZero()
+		{
+
+			string json = PlayerPrefs.GetString("Planes");
+			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
+			obj.Plan_Ethan_isTherePlan = false;
+			obj.Plan_Ethan_isLocked = false;
+			obj.Plan_Sophie_isTherePlan = false;
+			obj.Plan_Sophie_isLocked = false;
+			obj.Plan_Allan_isTherePlan = false;
+			obj.Plan_Allan_isLocked = false;
+			json = JsonUtility.ToJson(obj);
+			PlayerPrefs.SetString("Planes", json);
+		}
+
+		public void UpdatePlans(string name, bool isPlan, bool isLocked)
+		{
+			string json = PlayerPrefs.GetString("Planes");
+			Planes_Finde obj = JsonUtility.FromJson<Planes_Finde>(json);
+			NPCsDateable enumerator = System.Enum.Parse<NPCsDateable>(name);
+			switch (enumerator)
+			{
+				case NPCsDateable.Sophie:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Sophie_isTherePlan=true;
+							obj.Plan_Sophie_isLocked=true;
+
+						}
+						else
+						{
+							obj.Plan_Sophie_isTherePlan = true;
+							obj.Plan_Sophie_isLocked = false;
+						}
+					}
+					break;
+				case NPCsDateable.Allan:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Allan_isTherePlan = true;
+							obj.Plan_Allan_isLocked = true;
+
+						}
+						else
+						{
+							obj.Plan_Allan_isTherePlan = true;
+							obj.Plan_Allan_isLocked = false;
+						}
+					}
+					break;
+				case NPCsDateable.Ethan:
+					if (isPlan)
+					{
+						if (isLocked)
+						{
+							obj.Plan_Ethan_isTherePlan = true;
+							obj.Plan_Ethan_isLocked = true;
+
+						}
+						else
+						{
+							obj.Plan_Ethan_isTherePlan = true;
+							obj.Plan_Ethan_isLocked = false;
+						}
+					}
+					break;
+				case NPCsDateable.None:
+					break;
+				default:
+					break;
+			}
+
+			Debug.Log(obj.Plan_Allan_isTherePlan);
+			string json2 = JsonUtility.ToJson(obj);
+			PlayerPrefs.SetString("Planes", json2);
+		}
 		///<summary> Añade al sistema de love-hate de personaje un valor positivo o negativo</summary>
 
 		public void AddToLikeability(string keyVar, int sumValue)
@@ -104,11 +234,25 @@ namespace Yarn.Unity.Example {
 		{
 			Debug.Log("Entra en go to minigame");
 			Debug.Log(nombreCliente);
-			PlayerPrefs.SetString ("clienteActual", nombreCliente);
+			PlayerPrefs.SetString("clienteActual", nombreCliente); 
+			Debug.Log(runner.CurrentNodeName);
+			PlayerPrefs.SetString("currentMinigame", runner.CurrentNodeName);
 			SceneChanger.nextOrder = nombreCliente;
 			//Se llama con PlayerPrefs.GetString("clienteActual");
-			//SceneChanger.changeScene("MinijuegoFlores");
+
+
+			// SceneChanger.changeScene("MinijuegoFlores");
 		}
+
+		public void SaveNextNodeToJumpBack(string nextNode)
+		{
+			Debug.Log("Entra en SaveNextNodeToJumpBack");
+			Debug.Log(startNodeManually);
+			startNodeManually = nextNode;
+			Debug.Log(startNodeManually);
+			PlayerPrefs.SetString("nodeSaved", nextNode);
+		}
+
 		/// <summary>changes background image</summary>
 		public void DoSceneChange(string spriteName) {
 			bgImage.sprite = FetchAsset<Sprite>( spriteName );
@@ -414,16 +558,23 @@ namespace Yarn.Unity.Example {
                 nameplateBG.gameObject.SetActive(true);
             } else {
                 nameplateBG.gameObject.SetActive(false);
-            }
+				DeHighlightSprite();
+			}
 
             onDialogueLineFinished();
         }
 
 		public void HighlightSprite (Image sprite) {
+			StopCoroutine("DeHighlightSpriteCoroutine");
 			StopCoroutine( "HighlightSpriteCoroutine" ); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
 			StartCoroutine( "HighlightSpriteCoroutine", sprite );
 		}
-
+		public void DeHighlightSprite()
+		{
+			StopCoroutine("HighlightSpriteCoroutine");
+			StopCoroutine("DeHighlightSpriteCoroutine"); // use StartCoroutine(string) overload so that we can Stop and Start the coroutine (it doesn't work otherwise?)
+			StartCoroutine("DeHighlightSpriteCoroutine");
+		}
 		// called by HighlightSprite
 		IEnumerator HighlightSpriteCoroutine (Image highlightedSprite) {
 			float t = 0f;
@@ -445,7 +596,26 @@ namespace Yarn.Unity.Example {
 				yield return 0;
 			}
 		}
+		IEnumerator DeHighlightSpriteCoroutine()
+		{
+			float t = 0f;
+			// over time, gradually change sprites to be "normal" or
+			// "highlighted"
+			while (t < 1f)
+			{
+				t += Time.deltaTime / 2f;
+				foreach (var spr in sprites)
+				{
+					Vector3 regularScalePreserveXFlip = new Vector3(Mathf.Sign(spr.transform.localScale.x), 1f, 1f);
+					// set back to normal
+					spr.transform.localScale = Vector3.MoveTowards(spr.transform.localScale, regularScalePreserveXFlip, Time.deltaTime);
+					spr.color = Color.Lerp(spr.color, defaultTint, Time.deltaTime * 5f);
 
+
+				}
+				yield return 0;
+			}
+		}
 		IEnumerator MoveCoroutine(RectTransform transform, Vector2 newAnchorPos, float moveTime ) {
 			Vector2 startPos = transform.anchoredPosition;
 			float t = 0f;
@@ -555,6 +725,12 @@ namespace Yarn.Unity.Example {
 				case "bottomedge":
 				case "loweredge":
 					return 0f;
+				case "bottom010":
+					return 0.10f;
+				case "bottom015":
+					return 0.15f;
+				case "bottom020":
+					return 0.20f;
 				case "left":
 				case "bottom":
 				case "lower":
