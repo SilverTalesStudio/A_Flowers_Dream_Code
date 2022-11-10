@@ -86,6 +86,7 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler<string>("citaFin", AddCitaFinal);
 			runner.AddCommandHandler<string>("sobreMinerva", AddInfoMinerva);
 			runner.AddCommandHandler<string>("seDejaPintaraPietro", AddPintarPietro);
+			runner.AddCommandHandler<string>("LeisteLibroEthanMartes", AddLibroEthan);
 			
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
@@ -258,16 +259,23 @@ public class VNManager : DialogueViewBase
 
 		public void AddInfoMinerva(string info)
 		{
-			Debug.Log("Entra en AddCitaFinal");
+			Debug.Log("Entra en AddInfoMinerva");
 			PlayerPrefs.SetString("infoMinerva", info);
 			Debug.Log(info);
 		}
 
 		public void AddPintarPietro(string pintar)
 		{
-			Debug.Log("Entra en AddCitaFinal");
+			Debug.Log("Entra en AddPintarPietro");
 			PlayerPrefs.SetString("dejaPintar", pintar);
 			Debug.Log(pintar);
+		}
+
+		public void AddLibroEthan(string libro)
+		{
+			Debug.Log("Entra en AddLibroEthan");
+			PlayerPrefs.SetString("LeisteLibroEthanMartes", libro);
+			Debug.Log(libro);
 		}
 
 

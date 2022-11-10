@@ -8,9 +8,6 @@ public class YarnVariables : MonoBehaviour
 	[YarnFunction("get_date")]
 	public static string FinalDate()
 	{
-		//string json = PlayerPrefs.GetString("citaFin");
-		//Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-		//return planes.Cita_Final;
 		string cita = PlayerPrefs.GetString("citafinal");
 		Debug.Log(cita);
 		return cita;
@@ -19,9 +16,7 @@ public class YarnVariables : MonoBehaviour
 	[YarnFunction("get_infoMinerva")]
 	public static string SagrarioTeCuenta()
 	{
-		//string json = PlayerPrefs.GetString("citaFin");
-		//Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-		//return planes.Cita_Final;
+
 		string info = PlayerPrefs.GetString("infoMinerva");
 		Debug.Log(info);
 		return info;
@@ -30,11 +25,18 @@ public class YarnVariables : MonoBehaviour
 	[YarnFunction("get_pintarPietro")]
 	public static string pinturaPietro()
 	{
-		//string json = PlayerPrefs.GetString("citaFin");
-		//Planes_Finde planes = JsonUtility.FromJson<Planes_Finde>(json);
-		//return planes.Cita_Final;
+
 		string pintar = PlayerPrefs.GetString("dejaPintar");
 		Debug.Log(pintar);
 		return pintar;
+	}
+
+	[YarnFunction("get_libroEthanLeido")]
+	public static string libroEthan()
+	{
+
+		string libro = PlayerPrefs.GetString("libroLeido");
+		Debug.Log(libro);
+		return libro;
 	}
 }
