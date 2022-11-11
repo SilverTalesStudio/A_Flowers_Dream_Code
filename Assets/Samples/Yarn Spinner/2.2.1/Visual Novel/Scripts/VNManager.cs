@@ -274,7 +274,7 @@ public class VNManager : DialogueViewBase
 		public void AddLibroEthan(string libro)
 		{
 			Debug.Log("Entra en AddLibroEthan");
-			PlayerPrefs.SetString("LeisteLibroEthanMartes", libro);
+			PlayerPrefs.SetString("libroLeido", libro);
 			Debug.Log(libro);
 		}
 

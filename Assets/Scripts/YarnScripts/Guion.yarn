@@ -8,9 +8,10 @@ position: -612,-485
 <<set $name to get_player_name()>>
 
 
-<<citaFin Allan>> //--> se guarda la cita
+<<citaFin Ethan>> //--> se guarda la cita
+<<LeisteLibroEthanMartes no>>
 
-<<jump Sophie_miercoles_sem2>>
+<<jump Ethan_miercoles_sem2>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -3787,7 +3788,7 @@ position: -118,-144
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “Aquí está”
-Apoyo el ramo en la mesa y lo coloco para que sea bien.
+Apoyo el ramo en la mesa y lo coloco para que se vea bien.
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
 <<jump Minijuego_bien_Sophie_miercoles_sem2>>
@@ -3941,7 +3942,8 @@ Guiña el ojo al terminar la frase.
 <<Move Sophie offright bottom015 1.0>>
 <<wait 1.0>>
 <<Hide Sophie>>
-Sophie dirige a la salida con paso firme. Veo a Ethan que comienza un intento de continuar la conversación con ella, pero esta, al darse cuenta en vez de esquivarle para salir le choca a propósito el hombro. No hace falta decir más para explicar cómo le ha sentado el comentario a Sophie.
+Sophie dirige a la salida con paso firme. Veo a Ethan que comienza un intento de continuar la conversación con ella, pero esta, al darse cuenta en vez de esquivarle para salir le choca a propósito el hombro. 
+No hace falta decir más para explicar cómo le ha sentado el comentario a Sophie.
 <<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 Ethan: “Vaya, que fuerza...” Sonríe mientras se palpa el hombro.
 {$name}: “¿Estás bien?”
@@ -4053,7 +4055,7 @@ Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos
     Me abrazo a mí [select value={$gender} M="mismo" F="misma" NB="misme"/] intentando buscar consuelo.
     Es la primera vez que le escucho levantar la voz y perder los nervios de esa manera.
     Ethan: “Me gustaría dejar el tema, por favor. No creo que lo entiendas.”
-    Ethan: Suspiro.” Te sorprenderías.”
+    {$name}: Suspiro.” Te sorprenderías.”
 Con un carraspeo aclaro la garganta. Creo que es un buen momento para cambiar de tema y dejar esta conversación atrás.
 {$name}: “¿Y a qué has venido hoy aquí? ¿Tienes algún ramo en mente?”
 Ethan: “Pues ahora que lo mencionas sí, estoy aquí por un ramo.”
@@ -4068,11 +4070,11 @@ No puedo evitarlo y le sigo el juego.
 Ethan: “Y déjame que te diga que no querrás hacerme llorar o harás que mi magnifico maquillaje natural se arruine con mis lágrimas.”
 Sus palabras me dejan [select value={$gender} M="inexpresivo" F="inexpresiva" NB="inexpresive"/] y con más dudas que respuestas.
 Y yo que pensaba que me iba a contar algo más sobre este pedido misterioso.
-Pero bueno, al menos he conseguido aclarar mi otra gran duda desde que conozco a Ethan: el maquillaje.
+Pero bueno, al menos he conseguido aclarar mi otra gran duda desde que conozco a Ethan, el maquillaje.
 Siempre pensé que su cara se veía demasiado clara y suave, aunque no me sorprende.
 Se nota que le encanta cuidarse y verse elegante.
 Seguro que está al tanto de los últimos artículos de belleza y moda, no como yo.
-Nota mental: preguntarle la próxima vez por consejos de skincare.
+Nota mental, preguntarle la próxima vez por consejos de skincare.
 Asiento, aún con cierta curiosidad comiéndome por dentro. Tengo ganas de preguntarle, pero me da corte después de la conversación que hemos tenido antes.
 Además de que seguro que es para alguno de sus muchos admiradores.
 Vamos {$name}. Tienes que olvidarte de ello y centrarte en el pedido.
@@ -4133,7 +4135,7 @@ position: -123,-48
 <<Add_npc_likeability NPC_ethan 3>>
 
 Ethan: “¡Madre mía {$name}, está perfecto!”
-“Sabía que podía confiar en ti para hacer este encargo.”
+Ethan: “Sabía que podía confiar en ti para hacer este encargo.”
 Uff, que alivio. Definitivamente me he quitado un peso de encima.
 Y no solo eso, ¡además le ha encantado!
 Me siento extremadamente [select value={$gender} M="orgulloso" F="orgullosa" NB="orgullose"/] de haber podido presentar un ramo al nivel de lo que quería.
@@ -4295,10 +4297,10 @@ Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="n
     ¿Es posible ponerme más [select value={$gender} M="rojo" F="roja" NB="roje"/] de lo que ya estaba? 
     {$name}: “Eh... ¡Por cierto!”
     <<set $hasLeidoElLibro to get_libroEthanLeido()>>
-    <<if $hasLeidoElLibro == "yes">>
+    <<if $hasLeidoElLibro == "no">>
         {$name}: “No te dije todavía nada porque viniste ayer, pero ya he empezado el libro y menuda pasada.”
         {$name}: “¡Me está encantando y eso que solo voy por las cien primeras páginas!”
-    <<elseif $hasLeidoElLibro == "no">>
+    <<elseif $hasLeidoElLibro == "yes">>
         {$name}: “No te dije nada todavía porque viniste ayer, pero he vuelto a empezar el libro y es como recordaba.”
         {$name}: “Todavía voy por las primeras cien páginas, pero estoy apuntando mis momentos favoritos para comentarlos.”
     <<endif>>
@@ -4360,7 +4362,7 @@ Ethan: “Para poder tener esta cara es lo recomendable.”
 ¿Está de verdad Ethan poniendo morritos? No puedo con esto, es demasiado gracioso.
 Comienzo a reírme ante su estupidez.
 {$name}: “Tú siempre tan gracioso Ethan, aunque me apunto el consejo.”
-Ethan: “Tú siempre tan gracioso Ethan, aunque me apunto el consejo.”
+Ethan: “Deberías. No hay nadie que sepa más de belleza y salud que yo.”
 ¡Lo sabía, tenía razón! Un punto para mí.
 Me doy una palmadita en la espalda internamente.
 Mientras celebro mentalmente el punto ganado, Ethan comienza a marchar hacia la puerta.
@@ -4379,7 +4381,7 @@ Mientras celebro mentalmente el punto ganado, Ethan comienza a marchar hacia la 
     Ambos reímos.
 ->No decir nada.   
 Ethan: “Nos vemos, hasta la próxima.”
-{$name}: “Nos vemos, hasta la próxima.”
+{$name}: “Hasta luego Ethan.”
 <<Move Ethan offright bottom015 1.0>>
 <<wait 1.0>>
 <<Hide Ethan>>
