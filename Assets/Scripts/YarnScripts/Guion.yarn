@@ -4595,8 +4595,8 @@ Allan suspira resignado. Justo termino de comer y le miro [select value={$gender
     {$name}: “Imagínate los que trabajan en la mina. Ellos sí que lo tienen difícil”
     Su expresión se apaga con mis palabras. No sé si esperaba otra cosa, pero yo voy a ser totalmente sincera con lo que pienso.
 {$name}: “Por cierto, ¿querías que te hiciera algún ramo hoy? Como has dicho que es tu descanso y no sé cuánto te queda... Por ir haciéndolo ya”
-<<set $AfinidadAllan to get_npc_likeability(NPC_allan)>>
-<<if $AfinidadConAllan > 10>>
+
+<<if get_npc_likeability("NPC_allan") > 10>>
     Allan: “¡Cierto! Hablando contigo me despisto de otras cosas”
     Se sonroja él y menos mal, porque yo también lo hago, así no soy la única.
 <<else>>
@@ -4729,8 +4729,7 @@ position: -120,41
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Allan sprt_allan_placeholder right bottom015 white>>
 
-<<set $AfinidadAllan to get_npc_likeability(NPC_allan)>>
-<<if $AfinidadAllan < 15>>
+<<if get_npc_likeability("NPC_allan") < 15>>
     {$name}: “Muchas gracias por comprar aquí entonces”
     Allan: “A ti por atenderme cuando estabas descansando, aunque no fuera tu “descanso” oficial”
     {$name}: “No pasa nada, me gusta mi trabajo”
@@ -4756,7 +4755,7 @@ position: -120,41
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump Finde_sem2>>
-<<elseif $AfinidadAllan >= 15>>
+<<elseif get_npc_likeability("NPC_allan") >= 15>>
     Allan mira la hora y sus ojos se agrandan.
     Allan: “Me voy a tener que ir ya, que se me acaba el descanso y saliendo ahora ya voy justo”
     {$name}: “Pues date prisa, no quiero que llegues tarde por mi culpa” 
