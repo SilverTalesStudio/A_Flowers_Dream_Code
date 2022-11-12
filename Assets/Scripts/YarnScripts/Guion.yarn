@@ -1,4 +1,4 @@
-﻿title: Semana1
+title: Semana1
 tags:
 position: -612,-485
 ---
@@ -4390,5 +4390,573 @@ Ethan: “Nos vemos, hasta la próxima.”
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+
+<<jump Sophie_jueves_sem2>>
+===
+
+title: Sophie_jueves_sem2
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
+<<citaFin null>>
+Hoy de camino al trabajo el dueño de la pastelería de la calle me ha reglado un bollo de crema. 
+Estoy muy agradecida con toda la gente del barrio, me han ayudado mucho a no sentirme como [select value={$gender} M="un forastero" F="una forastera" NB="une forastere"/]. En detalles como estos, se nota.
+Mientras ando desenvuelvo el bollo del papel que lo contiene y comienzo a comerlo. 
+Mmmm, ¡qué bueno está!
+Alzo la mirada del bizcocho, visualizo el cartel de mi floristería y bajo él hay una chica de pelo negro. Esta situación me suena.
+Guardo el bollo de nuevo y me limpio con la servilleta que me dieron con el tentempié. Una vez estoy lista, acelero para hablar con Sophie.
+{$name}: “Buenos días, Sophie. Hoy estoy segura de que no voy tarde”
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+Sophie: “Hola {$name}, vas bien de tiempo, soy yo la que ha llegado muy pronto hoy”
+Está un poco alterada, tiene mucha urgencia de entrar.
+->“¿Tantas ganas tenías de verme?”
+    Sophie: “Si piensas así, diría que [select value={$gender} M="el" F="la" NB="le"/] que más quiere verme eres tú”
+    Se tranquiliza más y una sonrisa pícara aparece en su cara. Mi reacción es sonrojarme porque he sido [select value={$gender} M="leído" F="leída" NB="leíde"/] completamente.
+->“¿Ha pasado algo?”
+    Sophie: “No, no, nada importante”
+Sophie: “Ayer perdí la pulsera de Useless Misfits y vine aquí porque fue el último sitio donde recuerdo tenerla”
+{$name}:“Es verdad, sí la tengo yo. Estaba en el suelo”
+Saco las llaves de la tienda y empiezo a abrirla.
+{$name}: “Pasa, pasa, que la tengo dentro”
+<<Scene floristeria_placeholder>>
+Una vez dentro me dirijo directamente a la zona detrás del mostrador y oigo los pasos de Sophie detrás de mí siguiéndome.
+Abro un cajón, saco la pulsera y se la dejo en la mesa.
+{$name}: “Es esta ¿no?”
+Sophie: “Sí es, muchas gracias. Me hubiera jodido mucho perderla”
+{$name}: “Sabía que eras fan, pero no sabía que tanto”
+Sophie: “Ya, tampoco es que habláramos mucho...”
+{$name}: “Cierto, de hecho, tengo curiosidad por saber cómo conociste tú al grupo”
+Me inclino hacia delante y arqueo la ceja [select value={$gender} M="integrado" F="integrada" NB="integrade"/]. Me aguanta la mirada mientras se lo piensa, al ver que sigo esperando su respuesta, suspira y cede.
+Sophie: “Uff, vale... Pero no te pongas como una [select value={$gender} M="histérico" F="histérica" NB="histerique"/] cuando te lo cuente. Lo último que necesito es quedarme sorda tan pronto en la mañana”
+Solo de pensar en la situación pone una cara molesta. ¿Tan rara es la forma en que los conoció que voy a chillar?
+{$name}: “No será algo ilegal por el cuál conocer yo esa información vaya a poner en peligro mi vida, ¿verdad?”
+Su gesto cambia rápidamente a sorprendida.
+Sophie: “¿Qué? ¡No! Mucha imaginación tienes tú”
+{$name}: “Bueno es que te has puesto tan misteriosa de repente que no sabía que pensar”
+Traslada su peso a una pierna y coloca un mano sobre su cadera.
+Sophie: “Si de verdad hiciera algo criminal, para empezar no te lo contaría...”
+Cambia su postura, su cara se torna más seria, se echa hacia delante y apoya ambas manos en el mostrador.
+Sophie: “Y si de alguna manera lo supieras más te vale que yo no me enterara, porque de mí sería de quién más tendrías que resguardarte”
+->Asustarse
+    <<Add_npc_likeability NPC_sophie -1>>
+    Ay dios, ¿dónde me he metido? ¿Todo este tiempo he estado tratando con alguien peligroso? 
+    Pero no puede ser, ¿no? Se preocupa mucho por su hermana y compra flores, nadie que compra flores puede ser malo, pero tampoco sé qué hace fuera de la floristería.
+    Sophie ve que realmente me he asustado y relaja su actitud intimidante y adopta una más burlona.
+    Sophie: “Eh, que solo te estaba tomando el pelo. No sabía que ibas a ser tan inocente como para creértelo”
+->Burlarse
+    <<Add_npc_likeability NPC_sophie 1>>
+    Intenta ser intimidante pero no sé a quién pretende engañar cuando en la sala estoy solo yo. Adopto una pose burlona para enfrentarla.
+    {$name}: “Tranquila Al Pacino, no hace falta que me pongas una cabeza de caballo en la cama”
+    Rompe su postura imponente y se ríe.
+    Sophie: “Te sorprendería la cantidad de gente que se asusta por una mala cara y una mentira”
+    {$name}: “No me extraña, cuando te pones así das miedo”
+    Sophie: “Ah sí, y ¿por qué contigo no ha funcionado?”
+    Le sonrío ampliamente, es una sonrisa de las que muestras los dientes. 
+    {$name}: “Porque ya te conozco”
+    {$name}: “Así que a mí no me la cuelas”
+    Sonriendo vuelve a su postura anterior.
+    Sophie: “Al final sí que vas a saber demasiado”
+    {$name}: “Jajaja”
+Sophie: “Volviendo a lo que estábamos hablando, y espero que tomes en cuenta lo que he dicho de no gritar, la verdad es que no conocí al grupo de una manera digital digamos”
+{$name}: “Ahh que guay, ¿la primera vez que los escuchaste fue en un concierto entonces?”
+Sophie: “No, es algo mucho mejor”
+{$name}: “¿En un meet and greet? Pero no sé cómo eso sería mejor que en un concierto”
+Sophie: “No lo vas a adivinar nunca así que aquí va. No es conozca a  Useless Misfits por escuchar alguna canción suya, es que conozco a los integrantes del grupo incluso de antes de que empezaran a tocar. Son amigos míos”
+->Gritar de emoción
+    <<Add_npc_likeability NPC_sophie -1>>
+    {$name}: “¡AHHHH NO ME LO PUEDO CREER!”
+    Sophie suspira mientras se lleva la palma a la cara y niega con la cabeza.
+    Sophie: “Menos mal que te había avisado...”
+    {$name}: “Menos mal que te había avisado...”
+->Taparse la boca con las manos
+    <<Add_npc_likeability NPC_sophie 1>>
+    Me llevo a las manos a la boca y grito sabiendo que mis palmas ahogan el sonido. Cuando ya soy capaz de controlar mi emoción y termino de gritar, retiro las manos.
+    {$name}: “Lo siento, era la única manera de que no hiciera ruido”
+    Sophie: “Mis oídos te lo agradecen”
+{$name}: “Dios, pero es genial. ¡Eres amiga de Useless Misfits!”
+{$name}: “Dime, ¿son tan maravillosos como parecen en el escenario?”
+Sophie: “Bueno, un poco más tontos de lo que dejan ver, pero son muy buena gente. Aunque muchas veces son un peligro para ellos mismos jajaja”
+{$name}: “¿Y te enseñan sus nuevas canciones antes que nadie? Ojalá tuviera yo esa suerte”
+Sophie: “Bueno, te ahorras escuchar mucha mierda. No son perfectos claro, y menos con las primeras versiones de las canciones”
+Sophie: “Tu favorita era Biggest Lie, ¿no? Si hubieras oído como era esa canción al principio, ya te digo yo que no estaría ni en tu top 20”
+{$name}: “Aun así, que puedas ver todo el proceso creativo desde el principio además de conocerlos a ellos, eso sería un sueño cumplido para mí...”
+La miro con la ilusión de una [select value={$gender} M="un niño" F="una niña" NB="une niñe"/]. Pero no vivo en un cuento, la realidad es bien distinta. Suspiro [select value={$gender} M="decepcionado" F="decepcionada" NB="decepcionade"/] cuando siento los pies en la tierra.
+{$name}: “Unos tanto y otros tan poco...”
+Sophie se queda callada un rato, está sopesando una decisión. ¿Qué será lo que me quiere decir?
+Sophie: “Bueno... De hecho, tienen un concierto este fin de semana al que voy a ir-”
+Me inclino totalmente apoyando los antebrazos al mostrador con mis manos sosteniendo la cabeza, son las únicas que evitan que mi frente entre en contacto con la madera.
+{$name}: “No me digas más, soy tontísima. He estado tan liada con la mudanza con la floristería y la mudanza que se me ha pasado completamente. Y eso que les sigo en todas sus redes sociales”
+{$name}: “Aaghh qué rabia, a saber cuándo vuelven a tocar tan cerca”
+{$name}: “...”
+{$name}: “Bueno, igualmente no iba a poder permitirme las entradas en este momento, pero aun así, si lo hubiera sabido al menos lo podría haber intentado”
+Sophie: “No te lo decía por alardear, te lo comentaba porque a mí me invitan ellos, ni de broma me puedo permitir una entrada ja”
+Sophie: “Y estoy segura de que no le va a importar que lleve a alguien más”
+Sophie: “Así que podrías venirte conmigo si quieres”
+{$name}: “¿Lo dices en serio?”
+Sophie: “Totalmente, con esto no bromeo nunca”
+Su semblante serio acompaña su afirmación.
+->Apuntarse al concierto 
+    <<Update_Plans Sophie true false>>
+    <<Add_npc_likeability NPC_sophie 1>>
+    {$name}: “Pues no hace falta que me lo digas dos veces, ¡me apunto!”
+    Sophie: “¿Sabes dónde es y eso? Empieza a las 11 así que deberíamos estar allí a las 10:30 por lo menos si queremos ver algo. Que ser su amiga no me libra del resto del público”
+    {$name}: “No sé nada del concierto... ¿Te parece si intercambiamos datos de contacto y me lo escribes al móvil? Para organizarnos también es mejor”
+    Es cierto que me lo podría apuntar en un papel, pero tener su número es más interesante... Además de seguro claro, por si nos pasa algo allí. Qué bien pienso a veces.
+    Sophie: “Vale pues es...”
+    Me recita su número antes de que tenga dónde apuntarlo. Velozmente saco el teléfono y lo anoto en la agenda.
+    Tras escribirlo, aprovechando la pantalla encendida veo la hora. Se me ha pasado el tiempo volando.
+    Sophie: “Entonces- ”
+->Rechazar la oferta 
+    <<Add_npc_likeability NPC_sophie -1>>
+    {$name}: “Gracias por la oferta, pero igualmente no puedo ir. Es mucho lío y aún me quedan cajas que deshacer que ya no puedo atrasar más, y después de eso me tocará limpiar. No creo que vaya a tener muchas ganas de ir a un concierto después”
+    Sophie: “Bueno, tu verás lo que te apetece”
+    Parece molesta con que le haya rechazado el plan. ¿Es posible que quisiera ir conmigo de verdad?
+    {$name}: “...”
+//Campanitas
+Justo entra un cliente por la puerta y espera en la entrada a que se vaya Sophie para acercarse al mostrador. Creo que está un poco asustado de ella.
+Sophie: “Me voy ya para no molestarte más en el trabajo. Adiós y gracias por la pulsera”
+{$name}: “De nada, y hasta la próxima”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sophie>>
+Sophie sale de la floristería y el hombre se acerca al mostrador. Ahora sí que sí, primer cliente del día.
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+    
+
+<<jump Allan_jueves_sem2>>
+===
+
+title: Allan_jueves_sem2
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+[select value={$gender} M="Cansado" F="Cansada" NB="Cansade"/] me derrumbo en la silla tras el mostrador. Buff, menudo día llevo, se nota que ya se acerca el fin de semana. No he podido parar en ningún momento, los clientes han venido uno tras otro. 
+Hasta ahora no he podido detenerme a respirar. Abro un cajón del mostrador y saco el bollo de crema envuelto que no me pude terminar antes.
+Muerdo el bizcocho y saboreo su interior. Mmmm, ¡sigue buenísimo! A pesar del tiempo que ha pasado ahí continua esponjoso y la crema está en su punto.
+//Campanitas
+Allan entra a la floristería con su sonrisa habitual.
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+->Saludar con la boca llena
+    <<Add_npc_likeability NPC_allan 2>>
+    //////////////////////////////////////////////////////
+    ///////////////PONER EN CURSIVA///////////////////////
+    //////////////////////////////////////////////////////
+    {$name}: “¡Hoga Agam!”
+    Allan: “Jajajaja, hola a ti también {$name}”
+    Trago y apoyo mis manos con el bollo en el mostrador.
+->Saludar con un gesto
+    <<Add_npc_likeability NPC_allan 1>>
+    Con la boca llena no le puedo decir nada así que levanto mi mano libre y gesticulo con ella.
+    Allan: “Hola {$name}”
+    Mastico un poco más y finalmente trago. Me alejo el bollo de la boca.
+->Tragar y esconder el bollo rápido
+    <<Add_npc_likeability NPC_allan -1>>
+    Al ver como trago sin masticar y abro el cajón para guardarlo, rápidamente se acerca a mí con sus manos por delante haciendo gestos para que me detenga.
+    Allan: “[select value={$gender} M="Tranquilo" F="Tranquila" NB="Tranquile"/], que te vas a atragantar. Pensaba que había suficiente confianza entre nosotros para no tener que “esconder” una tontería así, ¿no?!”
+    Trata de sonar ligero pero las palabras me pesan. Aunque no sea mucho, le ha molestado que reaccionara así. Pero tampoco quería quedar mal delante de él... Y no es la primera vez que me juzgan por hacer algo poco apropiado para mí...
+    {$name}: “Entonces...”
+{$name}: “¿No te importa si sigo comiendo?”
+Allan: “Qué va, aprovecha el tiempo de descanso”
+{$name}: “En realidad aún no es mi descanso, pero tenía hambre ahora y como justo no había nadie en la tienda, pues me he querido dar un capricho”
+Sigo comiendo mientras dejo hablar a Allan.
+Allan: “Ahh... Que envidia me das, si hiciera eso, antes de que pudiera catar nada mi jefe me hubiera dejado sordo con sus gritos je...”
+Sonríe triste, sobrellevando con humor una mala situación.
+Allan ve que aún no he terminado de comerme el trozo que había empezado así que sigue con la conversación para rellenar el silencio.
+Allan: “Y podría entenderlo mientras estoy trabajando y eso, pero incluso en el descanso lo mejor es ir a algún sitio donde no te vea, porque como necesite algo y te vea libre le va a dar igual tu descanso y te va a ordenar cosas. Por eso estoy aquí en mi descanso”
+Allan: “Bueno, tampoco me puedo quejar mucho que al menos es trabajo, que con lo difícil que está la cosa...”
+Allan suspira resignado. Justo termino de comer y le miro [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/].
+->Estar en desacuerdo con su comentario  
+    <<Add_npc_likeability NPC_allan 2>>
+    {$name}: “¡Ey, no te conformes así! Claro que te puedes quejar, que haya gente en peor situación no quita que la tuya sea dura”
+    Allan: “Ya pero no sé, me parece poco empático por mi parte”
+    {$name}: “Nada de eso, quéjate todo lo que tú quieras y necesites. Es más, por lo que me dices, ¡poco te quejas!”
+    Allan: “Jajaja... puede que tengas razón”
+    {$name}: “Humpf, eso está mejor”
+    Pongo los brazos en jarra para afirmar mi consejo. Se ríe de mi acto y se queda mirándome fijamente perdido en su mente. Tras unos segundos así, hablo y le traigo de vuelta de haya donde estuviese.
+->Coincidir con él
+    <<Add_npc_likeability NPC_allan -2>>
+    {$name}: “Tienes razón, deberíamos agradecer el que tengamos trabajo. Además, no está tan mal, haces tu turno y luego te vas a casa y te olvidas. Hay trabajos mucho más duros tanto física como mentalmente.”
+    {$name}: “Imagínate los que trabajan en la mina. Ellos sí que lo tienen difícil”
+    Su expresión se apaga con mis palabras. No sé si esperaba otra cosa, pero yo voy a ser totalmente sincera con lo que pienso.
+{$name}: “Por cierto, ¿querías que te hiciera algún ramo hoy? Como has dicho que es tu descanso y no sé cuánto te queda... Por ir haciéndolo ya”
+<<set $AfinidadAllan to get_npc_likeability(NPC_allan)>>
+<<if $AfinidadConAllan > 10>>
+    Allan: “¡Cierto! Hablando contigo me despisto de otras cosas”
+    Se sonroja él y menos mal, porque yo también lo hago, así no soy la única.
+<<else>>
+    Allan: “¡Cierto! Hablando me despisto de otras cosas”
+<<endif>>
+{$name}: “¿Tenías algo pensado?”
+Allan: “La verdad es que sí”
+<<jump Minijuego_Allan_jueves_sem2>>
+===
+
+title: Minijuego_Allan_jueves_sem2
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Allan_miercoles_sem2>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Allan>>
+===
+
+title: Salida_minijuego_Allan_jueves_sem2
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “Aquí está tu ramo”
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Allan_jueves_sem2>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Allan_jueves_sem2>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Allan_jueves_sem2>>
+<<endif>>
+===
+
+title: Minijuego_bien_Allan_jueves_sem2
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act <<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Add_npc_likeability NPC_allan 3>>
+
+Esta vez creo que me he superado y seguro que Allan lo va a saber apreciar. Allan coge lentamente el ramo.
+Allan: “{$name}...”
+{$name}: “¡Es increíble!”
+Alza la mirada tan rápido del ramo a mí que me asusta un poco. Pero enseguida se me pasa al ver su cara rebosante de felicidad.
+{$name}: “Sabía que te iba a gustar”
+Allan: “La elección de las flores es perfecta, no se me había ocurrido en absoluto hacerlo así. Pensé que lo ibas a hacer de otra manera, pero después de ver tu trabajo, estoy seguro de que no había mejor forma de hacer el ramo”
+{$name}: “Hoy estaba muy inspirada. Según me has dicho el pedido ya me lo imaginaba”
+Allan: “Pues se nota, has acertado de lleno”
+
+<<jump Fin_ramas_minijuego_Allan_jueves_sem2>>
+===
+title: Minijuego_regular_Allan_jueves_sem2
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Add_npc_likeability NPC_allan 1>>
+
+No estaba totalmente inspirada haciéndolo, pero creo que cumple su función.
+Allan: “Es muy bonito...”
+{$name}: “¿Pero?”
+Allan: “A ver no es que esté mal, pero he visto tu trabajo y haces cosas geniales, sé que puedes llegar a hacerlo mucho mejor”
+{$name}: “Tienes razón, he hecho cosas mejores, pero no sé, no tengo el día creativo hoy”
+Allan: “Ey, no te preocupes, todos tenemos días así. Además, no es feo ni mucho menos, sirve justo para lo que lo necesito”
+
+<<jump Fin_ramas_minijuego_Allan_jueves_sem2>>
+===
+
+title: Minijuego_mal_Allan_jueves_sem2
+position: -289,-54
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Add_npc_likeability NPC_allan -3>>
+
+Tenía mil ideas mezcladas en la cabeza y con las prisas de hacerlo a tiempo no sé si me he decantado por la premisa correcta.
+Allan: “Es bonito”
+En cuanto veo su sonrisa incómoda sé que no era como lo esperaba. Suspiro triste.
+{$name}: “Perdón si esperabas otra cosa...”
+Allan: “No, no, no”
+Allan: “Bueno, a ver, el caso es que- ” 
+{$name}: “No hace falta que des tantas vueltas, puedes decírmelo directamente”
+Allan: “No sé, yo tal vez lo hubiera hecho de otra forma mejor. Las principales culpables son estas flores”
+Señala las dos flores más disonantes.
+{$name}: “Ya, es que tenía una idea inicial en mente y al final me he hecho un lío y el resultado ha sido esta... amalgama”
+{$name}: “Perdona de nuevo”
+Se queda callado sin saber cómo responder. Seguramente no lo haga porque no quiera herirme con su crítica. En silencio recojo el pago del ramo.
+
+
+<<jump Fin_ramas_minijuego_Allan_jueves_sem2>>
+===
+
+title: Fin_ramas_minijuego_Allan_jueves_sem2
+position: -120,41
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+
+<<set $AfinidadAllan to get_npc_likeability(NPC_allan)>>
+<<if $AfinidadAllan < 15>>
+    {$name}: “Muchas gracias por comprar aquí entonces”
+    Allan: “A ti por atenderme cuando estabas descansando, aunque no fuera tu “descanso” oficial”
+    {$name}: “No pasa nada, me gusta mi trabajo”
+    Allan: “Me voy a tener que ir yendo que mi descanso sí que es oficial y se me está acabando ya”
+    Allan: “¡Adiós!”
+    {$name}: “¡Hasta la próxima!”
+    <<Move Allan offright bottom015 1.0>>
+    <<wait 1.0>>
+    <<Hide Allan>>
+    La floristería no pasa mucho tiempo vacía, así que me vuelvo a centrar en el trabajo que me queda, que cada vez es menos.
+    <<HideAll>>
+    <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
+    <<Fade black 1.0 0.0 2.0>>
+    <<wait 2.0>>
+    <<Scene bg_calle_noche_placeholder>>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    De camino a casa paro a comprar unos recados y al final me encuentro más cargada de lo que tenía pensado. Todo por culpa de una tienda de animales que han abierto nueva al final de la calle comercial.
+    ¿Cómo no le iba a comprar unos juguetes nuevos a Limón? Eran monísimos, tampoco muy caros. Sólo espero que los acabe usando, conociéndole, va a jugar más con la caja del juguete que con el propio aparato.
+    Las bolas con cascabel dentro le tienen que gustar sí o sí, ¿no? Puff ya no sé qué pensar, solo me queda llegar a casa para probarlo.
+    ¡Limón, confío en ti!
+    <<HideAll>>
+    <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
+    <<jump Finde_sem2>>
+<<elseif $AfinidadAllan >= 15>>
+    Allan mira la hora y sus ojos se agrandan.
+    Allan: “Me voy a tener que ir ya, que se me acaba el descanso y saliendo ahora ya voy justo”
+    {$name}: “Pues date prisa, no quiero que llegues tarde por mi culpa” 
+    Allan: “¡Hasta el próximo día!
+    {$name}: “¡Sí, nos vemos!”
+    <<Move Allan offright bottom015 1.0>>
+    <<wait 1.0>>
+    <<Hide Allan>>
+    Abre la puerta para salir, pero cuando tiene medio cuerpo fuera un pensamiento me inunda la mente. Es algo que llevaba varios días pensando y hoy tenga la confianza para decirlo en voz alta.
+    {$name}: “Ay, casi se me olvida. ¿Te apetece tomar algo cuando acabes tu turno?”
+    <<Act Allan sprt_allan_placeholder right bottom015 white>>
+    {$name}: “Sin presiones, sólo si-”
+    Allan: “¡Me encantaría!”
+    Allan: “Agh pero hoy acabo muy tarde, no sé si vas a querer a esas horas”
+    /////////////////////////////////////////////////////////////////
+    //////////////////////EXPRESIÓN FRUSTRACIÓN ALLAN////////////////
+    /////////////////////////////////////////////////////////////////
+    Pocas veces he visto frustración en la cara de Allan, pero ahora es una de ellas . Aprieta los puños de la impotencia ante su horario infernal.
+    {$name}: “Después de lo que me has dicho hoy contaba con ello, así que soy consciente de la hora y me sigue pareciendo buen plan”
+    La felicidad vuelve a su rostro y sus ojos se iluminan de esperanza
+    {$name}: “¿Nos vemos luego entonces?”
+    Allan: “¡Sí! Ahora sí que me voy ya. Te aviso cuando salga, a ver si consigo salir antes por algún milagro”
+    {$name}: “Ojalá, mucho ánimo en lo que te queda día”
+    Allan: “Igualmente”
+    <<Move Allan offright bottom015 1.0>>
+    <<wait 1.0>>
+    <<Hide Allan>>
+    Su figura se pierde tras cerrar la puerta.
+    ¡Bien! ¡He conseguido quedar otra vez con Allan! La cita en el jardín botánico fue genial y quería ser yo quien tuviera iniciativa para la segunda.
+    Sé que no es igual de impresionante que lo otro, pero espero que nos lo pasemos bien igual, así podemos hablar más y él desconecta de ese maldito trabajo que tiene.
+    Estoy deseando que llegue la noche para volver a verle.
+    No pasa mucho tiempo vacía la floristería, así que me vuelvo a centrar en el trabajo que me queda, que cada vez es menos.
+    <<HideAll>>
+    <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
+    <<jump cita_Allan_jueves_sem2>>
+<<endif>>
+===
+
+title: cita_Allan_jueves_sem2
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle_noche_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+La noche cubre ya toda la ciudad, indicando así que la cita con Allan se acerca, y mientras tanto yo, que no soy la que acaba tarde de trabajar, voy con prisas a la tienda.
+Después de cerrar la floristería aproveché a hacer recados que tenía pendiente, y de paso le compré a Limón juguetes nuevos. Espero que los use, aunque ya me lo imagino jugando más con la caja en la que viene que con el juguete en sí.
+Como no contaba con estas compras extras e iba cargada de más y aún era pronto, fui hasta casa para dejarlas allí y luego ir al trabajo de Allan, pero al final me ha pillado el toro.
+Así que aquí estoy corriendo de nuevo por llegar tarde. Si sigo así llegaré bien a la hora que me ha dicho Allan que iba a salir.
+Acercándome a la tienda me fijo que es último local con las luces encendidas, además de los bares. No hay nadie fuera así que Allan sigue dentro. Me paro frente a la puerta para esperarle.
+Habrán pasado como 20 minutos cuando siento unos toquecitos mi hombro. Dejo de mirar el móvil para alzar la vista y ver a Allan detrás de mí.
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+Allan: “¡Hola! Perdona por hacerte esperar”
+Allan: “Pensaba que iba a salir antes, pero a última hora el jefe me ha mandado ordenar una sección, aunque ya estaba listo para irme”
+->Criticar al jefe
+    <<Add_npc_likeability NPC_allan 1>>
+    {$name}: “Pero ese tío... Que cara tiene. ¿No te lo podía haber dicho antes? ¿O mejor, haberlo dejado para mañana?”
+    {$name}: “Si tan urgente era es tarea que la hubiera hecho él”
+    {$name}: “¿No le dijiste que ya tenías planes?”
+    Allan: “No le dije nada... Es que le vi con prisas, y a lo mejor tenía algo más urgente”
+    {$name}: “Espera... ¡¿Él se ha marchado ya?!”
+    Allan: “Sí...”
+    {$name}: “O sea, te ha dejado aquí haciendo el trabajo duro mientras él se iba a casa a descansar”
+    Allan: “Bueno, no sé si iba a casa... A lo mejor sí que iba a algún sitio importante”
+    {$name}: “¿Y tus compañeros?”
+    Allan: “Se fueron antes que yo”
+    {$name}: “Así que solo te ha dicho a ti lo de la tarea... Entonces lo tengo claro, no iba a ningún sitio importante”
+    {$name}: “Lo que pasa es que se aprovecha de que eres demasiado bueno y vas a hacer lo que te pida”
+    {$name}: “Está bien pensar siempre en positivo sobre las acciones de los demás si no los conoces para no prejuzgar. Pero no es la primera vez que te hace esto tu jefe, ¿verdad?”
+    Allan: “No...” Mira al suelo cabizbajo
+    {$name}: “Entonces no pasa nada por pensar mal de él, no es que haya demostrado otra cosa”
+    {$name}: “¿Has pensado en hablar con él y ponerte firme sobre el horario?”
+    Allan: “Alguna vez se me ha ocurrido, pero es que sé que no voy a ser capaz. No soy ese tipo de persona... Además, no es para tanto, es sólo salir un poco más tarde”
+    {$name}: “No lo desestimes. Sí que es para tanto, cinco minutos un día, más diez minutos otro... Acabas trabajando muchas horas gratis”
+    {$name}: “Pero entiendo lo que dices, confrontarte a alguien nunca es fácil y menos si es tu jefe”
+    {$name}: “Así que no te voy a decir lo que tienes que hacer, pero si necesitas ayuda con algo, sabes que estoy aquí por si lo necesitas” Le sonrío.
+->Intentar entender al jefe
+    <<Add_npc_likeability NPC_allan -1>>
+    {$name}: “¿Tenía cosas que hacer?”
+    Allan: “Bueno, exactamente no lo sé, pero iba con prisa, así que supongo que algo tendría”
+    {$name}: “Pues entonces seguro que sería por eso. Sé que lo primero que se suele hacer es mal pensar del jefe y eso, pero yo creo que no hay que juzgar tanto, su trabajo no es fácil tampoco”
+    Allan: “Puede ser. Sinceramente, me hubiera gustado que me lo hubiera dicho antes para poder organizarme yo mejor”
+    {$name}: “Eso sí, debería ser más consciente de tu tiempo, que también tienes planes. ¿Tal vez podrías comentárselo un día?”
+    Allan: “Uff no sé yo si se lo va a tomar muy bien, y tampoco quiero tener malos rollos...”
+    {$name}: “Entonces siendo que es salir un poco más tarde tampoco pasa nada por ceder un poco. Mejor eso que empeorar el ambiente de trabajo”
+    Allan: “Sí, eso no quiero que pase”
+Allan: “Echo el cierre y ya podemos irnos”
+{$name}: “¡Genial!”
+<<Hide all>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+<<Scene bg_bar_placeholder>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+A pesar de ser jueves y no fin de semana, el bar está bastante lleno. Aun así, conseguimos una mesa pequeña un poco apartada de los demás y sin ningún altavoz cerca. Es perfecto.
+Allan se sienta de espaldas al resto del bar, y yo desde mi sitio veo todo el movimiento de camareros.
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
+Allan: “Menos mal que había sitio aquí, pensaba que iba al completo por la hora”
+{$name}: “Sí, si nos hubiera tocado ir a otro bar me hubiera fastidiado bastante que ya he cumplido mi cuota de caminar por hoy”
+Allan: “¿Ah sí, y eso?”
+{$name}: “Pues después de cerrar la floristería he tenido que hacer una ronda de compras. Como tenía tiempo, he ido a casa a dejar la compra y luego he vuelto aquí. Sé que no parecerá mucho a alguien tan en forma como tú, pero para mí es suficiente”
+Allan: “Tampoco hago tanto ejercicio.”
+{$name}: “Más que yo seguro, esos brazos no engañan.”
+A primera vista puede no parecerlo, pero cuando te fijas en las mangas del jersey puedes ver como no hay separación entre la tela y la piel. Le queda bien ajustado.
+Allan: “Lo suficientemente para estar sano, no soy un obsesivo de esos de estar todo el día en el gimnasio”
+->“¿Puedo tocar?” 
+    <<Add_npc_likeability NPC_allan 1>>
+    Echo mi cuerpo hacia delante sobre la mesa, acerco mi mano al brazo que extiende ante mí, y lo aprieto levemente con mis dedos. ¡Qué prieto! Claramente tiene la musculatura bien desarrollada.
+    Quien iba a decir que una persona con el corazón tan blando como Allan iba a tener un cuerpo tan duro.
+    {$name}: “Pues no sé cuánto tiempo irás, pero sí que se te nota fuerte”
+    Me echo para atrás para volver a sentarme en la silla y de refilón veo sus mofletes rojizos, es solo durante un instante. 
+    Ya [select value={$gender} M="sentado" F="sentada" NB="sentade"/] no soy capaz de discernir el tono colorado y la verdad es que hace calor en el bar.
+    {$name}:“Aunque me creo lo de que no vives en el gimnasio”
+->No hacer nada 
+{$name}: “Si estuvieras tanto tiempo en el gimnasio. ¿Quién cuidaría de las plantas?”
+Allan: “Exacto, y eso sí que no voy a dejarlo de lado. Y encima son muy exigentes, tengo varias con diferentes horarios, cada una necesita su cantidad de agua y así. Requiere su tiempo, bueno que te voy a contar, seguro que te pasa lo mismo” 
+{$name}: “Totalmente, y ¿qué me dices de tener que ir cambiándolas de sitios según el sol? Al principio cuando llegué aquí, no sabía cómo entraba la luz en casa al largo del día y fue un poco caos. Ahora cada planta tiene sus sitios definidos”
+Miro como mis manos juguetean entre sí mientras pienso en lo dura que fue la primera semana y lo mucho que me ayudaron las plantas a desconectar y calmarme. Sonrío del recuerdo.
+{$name}: “Sí es verdad que requiere un esfuerzo por nuestra parte, pero al final merece la pena cuando las ves florecer y bien verdes. Es ver con tus ojos que todo tu trabajo ha dado sus frutos y se muestra representado en esas flores, esa vida”
+{$name}: “¿No crees?”
+Levanto la mirada para poder observar a Allan de nuevo y me doy cuenta de que su mirada está perdida en la mía.
+{$name}: “¿Allan?”
+Al escucharme vuelve en sí y se sonroja.
+Allan: “Sí claro, coincido completamente”
+->“¿No me estabas escuchando?”
+    <<Add_npc_likeability NPC_allan -2>>
+    Allan: “¡Sí que estaba escuchando, te lo prometo!”
+    Luce preocupado porque no le crea. Odio que siempre sea yo la que escucha y nunca a la que escuchan. Así que sí, no le creo al 100%, me enfado un poco.
+    {$name}: “Si tú lo dices...”
+    Allan: “Lo digo de verdad, en serio”
+    Aunque me diga eso no cedo, mi postura refleja que he subido la guardia y el ambiente deja de ser tan relajado como lo estaba siendo.
+->“Pft, buena salvada ahí”
+    <<Add_npc_likeability NPC_allan 2>>
+    Allan: “De verdad que estaba prestando atención, ha sido solo al final, pero he escuchado todo”
+    {$name}: “No hace falta que des explicaciones, me creo lo que dices”
+    {$name}: “A mí también me pasa contigo a veces... Así que no soy quién para juzgar”
+    Ante mi comentario se sonroja aún más y se queda callado. Qué guapo está cuando se pone así.
+->Sonreírle y no mencionarlo 
+    <<Add_npc_likeability NPC_allan 1>>
+    Le sonrío con complicidad y se relaja al entender que no le voy a presionar más. Un despiste lo tiene cualquiera y no creo que no me haya prestado atención con algo relacionado con la jardinería.
+{$name}: “Por otro lado. ¿Sabes qué vas a querer tomar?”
+Allan: “Para beber sí lo tengo claro, voy a tomar un Lemtea, pero para comer ni idea”
+{$name}: “Bien, yo me voy a pedir una cerveza que hoy me apetece”
+{$name}: “Y para comer antes he echado un ojo a la carta en el móvil y había pensado que podíamos pedir unos nachos al centro y luego si queremos más cosas pedirlas después”
+Allan: “Me parece buena idea, me encantan los nachos”
+{$name}: “Entonces voy a ver si a la que pasa un camarero puedo-”
+{$name}: “Justo, ahí viene uno”
+Levanto el brazo para llamar la atención del camarero y que se acerque a tomarnos nota.
+{$name}: “Perdona”
+Terminamos de pedir y al rato vuelve con los nachos.
+{$name}: “¡Están riquísimos!”
+Allan: “Sí que lo están, hacía tiempo que no comía unos tan buenos”
+{$name}: “Ahora solo quiero pedir otros platos para ver cómo de buenos están”
+Allan: “Jajaja, y que lo digas”  
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+
+A lo largo de la cita terminamos pidiendo varios platos y, efectivamente, todos buenísimos. A Allan también le gustaron mucho, me alegro de haberle traído aquí.
+También hablamos mucho y en todo momento ambos en el mismo ritmo. No había silencios incómodos, ni nos pisábamos, cada uno sabía perfectamente cuando hablar, como si nos conociéramos de toda la vida.
+Volví a ver pequeños detalles de él que me hacen apreciarle aún más, como dejar siempre el último trozo para que lo comiera yo. 
+Aunque diera lugar a momentos graciosos en los que nadie lo comía porque yo estaba pensando de la misma manera, y al final hasta que no lo mencionábamos nadie se lo terminaba.
+Pero no es sólo me da él a mí, hoy también me he dado cuenta de las cosas que puedo hacer por él. Allan es introvertido y prefería que interactuara yo con los camareros, con eso entendí porque se sentó de espaldas al bar. 
+Pero no pasa nada porque a mí no me importa hacerlo, y me alegró ver que yo también podía ser un apoyo para él. 
+Ahora que ya terminamos de comer llamo por última vez al camarero para que nos traiga la cuenta. En nada está en nuestra mesa y deja un cuenco con el ticket.
+Cojo el ticket antes de que vea Allan el precio, saco dos billetes de 20.
+Allan: “Ey, ¿qué intentas? Déjame ver cuánto es, pagamos a medias”
+Ignorándole, meto el dinero en el cuenco y se lo ofrezco al camarero que lo coge y se lo lleva. Sólo queda esperar a las vueltas.
+Allan: “{$name}, en serio, dime cuanto es”
+{$name}: “No es nada”
+Me acerco el ticket al pecho para distanciarlo de él.
+Allan: “De verdad que no hace falta que me invites”
+{$name}: “Tienes razón, no hace falta, pero quiero”
+Allan: “Venga, déjame verlo que solo quiero darte mi parte, no te voy a invitar yo a ti”
+Se echa hacia delante y extiende el brazo para coger el ticket.
+{$name}: “Nope, jajaja”
+Levanto la mano con el ticket y la llevo hacia atrás para alejar el ticket lo más lejos posible de Allan. Pero no es suficiente para que deje de intentarlo.
+Se echa aún más adelante y extiende aún más el brazo para recortar la distancia generada por la mesa y mi gesto. Aún no es suficiente, mientras me río de la situación, Allan apoya una de las manos en la mesa para poder echar el cuerpo aún más adelante.
+Pero calcula mal, y mi risa se corta en seco cuando su mano se resbala y planta el codo para no caerse más. Ahora en vez de estar a la altura del ticket se queda frente a mis ojos y escasos centímetros nos separan.    
+En esta posición me puedo fijar más en las facciones de su cara y en esos profundos ojos miel clavados sobre los míos. ¿Estará haciendo él lo mismo?
+Sé que debería decir algo para salir de esta situación, pero quiero alargar este momento todo lo que pueda, quiero disfrutar de esta cercanía y calidez disponible solo entre Allan y yo ahora.
+
+===
+
+title: Finde_sem2
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
+
+
 ===
