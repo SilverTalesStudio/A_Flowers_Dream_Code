@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump cita_Allan_jueves_sem2>>
+<<jump Cita_Ethan_sem2>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -18,7 +18,7 @@ position: -678,-304
 ---
 <<HideAll>>
 // set fondo de CALLE
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 
 // Audio puerta
 
@@ -242,7 +242,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<Add_npc_likeability NPC_ethan -1>>
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. 
     Al mismo tiempo, la figura misteriosa que se encontraba escondida detrás sale dando un brinco y se gira hacia mí para señalarme con un dedo acusatorio.  
-    <<Act Chico sprt_ethan_placeholder center bottom015 white>>
+    <<Act Chico sprt_ethan_neutral center bottom015 white>>
     //<<Move Ethan right center 0.5>>
     Chico: “¡Noooooo! ¿¡Por qué me delataste!? ¡No esperaba esto de una preciosidad como tú!”  
     En un movimiento reflejo, levanto las manos en señal de rendición. ¡Yo no quería tener nada que ver con esto! Solo quería tener un primer día de trabajo tranquilo y satisfactorio, sin este tipo de escándalos. 
@@ -310,7 +310,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     Abro los ojos como platos y, antes de que pueda girarme al mostrador para descubrir la identidad de la figura misteriosa, noto como alguien me abraza por la espalda.  
     //[SHAKE Y GRITO]  
     No puedo evitar gritar del susto. Me retuerzo intentando separarme de la persona que me tiene [select value={$gender} M="atrapado" F="atrapada" NB="atrapade"/] en sus brazos cuando esta misma se aparta y me intenta tranquilizar levantando sus manos.  
-    <<Act Chico sprt_ethan_placeholder right bottom015 white>>
+    <<Act Chico sprt_ethan_neutral right bottom015 white>>
    // <<Move Ethan right center 0.5>>
     Chico: “[select value={$gender} M="Tranquilo, tranquilo" F="Tranquila, tranquila" NB="Tranquile, tranquile"/], no voy a hacerte nada. No era mi intención asustarte de esa manera”  
     Al girarme con una mano posada sobre mi corazón y respirando con fuerza puedo ver por fin la forma de la persona misteriosa. 
@@ -383,7 +383,7 @@ position: -502,-57
 <<Scene floristeria_placeholder>>
 <<Add_npc_likeability NPC_ethan 3>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Chico sprt_ethan_placeholder right bottom015 white>>
+<<Act Chico sprt_ethan_neutral right bottom015 white>>
 Chico: “¡Son preciosas! A Elizabeth le van a encantar” 
 Suelto un suspiro de alivio al ver que mi primer pedido ha sido un éxito. No tenía por qué estar tan [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/]. 
 {$name}: “Me alegro de que sean de tu agrado”  
@@ -404,7 +404,7 @@ position: -705,-48
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Add_npc_likeability NPC_ethan 1>>
-<<Act Chico sprt_ethan_placeholder right bottom015 white>>
+<<Act Chico sprt_ethan_neutral right bottom015 white>>
 Chico: “Son muy bonitas, aunque debo admitir que esperaba algo más de ti”  
 Me gustaría sentirme [select value={$gender} M="ofendido" F="ofendida" NB="ofendide"/] por sus palabras, pero sé que tiene razón. No es mi mejor ramo, pero cumple su función.  
 Chico: “No pongas esa cara, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Volveré a por más flores y sé que la próxima vez lo harás de 10.”  
@@ -420,7 +420,7 @@ position: -885,-51
 <<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan -3>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Chico sprt_ethan_placeholder right bottom015 white>>
+<<Act Chico sprt_ethan_neutral right bottom015 white>>
 ...  
 Chico: “Esperaba no tener que decirte esto, pero creo que este ramo no me va a ayudar a conquistar a mi próxima cita. Menos mal que dispongo de mi amplia belleza”  
 Ante sus palabras no puedo evitar sentir cómo mi ilusión es aplastada por los suelos. Es mi primer día y parece que de momento nada quiere salir bien.  
@@ -438,7 +438,7 @@ position: -684,46
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Chico sprt_ethan_placeholder right bottom015 white>>
+<<Act Chico sprt_ethan_neutral right bottom015 white>>
 Chico: “¡Ah! Antes de irme. No he podido evitar fijarme en que tienes aquí el móvil” 
 Con el dedo señala el móvil que se encuentra encima del mostrador y que antes estaba intentando conseguir con tanta desesperación. 
 Asiento con la cabeza mientras le miro con desconfianza. Creo que sé lo que va a pasar.  
@@ -482,7 +482,7 @@ position: -120,-314
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -508,7 +508,7 @@ Frunzo el ceño y hago una mueca pensativa mientras tomo nota mental de lo que m
 Dejo de mirar al fondo y me centro en el cliente sonriéndole.
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “¡Buenos días! ¿En qué puedo ayudarle?” 
-<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+<<Act Cliente sprt_allan_neutral right bottom015 white>>
 Cliente: “¡Hola, buenos días a ti también!”
 Cleinte: “Siento haber entrado tan pronto, desde fuera no se te veía bien así que no sabía que aún estabas preparando la tienda, si no me habría esperado, de verdad que no quería molestar” 
 Será un chico grande, pero se comporta como si quisiera ocupar el mínimo espacio posible.
@@ -571,7 +571,7 @@ position: -118,-144
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
-//<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+//<<Act Cliente sprt_allan_neutral right bottom015 white>>
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
 <<jump Minijuego_bien_Allan_miercoles_sem1>>
@@ -594,7 +594,7 @@ position: -123,-48
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+<<Act Cliente sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
 
 Cliente: “¡Es perfecto! Me encanta.” 
@@ -617,7 +617,7 @@ position: 45,-49
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+<<Act Cliente sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 Cliente: “Está bien. Gracias” 
 {$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
@@ -635,7 +635,7 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+<<Act Cliente sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
 Claramente no es mi día, no me ha quedado el ramo nada bien para lo que tenía pensado. Me da tanta vergüenza que le entrego el ramo sin mirarle directamente a los ojos. 
 Cliente: “Ah sí, gracias...” 
@@ -960,7 +960,7 @@ position: 432,-314
 //CALLE
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 <<Fade black 1.0 0.0 2.0>>
 Después de varios días yendo deprisa y corriendo se agradece una mañana tranquila. 
 Paseo por la calle mientras recuerdo los cruces y curvas que estoy atravesando para la próxima vez que tenga que hacer el mismo recorrido. 
@@ -1000,7 +1000,7 @@ La confusión y duda deben estar escritas en mi rostro porque tras un minuto [se
 Me giro para ver quien ha llamado mi atención y descubro una cara conocida. A pesar del uniforme de manga larga, es imposible no darse cuenta de que tras él se esconde un cuerpo ancho y musculado. 
 La tensión de la tela donde botones y ojales se conocen lo confirma. 
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Cliente sprt_allan_placeholder right bottom015 white>>
+<<Act Cliente sprt_allan_neutral right bottom015 white>>
 -> {$name}: “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?” 
     <<Add_npc_likeability NPC_allan 2>>
     Cliente: “Ese soy ya jajaja” 
@@ -1010,7 +1010,7 @@ La tensión de la tela donde botones y ojales se conocen lo confirma.
     {$name}: “Ahhh sí, es verdad” 
 {$name}: “Creo que no me quedé con tu nombre ayer” 
 Cliente: “¡AH! Es verdad, entre los nervios y las prisas se me pasó completamente. Me llamo Allan.” 
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Hide Cliente>>
 {$name}: “[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/] de saber por fin tu nombre jajaja, ya te puedo cambiar en el contacto. Yo me llamo {$name}.” 
 Allan: “¿Cómo me tenías apuntado? Espera no me lo digas. Es algo relacionado con los Lirios de sapo ¿no? ”
@@ -1077,7 +1077,7 @@ position: 433,-187
 <<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 <<Fade black 1.0 0.0 2.0>>
 Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. 
 Se me olvidó colocar un aviso, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
@@ -1436,7 +1436,7 @@ position: 977,-368
 
 <<Fade black 1.0 0.0 2.0>>
 //CALLE - DÍA  
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 ¡Ya es viernes! No sé por qué, pero esta semana se me hizo extrañamente corta. 
 Mientras recorro el camino hacia la floristería por última vez esta semana, no puedo evitar que mi mente piense en todos los acontecimientos que tuvieron lugar en estos cinco días. 
 Mis pies toman las decisiones por mí. Ya conocen el camino a su destino. Saludo a los dueños del resto de locales que, al igual que yo, inician el último día de trabajo con algo de pereza.  
@@ -1507,7 +1507,7 @@ Entrecierro más los ojos con el mismo objetivo en mente. Creo que estoy consigu
 <<Fade black 1.0 0.0 2.0>>
 ¡Ya lo tengo! ¡Es Ethan! ¿Pero qué hace aquí? ¡Claro! Debe de querer un pedido. Necesito atenderle.  
 
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Completamente [select value={$gender} M="desorientado" F="desorientada" NB="desorientade"/] por el golpe, pero con la acuciante necesidad de atenderle como florista, trato de incorporarme de golpe para cumplir mi deber.  
 
 {$name}: “Perdón... Dame...un...segundo. ¡Ya te atiendo!”  
@@ -1717,7 +1717,7 @@ position: 775,-57
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
 
 Ethan: “¡Está estupendo! Está claro que tengo que venir a verte para poder tener éxito en las citas” 
@@ -1734,7 +1734,7 @@ position: 975,-59
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 
 Ethan: “Está bien. Creo que a mi cita le va a gustar, pero no va a ser suficiente para que me perdone” 
@@ -1751,7 +1751,7 @@ position: 1172,-63
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
 Ethan: “Ummm” 
 Ethan: “Parece que el golpe ha afectado a tu talento” 
@@ -1770,7 +1770,7 @@ position: 975,38
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “Ahora sí que me voy a mi cita. ¡Deséame suerte!” 
 Ethan: “Espero que la próxima vez no se produzca ningún accidente” 
 Mi mano inconscientemente se mueve hacia el chichón. 
@@ -2073,7 +2073,7 @@ Es terminar de rellenarlo y ya está Limón devorando, ni un segundo tarda. Es t
 <<Hide Limón>>
 Tras una primera semana intensa de trabajo, aprovecho para tomarme la mañana con calma. Decido limpiar la casa y en el proceso escucho una tonadilla emitirse desde mi móvil. 
 Lo saco del bolsillo y al ver el nombre que aparece en pantalla sonrío, descuelgo inmediatamente.
-<<Act Leah sprt_Leah_mobile right center white>>
+<<Act Leah sprt_leah_phone right center white>>
 {$name}: “¡Hola Leah!”
 
 Leah: “¡Buenos días, {$name}! ¿Qué tal tu primera semana allí? Siento no haber podido hablarte antes, pero es que he estado super liada de diario”
@@ -2196,7 +2196,7 @@ position: 1597,-205
 ---
 <<HideAll>>
 //scene calle
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<set $cita to "Allan">>
@@ -2214,7 +2214,7 @@ Cuando llego dos pensamientos ocupan mi mente/:/ Primero, que la entrada es bell
 Cuando me ve acercarme sonríe y alza la mano para saludarme y respondo de igual manera.
 Según voy acortando distancia me fijo más en él.
 Tiene las manos en los bolsillos y una postura relajada, el sol baña su cara y en ella va creciendo una sonrisa y entrecerrando los ojos mientras continua con el gesto.
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 No soy [select value={$gender} M="ciego" F="ciega" NB="ciegue"/], ya sabía que Allan era guapo, pero en esta situación lo es aún más. Me sonrojo inconscientemente. Estoy a punto de alcanzarle, espero lo note.
 Allan: “¡Hola!”
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2354,7 +2354,7 @@ Como por ejemplo que da pasos más cortos para asegurarse seguir mi ritmo, o que
 Está todo el rato pendiente de que esté [select value={$gender} M="cómodo" F="cómoda" NB="cómode"/].
 <<Scene botanico_placeholder>>
 Terminamos la visita por los jardines y volvemos a la entrada. Cuando salimos me entristezco un poco, me lo he pasado tan bien y ahora se acaba. 
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 Me giro para buscar una reacción similar en Allan y así es, su rostro no está igual de alegre, al menos no soy [select value={$gender} M="el único" F="la única" NB="el únique"/] que se siente así. Tras unos segundos callados él es el que rompe el silencio.
 Allan: “¿Tú para dónde vas?”
 {$name}: “Tengo que dar la vuelta y coger el bus. ¿Y tú?”
@@ -2485,7 +2485,7 @@ Niño: “¡Pero mamá!”
 En cuanto veo que madre e hijo desaparecen por una de las calles laterales, me recompongo y con paso acelerado recorro los últimos metros al bar.
 Qué vergüenza...
 Espero que mi cara haya recuperado su color normal antes de llegar, ya puedo distinguir la cabeza de Ethan en la terraza.
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Todavía [select value={$gender} M="abochornado" F="abochornada" NB="abochornade"/] por mi descuido anterior, me acerco a la mesa en la que está Ethan sentado. Le miro algo [select value={$gender} M="preocupado" F="preocupada" NB="preocupade"/].
 Espero no haberle hecho esperar demasiado teniendo en cuenta que él ya lleva aquí desde que hablamos cuando estaba en casa.
 <<Scene bg_bar_placeholder>>
@@ -3410,7 +3410,7 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     Mientras planeo mi tarde-noche suenan las campanitas de la entrada. ¿Quién viene tan tarde a una floristería? ¿Tenía que venir justo ahora cuando estoy a punto de cerrar? 
     Suspiro con resignación y me giro para atender al nuevo cliente.
     En cuanto veo quién es mis ojos se iluminan y una energía renovada inunda mi cuerpo. Me levanto de la silla corriendo, apoyo mis manos en el mostrador y echo el cuerpo hacia delante para verle mejor. Alzo una mano y le saludo alegremente.
-    <<Act Allan sprt_allan_placeholder right bottom015 white>>
+    <<Act Allan sprt_allan_neutral right bottom015 white>>
     {$name}: “¡Hola Allan!”
     Allan: “¡Hola {$name}!”
     Allan se acerca a mí con una sonrisa radiante. Transmite felicidad pura.
@@ -3513,7 +3513,7 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     {$name}: “¡AHHHHHHHHHHHHHH!”
     Siento como unas manos se posan sobre mis hombros.
     Me giro de golpe y con lo primero que ha logrado tomar mi mano, una botella de agua medio vacía, golpeo aquello que se encuentra frente a mí repetidamente con los ojos cerrados.
-    <<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
     Ethan: “¡EH! ¡Tranquila {$name} que soy yo! ¡Para!”
     La persona misteriosa agarra con fuerza mi brazo para parar los continuos golpes.
     Intento forcejear y del movimiento uno de los auriculares cae de mi oído.
@@ -3909,7 +3909,7 @@ Sophie: “Sí, hasta la próxima”
 Me despido de ella, pero antes de que salga entra otro cliente a la tienda. Ese flequillo es indiscutible, es Ethan.
 La mirada de Ethan empieza conmigo, pero cuando ve que hay otra persona en el local tarda poco en dirigirse a Sophie. Una sonrisa pícara se dibuja en su rostro.
 
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “No sabía que esta floristería se había convertido en un museo...”
 Ethan: “Viendo que hay unas obras de arte tan bellas como [select value={$gender} M="vosotros" F="vosotras" NB="vosotres"/] ”
 Guiña el ojo al terminar la frase.
@@ -3929,7 +3929,7 @@ Guiña el ojo al terminar la frase.
     <<Act Sophie sprt_sophie_neutral right bottom015 white>>
     Sophie: “Ah, ¡que existen peores!”
     <<Hide Sophie>>
-    <<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
     Ethan: “Pues yo creo que es de mi top 5”
     {$name}: “No me quiero imaginar cómo serán las que se han quedado fuera del top”
     Ethan: “También son buenas, pero no tanto como [select value={$gender} M="vosotros" F="vosotras" NB="vosotres"/]”
@@ -3942,7 +3942,7 @@ Guiña el ojo al terminar la frase.
 <<Hide Sophie>>
 Sophie dirige a la salida con paso firme. Veo a Ethan que comienza un intento de continuar la conversación con ella, pero esta, al darse cuenta en vez de esquivarle para salir le choca a propósito el hombro. 
 No hace falta decir más para explicar cómo le ha sentado el comentario a Sophie.
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “Vaya, que fuerza...” Sonríe mientras se palpa el hombro.
 {$name}: “¿Estás bien?”
 Ethan: “Sí... ¿Es una amiga tuya?”
@@ -3968,7 +3968,7 @@ position: -143,644
 <<set $name to get_player_name()>>
 
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 
 Tomo lo que me da Ethan y lo guardo en el espacio bajo el mostrador para tenerlo a mano la próxima vez que venga Sophie.
 {$name}: “Muchas gracias.”
@@ -4129,7 +4129,7 @@ position: -123,-48
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_ethan 3>>
 
 Ethan: “¡Madre mía {$name}, está perfecto!”
@@ -4161,7 +4161,7 @@ position: 45,-49
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_ethan 1>>
 
 Ethan: “Umm...”
@@ -4194,7 +4194,7 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_ethan -3>>
 
 Ethan: “...”
@@ -4222,7 +4222,7 @@ position: -120,41
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 
 Termino de meter el dinero en la caja y veo cómo Ethan sigue observando el ramo con detenimiento.
 Me muerdo el labio, [select value={$gender} M="indeciso" F="indecisa" NB="indecise" /].
@@ -4397,7 +4397,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene bg_calle_placeholder>>
+<<Scene bg_calle>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -4551,7 +4551,7 @@ Hasta ahora no he podido detenerme a respirar. Abro un cajón del mostrador y sa
 Muerdo el bizcocho y saboreo su interior. Mmmm, ¡sigue buenísimo! A pesar del tiempo que ha pasado ahí continua esponjoso y la crema está en su punto.
 //Campanitas
 Allan entra a la floristería con su sonrisa habitual.
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 ->Saludar con la boca llena
     <<Add_npc_likeability NPC_allan 2>>
     //////////////////////////////////////////////////////
@@ -4657,7 +4657,7 @@ position: -123,-48
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
 
 Esta vez creo que me he superado y seguro que Allan lo va a saber apreciar. Allan coge lentamente el ramo.
@@ -4681,7 +4681,7 @@ position: 45,-49
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 
 No estaba totalmente inspirada haciéndolo, pero creo que cumple su función.
@@ -4702,7 +4702,7 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
 
 Tenía mil ideas mezcladas en la cabeza y con las prisas de hacerlo a tiempo no sé si me he decantado por la premisa correcta.
@@ -4730,7 +4730,7 @@ position: -120,41
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 
 <<if get_npc_likeability("NPC_allan") < 15>>
     {$name}: “Muchas gracias por comprar aquí entonces”
@@ -4770,7 +4770,7 @@ position: -120,41
     <<Hide Allan>>
     Abre la puerta para salir, pero cuando tiene medio cuerpo fuera un pensamiento me inunda la mente. Es algo que llevaba varios días pensando y hoy tenga la confianza para decirlo en voz alta.
     {$name}: “Ay, casi se me olvida. ¿Te apetece tomar algo cuando acabes tu turno?”
-    <<Act Allan sprt_allan_placeholder right bottom015 white>>
+    <<Act Allan sprt_allan_neutral right bottom015 white>>
     {$name}: “Sin presiones, sólo si-”
     Allan: “¡Me encantaría!”
     Allan: “Agh pero hoy acabo muy tarde, no sé si vas a querer a esas horas”
@@ -4816,7 +4816,7 @@ Como no contaba con estas compras extras e iba cargada de más y aún era pronto
 Así que aquí estoy corriendo de nuevo por llegar tarde. Si sigo así llegaré bien a la hora que me ha dicho Allan que iba a salir.
 Acercándome a la tienda me fijo que es último local con las luces encendidas, además de los bares. No hay nadie fuera así que Allan sigue dentro. Me paro frente a la puerta para esperarle.
 Habrán pasado como 20 minutos cuando siento unos toquecitos mi hombro. Dejo de mirar el móvil para alzar la vista y ver a Allan detrás de mí.
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 Allan: “¡Hola! Perdona por hacerte esperar”
 Allan: “Pensaba que iba a salir antes”
 ->Criticar al jefe
@@ -4962,7 +4962,7 @@ Camarero: “Aquí tienes las vueltas”
 <<Hide Camarero>>
 Sonrío incómodamente al camarero mientras tomo el dinero y lo guardo. 
 Allan vuelve a echarse hacia atrás para volver a sentarse en su sitio totalmente avergonzado, adopta una postura más encogida para intentando pasar más desapercibido.
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
 He pasado toda la noche teniendo que llamar la atención a los camareros para que se pasaran por nuestra mesa, y justo ahora tenía que venir a interrumpir este momento.
 Soy la primera en levantarme y al ver que Allan no me sigue me fijo que sigue perdido en su cabeza abochornado.
 ->Extender la mano para que la coja
@@ -5022,7 +5022,8 @@ position: -143,644
 
 SÁBADO
 Alarma: “Beep beep beep”
-Me despierto refunfuñando y apago la alarma del móvil. Siempre tengo un mal despertar, pero hoy no quería que se me pegaran las sábanas. Me toca hacer limpieza profunda de la cocina y tengo que aprovechar la mañana.
+Me despierto refunfuñando y apago la alarma del móvil. 
+Siempre tengo un mal despertar, pero hoy no quería que se me pegaran las sábanas. Me toca hacer limpieza profunda de la cocina y tengo que aprovechar la mañana.
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Limón sprt_limon right center white>>
 Limón: “¡Miaaauu!”
@@ -5041,7 +5042,7 @@ Con eso estará entretenido un rato así que puedo desayunar tranquilamente.
 <<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
 Mientras friego los platos mi móvil empieza a sonar. Me seco las manos y cojo el teléfono. Al ver el nombre que aparece en pantalla me llevo la palma a la cara. ¿Cómo se me ha podido olvidar? Acepto la llamada.
-<<Act Leah sprt_Leah_mobile right center white>>
+<<Act Leah sprt_leah_phone right center white>>
 Leah: “Vaya, vaya. Otra vez me ha tocado llamar a mí”
 {$name}: “Perdóname Leah, se me ha vuelto a pasar...”
 Leah: “Menos mal que ya nos conocemos, y sabía que te iba a pasar”
@@ -5213,7 +5214,7 @@ Miro la barra de notificaciones y solo con ver el último mensaje entrante ya s�
 Solo habría una persona capaz de mandar esa cantidad de emoticonos de corazones, estrellitas y destellos.
 {$name}: “¿Qué querrá Ethan?”  
 Será mejor que abra el chat para salir de dudas.
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_phoneMessage right center white>>
 Ethan: “¡Hola [select value={$gender} M="flor" F="florecilla" NB="flor"/]! Espero que estes teniendo un día genial.”
 Ethan: “Aunque creo que tu día podría mejorar con la oferta que vengo a hacerte.”
 ¿Oferta? Miedo me da. Espero que no sea nada raro.
@@ -5240,7 +5241,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Hide Ethan>>
         Antes de que pueda comenzar a prepararme, el teléfono vuelve a sonar. Es Sophie.
         Supongo que querrá asegurarse de que no me he olvidado de nuestra cita.
-        <<Act Sophie sprt_sophie_neutral right bottom015 white>>
+        <<Act Sophie sprt_sophie_phoneMessage right center white>>
         Sophie: “Hola {$name}. Espero que recuerdes que hoy es el concierto de Useless Missfits, aunque cómo se te iba a olvidar.”
         Sophie: “Seguro que estas gritando tú [select value={$gender} M="solo" F="sola" NB="sole"/] en casa de la emoción.”
         {$name}: “¡Hola Sophie! Claro que no se me ha olvidado, pero tampoco estoy gritando. Te has pasado un poco eh.”
@@ -5282,7 +5283,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         Lo más fácil ya está hecho. Ahora queda lo difícil, decirle a Sophie que no puedo ir al final al concierto.
         ¿Qué hago? ¿Le digo la verdad?
         Mientras me muerdo el labio, [select value={$gender} M="indeciso" F="indecisa" NB="indecise"/], abro el chat de Sophie y comienzo a redactar un mensaje que considero apropiado.
-        <<Act Sophie sprt_sophie_neutral right bottom015 white>>
+        <<Act Sophie sprt_sophie_phoneMessage right bottom015 white>>
         {$name}: “Hola Sophie. Tengo malas noticias.”
         {$name}: “Al final no voy a poder ir al concierto. Tenía muchas ganas, pero he debido comer algo que no me ha sentado muy bien y no estoy para salir de casa.”
         {$name}: “Lo siento, después de todo lo que hiciste...”
@@ -5347,7 +5348,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         Con eso, cierro el chat con un suspiro. No ha comenzado el fin de semana y ya estoy [select value={$gender} M="destrozado" F="destrozada" NB="destrozade"/].
         //Campanitas
         ¿Otra vez el teléfono? ¿Quién será ahora?
-        <<Act Leah sprt_Leah_mobile right center white>>
+        <<Act Leah sprt_leah_phone right bottom015 white>>
         Leah: “¡Hola de nuevo {$name}!”
         Leah: “Al final hoy no voy a estudiar más porque estoy bloqueada y necesito un descanso.”
         Leah: “Había pensado en coger el primer tren que salga hacia allí y dar un paseo por el parque [select value={$gender} M="juntos" F="juntas" NB="juntes"/]. para desconectar.”
@@ -5371,10 +5372,14 @@ position: -143,644
 <<set $name to get_player_name()>>
 
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-El concierto está cada vez más cerca, ya escucho el barullo de la gente de fuera. Mientras ando compruebo en la mochila que llevo todo encima. Sé que no tengo que llevar nada concreto, ni las entradas siquiera, pero estoy muy nerviosa.
-Es la primera vez que voy a un concierto después de mucho tiempo y encima en una ciudad que aún no conozco. ¡Si incluso he tenido que usar el Bubblie Maps para saber cómo llegar!
-Pero no me tengo que dejar llevar por las negatividades. ¡Voy a ver en directo a Useless Misfits! Solo de pensarlo me pongo feliz.
-Doy la vuelta a la esquina y ya veo el final de la cola. Está bastante lejos de la entrada. Sophie me dijo que me esperaba en la misma puerta así que paso de largo de todos los que están esperando.
+El concierto está cada vez más cerca, ya escucho el barullo de la gente de fuera. Mientras ando compruebo en la mochila que llevo todo encima. 
+Sé que no tengo que llevar nada concreto, ni las entradas siquiera, pero estoy muy nerviosa.
+Es la primera vez que voy a un concierto después de mucho tiempo y encima en una ciudad que aún no conozco. 
+¡Si incluso he tenido que usar el Bubblie Maps para saber cómo llegar!
+Pero no me tengo que dejar llevar por las negatividades. 
+¡Voy a ver en directo a Useless Misfits! Solo de pensarlo me pongo feliz.
+Doy la vuelta a la esquina y ya veo el final de la cola. Está bastante lejos de la entrada. 
+Sophie me dijo que me esperaba en la misma puerta así que paso de largo de todos los que están esperando.
 Por fin llego, y en la puerta hay un par de seguratas revisando las entradas, pero ni rastro de Sophie.
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Ey, estoy aquí”
@@ -5402,7 +5407,8 @@ Tira el cigarro al suelo y lo pisa. Deja de apoyarse en el poste y se yergue com
 Siguiéndola me doy cuenta de lo alta que es, y eso que no lleva tanta plataforma.
 Sophie: “Antes de entrar, pase lo que pase no digas nada y tú sígueme”
 Asiento obediente. Jamás había deseado tanto tener una situación calmada como ahora. No te preocupes {$name}, piensa en el concierto y se te pasa.
-Llegamos a la entrada y Sophie se aproxima a uno de los guardaespaldas que está libre en ese momento. De su bolsillo saca algo que no alcanzo a ver, se lo muestra al hombre y su actitud con ella completamente, ahora sabe quién es.
+Llegamos a la entrada y Sophie se aproxima a uno de los guardaespaldas que está libre en ese momento. 
+De su bolsillo saca algo que no alcanzo a ver, se lo muestra al hombre y su actitud con ella completamente, ahora sabe quién es.
 Sophie se acerca más al vigilante y le susurra algo al oído. El segurata deja de mirar la a ella para mirarme a mí y asiente. 
 Sophie me indica que me acerque y cuando estamos [select value={$gender} M="los dos juntos" F="las dos juntas" NB="les dos juntes"/] el guardaespaldas nos abre la puerta para pasar.
 <<Hide {$name}>>
@@ -5515,12 +5521,17 @@ Empuja al que me había tirado a mí y se cae encima del grupo, que le sujetan e
 Me duelen las rodillas, pero las manos aún más. La tela de la prenda me ha protegido las piernas, pero las manos las tenía descubiertas.
 Giro las manos para dejar las palmas hacia arriba y veo sangre y cristales.
 Sophie: “¿Estás bien?”
-Le muestro las manos a Sophie y la miro con sufrimiento. Instantáneamente me vuelve a agarrar del brazo, esta vez para sacarme de la pista. No sé muy bien a donde vamos, pero me doy cuenta de que es una zona no abierta al público.
+Le muestro las manos a Sophie y la miro con sufrimiento. Instantáneamente me vuelve a agarrar del brazo, esta vez para sacarme de la pista. 
+No sé muy bien a donde vamos, pero me doy cuenta de que es una zona no abierta al público.
 Entramos una sala que parece un vestidor. Me sienta en una silla.
 Sophie: “Espérame un minuto”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sophie>>
 Me deja sola y aprovecho para echar un ojo a la ropa de la habitación. Un momento, ese traje lo conozco. No te creo. ¡Estoy en el vestidor del bajista!
 Si no tuviera literalmente cristales en las manos apretaría los puños de felicidad.
 La puerta se abre y Sophie vuelve a entrar a la habitación. Lleva en la mano una cajita con una cruz roja. Coge otra silla y la coloca quedándose frente a mi cuando se sienta.
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Extiende una mano, la que más te duela”
 Hago lo que me ordena. Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida  .
 Pese a como se muestra a menudo, dura e impasible, ahora está siendo ultra cuidadosa para no hacerme daño en el proceso. Verla tan cerca y tan concentrada en ayudarme... 
@@ -5640,7 +5651,7 @@ Chica: “Cariño...”
 Tierra trágame... Esto ya es demasiado, ¡me voy a casa!
 Mando el mensaje a Ethan. En cuanto llegue a casa pienso ponerme mi pijama de franela, un capítulo de La Casa del Basilisco y le daré muchos mimos a Limón.
 Él sí que sabe hacerme caso. Bueno... Siempre que tenga comida o juguetes.
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “¡EY, {$name}!”
 Hablando del rey de Roma. Parece que por fin ha decidido tener su entrada triunfante.
 Me giro y veo que Ethan se ha acercado corriendo. Esta intentado recuperar el aire con las manos apoyadas sobre sus rodillas.
@@ -5898,7 +5909,7 @@ Oigo un grito a mi izquierda y para mi asombro noto como me agarran de la mano.
     <<Act Espectador sprt_chico left bottom015 white>>
     Espectador: “¡EH!¡Que queremos ver la peli!”
     <<Hide Espectador>>
-    <<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
     Me tapo la boca para intentar ahogar las carcajadas y observo a Ethan divertida.
     Feliz y con mariposas en mi estómago, regreso mi atención a la pantalla, pero no sin antes comenzar a pintar formas sobre el dorso de su mano.
 Este momento tan íntimo y familiar me ha ayudado a abrir los ojos.
@@ -5934,14 +5945,14 @@ Nos quedamos los dos quietos sin saber qué hacer. Nuestras miradas se repelen.
 <<Hide {$name}>>
 <<Hide Ethan>>
 <<Act Abuela sprt_chica left bottom015 white>>
-<<Act Abuelo sprt_chico left bottom015 white>>
+<<Act Abuelo sprt_chico right bottom015 white>>
 Abuela: “¡Mira esa parejita! Qué adorables.”
 Abuelo: “Sí, se parece a nosotros cuando éramos jóvenes. ¿Recuerdas lo que nos gustaba ir al cine los domingos?”
 Abuela: “Cómo olvidarlo jajaja.”
 <<Hide Abuelo>>
 <<Hide Abuela>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Por si no fuera suficiente nuestra propia vergüenza, ese comentario lo único que ha hecho ha sido incrementarla.
 Debemos de parecer dos tomates.
 Sin embargo, Ethan toma la iniciativa y para mi pesar aparta su mano de la mía.
