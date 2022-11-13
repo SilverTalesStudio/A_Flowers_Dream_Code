@@ -39,4 +39,13 @@ public class YarnVariables : MonoBehaviour
 		Debug.Log(libro);
 		return libro;
 	}
+
+	[YarnFunction("get_conciertoSophie")]
+	public static string conciertoS_Cancelado()
+	{
+
+		string concierto = PlayerPrefs.GetString("conciertoCancelado");
+		Debug.Log(concierto);
+		return concierto;
+	}
 }

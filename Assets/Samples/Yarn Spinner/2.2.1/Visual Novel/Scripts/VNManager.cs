@@ -87,6 +87,7 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler<string>("sobreMinerva", AddInfoMinerva);
 			runner.AddCommandHandler<string>("seDejaPintaraPietro", AddPintarPietro);
 			runner.AddCommandHandler<string>("LeisteLibroEthanMartes", AddLibroEthan);
+			runner.AddCommandHandler<string>("conciertoSophieCancelado", AddConciertoSophie);
 			
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
@@ -278,6 +279,12 @@ public class VNManager : DialogueViewBase
 			Debug.Log(libro);
 		}
 
+		public void AddConciertoSophie(string concierto)
+		{
+			Debug.Log("Entra en AddConciertoSophie");
+			PlayerPrefs.SetString("conciertoCancelado", concierto);
+			Debug.Log(concierto);
+		}
 
 		public void SaveNextNodeToJumpBack(string nextNode)
 		{
