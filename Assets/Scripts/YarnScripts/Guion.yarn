@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Allan_jueves_sem2>>
+<<jump cita_Allan_jueves_sem2>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -4662,10 +4662,11 @@ position: -123,-48
 
 Esta vez creo que me he superado y seguro que Allan lo va a saber apreciar. Allan coge lentamente el ramo.
 Allan: “{$name}...”
-{$name}: “¡Es increíble!”
+Allan: “¡Es increíble!”
 Alza la mirada tan rápido del ramo a mí que me asusta un poco. Pero enseguida se me pasa al ver su cara rebosante de felicidad.
 {$name}: “Sabía que te iba a gustar”
-Allan: “La elección de las flores es perfecta, no se me había ocurrido en absoluto hacerlo así. Pensé que lo ibas a hacer de otra manera, pero después de ver tu trabajo, estoy seguro de que no había mejor forma de hacer el ramo”
+Allan: “La elección de las flores es perfecta, no se me había ocurrido en absoluto hacerlo así.” 
+Allan: “Pensé que lo ibas a hacer de otra manera, pero después de ver tu trabajo, estoy seguro de que no había mejor forma de hacer el ramo”
 {$name}: “Hoy estaba muy inspirada. Según me has dicho el pedido ya me lo imaginaba”
 Allan: “Pues se nota, has acertado de lleno”
 
@@ -4745,12 +4746,13 @@ position: -120,41
     <<HideAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
+    <<Hide Scene>>
     <<Fade black 1.0 0.0 2.0>>
-    <<wait 2.0>>
     <<Scene bg_calle_noche_placeholder>>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
     De camino a casa paro a comprar unos recados y al final me encuentro más cargada de lo que tenía pensado. Todo por culpa de una tienda de animales que han abierto nueva al final de la calle comercial.
-    ¿Cómo no le iba a comprar unos juguetes nuevos a Limón? Eran monísimos, tampoco muy caros. Sólo espero que los acabe usando, conociéndole, va a jugar más con la caja del juguete que con el propio aparato.
+    ¿Cómo no le iba a comprar unos juguetes nuevos a Limón? Eran monísimos, tampoco muy caros. 
+    Sólo espero que los acabe usando, conociéndole, va a jugar más con la caja del juguete que con el propio aparato.
     Las bolas con cascabel dentro le tienen que gustar sí o sí, ¿no? Puff ya no sé qué pensar, solo me queda llegar a casa para probarlo.
     ¡Limón, confío en ti!
     <<HideAll>>
@@ -4808,16 +4810,18 @@ position: -143,644
 
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 La noche cubre ya toda la ciudad, indicando así que la cita con Allan se acerca, y mientras tanto yo, que no soy la que acaba tarde de trabajar, voy con prisas a la tienda.
-Después de cerrar la floristería aproveché a hacer recados que tenía pendiente, y de paso le compré a Limón juguetes nuevos. Espero que los use, aunque ya me lo imagino jugando más con la caja en la que viene que con el juguete en sí.
+Después de cerrar la floristería aproveché a hacer recados que tenía pendiente, y de paso le compré a Limón juguetes nuevos. 
+Espero que los use, aunque ya me lo imagino jugando más con la caja en la que viene que con el juguete en sí.
 Como no contaba con estas compras extras e iba cargada de más y aún era pronto, fui hasta casa para dejarlas allí y luego ir al trabajo de Allan, pero al final me ha pillado el toro.
 Así que aquí estoy corriendo de nuevo por llegar tarde. Si sigo así llegaré bien a la hora que me ha dicho Allan que iba a salir.
 Acercándome a la tienda me fijo que es último local con las luces encendidas, además de los bares. No hay nadie fuera así que Allan sigue dentro. Me paro frente a la puerta para esperarle.
 Habrán pasado como 20 minutos cuando siento unos toquecitos mi hombro. Dejo de mirar el móvil para alzar la vista y ver a Allan detrás de mí.
 <<Act Allan sprt_allan_placeholder right bottom015 white>>
 Allan: “¡Hola! Perdona por hacerte esperar”
-Allan: “Pensaba que iba a salir antes, pero a última hora el jefe me ha mandado ordenar una sección, aunque ya estaba listo para irme”
+Allan: “Pensaba que iba a salir antes”
 ->Criticar al jefe
     <<Add_npc_likeability NPC_allan 1>>
+    Allan: “Pero a última hora el jefe me ha mandado ordenar una sección, aunque ya estaba listo para irme”
     {$name}: “Pero ese tío... Que cara tiene. ¿No te lo podía haber dicho antes? ¿O mejor, haberlo dejado para mañana?”
     {$name}: “Si tan urgente era es tarea que la hubiera hecho él”
     {$name}: “¿No le dijiste que ya tenías planes?”
@@ -4850,20 +4854,18 @@ Allan: “Pensaba que iba a salir antes, pero a última hora el jefe me ha manda
     Allan: “Sí, eso no quiero que pase”
 Allan: “Echo el cierre y ya podemos irnos”
 {$name}: “¡Genial!”
-<<Hide all>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<Hide Scene>>
 <<Fade black 1.0 0.0 2.0>>
-<<wait 2.0>>
 <<Scene bg_bar_placeholder>>
-<<Act {$name} sprt_she_neutral_final left bottom015 white>>
 A pesar de ser jueves y no fin de semana, el bar está bastante lleno. Aun así, conseguimos una mesa pequeña un poco apartada de los demás y sin ningún altavoz cerca. Es perfecto.
 Allan se sienta de espaldas al resto del bar, y yo desde mi sitio veo todo el movimiento de camareros.
-<<Act Allan sprt_allan_placeholder right bottom015 white>>
 Allan: “Menos mal que había sitio aquí, pensaba que iba al completo por la hora”
 {$name}: “Sí, si nos hubiera tocado ir a otro bar me hubiera fastidiado bastante que ya he cumplido mi cuota de caminar por hoy”
 Allan: “¿Ah sí, y eso?”
-{$name}: “Pues después de cerrar la floristería he tenido que hacer una ronda de compras. Como tenía tiempo, he ido a casa a dejar la compra y luego he vuelto aquí. Sé que no parecerá mucho a alguien tan en forma como tú, pero para mí es suficiente”
+{$name}: “Pues después de cerrar la floristería he tenido que hacer una ronda de compras. Como tenía tiempo, he ido a casa a dejar la compra y luego he vuelto aquí.” 
+{$name}: “Sé que no parecerá mucho a alguien tan en forma como tú, pero para mí es suficiente”
 Allan: “Tampoco hago tanto ejercicio.”
 {$name}: “Más que yo seguro, esos brazos no engañan.”
 A primera vista puede no parecerlo, pero cuando te fijas en las mangas del jersey puedes ver como no hay separación entre la tela y la piel. Le queda bien ajustado.
@@ -4878,10 +4880,13 @@ Allan: “Lo suficientemente para estar sano, no soy un obsesivo de esos de esta
     {$name}:“Aunque me creo lo de que no vives en el gimnasio”
 ->No hacer nada 
 {$name}: “Si estuvieras tanto tiempo en el gimnasio. ¿Quién cuidaría de las plantas?”
-Allan: “Exacto, y eso sí que no voy a dejarlo de lado. Y encima son muy exigentes, tengo varias con diferentes horarios, cada una necesita su cantidad de agua y así. Requiere su tiempo, bueno que te voy a contar, seguro que te pasa lo mismo” 
-{$name}: “Totalmente, y ¿qué me dices de tener que ir cambiándolas de sitios según el sol? Al principio cuando llegué aquí, no sabía cómo entraba la luz en casa al largo del día y fue un poco caos. Ahora cada planta tiene sus sitios definidos”
+Allan: “Exacto, y eso sí que no voy a dejarlo de lado. Y encima son muy exigentes, tengo varias con diferentes horarios, cada una necesita su cantidad de agua y así.” 
+Allan: “Requiere su tiempo, bueno que te voy a contar, seguro que te pasa lo mismo” 
+{$name}: “Totalmente, y ¿qué me dices de tener que ir cambiándolas de sitios según el sol? Al principio cuando llegué aquí, no sabía cómo entraba la luz en casa al largo del día y fue un poco caos.” 
+{$name}: “Ahora cada planta tiene sus sitios definidos”
 Miro como mis manos juguetean entre sí mientras pienso en lo dura que fue la primera semana y lo mucho que me ayudaron las plantas a desconectar y calmarme. Sonrío del recuerdo.
-{$name}: “Sí es verdad que requiere un esfuerzo por nuestra parte, pero al final merece la pena cuando las ves florecer y bien verdes. Es ver con tus ojos que todo tu trabajo ha dado sus frutos y se muestra representado en esas flores, esa vida”
+{$name}: “Sí es verdad que requiere un esfuerzo por nuestra parte, pero al final merece la pena cuando las ves florecer y bien verdes.”
+{$name}: “Es ver con tus ojos que todo tu trabajo ha dado sus frutos y se muestra representado en esas flores, esa vida”
 {$name}: “¿No crees?”
 Levanto la mirada para poder observar a Allan de nuevo y me doy cuenta de que su mirada está perdida en la mía.
 {$name}: “¿Allan?”
@@ -4925,7 +4930,8 @@ A lo largo de la cita terminamos pidiendo varios platos y, efectivamente, todos 
 También hablamos mucho y en todo momento ambos en el mismo ritmo. No había silencios incómodos, ni nos pisábamos, cada uno sabía perfectamente cuando hablar, como si nos conociéramos de toda la vida.
 Volví a ver pequeños detalles de él que me hacen apreciarle aún más, como dejar siempre el último trozo para que lo comiera yo. 
 Aunque diera lugar a momentos graciosos en los que nadie lo comía porque yo estaba pensando de la misma manera, y al final hasta que no lo mencionábamos nadie se lo terminaba.
-Pero no es sólo me da él a mí, hoy también me he dado cuenta de las cosas que puedo hacer por él. Allan es introvertido y prefería que interactuara yo con los camareros, con eso entendí porque se sentó de espaldas al bar. 
+Pero no es sólo me da él a mí, hoy también me he dado cuenta de las cosas que puedo hacer por él. 
+Allan es introvertido y prefería que interactuara yo con los camareros, con eso entendí porque se sentó de espaldas al bar. 
 Pero no pasa nada porque a mí no me importa hacerlo, y me alegró ver que yo también podía ser un apoyo para él. 
 Ahora que ya terminamos de comer llamo por última vez al camarero para que nos traiga la cuenta. En nada está en nuestra mesa y deja un cuenco con el ticket.
 Cojo el ticket antes de que vea Allan el precio, saco dos billetes de 20.
@@ -4940,7 +4946,8 @@ Allan: “Venga, déjame verlo que solo quiero darte mi parte, no te voy a invit
 Se echa hacia delante y extiende el brazo para coger el ticket.
 {$name}: “Nope, jajaja”
 Levanto la mano con el ticket y la llevo hacia atrás para alejar el ticket lo más lejos posible de Allan. Pero no es suficiente para que deje de intentarlo.
-Se echa aún más adelante y extiende aún más el brazo para recortar la distancia generada por la mesa y mi gesto. Aún no es suficiente, mientras me río de la situación, Allan apoya una de las manos en la mesa para poder echar el cuerpo aún más adelante.
+Se echa aún más adelante y extiende aún más el brazo para recortar la distancia generada por la mesa y mi gesto. 
+Aún no es suficiente, mientras me río de la situación, Allan apoya una de las manos en la mesa para poder echar el cuerpo aún más adelante.
 Pero calcula mal, y mi risa se corta en seco cuando su mano se resbala y planta el codo para no caerse más. Ahora en vez de estar a la altura del ticket se queda frente a mis ojos y escasos centímetros nos separan.    
 En esta posición me puedo fijar más en las facciones de su cara y en esos profundos ojos miel clavados sobre los míos. ¿Estará haciendo él lo mismo?
 Sé que debería decir algo para salir de esta situación, pero quiero alargar este momento todo lo que pueda, quiero disfrutar de esta cercanía y calidez disponible solo entre Allan y yo ahora.
@@ -4953,7 +4960,8 @@ Camarero: “Aquí tienes las vueltas”
 <<Move Camarero offright bottom015 1.0>>
 <<wait 1.0>>
 <<Hide Camarero>>
-Sonrío incómodamente al camarero mientras tomo el dinero y lo guardo. Allan vuelve a echarse hacia atrás para volver a sentarse en su sitio totalmente avergonzado, adopta una postura más encogida para intentando pasar más desapercibido.
+Sonrío incómodamente al camarero mientras tomo el dinero y lo guardo. 
+Allan vuelve a echarse hacia atrás para volver a sentarse en su sitio totalmente avergonzado, adopta una postura más encogida para intentando pasar más desapercibido.
 <<Act Allan sprt_allan_placeholder right bottom015 white>>
 He pasado toda la noche teniendo que llamar la atención a los camareros para que se pasaran por nuestra mesa, y justo ahora tenía que venir a interrumpir este momento.
 Soy la primera en levantarme y al ver que Allan no me sigue me fijo que sigue perdido en su cabeza abochornado.
@@ -5011,7 +5019,6 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_casa_placeholder>>
-<<Fade black 0.0 1.0 0.5>>
 
 SÁBADO
 Alarma: “Beep beep beep”
