@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Cita_Ethan_sem2>>
+<<jump lunes_sem3>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -6013,12 +6013,811 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+El bullicio de la mañana me saluda cuando piso la calle. Ya he pasado el ecuador de mi primer mes aquí. 
+Echo la vista atrás y recuerdo el terror que tenía mudarme [select value={$gender} M="solo" F="sola" NB="sole"/] por primera vez. Antes siempre había vivido con gente, primero con mi padre y luego con mi expareja.
+No sólo era el miedo a la soledad en sí, sino a estar [select value={$gender} M="solo" F="sola" NB="sole"/] en una ciudad nueva, sin ningún amigo o familiar cerca. La diferencia respecto a mi antigua vida es abismal.
+Y el salto aún es mayor si lo comparo con mi estancia con mi ex. No podía ir a ningún sitio ni hacer nada sin que él lo supiera, controlaba todos los aspectos de mi vida.
+Me costó mucho tiempo darme cuenta de que su comportamiento tóxico no era culpa mía, y menos aún mi dependencia hacia él. Ahora ya soy libre de hacer lo que quiera dentro y fuera de casa.
+Estando [select value={$gender} M="solo" F="sola" NB="sole"/] toda la responsabilidad recae sobre mí, y sí, cometo muchos errores, pero también muchos aciertos. Me he dado cuenta de que realmente soy capaz de hacer bien las cosas, cosas que antes pensaba que eran imposibles para mí.
+¿Cómo puede alguien romperte hasta el punto de hacerte pensar que no vales nada? ¿Cómo éramos capaces de llamar amor a lo que nos estaba pasando?
+Sacudo la cabeza y miro hacia adelante con determinación. Ahora todo ha pasado, no hace falta darle más vueltas.
+Feliz con mi nueva vida, acelero el paso para llegar cuanto antes al fruto de mi esfuerzo, A Flower´s Dream.
+<<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 1.0>>
+<<Scene bg_floristeria_placeholder>>
+La afluencia de clientes no es mucha, como suele ocurrir los lunes. Así que empiezo el día sin mucho estrés.
+<<if get_npc_likeability("NPC_sophie") <= -10>>
+    <<jump Final_malo_Sophie>>
+<<elseif get_conciertoSophie() == "yes">>
+    <<jump Final_malo_traicion_Sophie>>
+<<else>>
+    <<jump Sophie_lunes_sem3>>
+<<endif>>
+//JUMP
+===
+
+title: Final_malo_Sophie
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
 <<Scene floristeria_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Aprovecho que la floristería está libre para salir del mostrador y recolocar el escaparate. Llevaba un tiempo queriendo cambiar las flores de exposición, pero antes no sabía por qué cambiarlas.
+Aparto la mampara que separa el ventanal del resto de la tienda, y accedo al escaparate. Desde aquí veo a la gente pasear por la calle haciendo sus compras.
+No me fijo en nadie en específico hasta que veo una figura que conozco. Esa melena negra y larga es inconfundible. Es Sophie, y parece que va cargando algo en la mano.
+No puede ser.
+Afino mi vista y mis miedos se hacen realidad. Lleva un ramo de flores envuelto en un papel de color azul. Yo no uso ese color para el envoltorio.  
+{$name}: “Mierda”
+Ha preferido irse a la otra floristería, mucho más lejana que la mía. Y sé que no está precisamente cerca porque cogí este local por eso.
+{$name}: “Aghh, acabo de perder un habitual. Justo el único tipo de cliente que no puedes perder en un negocio”
+Sé que era una borde, pero como otros clientes, tampoco era algo inaguantable. Tal vez si me hubiera aproximado a ella de otra manera las cosas serían diferentes. 
+Aunque ya da igual, no tiene sentido pensar en supuestos, lo hecho, hecho está. Ya vendrán otros clientes que seguramente serán mejores.
+{$name}: “Venga {$name}, no te desconcentres por esto que queda mucho por hacer”
+<<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
 
+<<jump Allan_lunes_sem3>>
+===
+
+title: Final_malo_traicion_Sophie
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Sonrío al hombre que tengo delante mientras acepto su dinero. ¡Otro cliente satisfecho!
+{$name}: “Gracias por-”
+//Golpe
+La puerta se abre violentamente. [select value={$gender} M="Sobresaltado" F="Sobresaltada" NB="Sobresaltade"/] miro a la dirección de donde provenía el ruido y veo a la causante.
+Una Sophie con cara de pocos amigos se acerca intimidantemente al mostrador.
+Antes de terminar de despedir al cliente, sale por patas de la tienda con el ramo en la mano. Está huyendo de la tormenta que se aproxima.
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+{$name}: “Hola Sophie. Bienvenida a Flower´s Dream”
+Se cruza de brazos frente a la mesa mientras me observa con el ceño fruncido.
+{$name}: “...”
+{$name}: “¿Pasa algo?”
+Sophie: “¿Qué tal el fin de semana?”
+{$name}: “¡Ah! Pues...”
+Mierda. A Sophie le dije que estuve mala, no puedo decir nada emocionante.
+{$name}: “Pues mal, lo pasé entero en casa. Vomité y todo. Mi rutina era dormir, comer e ir al baño. Ni jugar con mi gato pude jaja...”
+Sonrío [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/]. Vale, así mejor, coincide con lo que le dije y son motivos de sobra para rechazarla el plan.
+Sophie: “¿Tú te piensas que soy gilipollas?”
+{$name}: “¿Perdón?”
+Sophie: “O sea, me mientes anteayer y ahora me mientes en la cara. No se puede tener más vergüenza"
+No puede ser. ¡Sabe lo del fin de semana! Pero es imposible. Tengo que confirmarlo antes de validar su versión.
+{$name}: “No sé de qué estás hablando”
+Sophie: “Ya basta, deja de hacerte [select value={$gender} M="el" F="la" NB="le"/] inocente. Te vi el sábado por la calle con el tipo ese de la tienda”
+Mi expresión se rompe. He sido totalmente cazada.
+Sophie: “Me da igual con quien quedes o no, haz lo que quieras con tu vida, aunque crea que es un capullo. Pero no hay cosa que odie más que me mientan”
+Sophie: “Si preferías quedar con el chico ese me podrías a ver dicho la verdad. No inventarte una excusa de mierda. Pensaba que eras mejor que eso”
+{$name}: “Yo... Es que pensé que te ibas a enfadar si te cancelaba el plan por eso...”
+Sophie: “Mucho mejor engañarme, ¿no?”
+Miro al suelo sin saber cómo responder. Tras unos segundos así intento excusarme.
+{$name}: “No sabía que te afectarían tanto este tipo de cosas. Si lo hubiera sabido no lo habría hecho”
+Sophie: “Puede que para otra gente no sea importante, pero para mí las mentiras son una línea roja”
+Sophie: “Así que no pienso perder el tiempo con personas que actúan así”
+Sophie: “A diferencia de ti, he venido porque tengo la decencia de venir a comentártelo, para que no te extrañe que no me vayas a ver más por aquí”
+{$name}: “¿Qué?”
+Sophie: “Así es”
+Sophie: “Tsk, y pensar que en algún momento quise conocer más a [select value={$gender} M="un" F="una" NB="une"/]  cobarde como tú. Incluso me planteé presentarte a mis amigos”
+Sophie: “Bah, que desperdicio”
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sophie>>
+Con esto se gira y camina hacia la puerta menos violentamente después de haberlo soltado todo conmigo.
+Me llevo las manos a la cabeza. Aghh, cómo he podido cagarla tanto. ¿Debería escribirle para disculparme? No, eso lo empeoraría.
+De hecho, creo que no hay nada que arreglar, me ha dejado bastante claro que he cruzado su línea roja. Me apena saber que me he podido quedar sin una amistad por no saber afrontar las cosas.
+No tengo ganas de hacer nada, pero tengo que seguir trabajando. Espero que poner el foco en actividades manuales me ayude a despejarme.
+
+<<Fade black 0.0 1.0 1.0>>
+<<wait 2.0>>
+<<jump Allan_lunes_sem3>>
+===
+
+title: Sophie_lunes_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Sonrío al hombre que tengo delante mientras acepto su dinero. ¡Otro cliente satisfecho!
+{$name}: “Gracias por comprar aquí. Adiós”
+//Campanillas
+Mientras me despido del cliente oigo la puerta abrirse. Giro la cabeza para ver entrar una melena negra. Saludo a Sophie con un gesto desde el mostrador.
+<<Act Cliente sprt_chico right bottom015 white>>
+Cliente: “A- Adiós”
+El hombre sale de la floristería sin mirar a Sophie a la cara, intimidado por su apariencia. Pobrecito.
+//Campanillas
+Sophie: “Buenos días {$name}”
+{$name}: “¡Hola Sophie!”
+<<if get_date() == "Sophie">>
+    Baja la mirada para observarme las manos, llevo guantes de jardinería. Su rostro luce preocupado.
+    Sophie: “¿Qué tal van tus heridas?”
+    {$name}: “¡Mejorando poquito a poco! Más que dolor, siento molestia y tengo mucha sensibilidad en ellas. Por eso llevo con los guantes puestos todo el día, para evitar roces”
+    {$name}: “Pero por lo demás lo tengo todo bien, las rodillas no me duelen y la herida ya empieza a formar costra”
+    Sophie: “...”
+    {$name}: “Venga, no te preocupes, no soy tan frágil como te crees”
+    Hago un gesto como si quisiera sacar bíceps mientras le sonrío para que no se angustie más.
+    Sophie: “Je, no eres [select value={$gender} M="un principito" F="una princesita" NB="une noble"/] después de todo”
+    Sophie: “Me alegro de que estés mejor”
+    {$name}: “Fue por ti”
+    {$name}: “Si no me hubieras curado tan bien se podía haber puesto muy feo y habría estado más días dolorida, seguro”
+    {$name}: “Así que gracias de nuevo”
+    <<Add_npc_likeability NPC_shopie 2>>
+    Ante mi sinceridad se sonroja y aprovecho para admirar su belleza con esos tonos rojizos.
+    Sophie: “No es nada”
+    {$name}: “Lo es para mí”
+    Sophie: “...”
+    {$name}: “Y gracias también por invitarme. Aunque te perdieras medio concierto. ¿Volviste a entrar después?”
+    Su rostro y actitud vuelven a la normalidad para poder seguir con la conversación.
+    Sophie: “Eh, sí. Cuando volví vi que no estaba el grupo ese, pregunté a uno de seguridad y parece que les echaron cuando nos fuimos”
+    {$name}: “Bien merecido lo tienen”
+    Sophie: “Me quedé un rato en la pista, pero ya no era lo mismo si no estabas...”
+    ///////////////////////////////////////////////////////////
+    ////////PROTAGONISTA SE RUBORIZA///////////////////////////
+    ///////////////////////////////////////////////////////////
+    Sophie: “Así que estuve tras el escenario para ayudar al espectáculo. Siempre hay hueco para echarles una mano, y me pagaron por la ayuda, así que no estuvo todo perdido”
+    Me alegro porque no fuera todo malo, pero me apena haber perdido la experiencia completa del concierto y que a Sophie también le haya pasado.
+    {$name}: Suspiro. “Si tan solo no nos hubiera tocado a esa panda al lado”
+    Sophie: “Ya, pero eso no es algo que dependiese de nosotras.”
+    Sophie: “Por cierto, mis amigos preguntaron por ti, les conté todo lo que pasó...”
+    Sophie: “Y me han dicho que estás invitada a ir un día al local donde practican para que los conozcas y los escuches tocar de cerca”
+    {$name}: “¡¿EN SERIO?!”
+    Sophie: “Sí, me han que se siente mal que no disfrutaras del concierto al 100%”
+    {$name}: “Al final voy a tener que agradecer a los borrachos por hacerme eso. Esto es mucho mejor que un concierto”
+    Sophie: “Pft eso no pasaría nunca. Aquellos tíos nunca se merecerían una disculpa tuya”
+    Sophie: “Así que cuando sepas qué horas libres tienes avísame y organizo con ellos esto”
+    {$name}: “Dile a tus amigos que muchas gracias de mi parte. Al final voy a estar todo el día dando las gracias jaja”
+    Sophie: “Es que eres demasiado buena persona”
+    Sophie: “Pero también es lo que te hace tan interesante”
+    Sonríe sarcásticamente mientras se echa un poco hacia delante. Su actitud se transforma. No es la sonrisa de siempre, es una sonrisa de un depredador.
+    Pero no me causa terror, sino todo lo contrario. La cara me empieza a arder y mi mirada evade la suya.  
+    {$name}: Gulp. “Ehh, cambiando de tema...”
+<<else>>
+    ->Preguntarle sobre el concierto
+        <<Add_npc_likeability NPC_sophie 2>>
+        {$name}: “¿Qué tal el concierto?”
+        Sophie: “Estuvo bien, aunque hubo algunas movidas en la cola y en la pista. Los de seguridad se encargaron rápidamente de los liantes, así que no llegó a nada muy serio”
+        {$name}: “¿Y la música?”
+        Sophie: “No te voy a mentir, Useless Misfits nunca falla en un concierto. Todo el grupo se esfuerza al máximo, y tocan las canciones en su mejor versión”
+        {$name}: “Qué guay suena... Tendré que esperar a otra oportunidad”
+        {$name}: “Cambiando de tema...”
+    ->Preguntarle qué pedido quiere 
+        <<Add_npc_likeability NPC_sophie 1>>
+<<endif>>
+{$name}: “¿Quieres que te ponga hoy un ramo?”
+Sophie: “Pues sí, ¿recuerdas que te dije que los ramos eran para mi hermana? Necesito otro para y este es muy importante...”
+Creo que ya tengo la suficiente confianza con Sophie para preguntarle.
+{$name}: “Si no es meterme en un entierro en el que no tengo vela, ¿puedo saber por qué?” 
+{$name}: “No te pregunto sólo porque me ayudará a escoger las flores, sino porque creo que hablar estas cosas con alguien te ayuda a soltar una carga mental. Si lo aguantas sola mucho tiempo, te consume por dentro poco a poco.”
+Sophie: Suspira. “Puede que tengas razón...”
+Sophie: “Mi hermana...”
+//////////////////////////////////////////////////////////////////////////
+/////////////////////SOPHIE SAD///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+Sophie: “No está bien.  Está en el hospital de manera indefinida por ahora y no la dejan salir más que al patio de allí”
+Sophie: “Estoy todo el tiempo que puedo con ella, los enfermeros incluso me tratan como si viviera en allí”
+Sophie: “Pero da igual todo lo que haga que nada cambia, aún no sabe cómo solucionar su enfermedad”
+//////////////////////////////////////////////////////////////////////////
+///////////////////////////SOPHIE SOBBING/////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+Sophie: “No te imaginas la impotencia que siento al ver a mi hermana tumbada en la cama del hospital sin poder hacer nada, sin entender qué le pasa, sin saber cómo calmar su dolor cuando le dan episodios”
+Sophie: “Sólo puedo abrazarla y susurrarle al oído que todo va a estar bien, que no está sola. Los ataques no duran mucho rato, pero la paz no es muy duradera.”
+Sophie: “Y si eso no fuese suficiente, lo peor es esperar a que suceda el siguiente. Saber que más tarde volverá el dolor.”
+Sophie: “Todos los días lucha para aguantar y seguir adelante, para que los médicos por fin den con la tecla correcta. ¿No se merece mi hermana que todo le salga bien?”
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////SHOPIE SAD//////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+Sophie: Suspira. “Y, aun así, no saben nada todavía...”
+{$name}: “Lamento muchísimo todo lo que está pasando tu hermana, nadie se merece sufrir así, y menos siendo tan joven”
+{$name}: “¿Es posible que aún puedan descubrir su enfermedad?”
+Sophie: “Le van a hacer por la tarde una prueba nueva en el hospital y es posible que de una vez por toda descubran qué le pasa de una vez por todas.”
+Sophie: “Diría que no me quedan fuerzas para ilusionarme más, pero sería mentira. Siempre que haya posibilidades de que mi hermana se recuperase, me aferraré a ellas con todo mi ser.”
+Sophie: “Por eso el ramo de hoy es tan importante, quiero que antes de que la duerman para la prueba y después de que despierte, huela y vea el ramo que le he regalado.”
+Sophie: “Para que esté acompañada mientras no me dejen entrar los enfermeros. Para que no se sienta sola.” 
+{$name}: “Es una motivación preciosa, Sophie”
+{$name}: “Con lo fuerte que es tu hermana, confía en que será capaz de superarlo todo.”
+Sophie: “Sí... Eso espero.”
+{$name}: “Dime qué tenías pensado y me pongo manos a la obra”
+
+<<jump Minijuego_Sophie_lunes_sem3>>
+===
+
+title: Minijuego_Sophie_lunes_sem3
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Sophie_lunes_sem3>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Sophie>>
+===
+
+title: Salida_minijuego_Sophie_lunes_sem3
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “Aquí tienes tu ramo”
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Sophie_lunes_sem3>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Sophie_lunes_sem3>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Sophie_lunes_sem3>>
+<<endif>>
+===
+
+title: Minijuego_bien_Sophie_lunes_sem3
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_sophie 3>>
+
+{$name}: “Espero que sea lo que buscas para tu hermana”
+
+/////////////////////////////////////////////////////////
+////////////////////SOPHIE SAD///////////////////////////
+/////////////////////////////////////////////////////////
+Con las manos temblorosas coge el ramo. Sus ojos vuelven a estar llorosos.
+Cubro sus manos con las mías y la sonrío cálidamente, intentando calmarla.
+{$name}: “Le va a encantar, y estas flores le van a acompañar en todo ese proceso, cuidando a tu hermana cuando tú no puedas estar”
+Asiente y consigue hablar como puede.
+Sophie: “Gracias por todo”
+{$name}: “No es nada”
+
+<<jump Fin_ramas_minijuego_Sophie_lunes_sem3>>
+===
+title: Minijuego_regular_Sophie_lunes_sem3
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_shopie 1>>
+
+{$name}: “Siendo algo tan importante, he querido ir a asegurar”
+Sophie: “Es muy bonito, aunque esperaba algo realmente impresionante. Tal vez tengas razón, además es para mi hermana y yo no entiendo mucho de estas cosas.”
+{$name}: “Espero que le gusten.”
+Sophie: “Yo también.”
+
+<<jump Fin_ramas_minijuego_Ethan_miercoles_sem2>>
+===
+
+title: Minijuego_mal_Sophie_lunes_sem3
+position: -289,-54
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_sophie -3>>
+Sophie: “¿En serio?”
+Sophie: “Después de todo lo que te he contado, y la importancia del ramo. ¿Haces esto?”
+Sophie: “No le veo el sentido, es totalmente disonante.”
+{$name}: “Bueno, he intentado ir a por algo más arriesgado y dentro de la desarmonía hay un sentido...”
+Sophie: “Mira, voy a confiar en que sea eso y que mi hermana que sabe más sepa apreciarlo, porque como no le guste... La vamos a tener.”
+{$name}: Gulp. “Entonces confío en que le gustará”
+
+
+<<jump Fin_ramas_minijuego_Sophie_lunes_sem3>>
+===
+
+title: Fin_ramas_minijuego_Sophie_lunes_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+
+{$name}: “Por cierto, pensando en tu hermana se me había ocurrido que esto os podría gustar a las dos”
+Saco un pequeño sobre con el logo de la floristería y se lo extiendo para que lo coja.
+Sophie: “¿Qué es?”
+{$name}: “Son semillas de tulipán. Como me has dicho que tu hermana pasa mucho tiempo en el hospital, se me ha ocurrido que tener que cuidar unas flores podría ayudarle a hacer su día más entretenido”
+{$name}: “Y ver crecer una planta con el esfuerzo que le has dedicado es muy satisfactorio”
+Sophie: “Es muy buena idea, casi me molesta que no haya caído yo en ella para hacerla.”
+Sophie: “¿Cuánto es el sobre?”
+{$name}: “Nada.” 
+{$name}: “Je... Ahora va a tener más ganas de conocerte después de esto.”
+Sophie: “¿Me conoce?”
+{$name}: “Sí, alguna vez le he hablado de ti, aparte de lo de la discusión”.
+->Responder [select value={$gender} M="emocionado" F="emocionada" NB="emocionade"/]
+    {$name}: “¿En serio? ¿Y que le has contado?”
+    Me alegra mucho saber que tenemos la suficiente confianza para que le hable de mí a su hermana, sabiendo lo importante que es para ella.
+    Sophie: “Tampoco mucho, no hace falta que te emociones tanto”
+    Sophie: “Sobre todo le he contado lo mucho que sabes de plantas y flores. A ella también le gustan mucho, pero no ha podido aprender tanto de ellas.”
+    Sophie: “Así que le gustan mucho los ramos que eres capaz de hacer.”
+    La que tiene los ojos llorosos soy yo ahora.
+    Sophie: “Oye, ¿qué ha pasado?”
+    {$name}: “Nada es que... Saber que le transmito tanto alguien con mis ramos, me hace sentir orgullosa.”
+    Cambiadas las tornas, es ella quien me sonríe para tranquilizarme ahora.
+    Me froto los ojos para quitar las lágrimas antes de que se formen, y recupero mi postura.
+->Responder [select value={$gender} M="juguetón" F="juguetona" NB="juguetone"/] 
+    Trata de ocultar algo, como si escondiera algo que la hiciera más vulnerable. Una media sonrisa se dibuja en mi cara mientras arqueo una ceja.
+    {$name}: “¿Ah sí? No sabía que te interesaba hasta para llegar a ese nivel” 
+    {$name}: “¿Y qué le cuentas a tu hermana de mí? Espero que sólo cosas buenas.”
+    A pesar de mi actitud, Sophie no se acobarda y responde burlona.
+    Sophie: “No te vengas arriba, [select value={$gender} M="príncipe" F="princesa" NB="noble"/] . Solo han sido un par de ocasiones.”
+    Sophie: “Y no del modo que piensas.”
+    {$name}: “Pues sí que es curiosa tu hermana si me quiera conocer sabiendo tan poco de mi... supuestamente.”
+    No es capaz de mantener la fachada y desvía la mirada levemente.
+    Sophie: “Bueno, tal vez hayan sido algunas veces más, pero que no se te suba a la cabeza.”
+    {$name}: “Oh en absoluto.”
+    {$name}: “Jamás se me ocurriría preguntar por esto a tu hermana si en algún día se da la situación en que nos conozcamos.”
+    Utilizo una tonadilla y expresión inocente que no se creería nadie.
+    Sophie: “Tsk. No sé por qué te he contado esto”
+    {$name}: “Porque confías en mí.”
+    Exagero una sonrisa de oreja a oreja.
+La conversación acaba y el silencio inunda la floristería. Seguro que tiene mucho de lo que mentalizarse para la prueba de su hermana.
+{$name}: “Seguro que hoy va a ser un día duro para ambas, pero vais a salir adelante porque sois unas grandes luchadoras.”
+Sophie: “Muchas gracias por los ánimos.”
+<<if get_npc_likeability("NPC_sophie") >= 15>>
+    Sophie: “De hecho... quería preguntarte si tienes libre el domingo.”
+    Sophie: “Como dijiste que te mudaste hace poco no sé si sabrás esto, pero este fin de semana se organiza un festival medieval en la ciudad.”
+    Sophie: “Aún no puedo asegurarte si yo misma podré porque dependo del resultado de hoy y de cómo estará mi hermana, ya sabes.”
+    Sophie: “Pero si pudiera...”
+    Sophie: “¿Te gustaría ir conmigo?”
+    {$name}: “Me encantaría, pero yo tampoco puedo confirmarte con total seguridad que puedo ir. No te quiero mentir”
+    {$name}: “Me tienen que llegar unas cajas aún de la mudanza y venían el fin de semana, pero no me pueden asegurar el día y hora de entrega hasta que no sea más próxima la fecha”
+    {$name}: “¿Te puedo avisar si al final puedo?”
+    Sophie: “Sí claro, sería hipócrita de mí pedirte atarte a un plan que ni yo sé si voy a poder cumplirlo.”
+    {$name}: “¿Hablamos por quésapp entonces?”
+    Sophie: “Sí”
+    Sophie: “Hasta otro día {$name}”
+    {$name}: “Adiós”
+<<else>>
+    Sophie: “Hasta otro día”
+    {$name}: “¡Adiós!”
+<<endif>>
+<<Move Sophie offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sophie>>
+
+//Campanillas
+De verdad espero que la prueba de la hermana de Sophie salga bien. Estoy [select value={$gender} M="preocupado" F="preocupada" NB="preocupade"/] por cómo lo van a pasar ambas, pero no puedo hacer nada.
+A ver si centrándome en el trabajo consigo pensar en otra cosa.
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Allan_lunes_sem3>>
+
+===
+
+title: Allan_lunes_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
+//Campanillas
+Ensimismada con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
+{$name}: “¡Un segundo! Le atiendo ahora en cuanto termine con esto.”
+<<if get_npc_likeability("NPC_allan") <= -10>>
+    <<jump Allan_final_malo>>
+<<else>>
+    <<jump Allan_nodo_normal>>
+<<endif>>
+===
+
+title: Allan_final_malo
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+Termino de plantar el esqueje y regreso a mi posición erguida. Al girarme veo que Allan es el cliente.
+Como siempre está quieto en el sitio como intentando no molestar. Si no hubiera sido por las campanillas de la puerta, ni me hubiera enterado de que ha entrado.
+Tanto le cuesta hacerse notar, que no le va a pasar nada, es incluso molesto.
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+{$name}: “Hola Allan. ¿Qué pedido querías hoy?”
+Allan: “...”
+Allan: “Hoy he venido porque quería hablarte de un tema...”
+Allan: “... relacionado con tus ramos.”
+Arqueo la ceja extrañada. ¿Por qué quiere hablar de mis ramos ahora, y antes de que haya le haya hecho uno? Esto huele raro.
+{$name}: “¿Qué les pasan?”
+Juguetea con sus manos nervioso, quiere decir algo, pero no sabe cómo hacerlo.
+Allan: “Mmm...”
+Allan: “Antes de nada, ¿podrías responderme unas preguntas?”
+Esto sí que es sospechoso. Entrecierro los ojos para mirarlo con más cuidado.
+Viendo mi cara, rápidamente entiende mi actitud y agita los brazos a modo de negación.
+Allan: “¡No son preguntas personales ni nada de eso!”
+{$name}: “Bueno, pues entonces di”
+Allan: “Si tengo una Mussaenda, ¿dónde debería ponerla?”
+{$name}: “¿Qué?”
+Allan: “Responde por favor. ¿Dónde la pondrías respecto a luz que quieres que reciba? Es para una cosa que necesito saber”  
+->“Pleno sol”
+    Allan: “¿Cuánto hay que regarla?”
+    ->“Una vez al día”
+        <<jump Allan_fallo_preguntas>>
+    ->“De 3 a 5 veces al día”
+        <<jump Allan_fallo_preguntas>>
+    ->“Más de 5 veces al día”
+        Allan: “Por último, ¿cómo evitarías las plagas en ella?”
+            ->“Usando aceite y vinagre”
+                <<jump Allan_fallo_preguntas>>
+            ->“Usando agua con sal”
+                <<jump Allan_fallo_preguntas>>
+            ->“Pintando el tallo” 
+                <<jump Allan_fallo_preguntas>>
+->“Sol parcial”
+    <<jump Allan_fallo_preguntas>>
+->“Media sombra”
+    <<jump Allan_fallo_preguntas>>
+->“Sombra parcial”
+    <<jump Allan_fallo_preguntas>>
+===
+
+title: Allan_nodo_normal
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+Allan: “Termina con calma. Es hermoso verte hacerlo con tanto amor y cuidado.”
+{$name}: “¡Allan, eres tú!”
+Allan: “El mismo jajaja. Hola {$name}.”
+Allan: “Plantando un esqueje por lo que veo. ¿De qué es?”
+{$name}: “De una cala blanca.”
+Allan: “Ahh, va a quedar preciosa ahí con las demás.”
+{$name}: “¡A que sí! Le va a dar el toque perfecto a este rinconcito”
+Termino de plantarlo y vuelvo al mostrador para atender a Allan.
+{$name}: “¿Qué tal llevas el día?”
+Allan: “Pues por ahora con mi jefe sorprendentemente bien. Me refiero a que al menos no está encima de mí todo el rato, era muy agobiante. Hoy está ignorándonos a todos un poco. Supongo que tendrá otras cosas en las que pensar.”
+Allan: “Pero no hablemos de mi trabajo, por favor.”
+{$name}: “Vale, eso lo puedo hacer.”
+Allan: Se queda unos segundos congelado en una sonrisa cálida, hasta que una nueva idea irrumpe en su mente.
+Allan: “¡Ah, sí!”
+Allan: “Me acabo de acordar un sitio vi ayer, que en cuando lo descubrí me acordé de ti.”
+{$name}: “¿Sí? ¿Qué era?”
+Allan: “Van a abrir dentro de poco una tienda en el centro de flores super exóticas”
+Allan: “La he visto por fuera y luce genial, y por las imágenes que utilizan para patrocinarla ya he fichado alguna flor que no he visto en ningún otro sitio.”
+Allan: “Increíble, ¿verdad?”
+->Entristecerte por la competencia
+    <<Add_npc_likeability NPC_allan -1>>
+    No puede ser, más competencia en esta ciudad. Es lo último que necesito, me acabo de asentar y ocurre esto.
+    {$name}: “Ya... increíble...”
+    Allan: “Pasa algo malo?”
+    {$name}: “Bueno, tener más competencia nunca es bueno para el negocio.”
+    {$name}: “Y encima enterarme en el mismo momento que voy a perder un cliente por ello...”
+    {$name}: “Es imposible que me alegre por la noticia.”
+    Allan: “¿Qué?¡No! Me has malinterpretado. No lo decía para hacerte ver que te iba a cambiar por esa tienda”
+    Allan: “Te lo decía porque pensé que sería interesante para ti, en cuanto a tus propias plantas, las de tu casa.”
+    Allan: “Por si querías comprar allí alguna vez.”
+    {$name}: Suspiro con alivio. “Ah, así que era por eso. Menos mal”
+    Allan: “¿De verdad pensabas que lo había dicho porque iba a irme?”
+    Allan: “No cambiaría esta floristería por nada, me encanta venir aquí.”
+    {$name}: “Gracias, Allan.”
+    Asiente y me sonríe con pureza después de haber despejado el malentendido.
+-> Alegrarte
+    <<Add_npc_likeability NPC_allan 1>>
+    {$name}: “¡Eso es genial! Por fin podré comprar flores poco comunes sin tener que meterme en páginas y foros de dudosa legalidad.”
+    Allan: “Yo no compraba ninguna por eso. Sé que seguramente no fuera nada criminal, pero su apariencia era muy intimidante. Parecía que te iban a robar los datos en cualquier momento.”
+    {$name}: “Ya, entiendo lo que dices. Por suerte nunca me ha pasado nada de eso.”
+    {$name}: “Pues ojalá abran pronto y se les dé bien porque ya tengo unas plantas en mente.”
+    Allan: “Jajajaja, yo estoy igual.”
+{$name}: “Y bueno, ¿a qué has venido hoy? ¿Necesitas un ramo?”
+Allan: “La verdad es que sí, necesito...”
+<<jump Minijuego_Allan_lunes_sem3>>
+===
+
+title: Allan_fallo_preguntas
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+Allan: Suspira. “Lo que me temía... Tú en realidad no sabes tanto sobre las plantas”
+Allan: “Pensé que habría encontrado a otra persona como yo, pero después de ver el resultado de algunos pedidos...”
+Allan: “Lo digo como un consejo, en serio. Creo que puedes llegar a ser [select value={$gender} M="un" F="una" NB="une"/] gran florista, pero tal vez deberías ser más [select value={$gender} M="sincero" F="sincera" NB="sincere"/] con los clientes”
+{$name}: “¿Qué sabrás tú de cómo hacer mi trabajo?”
+///////////////////////////////////////////////////////
+//////////////ALLAN SAD////////////////////////////////
+///////////////////////////////////////////////////////
+Allan: “Soy una persona introvertida y nunca digo nada, pero mi amor por las flores no podía permitir que me callase ante tales atrocidades que hacías con algunos ramos.”
+Allan: “Todos tenemos días que nos equivocamos, pero no tan habitualmente. Sobre todo, por ofrecer un producto cumplidor al cliente.”
+Allan: “Lo siento, pero tenía que decírtelo.”
+{$name}: “Pues gracias por dar una opinión que nadie te ha pedido.”
+{$name}: “Haz el favor de salir de mi tienda.”
+Allan: “Espero que entres en razón y aprendas más sobre jardinería y floristería, por el bien de tu tienda.”
+{$name}: “Adiós”
+<<Move Allan offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Allan>>
+Se marcha en silencio de la tienda para no volver. Sabía que era un fanático de las plantas, pero no que fuera a ser tan pesado. 
+Todo esto por no saber cosas sobre un arbusto y por haber hecho algún que otro ramo mal. No hay quien lo entienda.
+No voy a dejar que se meta en mi cabeza con los comentarios sobre mi trabajo. Voy a seguir teniendo clientes y todo irá bien.
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<jump Fin_lunes_sem3>>
+===
+
+title: Minijuego_Allan_lunes_sem3
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Allan_lunes_sem3>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Allan>>
+===
+
+title: Salida_minijuego_Allan_lunes_sem3
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+{$name}: “Aquí está tu ramo, Allan”
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Allan_lunes_sem3>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Allan_lunes_sem3>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Allan_lunes_sem3>>
+<<endif>>
+===
+
+title: Minijuego_bien_Allan_lunes_sem3
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_allan 3>>
+
+Allan: “Esta vez te has superado”
+Allan: “La elección de cada flor es excelente, y encaja perfectamente con las demás.”
+Allan: “La combinación crea una armonía de colores que camela a la vista. Podría mirarlo durante horas.”
+{$name}: “La verdad es que me he esforzado mucho en él. Vienes tanto a la tienda y me has estado apoyando tanto estas semanas...”
+{$name}: “Que quería agradecértelo haciendo el mejor ramo que soy capaz de crear.”
+{$name}: “Como muestra de lo importante que es para mí que nos conociéramos.”
+///////////////////////////////////////////////////////////
+////////////ALLAN SE SONROJA///////////////////////////////
+///////////////////////////////////////////////////////////
+Allan: “Para mí también es importante, nunca tuve amigos tan interesados en la jardinería como yo. Así que estoy agradecido por ello.”
+Nos sonreímos mutuamente al ver que coincidimos. Me alegra tener un amigo como él.
+
+<<jump Fin_ramas_minijuego_Allan_lunes_sem3>>
+===
+title: Minijuego_regular_Allan_lunes_sem3
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_allan 1>>
+
+Allan: “Gracias por el ramo, es justo lo que necesito. No es que destaque en nada realmente, pero muchas veces es mejor un ramo bien equilibrado, que arriesgar y que quede descompensado.”
+{$name}: “Ya, puede que haya pecado de conservadora en este ramo, pero quería que saliera bien”
+{$name}: “Después de todo eres un buen amigo, y no quiero que salgas de aquí con un mal ramo.”
+Al escuchar mis palabras sonríe ampliamente.
+Allan: “Aprecio un montón tu intención. No te preocupes que va a cumplir perfectamente su propósito”
+{$name}: “Genial entonces”
+
+<<jump Fin_ramas_minijuego_Alllan_lunes_sem3>>
+===
+
+title: Minijuego_mal_Allan_lunes_sem3
+position: -289,-54
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_allan -3>>
+
+Allan: “Parece que tu mente sigue en el fin de semana...”
+Me entristece su comentario. Sé que no es perfecto, pero aun así confiaba en este ramo.
+Allan: “Eh, pero no pasa nada. Puedo rescatar gran parte del ramo así que no te preocupes.”
+Allan: “Y lo que me parece que no pega, puedo usarlo en otro sitio. No iba a malas.”
+Allan: “Simplemente parecías un poco despistada haciéndolo...”
+{$name}: “Sí, tienes razón, no estaba a tope con el ramo, y en el trabajo debo estar [select value={$gender} M="conentrado" F="concentrada" NB="concentrade"/].”
+{$name}: “Agh, a ver si me espabilo para hoy.”
+Allan: “No hace falta ser tan dura contigo misma, ya verás como con esfuerzo y paciencia mejoras.”
+{$name}: “Gracias por tu apoyo, Allan.”
+
+<<jump Fin_ramas_minijuego_Allan_lunes_sem3>>
+===
+
+title: Fin_ramas_minijuego_Allan_lunes_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<Act Allan sprt_allan_neutral right bottom015 white>>
+
+Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. Haciendo el ramo me he notado [select value={$gender} M="rígido" F="rígida" NB="rígide"/].
+{$name}: “Solo es el primer día de la semana y ya siento como si me hubiese pasado un camión por encima. Me duele todo.”
+{$name}: “Ahh... Tanto tiempo en malas posturas y con poco movimiento no puede ser bueno.”
+<<if get_npc_likeability("NPC_allan") >= 15>>
+    Al escuchar mis palabras Allan se lleva la mano a la barbilla y se la sujeta pensativo.
+    Pasa un tiempo hasta que decide hablar.
+    Allan: “Estaba pensando en alguna cosa que pudieras hacer que fuera interesante a la par de sano para el cuerpo y creo que tengo el plan perfecto.”
+    Allan: “Solo si quieres claro...”
+    {$name}: “¡Dispara!”
+    Allan: “Jajajaja vale.”
+    Allan: “No muy lejos de aquí, a 15 minutos en coche o así, hay un parque natural que abarca un bosque precioso. En él hay varias rutas de senderismo con diferentes niveles de dificultad.
+    {$name}: “¡Suena genial!”
+    ///////////////////////////////////////////////////////
+    ////////////////PROTA TRISTE///////////////////////////
+    ///////////////////////////////////////////////////////
+    {$name}: “La pena es que no tengo coche así que no puedo ir” 
+    ///////////////////////////////////////////////////////
+    ////////////////////ALLAN SONROJADO////////////////////
+    ///////////////////////////////////////////////////////
+    Allan: “Yo te puedo llevar si quieres. Tengo coche.”
+    Allan: “De hecho, en un principio había pensado comentártelo para que fuéramos juntos...”
+    {$name}: “Me gusta mucho la idea.”
+    Allan: “Se me había ocurrido que podríamos ir este domingo.”
+    Allan: “Justo en la ciudad hay un festival este fin de semana, y la verdad es que ese tipo de eventos me agobia. Mi calle pilla cerca de la celebración, así que en fechas así intento salir afuera.”
+    {$name}: “Estoy pendiente de que me lleguen unas cosas el fin de semana y no sé si podré salir. Si no te importa, prefiero esperar a si puedo quedar seguro para confirmarte.”
+    {$name}: “¿No te importa esperar a mi respuesta?”
+    Allan: “Claro, no te preocupes. Cuando sepas qué vas a hacer me avisas.”
+    {$name}: “Genial, muchas gracias, Allan.”
+    Allan: “Ay, se me está haciendo tarde. Me tengo que ir, pero me alegro de haber podido hablar contigo, aunque sea un rato.”
+    {$name}: “El sentimiento es mutuo, mucho ánimo con el trabajo.”
+    Allan: “Igualmente, hasta otro día.”
+    {$name}: “¡Adiós Allan!”
+<<else>>
+    Allan: “Yo suelo hacer una breve rutina de estiramientos por las mañanas. No es nada de deporte intenso, pero es muy útil para tener menos dolores durante el resto del día.”
+    {$name}: “Ey es buena idea, tienes algún video con la rutina que haces?”
+    Allan: “Sí, te lo puedo pasar.”
+    {$name}: “Me vendría genial, gracias.”
+    Allan: “En cuanto tenga un rato te lo mando. Creo que debería irme ya para llegar al trabajo.”
+    {$name}: “Cierto, no te preocupes ahora por eso. Adiós”
+    Allan: “¡Adiós!”
+<<endif>>
+<<Move Allan offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Allan>>
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Fin_lunes_sem3>>
+
+===
+
+title: Fin_lunes_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_calle_noche_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
+Primer día hecho. Ya queda menos para el fin de semana.
+No sé por qué, pero tengo la sensación de que este fin de semana va a ser importante. Como una especie de premonición de que lo que pase va a provocar un gran cambio en mi vida.
+Menos mal que no leo el horóscopo, sería carne de cañón para caer en todas esas cosas jajajaja .
+Sacudo la cabeza para evitar pensar en esas cosas. No puedo pensar en la sensación del finde cuando aún me queda toda la semana por delante.
+Pase lo que pase, todo depende de mis propias decisiones, así que a lo mejor el presentimiento que tengo es porque mi subconsciente desea que haga algo fuera de la rutina.
+Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y veré que hago
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<miercoles_sem3>>
+
+===
+
+title: miercoles_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_calle_noche_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+
+Primer día hecho. Ya queda menos para el fin de semana.
+No sé por qué, pero tengo la sensación de que este fin de semana va a ser importante. Como una especie de premonición de que lo que pase va a provocar un gran cambio en mi vida.
+Menos mal que no leo el horóscopo, sería carne de cañón para caer en todas esas cosas jajajaja .
+Sacudo la cabeza para evitar pensar en esas cosas. No puedo pensar en la sensación del finde cuando aún me queda toda la semana por delante.
+Pase lo que pase, todo depende de mis propias decisiones, así que a lo mejor el presentimiento que tengo es porque mi subconsciente desea que haga algo fuera de la rutina.
+Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y veré que hago
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 
 //JUMP
+
 ===
