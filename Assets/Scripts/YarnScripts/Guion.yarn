@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump lunes_sem3>>
+<<jump Lunes_sem3>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -127,7 +127,7 @@ position: -678,-304
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 
@@ -355,7 +355,7 @@ position: -688,-141
 <<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<set $resultado to get_minigame_result()>>
 
@@ -380,7 +380,7 @@ position: -502,-57
 <<HideAll>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Add_npc_likeability NPC_ethan 3>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<Act Chico sprt_ethan_neutral right bottom015 white>>
@@ -399,7 +399,7 @@ title: Minijuego_regular_Ethan_lunes_sem1
 position: -705,-48
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -415,7 +415,7 @@ title: Minijuego_mal_Ethan_lunes_sem1
 position: -885,-51
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan -3>>
@@ -434,7 +434,7 @@ title: Fin_ramas_minijuego_Ethan_lunes_sem1
 position: -684,46
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -501,7 +501,7 @@ Nada de venirse abajo ya, hoy es un nuevo día así que a por él.
 //FLORISTERÍA - MAÑANA 
 
 <<Fade black 1.0 0.0 1.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 Mientras preparo el mostrador oigo a alguien abrir la puerta y pasar. Eso sí que es raro, nadie antes había entrado a primera hora. Debe ser algo urgente si ha esperado a que justo abriera para entrar. 
 Cruzo al otro lado del mostrador, para poder atenderle. Desde este lado, miro el escaparate y observo imperfecciones por la falta de tiempo para colocarlo todo. 
 Frunzo el ceño y hago una mueca pensativa mientras tomo nota mental de lo que me queda por hacer cuando termine con el cliente, pero no debo lamentarme ahora por eso. 
@@ -566,7 +566,7 @@ position: -118,-144
 ---
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -590,7 +590,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -613,7 +613,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -631,7 +631,7 @@ title: Minijuego_mal_Allan_miercoles_sem1
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -660,7 +660,7 @@ position: -129,149
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -730,7 +730,7 @@ position: 38,445
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -763,7 +763,7 @@ position: -321,449
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -794,7 +794,7 @@ position: -140,446
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -837,7 +837,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -1098,7 +1098,7 @@ Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor”
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
 //[CAMPANITAS] 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Fade black 1.0 0.0 1.0>>
 
 Tras apartarse, entro y me coloco tras el mostrador para atenderla. Un cliente es un cliente, si pienso en el dinero puedo obviar su actitud. 
@@ -1127,7 +1127,7 @@ position: 426,-38
 ---
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
@@ -1152,7 +1152,7 @@ position: 238,44
 ---
 <<HideAll>>
 <<Add_npc_likeability NPC_sophie 3>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1169,7 +1169,7 @@ position: 427,41
 ---
 <<HideAll>>
 <<Add_npc_likeability NPC_sophie 1>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1183,7 +1183,7 @@ position: 625,42
 ---
 <<HideAll>>
 <<Add_npc_likeability NPC_sophie -3>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1198,7 +1198,7 @@ title: Fin_ramas_minijuego_Sophie_jueves_sem1
 position: 423,125
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1222,7 +1222,7 @@ title: Pietro_jueves_sem1
 position: 422,203
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
@@ -1330,7 +1330,7 @@ position: 424,345
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1354,7 +1354,7 @@ title: Minijuego_bien_Pietro_jueves_sem1
 position: 427,423
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1373,7 +1373,7 @@ title: Minijuego_regular_Pietro_jueves_sem1
 position: 617,431
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1390,7 +1390,7 @@ title: Minijuego_mal_Pietro_jueves_sem1
 position: 238,423
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1413,7 +1413,7 @@ title: Fin_ramas_minijuego_Pietro_jueves_sem1
 position: 424,514
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1473,7 +1473,7 @@ position: 977,-297
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: “¡Adiós! Que tenga un buen día”  
 
@@ -1692,7 +1692,7 @@ position: 975,-140
 <<set $name to get_player_name()>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 {$name}: "Aquí tienes."
 //Saltos a las diferentes ramas
@@ -1713,7 +1713,7 @@ title: Minijuego_bien_Ethan_viernes_sem1
 position: 775,-57
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1730,7 +1730,7 @@ title: Minijuego_regular_Ethan_viernes_sem1
 position: 975,-59
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1747,7 +1747,7 @@ title: Minijuego_mal_Ethan_viernes_sem1
 position: 1172,-63
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1766,7 +1766,7 @@ title: Fin_ramas_minijuego_Ethan_viernes_sem1
 position: 975,38
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1789,7 +1789,7 @@ position: 974,125
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -1907,7 +1907,7 @@ title: Salida_minijuego_Sophie_viernes_sem1
 position: 978,287
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1931,7 +1931,7 @@ title: Minijuego_bien_Sophie_viernes_sem1
 position: 981,377
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1956,7 +1956,7 @@ title: Minijuego_regular_Sophie_viernes_sem1
 position: 1169,378
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -1981,7 +1981,7 @@ title: Minijuego_mal_Sophie_viernes_sem1
 position: 797,379
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2007,7 +2007,7 @@ title: Fin_ramas_minijuego_Sophie_viernes_sem1
 position: 983,470
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -2073,7 +2073,7 @@ Es terminar de rellenarlo y ya está Limón devorando, ni un segundo tarda. Es t
 <<Hide Limón>>
 Tras una primera semana intensa de trabajo, aprovecho para tomarme la mañana con calma. Decido limpiar la casa y en el proceso escucho una tonadilla emitirse desde mi móvil. 
 Lo saco del bolsillo y al ver el nombre que aparece en pantalla sonrío, descuelgo inmediatamente.
-<<Act Leah sprt_leah_phone right center white>>
+<<Act Leah sprt_leah_phone right bottom015 white>>
 {$name}: “¡Hola Leah!”
 
 Leah: “¡Buenos días, {$name}! ¿Qué tal tu primera semana allí? Siento no haber podido hablarte antes, pero es que he estado super liada de diario”
@@ -2699,7 +2699,7 @@ position: -368,-504
 <<set $name to get_player_name()>>
 
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 
 Ya se acabó el fin de semana así que toca volver al trabajo. Al menos no está siendo una mañana muy ajetreada, me da tiempo a recordar este sábado. 
 Me lo pasé muy bien y era justo lo que necesitaba, la semana anterior no pude disfrutarlo porque estuve con la mudanza y la decoración de la floristería así que este lo he sentido como un oasis en el desierto.
@@ -2768,7 +2768,7 @@ position: -136,-594
 <<set $name to get_player_name()>>
 
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2842,7 +2842,7 @@ position: -136,-594
 <<set $name to get_player_name()>>
 
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2873,7 +2873,7 @@ position: 976,205
 title: Salida_minijuego_Sagrario_martes_sem2
 position: 978,287
 ---
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $resultado to get_minigame_result()>>
 
 //Saltos a las diferentes ramas
@@ -2894,7 +2894,7 @@ position: 978,287
 title: Minijuego_bien_Sagrario_martes_sem2
 position: -136,-594
 ---
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2955,7 +2955,7 @@ position: -136,-594
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -2986,7 +2986,7 @@ position: -136,-594
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3027,7 +3027,7 @@ position: -368,-504
 <<set $name to get_player_name()>>
 
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 
 //Sonido campanas
 
@@ -3174,7 +3174,7 @@ Asiento y preparo nuevos envoltorios para los próximos ramos.
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla de la tenue capa de sudor que ha aparecido por el continuo trabajo.
 Como se nota que es la hora punta. Las voces de la gente en la calle me dan la razón.
@@ -3272,7 +3272,7 @@ position: -118,-144
 ---
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3296,7 +3296,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3322,7 +3322,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3345,7 +3345,7 @@ title: Minijuego_mal_Pietro_martes_sem2
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3367,7 +3367,7 @@ title: Fin_ramas_minijuego_Pietro_martes_sem2
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3392,7 +3392,7 @@ title: Cita_martes_sem2
 position: -120,41
 ---
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3403,7 +3403,7 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
 <<set $cita to get_date()>>
 <<if $cita=="null">>
     Tras un rato de esperar a que llegue un último cliente, nadie hace acto de presencia. El reloj marca el fin de la jornada y me pongo manos a la obra a recoger el local.
-    <<Hide floristeria_placeholder>>
+    <<Scene bg_floristeria>>
     <<Scene bg_calle_noche_placeholder>>
     Termino en poco rato, echo el cierre y me pongo en marcha, vuelta a casa. En el trayecto voy repasando lo ocurrido en los capítulos anteriores de la serie. ¡Qué ganas de saber lo que ocurre!
 <<elseif $cita=="Allan">> 
@@ -3692,7 +3692,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -3781,7 +3781,7 @@ position: -118,-144
 ---
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3806,7 +3806,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3831,7 +3831,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3851,7 +3851,7 @@ title: Minijuego_mal_Sophie_miercoles_sem2
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3875,7 +3875,7 @@ title: Fin_ramas_minijuego_Sophie_miercoles_sem2
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3963,7 +3963,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -4099,7 +4099,7 @@ position: -118,-144
 <<HideAll>>
 
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4125,7 +4125,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4157,7 +4157,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4190,7 +4190,7 @@ title: Minijuego_mal_Ethan_miercoles_sem2
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4218,7 +4218,7 @@ title: Fin_ramas_minijuego_Ethan_miercoles_sem2
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4426,7 +4426,7 @@ Saco las llaves de la tienda y empiezo a abrirla.
 <<wait 2.0>>
 <<Hide Scene>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 Una vez dentro me dirijo directamente a la zona detrás del mostrador y oigo los pasos de Sophie detrás de mí siguiéndome.
 Abro un cajón, saco la pulsera y se la dejo en la mesa.
 {$name}: “Es esta ¿no?”
@@ -4541,7 +4541,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -4628,7 +4628,7 @@ position: -118,-144
 <<HideAll>>
 
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4653,7 +4653,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4677,7 +4677,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4698,7 +4698,7 @@ title: Minijuego_mal_Allan_jueves_sem2
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -4726,7 +4726,7 @@ title: Fin_ramas_minijuego_Allan_jueves_sem2
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -5015,7 +5015,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_casa_placeholder>>
@@ -5042,7 +5042,7 @@ Con eso estará entretenido un rato así que puedo desayunar tranquilamente.
 <<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
 Mientras friego los platos mi móvil empieza a sonar. Me seco las manos y cojo el teléfono. Al ver el nombre que aparece en pantalla me llevo la palma a la cara. ¿Cómo se me ha podido olvidar? Acepto la llamada.
-<<Act Leah sprt_leah_phone right center white>>
+<<Act Leah sprt_leah_phone right bottom015 white>>
 Leah: “Vaya, vaya. Otra vez me ha tocado llamar a mí”
 {$name}: “Perdóname Leah, se me ha vuelto a pasar...”
 Leah: “Menos mal que ya nos conocemos, y sabía que te iba a pasar”
@@ -5214,7 +5214,7 @@ Miro la barra de notificaciones y solo con ver el último mensaje entrante ya s�
 Solo habría una persona capaz de mandar esa cantidad de emoticonos de corazones, estrellitas y destellos.
 {$name}: “¿Qué querrá Ethan?”  
 Será mejor que abra el chat para salir de dudas.
-<<Act Ethan sprt_ethan_phoneMessage right center white>>
+<<Act Ethan sprt_ethan_phoneMessage right bottom015 white>>
 Ethan: “¡Hola [select value={$gender} M="flor" F="florecilla" NB="flor"/]! Espero que estes teniendo un día genial.”
 Ethan: “Aunque creo que tu día podría mejorar con la oferta que vengo a hacerte.”
 ¿Oferta? Miedo me da. Espero que no sea nada raro.
@@ -5241,7 +5241,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Hide Ethan>>
         Antes de que pueda comenzar a prepararme, el teléfono vuelve a sonar. Es Sophie.
         Supongo que querrá asegurarse de que no me he olvidado de nuestra cita.
-        <<Act Sophie sprt_sophie_phoneMessage right center white>>
+        <<Act Sophie sprt_sophie_phoneMessage right bottom015 white>>
         Sophie: “Hola {$name}. Espero que recuerdes que hoy es el concierto de Useless Missfits, aunque cómo se te iba a olvidar.”
         Sophie: “Seguro que estas gritando tú [select value={$gender} M="solo" F="sola" NB="sole"/] en casa de la emoción.”
         {$name}: “¡Hola Sophie! Claro que no se me ha olvidado, pero tampoco estoy gritando. Te has pasado un poco eh.”
@@ -6030,7 +6030,7 @@ Feliz con mi nueva vida, acelero el paso para llegar cuanto antes al fruto de mi
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
-<<Scene bg_floristeria_placeholder>>
+<<Scene bg_floristeria>>
 La afluencia de clientes no es mucha, como suele ocurrir los lunes. Así que empiezo el día sin mucho estrés.
 <<if get_npc_likeability("NPC_sophie") <= -10>>
     <<jump Final_malo_Sophie>>
@@ -6047,7 +6047,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6074,7 +6074,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6133,7 +6133,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6260,7 +6260,7 @@ position: -118,-144
 <<HideAll>>
 
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6285,7 +6285,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6311,7 +6311,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6330,7 +6330,7 @@ title: Minijuego_mal_Sophie_lunes_sem3
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6351,7 +6351,7 @@ title: Fin_ramas_minijuego_Sophie_lunes_sem3
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6436,7 +6436,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6457,7 +6457,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6509,7 +6509,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6567,7 +6567,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6619,7 +6619,7 @@ position: -118,-144
 <<HideAll>>
 
 <<set $resultado to get_minigame_result()>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6644,7 +6644,7 @@ position: -123,-48
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6670,7 +6670,7 @@ position: 45,-49
 ---
 <<HideAll>>
 
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6691,7 +6691,7 @@ title: Minijuego_mal_Allan_lunes_sem3
 position: -289,-54
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -6715,7 +6715,7 @@ title: Fin_ramas_minijuego_Allan_lunes_sem3
 position: -120,41
 ---
 <<HideAll>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Act {$name} sprt_she_neutral_final left bottom015 white>>
