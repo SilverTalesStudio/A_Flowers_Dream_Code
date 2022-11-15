@@ -6144,8 +6144,12 @@ Sonrío al hombre que tengo delante mientras acepto su dinero. ¡Otro cliente sa
 Mientras me despido del cliente oigo la puerta abrirse. Giro la cabeza para ver entrar una melena negra. Saludo a Sophie con un gesto desde el mostrador.
 <<Act Cliente sprt_chico right bottom015 white>>
 Cliente: “A- Adiós”
+<<Move Cliente offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Cliente>>
 El hombre sale de la floristería sin mirar a Sophie a la cara, intimidado por su apariencia. Pobrecito.
 //Campanillas
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Buenos días {$name}”
 {$name}: “¡Hola Sophie!”
 <<if get_date() == "Sophie">>

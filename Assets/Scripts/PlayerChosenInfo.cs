@@ -24,4 +24,12 @@ public class PlayerChosenInfo : MonoBehaviour
 
         return gender;
     }
+
+    [YarnFunction("get_player_mainCharacter")]
+    public static string GetPlayerMainCharacter()
+    {
+        var mainCharacter = PlayerPrefs.GetString("PlayerMainCharacter");
+
+        return mainCharacter;
+    }
 }

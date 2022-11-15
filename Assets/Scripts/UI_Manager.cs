@@ -7,6 +7,7 @@ public class UI_Manager : MonoBehaviour
 {
    // public Transform dropdownMenu;
     public ToggleGroup toggleGroup;
+    public ToggleGroup personajesGroup;
 
     private void Awake()
     {
@@ -50,6 +51,23 @@ public class UI_Manager : MonoBehaviour
         }
         Debug.Log(savedGender);
         PlayerPrefs.SetString("PlayerGender", savedGender);
+
+    }
+
+    public void ReadMainCharacterInput(bool value)
+    {
+        string mainCharacter = toggleGroup.GetFirstActiveToggle().name;
+        string savedMainCharacter = "primero";
+        if (mainCharacter == "Personaje 1")
+        {
+            savedMainCharacter = "primero";
+        }
+        else 
+        {
+            savedMainCharacter = "segundo";
+        }
+        Debug.Log(savedMainCharacter);
+        PlayerPrefs.SetString("PlayerMainCharacter", savedMainCharacter);
 
     }
     public void createNPCs()
