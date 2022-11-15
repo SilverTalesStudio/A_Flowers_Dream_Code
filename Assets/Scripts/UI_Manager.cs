@@ -58,7 +58,7 @@ public class UI_Manager : MonoBehaviour
     {
         string mainCharacter = toggleGroup.GetFirstActiveToggle().name;
         string savedMainCharacter = "primero";
-        if (mainCharacter == "Personaje 1")
+        if (mainCharacter == "Personaje_1")
         {
             savedMainCharacter = "primero";
         }
