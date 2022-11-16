@@ -234,7 +234,7 @@ La campanilla de la floristería vuelve a sonar.
 Como un rayo, giro mi cabeza hacia la puerta haciendo que un ligero dolor recorra mi cuello. 
 Con los ojos como platos, observo cómo una mujer despampanante espera en la entrada con expresión de intensa molestia. Parece que está buscando algo. 
 
-<<Act Desconocida sprt_exethan_placeholder right bottom015 white>>
+<<Act Desconocida sprt_daphne_neutral right bottom015 white>>
 //<<Move Desconocida right center 0.5>>
 Desconocida: “Tsk. ¿Dónde se habrá metido ese tipo?”  
 
@@ -731,13 +731,13 @@ Vuelvo a poner tras el mostrador para esperar al próximo cliente. Me dispongo a
 Una señora mayor pasa dentro lentamente. Se para en mitad de la tienda y observa interior con interés. Menos mal que ya sí que lo tengo todo ordenado.
 -> {$name}: “¡Hola, buenos días! ¿Puedo ayudarle en algo?” 
     <<Add_npc_likeability NPC_sagrario -1>>
-    <<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+    <<Act Anciana sprt_sagrario_neutral right bottom015 white>>
     La anciana se sobresalta. Estaba entretenida curioseando por la tienda. Se gira hacia mí y se acerca al mostrador con paso lento. 
 -> No le voy a decir nada para no molestarle. Que me hable cuando quiera. 
     <<Add_npc_likeability NPC_sagrario 1>>
     La anciana comienza a dar un paseo observando las macetas. Se para un instante delante de los tulipanes dubitativa. Agita la cabeza en negación y sigue caminando. 
     Cuando termina de dar una vuelta completa a la floristería se dirige hacia mí a paso lento. 
-    <<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+    <<Act Anciana sprt_sagrario_neutral right bottom015 white>>
     Anciana: “Buenos días” 
     {$name}: “¡Hola buenos días! ¿Necesita ayuda con algo?”  
 Anciana: “Sí, hola. La verdad es que no sé mucho de este tema... Así que no sé muy bien que pedir” 
@@ -764,8 +764,7 @@ position: -138,341
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-//<<Act {$name} sprt_she_neutral_final left bottom015 white>>
-//<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -794,7 +793,7 @@ position: 38,445
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 3>>
 No me ha dado mucha información. Es más, lo que me ha dicho parecía que fuera para enmascarar el motivo real. Pero bueno creo que lo he hecho muy bien para la información que tenía. 
 Le muestro el resultado con toda mi ilusión. 
@@ -831,7 +830,7 @@ position: -321,449
 <<else>>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 1>>
 El pedido era un poco ambiguo, como si no me quisiera contar el motivo real, pero creo que he conseguido hacer un ramo decente. 
 Sonriente y con esperanza de cumplir sus expectativas, le entrego el ramo. 
@@ -866,7 +865,7 @@ position: -140,446
 <<else>>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario -3>>
 La información que me ha dado era bastante genérica así que puede que no le guste en absoluto, espero tener suerte y que sea lo que esperaba. 
 Extiendo mi mano con el ramo para acercárselo.  
@@ -2889,7 +2888,7 @@ Sin nada que hacer sigo divagando en mi mente, rememorando los buenos momentos d
 //Sonido campanitas
 Ensimismada no me doy cuenta de que una persona pasa adentro de la floristería. No deambula por el interior, si no que viene directamente al mostrador con determinación.
 
-<<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
 Anciana: “Buenos días [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 Es cuando interactúa conmigo que vuelvo en mí. Qué embarazoso, en horario de trabajo y yo con la cabeza en las nubes.
 <<if get_player_mainCharacter() == "P">>
@@ -2910,7 +2909,7 @@ Anciana: “No, no, no lo decía para echarte la bronca, no te preocupes” Vuel
 {$name}: “Aun así, debería estar más [select value={$gender} M="atento" F="atenta" NB="atente"/]. Perdone señora”
 Anciana: “No hace falta ser tan [select value={$gender} M="duro con uno mismo" F="dura con una misma" NB="dure con une misme"/]. Y no me llames señora, me puedes llamar Sagrario.”
 <<Hide Anciana>>
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 Asiento firme, pero antes de que pueda decir nada continua ella.
 Sagrario: “De hecho, si esos recuerdos del fin de semana te provocan volver a ellos sin tu quererlo, para visitar de nuevo esa felicidad pasada, significa que son vivencias que merece la pena atesorar”
 Sagrario entrecierra los ojos y sonríe. No es simplemente un consejo sabio de un mayor a la juventud. Hay una motivación más profunda detrás. 
@@ -2954,7 +2953,7 @@ position: -136,-594
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene bg_floristeria>>
 
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -3032,7 +3031,7 @@ position: -136,-594
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene bg_floristeria>>
 
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -3094,7 +3093,7 @@ position: -136,-594
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 
 <<Add_npc_likeability NPC_sagrario 4>>
 
@@ -3159,7 +3158,7 @@ position: -136,-594
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 
 
 <<Add_npc_likeability NPC_sagrario 1>>
@@ -3194,7 +3193,7 @@ position: -136,-594
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 
 <<Add_npc_likeability NPC_sagrario -4>>
 
@@ -3255,7 +3254,7 @@ Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de 
 Puedo ver cómo, al igual que la última vez que vino a la tienda, este abre su taburete y se sienta delante de la amapola del Himalaya para continuar con su dibujo.
 Umm... ¿Le quedará mucho para terminarlo? Me pregunto si algún día podré verlo.
 Me haría mucha ilusión teniendo en cuenta que su “musa” es una de mis flores.
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 Sagrario: “-la? ¿Hola?”
 Una mano fina y arrugada por la edad inunda mi visión y me saca de mi ensimismamiento.
 Madre mía, ¡menudo día llevo hoy! Mi mente no para de regresar a las nubes.
@@ -3335,7 +3334,7 @@ Pietro: “He venido a liberar aquello que tienes encadenado.”
 <<wait 1.5>>
 <<Hide Pietro>>
 Ante mi confusión, Sagrario levanta la voz y me ayuda.
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 Sagrario: “Creo que quiere comprar algo [select value={$gender} M="niño" F="niña" NB="niñe"/].”
 <<Move Sagrario offright bottom015 1.0>>
 <<wait 1.5>>
@@ -3359,7 +3358,7 @@ Tardo unos segundos en procesar lo que acaba de pasar. ¿¡En serio se indigna d
 ¡Si todas las flores que me ha pedido son especímenes rarísimos y no me ha dejado ni justificarme! 
 Con la boca abierta y el ceño fruncido, miro a Pietro [select value={$gender} M="molesto" F="molesta" NB="moleste"/]. Una risa entrecortada invade la floristería.
 Es Sagrario que parece ser la única que ha disfrutado de este intercambio.
-<<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 Sagrario: “Sabía que me tenía que quedar a ver esto.”
 Sus palabras hacen que mi molestia aumente ligeramente.
 Sagrario: “Anda no te enfades {$name}. Mucho ánimo, lo vas a necesitar.”
@@ -6164,7 +6163,7 @@ Antes de que pueda terminar la frase, le agarro de la manga de la chaqueta y com
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
-<<Scene bg_bar_placeholder>> //HAY QUE REEMPLAZARLO CUANDO SE TENGA EL CINE
+<<Scene bg_cine>>
 Sonrío [select value={$gender} M="extasiado" F="extasiada" NB="extasiade"/] mientras nos sentamos finalmente en las butacas que nos han asignado.
 Al final he conseguido salirme con la mía y vamos a ver Silent Heights.
 {$name}: “Ethan, vamos a acomodarnos antes de que empiece la película.”
