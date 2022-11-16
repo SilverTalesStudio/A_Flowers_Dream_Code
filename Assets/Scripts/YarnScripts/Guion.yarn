@@ -50,9 +50,9 @@ Sacudo la cabeza para dejar de pensar en el pasado y centrarme en el presente. A
 Me tambaleo del impacto y doy un paso atrás consiguiendo mantener el equilibrio. Palpo brevemente mis pertenencias para comprobar que no se me ha caído nada mientras alzo la mirada rápidamente para disculparme.
 
 // Añade a la escena al protagonista
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Perd-” 
@@ -174,9 +174,9 @@ Mi mirada se posa sobre un pequeño diente de león. Durante años pensé que ha
 Me había rendido. Ahora soy libre y tengo que luchar por cumplir mis deseos. 
 Cojo el pequeño diente de león y, mientras sujeto su tallo delicadamente, cierro los ojos y pido un deseo.  
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -364,9 +364,9 @@ position: -688,-141
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_floristeria>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<set $resultado to get_minigame_result()>>
@@ -394,9 +394,9 @@ position: -502,-57
 <<set $name to get_player_name()>>
 <<Scene bg_floristeria>>
 <<Add_npc_likeability NPC_ethan 3>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Chico sprt_ethan_neutral right bottom015 white>>
@@ -418,9 +418,9 @@ position: -705,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Add_npc_likeability NPC_ethan 1>>
@@ -439,9 +439,9 @@ position: -885,-51
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Add_npc_likeability NPC_ethan -3>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Chico sprt_ethan_neutral right bottom015 white>>
@@ -461,9 +461,9 @@ position: -684,46
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Chico sprt_ethan_neutral right bottom015 white>>
@@ -495,9 +495,9 @@ position: -693,141
 
 
 Mientras recorro la calle de vuelta a casa, siento el dolor de mis pies por las continuas horas de trabajo.  
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Suspiro. Mira que hoy no ha sido un día muy concurrido, pero estoy [select value={$gender} M="cansadísimo" F="cansadísima" NB="cansadísime"/]. No he podido parar de limpiar y retocar la floristería para dejarla en el mejor estado posible.”  
@@ -538,9 +538,9 @@ Mientras preparo el mostrador oigo a alguien abrir la puerta y pasar. Eso sí qu
 Cruzo al otro lado del mostrador, para poder atenderle. Desde este lado, miro el escaparate y observo imperfecciones por la falta de tiempo para colocarlo todo. 
 Frunzo el ceño y hago una mueca pensativa mientras tomo nota mental de lo que me queda por hacer cuando termine con el cliente, pero no debo lamentarme ahora por eso. 
 Dejo de mirar al fondo y me centro en el cliente sonriéndole.
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “¡Buenos días! ¿En qué puedo ayudarle?” 
@@ -605,9 +605,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: "Aquí tienes."
@@ -633,9 +633,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
@@ -660,9 +660,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
@@ -682,9 +682,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
@@ -715,9 +715,9 @@ position: -129,149
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -789,9 +789,9 @@ position: 38,445
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
@@ -920,9 +920,9 @@ Ya no es tanto por ganar dinero, sino por la necesidad que siento de alegrar a l
 Con las energías renovadas por estos pensamientos y aprovechando que no hay clientes que atender, saco de mi mochila un pequeño aperitivo que había preparado y no había tenido la oportunidad de comer.
 Miro la hora en mí móvil. Las siete de la tarde.
 Puede que ya sea un poco tarde para la comida, pero necesito algo para calmar el ruido de mi estómago. Además, no quiero desperdiciar comida y más teniendo en cuenta lo que es.  
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Ummm. Que rico, sándwich vegetal”  
@@ -1071,9 +1071,9 @@ La confusión y duda deben estar escritas en mi rostro porque tras un minuto [se
 
 Me giro para ver quien ha llamado mi atención y descubro una cara conocida. A pesar del uniforme de manga larga, es imposible no darse cuenta de que tras él se esconde un cuerpo ancho y musculado. 
 La tensión de la tela donde botones y ojales se conocen lo confirma. 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
@@ -1159,9 +1159,9 @@ Según me acerco a mi local, veo a una persona parada frente la puerta. Está vi
 Se me olvidó colocar un aviso, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
 
 No puede ser .
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -1211,9 +1211,9 @@ position: 426,-38
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 "Aquí tienes."
@@ -1239,9 +1239,9 @@ position: 238,44
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
@@ -1260,9 +1260,9 @@ position: 427,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
@@ -1278,9 +1278,9 @@ position: 625,42
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
@@ -1297,9 +1297,9 @@ position: 423,125
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
@@ -1332,9 +1332,9 @@ Ventajas de ser mi [select value={$gender} M="propio jefe" F="propia jefa" NB="p
 
 Tampoco me da tiempo a estar mucho con él porque en cuanto escucho las campanas de la entrada, guardo el teléfono y sonrío para atender al nuevo comprador. 
 //[CAMPANITAS]  
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1437,9 +1437,9 @@ position: 424,345
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1465,9 +1465,9 @@ position: 427,423
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1488,9 +1488,9 @@ position: 617,431
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1509,9 +1509,9 @@ position: 238,423
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1536,9 +1536,9 @@ position: 424,514
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -1598,9 +1598,9 @@ position: 977,-297
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “¡Adiós! Que tenga un buen día”  
@@ -1821,9 +1821,9 @@ position: 975,-140
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: "Aquí tienes."
@@ -1848,9 +1848,9 @@ position: 775,-57
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -1869,9 +1869,9 @@ position: 975,-59
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -1890,9 +1890,9 @@ position: 1172,-63
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -1913,9 +1913,9 @@ position: 975,38
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -1948,9 +1948,9 @@ Se me ha hecho el día muy largo, y el golpe no ayuda. Si no viene ningún clien
 //[CAMPANITAS]
 Antes lo pienso, antes el mundo decide de llevarme la contraria. Suspiro para mis adentros, separo la mirada del mostrador y la dirijo a la puerta.
 No me lo puedo creer, otra vez no.
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
@@ -2062,9 +2062,9 @@ position: 978,287
 <<Scene bg_floristeria>>
 <<set $resultado to get_minigame_result()>>
 <<Fade black 1.0 0.0 2.0>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -2090,9 +2090,9 @@ position: 981,377
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -2119,9 +2119,9 @@ position: 1169,378
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -2148,9 +2148,9 @@ position: 797,379
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -2209,9 +2209,9 @@ No, no me voy a levantar. Ya estoy más [select value={$gender} M="despierto" F=
 //[MAULLIDO]
 //[POM – Golpe sobre la cama, es el gato subiéndose]
 <<Fade black 1.0 0.0 2.0>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “¡¿Pero qué?!”
@@ -2389,9 +2389,9 @@ Tiene las manos en los bolsillos y una postura relajada, el sol baña su cara y 
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 No soy [select value={$gender} M="ciego" F="ciega" NB="ciegue"/], ya sabía que Allan era guapo, pero en esta situación lo es aún más. Me sonrojo inconscientemente. Estoy a punto de alcanzarle, espero lo note.
 Allan: “¡Hola!”
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 -> {$name}: “¡Hola! ¿Te he hecho esperar mucho?”
@@ -2582,9 +2582,9 @@ position: 1419,-206
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<set $cita to "Ethan">>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Ummm, ¿debería ponerme estos pendientes en forma de rombo o los que tienen forma de girasol? 
@@ -2892,9 +2892,9 @@ Ensimismada no me doy cuenta de que una persona pasa adentro de la floristería.
 <<Act Anciana sprt_she_neutral_placeholder right bottom015 white>>
 Anciana: “Buenos días [select value={$gender} M="niño" F="niña" NB="niñe"/]”
 Es cuando interactúa conmigo que vuelvo en mí. Qué embarazoso, en horario de trabajo y yo con la cabeza en las nubes.
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Eh, sí, buenos días. Bienvenida a Flower’s Dream”
@@ -2955,9 +2955,9 @@ position: -136,-594
 <<Scene bg_floristeria>>
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -3033,9 +3033,9 @@ position: -136,-594
 <<Scene bg_floristeria>>
 
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -3089,9 +3089,9 @@ position: -136,-594
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
@@ -3154,9 +3154,9 @@ position: -136,-594
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
@@ -3189,9 +3189,9 @@ position: -136,-594
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sagrario sprt_she_neutral_placeholder right bottom015 white>>
@@ -3238,9 +3238,9 @@ position: -368,-504
 Mientras me despido de Sagrario, el leve tintineo de las campanas inunda la floristería. 
 Todavía con una sonrisa en la cara, miro ligeramente por encima de su hombro para ver al nuevo cliente.
 Un tenue sonido de sorpresa se escapa de mi boca.
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “¡Pietro!”
@@ -3383,9 +3383,9 @@ Asiento y preparo nuevos envoltorios para los próximos ramos.
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 <<Scene bg_floristeria>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla de la tenue capa de sudor que ha aparecido por el continuo trabajo.
@@ -3487,9 +3487,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Aquí tienes el ramo”
@@ -3515,9 +3515,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -3545,9 +3545,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -3572,9 +3572,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -3598,9 +3598,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
@@ -3627,9 +3627,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Entrelazo los dedos y empujo las manos hacia delante para estirar los brazos y la espalda. A pesar de que me haya acostumbrado ya la rutina de trabajo no quita que siga siendo dura.
@@ -3944,9 +3944,9 @@ Justo llega el primer cliente, ahora sí que sí. Manos a la obra.
 Ufff, ha sido un no parar. Es como si todos se hubieran puesto de acuerdo para venir a la vez, uno tras otro.
 
 //Campanitas
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Tsk, no tiene pinta de que vayan a parar de llegar, ni un rato de descanso me dejan. 
@@ -4024,9 +4024,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Aquí está”
@@ -4053,9 +4053,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -4082,9 +4082,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -4106,9 +4106,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -4134,9 +4134,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -4227,9 +4227,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -4366,9 +4366,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Y aquí estaría tu ramo especial, Eros”
@@ -4396,9 +4396,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -4432,9 +4432,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -4469,7 +4469,11 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_ethan -3>>
 
@@ -4497,9 +4501,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -4681,9 +4685,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -4829,9 +4833,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 [select value={$gender} M="Cansado" F="Cansada" NB="Cansade"/] me derrumbo en la silla tras el mostrador. Buff, menudo día llevo, se nota que ya se acerca el fin de semana. No he podido parar en ningún momento, los clientes han venido uno tras otro. 
@@ -4919,9 +4923,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Aquí está tu ramo”
@@ -4948,9 +4952,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -4976,9 +4980,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -5001,9 +5005,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -5033,9 +5037,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -5057,9 +5061,9 @@ position: -120,41
     <<Hide Scene>>
     <<Fade black 1.0 0.0 2.0>>
     <<Scene bg_calle_noche_placeholder>>
-    <<if get_player_mainCharacter() == "Personaje_1">>
+    <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-    <<else>>
+    <<elseif get_player_mainCharacter() == "S">>
         <<Act {$name} sprt_he_neutral left bottom015 white>>
     <<endif>>
     De camino a casa paro a comprar unos recados y al final me encuentro más cargada de lo que tenía pensado. Todo por culpa de una tienda de animales que han abierto nueva al final de la calle comercial.
@@ -5120,9 +5124,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 La noche cubre ya toda la ciudad, indicando así que la cita con Allan se acerca, y mientras tanto yo, que no soy la que acaba tarde de trabajar, voy con prisas a la tienda.
@@ -5340,9 +5344,9 @@ SÁBADO
 Alarma: “Beep beep beep”
 Me despierto refunfuñando y apago la alarma del móvil. 
 Siempre tengo un mal despertar, pero hoy no quería que se me pegaran las sábanas. Me toca hacer limpieza profunda de la cocina y tengo que aprovechar la mañana.
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Limón sprt_limon right center white>>
@@ -5691,9 +5695,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 El concierto está cada vez más cerca, ya escucho el barullo de la gente de fuera. Mientras ando compruebo en la mochila que llevo todo encima. 
@@ -5740,9 +5744,9 @@ Sophie me indica que me acerque y cuando estamos [select value={$gender} M="los 
 <<Act Fan sprt_chica left bottom015 white>>
 Fan: “¡Eh, se están colando!”
 <<Hide Fan>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -5755,7 +5759,11 @@ Paso la puerta y ella se queda en el marco girada a medias para poder ver el ext
 Fan: “Llevamos esperando por esto un montón. ¿Y la vais a dejar pasar, así como si nada?”
 Fan: “Me pregunto que habrá hecho para que la dejen pasar así”
 <<Hide Fan>>
-<<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vaso. Sophie se gira completamente hacia afuera y aprieta los puños.
 ->Agarrar a Sophie
@@ -5931,9 +5939,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 ¡Qué tarde es! Si es que me he entretenido demasiado escogiendo que me iba a poner para la cita.
@@ -5979,9 +5987,9 @@ Chico: “No, solo tenía ojos para ti.”
 Chica: “Cariño...”
 <<Hide Chica>>
 <<Hide Chico>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Tierra trágame... Esto ya es demasiado, ¡me voy a casa!
@@ -6287,9 +6295,9 @@ Abuelo: “Sí, se parece a nosotros cuando éramos jóvenes. ¿Recuerdas lo que
 Abuela: “Cómo olvidarlo jajaja.”
 <<Hide Abuelo>>
 <<Hide Abuela>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
@@ -6357,9 +6365,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 El bullicio de la mañana me saluda cuando piso la calle. Ya he pasado el ecuador de mi primer mes aquí. 
@@ -6395,9 +6403,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Aprovecho que la floristería está libre para salir del mostrador y recolocar el escaparate. Llevaba un tiempo queriendo cambiar las flores de exposición, pero antes no sabía por qué cambiarlas.
@@ -6426,9 +6434,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Sonrío al hombre que tengo delante mientras acepto su dinero. ¡Otro cliente satisfecho!
@@ -6489,9 +6497,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Sonrío al hombre que tengo delante mientras acepto su dinero. ¡Otro cliente satisfecho!
@@ -6623,9 +6631,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Aquí tienes tu ramo”
@@ -6652,9 +6660,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -6682,9 +6690,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -6705,9 +6713,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -6730,9 +6738,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
@@ -6820,9 +6828,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
@@ -6845,9 +6853,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 Termino de plantar el esqueje y regreso a mi posición erguida. Al girarme veo que Allan es el cliente.
@@ -6901,9 +6909,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -6963,9 +6971,9 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -7018,9 +7026,9 @@ position: -118,-144
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “Aquí está tu ramo, Allan”
@@ -7047,9 +7055,9 @@ position: -123,-48
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -7077,9 +7085,9 @@ position: 45,-49
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -7102,9 +7110,9 @@ position: -289,-54
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -7130,9 +7138,9 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
@@ -7197,9 +7205,9 @@ position: -120,41
 <<Scene bg_calle_noche_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
@@ -7225,9 +7233,9 @@ position: -120,41
 <<Scene bg_calle_noche_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 

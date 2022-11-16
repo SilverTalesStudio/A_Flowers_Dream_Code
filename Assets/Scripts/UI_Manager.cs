@@ -21,6 +21,7 @@ public class UI_Manager : MonoBehaviour
         PlayerPrefs.SetString("currentMinigame", "none");
         PlayerPrefs.SetString("PlayerName", "Lucía");
         PlayerPrefs.SetString("PlayerGender", "F");
+        PlayerPrefs.SetString("PlayerMainCharacter", "P");
     }
     //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
     // y lo guarda en PlayerPrefs
@@ -56,15 +57,15 @@ public class UI_Manager : MonoBehaviour
 
     public void ReadMainCharacterInput(bool value)
     {
-        string mainCharacter = toggleGroup.GetFirstActiveToggle().name;
+        string mainCharacter = personajesGroup.GetFirstActiveToggle().name;
         string savedMainCharacter = "primero";
-        if (mainCharacter == "Personaje_1")
+        if (mainCharacter == "1")
         {
-            savedMainCharacter = "primero";
+            savedMainCharacter = "P";
         }
-        else 
+        else if(mainCharacter == "2")
         {
-            savedMainCharacter = "segundo";
+            savedMainCharacter = "S";
         }
         Debug.Log(savedMainCharacter);
         PlayerPrefs.SetString("PlayerMainCharacter", savedMainCharacter);
