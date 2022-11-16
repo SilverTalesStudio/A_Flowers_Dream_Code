@@ -7215,13 +7215,13 @@ No sé por qué, pero tengo la sensación de que este fin de semana va a ser imp
 Menos mal que no leo el horóscopo, sería carne de cañón para caer en todas esas cosas jajajaja .
 Sacudo la cabeza para evitar pensar en esas cosas. No puedo pensar en la sensación del finde cuando aún me queda toda la semana por delante.
 Pase lo que pase, todo depende de mis propias decisiones, así que a lo mejor el presentimiento que tengo es porque mi subconsciente desea que haga algo fuera de la rutina.
-Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y veré que hago
+Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y veré que hago.
 
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<miercoles_sem3>>
+<<jump miercoles_sem3>>
 
 ===
 
@@ -7229,7 +7229,7 @@ title: miercoles_sem3
 position: -120,41
 ---
 <<HideAll>>
-<<Scene bg_calle_noche_placeholder>>
+<<Scene bg_calle>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
@@ -7238,17 +7238,247 @@ position: -120,41
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 
-Primer día hecho. Ya queda menos para el fin de semana.
-No sé por qué, pero tengo la sensación de que este fin de semana va a ser importante. Como una especie de premonición de que lo que pase va a provocar un gran cambio en mi vida.
-Menos mal que no leo el horóscopo, sería carne de cañón para caer en todas esas cosas jajajaja .
-Sacudo la cabeza para evitar pensar en esas cosas. No puedo pensar en la sensación del finde cuando aún me queda toda la semana por delante.
-Pase lo que pase, todo depende de mis propias decisiones, así que a lo mejor el presentimiento que tengo es porque mi subconsciente desea que haga algo fuera de la rutina.
-Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y veré que hago
+¡Ya es mitad de semana! Se me han pasado los días volando.
+Y queda muy poco para el fin de semana. Umm, ¿qué podré hacer?
+Tengo ganas de salir a dar una vuelta por la ciudad y descubrir nuevos rincones ocultos.
+Mira que llevo casi un mes aquí y aún hay cosas que me sorprenden.
+Además, ya no hay nadie en casa que me vigile cada dos por tres.
+Puedo salir a disfrutar y volver cuando quiera.
+Sonrío alegre mientras doy pequeños saltitos hasta la entrada de la floristería.
+¡Tengo la sensación de que hoy va a ser un gran día!
+Venga, manos a la obra que hay que poner en marcha de nuevo el local.
 
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Ethan_miercoles_sem3>>
 
+===
+
+title: Ethan_miercoles_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+Me apoyo durante un segundo sobre el mostrador intentado recuperar el aire y organizar mis pensamientos.
+Aprovecho que se acaba de ir el cliente al que estaba atendiendo y el resto están observando las distintas flores que se encuentran en los estantes para descansar un poco.
+¡Menuda mañana más ajetreada!
+Sé que a mitad de semana el flujo de clientes es mayor, pero no esperaba esto para nada.
+¿Será un día importante o algo?
+Eso lo explicaría, así como la cantidad de ramos con temática romántica que solicitan.
+Oh, parece que la mujer que estaba observando las camelias se va a acercar al mostrador.
+Será mejor que reponga el papel de envoltorio porque ya no me queda casi nada.
+Me agacho para buscar en el hueco que se encuentra bajo el mostrador donde almaceno cajas con utensilios variados.
+
+//[GOLPE -> como si diera un golpe sobre el mostrador]
+
+Parece que ya está aquí la mujer.
+Vamos a ello.
+Me enderezo con mi característica sonrisa de trabajo en la cara para darle la bienvenida.
+{$name}: “¡Bienvenida a A Flower’s Dream! Disculpe las molestias, estaba...”
+Un momento...
+¡Si no es la mujer!
+¡Yo conozco a esta persona!
+<<if get_npc_likeability("NPC_ethan") <= -10>>
+    <<jump Final_malo_Ethan>>
+<<elseif get_date() == "Ethan">>
+    <<jump Ethan_siHuboCita_sem3>>
+<<elseif get_date() != "Ethan">>
+    <<jump Ethan_siNoHuboCita_sem3>>
+<<endif>>
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+===
+
+title: Final_malo_Ethan
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+¡Pero si es Ethan!
+Menuda sorpresa. La verdad es que debo admitir que me preguntaba dónde se encontraba.
+Me extrañaba mucho que no hubiera venido a la floristería.
+La última vez que hablamos fue el fin de semana.
+{$name}: “Hola, Eros. ¿Otra vez en las andadas?”
+{$name}: “Ya me estaba resultando raro que no vinieras a intentar alguna de tus tácticas.”
+<<Hide Ethan>>
+/////////////////////////////////////////////////////////
+////////////////METER COPIA DE DAPHNE////////////////////
+/////////////////////////////////////////////////////////
+<<Act Chica sprt_copiaDaphne_neutral right bottom015 white>>
+Chica: “Mhm.”
+Ante ese carraspeo me doy cuenta de que Ethan no ha venido solo.
+Viene con acompañante y no me había fijado con el estrés de la tienda.
+La observo [select value={$gender} M="inquisitivo" F="inquisitiva" NB="inquisitive"/] con una ceja arqueada.
+¡Si parece una copia de aquella chica que vino el primer día a la floristería!
+Pelo perfectamente peinado, grandes capas de maquillaje, tacones altos y ropa escotada.
+Ni siquiera ha hablado y solo con su mirada ya me puedo hacer una idea de su personalidad.
+Arrogante, presumida y...
+Celosa.
+Su mirada se clava en mí como si quisiera borrarme.
+Gulp.
+Qué incómodo es esto.
+Sin apartar su amenazante mirada de mí, la mujer se dirige a Ethan.
+Chica: “¿Es que conoces a [select value={$gender} M="este" F="esta" NB="este"/], bomboncito?”
+¿Bomboncito? Ugh, casi me ha dado una arcada, que empalagoso.
+Ya veo porque está con Ethan, los dos comparten el mismo gusto por este tipo de apodos empalagosos.
+Sacudiendo la cabeza [select value={$gender} M="asqueado" F="asqueada" NB="asqueade"/], me giro [select value={$gender} M="intigrado" F="intigrada" NB="intrigade"/] por la respuesta de Ethan.
+¿Se puede saber qué es todo esto?
+<<Hide Chica>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+Por alguna razón Ethan me evita, sus ojos centrados en el suelo, completamente vacíos.
+Ethan: “No, no sé quién es preciosa.”
+<<Hide Ethan>>
+¿Cómo?
+<<Act Chica sprt_copiaDaphne_neutral right bottom015 white>>
+Chica: “Ya decía yo que no podía ser posible con esas pintas.”
+{$name}: “¿Qué dices Ethan?”
+{$name}: “Soy yo, {$name}.”
+{$name}: “[select value={$gender} M="El chico" F="La chica" NB="Le chique"/] con la que llevas coqueteando sin parar durante prácticamente un mes.”
+{$name}: “Si hasta has estado viniendo a la floristería habitualmente para comprar ramos para tus citas.”
+Chica: “¿¡Se puede saber qué son esas confianzas con MI novio!?”
+Chica: “Aparta tus sucias manos de [select value={$gender} M="agricultor" F="agricultora" NB="agricultore"/] de nosotros.”
+¿¡[select value={$gender} M="Agricultor" F="Agricultora" NB="Agricultore"/]!?
+Chica: “Más bien es él a quien tienes que controlar, no a mí.”
+Chica: “Y a ver si estudiamos más.”
+Chica: “¿¡Cómo!?”
+Chica: “Como vaya detrás del mostrador...”
+<<Hide Chica>>
+Antes de que la situación pueda ir a más, Ethan se interpone entre [select value={$gender} M="nosotros" F="nosotras" NB="nosotres"/] y apoya su mano en el brazo de su nueva “novia”.
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+Ethan: “Tranquila florecilla, yo solo tengo ojos para ti.”
+Me quedo sin palabras.
+El apodo que creía que era solo para mí parece que va saltando de persona en persona.
+Vaya, sabía que Ethan era un seductor, pero no a este nivel.
+Ha tardado menos de un mes en cambiarme por otra.
+<<Hide {$name}>>
+<<Act Chica sprt_copiaDaphne_neutral right bottom015 white>>
+Ethan: “Mejor vamos a otra floristería.”
+Chica:“Sí, bomboncito. No quiero que dejes tu dinero aquí.”
+Ethan: “Mientras vamos de camino piensa en lo que vas a pedir.”
+Chica: “Mejor sorpréndeme Ethan, quiero ver si conoces mis gustos tan bien como dices jajaja.”
+Incluso lo del ramo...
+<<Move Ethan offright bottom015 1.0>>
+<<Move Chica offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Ethan>>
+<<Hide Chica>>
+
+//Campanitas
+Sin dirigirme ni una sola palabra más, ambos abandonan la floristería dejándome [select value={$gender} M="perplejo" F="perpleja" NB="perpleje"/] en el sitio.
+El intenso enfado que debería de sentir se esfuma para dejar lugar a la tristeza.
+Esa mirada... Era la misma que tenía yo cuando estaba con Jacob.
+Mantener las apariencias es algo agotador, te consume desde dentro.
+¿A lo mejor podría haber hecho algo más para ayudarle?
+¿Haber dejado de lado la molestia ante sus avances para centrarme en él como [select value={$gender} M="amigo" F="amiga" NB="amigue"/]?
+{$name}: Suspiro. “Ya no vale la pena pensar en ello.”
+{$name}: “Podría mandarle un mensaje para disculparme e insistir, pero viendo lo de hoy sé que no va a contestar.”
+{$name}: “De hecho, puede que incluso me haya bloqueado de sus contactos.”
+No hace falta que lo revise.
+Será mejor que pase página y continue con lo mío, aunque mi pecho se sienta algo pesado durante el resto del día...
+
+
+
+//JUMP
+===
+
+
+
+title: Ethan_siHuboCita_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+¡Si es Ethan!
+No puedo evitar saludarle con una amplia sonrisa en mi cara.
+Creo que hasta me estoy sonrojando, pero desde que admití que me gusta no he podido dejar de pensar en él.
+Ese momento en el cine cuando nos tomamos de la mano...
+Fue una sensación muy acogedora y cálida.
+Me apenó mucho cuando tuvimos que despedirnos y todo terminó.
+En estos días, he reflexionado y he decidido ir a por todas.
+Creo que después de la relación tóxica que tuve con Jacob me merezco una oportunidad.
+A pesar del temor y las dudas quiero volver a intentarlo.
+Además, sé que Leah está ahí para apoyarme igual que yo a ella.
+{$name}: “¡Hola Ethan!”
+Ups, creo que me he emocionado demasiado.
+{$name}: “Mhm, hola, ¿qué te trae por aquí?”
+Espero con impaciencia las primeras palabras de Ethan después de todos estos días, pero para mi sorpresa el silencio prevalece.
+Parpadeo [select value={$gender} M="perplejo" F="perpleja" NB="perpleje"/] ante al carácter inusual de Ethan o, mejor dicho, su falta de emoción.
+Me recuerda a un globo desinflado.
+Parece evitar mi mirada a toda costa y esta rígido, incómodo.
+Tiene pinta de que no va a decir nada.
+->No decir nada.
+    Qué ambiente más cargante.
+    No sé qué decir para romperlo, estas cosas se me dan fatal.
+    Voy a esperar unos minutos más a ver si dice algo él y sino ya tomaré yo la iniciativa que, después de todo, estoy en mi turno de trabajo.
+->“L-la verdad es que estaba algo triste...”
+    <<Add_npc_likeability NPC_ethan 2>>
+    Ethan levanta la mirada, sorprendido, y sus ojos conectan con los míos.
+    Su atención me pone [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/].
+    {$name}: “Y-yo...”
+    Venga {$name}, ¡di lo que sientes!
+    {$name}: “Yo pensaba que a lo mejor vendrías antes a verme y debo admitir que estos días he estado esperando que pasaras por la puerta jajaja.”
+    {$name}: “Cada vez que escuchaba la campanita levantaba la mirada corriendo y …”
+    {$name}: “Me entristecía al ver que no eras tú.”
+    Miro a Ethan de soslayo, [select value={$gender} M="inquieto" F="inquieta" NB="inquiete"/], pero [select value={$gender} M="esperanzado" F="esperanzada" NB="esperanzade"/]. Necesito ver qué siente, qué opina de todo esto.
+    ¿Soy [select value={$gender} M="el único" F="la única" NB="le únique"/] que siente algo? 
+    Sin embargo, mis temores se manifiestan al ver su expresión.
+    Es como si estuviera en conflicto en su interior.
+    {$name}: “¡Perdón!”
+    {$name}: “No era mi intención incomodarte.”
+    Suspiro y, en un susurro prácticamente imperceptible, se me escapa lo que intento ocultar en mi corazón.
+    {$name}: “A lo mejor he sido [select value={$gender} M="un tonto" F="una tonta" NB="une tonte"/] por ilusionarme”
+->“Bueno Eros, ¿vas a decir algo o qué?”
+    <<Add_npc_likeability NPC_ethan -2>>
+//JUMP
+===
+
+title: Ethan_siNoHuboCita_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene floristeria_placeholder>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+
+//JUMP
 ===
