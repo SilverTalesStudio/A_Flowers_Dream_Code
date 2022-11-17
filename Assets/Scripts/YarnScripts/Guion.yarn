@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Sophie_lunes_sem1>>
+<<jump miercoles_sem3>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -6369,17 +6369,20 @@ position: -143,644
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
+
+
 El bullicio de la mañana me saluda cuando piso la calle. Ya he pasado el ecuador de mi primer mes aquí. 
 Echo la vista atrás y recuerdo el terror que tenía mudarme [select value={$gender} M="solo" F="sola" NB="sole"/] por primera vez. Antes siempre había vivido con gente, primero con mi padre y luego con mi expareja.
 No sólo era el miedo a la soledad en sí, sino a estar [select value={$gender} M="solo" F="sola" NB="sole"/] en una ciudad nueva, sin ningún amigo o familiar cerca. La diferencia respecto a mi antigua vida es abismal.
 Y el salto aún es mayor si lo comparo con mi estancia con mi ex. No podía ir a ningún sitio ni hacer nada sin que él lo supiera, controlaba todos los aspectos de mi vida.
 Me costó mucho tiempo darme cuenta de que su comportamiento tóxico no era culpa mía, y menos aún mi dependencia hacia él. Ahora ya soy libre de hacer lo que quiera dentro y fuera de casa.
-Estando [select value={$gender} M="solo" F="sola" NB="sole"/] toda la responsabilidad recae sobre mí, y sí, cometo muchos errores, pero también muchos aciertos. Me he dado cuenta de que realmente soy capaz de hacer bien las cosas, cosas que antes pensaba que eran imposibles para mí.
+Estando [select value={$gender} M="solo" F="sola" NB="sole"/] toda la responsabilidad recae sobre mí, y sí, cometo muchos errores, pero también muchos aciertos. 
+Me he dado cuenta de que realmente soy capaz de hacer bien las cosas, cosas que antes pensaba que eran imposibles para mí.
 ¿Cómo puede alguien romperte hasta el punto de hacerte pensar que no vales nada? ¿Cómo éramos capaces de llamar amor a lo que nos estaba pasando?
 Sacudo la cabeza y miro hacia adelante con determinación. Ahora todo ha pasado, no hace falta darle más vueltas.
 Feliz con mi nueva vida, acelero el paso para llegar cuanto antes al fruto de mi esfuerzo, A Flower´s Dream.
 <<Fade black 0.0 1.0 1.0>>
-<<wait 2.0>>
+<<wait 1.0>>
 <<Fade black 1.0 0.0 1.0>>
 <<Scene bg_floristeria>>
 La afluencia de clientes no es mucha, como suele ocurrir los lunes. Así que empiezo el día sin mucho estrés.
@@ -6528,7 +6531,7 @@ Sophie: “Buenos días {$name}”
     {$name}: “Fue por ti”
     {$name}: “Si no me hubieras curado tan bien se podía haber puesto muy feo y habría estado más días dolorida, seguro”
     {$name}: “Así que gracias de nuevo”
-    <<Add_npc_likeability NPC_shopie 2>>
+    <<Add_npc_likeability NPC_sophie 2>>
     Ante mi sinceridad se sonroja y aprovecho para admirar su belleza con esos tonos rojizos.
     Sophie: “No es nada”
     {$name}: “Lo es para mí”
@@ -6574,7 +6577,8 @@ Sophie: “Buenos días {$name}”
 Sophie: “Pues sí, ¿recuerdas que te dije que los ramos eran para mi hermana? Necesito otro para y este es muy importante...”
 Creo que ya tengo la suficiente confianza con Sophie para preguntarle.
 {$name}: “Si no es meterme en un entierro en el que no tengo vela, ¿puedo saber por qué?” 
-{$name}: “No te pregunto sólo porque me ayudará a escoger las flores, sino porque creo que hablar estas cosas con alguien te ayuda a soltar una carga mental. Si lo aguantas sola mucho tiempo, te consume por dentro poco a poco.”
+{$name}: “No te pregunto sólo porque me ayudará a escoger las flores, sino porque creo que hablar estas cosas con alguien te ayuda a soltar una carga mental.”
+{$name}: “Si lo aguantas sola mucho tiempo, te consume por dentro poco a poco.”
 Sophie: Suspira. “Puede que tengas razón...”
 Sophie: “Mi hermana...”
 //////////////////////////////////////////////////////////////////////////
@@ -6695,14 +6699,14 @@ position: 45,-49
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
-<<Add_npc_likeability NPC_shopie 1>>
+<<Add_npc_likeability NPC_sophie 1>>
 
 {$name}: “Siendo algo tan importante, he querido ir a asegurar”
 Sophie: “Es muy bonito, aunque esperaba algo realmente impresionante. Tal vez tengas razón, además es para mi hermana y yo no entiendo mucho de estas cosas.”
 {$name}: “Espero que le gusten.”
 Sophie: “Yo también.”
 
-<<jump Fin_ramas_minijuego_Ethan_miercoles_sem2>>
+<<jump Fin_ramas_minijuego_Sophie_lunes_sem3>>
 ===
 
 title: Minijuego_mal_Sophie_lunes_sem3
@@ -6752,9 +6756,9 @@ Sophie: “¿Qué es?”
 Sophie: “Es muy buena idea, casi me molesta que no haya caído yo en ella para hacerla.”
 Sophie: “¿Cuánto es el sobre?”
 {$name}: “Nada.” 
-{$name}: “Je... Ahora va a tener más ganas de conocerte después de esto.”
-Sophie: “¿Me conoce?”
-{$name}: “Sí, alguna vez le he hablado de ti, aparte de lo de la discusión”.
+Sophie: “Je... Ahora va a tener más ganas de conocerte después de esto.”
+{$name}: “¿Me conoce?”
+Sophie: “Sí, alguna vez le he hablado de ti, aparte de lo de la discusión”.
 ->Responder [select value={$gender} M="emocionado" F="emocionada" NB="emocionade"/]
     {$name}: “¿En serio? ¿Y que le has contado?”
     Me alegra mucho saber que tenemos la suficiente confianza para que le hable de mí a su hermana, sabiendo lo importante que es para ella.
@@ -6832,7 +6836,8 @@ position: -143,644
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
+Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. 
+No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
 //Campanillas
 Ensimismada con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
 {$name}: “¡Un segundo! Le atiendo ahora en cuanto termine con esto.”
@@ -6923,7 +6928,8 @@ Allan: “Ahh, va a quedar preciosa ahí con las demás.”
 {$name}: “¡A que sí! Le va a dar el toque perfecto a este rinconcito”
 Termino de plantarlo y vuelvo al mostrador para atender a Allan.
 {$name}: “¿Qué tal llevas el día?”
-Allan: “Pues por ahora con mi jefe sorprendentemente bien. Me refiero a que al menos no está encima de mí todo el rato, era muy agobiante. Hoy está ignorándonos a todos un poco. Supongo que tendrá otras cosas en las que pensar.”
+Allan: “Pues por ahora con mi jefe sorprendentemente bien. Me refiero a que al menos no está encima de mí todo el rato, era muy agobiante.” 
+Allan: “Hoy está ignorándonos a todos un poco. Supongo que tendrá otras cosas en las que pensar.”
 Allan: “Pero no hablemos de mi trabajo, por favor.”
 {$name}: “Vale, eso lo puedo hacer.”
 Allan: Se queda unos segundos congelado en una sonrisa cálida, hasta que una nueva idea irrumpe en su mente.
@@ -7154,7 +7160,7 @@ Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. H
     Allan: “Solo si quieres claro...”
     {$name}: “¡Dispara!”
     Allan: “Jajajaja vale.”
-    Allan: “No muy lejos de aquí, a 15 minutos en coche o así, hay un parque natural que abarca un bosque precioso. En él hay varias rutas de senderismo con diferentes niveles de dificultad.
+    Allan: “No muy lejos de aquí, a 15 minutos en coche o así, hay un parque natural que abarca un bosque precioso. En él hay varias rutas de senderismo con diferentes niveles de dificultad.”
     {$name}: “¡Suena genial!”
     ///////////////////////////////////////////////////////
     ////////////////PROTA TRISTE///////////////////////////
@@ -7201,7 +7207,9 @@ title: Fin_lunes_sem3
 position: -120,41
 ---
 <<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle_noche_placeholder>>
+
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
@@ -7229,6 +7237,7 @@ title: miercoles_sem3
 position: -120,41
 ---
 <<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
