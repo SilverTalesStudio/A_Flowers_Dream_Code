@@ -10,8 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
+//<<jump Sagrario_miercoles_sem3>>
 <<jump Sophie_lunes_sem1>>
-//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -7228,9 +7228,6 @@ Bueno, no merece la pena filosofar por ello. Ya llegará el final de semana y ve
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-
-<<jump miercoles_sem3>>
-
 ===
 
 title: miercoles_sem3
@@ -7269,6 +7266,7 @@ title: Ethan_miercoles_sem3
 position: -120,41
 ---
 <<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -7315,7 +7313,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -7348,7 +7346,7 @@ Celosa.
 Su mirada se clava en mí como si quisiera borrarme.
 Gulp.
 Qué incómodo es esto.
-Sin apartar su amenazante mirada de mí, la mujer se dirige a Ethan.
+Sin apartar su amenazante mirada de mi figura, la mujer se dirige a Ethan.
 Chica: “¿Es que conoces a [select value={$gender} M="este" F="esta" NB="este"/], bomboncito?”
 ¿Bomboncito? Ugh, casi me ha dado una arcada, que empalagoso.
 Ya veo porque está con Ethan, los dos comparten el mismo gusto por este tipo de apodos empalagosos.
@@ -7358,8 +7356,8 @@ Sacudiendo la cabeza [select value={$gender} M="asqueado" F="asqueada" NB="asque
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Por alguna razón Ethan me evita, sus ojos centrados en el suelo, completamente vacíos.
 Ethan: “No, no sé quién es preciosa.”
-<<Hide Ethan>>
 ¿Cómo?
+<<Hide Ethan>>
 <<Act Chica sprt_copiaDaphne_neutral right bottom015 white>>
 Chica: “Ya decía yo que no podía ser posible con esas pintas.”
 {$name}: “¿Qué dices Ethan?”
@@ -7369,8 +7367,8 @@ Chica: “Ya decía yo que no podía ser posible con esas pintas.”
 Chica: “¿¡Se puede saber qué son esas confianzas con MI novio!?”
 Chica: “Aparta tus sucias manos de [select value={$gender} M="agricultor" F="agricultora" NB="agricultore"/] de nosotros.”
 ¿¡[select value={$gender} M="Agricultor" F="Agricultora" NB="Agricultore"/]!?
-Chica: “Más bien es él a quien tienes que controlar, no a mí.”
-Chica: “Y a ver si estudiamos más.”
+{$name}: “Más bien es él a quien tienes que controlar, no a mí.”
+{$name}: “Y a ver si estudiamos más.”
 Chica: “¿¡Cómo!?”
 Chica: “Como vaya detrás del mostrador...”
 <<Hide Chica>>
@@ -7382,7 +7380,7 @@ El apodo que creía que era solo para mí parece que va saltando de persona en p
 Vaya, sabía que Ethan era un seductor, pero no a este nivel.
 Ha tardado menos de un mes en cambiarme por otra.
 <<Hide {$name}>>
-<<Act Chica sprt_copiaDaphne_neutral right bottom015 white>>
+<<Act Chica sprt_copiaDaphne_neutral left bottom015 white>>
 Ethan: “Mejor vamos a otra floristería.”
 Chica:“Sí, bomboncito. No quiero que dejes tu dinero aquí.”
 Ethan: “Mientras vamos de camino piensa en lo que vas a pedir.”
@@ -7393,7 +7391,11 @@ Incluso lo del ramo...
 <<wait 1.0>>
 <<Hide Ethan>>
 <<Hide Chica>>
-
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 //Campanitas
 Sin dirigirme ni una sola palabra más, ambos abandonan la floristería dejándome [select value={$gender} M="perplejo" F="perpleja" NB="perpleje"/] en el sitio.
 El intenso enfado que debería de sentir se esfuma para dejar lugar a la tristeza.
@@ -7407,9 +7409,12 @@ Mantener las apariencias es algo agotador, te consume desde dentro.
 No hace falta que lo revise.
 Será mejor que pase página y continue con lo mío, aunque mi pecho se sienta algo pesado durante el resto del día...
 
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 
+<<jump Sagrario_miercoles_sem3>>
 
-//JUMP
 ===
 
 
@@ -7419,7 +7424,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -7470,7 +7475,109 @@ Tiene pinta de que no va a decir nada.
     {$name}: “A lo mejor he sido [select value={$gender} M="un tonto" F="una tonta" NB="une tonte"/] por ilusionarme”
 ->“Bueno Eros, ¿vas a decir algo o qué?”
     <<Add_npc_likeability NPC_ethan -2>>
-//JUMP
+    {$name}: “No tengo todo el día.”
+    {$name}: “Por si se te has olvidado después de tus continuas visitas, esto es una floristería, Eros.”
+    Sigue sin decir nada, pero puedo apreciar molestia en su expresión.
+    Parece que no le ha hecho gracia mi comentario.
+    El estrés por el continuo trabajo me ha hecho saltar de esa manera.
+    Será mejor que intente arreglarlo.
+    {$name}: “¿A lo mejor lo que quieres es que te admire como una escultura antigua?”
+    {$name}: “La verdad es que no me importaría con tu bello rostro.”
+    Parece que no funciona.
+    De hecho, sus cejas se fruncen todavía más y sus hombros caen.
+    ¿He dicho algo malo?
+Tras unos largos minutos de incertidumbre, Ethan rompe el silencio suspirando.
+Ethan: “No {$name} ...”
+Ethan: “Yo...”
+Ethan: Suspiro. “No es eso...”
+Ethan: “No quiero que pienses que has hecho algo malo.”
+Ethan: “Yo estoy aquí porque quería...”
+Ethan: “No, necesitaba hablar contigo.”
+De repente, su intensa mirada choca con la mía y me corta la respiración.
+Ethan: “Quería... Confirmar algo que me pareció notar el último día que quedamos.”
+Ethan: “Estuve dándole muchas vueltas cuando nos despedimos y creí notar que...”
+¡Un momento! ¿¡No sé habrá dado cuenta de que me gusta!?
+Por si no fuera nada sospechoso, mi cara se transforma en una mueca de horror y mis mejillas se encienden.
+{$name}: “¿Qué hacía mucho frío?”
+{$name}: “¡Sí, tienes razón! El último día hacía mucho frío, pero nada que no se pudiera arreglar con un chocolate caliente jajaja.”
+¿Se puede saber qué estoy diciendo?
+Por un momento, Ethan sonríe divertido y me da un vuelco al corazón.
+Nunca dejará de deslumbrarme su sonrisa.
+Ethan: “Jajaja, no era eso lo que iba a decir, pero tienes razón.”
+Ethan: “¿Por eso no podías dejar de tomarme la mano?”
+////////////////////////////////////////////////////////
+///////////////////PROTAGONISTA SONROJADA///////////////
+////////////////////////////////////////////////////////
+{$name}: “E-eh...” 
+Mejor no digo nada que voy a empeorarlo todo.
+La risa de Ethan se corta abruptamente al ver mi reacción.
+Ethan: “Ahí está, era lo que sospechaba.”
+Ethan: Suspiro. “Mira {$name}, eres [select value={$gender} M="un chico" F="una chica" NB="une chique"/] increíble, pero creo que es mejor que te olvides de mí.”
+Ethan: “Yo solo soy un imbécil que finge ser lo que no es.”
+->“¡No digas eso, Ethan!”
+    <<Add_npc_likeability NPC_ethan 1>>
+    {$name}: “Yo te aprecio mucho, así que no me gusta oírte hablar así de ti mismo.”
+    {$name}: “Es más, tú deberías de ser el que más se acepte tal y cómo es y no los demás.”
+    {$name}: “Eso es lo que menos debería de importarte.”
+    {$name}: “Y...”
+    {$name}: “Yo creo que eres genial y una buena persona, aunque lo ocultes tras todas esas capas.”
+    Levanto la mirada, [select value={$gender} M="avergonzado" F="avergonzada" NB="avergonzade"/] tras mi arrebato.
+    Para mi sorpresa, Ethan me observa con los ojos cristalinos.
+->No decir nada. 
+    <<Add_npc_likeability NPC_ethan -1>>
+Ethan: “Yo no te merezco, {$name}.”
+Ethan: “¿Por qué eres tan [select value={$gender} M="bueno" F="buena" NB="buene"/] conmigo a pesar de todo?”
+Ethan: “Te he asustado, golpeado, ¿y aun así quieres seguir hablando conmigo?”
+Salgo del mostrador y me acerco a Ethan lentamente, como si fuese un animalillo al que no quiero asustar.
+Cuando estoy lo suficientemente cerca tomo su mano con delicadeza, igual que en el cine.
+{$name}: “Ethan...”
+{$name}: “Eres mi amigo y, aunque hayamos tenido todos esos accidentes, valoro más tu amistad, las risas que me has dado y todos los momentos que hemos pasado.”
+{$name}: “Yo...”
+////////////////////////////////////////////////////////////
+//////////////////PERSONAJE SE SONROJA//////////////////////
+////////////////////////////////////////////////////////////
+{$name}: “Pensaba que este fin de semana había ido todo bien. Para mí fue un día muy especial.” 
+{$name}: “Yo creía que tú pensabas lo mismo.”
+Con un movimiento brusco, Ethan se desprende de mi mano y se aleja de mí.
+No puedo evitar sobresaltarme y llevarme las manos al pecho en busca de consuelo.
+Ethan: “Para, {$name}. Es mejor que lo dejes así.”
+Ethan: “Te vas a arrepentir si continúas, y yo no quiero sufrir.”
+->Insistir.
+    Doy un paso al frente con la intención de volver a acercarme.
+    {$name}: “¿De qué tienes tanto miedo, Ethan?”
+    Ethan: “¿¡Es qué no puedes dejar de meter las narices en mis asuntos!?”
+    {$name}: “Perdón.”
+    Nunca había visto a Ethan así. He debido de tocar un tema delicado.
+    Será mejor que deje de insistir por el momento.
+->Darle su espacio.
+    Sonrío con la intención de calmarle.
+    {$name}: “Está bien, Ethan.”
+    {$name}: “No voy a insistir más al respecto.”
+    {$name}: “Aunque parezca mentira yo he pasado por una relación complicada en el pasado y puedo empatizar con las dudas que sientes.”
+    {$name}: “Pero te puedo decir que al final es mejor confiar en aquellas personas más cercanas para que te ayuden y... Liberarte.”
+    {$name}: “No quiero que estas palabras te presionen, pero quiero que sepas que...”
+    {$name}: “Cuando estés preparado, yo estaré aquí.”
+    Mis palabras se mantienen en el aire. Ethan me mira asombrado.
+    El alivio de sus ojos me tranquiliza y me hace sentir en paz.
+Ethan: Suspiro. “Por eso no me gusta acercarme tanto a la gente.”
+Ethan: “Ahora puedo notar calidez en mi pecho, pero ¿qué me garantiza que eso seguirá ahí?”
+Ethan: “Que no me dejarás como los demás.”
+{$name}: “Ethan...”
+¿Será esta la razón de sus continuos cambios de amistades, parejas y su máscara?
+Ethan sacude la cabeza como intentado librarse de un velo.
+Ethan: “Necesito pensar. Te vuelvo a recordar que es mejor que te alejes de mí, por tu bien y por el mío.”
+Ethan: “Nos... Nos vemos, {$name}.”
+<<Move Ethan offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Ethan>>
+Con el corazón encogido, alargo la mano con la intención de pararle, pero este abandona la tienda tan rápido como llegó.
+Espero que pronto se sienta mejor. Yo seguiré aquí esperando para cuando me necesite.
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Sagrario_miercoles_sem3>>
 ===
 
 title: Ethan_siNoHuboCita_sem3
@@ -7478,7 +7585,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene floristeria_placeholder>>
+<<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -7488,6 +7595,639 @@ position: -143,644
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
+¡Pero si es Ethan!
+Hacía mucho que no se pasaba por aquí. Creo que la última vez que hablé con él fue este finde, cuando me invitó a ir al cine.
+{$name}: “Hola Ethan, ¿qué te trae por aquí?” 
+¿Por qué de repente me siento tan [select value={$gender} M="cohibido" F="cohibida" NB="cohibide"/]?
+Ethan: “¡Hola, [select value={$gender} M="flor" F="florecilla" NB="flor"/]!”
+//////////////////////////////////////////////////////////////////
+/////////////////////////ETHAN GUIÑANDO OJO///////////////////////
+//////////////////////////////////////////////////////////////////
+Ethan: “¿Es que no puedo venir simplemente a ver a mi persona favorita?” 
+->Te avergüenzas.
+    <<Add_npc_likeability NPC_ethan 1>>
+    No sabía que Ethan pensaba así de mí. Cómo se nota que tiene un don con las palabras.
+    Sabe perfectamente qué es lo que quiere escuchar la gente.
+    Aunque eso también me hace dudar. ¿Le dirá eso a todo el mundo o es un sentimiento verdadero?
+    Sin atreverme a mirarle a los ojos consigo la confianza suficiente como para preguntarle.
+    {$name}: “¿De verdad piensas eso?”
+    Silencio. Durante varios segundos Ethan no dice nada.
+    Mis hombros comienzan a caer ante lo que eso significa.
+    Sabía que tenía razón, no puedo fiarme de todo el mundo que se porta bien conmigo.
+    Está claro que solo quieren aprovecharse.
+    Estoy a punto de recriminar a Ethan cuando este me corta.
+    Ethan: “Claro que pienso así, {$name}.”
+    Ethan: “Puede que nos conozcamos desde hace poco tiempo, pero tú siempre te has portado bien conmigo y me aceptas tal y como soy.”
+    Ethan: “Incluso a pesar de todos los accidentes que hemos tenido jajaja.”
+    Me río al acordarme de todos esos contratiempos.
+    Esa nube negra de dudas que se estaba formando en mi corazón se esfuma con estas simples palabras porque puedo reconocer su sinceridad en ellas.
+    {$name}: “Me alegra mucho que pienses así de mí.”
+    {$name}: “Yo también te aprecio mucho, Ethan.”
+    Nos miramos felices. Se siente como si el tiempo se hubiera parado.
+    {$name}: “Aunque debo admitir que a veces te pasas un poco con tus piropos.”
+    Ethan: “¿No te gustan? Si es lo que más hechiza a la gente de mí.”
+    {$name}: “Sí, sí, Eros. Lo que tú digas jajaja.”
+->Te molestas.
+    <<Add_npc_likeability NPC_ethan -1>>
+    Me cruzo de brazos al escuchar esas palabras.
+    Está claro que es una de sus típicas frases para atraer a la gente.
+    Es que se nota tanto, si la he escuchado incluso en las telenovelas que ve Leah.
+    ¿De verdad se piensa que me va a engatusar con eso?
+    {$name}: “Para, Ethan. Si te crees que esa frase cliché va a funcionar conmigo estas muy equivocado.”
+    {$name}: “Puede que no tenga la misma experiencia que tú en el amor, pero no soy [select value={$gender} M="tonto" F="tonta" NB="tonte"/].”
+    Estoy [select value={$gender} M="segurísimo" F="segurísima" NB="segurísime"/] de que es algo que le dice a todos sus pretendientes cuando lleva más de dos semanas con ellos.
+    Bueno, si aguanta porque por lo que he podido apreciar en sus pedidos no suele durar mucho con la misma persona.
+    Vamos, que Ethan es un rompecorazones y yo no estoy [select value={$gender} M="dispuesto" F="dispuesta" NB="dispueste"/] a que jueguen conmigo de esa manera.
+    Ethan: “No, {$name}, te equivocas. Lo digo de verdad.”
+    Ethan: “Siempre te has portado muy bien conmigo a pesar de todo y me aceptas tal y como soy.”
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////ETHAN TRISTE////////////////////////
+    /////////////////////////////////////////////////////////////////
+    Ethan: “Yo... Pensaba que tú pensabas lo mismo de mí.” 
+    ¿Me habré equivocado juzgándolo tan rápidamente?
+    {$name}: Suspiro. “Lo siento mucho, Ethan.”
+    {$name}: “Yo... La verdad es que he pasado por una relación complicada y a veces no puedo evitar desconfiar de la gente.”
+    Aparto la mirada [select value={$gender} M="avergonzado" F="avergonzada" NB="avergonzade"/].
+    Ethan: “No pasa nada, [select value={$gender} M="flor" F="florecilla" NB="flor"/]. Te entiendo.”
+<<if get_date() == "Sophie">> 
+    Como había quedado con Sophie para ir al concierto tuve que rechazar el plan de Ethan.
+    Espero que al final pudiera ir, se le veía tan emocionado...
+<<elseif get_date() == "null">>
+    Como tenía muchas cosas que hacer el fin de semana en casa tuve que rechazar su oferta.
+    De hecho, si no me equivoco creo que me dijo que ya había comprado las entradas.
+    Espero que al final pudiera encontrar a alguien para aprovecharlo.
+<<endif>>
+{$name}: “Por cierto Ethan, ¿al final pudiste encontrar a alguien con quién ir a ver la película?”
+Ethan: “Sí, me encontré a una amiga de camino al cine y se apuntó toda emocionada.”
+Ethan: “Casi no tuve ni que insistir jajaja.”
+Sí, sí, una “amiga”. Tiene pinta de que era una de sus admiradoras.
+Siempre le siguen a todos lados.
+{$name}: “Me alegro entonces. Me sentí un poco mal de no haber podido quedar contigo.”
+{$name}: “Pero al menos pudiste disfrutar de la película jajaja. ¿Qué tal estuvo?”
+Ethan: “¡No pasa nada! La verdad es que estuvo muy bien, aunque...”
+Ethan: “Debo admitir que no fue lo mismo sin ti, {$name}.”
+¡Ethan! ¡Por qué siempre sabes qué decir para hacerme sonrojar!
+Aparto la mirada ante la intensidad de la suya.
+->Comentar de quedar un día. 
+    <<Add_npc_likeability NPC_ethan 1>>
+    {$name}: “S-si, si quieres podemos quedar otro día para ir a ver una película juntos.”
+    {$name}: “Que me quedé con las ganas.”
+    //////////////////////////////////////////////////////
+    ////////////////ETHAN SONROJADO///////////////////////
+    //////////////////////////////////////////////////////
+    Ethan: “C-claro, {$name}.” 
+->No decir nada.
+Ethan: “¿Y tú qué tal todo, [select value={$gender} M="flor" F="florecilla" NB="flor"/]?”
+Ethan: “¿Ha pasado algo interesante que me quieras contar?”
+{$name}: “Umm, no mucho la verdad.”
+Intento pensar en algo interesante que contarle, pero no me viene nada a la mente.
+Ethan: “Claro, porque no estaba yo ahí contigo.”
+No me lo creo, ¡todo era una estratagema para volver a ligar conmigo!
+¿Cómo puede ser tan encantador para unas cosas y tan empalagoso para otras?
+Suspiro [select value={$gender} M="exasperado" F="exasperada" NB="exasperade"/].
+Ethan: “¿No vas a decir nada, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]?”
+Ethan: “Debes admitir que he estado veloz con esa.”
+{$name}: “¿Qué tipo de ramo querías hoy, Ethan?”
+Ethan: “¿¡En serio vas a cambiar así de tema, [select value={$gender} M="flor" F="florecita" NB="flor"/]!?”
+/////////////////////////////////////////////////////////////
+//////////////////////ETHAN GUIÑANDO OJO/////////////////////
+/////////////////////////////////////////////////////////////
+Ethan: “Yo no tengo la culpa de que me gustes. La culpa es tuya por tener todo lo que a mí me encanta.” 
+Sin comentarios. Será mejor que siga trabajando antes de que me suelte todo su repertorio de piropos malos.
+<<if get_npc_likeability("NPC_ethan") >= 15>>
+    Parece mentira que, a pesar de todo, Ethan me guste.
+    Sí, lo he admitido. Eros me gusta y demasiado.
+<<endif>>
+Ethan: Suspiro. “Está bien, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]. Tú ganas. Apunta mi pedido.”
+
+<<jump Minijuego_Ethan_miercoles_sem3>>
+===
+
+title: Minijuego_Ethan_miercoles_sem3
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Ethan_miercoles_sem3>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Ethan>>
+===
+
+title: Salida_minijuego_Ethan_miercoles_sem3
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+{$name}: “Aquí está tu ramo, Eros.”
+Terminando de atar el cordón en los tallos, extiendo mi mano para ofrecérselo.
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+    <<jump Minijuego_bien_Ethan_miercoles_sem3>>
+<<endif>>
+
+<<if $resultado == "regular">>
+    <<jump Minijuego_regular_Ethan_miercoles_sem3>>
+<<endif>>
+
+<<if $resultado == "mal">>
+    <<jump Minijuego_mal_Ethan_miercoles_sem3>>
+<<endif>>
+===
+
+title: Minijuego_bien_Ethan_miercoles_sem3
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_ethan 3>>
+
+Ethan: “¡Pero si están preciosas!”
+¡Genial! ¡He acertado de lleno!
+Ethan: “Aunque no tanto como tú, {$name}."
+No podía faltar el clásico cumplido de Eros.
+{$name}: Suspiro. “Gracias, Eros.”
+{$name}: “Me halaga mucho tu cumplido, pero debo admitir que me alegra mucho más que mis flores te hayan gustado.”
+Ethan: “No esperaba menos de ti, [select value={$gender} M="flor" F="florecilla" NB="flor"/]. Siempre tan pendiente de tus clientes.”
+Ethan: “¿O tal vez es una excepción por mí?”
+{$name}: “Eso siempre, Eros.”
+
+<<jump Fin_ramas_minijuego_Ethan_miercoles_sem3>>
+===
+title: Minijuego_regular_Ethan_miercoles_sem3
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_ethan 1>>
+
+Ethan: “Están bien, aunque creo que hubiera añadido un par de dalias más.”
+Ethan: “Para mejorar el contraste.”
+¿Y esto? Por alguna razón su comentario me ha recordado mucho a Pietro.
+El ramo de hoy podría haber sido mejor, pero ya no se puede hacer nada.
+{$name}: “¿Desde cuándo sabes tanto de arreglos florales?”
+No sabía esto de Ethan. Parece que a partir de ahora me tendré que esforzar más para cumplir sus expectativas.
+Ethan: “Desde que te conozco a ti, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
+////////////////////////////////////////////////////////////
+////////////////////PROTAGONISTA SE SONROJA/////////////////
+////////////////////////////////////////////////////////////
+{$name}: “¿En serio?” 
+Ethan: “Sí, en los libros se puede encontrar de todo.”
+{$name}: “Me alegro entonces, así tendré alguien más con quien hablar de este arte.”
+Ethan: “Por supuesto, [select value={$gender} M="flor" F="florecita" NB="flor"/].”
+
+<<jump Fin_ramas_minijuego_Ethan_miercoles_sem3>>
+===
+
+title: Minijuego_mal_Ethan_miercoles_sem3
+position: -289,-54
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_ethan -3>>
+
+Ethan: “Uff, la combinación de colores es demasiado extravagante para mi gusto.”
+Ethan: “Solo mirarla me da dolor de cabeza.”
+Bajo la cabeza, triste. No sabía que lo había hecho tan mal para sus expectativas.
+Ethan: “No pasa nada, {$name}.”
+Ethan: “Para mí es suficiente con saber que lo has hecho con todo tu amor.”
+Sus palabras me tranquilizan un poco.
+
+<<jump Fin_ramas_minijuego_Ethan_miercoles_sem3>>
+===
+
+title: Fin_ramas_minijuego_Ethan_miercoles_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+
+<<if get_npc_likeability("NPC_ethan") >= 15>>
+    Ethan: “Antes de que me vaya, {$name}.”
+    Ethan: “He visto en varios carteles que este fin de semana hay un festival medieval en la ciudad.”
+    Ethan: “¿Te gustaría ser mi [select value={$gender} M="bello príncipe" F="bella princesa" NB="belle noble"/]?”
+    ///////////////////////////////////////////////////////////////
+    ////////////////////////PROTAGONISTA TRISTE////////////////////
+    ///////////////////////////////////////////////////////////////
+    Vaya, que pena que no pueda quedar. Me hacía mucha ilusión ir con Ethan. 
+    {$name}: “Lo siento mucho, Ethan.”
+    {$name}: “Me sabe mal tener que decirte esto, pero no puedo aceptar tu oferta.”
+    {$name}: “Al menos de momento.”
+    {$name}: “Este fin de semana supuestamente van a llegar unas cajas de la mudanza que llevo esperando un tiempo y hasta que no me confirmen el día no te puedo decir.”
+    Ethan: “No pasa nada, {$name}. Lo comprendo.”
+    Ethan: “Las mudanzas son un jaleo.”
+    {$name}: “En cuanto lo sepa te aviso por quésapp.”
+    Ethan: “¡Genial!”
+<<endif>>
+Ethan: “Es hora de que me vaya y te deje trabajar, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
+Ethan: “¡Nos vemos!”
+{$name}: “¡Hasta la próxima, Ethan!”
+<<Move Ethan offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Ethan>>
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Sagrario_miercoles_sem3>>
+
+===
+
+
+title: Sagrario_miercoles_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+<<if get_npc_likeability("NPC_sagrario") <= -10>>
+    <<jump Final_malo_Sagrario>>
+<<else>>
+    <<jump Sagrario_miercoles_sem3_normal>>
+<<endif>>
+
+===
+
+title: Final_malo_Sagrario
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+Qué corto se hace el descanso cuando se disfruta, qué rica estaba la comida de ese sitio.
+Me voy a apuntar el restaurante para repetir porque aparte de salvarme de un apuro, por habérseme olvidado la comida, el menú del día estaba muy bien de precio y los platos no eran escasos precisamente.
+Con el estómago lleno vuelvo a la floristería. Acercándome al local veo a Sagrario pasar por delante de la puerta, pero no hacer ningún gesto de entrar.
+Qué raro, todas las semanas viene y en esta aún no se había pasado. A lo mejor le ha pasado algo.
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+{$name}: “Buenas tardes, Sagrario”
+No ha debido de verme porque se sobresalta y cuando ve mi cara su rostro serio cambia por uno incómodo.
+Sagrario: “Ah eres tú... Hola”
+Nunca la había visto así por lo que me preocupa.
+{$name}: “¿Está bien? ¿Le ha pasado algo?”
+Sagrario: “No, no, nada, no te preocupes”
+Intenta retomar el paso, pero la interrumpo. Algo raro pasa aquí y voy a llegar al fondo del asunto.
+{$name}: “¿Segura? ¿No quiere pasar a dentro a hablarlo?”
+Sagrario: “No, gracias”
+{$name}: “Venga, si hay confianza, además hace tiempo que no la veo por la tienda. ¿No le apetece comprar un ramo?”
+/////////////////////////////////////////////////////////
+///////////////SAGRARIO ENFADADA/////////////////////////
+/////////////////////////////////////////////////////////
+Sagrario: “¡Ay, para ya!” 
+Me callo y se me enfría todo el cuerpo de golpe. Jamás la había visto ponerse así.
+Sagrario: “Mira, no te iba a decir nada, pero estás siendo tan [select value={$gender} M="pesado" F="pesada" NB="pesade"/], [select value={$gender} M="niño" F="niña" NB="niñe"/], que no me voy a callar”
+Sagrario: “No voy más, ni voy a ir más a la tienda por ti”
+Sagrario: “Porque eres muy [select value={$gender} M="male" F="mala" NB="mal"/] florista”
+Sagrario: “Los ramos son insuficientes la mayoría de las ocasiones, y puede que para alguien que no tenga idea se lo puedas colar, pero a mí no”
+Sagrario: “Encima, los ramos para mí son muy importantes, no es para decorar un hogar ni nada tan simple. Necesito que tengan calidad”
+Sagrario: “Tú, simplemente no los haces bien”
+Sagrario: “Así que en vez de arrastrarte a por clientes para hacerlos entrar a tu floristería, aprende sobre tu profesión”
+Sagrario: “Que es una vergüenza por favor”
+Sagrario: “Y ahora si me permites voy a seguir con mi camino antes que me interrumpieras y fueras tan insistente conmigo” 
+Sagrario: “No repitas esto con nadie por educación que parece mentira que haya que decírtelo”
+<<Move Sagrario offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sagrario>>
+
+Soy incapaz de reaccionar, de moverme, de hablar... Cada frase suya es puñal directo a mi orgullo como trabajadora en este campo. Y no paran, es uno tras otro.
+Cuando termina estoy demasiado [select value={$gender} M="perdido" F="perdida" NB="perdide"/] asimilando todas las críticas que no me entero de que ha marchado y me ha dejado sola mirando al horizonte.
+Recupero mis sentidos tras unos segundos quieta y los sonidos de mi alrededor dejan de sonar amortiguados, ahora si los entiendo.
+Murmullos, ojos que me juzgan, miradas de desprecio, comentarios con repulsa. Los viandantes comentan el espectáculo que acaban de ver, pero para mí más que un espectáculo es un infierno.
+Consciente de mi situación, añado la vergüenza que siento a la pila de sentimientos que voy a tener que confrontar cuando esté [select value={$gender} M="solo" F="sola" NB="sole"/] con mis pensamientos.
+Entro a toda prisa en mi local y giro el cartel para indicar que está cerrado. Voy hasta la silla del mostrador para alejarme de las ventanas y me desplomo en el asiento.
+No puedo evitar que las lágrimas broten. Intento limpiármelas, pero es inútil, no paran de caer.
+Lo único en lo que estaba segura de que era buena haciéndolo, y al final es una mentira. Nada se me da bien.
+Descubrir que soy inútil con mi hobby de toda la vida, me ha destrozado.
+No sé cómo seguir con esto, lo único que tengo claro, es que por hoy he tenido suficiente, voy a irme a casa a esperar a que todo se enfríe y porque necesito estar lejos de aquí. No quiero estar en la floristería.
+Estoy un rato en la tienda hasta que me recompongo más a menos y salgo para volver pronto a casa.
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Pietro_viernes_sem3>>
+===
+
+title: Sagrario_miercoles_sem3_normal
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_calle>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+Qué corto se hace el descanso cuando se disfruta, qué rica estaba la comida de ese sitio.
+Me voy a apuntar el restaurante para repetir porque aparte de salvarme de un apuro, por habérseme olvidado la comida, el menú del día estaba muy bien de precio y los platos no eran escasos precisamente.
+Con el estómago lleno vuelvo a la floristería. Acercándome al local veo a Sagrario mirar por el cristal del escaparate y suspirar.
+Seguramente quiera entrar así que acelero el paso para alcanzarla.
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+{$name}: “Buenas tardes, Sagrario”
+Se sobresalta, no me ha debido ver venir
+Sagrario: “Ay, qué susto me has dado [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+{$name}: “Jajaja perdone, no tenía intención de asustarla”
+Sagrario: “Entre que no estaba atenta a mi alrededor y que mi oído ya no es el que era, no es extraño que haya pasado”
+Sagrario: “Yendo a otra cosa. ¿Vas a volver a atender ahora?”
+{$name}: “¡Sí! Justo acabo de terminar mi descanso”
+Sagrario: “Que bien que he venido entonces. ¿Entramos?”
+{$name}: “Claro, pase, pase”
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_floristeria>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+{$name}: “Bienvenida de nuevo a Flower’s Dream”
+Sagrario: “Creo que nunca te lo dije, pero me gusta mucho el nombre y el logo de la tienda”
+{$name}: “Gracias, se lo encargué a una amiga mía”
+Sagrario: “Pues dile de mi parte que es muy muy bonito”
+{$name}: “Se lo diré, seguro que se pone muy feliz”
+<<if get_infoMinerva() == "yes">>
+    Sagrario: “La verdad es que quería agradecerte por la semana pasada. No solo por el ramo sino también por las semillas. Fue muy buena idea y a mi mujer le encantaron”
+    Sagrario: “Ahora sé que tiene una parte de mí con ella, y me hace parecer que no estamos tan lejos”
+    ->Desear que se reencuentren
+        <<Add_npc_likeability NPC_sagrario 2>>
+        {$name}: “Ojalá el día que se reencuentre con su pareja llegue pronto”
+        {$name}: “A lo mejor suena un poco entrometido por mi parte, pero me gustaría ver como su historia tiene un final feliz”
+        Sagrario: “Yo también lo espero. Y no te preocupes por eso, no estás siendo [select value={$gender} M="un cotilla molesto" F="una cotilla molesta" NB="une cotilla moleste"/]”
+        Sagrario: “Me gusta que te hayas implicado porque desde que te lo conté, haces mejores ramos y ofreces ideas que nunca se me habrían ocurrido. Consigues expresar con flores lo que siento desde el corazón.”
+        Sagrario: “Así que gracias por ser tan “[select value={$gender} M="entrometido" F="entrometida" NB="entrometide"/]”. Nos has hecho felices a ambas.”
+        /////////////////////////////////////////////////////////////////////////
+        /////////////////////////////PROTAGONISTA TRISTE/////////////////////////
+        /////////////////////////////////////////////////////////////////////////
+        Empiezo a ver borroso y noto como las lágrimas intentan brotar de mis ojos.
+        {$name}: “Ah, perdone”
+        Me froto los ojos para secarlos. 
+        Sagrario: “Tienes un buen corazón, y no hay suficiente gente así en el mundo. No cambies nunca, [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+        Guardo sus palabras en mi corazón y termino de limpiarme para recuperar la compostura. Sigo teniendo un trabajo que hacer.
+    ->Darle ánimos
+        <<Add_npc_likeability NPC_sagrario 1>>
+        {$name}: “Seguro que su mujer piensa igual, ya verá como faltará mucho para el día en que se vuelvan a ver.”
+        Sagrario: “Dios te escuche, ya llevo mucho tiempo esperando. Demasiado...”
+        Asiento dándole la razón. Deber ser muy duro estar lejos de la persona que más quieres.
+    ->Hacer un chiste sobre la distancia
+        <<Add_npc_likeability NPC_sagrario -2>>
+        {$name}: “Mire el lado bueno, gracias a la distancia seguro que discuten menos. La convivencia al final agota”
+        {$name}: “Ya sabe el dicho, lo bueno y breve, dos veces bueno. O algo así creo que era.”
+        Sagrario: “Pamplinas. ¿Quién piensa así? ¿Cómo puede alguien no querer estar siempre que puede con su pareja?”
+        {$name}: “Bueno, a ver, es algo que se suele comentar...”
+        Sagrario: “Solo un misántropo pensaría así”
+        {$name}: “Sí, puede ser...”
+    {$name}: “Volviendo al tema del ramo. Entiendo que ha venido para encargar uno ¿no?”
+    Sagrario: “Entiendes bien. La verdad es que estaba pensando en algo así”
+<<else>>
+    Sagrario: “La verdad es que he vuelto porque, definitivamente, tienes buena mano con las flores”
+    Sonrío con orgullo. Nada me sienta mejor que me feliciten por mi trabajo, y más viniendo de una cliente habitual.
+    Sagrario: “Por eso esta semana vuelvo a estar en tus manos con un encargo, y como siempre, es muy importante para mí.”
+    {$name}: “No hace falta que diga más, haré todo lo que pueda para que salga un ramo que le guste”
+    {$name}: “¿Qué necesita exactamente?”
+<<endif>>
+<<jump Minijuego_Sagrario_miercoles_sem3>>
+===
+
+title: Minijuego_Sagrario_miercoles_sem3
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Sagrario_miercoles_sem3>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Sagrario>>
+===
+
+title: Salida_minijuego_Sagrario_miercoles_sem3
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+{$name}: “Aquí tiene su ramo”
+
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Sagrario_miercoles_sem3>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Sagrario_miercoles_sem3>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Sagrario_miercoles_sem3>>
+<<endif>>
+===
+
+title: Minijuego_bien_Sagrario_miercoles_sem3
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_sagrario 4>>
+
+Sagrario: “Sabía que había hecho bien en volver. Eres una apuesta segura”
+{$name}: “Estoy demasiado [select value={$gender} M="involucrado" F="involucrada" NB="involucrade"/] como para permitirme hacerlo mal. Estoy muy feliz de que le guste”
+Sagrario: “Te esperan grandes cosas si sigues así”
+{$name}: “Gracias”
+Sagrario: “A ti por tu trabajo”
+Sagrario: “Nos volveremos a ver [select value={$gender} M="niño" F="niña" NB="niñe"/]. Adiós”
+
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem3>>
+===
+
+title: Minijuego_regular_Sagrario_miercoles_sem3
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_sagrario 1>>
+
+Sagrario: “Cumple con lo que pedía. Tal vez demasiado reglamentario.”
+Sagrario: “Es como si hubieras encorsetado tu creatividad a unas reglas fijas.”
+{$name}: “La verdad es que preferí seguir un esquema más típico para no fallarle.”
+Sagrario: “Gracias por tu cuidado, pero la próxima vez dale rienda suelta a esa cabecita tuya.”
+{$name}: “Eso haré, gracias por el consejo.”
+Sagrario: “De nada, mucho ánimo con lo que te queda de día. Adiós”
+
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem3>>
+===
+
+title: Minijuego_mal_Sagrario_miercoles_sem3
+position: -289,-54
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_sagrario -2>>
+
+Sagrario: “...”
+Sagrario: “Sinceramente... esperaba más.”
+{$name}: “Lo siento mucho, la verdad es que me he puesto muy nerviosa haciéndolo.”
+{$name}: “Lo quería hacer tan bien que al final no he conseguido lo que quería. He dudado mucho.”
+Sagrario: “A lo mejor te he puesto demasiada presión...”
+Sagrario: “Por lo menos parte del ramo es rescatable, así que sigo pudiéndolo usar para mis cosas.”
+Sagrario: “La próxima vez intenta confiar más en tus capacidades.”
+{$name}: “Gracias, y lo siento de nuevo, de verdad.”
+Sagrario: “Hasta otro día [select value={$gender} M="niño" F="niña" NB="niñe"/].”
+{$name}: “Adiós”
+
+<<jump Fin_ramas_minijuego_Sagrario_miercoles_sem3>>
+===
+
+title: Fin_ramas_minijuego_Sagrario_miercoles_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+
+
+<<Move Sagrario offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Sagrario>>
+
+Sagrario sale por la puerta y poco tiempo pasa hasta que llega otro cliente. La verdad es que disfruto mucho más trabajar con los habituales, al final los conoces más y se hace más ameno.
+Pero trabajo es trabajo así que no puedo esforzarme menos con este cliente. ¡Vamos {$name}, a darlo todo!
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Pietro_viernes_sem3>>
+
+===
+
+title: Pietro_viernes_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+
 
 //JUMP
 ===
