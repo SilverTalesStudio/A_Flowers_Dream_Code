@@ -8226,8 +8226,165 @@ position: -143,644
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+
+<<jump Minijuego_Pietro_viernes_sem3>>
+===
+
+title: Minijuego_Pietro_viernes_sem3
+position: -125,-234
+---
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+//Se guarda el proximo nodo para ir despues del minijuego
+<<Save_node_to_jump_back Salida_minijuego_Pietro_viernes_sem3>>
+
+//Funcion de salto a minijuego
+<<Go_to_minigame Pietro>>
+===
+
+title: Salida_minijuego_Pietro_viernes_sem3
+position: -118,-144
+---
+<<HideAll>>
+
+<<set $resultado to get_minigame_result()>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+{$name}: “Y aquí estaría tu ramo especial, Eros”
+Con delicadeza sostengo el ramo en alto para que Ethan pueda apreciar mejor sus detalles.
+
+//Saltos a las diferentes ramas
+<<if $resultado == "bien">>
+<<jump Minijuego_bien_Pietro_viernes_sem3>>
+<<endif>>
+
+<<if $resultado == "regular">>
+<<jump Minijuego_regular_Pietro_viernes_sem3>>
+<<endif>>
+
+<<if $resultado == "mal">>
+<<jump Minijuego_mal_Pietro_viernes_sem3>>
+<<endif>>
+===
+
+title: Minijuego_bien_Pietro_viernes_sem3
+position: -123,-48
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro 3>>
 
 
 
-//JUMP
+<<jump Fin_ramas_minijuego_Pietro_viernes_sem3>>
+===
+title: Minijuego_regular_Pietro_viernes_sem3
+position: 45,-49
+---
+<<HideAll>>
+
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro 1>>
+
+
+
+<<jump Fin_ramas_minijuego_Pietro_viernes_sem3>>
+===
+
+title: Minijuego_mal_Pietro_viernes_sem3
+position: -289,-54
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Add_npc_likeability NPC_pietro -3>>
+
+
+
+<<jump Fin_ramas_minijuego_Pietro_viernes_sem3>>
+===
+
+title: Fin_ramas_minijuego_Pietro_viernes_sem3
+position: -120,41
+---
+<<HideAll>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
+
+
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Pietro>>
+
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+
+<<jump Encuentro_ex_viernes_sem3>>
+
+===
+
+title: Encuentro_ex_viernes_sem3
+position: -143,644
+---
+<<HideAll>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_floristeria>>
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
+Todo el mundo parece que tiene planes para el fin de semana porque están viniendo a comprar ramos sin parar.
+Aunque ninguno es tan interesante como Pietro, es un poco intenso, pero al final le he acabado cogiendo cariño.
+Riego las macetas que les toca agua en este momento. Para otra cosa no, pero para esto tengo mucha memoria, sé cuándo le toca a cada una de mis plantas. 
+//Campanillas
+Listo, plantas regadas y en camino de florecimiento precioso. Me giro para saludar.
+{$name}: “¡Buenos días! Bienveni-”
+
+//jump
 ===
