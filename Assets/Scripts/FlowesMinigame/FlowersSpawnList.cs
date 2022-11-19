@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 public class FlowersSpawnList : MonoBehaviour
 {
-    public GameObject FlowerNamePrefab;
-    public GameObject FlowerPrefab;    
+    public GameObject FlowerPrefab;
+    public GameObject FlowerBase;
     public GameObject list;
     
     public List<string> _flowers= new List<string>();
 
     readonly int amount = 20;
-    float yPos = 5.5F;
+    float xPos;
+    float yPos;
+    float zPos;
     public int FlowersAmount = 0;
+    string spriteName;
 
     struct FlowerType
     {
@@ -61,9 +64,12 @@ public class FlowersSpawnList : MonoBehaviour
 
     void Awake()
     {
+
+        xPos = FlowerBase.transform.position.x;
+        yPos = FlowerBase.transform.position.y;
+        zPos = FlowerBase.transform.position.z;
         for (int i = 0; i < amount; i++)
         {
-            yPos -= 1.5F;
             FlowerPrefab.name = FlowerTypes[i].Name;
             FlowerPrefab.GetComponent<DragAndDrop>().fname = FlowerTypes[i].Name;
             FlowerPrefab.GetComponent<DragAndDrop>().fcolor = FlowerTypes[i].Color;
@@ -71,6 +77,7 @@ public class FlowersSpawnList : MonoBehaviour
             FlowerPrefab.GetComponent<DragAndDrop>().fav = FlowerTypes[i].Favorite;
             FlowerPrefab.GetComponent<DragAndDrop>().hate = FlowerTypes[i].Hate;
 
+            /*
             if(FlowerPrefab.GetComponent<DragAndDrop>().fcolor == "Malva")
             {
                 FlowerPrefab.GetComponent<SpriteRenderer>().color = new UnityEngine.Color32(224, 176, 255, 255);
@@ -99,12 +106,24 @@ public class FlowersSpawnList : MonoBehaviour
             {
                 FlowerPrefab.GetComponent<SpriteRenderer>().color = new UnityEngine.Color32(255, 0, 0, 255);
             }
-
-            FlowerNamePrefab.GetComponent<TMP_Text>().text = FlowerPrefab.GetComponent<DragAndDrop>().fname;            
-            Instantiate(FlowerNamePrefab, new Vector3(10.3F, yPos - 0.7f, 0), FlowerNamePrefab.transform.localRotation);
-            Instantiate(FlowerPrefab, new Vector3(10.3F, yPos, 100), FlowerPrefab.transform.localRotation);            
+            */
+            spriteName = (i + 1).ToString();
+            FlowerPrefab.GetComponent<Image>().sprite = Resources.Load<Sprite>("Flowers/" + spriteName);
+            FlowerPrefab.GetComponent<Image>().preserveAspect = true;
+            Instantiate(FlowerPrefab, new Vector3(xPos, yPos, zPos), FlowerPrefab.transform.localRotation);
             _flowers.Add(FlowerPrefab.name);
+
+
+
+            if (Application.isMobilePlatform)
+            {
+                yPos -= 4.8F;
+            }
+            else
+            {
+                yPos -= 4.4F;
+            }
+
         }
     }
-
 }

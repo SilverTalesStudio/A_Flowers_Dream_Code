@@ -36,8 +36,4 @@ public class FlowersManager : MonoBehaviour
         }
     }
 
-    public void ConfirmDelivery()
-    {
-
-    }
 }

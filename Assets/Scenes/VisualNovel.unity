@@ -436,7 +436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c918c06f82e4294ebd94397bd9556cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 466b1041938d04d4b8fbbb2778e31901, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -844,9 +844,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1058317659796744, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1086358475575568, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_Name
       value: VisualNovelPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113064149824724, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1308810924048604, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_IsActive
@@ -856,9 +864,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1447318693757432, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1635097231764242, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635097231764242, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802931452094068, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4626815408203434, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_RootOrder
@@ -1650,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894275030868808514, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -26.950928
+      value: -26.95105
       objectReference: {fileID: 0}
     - target: {fileID: 7894275030868808514, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1806,7 +1826,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1940,9 +1960,9 @@ RectTransform:
   m_Father: {fileID: 409153755}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -518, y: 277}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 122, y: -83}
   m_SizeDelta: {x: 111, y: 113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321363885

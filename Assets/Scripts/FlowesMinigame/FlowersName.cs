@@ -14,5 +14,9 @@ public class FlowersName : MonoBehaviour
         gameObject.GetComponent<TMP_Text>().alignment = TextAlignmentOptions.Center;
         gameObject.transform.localScale = new Vector3(0.5F, 0.2F, 0.5F);
     }
+    private void Start()
+    {
+        gameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+    }
 
 }

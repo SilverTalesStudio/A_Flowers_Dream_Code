@@ -11,6 +11,7 @@ public class DragAndDrop : MonoBehaviour
     public GameObject panel;
     public GameObject Flist;
     public GameObject FlowersManager;
+    public GameObject FlowerBase;
     public string fname;
     public string fcolor;
     public string ffeeling;
@@ -28,7 +29,9 @@ public class DragAndDrop : MonoBehaviour
         panel = GameObject.Find("FlowersPanel");
         Flist = GameObject.Find("FlowersList");
         FlowersManager = GameObject.Find("FlowersManager");
+        FlowerBase = GameObject.Find("FlowerBase");
         gameObject.transform.SetParent(FlowersList);
+        transform.localScale = FlowerBase.transform.localScale;
     }
 
     private void Start()
@@ -42,6 +45,7 @@ public class DragAndDrop : MonoBehaviour
         resetPos.transform.position = transform.position;
         startRotation = transform.rotation;
         startScale = transform.localScale;
+        GetComponent<Image>().enabled = false;
     }
 
     private void OnMouseDrag()
@@ -60,12 +64,12 @@ public class DragAndDrop : MonoBehaviour
             panel.GetComponent<ScrollRect>().enabled = false;
 
             //La flor deja de pertenecer a la lista de flores para poder hacer transformaciones globales sin dependencias
-            transform.parent = null;
+            transform.SetParent(GameObject.Find("MiniGameManager").transform);
 
-            //Agranda la flor para colocarla en el ramo
-            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0);
-            transform.localScale = new Vector3(2, 2, 2);
-
+        //Agranda la flor para colocarla en el ramo
+            GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
+            transform.localScale = new Vector3(5f, 5f, 5f);
+        Debug.Log(transform.rotation.x);
     }
     private void OnMouseUp()
     {
@@ -82,15 +86,14 @@ public class DragAndDrop : MonoBehaviour
                 }
 
                 //vuelve a pertenecer a la lista de flores y tiene transformaciones con dependencias
-                transform.parent = FlowersList;
+                transform.SetParent(FlowersList);
 
                 //Resetea la posición de la flor con los valores iniciales en la lista de flores
                 transform.position = resetPos.transform.position;
                 transform.rotation = startRotation;
                 transform.localScale = startScale;
 
-                //Restar a la variable comunicada con VN
-            }
+        }
             else
             {
                 if (!FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet.Contains(gameObject.name))
