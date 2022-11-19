@@ -9,12 +9,13 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-<<Add_npc_likeability NPC_ethan 29>>
-<<Add_npc_likeability NPC_sophie 29>>
+
+<<Add_npc_likeability NPC_ethan 31>>
+<<Add_npc_likeability NPC_sophie 30>>
 <<Add_npc_likeability NPC_allan 29>>
+<<citaFin Ethan>>
 
-
-<<jump Pietro_viernes_sem3>>
+<<jump Encuentro_ex_viernes_sem3>>
 //<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -8735,7 +8736,7 @@ Nunca le había visto tan serio. Ha perdido su brillo característico.
     Con resolución firme, Ethan apoya su mano sobre el hombro de Jacob en señal de advertencia.
     Todavía no ejerce ningún tipo de presión, pero está claro que si Jacob intenta algo no va a dudar en ello.
     <<Hide Ethan>>
-->No involucrarla
+->No involucrarle
     No puedo meter a Ethan en esto, es mi problema y debería arreglarlo yo, no arrastrarlo conmigo.
     Busca una respuesta en mis ojos, algo que le diga cómo actuar, pero yo desvío la mirada.
     <<Hide Ethan>>
@@ -8826,9 +8827,9 @@ Cada vez se acerca más a mí.
 Su mirada me asusta y Ethan permanece en el fondo. Siento como si cada vez estuviera más lejos.
 Aprieto mis manos y me encojo como si quisiera desaparecer.
 <<Hide {$name}>>
+<<Act Jacob sprt_jacob_neutral left bottom015 white>>
 Jacob: “Compréndelo, no eres nadie. Sin mi apoyo no eres nada.”
 Jacob: “Eres [select value={$gender} M="un" F="una" NB="une"/] inútil y deberías agradecerme que me preocupe por ti.”
-<<Act Jacob sprt_jacob_neutral left bottom015 white>>
 Jacob: “Me he recorrido medio mundo y he gastado mucho dinero para encontrarte, ¿sabes?”
 Jacob: “Sería una pena malgastar todo ese esfuerzo en nada, así que no me enfades más y ven conmigo.”
 <<Hide Jacob>>
@@ -8882,13 +8883,24 @@ Ethan: “¿Estás dispuesta a ello? ¿A todo lo que conlleva?”
 Asiento con decisión. Ya es hora de poner punto y final a esta historia.
 Intenté alejarme para olvidarme de todo, pero está claro que no va a parar si no se hace así.
 <<Hide {$name}>>
+<<Hide Ethan>>
 <<Act Jacob sprt_jacob_neutral right bottom015 white>>
 <<Act Ethan sprt_ethan_neutral left bottom015 white>>
 Jacob: “No serás capaz de hacerme eso a mí, que he hecho de todo por ti.”
 Jacob: “Siempre te lo di TODO.”
 Jacob: “¿Y así me lo devuelves? Mereces todo lo malo que te pase.”
 //Golpe
+<<Hide Jacob>>
+<<Hide Ethan>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 Con un movimiento brusco, Ethan golpea el suelo enfadado.
+<<Hide {$name}>>
+<<Act Jacob sprt_jacob_neutral right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral left bottom015 white>>
 Ethan: “¿¡Otra vez con esas!?”
 Ethan: “Parece que lo único que sabes hacer es escupir basura por la boca.”
 Ethan: “Aquí donde [select value={$gender} M="le" F="la" NB="le"/] ves, lo único que ha hecho {$name} ha sido alegrarnos con sus ramos desde que llegó.”
@@ -9193,7 +9205,8 @@ Su cara es pura preocupación.
 ->“No” 
 Comienzo a llorar.
 {$name}: “Pensé que por fin había escapado de él, que ya no lo tenía que sufrir más. Y ha venido a mi floristería y me ha dicho esas... cosas... yo...”
-Sophie me abraza y coloca mi cabeza en su hombro. Mientras me desahogo ella no me interrumpe en ningún momento, ni hace afán de separase. Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
+Sophie me abraza y coloca mi cabeza en su hombro. Mientras me desahogo ella no me interrumpe en ningún momento, ni hace afán de separase. 
+Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
 Tras un rato así soy capaz de recomponerme y parar de llorar. Sophie rompe el abrazo y lentamente me sujeta con ambas manos el brazo que previamente agarraba Jacob.
 Sophie: “¿Me dejas verlo?”
 Asiento, sin fuerzas para hablar después el rato sollozando.
@@ -9303,7 +9316,8 @@ Jacob: “¿Qué te crees que estás haciendo?”
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-Parece que Allan ha hecho la suficiente fuerza para hacerle daño. Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
+Parece que Allan ha hecho la suficiente fuerza para hacerle daño. 
+Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
 Jacob le observa fijamente e hincha el pecho intentando intimarle, pero no funciona. Entre la diferencia de altura y de físico que existe entre los dos, a ojos de un extraño, el esfuerzo de Jacob es patético.
 Allan ni siquiera le presta tanta atención, sigue atento a mí. Jacob se da cuenta de esto y adquiere una postura burlona.
 <<Hide {$name}>>
@@ -9311,14 +9325,28 @@ Allan ni siquiera le presta tanta atención, sigue atento a mí. Jacob se da cue
 Jacob: “Ahh... Ya veo”
 Jacob: “Así que me has sustituido por este tipo, ¿eh?”
 Jacob: “No sabes estar [select value={$gender} M="solo" F="sola" NB="sole"/], siempre necesitas depender de alguien”
+<<Hide Jacob>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Hide Allan>>
 Miro a mis pies para no confrontarle directamente. No, no, eso no es verdad. Yo... yo he sido capaz de mudarme aquí [select value={$gender} M="solo" F="sola" NB="sole"/] y abrir esta floristería, no debo creerme sus palabras.
 Pero ya es tarde. Los pensamientos intrusivos empiezan a invadir mi mente y siento un fuerte dolor en el pecho. Es lo último que necesito ahora.
 Jacob cambia su enfoque y pasa a dirigirse a Allan.
+<<Hide {$name}>>
+<<Act Jacob sprt_jacob_neutral left bottom015 white>>
 Jacob: “Tú, no sé qué te habrá dicho, pero deberías alejarte de [select value={$gender} M="él" F="ella" NB="elle"/]. Te manipula y te encierra para que tu vida gire en torno a cuidarle y protegerle.”
 Jacob: “Y cuando le apetece considera que “le agobias” y que estás siendo tóxico y te abandona.”
 Jacob: “Va a hacer lo mismo contigo. Así que deja que me encargue, yo sé tratar con [select value={$gender} M="él" F="ella" NB="elle"/].”
 <<Hide Jacob>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 ¿Cómo puede decir esas cosas de mí? Agarro a Allan de la manga para que me vea y la miro desesperada.
 {$name}: “¡Eso es mentira! Yo no soy así, tienes que creerme a mí no a mi ex por favor”
 Allan asiente instantáneamente. La seguridad que tiene a la hora de confiar en mí me reconforta tanto que es mi ancla a la realidad en este momento.
@@ -9346,7 +9374,6 @@ Jacob: “Te crees muy valiente por mudarte y por abrir este negocio, pero no te
 Jacob: “La gente solo viene por la novedad. Cuando se den cuenta de que no eres capaz de hacer bien algo tan sencillo como unos ramos, dejaran de venir.”
 Jacob: “Y no sabes hacer más cosas que este pasatiempo tuyo.”
 Jacob: “Y cuando no puedas mantenerte, ¿qué harás? ¿Serás un parásito de cualquier persona que te haga un mínimo de caso? ¿O volverás a nuestra casa llorando?”
-Sophie: “No es una broma lo que te acabo de decir.”
 Jacob: “Compréndelo, no eres nadie. Sin mi apoyo no eres nada.”
 Jacob: “Eres [select value={$gender} M="un" F="una" NB="une"/] inútil y deberías agradecerme que me preocupe por ti.”
 Allan: “¡Suficiente!”
@@ -9417,7 +9444,8 @@ Su cara es pura preocupación y nervios. La determinación de antes ha desaparec
 ->“No” 
 Comienzo a llorar.
 {$name}: “Pensé que por fin había escapado de él, que ya no lo tenía que sufrir más. Y ha venido a mi floristería y me ha dicho esas... cosas... yo...”
-Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase. Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
+Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase. 
+Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
 Tras un rato así soy capaz de recomponerme y parar de llorar. Allan rompe el abrazo y lentamente me sujeta con ambas manos el brazo que previamente agarraba Jacob.
 Allan: “¿Me dejas verlo?”
 Asiento con la cabeza, sin fuerzas para hablar después del rato sollozando.
