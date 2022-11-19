@@ -791,6 +791,8 @@ public class VNManager : DialogueViewBase
 				case "bottom":
 				case "lower":
 					return 0.25f;
+				case "lowercenter":
+					return 0.4f;
 				case "center":
 				case "middle":
 					return 0.5f;
