@@ -6803,6 +6803,7 @@ Sophie: “Muchas gracias por los ánimos.”
     Sophie: “Sí”
     Sophie: “Hasta otro día {$name}”
     {$name}: “Adiós”
+    <<Update_Plans Sophie true false>>
 <<else>>
     Sophie: “Hasta otro día”
     {$name}: “¡Adiós!”
@@ -7182,6 +7183,7 @@ Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. H
     {$name}: “El sentimiento es mutuo, mucho ánimo con el trabajo.”
     Allan: “Igualmente, hasta otro día.”
     {$name}: “¡Adiós Allan!”
+    <<Update_Plans Allan true false>>
 <<else>>
     Allan: “Yo suelo hacer una breve rutina de estiramientos por las mañanas. No es nada de deporte intenso, pero es muy útil para tener menos dolores durante el resto del día.”
     {$name}: “Ey es buena idea, tienes algún video con la rutina que haces?”
@@ -7864,6 +7866,7 @@ position: -120,41
     Ethan: “Las mudanzas son un jaleo.”
     {$name}: “En cuanto lo sepa te aviso por quésapp.”
     Ethan: “¡Genial!”
+    <<Update_Plans Ethan true false>>
 <<endif>>
 Ethan: “Es hora de que me vaya y te deje trabajar, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
 Ethan: “¡Nos vemos!”
@@ -9020,6 +9023,7 @@ Me ofrece su preciada chaqueta de cuero para que no pase frío y le agradezco el
     {$name}: “No iba a decir eso, Ethan. Es que me tienen que llegar unas cajas de la mudanza y no sé cuándo llegarán.” 
     {$name}: “Pero sí que me gustaría. ¿Te puedo confirmar por quésapp?” 
     Ethan: “Claro, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Y ahora a descansar.”  
+    <<Update_Plans Ethan true false>>
 <<endif>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
