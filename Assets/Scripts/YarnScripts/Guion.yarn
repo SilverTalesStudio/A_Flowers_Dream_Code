@@ -14,8 +14,8 @@ position: -612,-485
 //<<Add_npc_likeability NPC_allan 29>>
 
 
-<<jump Cita_Ethan_sem1>>
-//<<jump Sophie_lunes_sem1>>
+//<<jump Cita_Ethan_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
