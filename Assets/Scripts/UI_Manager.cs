@@ -19,7 +19,7 @@ public class UI_Manager : MonoBehaviour
         new Planes_Finde(false, false, false, false, false, false);
         PlayerPrefs.SetString("nodeSaved", "Semana1");
         PlayerPrefs.SetString("currentMinigame", "none");
-        PlayerPrefs.SetString("PlayerName", "Lucía");
+        PlayerPrefs.SetString("PlayerName", "Alex");
         PlayerPrefs.SetString("PlayerGender", "F");
         PlayerPrefs.SetString("PlayerMainCharacter", "P");
     }
@@ -29,7 +29,7 @@ public class UI_Manager : MonoBehaviour
     {
        var _name = inputText;
         Debug.Log(_name);
-        PlayerPrefs.SetString("PlayerName", _name);
+       PlayerPrefs.SetString("PlayerName", _name);       
     }
 
     //Lee la seleccion de género del DropDown menu
