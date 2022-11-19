@@ -14,7 +14,8 @@ public class ActivateBook : MonoBehaviour
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
-            f.GetComponent<BoxCollider2D>().enabled = false;
+            if (f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -25,7 +26,8 @@ public class ActivateBook : MonoBehaviour
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
-            f.GetComponent<BoxCollider2D>().enabled = true;
+            if (f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

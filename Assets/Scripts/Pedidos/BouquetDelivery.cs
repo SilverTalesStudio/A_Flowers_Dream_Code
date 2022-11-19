@@ -11,7 +11,12 @@ public class BouquetDelivery : MonoBehaviour
     public GameObject PopUp;
     public GameObject FlowersManager;    
     public GameObject OrdersManager;
-    public int puntos = 0;
+    private int favPuntos = 0;
+    private int colorPuntos = 0;
+    private int SentimientoPuntos = 0;
+    private string favRes;
+    private string colorRes;
+    private string SentimientoRes;
 
     #endregion
 
@@ -34,60 +39,126 @@ public class BouquetDelivery : MonoBehaviour
             foreach(string f in FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet)
             {
                 // ENVIO DE VARIABLES A VN
-
+                
+                //-----------CHEQUEO--------------
                 //FLOR FAVORITA U ODIADA
                 if (GameObject.Find(f).GetComponent<DragAndDrop>().fav == OrdersManager.GetComponent<Orders_Manager>().clienteDelPedido)
                 {
-                    puntos += 2;
+                    favPuntos += 1;
+                    colorPuntos += 1;
+                    SentimientoPuntos += 1;
                 }
                 else if (GameObject.Find(f).GetComponent<DragAndDrop>().hate == OrdersManager.GetComponent<Orders_Manager>().clienteDelPedido)
                 {
-                    puntos -= 2;
-                }
-
-                //COLOR AFIN O NO
-                if (GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().colorDelPedido)
-                {
-                    puntos += 1;
-                }
-                else if (GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().noColorDelPedido1
-                        || GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().noColorDelPedido2)
-                {
-                    puntos -= 1;
-                } else
-                {
-                    puntos += 1;
-                }
-
-                if (GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().sentimientoDelPedido)
-                {
-                    puntos += 1;
-                }
-                else if (GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().noSentimientoDelPedido1
-                        || GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().noSentimientoDelPedido2)
-                {
-                    puntos -= 1;
+                    favPuntos -= 1;
+                    colorPuntos -= 1;
+                    SentimientoPuntos -= 1;
                 }
                 else
                 {
-                    puntos += 1;
+                    //COLOR AFIN O NO
+                    if (GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().colorDelPedido)
+                    {
+                        colorPuntos += 1;
+                    }
+                    else if (GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().noColorDelPedido1
+                            || GameObject.Find(f).GetComponent<DragAndDrop>().fcolor == OrdersManager.GetComponent<Orders_Manager>().noColorDelPedido2)
+                    {
+                        colorPuntos -= 1;
+                    }
+                    /*
+                    else
+                    {
+                        colorPuntos += 1;
+                    }
+                    */
+                    //SENTIMIENTO AFIN O NO
+                    if (GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().sentimientoDelPedido)
+                    {
+                        SentimientoPuntos += 1;
+                    }
+                    else if (GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().noSentimientoDelPedido1
+                            || GameObject.Find(f).GetComponent<DragAndDrop>().ffeeling == OrdersManager.GetComponent<Orders_Manager>().noSentimientoDelPedido2)
+                    {
+                        SentimientoPuntos -= 1;
+                    }
+                    /*
+                    else
+                    {
+                        SentimientoPuntos += 1;
+                    }
+                    */
                 }
+
+                
+            }
+            //--------------------------------
+
+            //-----------RESULTADOS--------------
+
+            //FLOR FAV
+            if (favPuntos == -1)
+            {
+                favRes = "mal";                
+            }
+            else if (favPuntos == 0)
+            {
+                favRes = "regular";
+            }
+            else if (favPuntos == 1)
+            {
+                favRes = "bien";
             }
 
-            //Enviar puntos a VN
-            if (puntos >= -12 && puntos < -4)
+            //COLOR
+            if (colorPuntos >= -5 && colorPuntos <= -2)
             {
-                PlayerPrefs.SetString("resultadoMinijuego", "mal");
+                colorRes = "mal";               
             }
-            else if (puntos >= -4 && puntos < 4)
+            else if (colorPuntos >= -1 && colorPuntos <= 1)
             {
+                colorRes = "regular";
+            }
+            else if (colorPuntos >= 2 && colorPuntos <= 5)
+            {
+                colorRes = "bien";
+            }
+
+            //SENTIMIENTO
+            if (SentimientoPuntos >= -5 && SentimientoPuntos <= -2)
+            {
+                SentimientoRes = "mal";
+            }
+            else if (SentimientoPuntos >= -1 && SentimientoPuntos <= 1)
+            {
+                SentimientoRes = "regular";
+            }
+            else if (SentimientoPuntos >= 2 && SentimientoPuntos <= 5)
+            {
+                SentimientoRes = "bien";
+            }
+            //------------------------------------
+
+            Debug.Log(favRes);
+            Debug.Log(colorRes);
+            Debug.Log(SentimientoRes);
+
+            //RESULTADO FINAL
+            if (favRes == colorRes || favRes == SentimientoRes)
+            {
+                Debug.Log(favRes);
+                PlayerPrefs.SetString("resultadoMinijuego", favRes);
+            }
+            else if (colorRes == SentimientoRes)
+            {
+                Debug.Log(colorRes);
+                PlayerPrefs.SetString("resultadoMinijuego", colorRes);
+            }
+            else
+            {
+                Debug.Log("NEUTRO");
                 PlayerPrefs.SetString("resultadoMinijuego", "regular");
             }
-            else if (puntos >= 4 && puntos < 12)
-            {
-                PlayerPrefs.SetString("resultadoMinijuego", "bien");
-            }
-            //Debug.Log(puntos);
             OrdersManager.GetComponent<SceneChanger>().changeScene("VisualNovel");
         }
     }
@@ -99,7 +170,8 @@ public class BouquetDelivery : MonoBehaviour
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
-            f.GetComponent<BoxCollider2D>().enabled = false;
+            if(f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -110,7 +182,8 @@ public class BouquetDelivery : MonoBehaviour
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
-            f.GetComponent<BoxCollider2D>().enabled = true;
+            if (f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 

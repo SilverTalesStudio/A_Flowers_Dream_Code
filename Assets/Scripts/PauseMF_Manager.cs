@@ -11,10 +11,24 @@ public class PauseMF_Manager : MonoBehaviour
     public void ActivatePause()
     {
         pause.SetActive(true);
+        Time.timeScale = 0;
+
+        foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
+        {
+            if (f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
     public void DeactivatePause()
     {
         pause.SetActive(false);
+        Time.timeScale = 1;
+
+        foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
+        {
+            if (f.name != "FlowerBase")
+                f.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
     public void GuardarEnMF()
     {
