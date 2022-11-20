@@ -17,7 +17,8 @@ position: -612,-485
 //<<Update_Plans Ethan true false>>
 
 //<<jump cita_Sophie_sem3>>
-<<jump Sophie_lunes_sem1>>
+<<jump Cita_Sophie_sem2>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -6922,6 +6923,7 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
     Sophie: “Tienes razón, es una idiota. Pasemos de ella.”
     Sonrío al ver que entra en razón.
     {$name}: “Te sigo”
+    <<Hide Fan>>
 ->Quedarse atrás
     No soy capaz de reaccionar así que me quedo parada como liebre frente a la luz de un coche. Pero Sophie es todo lo contrario. Se gira completamente y da un paso a fuera.
     Sophie: “¡Acércate y atrévete a decírmelo a la cara!”
@@ -6932,6 +6934,7 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
     {$name}: “No pienses en ella, que no nos arruine la noche por una tontería”
     <<Act Sophie sprt_sophie_neutral>>
     Sophie: “Ya... Venga, vamos a entrar ya”
+    <<Hide Fan>>
 ->Insultar al fan
     <<Add_npc_likeability NPC_sophie 3>>
     <<if get_player_mainCharacter() == "P">>
@@ -6950,6 +6953,7 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
     <<endif>>
     <<Hide Fan>>
     <<Move Sophie right bottom015 1.0>>
+    <<wait 1.0>>
     Sophie se gira para verme y su cara refleja sorpresa total. Aprovecho la conclusión para cogerle del brazo y tirar de ella hacia dentro. La puerta se cierra y amortigua los ruidos del exterior.
     {$name}: “Era para que no perdiéramos más tiempo con ella”
     <<Act Sophie sprt_sophie_happy>>
@@ -6963,9 +6967,8 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
 <<Fade black 0.0 1.0 2.0>>
 <<wait 1.0>>
 <<StopAudioAll>>
-<<Hide Fan>>
 <<Move Sophie right bottom015 0.1>>
-<<wait 1.0>>>>
+<<wait 1.0>>
 <<Scene bg_concierto>>
 <<PlayAudio muchedumbre_ambiente_calle  0.2 loop>>
 <<if get_player_mainCharacter() == "P">>
@@ -7044,7 +7047,9 @@ Noto sus manos cogerme del brazo y con su ayuda logro levantarme. Una vez de pie
 <<Act Sophie sprt_sophie_angry>>
 Sophie: “¡¿Sois gilipollas o qué?!”
 <<Move Hombre offright bottom015 1.0>>
+<<wait 1.0>>
 <<Move Sophie right bottom015 2.0>>
+<<wait 2.0>>
 Empuja al que me había tirado a mí y se cae encima del grupo, que le sujetan entre todos. 
 Me duelen las rodillas, pero las manos aún más. La tela de la prenda me ha protegido las piernas, pero las manos las tenía descubiertas.
 Giro las manos para dejar las palmas hacia arriba y veo sangre y cristales.
@@ -7058,7 +7063,7 @@ Sophie: “¿Estás bien?”
 Le muestro las manos a Sophie y la miro con sufrimiento. Instantáneamente me vuelve a agarrar del brazo, esta vez para sacarme de la pista. 
 <<Fade black 0.0 1.0 1.0>>
 <<wait 1.0>>
-//<<bg_camerino>>------------FALTA ESCENARIO
+<<Scene Camerino_Final_Con_Ruido>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 1.0>>
 No sé muy bien a donde vamos, pero me doy cuenta de que es una zona no abierta al público.
@@ -7066,7 +7071,7 @@ Entramos una sala que parece un vestidor. Me sienta en una silla.
 <<Act Sophie sprt_sophie_neutral>>
 Sophie: “Espérame un minuto”
 <<Move Sophie offright bottom015 1.0>>
-<<wait 1.0>>
+<<wait 2.0>>
 <<Hide Sophie>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -7090,12 +7095,12 @@ Hago lo que me ordena.
 Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida .
 Pese a como se muestra a menudo, dura e impasible, ahora está siendo ultra cuidadosa para no hacerme daño en el proceso. Verla tan cerca y tan concentrada en ayudarme...
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_shy>>
+    <<Act {$name} sprt_she_shy left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
    //<<Act {$name} sprt_he_shy>>
 <<endif>>
 Es imposible no sentir nada. Me sonrojo, pero ella no lo ve. Sólo mira mis manos y el kit de primeros auxilios.
-<<Act Sophie sprt_sophie_sad>>
+<<Act Sophie sprt_sophie_sad right bottom015 white>>
 Sophie: “Perdona”
 {$name}: “¿Eh?”
 Sophie: “Si hubiera estado más atenta me habría fijado en la panda de tíos esa y les hubiera dicho algo antes de que se colocaran”
@@ -7739,7 +7744,7 @@ Ethan: “Hasta luego, {$name}.”
 title: Lunes_sem3
 position: -143,644
 ---
-<<StopAllAudio>>
+<<StopAudioAll>>
 <<HideAll>>
 <<Scene bg_calle>>
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
