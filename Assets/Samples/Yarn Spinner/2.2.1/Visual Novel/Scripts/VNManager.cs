@@ -142,7 +142,7 @@ public class VNManager : DialogueViewBase
 		public void TheEnd()
 		{
 
-			SceneChanger.changeScene("Menu");
+			SceneChanger.changeScene("TheEnd");
 		}
 		public void PlansToZero()
 		{

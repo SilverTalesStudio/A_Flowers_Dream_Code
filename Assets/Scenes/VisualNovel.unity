@@ -1246,7 +1246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.size
-      value: 77
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadAudio.Array.data[0]
@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: loadSprites.Array.data[76]
       value: 
       objectReference: {fileID: 21300000, guid: 0ae6f719b94526246ae218f550318586, type: 3}
+    - target: {fileID: 6167349947878513351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[77]
+      value: 
+      objectReference: {fileID: 21300000, guid: 23ead0bb32f63f442bb961ab7a303f46, type: 3}
     - target: {fileID: 6798407037274427283, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: characterNameText
       value: 
