@@ -10,11 +10,13 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 //<<Add_npc_likeability NPC_ethan 29>>
-//<<Add_npc_likeability NPC_sophie 29>>
+//<<Add_npc_likeability NPC_sophie 39>>
 //<<Add_npc_likeability NPC_allan 29>>
+//<<Update_Plans Allan true false>>
+//<<Update_Plans Sophie true false>>
+//<<Update_Plans Ethan true false>>
 
-
-//<<jump Semana2>>
+//<<jump cita_Sophie_sem3>>
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -11199,18 +11201,36 @@ position: -143,644
 <<endif>>
 
 Después del viernes que tuve, el fin de semana comienza tranquilo. Bueno, todo lo que puede ser tranquilo un día que empieza teniendo que contarle a Leah lo que me pasó con Jacob. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   //<<Act {$name} sprt_he_sad>>
+<<endif>>
 Casi tuve que llamar a sus padres para que la detuvieran antes de que se plantase aquí en mi casa, dejando su trabajo a medias.
 Presiento que Jacob no va a salir bien parado de la ira de Leah. Yo no estoy con ella para pararla, pero no me da pena. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 Después de todo lo que hizo... Me alegra saber que tengo a Leah siempre ahí para cubrirme las espaldas sea cual sea la situación y sin importar cual sea la distancia. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Tras la larga conversación con Leah, me he tumbado en el sofá para ver una serie para pasar el rato pensando en qué hacer de comer.
 Sin embargo, siento como si me hubiera olvidado de algo importante, algo que ocurría hoy.
 Los paquetes restantes de la mudanza no pueden ser, porque ya me avisaron de que me lo traerían por la tarde. ¿Qué se me habrá olvidado?
-//Notificación de movil
+<<PlayAudio noti_movil 1.0>>
+
 Suena una notificación en mi teléfono y lo cojo sin darle mucha importancia. Hasta que veo varios mensajes de quéssap y me fijo en el remitente.
 <<citaFin null>>
 <<if has_Ethan_Plan() ==true or has_Sophie_Plan() ==true or has_Allan_Plan() ==true>>
+    <<StopAudioAll>>
     <<jump con_plan_sem3>>
 <<else>>
+    <<StopAudioAll>>
     <<jump sin_plan_sem3>>
 <<endif>>
 
@@ -11225,11 +11245,12 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_casa_placeholder>>
-
+<<PlayAudio Musica_casa 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_happy left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
+    //<<Act {$name} sprt_he_happy left bottom015 white>>
 <<endif>>
 
 Es Leah, dice que viene esta tarde a casa. Parece que no he conseguido disuadirla y al final se queda todo el finde. 
@@ -11238,7 +11259,18 @@ Pero cuando se le mete algo en la cabeza es imposible hacerle cambiar de idea, e
 Aceptando su plan, le respondo dando el visto bueno a que se venga y comienzo a pensar en cómo se desarrollará la tarde. 
 En realidad, aprecio un montón que venga. Todavía tengo mal cuerpo de ayer y sé que me va a hacer sentir mejor.
 Ay, ahora tengo ganas de que Leah llegué ya, y eso que fui yo la que le dije que no.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   //<<Act {$name} sprt_he_sad>>
+<<endif>>
 Lo malo es que me va a tocar recoger un poco la casa para que no esté todo manga por hombro, pero bueno, así no procrastino tanto.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    //<<Act {$name} sprt_he_happy left bottom015 white>>
+<<endif>>
 Me levanto del sofá y me pongo manos a la obra. Seguro que con Leah me lo voy a pasar genial estos días.
 
 
@@ -11253,7 +11285,7 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_casa_placeholder>>
-
+<<PlayAudio Musica_casa 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11262,11 +11294,23 @@ position: -143,644
 
 {$name}: “¡Es verdad! ¡Se me había olvidado completamente!”
 <<Act Limón sprt_limon right center white>>
+<<PlayAudio maullo_gato 1.0>>
 Limón: “¡Miauu!”
 Me sorprende desde el respaldo del sofá, debe haber subido saltando desde atrás.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “No, Limón, no me refería a ti”
 {$name}: “Cómo me voy a olvidar de ti si todo el rato me pides mimos”
+<<PlayAudio maullo_gato 1.0>>
 Limón: “Miau”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “¡Ah!”
 El gato salta del respaldo a mi regazo haciéndome daño al caer sobre mí, pero por supuesto, eso a él le da igual. 
 Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de mí, hecho una bola.
@@ -11277,8 +11321,10 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     {$name}: “Agh, no sé qué hacer. No lo pensé mucho al decirle a todos que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete”
     {$name}: “Y sólo puedo quedar con uno de ellos...”
     {$name}: “¿Tú qué harías, Limón?”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “¿Miau?”
     {$name}: “No sé para qué te pregunto, si lo máximo que has salido es al balcón”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “Miauu...”
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11286,33 +11332,53 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     ->Quedar con Sophie
         <<citaFin Sophie>>
         <<Add_npc_likeability NPC_sophie 30>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            //<<Act {$name} sprt_he_happy>>
+        <<endif>>
         Decidido, voy a quedar con Sophie, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
         Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
         Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
         Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
         <<HideAll>>
+        <<StopAudioAll>>
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<jump cita_Sophie_sem3>>
     ->Quedar con Ethan
         <<citaFin Ethan>>
         <<Add_npc_likeability NPC_ethan 30>>
+        <<Add_npc_likeability NPC_sophie 30>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            //<<Act {$name} sprt_he_happy>>
+        <<endif>>
         Decidido, voy a quedar con Ethan, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
         Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
         Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
         Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.     
         <<HideAll>>
+        <<StopAudioAll>>
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<jump cita_Ethan_sem3>>
     ->Quedar con Allan 
         <<citaFin Allan>>
         <<Add_npc_likeability NPC_allan 30>>
+        <<Add_npc_likeability NPC_sophie 30>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            //<<Act {$name} sprt_he_happy>>
+        <<endif>>
         Decidido, voy a quedar con Allan, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
         Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
         Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
         Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
         <<HideAll>>
+        <<StopAudioAll>>
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<jump cita_Allan_sem3>>
@@ -11321,8 +11387,10 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     {$name}: “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete”
     {$name}: “Y sólo puedo quedar con uno de ellos...”
     {$name}: “¿Tú qué harías Limón?”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “¿Miau?”
     {$name}: “No sé para qué te pregunto si lo máximo que has salido es al balcón”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “Miauu...”
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11334,11 +11402,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<citaFin Allan>>
         <<Add_npc_likeability NPC_allan 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     Decidido, voy a quedar con {$nombreCita}, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
     Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
     Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<if get_date() == "Sophie">>
@@ -11351,8 +11425,10 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     {$name}: “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete”
     {$name}: “Y sólo puedo quedar con uno de ellos...”
     {$name}: “¿Tú qué harías Limón?”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “¿Miau?”
     {$name}: “No sé para qué te pregunto si lo máximo que has salido es al balcón”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “Miauu...”
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11364,11 +11440,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<citaFin Allan>>
         <<Add_npc_likeability NPC_allan 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     Decidido, voy a quedar con {$nombreCita}, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
     Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
     Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<if get_date() == "Ethan">>
@@ -11383,8 +11465,10 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     {$name}: “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete”
     {$name}: “Y sólo puedo quedar con uno de ellos...”
     {$name}: “¿Tú qué harías Limón?”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “¿Miau?”
     {$name}: “No sé para qué te pregunto si lo máximo que has salido es al balcón”
+    <<PlayAudio maullo_gato 1.0>>
     Limón: “Miauu...”
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11396,11 +11480,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<citaFin Sophie>>
         <<Add_npc_likeability NPC_sophie 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     Decidido, voy a quedar con {$nombreCita}, le voy a escribir ya y voy a comentarle a los demás que no puedo ir.
     Me da pena, pero no puedo multiplicarme, y creo que he tomado la decisión correcta. 
     Es la persona que más ganas tengo de ver, y realmente creo que podríamos llegar a tener una conexión más real. 
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<if get_date() == "Ethan">>
@@ -11412,11 +11502,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<citaFin Sophie>>
     <<Add_npc_likeability NPC_sophie 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$nombreCita} quería quedar mañana, y ahora que estoy libre de tener que recibir el paquete, ya que no llega mañana, no veo motivo para rechazar el plan.
     Le respondo que yo también quiero ir y acordamos una hora y un lugar al que reunirnos.
     En realidad, ahora que soy consciente de esta cita tengo muchísimas ganas de que llegue. Creo que podemos llegar a tener una conexión más real.
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Sophie_sem3>>
@@ -11424,11 +11520,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<citaFin Allan>>
     <<Add_npc_likeability NPC_allan 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$nombreCita} quería quedar mañana, y ahora que estoy libre de tener que recibir el paquete, ya que no llega mañana, no veo motivo para rechazar el plan.
     Le respondo que yo también quiero ir y acordamos una hora y un lugar al que reunirnos.
     En realidad, ahora que soy consciente de esta cita tengo muchísimas ganas de que llegue. Creo que podemos llegar a tener una conexión más real.
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Allan_sem3>>
@@ -11436,11 +11538,17 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<citaFin Ethan>>
     <<Add_npc_likeability NPC_ethan 30>>
     <<set $nombreCita to get_date()>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$nombreCita} quería quedar mañana, y ahora que estoy libre de tener que recibir el paquete, ya que no llega mañana, no veo motivo para rechazar el plan.
     Le respondo que yo también quiero ir y acordamos una hora y un lugar al que reunirnos.
     En realidad, ahora que soy consciente de esta cita tengo muchísimas ganas de que llegue. Creo que podemos llegar a tener una conexión más real.
     Y quién sabe, quizás algo más. Sólo de pensarlo me sonrojo. Estoy deseando que llegue mañana.
     <<HideAll>>
+    <<StopAudioAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Ethan_sem3>>
@@ -11456,7 +11564,7 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_calle>>
-
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11480,20 +11588,51 @@ Comenzamos a andar uniéndonos al resto de personas que también van al festival
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
 
 <<if ($AfinidadSophie >= $AfinidadEthan) && ($AfinidadSophie >= $AfinidadAllan)>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Lo ocurrido el viernes ha estado ocupando mi mente constantemente, dándole vueltas de lo que podría a ver pasado si me hubiera sucedido estando [select value={$gender} M="solo" F="sola" NB="sole"/].
     {$name}: “Cada vez que lo recuerdo siento un escalofrío... No me quiero imaginar lo que habría pasado si hubiera estado [select value={$gender} M="solo" F="sola" NB="sole"/]."
     {$name}: “Por eso agradezco muchísimo tu ayuda anteayer”
+    <<Act Sophie sprt_sophie_happy>>
     Sophie: “Y lo volvería hacer, ya te lo dije ¿recuerdas?”
     Sophie: “Así que no tienes que volver a preocuparte por él, que, si necesitas ayuda de nuevo, ahí estaré”
+    <<Act Sophie sprt_sophie_neutral>>
     La fuerza y determinación con la que habla me proporciona la seguridad que necesito ahora. Saber que estoy [select value={$gender} M="protegido" F="protegida" NB="protegide"/] pase lo que pase, me reconforta. 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Muchas gracias por todo Sophie, de verdad”
     Le muestro mi sonrisa más sincera, quiero que mis palabras la lleguen. Y eso hace porque asiente feliz de ver mi reacción.
 <<endif>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “Por cierto, ¿qué tal tu hermana?”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Bien, siguen atentos de ella por la recuperación de la operación, pero ya puede volver a salir al patio a dar paseos acompañada.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Me alegro muchísimo de que saliera bien.”
 Sophie: “Sí, yo también. Y le gustaron mucho las flores, funcionó como tú decías. Saber que tenía un regalo mío acompañándola le reconfortó mucho.”
 No puedo hacer otra cosa más que sonreír y asentir. Me cuesta hablar bien cuando veo a Sophie hablar de su hermana. En ningún momento desprende tanta felicidad que cuando cuenta cosas sobre ella.
+<<Act Sophie sprt_sophie_neutral>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_festival>>
 Una vez dentro del festival se pueden ver todo tipo de puestos. 
 Hay puestos de comida de época, otros centrados en la cerveza y el hidromiel, algunos de especias, pero los que más me interesan son los de los juegos.
 Hay muchos, pero no he traído tanto dinero para jugarlos todos. Tengo que elegir uno.
@@ -11510,21 +11649,44 @@ Sophie: “Vale, vale, no voy a ser yo quien te niegue una derrota.”
 {$name}: “Eso ya lo veremos. Antes déjame probar una a mí [select value={$gender} M="solo" F="sola" NB="sole"/].”
 Sophie: “Adelante”
 Compro una ronda de tiradas en el puesto y la verdad es que no puedo empezar peor. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   //<<Act {$name} sprt_he_sad>>
+<<endif>>
 No consigo colocar ninguna herradura en el palo y solo consigo rascarle un punto a Sophie por dejarla más cerca y ya. Está siendo una absoluta paliza.
 Llevamos ya la mitad de la ronda y no tiene buena pinta. Me estoy frustrando tanto que no estoy ni disfrutando el juego, pensaba que iba a ser mucho más sencillo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Me coloco para volver a lanzar, pero esta vez noto la presencia de Sophie detrás de mí y siento cómo su mano roza mi brazo hasta llegar a mi mano y la agarra. Su otra mano la posa en mi costado.
-///////////////////////////////////////////////////////
-///////////////////PROTAGONISTA SONROJADA//////////////
-///////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 Sophie: “Estás mal [select value={$gender} M="colocado" F="colocada" NB="colocade"/] y hay mejores formas de lanzar, déjame que te ayude.”
 Noto su respiración en mi oreja. Está muy cerca, es imposible que no me sonroje. A pesar de lo competitiva que es me está ayudando de manera franca, no es por pena, de verdad quiere que aprenda para que lo disfrute.
 Con sus manos sobre mí me ajusta a la posición correcta y yo me dejo llevar, confío ciegamente en las indicaciones de Sophie. 
 La verdad es que no puedo estar muy pendiente de lo que dice cuando lo único que puedo pensar es en el contacto que tiene conmigo, en el calor de sus manos, en su voz, que es tan cercana que es casi un susurro.
 Sophie: “Ahora en esta postura si haces así el lanzamiento, va a ser mucho mejor. ¿Lo pillas?”
 {$name}: “Eh sí, sí”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Vuelvo a concentrarme y esta vez lo hago mucho mejor que antes, Sophie tenía razón. Sonríe al ver que sus consejos han funcionado.
 Es imposible salvar esta ronda ya, pero tengo confianza en mí [select value={$gender} M="mismo" F="misma" NB="misme"/] para hacerlo mejor en la siguiente. Compro otra y brota mi competitividad interior.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Prepárate, Sophie. Ahora que sé jugar no te lo voy a poner tan fácil, esta es la que cuenta”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Piensas ganar a tu maestra eh, hagámoslo más divertido ya que confías tanto en tu victoria. ¿Qué tal si apostamos algo?”
 {$name}: “¿Qué tenías pensado?”
 Sophie: “Algo simple. Quien gane le puede pedir cualquier cosa a la otra persona, por supuesto algo realista.”
@@ -11535,11 +11697,22 @@ Le extiendo la mano y ella la agarra con fuerza sellando así la apuesta.
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Suspiro [select value={$gender} M="decepcionado" F="decepcionada" NB="decepcionade"/] conmigo [select value={$gender} M="mismo" F="misma" NB="misme"/]. Volví a perder. Es cierto que esta vez se me ha dado mucho mejor, pero aun así no ha sido suficiente.
 Sophie: “¡Sí! Gané”
 Sophie: “Te dije que no ibas a ganar a tu maestra”
 {$name}: “Ya, ya, tampoco hace falta que te recochinees tanto”
 Sophie: “Sí que te ha afectado perder, ¿tantas ganas tenías de ganar esa apuesta?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
 Noto mucho interés por parte de Sophie en saber qué hubiera pedido si hubiera ganado. ¿Es posible que me pueda aprovechar de esa curiosidad para salirme con la mía? Sonrío pícara.
 {$name}: “Puede ser... Pero bueno, da igual, nunca sabrás qué iba a pedirte.”
 Sophie: “¿Tan interesante era?”
