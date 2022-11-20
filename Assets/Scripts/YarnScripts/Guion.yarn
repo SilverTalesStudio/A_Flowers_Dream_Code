@@ -9,15 +9,8 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-//<<Add_npc_likeability NPC_ethan 29>>
-//<<Add_npc_likeability NPC_sophie 39>>
-//<<Add_npc_likeability NPC_allan 29>>
-//<<Update_Plans Allan true false>>
-//<<Update_Plans Sophie true false>>
-//<<Update_Plans Ethan true false>>
 
-<<jump Final_bueno_Allan>>
-//<<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
