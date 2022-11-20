@@ -17,8 +17,8 @@ position: -612,-485
 //<<Update_Plans Ethan true false>>
 
 
-<<jump cita_Ethan_sem3>>
-//<<jump Sophie_lunes_sem1>>
+//<<jump cita_Ethan_sem3>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
