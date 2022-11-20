@@ -13043,6 +13043,7 @@ Si esta es la imagen de mi futuro, espero que nunca cambie.
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<the_end>>
 //JUMP
 ===
 
