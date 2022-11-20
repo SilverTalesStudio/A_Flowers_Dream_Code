@@ -14,8 +14,8 @@ position: -612,-485
 //<<Add_npc_likeability NPC_allan 29>>
 
 
-//<<jump Cita_Ethan_sem1>>
-<<jump Sophie_lunes_sem1>>
+<<jump Semana2>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -3618,6 +3618,8 @@ Suspiro [select value={$gender} M="aliviado" F="aliviada" NB="aliviade"/]
 {$name}: “Así que al final era eso”
 Sagrario:“Perdona si te ha incomodado el comentario”
 {$name}: “No, no, simplemente me sorprendió nada más”
+<<StopAudioAll>>
+<<PlayAudio musica_momento_sinceridad 0.4 loop>>
 Sagrario: “Es que no pude evitar fijarme... Me diste mucha envidia la verdad”
 {$name}: “¿Envidia?”
 Sagrario: “Sí, [select value={$gender} M="niño" F="niña" NB="niñe"/]. Tener una cita-”
@@ -3697,10 +3699,10 @@ position: 976,205
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Sagrario_martes_sem2>>
 <<HideAll>>
-<<StopAudioAll>>
+
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-
+<<StopAudioAll>>
 //Funcion de salto a minijuego
 <<Go_to_minigame Sagrario>>
 ===
@@ -3709,6 +3711,7 @@ title: Salida_minijuego_Sagrario_martes_sem2
 position: 978,287
 ---
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $resultado to get_minigame_result()>>
 
 //Saltos a las diferentes ramas
@@ -3782,9 +3785,9 @@ Paga el ramo y se acerca a la puerta de salida. Le sonrío de vuelta.
 {$name}: “¡Que tenga un buen día!”
 <<endif>>
 
-<<Move Sagrario offright bottom015 1.0>>
-<<wait 1.5>>
-<<Hide Sagrario>>
+//<<Move Sagrario offright bottom015 1.0>>
+//<<wait 1.5>>
+//<<Hide Sagrario>>
 <<jump Fin_ramas_minijuego_Sagrario_martes_sem2>>
 ===
 
@@ -3817,9 +3820,9 @@ Sagrario: “Esa es la actitud [select value={$gender} M="niño" F="niña" NB="n
 Sagrario: “Que te sea leve el resto de la jornada”
 {$name}: “¡Muchas gracias! Tenga usted un buen día”
 
-<<Move Sagrario offright bottom015 1.0>>
-<<wait 1.5>>
-<<Hide Sagrario>>
+//<<Move Sagrario offright bottom015 1.0>>
+//<<wait 1.5>>
+//<<Hide Sagrario>>
 <<jump Fin_ramas_minijuego_Sagrario_martes_sem2>>
 ===
 
@@ -3854,9 +3857,9 @@ Sagrario: “Pero deberías prestar atención siempre mientras estés trabajando
 Sagrario: “Te dejo ya en paz [select value={$gender} M="chiquillo" F="chiquilla" NB="chiquille"/]. Adiós”
 {$name}: “Adiós. Pase un buen día”
 Le despido con una sonrisa cordial. Al menos creo que he conseguido salvarlo al final. Confío en que haya posibilidades de que siga volviendo en el futuro.
-<<Move Sagrario offright bottom015 1.0>>
-<<wait 1.5>>
-<<Hide Sagrario>>
+//<<Move Sagrario offright bottom015 1.0>>
+//<<wait 1.5>>
+//<<Hide Sagrario>>
 <<jump Fin_ramas_minijuego_Sagrario_martes_sem2>>
 ===
 
@@ -3876,7 +3879,7 @@ position: -368,-504
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene bg_floristeria>>
 
-//Sonido campanas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 
 Mientras me despido de Sagrario, el leve tintineo de las campanas inunda la floristería. 
 Todavía con una sonrisa en la cara, miro ligeramente por encima de su hombro para ver al nuevo cliente.
@@ -3893,6 +3896,8 @@ De verdad, parece que voy a tener que plantearme seriamente si venderle la flori
 Ya parece más suya que mía. 
 
 <<set $PietroPinta to get_pintarPietro()>>
+
+
 <<if $PietroPinta == "yes">>
 Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
 Puedo ver cómo, al igual que la última vez que vino a la tienda, este abre su taburete y se sienta delante de la amapola del Himalaya para continuar con su dibujo.
@@ -4012,7 +4017,7 @@ Sagrario: “Anda no te enfades {$name}. Mucho ánimo, lo vas a necesitar.”
 Todavía [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/], asiento con la cabeza y veo por el rabillo del ojo como Sagrario finalmente abandona la floristería.
 <<endif>>
 
-//Campanas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 La puerta se cierra y veo como Sagrario huele el ramo que me acaba de comprar mientras avanza por la calle. Sonrío.
 Estiro mis brazos agarrotados de realizar tantos pedidos tan pronto en la mañana y cierro sin darme cuenta los ojos por el alivio.
 El suave sonido del lápiz sobre papel hace que mi mente se relaje todavía más. Y encima el sol de hora punta entra por la ventana y hace que el ambiente se sienta cálido.
@@ -4128,8 +4133,10 @@ title: Salida_minijuego_Pietro_martes_sem2
 position: -118,-144
 ---
 <<HideAll>>
+
 <<set $resultado to get_minigame_result()>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
@@ -4272,64 +4279,95 @@ position: -120,41
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
 Entrelazo los dedos y empujo las manos hacia delante para estirar los brazos y la espalda. A pesar de que me haya acostumbrado ya la rutina de trabajo no quita que siga siendo dura.
 Bajo la mirada y giro la muñeca para ver la hora. Genial, queda poco para cerrar. En cuanto llegue a casa voy a tumbarme en el sofá y veré los capítulos que me faltan de la Casa del Basilisco.
 Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el táper con tortilla sin terminar. Pues ya está, ya tengo cena. Mejor, así cuando me apetezca solo tengo que calentarla y darle de comer a Limón. 
-
 <<set $cita to get_date()>>
+
 <<if $cita=="null">>
     Tras un rato de esperar a que llegue un último cliente, nadie hace acto de presencia. El reloj marca el fin de la jornada y me pongo manos a la obra a recoger el local.
-    <<Scene bg_floristeria>>
+    <<Fade black 0.0 1.0 2.0>>
+    <<wait 2.0>>
     <<Scene bg_calle_noche_placeholder>>
+    <<Fade black 1.0 0.0 2.0>>
+    <<wait 2.0>>
     Termino en poco rato, echo el cierre y me pongo en marcha, vuelta a casa. En el trayecto voy repasando lo ocurrido en los capítulos anteriores de la serie. ¡Qué ganas de saber lo que ocurre!
 <<elseif $cita=="Allan">> 
+    <<PlayAudio timbre_puerta_floristeria 0.5>>
     Mientras planeo mi tarde-noche suenan las campanitas de la entrada. ¿Quién viene tan tarde a una floristería? ¿Tenía que venir justo ahora cuando estoy a punto de cerrar? 
     Suspiro con resignación y me giro para atender al nuevo cliente.
     En cuanto veo quién es mis ojos se iluminan y una energía renovada inunda mi cuerpo. Me levanto de la silla corriendo, apoyo mis manos en el mostrador y echo el cuerpo hacia delante para verle mejor. Alzo una mano y le saludo alegremente.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy left bottom015 white>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy left bottom015 white>>
+    <<endif>>
     <<Act Allan sprt_allan_neutral right bottom015 white>>
     {$name}: “¡Hola Allan!”
     Allan: “¡Hola {$name}!”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Allan se acerca a mí con una sonrisa radiante. Transmite felicidad pura.
     ->“¿Qué haces tú por aquí a estas horas?”
         <<Add_npc_likeability NPC_allan 1>>
         {$name}: “Pensaba que solo podías pasarte por las mañanas a primera hora”
         Allan: “Y así es de normal, pero hoy he conseguido salir un poco antes y he pensado en pasarme”
-        ////////////////////////////////////////////////////////////////////
-        ////////METER SPRITE DE ALLAN RUBORIZADO///////////////////////////
-        ///////////////////////////////////////////////////////////////////
+        <<Act Allan sprt_allan_shy_lookingforward>>
         Se ruboriza con una sonrisa nerviosa.
     ->“Te gusta venir aquí con la hora pillada ¿eh?”
         <<Add_npc_likeability NPC_allan -2>>
+        <<Act Allan sprt_allan_shy_frustrated>>
         Allan: “Bueno, ya te comenté que odio llegar tarde a los sitios. Pero es que hoy no podía pasarme antes, justo acabo de terminar mi turno”
         Su rostro se entristece al ver que no me acordé de eso. Qué cabeza tengo, si hace sólo dos días desde que me lo contó.
+    <<Act Allan sprt_allan_neutral>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_shy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_shy>>
+    <<endif>>
     {$name}: “Me alegro de que hayas venido, la verdad es que también me apetecía verte, pero no sabía a qué hora acababas. Y pensé que tal vez preguntarte directamente era demasiado intrusivo”
     Me sonrojo tras confesarle lo que llevo pensando todo el día.
+    <<Act Allan sprt_allan_shy_lookingdown>>
     Allan: “Yo pensé lo mismo, pero el lunes yendo a la tienda me fijé de que tenías el horario en el escaparate. A diferencia del mío, el tuyo es fijo y pensé en venir por estas horas porque supuse que ya no tendrías ningún cliente”
     Allan: “No quería molestar mientras estuvieras trabajando”
     ¿Puede dejar Allan de ser un amor de persona? No creo que sea posible para él. Siempre está atento a las pequeñas cosas y se esfuerza en hacer que los demás estén siempre cómodos.
     ->“Sí, eso hubiera sido problemático”
         <<Add_npc_likeability NPC_allan -1>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
+        <<Act Allan sprt_allan_shy_frustrated>>
         Allan: “Ya...”
         Se lleva la mano a la nuca y mira a otro lado incómodo.
     ->“Es muy considerado por tu parte”
-        <<Add_npc_likeability NPC_allan +2>>
+        <<Add_npc_likeability NPC_allan 2>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         Mis palabras le reconfortan y deja de estar tan nervioso. Baja su mano, ahora cuelga tranquilamente a la par que la otra.
+        <<Act Allan sprt_allan_happy>>
         Allan: “Es lo mínimo”
         Asiento y le sonrío cálidamente para reforzar mi mensaje. No todo el mundo se comporta así, y nunca está de más tener en cuenta las buenas acciones de las personas.
     ->“Tú nunca serías una molestia”
-        <<Add_npc_likeability NPC_allan +3>>
-        //////////////////////////////////////////////////////////////////////////////
-        /////////////////////////METER SPRITE DE ALLAN MUY ROJO///////////////////////
-        /////////////////////////////////////////////////////////////////////////////
+        <<Add_npc_likeability NPC_allan 3>>
+        <<Act Allan sprt_allan_shy_lookingdown>>
         Se queda perplejo, sus ojos se agrandan y sus mofletes se tornan rojos como un tomate.  
         Allan: “Eh... Gra-Gracias"
         No se esperaba un cumplido tan sincero, su cerebro ha cortocircuitado. Me río internamente con su reacción. Es imposible no quererle así.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Entonces no te importa que hablemos mientras recojo y cierro, ¿no?”
+    <<Act Allan sprt_allan_neutral>>
     Allan: “Qué va, te puedo ayudar incluso, si quieres”
     {$name}: “No, gracias, que tú ya llevas todo el día trabajando y ya acabaste, yo en cambio aún sigo. Además, ya estoy acostumbrada”
     Antes de que haga nada, le saco una silla para que se siente y me remango para empezar a recoger. Con mi iniciativa acepta que no a poder hacer nada así que se sienta.
@@ -4361,12 +4399,21 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     Allan: “¡Ay, tienes razón!”
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
+    <<StopAudioAll>>
+    <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
     <<Fade black 1.0 0.0 2.0>>
+    <<wait 2.0>>
     <<Scene bg_calle_noche_placeholder>>
     Salimos de la floristería, echo la llave y bajo el cierro. La tienda ya está oficialmente cerrada por hoy.
     {$name}: “Me lo he pasado muy bien hablando hoy, espero no haberte retrasado mucho en volver a casa”
     A pesar de estar feliz frunzo el ceño, [select value={$gender} M="preocupado" F="preocupada" NB="preocupade"/]. Quién sabe a cuánto está de su casa, por quedarse aquí es posible que llegue tardísimo y ya es de noche.
+    <<Act Allan sprt_allan_flirty>>
     Allan: “Yo también lo pasé bien, y no te preocupes por eso. Vivo cerca”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Gesticula con sus manos para calmar mis preocupaciones. Mi preocupación desaparece y en mi cara aparece una sonrisa. La suya se ensalza aún más.
     {$name}: “Otro día nos vemos entonces”
     Allan: “¡Sí! Hasta la próxima”
@@ -4374,13 +4421,18 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     <<Move Allan offright bottom015 1.0>>
     <<wait 1.0>>
     <<Hide Allan>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Mientras nos alejamos el uno del otro, cada uno siguiendo caminos opuestos, me giro para ver su inconfundible espalda perderse en la lejanía.
     Vuelvo a mirar al frente y retomo el paso veloz de vuelta a casa.
 <<elseif $cita=="Ethan">>
     Bueno, será mejor que me ponga manos a la obra si quiero llegar lo antes posible a casa.
     Pero hoy vengo [select value={$gender} M="preparado" F="preparada" NB="preparade"/]. Para que la tarea de recoger sea algo más amena...
     ¡Me he traído los auriculares y una playlist con los mejores éxitos de Useless Misfits! 
-    Asiento mientras activo la primera canción: “Ally”. Mi cabeza comienza a moverse con el ritmo de la música.
+    Asiento mientras activo la primera canción, “Ally”. Mi cabeza comienza a moverse con el ritmo de la música.
     ¡Ahora sí! Con estos temazos voy a terminar en un periquete.
     Guardo el teléfono en el bolsillo de mi camisa y me agacho para recoger la parte trasera del mostrador.
     Tengo que sacar nuevos envoltorios y cintas de las cajas para el próximo día porque ya no me quedan suficientes.
@@ -4388,13 +4440,16 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     ¡No puede ser! ¡Mi canción favorita!
     Mis movimientos se intensifican y comienzo a cantar con más intensidad.
     Estoy tan [select value={$gender} M="metido" F="metida" NB="metide"/] en la música que no me doy cuenta de lo que se encuentra detrás de mí hasta que...
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////METER SHAKE//////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<endif>>
+    <<Shake {$name}>>
     {$name}: “¡AHHHHHHHHHHHHHH!”
     Siento como unas manos se posan sobre mis hombros.
     Me giro de golpe y con lo primero que ha logrado tomar mi mano, una botella de agua medio vacía, golpeo aquello que se encuentra frente a mí repetidamente con los ojos cerrados.
-    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
+    <<Act Ethan sprt_ethan_surprisedBad right bottom015 white>>
     Ethan: “¡EH! ¡Tranquila {$name} que soy yo! ¡Para!”
     La persona misteriosa agarra con fuerza mi brazo para parar los continuos golpes.
     Intento forcejear y del movimiento uno de los auriculares cae de mi oído.
@@ -4404,9 +4459,15 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     Poco a poco mis movimientos bruscos se ralentizan hasta parar. Mi respiración agitada por el susto.
     {$name}: “¿Eh?”
     Al ver que no voy a intentar golpearle más, Ethan me suelta y se palpa la zona golpeada para aliviar el dolor.
+    <<Act Ethan sprt_ethan_neutral>>
     Ethan: “Menudos golpes das [select value={$gender} M="flor" F="florecita" NB="flor"/].”
     “¿Se puede saber qué he hecho para merecer esto?”
     ->“¡Lo siento mucho Ethan!” 
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_sad>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_sad>>
+        <<endif>>
         {$name}: “Me has asustado y te he golpeado por auto reflejo.”
         <<Add_npc_likeability NPC_ethan 1>>
         Ante mi clara angustia, Ethan rápidamente deja a un lado su carácter sarcástico y se acerca a mí para consolarme.
@@ -4414,20 +4475,43 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
         Avergonzado, se lleva una mano al cuello y aparta la mirada.
         Ethan: “No debería haberte asustado, pero te vi tan [select value={$gender} M="concentrado" F="concentrada" NB="concentrade"/] recogiendo que no pude evitarlo.”
         Sus palabras me reconfortan y más teniendo en cuenta que no ha utilizado ningún mote.
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
         Sé que cuando utiliza mi nombre es porque está siendo completamente sincero.
         {$name}: “No te preocupes Ethan.”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         {$name}: “Creo que después de los golpes que te di ya estamos en paz jajaja.”
+        <<Act Ethan sprt_ethan_happy>>
         Ethan: “Sí, menuda fuerza que tienes.”
         Ambos nos reímos.
         Ethan: “Y bueno tampoco me puedo quejar.”
+        <<Act Ethan sprt_ethan_wink>>
         Ethan: “He podido ver tus maravillosos pasos de baile y escuchar tu bella voz.”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_embarrassed>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_embarrassed>>
+        <<endif>>
         Tardo unos segundos en procesar sus palabras, pero cuando lo consigo mi cara se convierte en un tomate.
         ¿¡Ha visto eso!?
         Ethan: “Anda no te sonrojes [select value={$gender} M="flor" F="florecita" NB="flor"/]. Estabas espectacular.”
         {$name}: “¡Ethaaaan!”
     ->“¿¡Te parece poco después del susto que me diste!?”
         <<Add_npc_likeability NPC_ethan -2>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_angry>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_angry>>
+        <<endif>>
         Ante mi reacción, Ethan abre los ojos como platos y mira al suelo como un niño al que acaban de regañar.
+        <<Act Ethan sprt_ethan_sad>>
         Ethan: “Lo siento, no era mi intención.”
         Ethan: “Solo quería gastarte una pequeña broma.”
         {$name}: “¿Solo una broma? Pues casi acabas conmigo.”
@@ -4436,14 +4520,26 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
         No puedo evitar sentirme mal al ver su cara triste.
         Creo que me he pasado, a fin de cuentas, yo también le he pegado con una botella de plástico en la cabeza.
         Con los nervios y el miedo todavía haciendo efecto no he podido evitar atacar a Ethan.
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>  
+        <<endif>> 
         {$name}: Suspiro. “Lo siento yo Ethan, no debería haber dicho eso.”
         {$name}: “Todavía me estoy recuperando del susto.”
+        <<Act Ethan sprt_ethan_neutral>>
         Ethan sonríe débilmente ante mi disculpa, pero esta no alcanza sus ojos.
         Parece que no esperaba que le incriminara de esa manera.
         Ethan: “Nada, lo comprendo.”
         Suspiro. Muy bien hecho {$name}, ya estás haciendo sentir mal a los demás.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Será mejor que cambie de tema. A ver si con eso consigo que Ethan olvide lo que ha pasado.
     Y no solo él, yo también.
+    <<Act Ethan sprt_ethan_neutral>>
     {$name}: “¿Por qué siempre tenemos que encontrarnos de esta manera?”
     {$name}: “¿En algún momento podremos saludarnos como personas normales?”
     Ethan: “Bueno [select value={$gender} M="príncipe" F="princesa" NB="noble"/], yo no diría siempre jajaja...”
@@ -4459,35 +4555,62 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     ¿Qué podría decirle que le sorprenda?
     ->“¿A lo mejor poniendo un cartel de “prohibido el paso a Ethans”?”
         <<Add_npc_likeability NPC_ethan 1>>
+        <<Act Ethan sprt_ethan_surprisedBad>>
         Ethan se lleva una mano al pecho como si le hubieran disparado.
         Sacudo la cabeza divertida. Él siempre tan exagerado.
         Ethan: “¡Agh! Esas palabras me han dolido [select value={$gender} M="flor" F="florecita" NB="flor"/]. No esperaba esto de ti.”
+        <<Act Ethan sprt_ethan_wink>>
         En un abrir y cerrar de ojos, Ethan se recompone y me guiña un ojo como si me estuviera retando.
         Ethan: “Me temo que eso no va a ser suficiente para pararme, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/].”
     ->“¿A lo mejor debería de regalarte un cascabel?”
         {$name}: “Así podré reconocerte cuando te encuentres cerca”
         <<Add_npc_likeability NPC_ethan 2>>
+        <<Act Ethan sprt_ethan_wink>>
         Ethan: “¿Y eso [select value={$gender} M="flor" F="florecilla" NB="flor"/]? ¿Es que ahora quieres que sea tu mascota?” 
+        <<Act Ethan sprt_ethan_embarrassed>>
         Ethan se acerca lentamente a mí, como si yo fuera su presa.
         Levanta la mano y sostiene uno de mis mechones mientras acerca su cara a la mía.
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_shy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_shy>>
+        <<endif>>
         ¿¡Qué está pasando!? ¿¡Cómo ha podido contratacar tan rápido de esa manera!?
         Mi cara comienza a calentarse. Siento como si mi mente hubiera dejado de funcionar ante la proximidad.
         {$name}: “E-esto...”
         Ante mi intento vergonzoso de arreglar la situación, Ethan comienza a reírse a carcajadas.
+        <<Act Ethan sprt_ethan_wink>>
         Ethan: “Tranquila [select value={$gender} M="flor" F="florecilla" NB="flor"/]. Solo era una broma jajaja.”
         Ethan se apiada de mí y da un paso hacia atrás dejando caer mi mechón.
         Me llevo una mano al pecho.
         Uff, menos mal...
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Act Ethan sprt_ethan_neutral>>
     {$name}: “¿Y qué estás haciendo aquí tan tarde?”
     {$name}: “Estaba terminando de recoger para cerrar hasta que me has interrumpido.”
+    <<Act Ethan sprt_ethan_embarrassed>>
     Ethan se rasca el cuello soltando una risita nerviosa. Aparta la mirada de mi cara con un ligero rubor en sus mejillas.
     Ethan: “Bueno...”
     Ethan: “Simplemente quería verte.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_shy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_shy>>
+    <<endif>>
     ¿Quería verme? Me llevo una mano al pecho [select value={$gender} M="ruborizado" F="ruborizada" NB="ruborizade"/] ante su revelación.
     No esperaba esto la verdad.
     Ethan: “El otro día... Lo pasé muy bien cuando quedamos.”
     Ethan: “Quería haber venido a verte ayer, pero no pude por un compromiso.”
     ¿Un compromiso?
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     No sé por qué, pero siento que ese “compromiso” está relacionado con su vida amorosa.
     Noto una imperceptible punzada en el pecho. ¿Pero qué...?
     Sacudo la cabeza con fuerza para dejar de preocuparme. Seguro que es algo sin importancia {$name}.
@@ -4498,15 +4621,25 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     {$name}: “Hablamos un montón, pero siento como si hubieran quedado muchas cosas por decir.”
     La sonrisa que me devuelve Ethan al escuchar mis palabras es deslumbrante, pero diferente a las que me suele dirigir habitualmente.
     Esta es honesta, como si se sintiera verdaderamente feliz.
-    ////////////////////////////////////////////////////////////////////////
-    //////////////////CAMBIAR SPRITE PROTAGONISTA A RUBORIZADO//////////////
-    ////////////////////////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_shy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_shy>>
+    <<endif>>
     Vaya, que sonrisa más bonita tiene Ethan. No me había dado cuenta antes. 
     Ethan: “Sí, yo pienso lo mismo, deberíamos de repetir en algún momento.”
-    ////////////////////////////////////////////////////////////////////////
-    //////////////////CAMBIAR SORITE PROTAGONISTA A SONRIENDO///////////////
-    ////////////////////////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Claro, me parece bien.” 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Act Ethan sprt_ethan_neutral>>
     Continúo recogiendo para poder cerrar la tienda, pero me doy cuenta de que Ethan sigue mirándome.
     Parece que todavía quiere decirme algo, aunque se le nota indeciso.
     Su vista se despega y vuelve a mi figura incesantemente y no deja de dar golpecitos en el mostrador con el dedo.
@@ -4527,9 +4660,15 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     ->”Muchas gracias, Ethan. La verdad es que tenía muchas ganas de leerlo.”
         <<Add_npc_likeability NPC_ethan 2>>
         <<LeisteLibroEthanMartes no>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         {$name}: “Lo tengo en mi lista de deseos desde hace varios meses, pero no conseguía encontrarlo en ningún sitio.”
         Por el rabillo del ojo veo como el tenue temblor de sus manos cesa e infla el pecho orgulloso.
         Parece que el haber compartido este libro conmigo es algo muy importante para él.
+        <<Act Ethan sprt_ethan_happy>>
         Ethan: “Sí, es que se descatalogo hace varios años y ahora mismo solo se puede conseguir en subastas online y a muy alto precio.”
         Ethan: “Yo tuve suerte de hacerme con esta edición especial.”
         ¿¡Cómo ha dicho!? Miro el libro con asombro y temor.
@@ -4544,6 +4683,7 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     ->“Gracias, aunque debo admitir que ya lo he leído.”
         <<Add_npc_likeability NPC_ethan -2>>
         <<LeisteLibroEthanMartes yes>>
+        <<Act Ethan sprt_ethan_sad>>
         Como si le acabara de echar una jarra de agua fría por la cabeza, Ethan se desinfla.
         Sus hombros caen y su expresión se vuelve triste, aunque intenta ocultarlo tras una sonrisa.
         Ethan: “Vaya... Que faena entonces.”
@@ -4551,8 +4691,14 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
         Parece que no debería de haber admitido eso. Se nota que este libro es muy importante para Ethan.
         {$name}: “No pasa nada Ethan, me gustaría volver a leerlo en verdad.”
         {$name}: “A mí también me gusta mucho.”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         {$name}: “A lo mejor podríamos quedar un día para hablar de nuestras partes favoritas.”
         Sonrío con la intención de animarle.
+        <<Act Ethan sprt_ethan_happy>>
         Parece que funciona porque enseguida Ethan se recompone y sonríe de par en par.
         Ethan: “¡Me encantaría!”
     Guardando la última de mis pertenencias en mi mochila, cojo la llave para cerrar la floristería.
@@ -4562,9 +4708,10 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     No puedo esperar a ver cómo evoluciona esta relación.
 <<endif>>
 <<HideAll>>
+
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-
+<<StopAudioAll>>
 <<jump Sophie_miercoles_sem2>>
 ===
 
@@ -4572,8 +4719,11 @@ title: Sophie_miercoles_sem2
 position: -143,644
 ---
 <<HideAll>>
-<<Fade black 1.0 0.0 2.0>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<Scene bg_floristeria>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -4581,14 +4731,15 @@ Otro día más de trabajo y, por lo tanto, otro día de tener que ganarse el sue
 He de decir que ayer se me pasó bastante rápido y eso que vino bastante gente. Eso son buenas noticias, porque espero que cada vez vengan más así que tendré que ser capaz de mantener el ritmo.
 Ver en primera línea como está despegando mi proyecto... Es una felicidad que no puedo describir.
 
-//Campanitas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 Justo llega el primer cliente, ahora sí que sí. Manos a la obra.
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 Ufff, ha sido un no parar. Es como si todos se hubieran puesto de acuerdo para venir a la vez, uno tras otro.
 
-//Campanitas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -4618,6 +4769,11 @@ Sophie: “Qué va, son cosas para casa”
 Sophie: “Sólo los estúpidos y los pijos compran ropa de temporada”
 ->Ofenderse por el comentario
     <<Add_npc_likeability NPC_sophie -2>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “¡Eh! ¿Qué problema hay con eso?”
     Cruzo los brazos enfadada. ¿Por qué iba a ser tonta por comprar la ropa de temporada si me gusta? Qué manera de juzgar tiene.
     Sophie: “Pues que estás pagando por algo carísimo cuando te puedes esperar a que pase la temporada”
@@ -4625,23 +4781,46 @@ Sophie: “Sólo los estúpidos y los pijos compran ropa de temporada”
     {$name}: “Pero si me espero puede que me quede sin ello”
     Sophie: “Eso no pasa casi nunca, siempre tienen o en otras tiendas o en online. Y a unas malas buscas otro modelo similar, que seguro que lo hay en otra tienda”
     {$name}: “Lo dices porque nunca has comprado algo así. Si no, sabrías que es muy fácil que te ocurra si una prenda es mínimamente popular”
+    <<Act Sophie sprt_sophie_angry>>
     Sophie: “Bueno, perdón porque no me llueva el dinero”
     Esta vez es ella quien cruza los brazos. Está más que enfadada, creo que justo he tocado un tema delicado. No era mi intención tampoco hablar de dinero. 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Tengo que intentar arreglarlo, la conversación se nos ha ido de las manos.
     {$name}: “No iba encaminada por ahí, lo decía porque suponía que no eras una fanática de la ropa, porque la gente que conozco que compra la ropa así le gusta mucho. Perdón si he dado a entender otra cosa”
+    <<Act Sophie sprt_sophie_uncomfortable>>
     Sophie: “Es posible que también haya sido culpa mía por malpensar sobre tu comentario”
     Sophie desvía la mirada para no confrontar la mía. La conversación cae muerta y el ambiente se vuelve incómodo.
-    Sophie: “Eh... Bueno, ¿qué querías que te pusiera hoy?”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    {$name}: “Eh... Bueno, ¿qué querías que te pusiera hoy?”
     Lo mejor va a ser cambiar de tema y dejar esta tontería de discusión atrás.
 ->Estar de acuerdo con lo que dice
-    <<Add_npc_likeability NPC_sophie +2>>
+    <<Add_npc_likeability NPC_sophie 2>>
     {$name}:  “Jajajaja, no lo habría dicho mejor”
+    <<Act Sophie sprt_sophie_happy>>
     Sonríe al ver que mi opinión coincide con la suya.
     {$name}: “A no ser me encapriche de alguna prenda, siempre intento comprar en rebajas. Es que te acabas ahorrando un montón de dinero así”
     Sophie: “Yo también compro de rebajas siempre que puedo, y hago lo de comprar en una estación lo que necesitaré para la siguiente porque está más barato.” 
     Sophie: “Por ejemplo, comprar abrigos en verano. Con eso sí que ahorras de verdad”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Eh, ¡pues es buena idea!, me lo apunto para las próximas rebajas.”
     Ahora soy yo quien le sonríe. Le reconforta que acepte su consejo.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Dejando de lado las compras, ¿qué quieres que te ponga hoy?”
 Sophie: “Cierto, que yo había venido a por un ramo. Hablando casi se me pasa”
 Sophie: “Pues la verdad es que...”
@@ -4667,6 +4846,7 @@ position: -118,-144
 ---
 <<HideAll>>
 <<set $resultado to get_minigame_result()>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -4706,18 +4886,26 @@ position: -123,-48
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 3>>
-
 Sophie: “Sinceramente me parece incomprensible cómo simplemente usando las flores eres capaz de crear algo tan bonito”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_shy>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_shy>>
+<<endif>>
 Me sonrojo levemente por sus palabras, sé que ella no suelta cumplidos a la ligera.
 {$name}: “Gracias...”
 Se sorprende de su propia sinceridad y trata de volver a su actitud de dura.
 Sophie: “Bueno, es lo normal siendo tu trabajo. Al final lo haces todos los días, si lo hicieras mal sería un problema”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Lo dice rápidamente tratando de no atropellarse las palabras. Me río internamente. No es capaz de dejar que nadie vea un poco de su lado tierno ni un segundo.
 {$name}: “Es lo mínimo que podía hacer, siendo para tu hermana. Que de lo poco que me has hablado de ella seguro que se merece el mejor de los ramos”
 Al mencionar a su hermana vuelve a ablandarse.
 Sophie: “De eso no hay duda, se merece todo lo bueno del mundo...”
 Su mirada se pierde, acordándose de su hermana seguramente. Cuando vuelve en sí acerca su mano desocupada al mostrador para coger el ramo.
-
 <<jump Fin_ramas_minijuego_Sophie_miercoles_sem2>>
 ===
 title: Minijuego_regular_Sophie_miercoles_sem2
@@ -4729,9 +4917,9 @@ position: 45,-49
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_disappointed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_disappointed left bottom015 white>>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sophie 1>>
@@ -4753,13 +4941,12 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_resignation left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_resignation left bottom015 white>>
 <<endif>>
-<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Act Sophie sprt_sophie_angry right bottom015 white>>
 <<Add_npc_likeability NPC_sophie -3>>
-
 Sophie: “¿De verdad esto es lo mejor que puedes hacer?”
 Sophie: “Hasta yo que no tengo ni idea de esto, sé que debería ser de otra manera”
 Sophie: “Es que mira estas flores, ¡no pegan nada!”
@@ -4767,16 +4954,16 @@ Mira al suelo y no sé dónde meterme. Quiero que la tierra me trague. Se que de
 {$name}: “Lo- lo siento”
 Sophie: “Espero que al menos a mi hermana le guste. Si no, cuenta con una cliente menos”
 Yo también lo espero, pero no le respondo en voz alta. Debo estar muy compungida, porque suspira resignada y eso marca el final de sus quejas.
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Ahh... Bueno ya está hecho así que no hay nada que se pueda hacer”
 Acerca su mano desocupada al mostrador para coger el ramo.
-
 <<jump Fin_ramas_minijuego_Sophie_miercoles_sem2>>
 ===
 
 title: Fin_ramas_minijuego_Sophie_miercoles_sem2
 position: -120,41
 ---
-<<HideAll>>
+//<<HideAll>>
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -4788,67 +4975,81 @@ position: -120,41
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 
 Al realizar este movimiento me fijo en su muñeca. ¡No me lo puedo creer!
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Ah!”
 No puedo evitar dar un gritito de emoción, y sin querer la asusto.
 Sophie: “¡Ay! ¿Qué pasa?”
 Señalo a la pulsera de su muñeca.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “Ah... Perdona por el susto, es que he visto que tienes una pulsera de Useless Misfits y no suelo conocer a gente que también sea fan” 
 Sophie: “¿Te gusta este grupo?”
 Arquea la ceja sorprendida, realmente no se cree que los escuche. En realidad, no me sorprende, no es la primera vez que ponen en duda mis gustos musicales.
 Pero a pesar de que otros decidieran por mí que no era mi “estilo” yo he seguido escuchándolos y estando atenta a todos sus nuevos discos.
 {$name}: “Mucho, de hecho, es mi grupo favorito. Sé que no parece de mi rollo pero que puedo hacer, es que me gusta y ya”
 Sophie: “Tranquila, no preguntaba a malas, ni por ti en particular. Es que no es un grupo conocido ni dentro del género, por eso me sorprende que lo conozcas”
-{$name}: “Los descubrí por pura casualidad, un día Spotifu   me recomendó una lista de descubrimiento y dentro de ella una de las canciones era Headbanger y me encantó”
+{$name}: “Los descubrí por pura casualidad, un día Spotifu  me recomendó una lista de descubrimiento y dentro de ella una de las canciones era Headbanger y me encantó”
 En cuanto empiezo hablar sobre Useless Misfits sus ojos se iluminan, y otra vez sin querer dejar caer esos muros de tipa dura.
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Normal, esa canción es de las mejores, aunque mi favorita es Hybrid Times”
 {$name}: “Me gusta mucho esa también, pero la mía es Biggest Lie”
 Al escuchar el nombre sonríe con complicidad.
 Sophie: “Buena elección”
-Se escucha una vibración y de repente su expresión cambia. Actúa veloz, intenta guardar el ramo en la bolsa con dificultad, colocándolo de tal meticulosamente para que no acabe destrozado, tras pelearse un poco con la bolsa lo consigue guardar bien. Ahora con una mano libre, coje su móvil del bolsillo del pantalón y mira la pantalla del mismo.
+<<PlayAudio noti_movil 1.0>>
+<<Act Sophie sprt_sophie_neutral>>
+Se escucha una notificación y de repente su expresión cambia. Actúa veloz, intenta guardar el ramo en la bolsa con dificultad, colocándolo de tal meticulosamente para que no acabe destrozado, tras pelearse un poco con la bolsa lo consigue guardar bien. Ahora con una mano libre, coje su móvil del bolsillo del pantalón y mira la pantalla del mismo.
 Sophie: “Te voy a tener que dejar ya”
 {$name}: “No te preocupes, ya otro día seguimos hablando de Useless Misfits”
 Sophie: “Sí, hasta la próxima”
 {$name}: “¡Adiós!”
-<<Move Sophie offright bottom015 1.0>>
-<<wait 1.0>>
-<<Hide Sophie>>
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 Me despido de ella, pero antes de que salga entra otro cliente a la tienda. Ese flequillo es indiscutible, es Ethan.
 La mirada de Ethan empieza conmigo, pero cuando ve que hay otra persona en el local tarda poco en dirigirse a Sophie. Una sonrisa pícara se dibuja en su rostro.
-
-<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Act Ethan sprt_ethan_wink center bottom015 white>>
 Ethan: “No sabía que esta floristería se había convertido en un museo...”
 Ethan: “Viendo que hay unas obras de arte tan bellas como [select value={$gender} M="vosotros" F="vosotras" NB="vosotres"/] ”
 Guiña el ojo al terminar la frase.
 ->Reírse
     <<Add_npc_likeability NPC_sophie -1>>
     <<Add_npc_likeability NPC_ethan 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Ptff jajajaja, eres un exagerado”
     Ethan: “Llamas exageración a la verdad que ven mis ojos, [select value={$gender} M="flor" F="florecita" NB="flor"/]”
-    <<Hide Ethan>>
-    <<Act Sophie sprt_sophie_neutral right bottom015 white>>
     Sophie: “No, esto sí que no lo voy a aguantar”
 ->Sentir vergüenza ajena
     <<Add_npc_likeability NPC_sophie 1>>
     <<Add_npc_likeability NPC_ethan -1>>
     {$name}: “Diría que esta es de las peores frases que has usado”
-    <<Hide Ethan>>
-    <<Act Sophie sprt_sophie_neutral right bottom015 white>>
     Sophie: “Ah, ¡que existen peores!”
-    <<Hide Sophie>>
-    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
+    <<Act Ethan sprt_ethan_neutral>>
     Ethan: “Pues yo creo que es de mi top 5”
     {$name}: “No me quiero imaginar cómo serán las que se han quedado fuera del top”
+    <<Act Ethan sprt_ethan_wink>>
     Ethan: “También son buenas, pero no tanto como [select value={$gender} M="vosotros" F="vosotras" NB="vosotres"/]”
     Me llevo la palma a la cara y niego con la cabeza. Su intento vuelve a caer en saco roto.
-    <<Hide Ethan>>
-    <<Act Sophie sprt_sophie_neutral right bottom015 white>>
     Sophie: “No me puedo creer que este viviendo esta situación. Ya sí que me marcho”
 <<Move Sophie offright bottom015 1.0>>
-<<wait 1.0>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
+Sophie dirige a la salida con paso firme. Veo a Ethan que comienza un intento de continuar la conversación con ella, pero esta, al darse cuenta en vez de esquivarle para salir le choca a propósito el hombro.
 <<Hide Sophie>>
-Sophie dirige a la salida con paso firme. Veo a Ethan que comienza un intento de continuar la conversación con ella, pero esta, al darse cuenta en vez de esquivarle para salir le choca a propósito el hombro. 
+<<Move Ethan right bottom015 1.0>>
 No hace falta decir más para explicar cómo le ha sentado el comentario a Sophie.
-<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “Vaya, que fuerza...” Sonríe mientras se palpa el hombro.
 {$name}: “¿Estás bien?”
 Ethan: “Sí... ¿Es una amiga tuya?”
@@ -4882,21 +5083,34 @@ position: -143,644
 
 Tomo lo que me da Ethan y lo guardo en el espacio bajo el mostrador para tenerlo a mano la próxima vez que venga Sophie.
 {$name}: “Muchas gracias.”
+<<Act Ethan sprt_ethan_wink>>
 Ethan: “Tú siempre tan altruista con los demás. No esperaba menos de ti, [select value={$gender} M="príncipe" F="princesa" NB="noble"/].”
-
 Guiña un ojo en mi dirección y no puedo evitar sacudir la cabeza [select value={$gender} M="entretenido" F="entretenida" NB="entretenide"/].
 Siempre tiene que tener algún comentario de este estilo bajo la manga.
 Típico de él. No me extrañaría que me dijera que tiene un cuaderno con todo su repertorio apuntado.
 A lo mejor debería ponerlo a la venta, seguro que alguien lo compraba.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 El pensamiento de Ethan firmando copias de su libro de frases de coqueteo me hace soltar una risita.
+<<Act Ethan sprt_ethan_neutral>>
 Ante esto, Ethan me mira extrañado.
 Ethan: “¿Y tú de qué te ríes, [select value={$gender} M="flor" F="florecita" NB="flor"/]?”
 Me llevo una mano a la boca para intentar ocultar mi sonrisa.
 {$name}: “Nada, no es nada jajaja.”
 Uno de sus característicos pucheros toma forma en su cara.
+<<Act Ethan sprt_ethan_sad>>
 Ethan: “Yo también quiero saber qué es eso tan divertido.”
 Simplemente niego riendo tenuemente y espero a que Ethan me diga la razón de su visita.
 Al ver que no doy mi brazo a torcer, Ethan suspira y señala la puerta con un ligero golpe de cabeza.
+<<Act Ethan sprt_ethan_neutral>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Apoya su codo sobre el mostrador y se acerca a mí como si fuese a contarme un secreto.
 No puedo evitar arrimarme por la curiosidad.
 ¿Qué me irá a decir?
@@ -4906,6 +5120,11 @@ Apoya su mejilla en la mano y mira al techo embobado.
 Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos de “Eros”.
 ->“Sí... Sophie es muy guapa y se preocupa por su hermana...”
     <<Add_npc_likeability NPC_ethan 2>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_resignation>>
+    <<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_resignation>>
+    <<endif>>
     Mi voz se va apagando y aparto la mirada [select value={$gender} M="avergonzado" F="avergonzada" NB="avergonzade"/].
     Sé que todo lo que he dicho es cierto, pero por alguna razón que desconozco me siento [select value={$gender} M="decepcionado" F="decepcionada" NB="decepcionade"/].
     ¿Me estaré haciendo ilusiones?
@@ -4920,9 +5139,15 @@ Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos
     Al intentar calmarle he golpeado la pulsera de Sophie e inconscientemente me paro a mirarla.
     Otra vez esa sensación...
     Entonces Ethan levanta el cuello para ver qué tiene captada mi atención y sus ojos se iluminan como si se hubiera percatado de algo.
+    <<Act Ethan sprt_ethan_embarrassed>>
     Ethan: “No tienes que preocuparte de nada, {$name}. Tú sigues siendo la flor más bella de este jardín.”
     Sus palabras solo consiguen que me ruborice más y trato de ocultarme tras una pared inexistente.
     Con que era eso...
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Una cálida risa llega hasta mis oídos.
     Ethan: “Además, Sophie tiene belleza, pero su actitud asusta a cualquiera.”
     Ethan: “Tiene que sonreír más para atraer más abejas. Bzzzzzz.”
@@ -4937,8 +5162,14 @@ Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos
     Me llevo una mano a los ojos ante la intensidad.
     De verdad, ¿cómo hace Ethan para que todas sus sonrisas desprendan brillitos de ese calibre?
     En el momento en el que logro recuperarme mi cara adopta una mueca.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “Siempre pensando en la apariencia, pero no en cómo se sienten los demás.”
     {$name}: “¿No has pensado que algunas personas a lo mejor no se sienten cómodas con ese tipo de comentarios?”
+    <<Act Ethan sprt_ethan_sad>>
     Su postura presumida se desmorona al escucharme. Su cara se desencaja.
     Es como si le hubiera dado un golpe seco.
     Ethan: “Yo pensaba que a todo el mundo le gustaba que le dijeran cosas bonitas.”
@@ -4947,13 +5178,16 @@ Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos
     Esto confirma lo que había percibido en alguna ocasión.
     Ethan no es completamente sincero, ni consigo mismo ni con nadie.
     Es como si estuviera interpretando un papel.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: Suspiro. “Mira Ethan, te digo esto como amigos, no quiero ofenderte.”
     {$name}: “Deberías dejar de pensar en lo que los demás piensan de ti y tratar de actuar según lo que sientes de verdad.”
     {$name}: “Puede que parezca que funciona con la mayoría de las personas, pero...”
     Ethan: “¡Ya está bien!”
-    ///////////////////////////////////////////////////////////
-    /////////////////////////SHAKE//////////////////////////////
-    ////////////////////////////////////////////////////////////
+    <<Shake Ethan>>
     Un movimiento brusco llama mi atención. Debido al instinto y al hábito, me encojo sobre mí [select value={$gender} M="mismo" F="misma" NB="misme"/] al percibirlo.
     Es entonces cuando me doy cuenta de lo que ha pasado.
     Ethan se ha llevado las manos a la cabeza y cierra los ojos con fuerza, como si quisiera esfumarse.
@@ -4965,6 +5199,12 @@ Vaya, sí que parece que Sophie le ha gustado bastante, aunque no esperaba menos
     Ethan: “Me gustaría dejar el tema, por favor. No creo que lo entiendas.”
     {$name}: Suspiro.” Te sorprenderías.”
 Con un carraspeo aclaro la garganta. Creo que es un buen momento para cambiar de tema y dejar esta conversación atrás.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
 {$name}: “¿Y a qué has venido hoy aquí? ¿Tienes algún ramo en mente?”
 Ethan: “Pues ahora que lo mencionas sí, estoy aquí por un ramo.”
 Ethan: “Y me gustaría que dieras lo máximo de tu parte para que sea perfecto.”
@@ -5008,7 +5248,7 @@ title: Salida_minijuego_Ethan_miercoles_sem2
 position: -118,-144
 ---
 <<HideAll>>
-
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $resultado to get_minigame_result()>>
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
@@ -5048,13 +5288,18 @@ position: -123,-48
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Act Ethan sprt_ethan_happy right bottom015 white>>
 <<Add_npc_likeability NPC_ethan 3>>
 
 Ethan: “¡Madre mía {$name}, está perfecto!”
 Ethan: “Sabía que podía confiar en ti para hacer este encargo.”
 Uff, que alivio. Definitivamente me he quitado un peso de encima.
 Y no solo eso, ¡además le ha encantado!
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 Me siento extremadamente [select value={$gender} M="orgulloso" F="orgullosa" NB="orgullose"/] de haber podido presentar un ramo al nivel de lo que quería.
 Aunque esto solo ha aumentado todavía más el enigma de esta persona.
 {$name}: “Me alegro de que cumpla tus expectativas. Espero que le guste a la persona a la que se lo vas a regalar.”
@@ -5062,11 +5307,14 @@ Ethan: “¿Estas de broma? Creo que es de los mejores ramos que me has entregad
 Ethan: “Le va a encantar. No puedo esperar por ver su reacción.”
 Con una sonrisa de oreja a oreja, Ethan me entrega el dinero.
 Ethan: “Toma, aquí tienes el dinero. Y antes de que digas nada, no hace falta que me des la vuelta.”
+<<Act Ethan sprt_ethan_wink>>
 Ethan: “Todo tuyo, [select value={$gender} M="príncipe" F="princesa" NB="noble" /].”
 Con eso, Ethan me guiña un ojo y sonríe. 
-/////////////////////////////////////////////////////////////////
-///////////////PROTAGONISTA SE SONROJA///////////////////////////
-/////////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “Gracias Ethan.”
 
 <<jump Fin_ramas_minijuego_Ethan_miercoles_sem2>>
@@ -5117,11 +5365,11 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_disappointed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_disappointed left bottom015 white>>
 <<endif>>
-<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Act Ethan sprt_ethan_sad right bottom015 white>>
 <<Add_npc_likeability NPC_ethan -3>>
 
 Ethan: “...”
@@ -5174,11 +5422,9 @@ No por su opinión porque ya la ha dejado clara hace unos segundos, sino por la 
     {$name}: “Bueno, creo que es hora de que vayas a ver a tu nuevo pretendiente ahora que ya tienes el ramo, Eros.”
     {$name}: “No queremos que se marchite.”
     Hago una referencia a una de sus muchas bromas y parece que le gusta.
+    <<Act Ethan sprt_ethan_wink>>
     Ethan: “Me siento dolido por tu “disimulado” intento de echarme, pero admito que tienes razón, [select value={$gender} M="príncipe" F="princesa" NB="noble" /].”
     Ethan: “Será mejor que ponga rumbo a la entrega de este regalo.”
-    /////////////////////////////////////////////////////////////////////
-    ///////////////////////ETHAN GUIÑA EL OJO (SI DA TIEMPO)/////////////
-    ////////////////////////////////////////////////////////////////////
     Ethan: “Aunque antes déjame decirte que me gusta tu estilo del humor. Ya me contarás quién te lo ha enseñado.” 
     Cuando me dispongo a recoger el mostrador pensando que Ethan ya se va a ir, este me sorprende acercándose a mí y susurrándome por tercera vez hoy.
     Ethan: “Tranquila [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]. Pronto descubrirás para quién es el ramo.”
@@ -5192,6 +5438,7 @@ No por su opinión porque ya la ha dejado clara hace unos segundos, sino por la 
     Sacudo la cabeza.
     No, es mejor que no diga nada. Es su vida privada y no debería de meterme en ella.
     Me dispongo a recoger el mostrador pensando que Ethan ya se va a ir cuando este me sorprende acercándose a mí y entregándome algo bastante familiar.
+<<Act Ethan sprt_ethan_embarrassed>>
 Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="noble"/]. Espero que te gusten.”
 
 <<set $cita to get_date()>>
@@ -5200,9 +5447,11 @@ Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="n
     Tardo un rato en procesar qué es lo que está pasando.
     Entonces me doy cuenta de que Ethan me está regalando el ramo que acaba de comprar.
     Como si se tratara de una rosa floreciendo, la calidez inunda mi pecho y se extiende por mi cara.
-    ////////////////////////////////////////////////////////////
-    //////////////////PROTAGONISTA SONROJADO////////////////////
-    ////////////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_shy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_shy>>
+    <<endif>>
     La verdad es que me he quedado sin palabras. Hacía mucho que no tenían un detalle así conmigo.
     Qué irónico, ¿no? Hace menos de cinco minutos era yo quien realizaba esta misma acción para entregarle el pedido a Ethan.
     Suelto una ligera carcajada ante el pensamiento.
@@ -5219,12 +5468,28 @@ Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="n
     Ethan: “Me sentía mal por el golpe que te di y quería compensarlo de alguna manera.”
     Ethan: “Y como sé que te encantan las flores, pues pensé, ¿quién mejor para realizar el encargo que [select value={$gender} M="el" F="la" NB="le"/] mejor florista de esta zona?”
     Él siempre tan exagerado.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}:“Claro, claro. Definitivamente no hay floristas más veteranos en esta zona que no conozcas.”
     Bromeo ante su comentario, pero Ethan se pone completamente serio.
     Ethan: “Por supuesto, no hay nadie como tú.”
     ¿Y este cambio de actitud tan repentino?
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
     ¿Es posible ponerme más [select value={$gender} M="rojo" F="roja" NB="roje"/] de lo que ya estaba? 
     {$name}: “Eh... ¡Por cierto!”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Act Ethan sprt_ethan_neutral>>
     <<set $hasLeidoElLibro to get_libroEthanLeido()>>
     <<if $hasLeidoElLibro == "no">>
         {$name}: “No te dije todavía nada porque viniste ayer, pero ya he empezado el libro y menuda pasada.”
@@ -5244,12 +5509,15 @@ Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="n
         <<Add_npc_likeability NPC_ethan 2>>
         Tardo un rato en procesar qué es lo que está pasando.
         Entonces me doy cuenta de que Ethan me está regalando el ramo que acaba de comprar.
-        //////////////////////////////////////////////////////////////////
-        //////////////////PÈRSONAJE RIBORIZADO////////////////////////////
-        //////////////////////////////////////////////////////////////////
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_shy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_shy>>
+        <<endif>>
         No sé qué decir en esta situación. Hacía mucho que no tenían un detalle así conmigo.
         Lo tomo de nuevo en mis manos a pesar de haber sido yo [select value={$gender} M="el" F="la" NB="le"/] que hace unos minutos realizaba esta misma acción a la inversa.
         {$name}: “Gracias Ethan.”
+        <<Act Ethan sprt_ethan_happy>>
         Ethan sonríe triunfante ante mi cara estupefacta. Es como si hubiera ganado un premio.
         Ethan: “¿A que no te esperabas esto, [select value={$gender} M="flor" F="florecilla" NB="flor"/]?”
         Ethan: “Llevaba unos días pensando en esta idea. Quería regalarte algo y, como sé que te encantan las flores...”
@@ -5263,27 +5531,38 @@ Ethan: “Toma, para ti [select value={$gender} M="príncipe" F="princesa" NB="n
         Sé que a lo mejor hago mal en confiarme tanto después de todo, pero me siento bien.
         Sin saber qué decir para expresar lo que siento, simplemente miro a Ethan y le sonrío de la forma más sincera posible.
         {$name}: “Gracias Ethan, significa mucho para mí.”
+        <<Act Ethan sprt_ethan_surprisedShy>>
         Ethan abre los ojos como platos y se queda estático en el sitio. Se pone completamente rojo, pero sonríe.
         Nos quedamos así un bueno rato, simplemente comunicándonos a través de nuestras miradas. No hace falta decir más.
     ->Rechazar el ramo.
         <<Add_npc_likeability NPC_ethan -2>>
         ¿De verdad me está regalando el ramo que me ha pedido hace solo cinco minutos?
         No puedo evitar poner una mueca.
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_angry>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_angry>>
+        <<endif>>
         Seguro que es algo que suele hace con el resto de sus “pretendientes”. Lo único que quiere es captar mi atención de forma fácil.
         {$name}: “Lo siento, pero no puedo aceptarlo.”
+        <<Act Ethan sprt_ethan_neutral>>
         Me cruzo de brazos y giro mi cabeza [select value={$gender} M="indignado" F="indignada" NB="indignade"/].
         {$name}: “Puede que te funcione con el resto del mundo, pero conmigo no.”
         {$name}: “Ya me conozco este tipo de trucos.”
         Comienzo a ver en mi cabeza la silueta de una figura conocida que me gustaría olvidar.
-        //////////////////////////////////////////////////////////
-        ///////////////ETHAN TRISTE///////////////////////////////
-        //////////////////////////////////////////////////////////
+        <<Act Ethan sprt_ethan_sad>>
         Ethan: “No {$name}, te equivocas. Quería disculparme por el golpe del otro día y ...” 
         Pero mi mente no es capaz de razonar, dominada por antiguos recuerdos y pensamientos negativos.
         {$name}: “¡No, Ethan! No vas a conseguir engañarme.”
         Ethan: “Yo no...”
         Oigo como Ethan suspira cansado. Le miro de reojo y su figura transmite derrota.
         ¿He hecho mal?
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
 <<endif>>
 Con su objetivo cumplido, Ethan se recompone y consulta la hora en un reloj imaginario.
 Ethan: “¡Pero mira qué hora es! Será mejor que me vaya si quiero llegar a casa para dormir mis 10 horas de sueño.”
@@ -5315,11 +5594,10 @@ Ethan: “Nos vemos, hasta la próxima.”
 <<wait 1.0>>
 <<Hide Ethan>>
 
-<<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-
-
+<<StopAudioAll>>
+<<HideAll>>
 <<jump Sophie_jueves_sem2>>
 ===
 
@@ -5327,16 +5605,11 @@ title: Sophie_jueves_sem2
 position: -143,644
 ---
 <<HideAll>>
-<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
+<<Fade black 1.0 0.0 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
 
 Hoy de camino al trabajo el dueño de la pastelería de la calle me ha reglado un bollo de crema. 
 Estoy muy agradecida con toda la gente del barrio, me han ayudado mucho a no sentirme como [select value={$gender} M="un forastero" F="una forastera" NB="une forastere"/]. En detalles como estos, se nota.
@@ -5344,24 +5617,45 @@ Mientras ando desenvuelvo el bollo del papel que lo contiene y comienzo a comerl
 Mmmm, ¡qué bueno está!
 Alzo la mirada del bizcocho, visualizo el cartel de mi floristería y bajo él hay una chica de pelo negro. Esta situación me suena.
 Guardo el bollo de nuevo y me limpio con la servilleta que me dieron con el tentempié. Una vez estoy lista, acelero para hablar con Sophie.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+
 {$name}: “Buenos días, Sophie. Hoy estoy segura de que no voy tarde”
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Hola {$name}, vas bien de tiempo, soy yo la que ha llegado muy pronto hoy”
 Está un poco alterada, tiene mucha urgencia de entrar.
 ->“¿Tantas ganas tenías de verme?”
+    <<Act Sophie sprt_sophie_flirty>>
     Sophie: “Si piensas así, diría que [select value={$gender} M="el" F="la" NB="le"/] que más quiere verme eres tú”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>   
     Se tranquiliza más y una sonrisa pícara aparece en su cara. Mi reacción es sonrojarme porque he sido [select value={$gender} M="leído" F="leída" NB="leíde"/] completamente.
 ->“¿Ha pasado algo?”
     Sophie: “No, no, nada importante”
+<<Act Sophie sprt_sophie_neutral>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Sophie: “Ayer perdí la pulsera de Useless Misfits y vine aquí porque fue el último sitio donde recuerdo tenerla”
 {$name}:“Es verdad, sí la tengo yo. Estaba en el suelo”
 Saco las llaves de la tienda y empiezo a abrirla.
 {$name}: “Pasa, pasa, que la tengo dentro”
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-<<Hide Scene>>
-<<Fade black 1.0 0.0 2.0>>
+<<StopAudioAll>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
+
 Una vez dentro me dirijo directamente a la zona detrás del mostrador y oigo los pasos de Sophie detrás de mí siguiéndome.
 Abro un cajón, saco la pulsera y se la dejo en la mesa.
 {$name}: “Es esta ¿no?”
@@ -5390,16 +5684,28 @@ Sophie: “Y si de alguna manera lo supieras más te vale que yo no me enterara,
     <<Add_npc_likeability NPC_sophie 1>>
     Intenta ser intimidante pero no sé a quién pretende engañar cuando en la sala estoy solo yo. Adopto una pose burlona para enfrentarla.
     {$name}: “Tranquila Al Pacino, no hace falta que me pongas una cabeza de caballo en la cama”
+    <<Act Sophie sprt_sophie_happy>>
     Rompe su postura imponente y se ríe.
     Sophie: “Te sorprendería la cantidad de gente que se asusta por una mala cara y una mentira”
     {$name}: “No me extraña, cuando te pones así das miedo”
     Sophie: “Ah sí, y ¿por qué contigo no ha funcionado?”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Le sonrío ampliamente, es una sonrisa de las que muestras los dientes. 
     {$name}: “Porque ya te conozco”
     {$name}: “Así que a mí no me la cuelas”
     Sonriendo vuelve a su postura anterior.
     Sophie: “Al final sí que vas a saber demasiado”
     {$name}: “Jajaja”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Volviendo a lo que estábamos hablando, y espero que tomes en cuenta lo que he dicho de no gritar, la verdad es que no conocí al grupo de una manera digital digamos”
 {$name}: “Ahh que guay, ¿la primera vez que los escuchaste fue en un concierto entonces?”
 Sophie: “No, es algo mucho mejor”
@@ -5408,6 +5714,11 @@ Sophie: “No lo vas a adivinar nunca así que aquí va. No es conozca a  Useles
 Sophie: “Son amigos míos”
 ->Gritar de emoción
     <<Add_npc_likeability NPC_sophie -1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “¡AHHHH NO ME LO PUEDO CREER!”
     Sophie suspira mientras se lleva la palma a la cara y niega con la cabeza.
     Sophie: “Menos mal que te había avisado...”
@@ -5417,10 +5728,22 @@ Sophie: “Son amigos míos”
     Me llevo a las manos a la boca y grito sabiendo que mis palmas ahogan el sonido. Cuando ya soy capaz de controlar mi emoción y termino de gritar, retiro las manos.
     {$name}: “Lo siento, era la única manera de que no hiciera ruido”
     Sophie: “Mis oídos te lo agradecen”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Dios, pero es genial. ¡Eres amiga de Useless Misfits!”
 {$name}: “Dime, ¿son tan maravillosos como parecen en el escenario?”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Bueno, un poco más tontos de lo que dejan ver, pero son muy buena gente. Aunque muchas veces son un peligro para ellos mismos jajaja”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “¿Y te enseñan sus nuevas canciones antes que nadie? Ojalá tuviera yo esa suerte”
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Bueno, te ahorras escuchar mucha mierda. No son perfectos claro, y menos con las primeras versiones de las canciones”
 Sophie: “Tu favorita era Biggest Lie, ¿no? Si hubieras oído como era esa canción al principio, ya te digo yo que no estaría ni en tu top 20”
 {$name}: “Aún así, que puedas ver todo el proceso creativo desde el principio además de conocerlos a ellos, eso sería un sueño cumplido para mí...”
@@ -5429,6 +5752,11 @@ La miro con la ilusión de una [select value={$gender} M="un niño" F="una niña
 Sophie se queda callada un rato, está sopesando una decisión. ¿Qué será lo que me quiere decir?
 Sophie: “Bueno... De hecho, tienen un concierto este fin de semana al que voy a  ir-”
 Me inclino totalmente apoyando los antebrazos al mostrador con mis manos sosteniendo la cabeza, son las únicas que evitan que mi frente entre en contacto con la madera.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 {$name}: “No me digas más, soy tontísima. He estado tan liada con la mudanza con la floristería y la mudanza que se me ha pasado completamente. Y eso que les sigo en todas sus redes sociales”
 {$name}: “Aaghh qué rabia, a saber cuándo vuelven a tocar tan cerca”
 {$name}: “...”
@@ -5436,14 +5764,29 @@ Me inclino totalmente apoyando los antebrazos al mostrador con mis manos sosteni
 Sophie: “No te lo decía por alardear, te lo comentaba porque a mí me invitan ellos, ni de broma me puedo permitir una entrada ja”
 Sophie: “Y estoy segura de que no le va a importar que lleve a alguien más”
 Sophie: “Así que podrías venirte conmigo si quieres”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “¿Lo dices en serio?”
 Sophie: “Totalmente, con esto no bromeo nunca”
 Su semblante serio acompaña su afirmación.
 ->Apuntarse al concierto 
     <<Update_Plans Sophie true false>>
     <<Add_npc_likeability NPC_sophie 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Pues no hace falta que me lo digas dos veces, ¡me apunto!”
     Sophie: “¿Sabes dónde es y eso? Empieza a las 11 así que deberíamos estar allí a las 10:30 por lo menos si queremos ver algo. Que ser su amiga no me libra del resto del público”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “No sé nada del concierto... ¿Te parece si intercambiamos datos de contacto y me lo escribes al móvil? Para organizarnos también es mejor”
     Es cierto que me lo podría apuntar en un papel, pero tener su número es más interesante... Además de seguro claro, por si nos pasa algo allí. Qué bien pienso a veces.
     Sophie: “Vale pues es...”
@@ -5457,7 +5800,7 @@ Su semblante serio acompaña su afirmación.
     Sophie: “Bueno, tu verás lo que te apetece”
     Parece molesta con que le haya rechazado el plan. ¿Es posible que quisiera ir conmigo de verdad?
     {$name}: “...”
-//Campanitas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 Justo entra un cliente por la puerta y espera en la entrada a que se vaya Sophie para acercarse al mostrador. Creo que está un poco asustado de ella.
 Sophie: “Me voy ya para no molestarte más en el trabajo. Adiós y gracias por la pulsera”
 {$name}: “De nada, y hasta la próxima”
@@ -5480,22 +5823,22 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
+[select value={$gender} M="Cansado" F="Cansada" NB="Cansade"/] me derrumbo en la silla tras el mostrador. Buff, menudo día llevo, se nota que ya se acerca el fin de semana. No he podido parar en ningún momento, los clientes han venido uno tras otro. 
+Hasta ahora no he podido detenerme a respirar. Abro un cajón del mostrador y saco el bollo de crema envuelto que no me pude terminar antes.
+Muerdo el bizcocho y saboreo su interior. Mmmm, ¡sigue buenísimo! A pesar del tiempo que ha pasado ahí continua esponjoso y la crema está en su punto.
+<<PlayAudio timbre_puerta_floristeria 0.5>>
+Allan entra a la floristería con su sonrisa habitual.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-[select value={$gender} M="Cansado" F="Cansada" NB="Cansade"/] me derrumbo en la silla tras el mostrador. Buff, menudo día llevo, se nota que ya se acerca el fin de semana. No he podido parar en ningún momento, los clientes han venido uno tras otro. 
-Hasta ahora no he podido detenerme a respirar. Abro un cajón del mostrador y saco el bollo de crema envuelto que no me pude terminar antes.
-Muerdo el bizcocho y saboreo su interior. Mmmm, ¡sigue buenísimo! A pesar del tiempo que ha pasado ahí continua esponjoso y la crema está en su punto.
-//Campanitas
-Allan entra a la floristería con su sonrisa habitual.
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 ->Saludar con la boca llena
     <<Add_npc_likeability NPC_allan 2>>
     //////////////////////////////////////////////////////
     ///////////////PONER EN CURSIVA///////////////////////
-    //////////////////////////////////////////////////////
+    ///////////////No sé hacerlo para la beta/////////////////////////////
     {$name}: “¡Hoga Agam!”
     Allan: “Jajajaja, hola a ti también {$name}”
     Trago y apoyo mis manos con el bollo en el mostrador.
@@ -5515,6 +5858,7 @@ Allan entra a la floristería con su sonrisa habitual.
 Allan: “Qué va, aprovecha el tiempo de descanso”
 {$name}: “En realidad aún no es mi descanso, pero tenía hambre ahora y como justo no había nadie en la tienda, pues me he querido dar un capricho”
 Sigo comiendo mientras dejo hablar a Allan.
+<<Act Allan sprt_allan_shy_frustrated>>
 Allan: “Ahh... Que envidia me das, si hiciera eso, antes de que pudiera catar nada mi jefe me hubiera dejado sordo con sus gritos je...”
 Sonríe triste, sobrellevando con humor una mala situación.
 Allan ve que aún no he terminado de comerme el trozo que había empezado así que sigue con la conversación para rellenar el silencio.
@@ -5524,10 +5868,21 @@ Allan: “Bueno, tampoco me puedo quejar mucho que al menos es trabajo, que con 
 Allan suspira resignado. Justo termino de comer y le miro [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/].
 ->Estar en desacuerdo con su comentario  
     <<Add_npc_likeability NPC_allan 2>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “¡Ey, no te conformes así! Claro que te puedes quejar, que haya gente en peor situación no quita que la tuya sea dura”
     Allan: “Ya pero no sé, me parece poco empático por mi parte”
     {$name}: “Nada de eso, quéjate todo lo que tú quieras y necesites. Es más, por lo que me dices, ¡poco te quejas!”
+    <<Act Allan sprt_allan_neutral>>
     Allan: “Jajaja... puede que tengas razón”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Humpf, eso está mejor”
     Pongo los brazos en jarra para afirmar mi consejo. Se ríe de mi acto y se queda mirándome fijamente perdido en su mente. Tras unos segundos así, hablo y le traigo de vuelta de haya donde estuviese.
 ->Coincidir con él
@@ -5536,11 +5891,12 @@ Allan suspira resignado. Justo termino de comer y le miro [select value={$gender
     {$name}: “Imagínate los que trabajan en la mina. Ellos sí que lo tienen difícil”
     Su expresión se apaga con mis palabras. No sé si esperaba otra cosa, pero yo voy a ser totalmente sincera con lo que pienso.
 {$name}: “Por cierto, ¿querías que te hiciera algún ramo hoy? Como has dicho que es tu descanso y no sé cuánto te queda... Por ir haciéndolo ya”
-
 <<if get_npc_likeability("NPC_allan") > 10>>
+    <<Act Allan sprt_allan_shy_lookingforward>>
     Allan: “¡Cierto! Hablando contigo me despisto de otras cosas”
     Se sonroja él y menos mal, porque yo también lo hago, así no soy la única.
 <<else>>
+    <<Act Allan sprt_allan_neutral>>
     Allan: “¡Cierto! Hablando me despisto de otras cosas”
 <<endif>>
 {$name}: “¿Tenías algo pensado?”
@@ -5551,9 +5907,10 @@ Allan: “La verdad es que sí”
 title: Minijuego_Allan_jueves_sem2
 position: -125,-234
 ---
-<<HideAll>>
+
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<HideAll>>
 <<StopAudioAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Allan_jueves_sem2>>
@@ -5566,7 +5923,7 @@ title: Salida_minijuego_Allan_jueves_sem2
 position: -118,-144
 ---
 <<HideAll>>
-
+<<PlayAudio Musica_floristeria 0.4 loop>> 
 <<set $resultado to get_minigame_result()>>
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
@@ -5605,7 +5962,7 @@ position: -123,-48
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Act Allan sprt_allan_happy right bottom015 white>>
 <<Add_npc_likeability NPC_allan 3>>
 
 Esta vez creo que me he superado y seguro que Allan lo va a saber apreciar. Allan coge lentamente el ramo.
@@ -5654,9 +6011,9 @@ position: -289,-54
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_disappointed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_disappointed left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan -3>>
@@ -5668,13 +6025,12 @@ En cuanto veo su sonrisa incómoda sé que no era como lo esperaba. Suspiro tris
 Allan: “No, no, no”
 Allan: “Bueno, a ver, el caso es que- ” 
 {$name}: “No hace falta que des tantas vueltas, puedes decírmelo directamente”
+<<Act Allan sprt_allan_shy_sad>>
 Allan: “No sé, yo tal vez lo hubiera hecho de otra forma mejor. Las principales culpables son estas flores”
 Señala las dos flores más disonantes.
 {$name}: “Ya, es que tenía una idea inicial en mente y al final me he hecho un lío y el resultado ha sido esta... amalgama”
 {$name}: “Perdona de nuevo”
 Se queda callado sin saber cómo responder. Seguramente no lo haga porque no quiera herirme con su crítica. En silencio recojo el pago del ramo.
-
-
 <<jump Fin_ramas_minijuego_Allan_jueves_sem2>>
 ===
 
@@ -5706,22 +6062,17 @@ position: -120,41
     <<HideAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
-    <<Hide Scene>>
-    <<Fade black 1.0 0.0 2.0>>
     <<Scene bg_calle_noche_placeholder>>
-    <<if get_player_mainCharacter() == "P">>
-        <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-    <<elseif get_player_mainCharacter() == "S">>
-        <<Act {$name} sprt_he_neutral left bottom015 white>>
-    <<endif>>
+    <<Fade black 1.0 0.0 2.0>>
+    <<wait 2.0>>
     De camino a casa paro a comprar unos recados y al final me encuentro más cargada de lo que tenía pensado. Todo por culpa de una tienda de animales que han abierto nueva al final de la calle comercial.
     ¿Cómo no le iba a comprar unos juguetes nuevos a Limón? Eran monísimos, tampoco muy caros. 
     Sólo espero que los acabe usando, conociéndole, va a jugar más con la caja del juguete que con el propio aparato.
     Las bolas con cascabel dentro le tienen que gustar sí o sí, ¿no? Puff ya no sé qué pensar, solo me queda llegar a casa para probarlo.
     ¡Limón, confío en ti!
-    <<HideAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
+    <<StopAudioAll>>
     <<jump Finde_sem2>>
 <<elseif get_npc_likeability("NPC_allan") >= 15>>
     Allan mira la hora y sus ojos se agrandan.
@@ -5729,20 +6080,16 @@ position: -120,41
     {$name}: “Pues date prisa, no quiero que llegues tarde por mi culpa” 
     Allan: “¡Hasta el próximo día!
     {$name}: “¡Sí, nos vemos!”
-    <<Move Allan offright bottom015 1.0>>
-    <<wait 1.0>>
-    <<Hide Allan>>
     Abre la puerta para salir, pero cuando tiene medio cuerpo fuera un pensamiento me inunda la mente. Es algo que llevaba varios días pensando y hoy tenga la confianza para decirlo en voz alta.
     {$name}: “Ay, casi se me olvida. ¿Te apetece tomar algo cuando acabes tu turno?”
-    <<Act Allan sprt_allan_neutral right bottom015 white>>
     {$name}: “Sin presiones, sólo si-”
+    <<Act Allan sprt_allan_happy>>
     Allan: “¡Me encantaría!”
+    <<Act Allan sprt_allan_shy_frustrated>>
     Allan: “Agh pero hoy acabo muy tarde, no sé si vas a querer a esas horas”
-    /////////////////////////////////////////////////////////////////
-    //////////////////////EXPRESIÓN FRUSTRACIÓN ALLAN////////////////
-    /////////////////////////////////////////////////////////////////
     Pocas veces he visto frustración en la cara de Allan, pero ahora es una de ellas . Aprieta los puños de la impotencia ante su horario infernal.
     {$name}: “Después de lo que me has dicho hoy contaba con ello, así que soy consciente de la hora y me sigue pareciendo buen plan”
+    <<Act Allan sprt_allan_neutral>>
     La felicidad vuelve a su rostro y sus ojos se iluminan de esperanza
     {$name}: “¿Nos vemos luego entonces?”
     Allan: “¡Sí! Ahora sí que me voy ya. Te aviso cuando salga, a ver si consigo salir antes por algún milagro”
@@ -5756,9 +6103,10 @@ position: -120,41
     Sé que no es igual de impresionante que lo otro, pero espero que nos lo pasemos bien igual, así podemos hablar más y él desconecta de ese maldito trabajo que tiene.
     Estoy deseando que llegue la noche para volver a verle.
     No pasa mucho tiempo vacía la floristería, así que me vuelvo a centrar en el trabajo que me queda, que cada vez es menos.
-    <<HideAll>>
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
+    <<HideAll>>
+    <<StopAudioAll>>
     <<jump cita_Allan_jueves_sem2>>
 <<endif>>
 ===
@@ -5767,16 +6115,12 @@ title: cita_Allan_jueves_sem2
 position: -143,644
 ---
 <<HideAll>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle_noche_placeholder>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
 La noche cubre ya toda la ciudad, indicando así que la cita con Allan se acerca, y mientras tanto yo, que no soy la que acaba tarde de trabajar, voy con prisas a la tienda.
 Después de cerrar la floristería aproveché a hacer recados que tenía pendiente, y de paso le compré a Limón juguetes nuevos. 
 Espero que los use, aunque ya me lo imagino jugando más con la caja en la que viene que con el juguete en sí.
@@ -5784,12 +6128,22 @@ Como no contaba con estas compras extras e iba cargada de más y aún era pronto
 Así que aquí estoy corriendo de nuevo por llegar tarde. Si sigo así llegaré bien a la hora que me ha dicho Allan que iba a salir.
 Acercándome a la tienda me fijo que es último local con las luces encendidas, además de los bares. No hay nadie fuera así que Allan sigue dentro. Me paro frente a la puerta para esperarle.
 Habrán pasado como 20 minutos cuando siento unos toquecitos mi hombro. Dejo de mirar el móvil para alzar la vista y ver a Allan detrás de mí.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 Allan: “¡Hola! Perdona por hacerte esperar”
 Allan: “Pensaba que iba a salir antes”
 ->Criticar al jefe
     <<Add_npc_likeability NPC_allan 1>>
     Allan: “Pero a última hora el jefe me ha mandado ordenar una sección, aunque ya estaba listo para irme”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “Pero ese tío... Que cara tiene. ¿No te lo podía haber dicho antes? ¿O mejor, haberlo dejado para mañana?”
     {$name}: “Si tan urgente era es tarea que la hubiera hecho él”
     {$name}: “¿No le dijiste que ya tenías planes?”
@@ -5803,11 +6157,17 @@ Allan: “Pensaba que iba a salir antes”
     {$name}: “Así que solo te ha dicho a ti lo de la tarea... Entonces lo tengo claro, no iba a ningún sitio importante”
     {$name}: “Lo que pasa es que se aprovecha de que eres demasiado bueno y vas a hacer lo que te pida”
     {$name}: “Está bien pensar siempre en positivo sobre las acciones de los demás si no los conoces para no prejuzgar. Pero no es la primera vez que te hace esto tu jefe, ¿verdad?”
+    <<Act Allan sprt_allan_shy_frustrated>>
     Allan: “No...” Mira al suelo cabizbajo
     {$name}: “Entonces no pasa nada por pensar mal de él, no es que haya demostrado otra cosa”
     {$name}: “¿Has pensado en hablar con él y ponerte firme sobre el horario?”
     Allan: “Alguna vez se me ha ocurrido, pero es que sé que no voy a ser capaz. No soy ese tipo de persona... Además, no es para tanto, es sólo salir un poco más tarde”
     {$name}: “No lo desestimes. Sí que es para tanto, cinco minutos un día, más diez minutos otro... Acabas trabajando muchas horas gratis”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Pero entiendo lo que dices, confrontarte a alguien nunca es fácil y menos si es tu jefe”
     {$name}: “Así que no te voy a decir lo que tienes que hacer, pero si necesitas ayuda con algo, sabes que estoy aquí por si lo necesitas” Le sonrío.
 ->Intentar entender al jefe
@@ -5820,13 +6180,16 @@ Allan: “Pensaba que iba a salir antes”
     Allan: “Uff no sé yo si se lo va a tomar muy bien, y tampoco quiero tener malos rollos...”
     {$name}: “Entonces siendo que es salir un poco más tarde tampoco pasa nada por ceder un poco. Mejor eso que empeorar el ambiente de trabajo”
     Allan: “Sí, eso no quiero que pase”
-Allan: “Echo el cierre y ya podemos irnos”
-{$name}: “¡Genial!”
+<<Act Ethan sprt_ethan_neutral>>
+{$name}: “Echo el cierre y ya podemos irnos”
+Allan: “¡Genial!”
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-<<Hide Scene>>
-<<Fade black 1.0 0.0 2.0>>
+<<StopAudioAll>>
 <<Scene bg_bar_placeholder>>
+<<PlayAudio murmullo_bar 0.4 loop>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 A pesar de ser jueves y no fin de semana, el bar está bastante lleno. Aun así, conseguimos una mesa pequeña un poco apartada de los demás y sin ningún altavoz cerca. Es perfecto.
 Allan se sienta de espaldas al resto del bar, y yo desde mi sitio veo todo el movimiento de camareros.
 Allan: “Menos mal que había sitio aquí, pensaba que iba al completo por la hora”
@@ -5843,10 +6206,12 @@ Allan: “Lo suficientemente para estar sano, no soy un obsesivo de esos de esta
     Echo mi cuerpo hacia delante sobre la mesa, acerco mi mano al brazo que extiende ante mí, y lo aprieto levemente con mis dedos. ¡Qué prieto! Claramente tiene la musculatura bien desarrollada.
     Quien iba a decir que una persona con el corazón tan blando como Allan iba a tener un cuerpo tan duro.
     {$name}: “Pues no sé cuánto tiempo irás, pero sí que se te nota fuerte”
+    <<Act Allan sprt_allan_shy_lookingforward>>
     Me echo para atrás para volver a sentarme en la silla y de refilón veo sus mofletes rojizos, es solo durante un instante. 
     Ya [select value={$gender} M="sentado" F="sentada" NB="sentade"/] no soy capaz de discernir el tono colorado y la verdad es que hace calor en el bar.
     {$name}:“Aunque me creo lo de que no vives en el gimnasio”
 ->No hacer nada 
+<<Act Allan sprt_allan_neutral>>
 {$name}: “Si estuvieras tanto tiempo en el gimnasio. ¿Quién cuidaría de las plantas?”
 Allan: “Exacto, y eso sí que no voy a dejarlo de lado. Y encima son muy exigentes, tengo varias con diferentes horarios, cada una necesita su cantidad de agua y así.” 
 Allan: “Requiere su tiempo, bueno que te voy a contar, seguro que te pasa lo mismo” 
@@ -5856,26 +6221,50 @@ Miro como mis manos juguetean entre sí mientras pienso en lo dura que fue la pr
 {$name}: “Sí es verdad que requiere un esfuerzo por nuestra parte, pero al final merece la pena cuando las ves florecer y bien verdes.”
 {$name}: “Es ver con tus ojos que todo tu trabajo ha dado sus frutos y se muestra representado en esas flores, esa vida”
 {$name}: “¿No crees?”
+<<Act Allan sprt_allan_shy_lookingforward>>
 Levanto la mirada para poder observar a Allan de nuevo y me doy cuenta de que su mirada está perdida en la mía.
 {$name}: “¿Allan?”
+<<Act Allan sprt_allan_shy_lookingdown>>
 Al escucharme vuelve en sí y se sonroja.
 Allan: “Sí claro, coincido completamente”
 ->“¿No me estabas escuchando?”
     <<Add_npc_likeability NPC_allan -2>>
+    <<Act Allan sprt_allan_neutral>>
     Allan: “¡Sí que estaba escuchando, te lo prometo!”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Luce preocupado porque no le crea. Odio que siempre sea yo la que escucha y nunca a la que escuchan. Así que sí, no le creo al 100%, me enfado un poco.
     {$name}: “Si tú lo dices...”
     Allan: “Lo digo de verdad, en serio”
     Aunque me diga eso no cedo, mi postura refleja que he subido la guardia y el ambiente deja de ser tan relajado como lo estaba siendo.
 ->“Pft, buena salvada ahí”
     <<Add_npc_likeability NPC_allan 2>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Allan: “De verdad que estaba prestando atención, ha sido solo al final, pero he escuchado todo”
     {$name}: “No hace falta que des explicaciones, me creo lo que dices”
     {$name}: “A mí también me pasa contigo a veces... Así que no soy quién para juzgar”
     Ante mi comentario se sonroja aún más y se queda callado. Qué guapo está cuando se pone así.
 ->Sonreírle y no mencionarlo 
     <<Add_npc_likeability NPC_allan 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Le sonrío con complicidad y se relaja al entender que no le voy a presionar más. Un despiste lo tiene cualquiera y no creo que no me haya prestado atención con algo relacionado con la jardinería.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Allan sprt_allan_neutral>>
 {$name}: “Por otro lado. ¿Sabes qué vas a querer tomar?”
 Allan: “Para beber sí lo tengo claro, voy a tomar un Lemtea, pero para comer ni idea”
 {$name}: “Bien, yo me voy a pedir una cerveza que hoy me apetece”
@@ -5892,8 +6281,9 @@ Allan: “Sí que lo están, hacía tiempo que no comía unos tan buenos”
 Allan: “Jajaja, y que lo digas”  
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
-
+<<wait 2.0>>
 A lo largo de la cita terminamos pidiendo varios platos y, efectivamente, todos buenísimos. A Allan también le gustaron mucho, me alegro de haberle traído aquí.
 También hablamos mucho y en todo momento ambos en el mismo ritmo. No había silencios incómodos, ni nos pisábamos, cada uno sabía perfectamente cuando hablar, como si nos conociéramos de toda la vida.
 Volví a ver pequeños detalles de él que me hacen apreciarle aún más, como dejar siempre el último trozo para que lo comiera yo. 
@@ -5903,6 +6293,12 @@ Allan es introvertido y prefería que interactuara yo con los camareros, con eso
 Pero no pasa nada porque a mí no me importa hacerlo, y me alegró ver que yo también podía ser un apoyo para él. 
 Ahora que ya terminamos de comer llamo por última vez al camarero para que nos traiga la cuenta. En nada está en nuestra mesa y deja un cuenco con el ticket.
 Cojo el ticket antes de que vea Allan el precio, saco dos billetes de 20.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Allan sprt_allan_placeholder right bottom015 white>>
 Allan: “Ey, ¿qué intentas? Déjame ver cuánto es, pagamos a medias”
 Ignorándole, meto el dinero en el cuenco y se lo ofrezco al camarero que lo coge y se lo lleva. Sólo queda esperar a las vueltas.
 Allan: “{$name}, en serio, dime cuanto es”
@@ -5916,31 +6312,66 @@ Se echa hacia delante y extiende el brazo para coger el ticket.
 Levanto la mano con el ticket y la llevo hacia atrás para alejar el ticket lo más lejos posible de Allan. Pero no es suficiente para que deje de intentarlo.
 Se echa aún más adelante y extiende aún más el brazo para recortar la distancia generada por la mesa y mi gesto. 
 Aún no es suficiente, mientras me río de la situación, Allan apoya una de las manos en la mesa para poder echar el cuerpo aún más adelante.
-Pero calcula mal, y mi risa se corta en seco cuando su mano se resbala y planta el codo para no caerse más. Ahora en vez de estar a la altura del ticket se queda frente a mis ojos y escasos centímetros nos separan.    
+Pero calcula mal, y mi risa se corta en seco cuando su mano se resbala y planta el codo para no caerse más. Ahora en vez de estar a la altura del ticket se queda frente a mis ojos y escasos centímetros nos separan.  
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio music_romantic 0.4 loop>>
+<<Scene illus_week1_she_allan>>//////////////AQUI ILLUS_WEEK2_SHE_ALLAN
+<<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>>
 En esta posición me puedo fijar más en las facciones de su cara y en esos profundos ojos miel clavados sobre los míos. ¿Estará haciendo él lo mismo?
 Sé que debería decir algo para salir de esta situación, pero quiero alargar este momento todo lo que pueda, quiero disfrutar de esta cercanía y calidez disponible solo entre Allan y yo ahora.
-<<Hide Allan>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio murmullo_bar  0.4 loop>>
+<<Scene botanico_placeholder>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 <<Act Camarero sprt_camarero right bottom015 white>>
 Camarero: “Ejem” Tose sobre su puño.
 Camarero: “Aquí tienes las vueltas”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_shy left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_shy left bottom015 white>>
+<<endif>>
 {$name}: “Eh sí sí”
 {$name}: “Muchas gracias por todo”
-<<Move Camarero offright bottom015 1.0>>
-<<wait 1.0>>
-<<Hide Camarero>>
+
 Sonrío incómodamente al camarero mientras tomo el dinero y lo guardo. 
+<<Move Camarero offright bottom015 1.0>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Allan sprt_allan_shy_lookingdown right bottom015 white>>
 Allan vuelve a echarse hacia atrás para volver a sentarse en su sitio totalmente avergonzado, adopta una postura más encogida para intentando pasar más desapercibido.
-<<Act Allan sprt_allan_neutral right bottom015 white>>
 He pasado toda la noche teniendo que llamar la atención a los camareros para que se pasaran por nuestra mesa, y justo ahora tenía que venir a interrumpir este momento.
 Soy la primera en levantarme y al ver que Allan no me sigue me fijo que sigue perdido en su cabeza abochornado.
 ->Extender la mano para que la coja
     <<Add_npc_likeability NPC_allan 2>>
     {$name}: “Allan”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Extiendo mi mano frente a su campo de visión para que la vea. Se gira hacia mí y le sonrío de manera tranquilizadora.
+    <<Act Allan sprt_allan_shy_lookingforward>>
     Con nervios acepta mi mano y la agarra. En cuanto nuestras manos entran en contacto tiro de él suavemente para que me acompañe.
     Salimos de la mano del bar y una vez fuera aún no las separamos.
     Allan: “Gracias por sacarme de ahí, me había quedado un poco parado...”
     {$name}: “No pasa nada, está bien”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Me gustaría quedarme así más rato pero cada vez noto más el cansancio del día.
     {$name}: “Ha sido una noche genial”
     Allan: “Sí, la comida estaba espectacular”
@@ -5949,12 +6380,14 @@ Soy la primera en levantarme y al ver que Allan no me sigue me fijo que sigue pe
     Allan: “Ojalá repitamos entonces... ¿no?”
     {$name}: “Sí, me encantaría”
     Esta vez desenlazo yo nuestras manos. Por poco que me apetezca, tenemos que irnos por distintos caminos, aunque sea por ahora.
+    <<Act Allan sprt_allan_neutral>>
     {$name}: “Entonces... Ten una buena noche”
     Allan: “Igualmente, nos vemos en tu floristería seguro”
     Allan: “Adiós”
 ->Incitarle a que se levante
     {$name}: “Allan, ya pagué así que ya podemos irnos”
     Allan: “Eh sí, voy”
+    <<Act Allan sprt_allan_neutral>>
     Salimos juntos del bar, Allan justo detrás de mí. 
     Allan: “Al final me he quedado sin saber cuánto te debo”
     {$name}: “Justo lo que quería, je”
@@ -5972,9 +6405,10 @@ Soy la primera en levantarme y al ver que Allan no me sigue me fijo que sigue pe
     Allan: “Adiós”
 <<Move Allan offright bottom015 1.0>>
 <<wait 1.0>>
-<<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<HideAll>>
+<<StopAudioAll>>
 <<jump Finde_sem2>>
 ===
 
@@ -5982,13 +6416,14 @@ title: Finde_sem2
 position: -143,644
 ---
 <<HideAll>>
+<<Scene bg_casa_placeholder>>
+<<PlayAudio Musica_casa 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
-<<Scene bg_floristeria>>
+
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<Scene bg_casa_placeholder>>
 
-SÁBADO
+
 Alarma: “Beep beep beep”
 Me despierto refunfuñando y apago la alarma del móvil. 
 Siempre tengo un mal despertar, pero hoy no quería que se me pegaran las sábanas. Me toca hacer limpieza profunda de la cocina y tengo que aprovechar la mañana.
@@ -6013,6 +6448,7 @@ Con eso estará entretenido un rato así que puedo desayunar tranquilamente.
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 1.0>>
+
 Mientras friego los platos mi móvil empieza a sonar. Me seco las manos y cojo el teléfono. Al ver el nombre que aparece en pantalla me llevo la palma a la cara. ¿Cómo se me ha podido olvidar? Acepto la llamada.
 <<Act Leah sprt_leah_phone right bottom015 white>>
 Leah: “Vaya, vaya. Otra vez me ha tocado llamar a mí”
@@ -6025,6 +6461,11 @@ Leah: “Ojo, ¿significa eso que tienes algo interesante que contarme? ¡Qué a
 {$name}: “Pues ha seguido viniendo el chico amante de las flores así que he podido hablar más con él”
 Leah: “Ah sí me acuerdo de él, de lo que me contaste tenía pinta de ser muy majo”
 <<if get_npc_likeability("NPC_allan") <= 0>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     {$name}: “Al final nada, sí que es majo, pero no sé parece que va siempre con cuidado, como si hablar conmigo fuera como andar sobre arenas movedizas”
     {$name}: “Y las conversaciones acaban siendo incómodas, no me gusta que alguien esté así conmigo”
     Leah: “¿No has tenido ningún problema con él para que esté así?”
@@ -6039,6 +6480,11 @@ Leah: “Ah sí me acuerdo de él, de lo que me contaste tenía pinta de ser muy
     Leah: “Que no lo tiene, ¿verdad?”
     {$name}: “No que yo sepa, pero por cómo es él me parece imposible”
 <<elseif get_npc_likeability("NPC_allan") > 15>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
     {$name}: “Pues no sólo es majo, es una persona genial y creo que me está empezando a gustar”
     Leah: “¡[select value={$gender} M="Tío" F="Tía" NB="Tíe"/] eso es genial! ¿Qué ha pasado esta semana para que digas eso?”
     {$name}: “No sé, pero de conocerle más quería pasar más tiempo con él, y el otro día me envalentoné y le dije de salir a cenar a un bar que conocía...”
@@ -6053,12 +6499,22 @@ Leah: “Ah sí me acuerdo de él, de lo que me contaste tenía pinta de ser muy
     Leah: “Ni siquiera te plantees eso, yo aquí veo claramente posibilidades. Al final tu verás lo que hacer, mira a ver cómo se va desarrollando y te lo vas pensando”
     {$name}: “Eso voy a hacer, sí”
 <<endif>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “Cambiando de tema, o de persona más bien”
 {$name}: “¿Te acuerdas de la chica que te hablé la semana pasada?”
 Leah: “Esa que he acertado que me volverías hablar de ella por mucho que lo negaras. Si es que... Cómo te conozco”
 {$name}: “¡Leah!”
-Leah: “Sí perdón, no interrumpo 
+Leah: “Sí perdón, no interrumpo"
 <<if get_npc_likeability("NPC_sophie") <= 0 && has_Sophie_Plan() == false>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “De hecho no tienes razón en absoluto, la chica, aunque se disculpara sigue siendo una borde, al final fueron palabras vacías” 
     {$name}: “Cada vez que viene a la tienda es un suplicio, parece un abuelo cascarrabias”
     Leah: “Uff pues sí que he fallado completamente con la predicción. Vaya mierda tener que aguantarla de clienta entonces”
@@ -6075,12 +6531,22 @@ Leah: “Sí perdón, no interrumpo
     {$name}: “Ya sé por dónde vas. La verdad, no sé si tiene pareja, diría que no, pero no sé”
     Leah: “Bueno, pues entérate si puedes. Y si no, nada, como [select value={$gender} M="amigos" F="amigas" NB="amigues"/] también se está bien.”
 <<elseif get_npc_likeability("NPC_sophie") > 15>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
     {$name}: “Pues... tenías completamente razón, creo que me está gustando cada vez más. Sabes que aún no puedo poner la mano en el fuego por nadie, pero tampoco puedo ocultar lo que siento”
     Leah: “No hace falta acelerar tanto, poco a poco. Ahora sabes que te interesa en ese sentido y eso ya está genial”
     Leah: “Sabiendo esto ahora puedes ver cómo enfocarlo con ella. Con el tiempo se te aclararán las ideas y sabrás qué tienes que hacer”
     {$name}: “Tienes razón, a veces das muy buenos consejos”
     Leah: “¡Ey!¿Cómo que a veces? Siempre doy buenos consejos”
     {$name}: “Jajajaja”
+<<endif>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
 <<endif>>
 <<if has_Sophie_Plan() == true>>
     {$name}: “Y bueno, que no se me olvide contarte lo más importante de ella. He descubierto que es fan de Useless Misfits”
@@ -6098,6 +6564,11 @@ Leah: “Como para olvidarlo. ¿No es el mismo chico que te golpeó con la puert
 Leah: “Un momento, déjame adivinar. ¿Ha vuelto a liarla?”
 Leah: “Como sea eso estoy a nada de comprar un billete e irme allí, ¿eh?”
 <<if get_npc_likeability("NPC_ethan") <= 0>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     {$name}: Suspiro. “Ahh, tú siempre dando en el clavo, Leah.”
     {$name}: “A veces no puedo evitar pensar si puedes leer mentes o algo así.”
     Leah: “Jajaja, me gustaría decir que es eso, pero la verdad es que por lo que me contaste de ese chico era bastante obvio.”
@@ -6113,6 +6584,11 @@ Leah: “Como sea eso estoy a nada de comprar un billete e irme allí, ¿eh?”
     {$name}: “Ya...”
     Leah: “{$name}, sé que te preocupas mucho por los demás por lo que te pasó, pero si ves que no llega a nada y además te incomoda, deberías plantearte pararle los pies.”
     Leah: “No es bueno forzar las cosas. Ya encontrarás a alguien más afín a ti.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Tienes razón Leah, me apunto tu consejo.”
     Leah: “¿Y cuando no la tengo?”
     {$name}: “Anda calla, jajaja.”
@@ -6135,6 +6611,11 @@ Leah: “Como sea eso estoy a nada de comprar un billete e irme allí, ¿eh?”
     Leah: “Aún así, sigo queriendo más. Espero que la próxima vez que hable contigo haya algún avance y, si no, me lo presentas a mí.”
     {$name}: “¡Bieeeen!”
 <<elseif get_npc_likeability("NPC_ethan") > 15>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
     {$name}: “Pues la verdad es que todo lo contrario.”
     {$name}: “Últimamente Ethan solo ha tenido detalles conmigo, y bastante bonitos, la verdad.”
     Leah: “¿Oh?”
@@ -6161,6 +6642,11 @@ Leah: “Como sea eso estoy a nada de comprar un billete e irme allí, ¿eh?”
     Leah: “¡No sabes lo que me alegro por ti, {$name}!”
     Leah: “Yo voy a estar aquí apoyándote para lo que necesites.”
     {$name}: “Gracias Leah, ya te contaré cómo va todo con él.”
+<<endif>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
 <<endif>>
 {$name}: “Y ese es un poco el resumen de esta semana.”
 {$name}: “La cantidad de clientes la verdad es que ha aumentado y estoy muy [select value={$gender} M="contento" F="contenta" NB="contente"/], pero no hay nada más interesante que me deje por contar.”
@@ -6229,6 +6715,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<HideAll>>
+        <<StopAudioAll>>
         <<jump Cita_Sophie_sem2>>
     -> Quedar con Ethan. 
         <<conciertoSophieCancelado yes>>
@@ -6273,15 +6760,18 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<HideAll>>
+        <<StopAudioAll>>
         <<jump Cita_Ethan_sem2>>
 <<elseif has_Sophie_Plan() == false>>
     -> Quedar con Ethan. 
         <<citaFin Ethan>>
         ¿Una película?
         Umm... La verdad es que me apetece bastante, hace mucho que no voy al cine y hoy no tengo nada más interesante que hacer.
-        //////////////////////////////////////////////////////////
-        ///////////////SPRITE PROTAGONISTA RUBORIZADA/////////////
-        //////////////////////////////////////////////////////////
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_embarrassed>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_embarrassed>>
+        <<endif>>
         Además, así puedo pasar más tiempo con Ethan y conocerle mejor. 
         {$name}: “Me encanta la idea, Eros. ¿Quedamos dentro de una hora en la puerta del cine y ya vemos qué película ver?”
         Ethan: “¡Por supuesto, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]!”
@@ -6300,6 +6790,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<HideAll>>
+        <<StopAudioAll>>
         <<jump Cita_Ethan_sem2>>
     -> Rechazar
         Umm... La verdad es que hoy no tenía muchas ganas de salir y todavía me quedan cosas por hacer en casa.
@@ -6330,6 +6821,7 @@ Ethan: “La verdad es que hace mucho que no voy al cine y había pensado que po
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<HideAll>>
+        <<StopAudioAll>>
         <<jump Lunes_sem3>>
 <<endif>>
 ===
@@ -6338,16 +6830,13 @@ title: Cita_Sophie_sem2
 position: -143,644
 ---
 <<HideAll>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
+<<Scene bg_calle_noche_placeholder>> 
 <<Fade black 1.0 0.0 2.0>>
-<<Scene bg_calle_noche_placeholder>>     
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
+
 El concierto está cada vez más cerca, ya escucho el barullo de la gente de fuera. Mientras ando compruebo en la mochila que llevo todo encima. 
 Sé que no tengo que llevar nada concreto, ni las entradas siquiera, pero estoy muy nerviosa.
 Es la primera vez que voy a un concierto después de mucho tiempo y encima en una ciudad que aún no conozco. 
@@ -6357,6 +6846,11 @@ Pero no me tengo que dejar llevar por las negatividades.
 Doy la vuelta a la esquina y ya veo el final de la cola. Está bastante lejos de la entrada. 
 Sophie me dijo que me esperaba en la misma puerta así que paso de largo de todos los que están esperando.
 Por fin llego, y en la puerta hay un par de seguratas revisando las entradas, pero ni rastro de Sophie.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Ey, estoy aquí”
 Me giro en dirección del sonido y veo a Sophie posada en una farola fumando. Camino hacia ella.
@@ -6379,6 +6873,7 @@ Le da una última calada al cigarro, y se lo aleja de la boca son intención de 
     {$name}: “¿Problemas?”
     Sophie: “No te preocupes nada importante”
 ->No mencionarlo 
+    <<Add_npc_likeability NPC_sophie 0>>
 Tira el cigarro al suelo y lo pisa. Deja de apoyarse en el poste y se yergue completamente. Echa andar en dirección a la puerta y yo detrás de ella.
 Siguiéndola me doy cuenta de lo alta que es, y eso que no lleva tanta plataforma.
 Sophie: “Antes de entrar, pase lo que pase no digas nada y tú sígueme”
@@ -6387,32 +6882,18 @@ Llegamos a la entrada y Sophie se aproxima a uno de los guardaespaldas que está
 De su bolsillo saca algo que no alcanzo a ver, se lo muestra al hombre y su actitud con ella completamente, ahora sabe quién es.
 Sophie se acerca más al vigilante y le susurra algo al oído. El segurata deja de mirar la a ella para mirarme a mí y asiente. 
 Sophie me indica que me acerque y cuando estamos [select value={$gender} M="los dos juntos" F="las dos juntas" NB="les dos juntes"/] el guardaespaldas nos abre la puerta para pasar.
-<<Hide {$name}>>
-<<Hide Sophie>>
+<<Move Sophie center bottom015 1.0>>
 <<Act Fan sprt_chica left bottom015 white>>
 Fan: “¡Eh, se están colando!”
-<<Hide Fan>>
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
-<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+
 Me volteo repentinamente para ver de dónde viene la voz. Una chica de la fila nos señala. Empiezo a notar el sudor frío en mi frente.
+
 Sophie: “Tsk, justo esto era lo que quería evitar. Pasa tú delante”
 Paso la puerta y ella se queda en el marco girada a medias para poder ver el exterior.
-<<Hide {$name}>>
-<<Hide Sophie>>
-<<Act Fan sprt_chica left bottom015 white>>
+
 Fan: “Llevamos esperando por esto un montón. ¿Y la vais a dejar pasar, así como si nada?”
 Fan: “Me pregunto que habrá hecho para que la dejen pasar así”
-<<Hide Fan>>
-<<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-<<endif>>
-<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Act Sophie sprt_sophie_angry>>
 El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vaso. Sophie se gira completamente hacia afuera y aprieta los puños.
 ->Agarrar a Sophie
     <<Add_npc_likeability NPC_sophie 1>>
@@ -6422,6 +6903,7 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
     {$name}: “Da igual lo que digas que no le vas a hacer cambiar de opinión. Tus amigos, tú y yo sabemos que lo que dice son tonterías.”
     {$name}: “Así que no dejes que una don nadie te haga perder los nervios.”
     Cierra los ojos y suspira tratando de relajarse. Afloja los puños y pasa al interior del edificio. Cierro la puerta y dejamos de escuchar el alboroto del exterior.
+    <<Act Sophie sprt_sophie_neutral>>
     Sophie: “Tienes razón, es una idiota. Pasemos de ella.”
     Sonrío al ver que entra en razón.
     {$name}: “Te sigo”
@@ -6433,34 +6915,73 @@ El tono socarrón y lo que quiere implicar esa frase es la gota que colma el vas
     Sophie vuelve a pasar a dentro y el hombre nos cierra la puerta.
     Sophie: “Menuda gilipollas”
     {$name}: “No pienses en ella, que no nos arruine la noche por una tontería”
+    <<Act Sophie sprt_sophie_neutral>>
     Sophie: “Ya... Venga, vamos a entrar ya”
 ->Insultar al fan
-    <<Add_npc_likeability NPC_sophie 2>>
+    <<Add_npc_likeability NPC_sophie 3>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     Antes de que haga Sophie nada me asomo por el lateral de Sophie y miro fijamente a la fan que se ríe con sus amigos. Le parecerá una broma lo que acaba de decir, pero estoy que echo humo. 
     Respiro hondo y grito.
     {$name}: “¡No hables si no tienes ni puta idea de nada! ¡Gilipollas!”
+    <<Act Sophie sprt_sophie_neutral>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Hide Fan>>
+    <<Move Sophie right bottom015 1.0>>
     Sophie se gira para verme y su cara refleja sorpresa total. Aprovecho la conclusión para cogerle del brazo y tirar de ella hacia dentro. La puerta se cierra y amortigua los ruidos del exterior.
     {$name}: “Era para que no perdiéramos más tiempo con ella”
+    <<Act Sophie sprt_sophie_happy>>
     Se echa a reír.
     Sophie: “No me esperaba esto de [select value={$gender} M="un principito" F="una princesita" NB="une noble"/]”
     {$name}: “Te sorprendería lo que puedo llegar a hacer”
     Le sonrío [select value={$gender} M="burlón" F="burlona" NB="burlone"/].
+    <<Act Sophie sprt_sophie_flirty>>
     Sophie: “Ah, ¿sí? Interesante saberlo”
     {$name}: Mientras me devuelve la sonrisa ella nos adentramos más.
-<<Fade black 0.0 1.0 1.0>>
-<<wait 2.0>>
-<<Fade black 1.0 0.0 1.0>>
-<<Scene bg_bar_placeholder>>//Hay que cambiarlo cuando se tenga el de verdad
+<<Fade black 0.0 1.0 2.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<Hide Fan>>
+<<Move Sophie right bottom015 0.1>>
+<<wait 1.0>>>>
+<<Scene bg_concierto>>
+<<PlayAudio muchedumbre_ambiente_calle  0.2 loop>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 1.0>>>>
 Finalmente llegamos a la pista. Resulta agobiante e impresionante a partes iguales. Gracias a Sophie y su imponente actitud conseguimos quedar bastante cerca del escenario.
 Sophie: “Venimos en el momento justo, está a punto de empezar”
 {$name}: “¿Cómo lo sabes?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_shy>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_shy>>
+<<endif>>
 Se acerca a mí, pasa su brazo por mi espalda, me agarra del hombro más lejano y me arrima hacia ella. Me sonrojo de lo directo de su acción, nunca habíamos estado tan cerca.
 Señala a una de las esquinas del escenario con la mano libre.
 Sophie: “¿Ves esos pies de ahí?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Vuelvo en mí despues de asimilar la proximidad en entre [select value={$gender} M="los dos" F="las dos" NB="les dos"/]. Al principio no veo nada, pero cuando me fijo sí que los veo.
 {$name}: “Ah sí, ya los veo, pero ¿qué tiene que ver con el comienzo del concierto?”
 Sophie: “Pues que esos zapatos no son ni más ni menos que de la cantante principal. Siempre le gusta asomarse a ver al público antes de empezar”
 {$name}: “Como se nota que los conoces bien.”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Te lo dije.”
 Sonríe levemente con orgullo. Nunca había visto su sonrisa tan cerca de mí. 
 De repente se apagan las luces principales del escenario.
@@ -6468,15 +6989,23 @@ Sophie: “Ya empieza”
 Nos separamos y volvemos a nuestra posición previa. Clavo mis ojos en el escenario expectante. El espectáculo comienza ahora.
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio musica_rock 0.4 loop>>
 <<Fade black 1.0 0.0 1.0>>
-//Música de concierto
+<<wait 2.0>>
+
 Después de 10 canciones o así tocan Headbanger, y yo me vengo arriba. Está siendo increíble bailar y cantar con alguien que se sabe todas las canciones al pie de la letra, no me había pasado nunca.
 Y Sophie, no tengo palabras para definirla. Se ha ido soltando cada vez más según progresa el concierto y verla bailar sin ataduras solo hace que sienta cosas en el corazón. 
 Estaremos [select value={$gender} M="rodeados" F="rodeadas" NB="rodeades"/] de decenas de personas, pero bajo los focos solo la veo a ella.
 La noche es un conjunto de engranajes perfectamente encajado resultando en una situación perfecta. O eso estaba siendo hasta un grupo se pone delante nuestro empujando.
 Sophie no se entera porque está atenta al escenario, y yo tampoco llamar la atención así que me aparto para dejarles pasar y que se coloquen.
 Ahora no veo el centro del escenario. Intento moverme por los lados para ver si asomando veo mejor, pero nada.
-<<Hide Sophie>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 <<Act Hombre sprt_chico right bottom015 white>>
 Hombre: “Eh, ¿qué cojones haces?”
 {$name}: “¡Nada! Era solo por si podíais echaros un poco a un lado, que no veo nada-”
@@ -6485,60 +7014,122 @@ Hombre: “¿Y a mí que me importa? No nos molestes.”
 {$name}: “Hombre, estaba aquí antes y no veo por vosotros, solo pido que os mováis un poco, que vais a seguir viendo igual”
 Hombre: “Mira, nosotros no nos vamos a mover, así que ve a darle por culo a otros, ¿vale?”
 Su tono me asusta. No solo son más altos que yo, sino que son varios y no parece que estén en sus cabales, huelen bastante a alcohol. De aquí sólo salgo perdiendo.
-<<Hide Hombre>>
-<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Act Sophie sprt_sophie_angry center bottom015 white>>
 Sophie: “¿Qué está pasando aquí?”
 Justo parece que Sophie se ha dado cuenta de este grupo. Tiene el rostro serio y concentrado, pensando en lo que pueda pasar. No quiero que se líe mas así que intento apagar el conflicto.
 {$name}: “Nada, nada, ya me iba”
-<<Hide Sophie>>
 Me giro hacia Sophie dándole la espalda al grupo de borrachos.
-<<Act Hombre sprt_chico right bottom015 white>>
 Hombre: “Eso, déjanos ya [select value={$gender} M="petardo" F="petarda" NB="petarde"/]”
-<<Hide Hombre>>
 Noto un empujón en la espalda, y acto seguido estoy en el suelo. 
-<<Act Sophie sprt_sophie_neutral right bottom015 white>>
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “¡{$name}!”
-Consigo amortiguar la caída apoyando las manos y las rodillas, pero eso no soluciona mucho. Por las botas no lo había notado pero el suelo está lleno de gravilla y cristalitos, ha debido de romperse algún vaso o botellín.
+Consigo amortiguar la caída apoyando las manos y las rodillas, pero eso no soluciona mucho.
+Por las botas no lo había notado pero el suelo está lleno de gravilla y cristalitos, ha debido de romperse algún vaso o botellín.
 Noto sus manos cogerme del brazo y con su ayuda logro levantarme. Una vez de pie Sophie se encara con la pandilla. 
+<<Act Sophie sprt_sophie_angry>>
 Sophie: “¡¿Sois gilipollas o qué?!”
+<<Move Hombre offright bottom015 1.0>>
+<<Move Sophie right bottom015 2.0>>
 Empuja al que me había tirado a mí y se cae encima del grupo, que le sujetan entre todos. 
 Me duelen las rodillas, pero las manos aún más. La tela de la prenda me ha protegido las piernas, pero las manos las tenía descubiertas.
 Giro las manos para dejar las palmas hacia arriba y veo sangre y cristales.
+<<Act Sophie sprt_sophie_sad>>
 Sophie: “¿Estás bien?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_resignation>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_resignation>>
+<<endif>>
 Le muestro las manos a Sophie y la miro con sufrimiento. Instantáneamente me vuelve a agarrar del brazo, esta vez para sacarme de la pista. 
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+//<<bg_camerino>>------------FALTA ESCENARIO
+<<Fade black 1.0 0.0 1.0>>
+<<wait 1.0>>
 No sé muy bien a donde vamos, pero me doy cuenta de que es una zona no abierta al público.
 Entramos una sala que parece un vestidor. Me sienta en una silla.
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Espérame un minuto”
 <<Move Sophie offright bottom015 1.0>>
 <<wait 1.0>>
 <<Hide Sophie>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Me deja sola y aprovecho para echar un ojo a la ropa de la habitación. Un momento, ese traje lo conozco. No te creo. ¡Estoy en el vestidor del bajista!
 Si no tuviera literalmente cristales en las manos apretaría los puños de felicidad.
 La puerta se abre y Sophie vuelve a entrar a la habitación. Lleva en la mano una cajita con una cruz roja. Coge otra silla y la coloca quedándose frente a mi cuando se sienta.
 <<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Extiende una mano, la que más te duela”
-Hago lo que me ordena. Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida  .
-Pese a como se muestra a menudo, dura e impasible, ahora está siendo ultra cuidadosa para no hacerme daño en el proceso. Verla tan cerca y tan concentrada en ayudarme... 
+Hago lo que me ordena. 
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio musica_momento_sinceridad 0.4 loop>>
+//<<Scene illus_week2_she_sophie>>---FALTA ILLUS WEEK2 SHE SOPHIE
+<<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>>
+Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida .
+Pese a como se muestra a menudo, dura e impasible, ahora está siendo ultra cuidadosa para no hacerme daño en el proceso. Verla tan cerca y tan concentrada en ayudarme...
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_shy>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_shy>>
+<<endif>>
 Es imposible no sentir nada. Me sonrojo, pero ella no lo ve. Sólo mira mis manos y el kit de primeros auxilios.
+<<Act Sophie sprt_sophie_sad>>
 Sophie: “Perdona”
 {$name}: “¿Eh?”
 Sophie: “Si hubiera estado más atenta me habría fijado en la panda de tíos esa y les hubiera dicho algo antes de que se colocaran”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “¿Para que te hubieran empujado a ti en vez de a mí?
+<<Act Sophie sprt_sophie_flirty>>
 Sophie: “Si lo hubieran hecho, no saben lo que se les habría venido encima je”
 Mientras espera a que hable, cambia a mi otra mano.
 ->Reírte 
     <<Add_npc_likeability NPC_sophie 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Jajaja, de eso no tengo ninguna duda”
+    <<Act Sophie sprt_sophie_happy>>
     Alza la mirada para verme reír y sonríe ella. Le reconforta que ya me sienta mejor, al menos anímicamente.
 ->Discrepar de su actitud temeraria
     <<Add_npc_likeability NPC_sophie 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     {$name}: “No digas eso. Las cosas no pasan a estar bien si te hubiera pasado a ti en vez de a mi”
     Frunce el ceño mientras reflexiona sobre mis palabras.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “De lo que estoy segura es que no ha sido culpa tuya, así que ni pienses eso”
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Tienes razón”
 Tras terminar de curarme la herida y de quitarme los cristales, guarda los utensilios en la caja y saca vendas.
 Se aproxima aún más a mí para poder maniobrar mejor para envolver mi mano. Lo hace directamente y sin prestar atención a cómo crecen los tonos rojos de mis mofletes.
 Al igual que todo lo anterior, me venda con extremo cuidado.
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
+<<StopAudioAll>>
+<<PlayAudio musica_rock 0.4 loop>>
+//<<Scene bg_camerino>>-----FALTA FONDO CAMERINO
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 {$name}: “Gracias por curarme”
 Sophie: “Es lo mínimo después de que te haya invitado yo”
 “Por cierto, ¿vas a querer volver a la pista cuando termine?”
@@ -6564,17 +7155,30 @@ Nunca había visto esta faceta tan protectora de Sophie pero me reconforta, es j
 El taxi llega y Sophie me ayuda a entrar a pesar de que intento convencerla de lo contrario. Ya [select value={$gender} M="sentado" F="sentada" NB="sentade"/] en el coche, con la ventanilla bajada, Sophie se apoya en la puerta del coche para despedirme.
 {$name}: “Muchas gracias por todo, me lo he pasado genial”
 Sophie: “¿Incluso con todo lo que ha pasado?”
-{$name}: “Incluso con todo eso, gracias a ti” 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
+{$name}: “Incluso con todo eso, gracias a ti”
+<<Act Sophie sprt_sophie_shy>>
 Sonrío sinceramente y ella se sonroja, no puede ni evitarlo.
 Sophie: “Me alegro entonces...”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
 Sophie: “Avísame cuando llegues a casa y me dices que tal estás de las heridas.”
 {$name}: “Sí no te preocupes, aunque no te hablaré mucho porque en cuanto llegue voy a caer muerta en la cama.”
 Sophie: “Jajaja, lo entiendo perfectamente.”
 {$name}: “Adiós entonces.”
 Sophie: “Sí, hasta otro día.”
-<<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<StopAudioAll>>
+<<HideAll>>
 <<jump Lunes_sem3>>
 ===
 
@@ -6582,8 +7186,9 @@ title: Cita_Ethan_sem2
 position: -143,644
 ---
 <<HideAll>>
-<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle_noche_placeholder>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
+<<Fade black 1.0 0.0 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -6595,9 +7200,11 @@ position: -143,644
 ¡Qué tarde es! Si es que me he entretenido demasiado escogiendo que me iba a poner para la cita.
 Pero...
 Debo admitir que me quería ver bien y, a diferencia de la última vez, parte de este sentimiento se debe a Ethan.
-////////////////////////////////////////////////////////////////////////
-//////////////PROTAGONISTA SE SONROJA//////////////////////////////////
-////////////////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 Es cierto que creo que estoy empezando a sentir algo por él. 
 Y encima la cita en el cine.
 Inconscientemente mi mente empieza a llenarse de escenas de películas románticas.
@@ -6612,6 +7219,11 @@ Apresuro el paso para llegar de una vez a la entrada del cine.
 ¿Cuánto tiempo ha pasado ya? ¿Media hora?
 Me abrazo a mí misma para intentar entrar en calor. Una ligera brisa fría esta comenzado a levantarse.
 ¿Dónde estará Ethan?
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Con tristeza observo al resto de personas que se encuentran en los alrededores, la mayoría parejas.
 ¿Me habrá dejado [select value={$gender} M="plantado" F="plantada" NB="plantade"/]?
 <<if get_conciertoSophie() == "yes">>
@@ -6636,9 +7248,9 @@ Chica: “Cariño...”
 <<Hide Chica>>
 <<Hide Chico>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_resignation left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_resignation left bottom015 white>>
 <<endif>>
 Tierra trágame... Esto ya es demasiado, ¡me voy a casa!
 Mando el mensaje a Ethan. En cuanto llegue a casa pienso ponerme mi pijama de franela, un capítulo de La Casa del Basilisco y le daré muchos mimos a Limón.
@@ -6657,6 +7269,7 @@ Ethan: “No veas la carrera que he tenido que echar para llegar aquí a tiempo.
     Miro [select value={$gender} M="avergonzado" F="avergonzada" NB="avergonzade"/] a Ethan por lo que acabo de admitir.
     Su reacción me sorprende enormemente, tanto que por poco dejo caer mi bolso al suelo.
     Al principio se ha quedado sorprendido, pero después su expresión ha pasado a una de completa tristeza y arrepentimiento.
+    <<Act Ethan sprt_ethan_sad>>
     Ethan: “Yo...”
     Se rasca la nuca, intentado encontrar la mejor manera de justificarse.
     Ethan: Suspiro. “Yo nunca podría hacerte eso, {$name}.”
@@ -6668,6 +7281,11 @@ Ethan: “No veas la carrera que he tenido que echar para llegar aquí a tiempo.
     Ethan: “Espero poder contártelo en un futuro, pero ahora...”
     Ethan: “Dame más tiempo, {$name}.”
     Sus ojos se clavan en los míos de golpe y toda su honestidad me golpea como una marea.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Ethan...
     Puede que no sepa qué puede llegar a pasar en un futuro, pero sé que estas palabras han sido completamente sinceras.
     Puede que me arrepienta, pero estoy [select value={$gender} M="dispuesto" F="dispuesta" NB="dispueste"/] a darle una oportunidad.
@@ -6676,14 +7294,25 @@ Ethan: “No veas la carrera que he tenido que echar para llegar aquí a tiempo.
     {$name}: “Claro, espero que pronto sientas la suficiente confianza. Quiero conocer a tu verdadero yo.”
 ->“¿A tiempo? Llevo media hora esperándote, con el frío que hace.”
     <<Add_npc_likeability NPC_ethan -1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     Pongo los brazos en jarras y le miro con el ceño fruncido.
     Estoy completamente [select value={$gender} M="congelado" F="congelada" NB="congelade"/], avergonzada y se atreve a decir eso.
     Ethan: “Anda, [select value={$gender} M="príncipe" F="princesa" NB="noble"/], no te enfades. He intentado venir lo más rápido posible.”
     {$name}: “Se supone que habíamos quedado a una hora concreta, Ethan.”
     {$name}: “Además, si sabes que vas a llegar con el tiempo justo, lo mínimo que podrías hacer sería avisarme.”
     {$name}: “Al menos, sabiéndolo, podría haber entrado al cine a tomar un café mientras esperaba en lugar de estar aquí fuera, [select value={$gender} M="congelado" F="congelada" NB="congelade"/] como [select value={$gender} M="un tonto" F="una tonta" NB="une tonte"/].”
+    <<Act Ethan sprt_ethan_sad>>
     Ethan: “De verdad que lo siento mucho. Salí de casa para llegar aquí a tiempo, pero tuve que ayudar a mi abuela con un recado urgente.”
     Ethan: “Venía del supermercado, que está bastante lejos, y fui a ayudarla para que no cargara peso.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     ¿Su abuela? No sabía eso de Ethan...
     Qué atento y amable.
     Estos comentarios me hacen darme cuenta de lo poco que lo conozco.
@@ -6693,9 +7322,15 @@ Ethan: “No veas la carrera que he tenido que echar para llegar aquí a tiempo.
     {$name}: “De hecho, déjame disculparme por mi reacción. No debí haberte echado la bronca de esa manera sin saber tus razones.”
     {$name}: “Simplemente, avísame la próxima vez, ¿vale?”
     Ethan: “Claro, {$name}...”
+    <<Act Ethan sprt_ethan_neutral>>
     Ethan sonríe aparentemente alegre, pero con ojos caídos, tristes. Está claro que me he equivocado.
 ->“Vaya, parece que Eros por fin se decidió a venir.”
     <<Add_npc_likeability NPC_ethan 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Ethan: “Por supuesto, Eros siempre cumple su palabra, pero con estilo.”
     Ethan: “¿No sabías que las mejores entradas son aquellas que se realizan tarde?”
     Ethan: “No se olvidan con facilidad.”
@@ -6710,21 +7345,29 @@ Ethan: “No veas la carrera que he tenido que echar para llegar aquí a tiempo.
     ¿Y esta confianza tan repentina?
     Le observo [select value={$gender} M="entretenido" F="entretenida" NB="entretenide"/].
     {$name}: “¿Qué podrías hacer tú para compensarme?”
-    /////////////////////////////////////////////////////
-    ////////////////////Shake///////////////////////////
-    ////////////////////////////////////////////////////
+    <<Shake {$name}>>
     Ethan me agarra del antebrazo para acercarme a él. 
-    //////////////////////////////////////////////////////
-    ///////////PROTAGONISTA SE SONROJA///////////////////
-    //////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
+    <<Act Ethan sprt_ethan_embarrassed>>
     ¡Estamos muy cerca! Puedo ver todos los detalles de su inmaculada piel. 
     Ethan: “A lo mejor debería...”
     ¿¡Me va a besar!?
     Se acerca a mi oído y noto el aire cálido de su respiración moviendo mi pelo.
     Ethan: “Comprarte un chocolate caliente en la tienda del cine.”
     ¿Eh?
+    <<Act Ethan sprt_ethan_wink>>
     Ethan se aleja de mí y yo me quedo inmóvil en el sitio, tratando de procesar lo que acaba de pasar.
     Parpadeo varias veces mientras Ethan se ríe a carcajadas de fondo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
 Ethan: “Bueno, lo importante es que ya estoy aquí y voy a compensar el tiempo que no pude estar contigo. Te lo prometo.”
 Con su característico guiño de ojo, Ethan se acerca y me da un golpe amistoso en el hombro.
 Si es que no puedo estar ni más de un minuto [select value={$gender} M="enfadado" F="enfadada" NB="enfadade"/] con él.
@@ -6735,6 +7378,7 @@ Parece muy concentrado, pero no puedo evitar tener la sensación de que algo no 
 La postura indica que está pensando en las opciones, pero su mirada pícara me dice lo contrario.
 {$name}: “¿Tienes alguna película en mente, Ethan?”
 Inmediatamente, se gira hacia mí dando una palmada.
+<<Act Ethan sprt_ethan_wink>>
 Ethan: “¡Me alegro de que me lo preguntes, [select value={$gender} M="flor" F="florecilla" NB="flor"/]!”
 {$name}: ¿Qué es esto? ¿Un anuncio de teletienda?
 Ethan: “La verdad es que hace poco han estrenado la película de Atardecer y creo que es perfecta para nosotros, ¿no crees?”
@@ -6743,28 +7387,41 @@ Un momento, ¿no es Atardecer esa película romántica nueva de la que me habló
 Si no me equivoco era de una universitaria que se enamora de un brujo o algo así raro...
 Creo que es una de las últimas tendencias, pero no sé si me convence del todo.
 Mientras pienso en si darle una oportunidad a Atardecer, veo un poster que me llama bastante la atención.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡AH! ¡No me lo creo!”
+<<Act Ethan sprt_ethan_surprisedBad>>
 Parece que mi reacción ha asustado a Ethan.
 Ethan: “¿¡Qué!? ¿¡Qué pasa!?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 ->“Perdón Ethan, no era mi intención asustarte.”
-    “No te preocupes, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]. Me alegro de que no sea nada.”
+    <<Act Ethan sprt_ethan_neutral>>
+    Ethan: “No te preocupes, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]. Me alegro de que no sea nada.”
     Ethan: “Supongo que es el karma por los anteriores sustos que te di jajaja.”
     {$name}: “Cierto, es la primera vez que te sorprendo yo.”
     {$name}: “A lo mejor debería de repetir en algún otro momento jajaja.”
     Ethan: “Si me aprecias no lo harás, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
     {$name}: “Umm...”
     {$name}: “No prometo nada, todavía creo que quedan algunos sobresaltos que compensar je.”
+    <<Act Ethan sprt_ethan_embarrassed>>
     Ethan: Suspiro. “Mientras después me des un abracito para calmar mi acelerado corazón.”
     Parece una broma, pero no puedo evitar sentir cierto cosquilleo al pensar en la alternativa.
-    ///////////////////////////////////////////////////////////////////////////
-    /////////////////////ETHAN SE SONROJA//////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////
     {$name}: “Bueno...” 
 ->No decir nada.
+
 Ethan: “¿Y qué es eso que te ha hecho reaccionar así?”
-///////////////////////////////////////////////////////////////////////////////
-////////////////////PROTAGONISTA SE SONROJA////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “Es que...” 
 {$name}: “He visto que han sacado una versión actual de la película de Silent Heights y me he sorprendido porque no tenía ni idea.”
 No puedo evitar mirar el cartel como un niño pequeño un caramelo.
@@ -6789,21 +7446,34 @@ Pero es que necesito ver Silent Heights.
     ¡Mirarle con los mayores ojos de cachorrito posible!
     Y de paso le voy a añadir un puchero que sé que es algo que le encanta a Ethan.
     {$name}: “¿Podrías dejarme elegir a mí la película esta vez, Eros?”
+    <<Act Ethan sprt_ethan_surprisedShy>>
     Parece que le ha pillado desprevenido.
     Se ha tapado la cara con la mano, pero puedo ver debajo de esta el claro rubor que se está formando en sus mejillas.
     Ethan: “B-bueno...”
 ->Táctica coqueteo.
     <<Add_npc_likeability NPC_ethan 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Creo que hay algo que puede funcionar con Ethan...
     Con toda la seguridad que soy capaz de conseguir, me acerco a Ethan con paso lento y apoyo mi mano en su mejilla.
     Acerco a mi cara a la suya todo lo que me atrevo sin sonrojarme, igual que él ha hecho conmigo en alguna ocasión.
     Entonces con un tenue susurro, le digo lo que quiero, sin apartar mi mirada de la suya.
     {$name}: “¿No serías un gran caballero y dejarías a esta [select value={$gender} M="flor" F="florecilla" NB="flor"/] ver la película que quiera, Eros?”
     ¡Ah!
+    <<Act Ethan sprt_ethan_surprisedShy>>
     Me aparto de él, [select value={$gender} M="asombrado" F="asombrada" NB="asombrade"/]. ¡Se ha puesto rojísimo!
     No le había visto nunca así. Creo que lo he roto.
     {$name}: “¿Ethan?”
     Ethan: “E-eh...”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
 Ethan: “Está bien. Creo que te debo algo por haber tardado tanto en llegar.”
 Ethan: “Haré un esfuerzo y dejaré a mi [select value={$gender} M="príncipe" F="princesa" NB="noble"/] escoger hoy la película, pero la próxima vez me toca a mí.”
 {$name}: “¡Gracias Ethan! Te prometo que veré la película que quieras, aunque sea una cursilada.”
@@ -6811,8 +7481,11 @@ Ethan: “¿Una cursilada? Me ofende bastante que...”
 Antes de que pueda terminar la frase, le agarro de la manga de la chaqueta y comienzo a arrastrarle a las taquillas dando pequeños brinquitos.
 <<Fade black 0.0 1.0 1.0>>
 <<wait 2.0>>
-<<Fade black 1.0 0.0 1.0>>
+<<StopAudioAll>>
 <<Scene bg_cine>>
+<<PlayAudio murmullo_voces_en_teatro 0.5 loop>>
+<<Fade black 1.0 0.0 1.0>>
+<<wait 1.0>>
 Sonrío [select value={$gender} M="extasiado" F="extasiada" NB="extasiade"/] mientras nos sentamos finalmente en las butacas que nos han asignado.
 Al final he conseguido salirme con la mía y vamos a ver Silent Heights.
 {$name}: “Ethan, vamos a acomodarnos antes de que empiece la película.”
@@ -6826,12 +7499,12 @@ Se le ve algo nervioso.
 Ethan: “Yo, ¿nervioso?”
 Ethan: “Puff, para nada. A lo mejor es por tener tu belleza tan cerca de mí.”
 Ethan: “Me he quedado sin... ¡AH!”
-///////////////////////////////////////////////////
-/////////////////Shake/////////////////////////////
-///////////////////////////////////////////////////
+<<Act Ethan sprt_ethan_surprisedBad>>
+<<Shake Ethan>>
 El grito de Ethan me sobresalta y parte de mis palomitas se caen al suelo.
 Intento ver si se ha montado mucho estropicio, pero no lo consigo por la oscuridad. Han apagado las luces.
 {$name}: “¡Ethan, me has asustado! Y encima se me han caído parte de las palomitas al suelo, con lo caras que son.”
+<<Act Ethan sprt_ethan_sad>>
 Ethan: “Lo siento, {$name}.”
 {$name}: “¿Te encuentras bien? Esto ya me está preocupando.”
 {$name}: “Desde que compramos las entradas para la película estás algo extraño, como si no fueras tú mismo.”
@@ -6839,7 +7512,9 @@ Ethan: “Yo me siento bien.”
 Pero su mirada danzante, su tono de voz más agudo de lo normal y el repiqueteo incesante de su pierna me indica lo contrario.
 {$name}: “No será...”
 {$name}: “¡Qué te dan miedo este tipo de películas!”
+<<Act Ethan sprt_ethan_surprisedBad>>
 Abre los ojos como platos, pero rápidamente se recompone.
+<<Act Ethan sprt_ethan_neutral>>
 Ethan: “¿Qué bobadas son esas?”
 Ethan: “Estas pelis no me hacen sentir nada. De hecho, te iba a ofrecer mis fuertes brazos en caso de que te asustes durante la película.”
 ->“Te sorprendería saber que estas películas no me afectan, Eros”
@@ -6848,10 +7523,20 @@ Ethan: “Estas pelis no me hacen sentir nada. De hecho, te iba a ofrecer mis fu
     <<Add_npc_likeability NPC_ethan 1>>
 ->“Las manos donde yo pueda verlas. 
 Ethan me dirige una mirada entre sorprendido y asustado. Se me escapa una pequeña risa.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Oh, empieza la película!”
 <<Fade black 0.0 1.0 1.0>>
-<<wait 2.0>>
+<<wait 1.5>>
+<<StopAudioAll>>
+<<HideAll>>
+<<Scene illus_week2_she_ethan>>
+<<PlayAudio murmullo_voces_en_teatro 0.2 loop>>
 <<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>>
 ¡Qué pasada! Me está encantando la película, aunque creo que Ethan no lo está pasando igual de bien.
 Se le ve bastante ansioso. Me siento un poco mal por haberle “forzado” a verla.
 Llevamos una hora de película cuando uno de los sustos más grandes sale en pantalla.
@@ -6881,13 +7566,25 @@ Oigo un grito a mi izquierda y para mi asombro noto como me agarran de la mano.
     Por primera vez desde que llegue a esta nueva ciudad me siento como en casa.
 ->“¿Ves? Tenía yo razón.”
     <<Add_npc_likeability NPC_ethan 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<endif>>
     {$name}: “Sabía que iba a terminar pasando esto, Eros.”
     En cuanto mis palabras salen de mi boca, Ethan se tensa y me mira indignado.
     Con un movimiento seco recupera su mano y no puedo evitar sentirme [select value={$gender} M="vacío" F="vacía" NB="vacíe"/].
+    <<Act Ethan sprt_ethan_angry>>
     Ethan: “¿Qué dices, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]? Si esto no da nada de miedo.”
     Antes de poder demostrar su renovada valentía, otro monstruo aparece en pantalla asustándolo.
+    <<Act Ethan sprt_ethan_surprisedBad>>
     Ethan: “¡AH!”
     Su mano vuelve a la mía como si fuera un imán.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Con una pequeña risita, le aprieto la mano para animarle.
     {$name}: “No pasa nada, Ethan. Es normal sentir miedo y no por ello se es más débil.”
     {$name}: “Además, yo estoy aquí para protegerte si hace falta.”
@@ -6896,12 +7593,11 @@ Oigo un grito a mi izquierda y para mi asombro noto como me agarran de la mano.
     {$name}: “Jajajaja”
     Comienzo a reírme en voz alta sin pensar en el resto de la gente que se encuentra en la sala.
     ¿¡Qué clase de comparación es esa!?
+    <<Act Ethan sprt_ethan_happy>>
     No puedo parar de reír y pronto Ethan se une a mí.
-    <<Hide Ethan>>
-    <<Act Espectador sprt_chico left bottom015 white>>
+    <<Act Espectador sprt_chico center bottom015 white>>
     Espectador: “¡EH!¡Que queremos ver la peli!”
     <<Hide Espectador>>
-    <<Act Ethan sprt_ethan_neutral right bottom015 white>>
     Me tapo la boca para intentar ahogar las carcajadas y observo a Ethan divertida.
     Feliz y con mariposas en mi estómago, regreso mi atención a la pantalla, pero no sin antes comenzar a pintar formas sobre el dorso de su mano.
 Este momento tan íntimo y familiar me ha ayudado a abrir los ojos.
@@ -6909,24 +7605,36 @@ A confirmar lo que llevo sintiendo desde hace unos días y que parecía no quere
 Me gusta Ethan.
 Durante el resto de la película nuestras manos se mantienen conectadas y ninguno de los dos dice nada. 
 Cómodos y fascinados con esta nueva calidez.
-<<Fade black 0.0 1.0 1.0>>
+<<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-<<Fade black 1.0 0.0 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
 <<Scene bg_calle_noche_placeholder>>
+<<<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>>>
+<<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 Ya ha terminado la película. Ha estado muy bien, pero la original siempre será mejor.
 Uff, ¿cómo puede ser que haga más frío ahora que cuando entramos?
 Menos mal que me he traído una bufanda por si pasaba esto.
 Será mejor que me la ponga para la vuelta a casa.
 Es en ese momento, cuando voy a sacar la bufanda de mi bolso, que me doy cuenta de que mi mano está ocupada.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
 {$name}: “¿Um?”
 [select value={$gender} M="Confundido" F="Confundida" NB="Confundide"/], agacho la mirada para ver qué es lo que mantiene mi mano presa cuando me doy cuenta...
-//////////////////////////////////////////////////////////////////////
-/////////////////////PROTAGONISTA SE SONROJA//////////////////////////
-//////////////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 ¿¡Llevamos todo este tiempo de la mano!? 
 Si yo pensaba que cuando salimos de la sala nos habíamos separado.
 Parece ser que nuestras manos se volvieron a encontrar de forma natural al realizar el camino de vuelta.
 Con razón esa mano no estaba congelada.
+<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
 Ethan: “¿Pasa algo, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]?”
 ¿Qué le digo? Es que quería coger la bufanda, pero no quiero soltar tu sedosa y cálida mano.
 ¡No! No digas eso, {$name}.
@@ -6944,11 +7652,11 @@ Abuela: “Cómo olvidarlo jajaja.”
 <<Hide Abuelo>>
 <<Hide Abuela>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_embarrassedleft bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_embarrassedl left bottom015 white>>
 <<endif>>
-<<Act Ethan sprt_ethan_neutral right bottom015 white>>
+<<Act Ethan sprt_ethan_embarrassed right bottom015 white>>
 Por si no fuera suficiente nuestra propia vergüenza, ese comentario lo único que ha hecho ha sido incrementarla.
 Debemos de parecer dos tomates.
 Sin embargo, Ethan toma la iniciativa y para mi pesar aparta su mano de la mía.
@@ -6963,12 +7671,24 @@ Ethan: “Perdón {$name}, parece que te cogí de la mano sin querer jajaja.”
     Antes de que pueda seguir soltando palabras sin sentido, Ethan me interrumpe.
     Ethan: “{$name}...”
     Ethan: “Yo...”
+    <<Act Ethan sprt_ethan_neutral>>
     Ethan: “Yo no te merezco, [select value={$gender} M="príncipe" F="princesa" NB="noble"/].”
     Sonríe en mi dirección, pero mi corazón se encoge.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Creo que soy yo [select value={$gender} M="el" F="la" NB="le"/] que debería de decidir eso.”
     Apoyo mi mano sobre la suya para afianzar mis palabras.
 ->No decir nada.
 El silencio inunda el aire. Ninguno de los dos sabe qué decir.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Ethan sprt_ethan_neutral>>
 Aunque me gustaría que esta noche no acabara es hora de volver a casa.
 {$name}: “La verdad es que me lo he pasado muy bien.”
 Ethan: “Yo también, [select value={$gender} M="príncipe" F="princesa" NB="noble"/].”
@@ -6994,13 +7714,9 @@ Ethan: “Claro, claro. No querrás que te ataque la bestia.”
 {$name}: “Sí jajaja. Hasta la próxima, Ethan.”
 Ethan: “Hasta luego, {$name}.”
 
-<<Move Ethan offright bottom015 1.0>>
-<<wait 1.0>>
-<<Hide Ethan>>
-
-<<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
+<<HideAll>>
 <<jump Lunes_sem3>>
 ===
 
