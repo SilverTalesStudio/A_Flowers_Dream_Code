@@ -16,8 +16,7 @@ position: -612,-485
 //<<Update_Plans Sophie true false>>
 //<<Update_Plans Ethan true false>>
 
-
-//<<jump Final_neutro_Pietro>>
+//<<jump Final_bueno_Sagrario>>
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -12454,6 +12453,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12465,12 +12465,23 @@ position: -143,644
 
 Otro día que viene Sagrario y otro día que me quedo con ganas de saber más de ella.
 Ya es una habitual, viene todas las semanas y aun así no logro crear una conexión tan profunda como con otros clientes que vienen a menudo. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_disappointed>>
+<<endif>>
 ¿A lo mejor es culpa mía? La verdad es que es mi cliente más exigente en cuanto a los ramos se refiere. Tal vez si me esfuerzo lo suficiente poco se abrirá más conmigo.
 Tampoco debo insistirle mucho, que sea natural. Sí, esa creo que va a ser mi táctica. La próxima vez que venga tengo que clavar el encargo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Con determinación comienzo a hacer arreglos florares para ponerlos en el escaparate. Además, me sirven para practicar y probar nuevos conceptos y mezclas.
 Estos momentos en los que hago ramos para mí son en los que más exploro mi creatividad así que debo aprovecharlos al máximo hasta que venga alguien.
 {$name}: ¡Vamos {$name}!
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12484,6 +12495,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12494,13 +12506,18 @@ position: -143,644
 <<endif>>
 
 Otro día más de trabajo en la floristería, diría que me cansa, pero sería mentira, adoro mi trabajo y esta rutina.
-//campanillas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 {$name}: “Buenos días, Sagrario...”
 Me quedo sin terminar la frase, es la primera vez que Sagrario viene acompañada. De hecho, viene agarrada de la mano con otra mujer. ¿Es posible que sea quien yo creo que es?
 <<Hide Sagrario>>
 <<Act Minerva sprt_minerva_neutral right bottom015 white>>
 Minerva: “Hola, soy Minerva. Sagrario me ha hablado mucho de ti”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¿En serio?”
 Miro a Sagrario y asiente. Vuelvo a dirigirme a Minerva.
 {$name}: “Yo soy {$name}, encantada de conocerla. Sagrario también me ha hablado mucho de usted.”
@@ -12518,22 +12535,29 @@ Sagrario: “Y eso que le faltaba información, si llega a saber para qué momen
 <<Act Minerva sprt_minerva_neutral right bottom015 white>>
 Minerva: “En algo magnífico, estoy segura.”
 Verlas juntas después de estar tanto tiempo sin verse, y que se hayan acordado de mi para incluirme en este reencuentro entre ambas, solo por ser quien hizo los ramos... No puedo evitar emocionarme.
-//////////////////////////////////////////////////////////////
-///////////////PROTAGONISTA SAD///////////////////////////////
-//////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   //<<Act {$name} sprt_he_sad>>
+<<endif>>
 {$name}: “No sabía que mi trabajo podría llegar a ser tan importante para alguien.”
 Minerva: “Oh querida, no sabes cuánto. Gracias a ti he podido sentir a Sagrario como si estuviera al lado mía mientras leía sus cartas.”
 Minerva: “Como si hubiera venido ella misma a la otra punta del mundo a darme el ramo.”
 Me sonríe con total sinceridad, y me froto los ojos para parar de llorar. Le devuelvo la sonrisa.
-///////////////////////////////////////////////////////////////
-//////////////////PROTAGONISTA SONRÍE//////////////////////////
-///////////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Me alegro muchísimo de que les haya servido para tanto.”
 Minerva: “A ti por hacerlos con tanto cariño”
-<<Move Minerva offright bottom015 1.0>>
-<<wait 1.0>>
 <<Hide Minerva>>
 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Aprovechando que el local está vacío, me cuenta de todo, cómo se conocieron, cómo ocurrió el viaje de Minerva a Argentina, lo mal que pasaron el primer mes viviendo separadas y más.
 Durante toda la conversación no puedo evitar admirar su relación. 
 El cómo se miran, los chistes que solo ellas reconocen, los pequeños gestos que tienen entre sí y que muchas veces no se dan ni cuenta de que los hacen...
@@ -12541,6 +12565,7 @@ Es una relación perfecta, ojalá consiga yo también tener a una persona que me
 En ese momento decido que quiero que mi futuro sea así. Envejecer con la persona más cercana a tu corazón es algo de un valor incalculable. 
 ¿Quién no querría lo mismo?
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
