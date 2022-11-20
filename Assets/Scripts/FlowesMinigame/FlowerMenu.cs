@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class FlowerMenu : MonoBehaviour
 {
     public GameObject FlowersList;
+    public GameObject ButtonSound;
 
     [SerializeField] private Animator animator;
 
@@ -42,6 +43,7 @@ public class FlowerMenu : MonoBehaviour
     //Al pulsar el botón
     private void OnMouseDown()
     {
+        ButtonSound.GetComponent<AudioSource>().Play();
         //Si está cerrada la lista de flores, se activa la animación para abrirla
         if (GetComponent<Image>().sprite.name == "boton")
         {
