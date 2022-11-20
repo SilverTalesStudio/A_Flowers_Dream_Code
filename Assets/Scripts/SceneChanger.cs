@@ -8,10 +8,12 @@ public class SceneChanger : MonoBehaviour
 {
     public string nextOrder;
     public UnityEvent listenOrder;
+    public GameObject Loading;
     string curretScene;
 
     public void playVN()
     {
+        Loading.SetActive(true);
         SceneManager.LoadScene("VisualNovel");
     }
 

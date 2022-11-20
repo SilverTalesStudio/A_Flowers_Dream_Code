@@ -11,6 +11,7 @@ public class BouquetDelivery : MonoBehaviour
     public GameObject PopUp;
     public GameObject FlowersManager;    
     public GameObject OrdersManager;
+    public GameObject Loading;
     private int favPuntos = 0;
     private int colorPuntos = 0;
     private int SentimientoPuntos = 0;
@@ -36,6 +37,7 @@ public class BouquetDelivery : MonoBehaviour
         }
         else
         {
+            Loading.SetActive(true);
             foreach(string f in FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet)
             {
                 // ENVIO DE VARIABLES A VN
