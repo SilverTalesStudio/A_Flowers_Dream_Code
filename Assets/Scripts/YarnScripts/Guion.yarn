@@ -12259,7 +12259,57 @@ Comenzamos a bajar la colina aferrados de la mano. Ahora nos tenemos el uno al o
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
+===
+title: Nexo_Semana4
+position: -143,644
+---
+<<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
+<<set $AfinidadEthan to get_npc_likeability("NPC_ethan")>>
+<<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
+<<set $AfinidadPietro to get_npc_likeability("NPC_pietro")>>
+<<set $AfinidadSagrario to get_npc_likeability("NPC_sagrario")>>
+
+
+<<if get_nodes_left() > 1>>
+    <<if get_last_node() == "Sagrario">>
+        <<if $AfinidadSagrario >= 15>>
+        <<remove_last_node>>
+            <<jump Final_bueno_Sagrario>>
+        <<else>>
+        <<remove_last_node>>
+            <<jump Final_neutro_Sagrario>>
+        <<endif>>
+    <<elseif get_last_node() == "Pietro">>
+        <<if $AfinidadPietro >= 15>>
+        <<remove_last_node>>
+            <<jump Final_bueno_Pietro>>
+        <<else>>
+        <<remove_last_node>>
+            <<jump Final_neutro_Pietro>>
+        <<endif>>
+    <<elseif get_last_node() == "Allan">>
+        <<remove_last_node>>
+        <<jump Final_neutro_Allan>>
+    <<elseif get_last_node() == "Sophie">>
+        <<remove_last_node>>
+        <<jump Final_neutro_Sophie>>
+    <<elseif get_last_node() == "Ethan">>
+        <<remove_last_node>>
+        <<jump Final_neutro_Ethan>>
+    <<endif>>
+<<else>>
+    <<if get_last_node() == "Allan">>
+        <<remove_last_node>>
+        <<jump Final_bueno_Allan>>
+    <<elseif get_last_node() == "Sophie">>
+        <<remove_last_node>>
+        <<jump Final_bueno_Sophie>>
+    <<elseif get_last_node() == "Ethan">>
+        <<remove_last_node>>
+        <<jump Final_bueno_Ethan>>
+    <<endif>>
+<<endif>>
 ===
 
 title: Final_neutro_Pietro
@@ -12306,7 +12356,7 @@ La próxima vez que le vea se lo tengo que pedir. Por ahora, he de continuar la 
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 title: Final_bueno_Pietro
@@ -12436,7 +12486,7 @@ Feliz por Pietro y por haber podido ayudarle, continuo con la nueva clienta que 
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 
@@ -12479,7 +12529,7 @@ Estos momentos en los que hago ramos para mí son en los que más exploro mi cre
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 title: Final_bueno_Sagrario
@@ -12563,7 +12613,7 @@ En ese momento decido que quiero que mi futuro sea así. Envejecer con la person
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 title: Final_neutro_Ethan
@@ -12619,7 +12669,7 @@ Qué ganas de verlo otra vez. ¿Con qué me sorprenderá esta vez?
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 
@@ -12724,7 +12774,7 @@ No puedo esperar por ver que aventuras nos depara nuestro viaje y, más importan
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<the_end>>
 ===
 
 title: Final_neutro_Sophie
@@ -12762,7 +12812,7 @@ Cuando llegue a casa les preguntaré a ambas cuando tienen libre.
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 title: Final_bueno_Sophie
@@ -12860,7 +12910,7 @@ Mi ansiedad se transforma en emoción. Voy a conocer a una persona que se va a c
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<the_end>>
 ===
 
 
@@ -12904,7 +12954,7 @@ Antes de que pueda seguir divagando llega otro cliente, toca volver al trabajo. 
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-//JUMP
+<<jump Nexo_Semana4>>
 ===
 
 
