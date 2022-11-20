@@ -17,8 +17,7 @@ position: -612,-485
 //<<Update_Plans Ethan true false>>
 
 //<<jump cita_Sophie_sem3>>
-<<jump Cita_Sophie_sem2>>
-//<<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -11730,14 +11729,15 @@ No puedo dudar siempre en esta vida, tengo que confiar en que tengo posibilidade
 Sophie: “Yo siempre cumplo mis promesas. No dudes eso jamás sobre mi”
 Sophie: “De hecho, creo que voy a usar mi victoria para que me cuentes lo que tenías pensado pedirme. A ver si de verdad me sorprendes.”
 {$name}: “Mmm, eso es muy aburrido, creo que es mejor si lo adivinas.”
+<<StopAudioAll>>
+<<PlayAudio musica_momento_sinceridad 0.4 loop>>
 Me acerco a Sophie y cojo una de sus manos entre las mías mientras la miro a los ojos. Estamos casi igual de cerca que antes, solo que ahora estamos [select value={$gender} M="uno frente al otro" F="una frente a la otra" NB="une frente al otre"/]. Se empieza a sonrojar, sorprendida.
-////////////////////////////////////////////////////////
-/////////PROTAGONISTA SONROJADA//////////////////////////
-////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////
-/////////////////SOPHIE SONROJADA/////////////////////////
-/////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
+<<Act Sophie sprt_sophie_shy>>
 
 {$name}: “Después de conocerte más y más estas semanas, que te abrieras a mí, que te convirtieras en un gran apoyo para mí... “
 {$name}: “Y encima teniendo en cuenta el día de hoy...”
@@ -11753,15 +11753,37 @@ Sophie: “Si no era esto lo que querías párame.”
 No quiero detener esto por nada en el mundo, me acerco yo a ella también hasta que nuestros labios se tocan y nos besamos.
 El beso comienza desesperado como si fuera algo efímero, pero cuando acaricio su mejilla para poder sujetarle de la nunca y hacerle saber que no quiero que termine, relaja el ritmo y disfruta más del momento. 
 
-////////////////////////////////////////////////////////////
-//////////////////ILUSTRACIÓN///////////////////////////////
-////////////////////////////////////////////////////////////
-
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio music_romantic 0.4 loop>>
+<<Scene illus_week3_she_sophie>>
+<<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>>
+<<Scene bg_festival>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed left bottom015 white>>
+    //<<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Sophie sprt_sophie_shy right bottom015 white>>
 Nos separamos para tomar aire y veo que Sophie está igual que yo. 
 Sophie: “Espero que haya resuelto tus dudas sobre mi capacidad de hacerlo.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_disappointed>>
+<<endif>>
 ¿Qué? ¿Lo ha hecho por la apuesta? No puede ser. Tengo confirmarlo, sí es así...
 {$name}: “¿Lo- lo has hecho solo por la apuesta?”
 Sophie: “¿Qué? ¡No! Lo he hecho porque quería, me gustas {$name}. Pensaba que tu pensabas lo mismo y que lo querías con esa intención...”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “¡Y así es! Sophie me gustas mucho. Ahora mismo soy la persona  más feliz del mundo por tenerte conmigo”
 Parece imposible que alguien pueda ruborizarse más, pero Sophie desafía los límites.
 Sophie: “Yo... siento lo mismo”
