@@ -45,25 +45,13 @@ public class NPC_stats
         return npc.likeability;
     }
 
-
-    /// <summary>
-    /// Primero se obtiene los datos del npc, se le cambia el valor correspondiente, y se vuelve a guardar.
-    /// Es una función que se va a llamar también desde la VN, por ello usa [YarnFunction("")]
-    /// </summary>
-    /// <param name="keyVar">Key para encontrar al personaje en los PlayerPrefs</param>
-    /// <param name="sumValue">Dato positivo o negativo para sumarlo al valor de un determinado stat</param>
-   /* [YarnCommand("Add_npc_likeability")]
-    public void addToLikeability(string keyVar, int sumValue)
+    public static NPC_stats GetNPC_Stats(string keyVar)
     {
-        Debug.Log("Entra al add likeability");
         string json = PlayerPrefs.GetString(keyVar);
         NPC_stats npc = JsonUtility.FromJson<NPC_stats>(json);
-        npc.likeability -= sumValue;
+        return npc;
+    }
 
-        json = JsonUtility.ToJson(npc);
-        PlayerPrefs.SetString(keyVar, json);
-    }*/
-    
 
 
 }
