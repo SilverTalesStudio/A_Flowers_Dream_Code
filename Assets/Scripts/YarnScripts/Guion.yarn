@@ -3894,10 +3894,10 @@ Al ver sus próximas acciones, suelto un suspiro de cansancio que enseguida se e
 Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
 De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
 Ya parece más suya que mía. 
-////////////////ACTIVAR PARA EL JUEGO/////////////////////////////
-//<<set $PietroPinta to get_pintarPietro()>>
-/////////////////SETEADO PARA TESTING/////////////////////////////////////
-<<set $PietroPinta to "yes">>
+
+<<set $PietroPinta to get_pintarPietro()>>
+
+
 <<if $PietroPinta == "yes">>
 Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
 Puedo ver cómo, al igual que la última vez que vino a la tienda, este abre su taburete y se sienta delante de la amapola del Himalaya para continuar con su dibujo.
@@ -4282,10 +4282,8 @@ position: -120,41
 Entrelazo los dedos y empujo las manos hacia delante para estirar los brazos y la espalda. A pesar de que me haya acostumbrado ya la rutina de trabajo no quita que siga siendo dura.
 Bajo la mirada y giro la muñeca para ver la hora. Genial, queda poco para cerrar. En cuanto llegue a casa voy a tumbarme en el sofá y veré los capítulos que me faltan de la Casa del Basilisco.
 Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el táper con tortilla sin terminar. Pues ya está, ya tengo cena. Mejor, así cuando me apetezca solo tengo que calentarla y darle de comer a Limón. 
-//////////////////////////////////////SETEADO PARA TESTAR//////////////////////
-///////////CAMBIAR PARA LA FINAL/////////////////////////////////////////
-//<<set $cita to get_date()>>
-<<set $cita to "Allan">>
+<<set $cita to get_date()>>
+
 <<if $cita=="null">>
     Tras un rato de esperar a que llegue un último cliente, nadie hace acto de presencia. El reloj marca el fin de la jornada y me pongo manos a la obra a recoger el local.
     <<Fade black 0.0 1.0 2.0>>
