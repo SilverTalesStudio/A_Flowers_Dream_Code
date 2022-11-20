@@ -9,14 +9,14 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-<<Add_npc_likeability NPC_ethan 29>>
+//<<Add_npc_likeability NPC_ethan 29>>
 //<<Add_npc_likeability NPC_sophie 39>>
 //<<Add_npc_likeability NPC_allan 29>>
 //<<Update_Plans Allan true false>>
 //<<Update_Plans Sophie true false>>
 //<<Update_Plans Ethan true false>>
 
-//<<jump Final_bueno_Sagrario>>
+//<<jump Final_bueno_Ethan>>
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -6194,7 +6194,7 @@ Allan: “Pensaba que iba a salir antes”
     Allan: “Uff no sé yo si se lo va a tomar muy bien, y tampoco quiero tener malos rollos...”
     {$name}: “Entonces siendo que es salir un poco más tarde tampoco pasa nada por ceder un poco. Mejor eso que empeorar el ambiente de trabajo”
     Allan: “Sí, eso no quiero que pase”
-<<Act Ethan sprt_ethan_neutral>>
+<<Act Allan sprt_allan_neutral>>
 {$name}: “Echo el cierre y ya podemos irnos”
 Allan: “¡Genial!”
 <<Fade black 0.0 1.0 2.0>>
@@ -9778,15 +9778,15 @@ position: -118,-144
 
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
-<<jump Minijuego_bien_Sagrario_miercoles_sem3>>
+    <<jump Minijuego_bien_Sagrario_miercoles_sem3>>
 <<endif>>
 
 <<if $resultado == "regular">>
-<<jump Minijuego_regular_Sagrario_miercoles_sem3>>
+    <<jump Minijuego_regular_Sagrario_miercoles_sem3>>
 <<endif>>
 
 <<if $resultado == "mal">>
-<<jump Minijuego_mal_Sagrario_miercoles_sem3>>
+    <<jump Minijuego_mal_Sagrario_miercoles_sem3>>
 <<endif>>
 ===
 
@@ -12579,6 +12579,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12591,6 +12592,11 @@ position: -143,644
 Otro día más en la floristería, aunque esta vez sin ningún cliente.
 Se me hace muy raro trabajar teniendo el local cerrado, pero con el encargo que me han pedido no me ha quedado más remedio.
 Además, el dinero que me van a pagar compensa el cierre de estos dos días.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 Y no podría estar más ilusionada. ¡Me han pedido arreglos florales para una boda!
 Saber que mis flores van a ser las protagonistas de un día tan importante me emociona.
 Qué bonito es el amor...
@@ -12604,13 +12610,18 @@ Y no solo eso, últimamente le veo más feliz y libre. Ya no miente sobre lo que
 El otro día vino a mi casa para darme clases de cocina y abrió la puerta al cartero con delantal de ositos y espátula.
 ¡Fue genial! Hace unas semanas no le habría imaginado haciendo eso, siempre buscando la apariencia perfecta.
 Sé que va a ser un largo proceso, pero aquí estoy para apoyar a mi gran amigo.
-//Sonido notificación
+<<PlayAudio noti_movil 1.0>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Salgo de mis pensamientos ante la notificación. Me quito los guantes de jardinería para consultarla.
 Es Ethan, está de camino al bar en el que hemos quedado para vernos cuando termine de trabajar.
 Le contesto pensando en llevarle un ramo en señal de agradecimiento por sus clases y no olvidemos todos los libros que me ha dejado este último mes.
 Qué ganas de verlo otra vez. ¿Con qué me sorprenderá esta vez?
 
-
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12625,6 +12636,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12647,13 +12659,25 @@ Hemos creado una rutina familiar y acogedora.
 Y no solo es eso, gracias a las palabras de apoyo y ánimo de mi parte, Ethan está dejando caer sus capas.
 Ya no le avergüenza leer en público, aunque eso haya hecho que muchos de sus admiradores lo hayan abandonado.
 Siempre dice que solo con saber que tiene mi atención es suficiente.
-//Campanillas
+<<PlayAudio noti_movil 1.0>>
 Hablando del rey de Roma.
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “¡Hola [select value={$gender} M="flor" F="florecilla" NB="flor"/]! Espero que no me hayas echado mucho de menos.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Jajaja, claro que no, Ethan. Si tan solo hemos hablado hace media hora por teléfono.”
+<<Act Ethan sprt_ethan_wink>>
 Ethan: “Para mí eso es demasiado, mi [select value={$gender} M="rey" F="reina" NB="noble"/].”
+<<Act Ethan sprt_ethan_neutral>>
 Me río ante el nuevo apodo cariñoso. Siempre me sorprende con su creatividad.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 ¿Umm? Noto hoy algo raro en él.
 Me mira con un brillo peligroso en los ojos. Se le ve extasiado, como un niño pequeño esperando a contar un secreto.
 Es entonces cuando me fijo en que sus manos se encuentran ocultas tras su espalda.
@@ -12664,8 +12688,18 @@ En un abrir y cerrar de ojos, Ethan me muestra lo que estaba ocultando y mis ojo
 {$name}: “¿¡Son billetes de avión!?”
 Ethan: “Sí, cielo. Llevaba ya varias semanas pensándolo y creo que nos merecemos un viaje de varios meses por el mundo.”
 Ethan: “Solos tú y yo, sin nadie más en quien pensar o preocuparse.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Ethan, ¡esto es increíble!”
 Sería la primera vez que viajo sin ningún objetivo en mente, sin tener que huir de nadie.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “Pero han debido de costar un dineral.”
 {$name}: “Tendrías que haberme avisado para ayudarte con ello.”
 Ethan: “Tenía dinero ahorrado de hace varios años y...”
@@ -12674,12 +12708,16 @@ Ethan: “No hay nada que más quiera que conocer todo sobre ti y poder crear nu
 Ethan: “Y no olvidemos hacerte olvidar a ese ex idiota tuyo.”
 {$name}: “Gracias, Ethan. No sabes lo feliz que me hace.”
 {$name}: “Pero no te vas a librar de que yo me encargue de la comida y el alojamiento.”
+<<Act Ethan sprt_ethan_happy>>
 Ethan: “Está bien, [select value={$gender} M="flor" F="florecilla" NB="flor"/]. No voy a luchar contigo jajaja.”
+<<Act Ethan sprt_ethan_neutral>>
 Durante unos instantes simplemente nos miramos perdidos el uno en el otro, como si fuéramos las dos únicas personas en el mundo.
 Me siento tan [select value={$gender} M="emocionado" F="emocionada" NB="emocionade"/] que no puedo evitar acercarme a él y abrazarle.
 {$name}: “Me siento muy feliz.”
 Levanto la cara de su pecho y me estiro para darle un beso en la mejilla.
+<<Act Ethan sprt_ethan_embarrassed>>
 Ethan: “N-no es nada, {$name}.”
+<<Act Ethan sprt_ethan_neutral>>
 Con nuevas energías, me separo de él y le tomo de las manos para partir a casa.
 {$name}: “Vamos a mi casa. ¡Tenemos que comenzar a planearlo todo!”
 {$name}: “Y que no se te olvide que antes de partir necesito conocer a tu abuela.”
@@ -12688,6 +12726,7 @@ La verdad es que mi vida ha cambiado mucho desde que llegué aquí.
 He conocido a mucha gente maravillosa, me dedico a lo que más me gusta y puedo compartir mi día a día con mi encantador novio.
 No puedo esperar por ver que aventuras nos depara nuestro viaje y, más importante, nuestra futura vida juntos.
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
