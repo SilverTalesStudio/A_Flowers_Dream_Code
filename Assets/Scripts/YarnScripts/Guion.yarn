@@ -9,14 +9,7 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-//<<Add_npc_likeability NPC_ethan 29>>
-//<<Add_npc_likeability NPC_sophie 39>>
-//<<Add_npc_likeability NPC_allan 29>>
-//<<Update_Plans Allan true false>>
-//<<Update_Plans Sophie true false>>
-//<<Update_Plans Ethan true false>>
 
-//<<jump Final_bueno_Ethan>>
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -12659,7 +12652,7 @@ Hemos creado una rutina familiar y acogedora.
 Y no solo es eso, gracias a las palabras de apoyo y ánimo de mi parte, Ethan está dejando caer sus capas.
 Ya no le avergüenza leer en público, aunque eso haya hecho que muchos de sus admiradores lo hayan abandonado.
 Siempre dice que solo con saber que tiene mi atención es suficiente.
-<<PlayAudio noti_movil 1.0>>
+<<PlayAudio timbre_puerta_floristeria 0.5>>
 Hablando del rey de Roma.
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “¡Hola [select value={$gender} M="flor" F="florecilla" NB="flor"/]! Espero que no me hayas echado mucho de menos.”
@@ -12740,6 +12733,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12751,13 +12745,19 @@ position: -143,644
 
 Calles vaciándose poco a poco, tiendas echando el cierre, bares sacando más mesas a la terraza, y todo esto bajo el cielo anaranjado que marca el fin de la jornada de los locales diurnos. 
 Al igual que los demás, me encuentro guardando los utensilios de jardinería, y preparada para empezar con la limpieza. Ha sido un día duro, pero por fin termina. 
-Cojo el móvil para poner mi playlist preferida y la primera canción que suena es Hybrid Times. Sonrío al escucharla.
+Cojo el móvil para poner mi playlist preferida y la primera canción que suena es Hybrid Times. 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
+Sonrío al escucharla.
 Me recuerda a cuando hoy ha venido Sophie a la floristería escuchando una canción de Useless Misfits, y era nada más y nada menos que el nuevo single que van a sacar.
 Gracias a que son sus amigos, Sophie ha podido escucharla en primicia. Lo que no esperaba es que me lo mostrara a mí también. Lo hemos escuchado juntas y estuvimos hablando mucho rato de él.
 Qué guay es haber conocido a Sophie, estoy [select value={$gender} M="seguro" F="segura" NB="segure"/] de que a Leah le caería bien. Deberíamos quedar [select value={$gender} M="los tres juntos" F="las tres juntas" NB="les tres juntes"/] algún día.
 Cuando llegue a casa les preguntaré a ambas cuando tienen libre.
 
-
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12771,6 +12771,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12781,29 +12782,63 @@ position: -143,644
 <<endif>>
 
 Estoy [select value={$gender} M="parado" F="parada" NB="parade"/] frente a mi portal sosteniendo un ramo entre mis manos, y más [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] que nunca. Lo estoy tanto que no oigo a Sophie acercase. Me da unos toquecitos en el hombro y pego un bote del susto.
+<<Act Sophie sprt_sophie_neutral right bottom015 white>>
 Sophie: “Tranquila, no quería asustarte”
 {$name}: “Perdona, es que estoy tan nerviosa que no estaba prestando atención.”
 Sophie: “¿Nerviosa por qué?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Por conocer a tu hermana, obviamente!”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Pft jajajaja, pero por qué si solo es mi hermana”
 {$name}: “Precisamente, es algo muy importante y quiero que salga bien”
 Sophie: “Ella es la primera que se va a reír cuando le cuente como te has puesto antes de ir a verla. Anda vamos, he dejado la moto aparcada más adelante.”
-Andamos un rato hasta la moto mientras Sophie trata de quitarle hierro al asunto, pero no funciona. Para mí sigue siendo un momento muy importante, es la primera vez que voy a conocer a la hermana de mi novia, es fundamental que nos llevemos bien.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
+Andamos un rato hasta la moto mientras Sophie trata de quitarle hierro al asunto, pero no funciona. 
+Para mí sigue siendo un momento muy importante, es la primera vez que voy a conocer a la hermana de mi novia, es fundamental que nos llevemos bien.
 Sophie: “Deja que guarde el ramo en el baúl de la moto”
 {$name}: “¿No se va a destrozar un poco por el viaje?”
 Sophie: “No te preocupes, siempre los llevo así. Hice un sistema de agarres para dejarlos fijos y que se muevan lo menos posible. ¿Ves?”
 Señala al compartimento abierto donde efectivamente ha dejado el ramo totalmente inmovilizado con palos y cuerdas, además de meterlo en una caja perfecta para el tamaño del ramo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Es genial el arreglo que has hecho para esto”
+<<Act Sophie sprt_sophie_happy>>
 Sophie: “Je, con maña se acaba sacando todo”
 {$name}: “Y yo que pensaba que eras más de fuerza.” Sonrío sarcásticamente.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Sophie sprt_sophie_neutral>>
 Me coge de la cintura con una mano y me acerca hacia ella hasta que pocos centímetros nos separan.
-//////////////////////////////////////////////////////////
-//////////////////PROTAGONISTA SE SONROJA/////////////////
-//////////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 Sophie: “Esa ya la uso en otros momentos más adecuados, ¿no crees?”  
 Ahora es ella quien me devuelve la sonrisa con una mirada cazadora. Trago mientras le aguanto la mirada como una liebre paralizada. Cada segundo que pasa me ruborizo más.
 Con su mano libre coge uno de los cascos y cuando lo tiene me lo empieza a colocar con ambas. Cuando termina se coloca el suyo y sube a la moto.
 Me subo detrás de ella y le agarro fuerte de la cintura.
+<<Act Sophie sprt_sophie_happy>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Sophie: “Menos mal que era yo la de la fuerza-”
 {$name}: “Es que me parece “adecuado” usar mi fuerza ahora. No es como si mi vida corriese peligro en un aparato mortal como lo es una moto.”
 Sophie: “Jajajajaja”
@@ -12820,6 +12855,7 @@ Sophie para en un semáforo y debe notar mi inquietud porque en cuanto detiene l
 Su tacto me tranquiliza. Sophie tiene razón, debería confiar en sus palabras, ella es quién mejor conoce a su hermana.
 Mi ansiedad se transforma en emoción. Voy a conocer a una persona que se va a convertir en una de las más importantes de mi vida. Estoy expectante de qué me deparará este futuro.
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12834,6 +12870,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12846,13 +12883,23 @@ position: -143,644
 Despido a la clienta cuando sale de la floristería y guardo feliz el dinero. Hoy estoy haciendo mucha caja, y la verdad es que me reconforta. 
 He hecho una inversión de flores arriesgada y recuperar ese dinero es primordial para mí.
 Miro el nuevo jarrón que he colocado en el mostrador con la causante de mis últimos gastos, un lirio de sapo. Realmente no me puedo quejar.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 Sólo de ver la cara que puso Allan cuando descubrió que los había traído ha merecido la pena, así que no me arrepiento.
 Además, hablando con él cogí muchas ideas de como introducirlo a otros ramos. Siempre es agradable hablar con alguien que me entiende tan bien.
 Me alegro de que aparte de hacer cumplir mi sueño al abrir la floristería, también me ha servido para conocer a gente estupenda como por ejemplo Allan, que se ha convertido en uno de mis grandes amigos.
 Espero seguir conociendo a más gente y haciendo más amigos en esta ciudad.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Antes de que pueda seguir divagando llega otro cliente, toca volver al trabajo. ¿Se convertirá este cliente en otro habitual? Sólo me queda descubrirlo.
 
-
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12867,6 +12914,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene tienda_placeholder>>
+<<PlayAudio tienda_sonidos 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -12883,12 +12931,17 @@ Menos mal que hacen pedidos a domicilio porque sería incapaz de llevar todo est
 <<Act Cajero sprt_chico right bottom015 white>>
 {$name}: “Perdona, ¿sabes dónde está Allan? Sé que trabaja aquí y no le tocaba almacén hoy, ¿verdad?”
 El cajero se pone nervioso y desvía la mirada.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   //<<Act {$name} sprt_he_sad>>
+<<endif>>
 {$name}: “¿Le ha pasado algo? Por favor, soy su [select value={$gender} M="novio" F="novia" NB="novie"/], si le ha pasado algo necesito saberlo”
 Cajero: “Sí, está en el almacén...”
 <<Hide Cajero>>
 No parece que me vaya a decir nada más pero no necesito más, en cuanto termina de separar mi compra para guardarla para el envío a domicilio vuelvo al interior del supermercado para buscar a Allan.
 Encuentro la puerta que da al almacén desde la tienda, pero no hace falta que la cruce, según me voy acercando veo cómo sale Allan cabizbajo.
-<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Act Allan sprt_allan_shy_sad right bottom015 white>>
 {$name}: “¡Allan!”
 Alza la vista al escucharme y lo veo, tiene los ojos rojos y húmedos además de hinchados, ha estado llorando.
 {$name}: “¿Qué ha pasado?”
@@ -12899,11 +12952,16 @@ La puerta vuelve a abrirse y sale su jefe del almacén. Se para frente a Allan e
 <<Act Jefe sprt_chico right bottom015 white>>
 Jefe: “¡Allan! Justo te acabo de decir que tienes que trabajar más, ¿y ya estás hablando con [select value={$gender} M="un cliente" F="una clienta" NB="une cliente"/]?”
 <<Hide Jefe>>
-<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Act Allan sprt_allan_shy_sad right bottom015 white>>
 Allan: “Perdón”
 <<Hide Allan>>
 <<Act Jefe sprt_chico right bottom015 white>>
 Jefe: “Bah, prefiero que no digas nada, ya sabía que no se puede confiar en alguien como tú. Siempre vagueando”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_angry>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_angry>>
+<<endif>>
 ¿Cómo se atreve hablar así de Allan? Es él quien no hace nada, se va pronto todos los días mientras Allan hacer turnos inhumanos.
 Veo como Allan hace todo lo posible para evitar mirarle a la cara, sigue soportando para evitar que esto vaya a más. 
 Pero esto es inadmisible, nadie debería aguantar este trato constante, y menos mi novio.
@@ -12914,7 +12972,7 @@ Jefe: “Qué sabrás tú de negocios. Aquí todos trabajan, no voy a hacer la e
 {$name}: “Eso es mentira. Todos trabajan menos tú, sé los turnos que hacen los demás y sobre todo Allan. No me creo que salgas tan tarde.”
 Jefe: “Allan, haz que se calle tu [select value={$gender} M="amiguito" F="amiguita" NB="amiguite"/] porque si no te vas a quedar sin trabajo.”
 <<Hide Jefe>>
-<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Act Allan sprt_allan_shy_frustrated right bottom015 white>>
 Allan: “{$name}, no hace falta que sigas, simplemente tengo que trabajar mejor, la próxima vez no me equivocaré.”
 Ver a Allan sonreírme, mientras sus ojos están ausentes de su luz habitual, para ocultar el sufrimiento que siente, es la gota que colma el vaso.
 {$name}: “De hecho no, no va a haber próxima vez.”
@@ -12926,26 +12984,42 @@ Cojo a Allan de la mano y le miro con determinación para que confíe en mí.
 Empiezo a andar hacia a la puerta sin mirar atrás.
 Jefe: “¡ALLAN! ¡Si cruzas esa puerta estarás despedido!”
 <<Hide Jefe>>
-<<Act Allan sprt_allan_neutral right bottom015 white>>
+<<Act Allan sprt_allan_shy_frustrated right bottom015 white>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Me paro y me giro para ver a Allan. Está desconcertado, no sabe qué hacer. Le acaricio la mejilla con mi mano libre.
 {$name}: “Allan, mírame.”
 {$name}: “No tienes que hacer lo que te diga, te mereces mucho más que trabajar aquí. Y si tu preocupación es el dinero que no lo sea, tengo ya un plan para eso. Confía en mí, ¿vale?”
 {$name}: “Si de verdad quieres trabajar aquí, me disculparé ahora mismo con tu jefe, pero tienes que elegir tú de verdad. ¿Qué quieres hacer?”
 Las lágrimas vuelven a brotar de sus ojos.
+<<Act Allan sprt_allan_shy_sad>>
 Allan: “No quiero estar más aquí, odio trabajar en este sitio. No lo aguanto más”
 {$name}: “Entonces no hace falta que lo hagas. Sígueme”
 Continuamos hasta la salida mientras oímos gritos del jefe de fondo. Por fin Allan es libre.
+<<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle>>
+<<wait 2.0>>
 Allan: “Jamás pensé que podría escapar de ese trabajo. Sin tu ayuda no habría sido posible, {$name}”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Si no era ahora habría sido más adelante. Allan, no podía aguantar mucho más verte sufrir por tu jefe. Me alegro de que esto haya sucedido.”
 {$name}: “Además, aún no te he dicho lo que tenía pensado si se daba esta situación.”
 {$name}: “Ya verás, te va a encantar...”
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<wait 2.0>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 
 <<Act Clienta sprt_chica right bottom015 white>>
 <<if get_player_mainCharacter() == "P">>
@@ -12965,6 +13039,10 @@ Tan solo lleva una semana aquí y se nota que ha nacido para esto. Ver a Allan d
 No puedo evitar admirarle mientras le explica a la clienta qué tipo de planta es. Es imposible irradiar más alegría que él cuando se pone a hablar de flora.
 Si esta es la imagen de mi futuro, espero que nunca cambie.   
 
+<<StopAudioAll>>
+<<HideAll>>
+<<Fade black 0.0 1.0 2.0>>
+<<wait 2.0>>
 //JUMP
 ===
 
