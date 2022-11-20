@@ -6,6 +6,10 @@ public class ExitGame : MonoBehaviour
 {
     public void Exit()
     {
-        Application.Quit();
+        if(Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            Application.Quit();
+        }
+        
     }
 }
