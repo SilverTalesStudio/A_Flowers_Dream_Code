@@ -9,15 +9,16 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-//<<Add_npc_likeability NPC_ethan 29>>
+<<Add_npc_likeability NPC_ethan 29>>
 //<<Add_npc_likeability NPC_sophie 39>>
 //<<Add_npc_likeability NPC_allan 29>>
 //<<Update_Plans Allan true false>>
 //<<Update_Plans Sophie true false>>
 //<<Update_Plans Ethan true false>>
 
-//<<jump cita_Sophie_sem3>>
-<<jump Sophie_lunes_sem1>>
+
+<<jump cita_Ethan_sem3>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -956,9 +957,9 @@ position: -321,449
 //<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Anciana sprt_sagrario_neutral right bottom015 white>>
@@ -992,9 +993,9 @@ position: -140,446
 //<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
-<<if get_player_mainCharacter() == "Personaje_1">>
+<<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
-<<else>>
+<<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Anciana sprt_sagrario_neutral right bottom015 white>>
@@ -1353,16 +1354,16 @@ position: 433,-187
 <<Scene bg_calle>>
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
-Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. 
-Se me olvidó colocar un aviso, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
-
-No puede ser .
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_angry bottom015 white>>
+    <<Act {$name} sprt_she_angry left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
     //<<Act {$name} sprt_he_angry left bottom015 white>>
 <<endif>>
+Según me acerco a mi local, veo a una persona parada frente la puerta. Está viendo si hay alguien dentro. 
+Se me olvidó colocar un aviso, pero no pensé que otra vez fuera a llegar alguien tan pronto. 
+
+No puede ser .
 
 -> {$name}: “Ejem, si quieres que te atienda vas a tener que apartarte para que pueda abrir” 
 -> {$name}: “Perdón, si te apartas un segundo puedo abrir y te atiendo” 
@@ -1381,7 +1382,7 @@ Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor”
 //[CAMPANITAS] 
 <<Scene bg_floristeria>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final bottom015 white>>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
@@ -11807,6 +11808,7 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -11820,16 +11822,26 @@ Allan: “¡Hola {$name}!”
 Allan: “Parece que el festival ya está a tope”
 A pie de calle se ve mucha gente yendo en la misma dirección, algunos de ellos incluso disfrazados con atuendos medievales.
 {$name}: “Sí, no sabía que era tan popular”
-////////////////////////////////////////////////////
-//////////////////ALLAN FLIRTY//////////////////////
-////////////////////////////////////////////////////
+<<Act Allan sprt_allan_flirty>>
 Allan: “Es de las cosas más famosas de esta ciudad, pero siendo sinceros, al sitio que te voy a llevar es mucho más bonito.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Eso espero, me has dicho muchas cosas buenas así que voy con muchas ganas”
+<<Act Allan sprt_allan_happy>>
 Allan: “Ya verás como no te defrauda. ¿Vamos?”
 Abre la puerta del copiloto para invitarme a dentro y accedo al interior. Él se sienta en el asiento del conductor y ambos nos ponemos el cinturón.
 Allan: “¿[select value={$gender} M="Listo" F="Lista" NB="Liste"/]?”
 {$name}: “¡Sí! No estaba muy lejos, ¿verdad?”
 Allan: “Llegamos en quince minutos así que en nada estamos.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Allan sprt_allan_neutral>>
 ¿Cómo de bonito será el camino que vamos a hacer allí? Sólo queda esperar a verlo.
 Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo que necesito para despejarme.  
 <<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
@@ -11837,26 +11849,39 @@ Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
 
 <<if ($AfinidadAllan >= $AfinidadEthan) && ($AfinidadAllan >= $AfinidadSophie)>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     No puedo dejar de darle vueltas. Pasé mucho miedo, pero me siento más segura a su lado. 
     {$name}: “Oye Allan”
     Allan: “¿Sí?”
     {$name}: “Muchas gracias otra vez por lo de ayer. No sé qué habría hecho sin ti.”
+    <<Act Allan sprt_allan_happy>>
     Allan sonríe con preocupación.
     Allan: “De nada, {$name}. Siempre estaré aquí para lo que necesites, no importa qué ocurra.”
     Allan: “Ahora estás a salvo, ¿vale?”
     Allan: “Las autoridades se ocuparán de él, y Limón y yo estamos para protegerte. Ya no estás [select value={$gender} M="solo" F="sola" NB="sole"/].”
     Sus palabras me calman, y siento calidez en mi interior. Allan me transmite paz y estabilidad.
+    <<Act Allan sprt_allan_neutral>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_neutral>>
+    <<endif>>
     El resto del viaje lo pasamos en silencio. Otras personas estarían incómodas, pero nosotros no. 
     Era un silencio necesario, un silencio que nos deja simplemente disfrutar de la compañía mutua. 
 <<endif>>
 <<HideAll>>
+<<StopAudioAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_parajeNatural>>
-
+<<PlayAudio sonido_pajaros 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11866,11 +11891,23 @@ Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo
 
 Allan: “¡Ya estamos aquí!”
 {$name}: “Es precioso, Allan”
+<<Act Allan sprt_allan_shy_lookingdown>>
 Allan: “Entonces, ¿es lo que esperabas?”
 Suena dubitativo y se mira las manos mientras juguetea un poco con ellas, como otras tantas ocasiones en las que ha hecho lo mismo por estar nervioso.
 Le sonrío para tranquilizarle y antes de que responda, sólo con ver mi cara se alegra y deja de inquietarse.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Mucho más.”
 {$name}: “¡Y encima tan solo estamos al principio!”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Allan sprt_allan_neutral>>
 Allan: “Cuando lleguemos a las profundidades del bosque, rodeados de naturaleza en su máxima expresión... No digo más para no romperte la sorpresa.”
 {$name}: “Qué malo eres dejándome con la miel en los labios. ¿A qué estamos esperando? ¡Adentrémonos ya!”
 Echo a correr al interior y oigo como Allan me sigue hasta que me alcanza y ambos vamos a la par. ¿Cómo será el interior de esta ruta?
@@ -11881,9 +11918,21 @@ Allan tenía razón, es absolutamente magnífico. Nunca había visto un robledal
 El color predominante es claramente el verde y es tan denso el bosque que me encanta ser capaz de atravesar un pasaje natural casi totalmente virgen.
 El único camino libre es el de la propia senda, en cuanto miras a tu alrededor es imposible ver la línea de fondo. Incluso mirar para arriba tampoco sirve, los árboles, en su inmensidad, tapan gran parte del cielo.
 Es como estar en un túnel generado por la naturaleza.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
+<<Act Allan sprt_allan_happy>>
 Allan: “Impresionante, ¿verdad?”
 {$name}: “Allan, me encanta que me hayas traído aquí, prefiero esto mil veces al festival.”
 Allan: “Otra cosa en la coincidimos, jajaja”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
+<<Act Allan sprt_allan_neutral>>
 Y no sé cuánto tiempo más puedo aguantar sin decirle nada. Cada vez que me mira y me sonríe sin mayor motivo que alegrarme, más delgada se vuelve la línea que me impide dar un paso adelante.
 No quiero decirle nada aún porque no estoy [select value={$gender} M="seguro" F="segura" NB="segure"/] de si él siente lo mismo, pero tal vez no pueda controlarme a mí [select value={$gender} M="mismo" F="misma" NB="misme"/] si llega el momento.
 Allan: “¡Ah!¡Mira!”
@@ -11896,23 +11945,28 @@ Esta vez sí que me señala el lugar y lo sigo con la vista.
 {$name}: “Asfódelos blancos...”
 Allan se aleja de los helechos para acercase a las flores y observarlas de cerca.
 Allan: “¡Exacto! Ya los había visto antes, pero en esta época siempre están genial, no puedo evitar emocionarme con ellos. Preciosos, ¿no?”
+<<StopAudioAll>>
+<<PlayAudio musica_momento_sinceridad 0.4 loop>>
 Sin embargo, no puedo fijarme menos en las flores, en este momento solo puedo ver a Allan.
 Ya no hay ni delgada línea, ha sido destruida en el instante en el que unos helechos le han sacado una felicidad tan radiante que me quema al acercarme.
 Cómo no voy a enamorarme de un hombre con tanta pasión y que me da tantas alegrías.
 Tengo que decírselo, puede que salga mal, pero peor es vivir aguantando esto por dentro, y no soy capaz de retener más este sentimiento.
 {$name}: “Allan, ¿puedes acercarte un momento?”
 Allan: “Sí, ¿pasa algo?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “¿Te acuerdas cuando hace un momento has dicho que tenemos muchas cosas en común?”
 Allan: “Sí, claro”
 {$name}: “Pues me preguntaba si coincidiríamos en otra cosa más...”
 Allan: “No entiendo a qué te refieres, {$name}”
 Suspiro. No voy a dar más rodeos, al toro se le coge por los cuernos.
 {$name}: “Me gustas, Allan, llevo mucho tiempo pensando en si decírtelo o no porque no sé si sientes lo mismo, pero no podía aguantar más sin confesártelo”
+<<Act Allan sprt_allan_shy_lookingforward>>
 {$name}: “Entiendo si no quieres tener esa relación conmigo, aunque me-”
 Allan: “¿Te gusto?”
-//////////////////////////////////////////////////////////
-///////////////ALLAN SONROJADO/////////////////////////////
-//////////////////////////////////////////////////////////
 Su cara está totalmente roja y sorprendida. Me descoloca la pregunta porque para mí tiene una respuesta muy obvia.
 {$name}: “Claro que me gustas, eres perfecto Allan. Eres súper atento conmigo, jamás había encontrado a alguien que disfrutara tanto de las plantas y las flores como yo.”
 {$name}: “Siempre me apoyas en cualquier situación y podría hacer una lista infinita con razones por las que me gustas.”
@@ -11925,10 +11979,22 @@ Mira hacia abajo y pongo sus manos entre las mías para que mire hacia arriba a 
 Vuelve a sonreír, aceptante, y asiente.
 Ahora no puedo parar, quiero más. Le agarro de la muñeca y tiro levemente de él hacia mí y hacia abajo mientras me inclino hacia delante.
 {$name}: “Hagámoslo mucho más sencillo.”
-/////////////////////////////////////////////////////////////
-////////////////////ILUSTRACIÓN//////////////////////////////
-/////////////////////////////////////////////////////////////
-Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura una eternidad.  
+Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura una eternidad.
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio music_romantic 0.4 loop>>
+<<Scene illus_week3_she_allan>>
+<<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>> 
+<<Scene bg_parajeNatural>> 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
+<<Act Allan sprt_allan_shy_lookingforward right bottom015 white>>
 Cuando nos separamos estamos ambos sonrojados, pero esta vez es Allan quien toma la iniciativa.  
 Extiende la palma de su mano bocarriba, coloca la mía encima y las entrelazamos. No puedo estar más feliz ahora mismo, todo ha salido bien y ahora estamos juntos.
 Continuamos el resto de la ruta mucho más cercanos que antes. Jugueteamos empujándonos con suavidad por el camino. 
@@ -11950,7 +12016,7 @@ position: -143,644
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Scene bg_calle>>
-
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11971,8 +12037,14 @@ Antes de poder pensar más en la bella sonrisa de Ethan, abro la puerta y me la 
 Ethan me observa divertido. ¿He dicho algo malo?
 Ethan: “Si mi memoria no me falla habíamos quedado para ir al festival medieval, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
 Estaba claro que la iba a liar. ¡Se ha notado muchísimo que estoy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/]!
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Jejeje. Claro que me acordaba, era una pequeña broma.”
 Creo que Ethan ha notado que es una mentira, pero no dice nada.
+<<Act Ethan sprt_ethan_happy>>
 Ethan: “Vaya, [select value={$gender} M="flor" F="florecilla" NB="flor"/], estás absolutamente [select value={$gender} M="precioso" F="preciosa" NB="preciose"/].”
 {$name}: “Gracias. Tú también estas guapo, aunque siempre lo estas.”
 Ethan: “Hoy te veo muy [select value={$gender} M="atrevido" F="atrevida" NB="atrevide"/], {$name}.”
@@ -11982,14 +12054,22 @@ Si no era suficiente con lo de antes, ahora mi mente acaba de romperse.
 {$name}: “Solo digo la verdad.”
 Ethan: “Pero no te veo [select value={$gender} M="preparado" F="preparada" NB="preparade"/] para el festival.”
 Ethan: “Y yo que no he podido dormir pensando que iba a verte disfrazada de [select value={$gender} M="príncipe" F="princesa" NB="noble"/].”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 ¿Teníamos que disfrazarnos? La idea no me disgusta, la verdad es que hubiera estado divertido, pero ya no se puede hacer nada.
 {$name}: “No lo había pensado, pero a lo mejor a otro año podríamos ir los dos disfrazados.”
 {$name}: “Más bien me extraña que tú no te hayas puesto un traje de príncipe o algo así con lo que te gusta llamar la atención.”
+<<Act Ethan sprt_ethan_wink>>
 Ethan: “¿Yo? ¿Llamar la atención? No sé a qué te refieres con eso, [select value={$gender} M="flor" F="florecilla" NB="flor"/].”
 Con eso dicho, Ethan se coloca el perfecto flequillo haciéndome reír en voz baja.
 Si tuviera que comparar a Ethan con un animal definitivamente sería un pavo real.
+<<Act Ethan sprt_ethan_happy>>
 Ethan: “Debo admitir que no estabas mal [select value={$gender} M="encaminado" F="encaminada" NB="encaminade"/], [select value={$gender} M="príncipe" F="princesa" NB="noble"/].”
 Ethan: “Sí que tenía pensado venir disfrazado para sorprenderte, pero no me ha llegado el traje a tiempo.”
+<<Act Ethan sprt_ethan_neutral>>
 Ethan: “De todas formas, será mejor que pongamos rumbo al festival si queremos ver bien los puestos. Suele ir mucha gente.”
 Ethan: “¿Nos vamos?”
 Me ofrece el brazo como en las películas antiguas y [select value={$gender} M="sonrojado" F="sonrojada" NB="sonrojade"/] lo acepto.
@@ -11998,13 +12078,13 @@ Qué estoy diciendo, está claro que sí. Con la larga lista de admiradores que 
 Parece que Ethan me lee la mente porque apoya su mano sobre la mía y la aprieta.
 Ethan: “Mi abuela me traía aquí de pequeño, ¿sabes? Siempre me han gustado este tipo de cosas.”
 
-////////////////////////////////////////////////////
-////////////PROTAGONISTA SONROJADA/////////////////
-///////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 
-////////////////////////////////////////////////////
-////////////////ETHAN SONROJADO/////////////////////
-///////////////////////////////////////////////////
+<<Act Ethan sprt_ethan_embarrassed>>
 
 Ethan: “Pero es la primera vez que vengo con alguien especial.” 
 <<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
@@ -12012,17 +12092,38 @@ Ethan: “Pero es la primera vez que vengo con alguien especial.”
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
 
 <<if ($AfinidadEthan >= $AfinidadAllan) && ($AfinidadEthan >= $AfinidadSophie)>>
+    <<Act Ethan sprt_ethan_sad>>
     Ethan: “Por cierto, ¿cómo te encuentras después de lo del otro día?”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_sad>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_sad>>
+    <<endif>>
     Ethan: “Me costó mucho irme cuando te acompañe a casa.”
+    <<Act Ethan sprt_ethan_angry>>
     Ethan: “Solo acordarme de todo lo que te dijo hace que me hierva la sangre.”
     No sabía que le había afectado tanto el comportamiento de Jacob.
     Ahora soy yo la que apoyo mi mano sobre la suya para tranquilizarle.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Ya estoy mucho mejor, Ethan. Todo gracias a ti.”
+    <<Act Ethan sprt_ethan_neutral>>
     {$name}: “No sé expresar con palabras lo [select value={$gender} M="agradecido" F="agradecida" NB="agradecide"/] que estoy por tu ayuda.”
     {$name}: “Si no hubieras llegado a entrar en ese momento no sé qué habría podido pasar.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        //<<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Ethan: “Ya no es momento de pensar en eso. Lo importante es que estas bien y que siempre que necesites una mano yo estaré aquí para ello.”
     Con lágrimas a punto de brotar, miro a Ethan intentado transmitirle lo que siento sin decir nada.
 <<endif>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene bg_festival>>
+<<wait 2.0>>
 ¡No sabía que un festival medieval podía ser tan divertido!
 Llevamos aquí ya unas tres horas y se me ha hecho demasiado corto.
 Y la experiencia ha sido mejor por haber podido disfrutarla con Ethan.
@@ -12042,19 +12143,37 @@ Observo [select value={$gender} M="extasiado" F="extasiada" NB="extasiade"/] la 
 {$name}: “¡Qué bonito! La talla de rosa blanca es simplemente preciosa.”
 Miro el precio, pero me doy cuenta de que no llevo lo suficiente encima y aparto la atención de esta triste.
 Unos minutos después noto como alguien me agarra del hombro.
+<<Act Ethan sprt_ethan_happy>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 Ethan: “Toma {$name}, una hermosa rosa para otra bella flor.”
 ¡No puede ser! ¡Si es el collar!
 {$name}: “¡Ethan, muchas gracias! Pero no era necesario de verdad...”
+<<Act Ethan sprt_ethan_neutral>>
 ¿Puede ser Ethan más atento y detallista conmigo?
 Siempre que estoy con él me siento como en casa, como si hubiera encontrado a mi otra mitad.
 La calidez que siento cuando nos tomamos de la mano...
 No creo que pueda ocultar más estos sentimientos. Si no digo algo ahora tarde o temprano se dará cuenta.
 No puedo dejar de sonreír o ruborizarme cuando estoy con él.
 ¡Decidido! ¡Antes de que termine el día me voy a confesar!
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Mis ojos caen sobre una talla de una rosa, idéntica a la mía, pero de color rojo.
 Me separo de Ethan para hablar con el dueño del puesto e intentar regatear por un precio más barato para poder pagarlo con el dinero que llevo.
 Tras mucho insistir lo consigo y me acerco a Ethan.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Toma Ethan.”
+<<Act Ethan sprt_ethan_happy>>
 Ethan: “¿Para mí? Gracias, {$name}.”
 {$name}: “El rojo te favorece mucho y...”
 {$name}: “Ahora vamos complementados.”
@@ -12063,22 +12182,47 @@ Ethan: “¡Venga, que todavía tenemos que hacer muchas cosas!”
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<Fade black 1.0 0.0 2.0>>
+<<Act Ethan sprt_ethan_neutral>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_neutral>>
+<<endif>>
 Uff, menuda caminata. Después de disfrutar otras dos horas más del festival hemos decidido alejarnos a una zona más oscura para disfrutar de los fuegos artificiales.
 Observo de soslayo a Ethan. Se le ve completamente emocionado y su cara iluminada por las luces de la feria únicamente lo hace ver más atractivo.
 Me llevo una mano al pecho intentado calmar mi acelerado corazón.
 En el tiempo desde que lo conozco nos hemos apoyado mutuamente.
 Pero me he dado cuenta de que su corazón está dolido y le impide aceptar a los demás.
 Si quiero que mis sentimientos sean escuchados y lleguen a algo más, tengo que ser yo quien de el paso.
+<<StopAudioAll>>
+<<PlayAudio musica_momento_sinceridad 0.4 loop>>
 {$name}: “¡Ethan!”
 Ethan: “¿Sí, [select value={$gender} M="flor" F="florecilla" NB="flor"/]?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “Y-yo...”
 Venga {$name}, ¡solo tienes que decirlo!
 {$name}: “Desde que nos conocimos no has dejado de sorprenderme.”
+<<Act Ethan sprt_ethan_happy>>
 Ethan: “Sí, me confundiste con un ladrón, ¿recuerdas?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Como para olvidarlo jajaja.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 {$name}: “Pero...”
 {$name}: “Cada día he podido descubrir más cosas nuevas sobre ti. Que debajo de tu máscara seductora hay un chico gentil, amante de los libros, gracioso y, lo más importante de todo, en el que se puede confiar.”
 {$name}: “No sé en qué momento exacto pasó, pero solo sé que me gustas y ya no puedo ignorar más estos sentimientos.”
+<<Act Ethan sprt_ethan_embarrassed>>
 {$name}: “Entiendo tus dudas y miedo, pero quiero una oportunidad y yo estaré apoyándote en el camino igual que has hecho tú conmigo muchas veces.”
 {$name}: “Ethan, te quiero.”
 Ya está, lo dije.
@@ -12086,10 +12230,21 @@ Con manos temblorosas consigo la suficiente confianza como para mirarle a los oj
 Espero un rechazo o una huida, pero lo único que veo es la mirada perpleja de Ethan y sus ojos cristalinos.
 Entonces, un sonido estridente me sobresalta, pero antes de que pueda ver qué ha sido, Ethan me toma de las mejillas y me besa. 
 
-//////////////////////////////////////////////////
-/////////////ILUSTRACION//////////////////////////
-//////////////////////////////////////////////////
-
+<<Fade black 0.0 1.0 1.0>>
+<<wait 1.0>>
+<<StopAudioAll>>
+<<HideAll>>
+<<PlayAudio music_romantic 0.4 loop>>
+<<Scene illus_week3_ethan>>//////////////AQUI ILLUS_WEEK2_SHE_ALLAN
+<<Fade black 1.0 0.0 1.0>>
+<<wait 3.0>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed left bottom015 white>>
+<<elseif get_player_mainCharacter() == "S">>
+    //<<Act {$name} sprt_he_embarrassed left bottom015 white>>
+    <<Act {$name} sprt_he_neutral left bottom015 white>>
+<<endif>>
+<<Act Ethan sprt_ethan_embarrassed right bottom015 white>>
 Tardo unos segundos en procesar lo que está pasando, pero rápidamente me tranquilizo y cierro los ojos.
 Poso mis manos sobre las suyas con delicadeza.
 Sus labios son suaves y el beso intenso, cómo si me estuviera intentando trasmitir a través de él sus sentimientos reprimidos.
