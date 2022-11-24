@@ -8664,7 +8664,7 @@ Al escuchar mis palabras sonríe ampliamente.
 Allan: “Aprecio un montón tu intención. No te preocupes que va a cumplir perfectamente su propósito”
 {$name}: “Genial entonces”
 
-<<jump Fin_ramas_minijuego_Alllan_lunes_sem3>>
+<<jump Fin_ramas_minijuego_Allan_lunes_sem3>>
 ===
 
 title: Minijuego_mal_Allan_lunes_sem3
