@@ -10,7 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Sophie_lunes_sem1>>
+<<jump Cita_Ethan_sem1>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -275,8 +276,9 @@ Desconocida: “¡Tú! ¿No habrás visto a un chico muy descarado y sin vergüe
 ¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... 
 Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
 
--> {$name}: “No sé si puede ser la persona a quien buscas, pero alguien ha entrado y se ha escondido detrás del mostrador” 
+-> {$name}: “No sé si puede ser la persona a quien buscas...” 
     <<Add_npc_likeability NPC_ethan -1>>
+    {$name}: ...pero alguien ha entrado y se ha escondido detrás del mostrador
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. 
     Al mismo tiempo, la figura misteriosa que se encontraba escondida detrás sale dando un brinco y se gira hacia mí para señalarme con un dedo acusatorio.  
     <<Act Chico sprt_ethan_sad center bottom015 white>>
@@ -342,8 +344,9 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     {$name}: “Suspiro. Dime, ¿qué te puedo poner?”  
     //Minijuego
     <<jump Minijuego_Ethan_lunes_sem1>> 
--> {$name}: “... Lo siento, no me suena haber visto entrar a nadie con esa descripción aquí” 
+-> {$name}: “... No, lo siento” 
     <<Add_npc_likeability NPC_ethan 2>>
+    {$name}: “No me suena haber visto entrar a nadie con esa descripción aquí”
     Ante mi declaración, la mujer me mira con desconfianza. Vuelve a inspeccionar con ojo crítico la floristería.  
     <<PlayAudio object_dropped 1.0>>  
     Otro ruido como el que llamó mi atención con anterioridad suena desde detrás del mostrador. Al escucharlo me tenso como un palo.
@@ -1083,8 +1086,9 @@ Para mi incredulidad, el joven asiente y abre su cuaderno para comenzar a dibuja
 En esencia, no se había girado a mirarme a mí, sino a la flor que capta su atención. ¿Qué es lo que está pasando?  
 El joven sigue pintando absorto en su labor como si esta fuera su tienda y no la mía. Por unos instantes me siento fuera de lugar, como si por estar cerca de él le estuviera importunando.
 Tras varios minutos de duda en los que me remuevo en el sitio por la incomodidad, me dispongo a acercarme a él para preguntarle por su tarea.  
--> {$name}: “¿Puedo saber qué estás haciendo? Por si no te has dado cuenta esta es una tienda de flores y no un estudio de arte” 
+-> {$name}: “¿Puedo saber qué estás haciendo?” 
     <<Add_npc_likeability NPC_pietro -2>>
+    {$name}: “Por si no te has dado cuenta esta es una tienda de flores y no un estudio de arte”
     Le doy un golpecito con el dedo en el hombro, pero el joven ni se inmuta. ¿Acaso me está ignorando? Esto no puede ser ya una mera coincidencia. Frunzo el ceño con molestia.
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_angry>>
@@ -1364,7 +1368,7 @@ No puede ser .
 Borde: “¿En serio? ¿Tú de nuevo? Ya entiendo por qué estaba cerrada la tienda a estas horas. Horario de [select value={$gender} M="príncipes" F="princesas" NB="nobles"/] supongo” 
 -> {$name}: “Oye, simplemente tenía cosas que hacer antes y se me olvidó poner un aviso” 
 -> {$name}: “El que me dé a mí la gana que para eso soy [select value={$gender} M="el propietario" F="la propietaria" NB="el propietarie"/]” 
--> {$name}: “Si vas a estar así todo el rato puedes ir yéndote a buscar otra floristería por la ciudad” 
+-> {$name}: “Si vas a estar así todo el rato puedes ir yéndote a buscar otra floristería” 
 Borde: “Ugh. Abre ya, que cuanto antes terminemos esto mejor” 
 
 <<Fade black 0.0 1.0 1.0>>
@@ -1546,13 +1550,14 @@ El enigmático y peculiar artista, Pietro. Al igual que ayer, viene con su carac
 
 Sin poder evitarlo, llamo su atención con un gesto exagerado.  
 
--> {$name}:  “¿¡Tú otra vez aquí!? Espero que esta vez hayas venido a comprar algo y no a dibujar” 
+-> {$name}: “¿¡Tú otra vez aquí!?” 
     <<Add_npc_likeability NPC_pietro -1>>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_angry>>
     <<elseif get_player_mainCharacter() == "S">>
         //<<Act {$name} sprt_he_angry>>
     <<endif>>
+    {$name}: “Espero que esta vez hayas venido a comprar algo y no a dibujar”
     Ante mis palabras acusadoras, Pietro me dirige una breve mirada de fastidio y, sin decir nada, se dirige a la sección en la que se encuentra la amapola del Himalaya.
     Abre el taburete que trae bajo su brazo y procede a sentarse en este para lo que supongo que es continuar su dibujo.  
     Pietro: ...
@@ -1573,7 +1578,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Creo que es lo más expresivo que le he visto mostrar en todo este tiempo, aunque tampoco es que le conozca mucho. 
     Con cara de estupefacción le observo mientras abre su taburete y se sienta para continuar el dibujo del otro día.
 {$name}: “¿De verdad se va a pasar toda la tarde en ese rinconcito dibujando?”  
--> {$name}: “¡Oye! Lo siento, pero no te puedes quedar aquí pintando todo el día. Será mejor que te marches, gracias” 
+-> {$name}: “¡Oye! Lo siento, pero no te puedes quedar aquí pintando todo el día.” 
     <<seDejaPintaraPietro no>>
     <<Add_npc_likeability NPC_pietro -2>>
     <<if get_player_mainCharacter() == "P">>
@@ -1581,6 +1586,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     <<elseif get_player_mainCharacter() == "S">>
         //<<Act {$name} sprt_he_angry>>
     <<endif>>
+    {$name}: “Será mejor que te marches, gracias”
     Como esperaba, Pietro no me hace caso. No sé si es por error o intencionado, aunque una ligera voz en mi cabeza me dice que es lo último. 
     Agh, ¿es que no puedo tener un día normal? Con pasos fuertes, me acerco a Pietro y le vuelvo a dar golpecitos insistentes en el hombro como el día anterior.  
     {$name}: “Tierra llamando a Pietro... Es hora de que regreses a casa, tengo que trabajar. Regresa cuando hayas aprendido a pedir las cosas”  
@@ -1602,9 +1608,10 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     <<HideAll>>
     <<StopAudioAll>>
     <<jump Viernes_sem1>>
--> {$name}: “Ánimo con el dibujo Pietro.” Espero poder ver cómo ha quedado cuando termine.
+-> {$name}: “Ánimo con el dibujo Pietro.” 
     <<seDejaPintaraPietro yes>>
     <<Add_npc_likeability NPC_pietro 2>>
+    Espero poder ver cómo ha quedado cuando termine.
     Como esperaba, Pietro no articula palabra completamente dedicado y entregado a su amado arte. Me encojo de hombros. No sé qué más podría hacer para gestionar esta situación. 
     Supongo que mientras se quede ahí dibujando y yo pueda trabajar sin problemas no pasa nada. Siento algo de empatía hacia Pietro.
     Al final los dos estamos dedicando nuestro tiempo a aquello que amamos, yo a las flores y él al arte. Debería de sentirme [select value={$gender} M="orgulloso" F="orgullosa" NB="orgullose"/] de que ha escogido mis flores para ello. 
@@ -1626,8 +1633,9 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     Además, él también se merece un descanso después de todo el trabajo duro.  
     -> {$name}: “Oye, es hora de cerrar así que tienes que ir abandonando este sitio. Venga” 
         <<Add_npc_likeability NPC_pietro -1>>
-    -> {$name}: “Disculpa Pietro, pero ya es muy tarde y tengo que cerrar. Creo que los dos nos merecemos un descanso” 
+    -> {$name}: “Disculpa Pietro, pero ya es muy tarde y tengo que cerrar.” 
         <<Add_npc_likeability NPC_pietro 1>>
+        {$name}: “Creo que los dos nos merecemos un descanso”
     Antes de que pueda dar un paso más para comenzar a recoger mis pertenencias e irme, Pietro me agarra ligeramente del antebrazo.  
     Pietro: “Antes de que te vayas, ¿podrías atenderme? Me gustaría llevarme unas flores para continuar dibujando en casa”
     <<if get_player_mainCharacter() == "P">>
@@ -1942,25 +1950,27 @@ Ethan: “¿No te dolió cuando caíste del cielo?”
 ¿Cómo? Ahora soy yo la que se encuentra sin palabras. Le miro con la boca completamente abierta mientras sigue sujetando mi pelo. ¿En serio acaba de...? 
 Ya está, definitivamente desde este momento le voy a llamar “Eros” como el dios griego del amor. Creo que le queda que ni pintado.   
 
--> {$name}: “¿Es en serio? Agradecería que dejarás de intentar ligar conmigo y te tomarás en serio la conversación”  
+-> {$name}: “¿Es en serio?”  
     <<Add_npc_likeability NPC_ethan -2>>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_angry>>
     <<elseif get_player_mainCharacter() == "S">>
         //<<Act {$name} sprt_he_angry>>
     <<endif>>
+    {$name}: “Agradecería que dejarás de intentar ligar conmigo y te tomarás en serio la conversación”
     Ante mis palabras cortantes, Ethan se queda estático. Claramente no sabe cómo tomar mi reacción, pero entre el dolor y su insistencia no he podido evitarlo. Entiendo que ese es su carácter, pero ¿no puede dejar de coquetear ni en esta situación? De nuevo, sin ningún tipo de filtro le digo lo que pienso. 
     {$name}: “Me duele muchísimo la cabeza por el golpe y lo único que se te ocurre es soltar una frase “romántica” para arreglarlo” 
     {$name}: “En verdad valoraría mucho más tu sinceridad Ethan” 
     ... 
     Ethan no dice nada claramente procesando mis palabras. Es como si le hubiera tirado un jarro de agua fría. Su mirada perdida y triste se posa en el suelo. Antes de que pueda descifrar lo que está pensando, agita la cabeza y me vuelve a mirar con su típica sonrisa pícara. Sin embargo, esta no llega a sus ojos. 
--> {$name}: Te ríes a carcajadas. “Puff. JAJAJA. ¿Eso es lo más ingenioso que se te ha ocurrido?”
+-> {$name}: Te ríes a carcajadas.
     <<Add_npc_likeability NPC_ethan 2>>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_happy>>
     <<elseif get_player_mainCharacter() == "S">>
         //<<Act {$name} sprt_he_happy>>
     <<endif>>
+    {$name}: “Puff. JAJAJA. ¿Eso es lo más ingenioso que se te ha ocurrido?”
     No puedo parar de reír. Estas cosas solo se le pueden ocurrir a Ethan. En una situación normal habría reaccionado con indiferencia o [select value={$gender} M="cansado" F="cansada" NB="cansade"/] ante sus intentos, pero está claro que el golpe me ha dejado sin fuerzas. ¡Ha sido demasiado gracioso! 
     Ethan me mira extrañado, como si me hubiera vuelto [select value={$gender} M="loco" F="loca" NB="loque"/]. 
     Ethan: “¿Te estas riendo de mí?” 
@@ -1996,7 +2006,7 @@ Espero que, si nuestra relación va a más, confíe en mí lo suficiente para se
 A pesar de que mis pensamientos son un caos, no sé si sacarlos a la luz. ¿Qué debería de hacer? Debo de tardar mucho en contestar porque Ethan se adelanta. 
 Ethan: “¿Te he incomodado de alguna manera?” 
 
--> {$name}: “Sí, si te parece no me incomoda que cada vez que intentas hablar conmigo sea para ligar o coquetear” 
+-> {$name}: “Sí, si te parece no me incomoda” 
     <<Add_npc_likeability NPC_ethan -2>>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_angry>>
@@ -2004,6 +2014,7 @@ Ethan: “¿Te he incomodado de alguna manera?”
         //<<Act {$name} sprt_he_angry>>
     <<endif>>
     <<Act Ethan sprt_ethan_neutral>>
+    {$name}: “Cada vez que intentas hablar conmigo es para ligar o coquetear” 
     Ethan hace una mueca ante mis palabras. Parece que he sido demasiado [select value={$gender} M="duro" F="dura" NB="dure"/] con él, pero es cierto que puede llegar a ser demasiado insistente. 
     Como he podido observar que hace al sentirse acorralado, oculta sus verdaderos sentimientos e intenta no darle importancia.
     <<Act Ethan sprt_ethan_wink>> 
@@ -2015,8 +2026,9 @@ Ethan: “¿Te he incomodado de alguna manera?”
     {$name}: “Lo que es más, las dos veces que hemos coincidido ha sido por accidentes extraños” 
     {$name}: “Siento que no puedas entenderlo, pero así soy yo”
     Ethan: “En ningún momento era mi intención hacerte sentir así, lo siento. Intentaré limitar mis mensajes y darte tu espacio” 
--> {$name}: Te sinceras con él. “No es eso, es que... siento como si no fueras del todo sincero” 
+-> {$name}: Te sinceras con él. 
     <<Add_npc_likeability NPC_ethan 2>>
+    {$name}: “No es eso, es que... siento como si no fueras del todo sincero” 
     Una vez que las palabras han brotado de mi boca como una cascada se funden en el aire, todo lo que queda es un silencio cargante. Pasan unos segundos hasta que proceso lo que acabo de decir.
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_sad>>
@@ -2810,9 +2822,10 @@ No aguantaba más, verle liarse intentando arreglar un malentendido que no ha oc
     Acerca su mano hacia mí con ímpetu, en ella tiene dos entradas.
     {$name}: “Perfecto, entonces démonos prisa que he leído que es muy amplio”
     Empezamos a andar al interior de la edificación con paso parejo.
--> {$name}: “Tú dándole mil vueltas, y te entendí a la primera. No te preocupes, está todo bien”
+-> {$name}: “Tú dándole mil vueltas, y te entendí a la primera.”
     <<Add_npc_likeability NPC_allan 1>>
     <<Act Allan sprt_allan_shy_lookingforward>>
+    {$name}: “No te preocupes, está todo bien”
     Allan: “Gracias, gracias por pararme, muchas veces me lío yo solo y me enrollo tanto y no sé ni lo que digo”
     {$name}: “No es nada, ojalá todo lo malo fuera eso” 
     Sonrío para tranquilizarle y demostrarle que de verdad no ha estropeado nada. Funciona porque me devuelve una sonrisa más relajada.
@@ -3148,7 +3161,7 @@ Cierro la foto y leo el último mensaje que me ha enviado.
 Ethan: “Espero que no me dejes “plantado”. No me gustaría marchitarme, aunque te tengo a ti para cuidarme.”
 Ufffff. Desde que me reí el último día con el nuevo apodo que me puso no ha dejado de hacer bromas y frases hechas sobre flores. Es como su nueva estrategia de coqueteo.
 A quien quiero engañar. En el fondo me resulta gracioso y adorable. Le envío mi respuesta con un emoticono de un girasol corriendo.
--> {$name}: “No te preocupes, Eros. No te marchites esperándome o te voy a tener que regar con agua fría.”
+-> {$name}: “No te preocupes, Eros.”
     <<Add_npc_likeability NPC_ethan 2>>
     Ethan: “¡[select value={$gender} M="Tranquilo flor" F="Tranquila florecita" NB="Tranquile flor"/]! Eso no va a ser necesario. Ya me estoy hidratando yo solo.”
     <<if get_player_mainCharacter() == "P">>
@@ -3156,6 +3169,7 @@ A quien quiero engañar. En el fondo me resulta gracioso y adorable. Le envío m
     <<elseif get_player_mainCharacter() == "S">>
         //<<Act {$name} sprt_he_happy>>
     <<endif>>
+    {$name}: “No te marchites esperándome o te voy a tener que regar con agua fría.”
     Me río a carcajadas. ¿De verdad me acaba de mandar una foto de él tomándose una cerveza? No puedo más.
     {$name}: “¡Genial! Nos vemos ahora.”
     {$name}: “Espero que quede alguna bebida cuando llegue, Eros.”
@@ -3312,9 +3326,9 @@ Percibo como mi cara vuelve a ruborizarse por segunda vez en la noche, aunque po
 <<Fade black 1.0 0.0 1.0>>
 <<wait 1.0>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final>>
+    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    //<<Act {$name} sprt_he_neutral>>
+    //<<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ya con más distancia entre nosotros, suelto un suspiro que no sabía que había estado conteniendo y comienzo a respirar más [select value={$gender} M="tranquilo" F="tranquila" NB="tranquile"/].
@@ -3349,10 +3363,12 @@ Uff, todavía me encuentro algo [select value={$gender} M="alterado" F="alterada
 <<Act Ethan sprt_ethan_wink>>
 Con el dedo índice, Ethan da un toque sobre la mesa para llamar mi atención. Al sentir mi atención sobre él, este apoya los codos sobre la mesa y se inclina hacia mí sonriendo. 
 Ethan: “Bueno, [select value={$gender} M="flor" F="florecita" NB="flor"/]. ¿Quieres tomar algo? Invito yo.”
--> {$name}: “¿Eh? Pues...La verdad es que agradecería  mucho un refresco ahora, pero... No tienes por qué invitarme de verdad.”
+-> {$name}: “¿Eh? Pues...”
     <<Add_npc_likeability NPC_ethan 2>>
--> {$name}: “Vale, pero no hace falta que me invites. Puedo pagarme yo el refresco sin problema.”
+    {$name}: “La verdad es que agradecería mucho un refresco ahora, pero... No tienes por qué invitarme de verdad.”
+-> {$name}: “Vale, pero no hace falta que me invites.”
     <<Add_npc_likeability NPC_ethan 1>>
+    {$name}: “Puedo pagarme yo el refresco sin problema.”
 Ante mi respuesta, infla los mofletes. Intenta mostrarse indignado, pero claramente está tomándome el pelo.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
@@ -3407,7 +3423,7 @@ Ethan: “Creo que es la vez que te he visto más feliz.”
     <<Act Ethan sprt_ethan_happy>> 
     Ethan: “Estoy en buena compañía.” 
     Le observo atónita mientras me dirige una sonrisa deslumbrante y... Verdadera. 
--> {$name}: “Bueno... Debo admitir que para lo poco que te conozco ya me has hecho reír un montón.”
+-> {$name}: “Bueno... Debo admitir que me has hecho reír un montón.”
     <<Add_npc_likeability NPC_ethan 1>>
     El ambiente liviano se mantiene.  
     Ethan: “Jajaja, me alegro de oír eso [select value={$gender} M="flor" F="florecilla" NB="flor"/].”  
@@ -3476,8 +3492,9 @@ Ethan: “Me lo he pasado muy bien hoy. Gracias por darme esta segunda oportunid
 
 Con las manos metidas en los bolsillos y una tenue sonrisa, Ethan espera a que responda. Intenta demostrar confianza, pero parece estar nervioso.   
 
--> {$name}: “Sí, yo también me lo he pasado genial. Me alegro de haberte podido conocer más.” 
+-> {$name}: “Sí, yo también me lo he pasado genial.” 
     <<Add_npc_likeability NPC_ethan 2>>
+    {$name}: “Me alegro de haberte podido conocer más.” 
     La sonrisa tímida de Ethan se ensancha ante mi respuesta y se endereza reconfortado. 
     Ethan: “Me alegro mucho. Espero que esto te anime a seguir hablando conmigo y repetir una segunda vez, ¿tal vez?” 
     {$name}: “Me encantaría.”  
@@ -3488,8 +3505,9 @@ Con las manos metidas en los bolsillos y una tenue sonrisa, Ethan espera a que r
     Se encoge de hombros. Creo que esperaba más, pero le ha sido suficiente. 
     Ethan: “Entonces, ¿seguimos hablando por teléfono?” 
     {$name}: “Claro.” 
--> {$name}: “Bueno... No se puede decir que no hayamos llamado la atención hoy tampoco.” 
+-> {$name}: “Bueno...” 
     <<Add_npc_likeability NPC_ethan -1>>
+    {$name}: “No se puede decir que no hayamos llamado la atención hoy tampoco.”
     Parece que mi comentario no le ha gustado del todo. Le ha debido recordar a los accidentes de nuestros anteriores encuentros. 
     Ethan: “Es cierto que hemos llamado la atención, pero si estás conmigo es algo inevitable.” 
     {$name}:“Yo preferiría no llamar la atención.” 
