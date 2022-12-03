@@ -1472,6 +1472,7 @@ GameObject:
   - component: {fileID: 1034724677}
   - component: {fileID: 1034724676}
   - component: {fileID: 1034724675}
+  - component: {fileID: 1034724678}
   m_Layer: 5
   m_Name: InputNombre
   m_TagString: Untagged
@@ -1498,7 +1499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -437, y: 95}
-  m_SizeDelta: {x: 681.1587, y: 161}
+  m_SizeDelta: {x: 587.64, y: 161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034724675
 MonoBehaviour:
@@ -1548,17 +1549,17 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 15
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
@@ -1660,6 +1661,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034724673}
   m_CullTransparentMesh: 1
+--- !u!114 &1034724678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034724673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b6205aa0bf6d047873f86a9696e9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 1034724675}
 --- !u!1 &1058757396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,8 +2051,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.6181, y: 0.4013977}
-  m_SizeDelta: {x: -138.9702, y: -101.3264}
+  m_AnchoredPosition: {x: -5.7496, y: 0.4013977}
+  m_SizeDelta: {x: -125.2331, y: -101.3264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439575257
 MonoBehaviour:
