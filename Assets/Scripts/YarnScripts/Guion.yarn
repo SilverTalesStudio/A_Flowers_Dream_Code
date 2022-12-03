@@ -7239,7 +7239,7 @@ Debo admitir que me quería ver bien y, a diferencia de la última vez, parte de
 Es cierto que creo que estoy empezando a sentir algo por él. 
 Y encima la cita en el cine.
 Inconscientemente mi mente empieza a llenarse de escenas de películas románticas.
-¿Pasará algo así? 
+¿Pasará algo así? Cita_Ethan_sem2
 Conociendo a Ethan seguro que intenta algo, pero no sabría distinguir entre un gesto real o algo a lo que está acostumbrado.
 Este último pensamiento me entristece un poco, pero no voy a dejar que me arruine el día.
 Vamos a ver cómo se desenvuelve todo.
@@ -7606,7 +7606,7 @@ Oigo un grito a mi izquierda y para mi asombro noto como me agarran de la mano.
     {$name}: “Sabía que iba a terminar pasando esto, Eros.”
     En cuanto mis palabras salen de mi boca, Ethan se tensa y me mira indignado.
     Con un movimiento seco recupera su mano y no puedo evitar sentirme [select value={$gender} M="vacío" F="vacía" NB="vacíe"/].
-    <<Act Ethan sprt_ethan_angry>>
+    <<Act Ethan sprt_ethan_angry right bottom015 white>>
     Ethan: “¿Qué dices, [select value={$gender} M="precioso" F="preciosa" NB="preciose"/]? Si esto no da nada de miedo.”
     Antes de poder demostrar su renovada valentía, otro monstruo aparece en pantalla asustándolo.
     <<Act Ethan sprt_ethan_surprisedBad>>
