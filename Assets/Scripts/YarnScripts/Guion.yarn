@@ -10,8 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Cita_Ethan_sem1>>
-//<<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -2758,7 +2757,7 @@ Ay, no sé por qué, pero estoy [select value={$gender} M="nervioso" F="nerviosa
 Bajo la vista a mi muñeca y la giro para ver la hora. Genial, voy bien de tiempo, incluso voy a llegar un poco antes.
 Por si acaso voy a revisar que llevo todo una vez más. Abro la mochilita que tengo en mi regazo y compruebo su interior. 
 Vale, llevo las llaves, el móvil, la cartera, y un paraguas  , que luego nunca se sabe. Cierro de nuevo la mochila y escucho el aviso de mi parada. ¡Justo a tiempo!
-En cuanto salgo del vehículo me quedo embelesada con el edificio que surge frente a mí. La fachada del botánico es preciosa. 
+En cuanto salgo del vehículo me quedo [select value={$gender} M="embelesado" F="embelesada" NB="embelesade"/] con el edificio que surge frente a mí. La fachada del botánico es preciosa. 
 Incluso yo que no tengo conocimiento alguno de arquitectura, soy capaz de discernir lo increíble de su diseño, aunque no sepa explicar por qué. 
 Inspecciono el edificio de abajo a arriba [select value={$gender} M="fascinado" F="fascinada" NB="fascinade"/], pero cuando mi vista alcanza la zona superior mi expresión se torna amarga.
 Oscuras nubes se extienden a lo lejos, es posible que según la dirección del viento no lleguen aquí pero no sé. Al menos, llevo el paraguas.
@@ -2783,19 +2782,19 @@ Allan: “¡Hola!”
 {$name}: “Yo igual , para no hacer esperar a nadie, y hoy iba con la misma intención, de hecho, me he tenido que vestir y preparar rápidamente para llegar a la hora que quería.”
 {$name}: “Pero te me has adelantado igualmente.”
 <<Act Allan sprt_allan_flirty>>
-Allan: “Pues estás muy guapa”
+Allan: “Pues estás muy [select value={$gender} M="guapo" F="guapa" NB="guape"/]”
 
-¿Me acaba de llamar guapa?
+¿Me acaba de llamar [select value={$gender} M="guapo" F="guapa" NB="guape"/]?
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_embarrassed>>
 <<elseif get_player_mainCharacter() == "S">>
     //<<Act {$name} sprt_he_embarrassed>>
 <<endif>>
-Si antes estaba sonrojada, ahora me ruborizo aún más. De la sorpresa me quedo pillada sin saber que decir. Allan habla rápidamente para llenar el silencio.
+Si antes estaba [select value={$gender} M="sonrojado" F="sonrojada" NB="sonrojade"/], ahora me ruborizo aún más. De la sorpresa me quedo pillada sin saber que decir. Allan habla rápidamente para llenar el silencio.
 <<Act Allan sprt_allan_shy_lookingdown>>
 Allan: “Por lo de que te has preparado con prisas decía.”
 Allan: “O sea, que habiendo elegido el conjunto en poco tiempo está muy bien, pero sin decirlo con segundas, sino que genuinamente  parece que le has dedicado mucho tiempo a la preparación.”
-Allan: “Que no quiero decir que con otra cosa no estarías guapa, me parecerías guapa igual. Lo que quiero decir es -”
+Allan: “Que no quiero decir que con otra cosa no estarías [select value={$gender} M="guapo" F="guapa" NB="guape"/], me parecerías [select value={$gender} M="guapo" F="guapa" NB="guape"/] igual. Lo que quiero decir es -”
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -2803,7 +2802,7 @@ Allan: “Que no quiero decir que con otra cosa no estarías guapa, me parecerí
 <<endif>>
 {$name}: “Pft, jajajajaja”
 No aguantaba más, verle liarse intentando arreglar un malentendido que no ha ocurrido porque le entendí a la primera, era imposible no reírse. Su cara preocupada se relaja al escucharme reír.
--> {$name}: “Así que siempre estaría guapa independientemente de lo que lleve”
+-> {$name}: “Así que siempre estaría [select value={$gender} M="guapo" F="guapa" NB="guape"/] independientemente de lo que lleve”
     <<Add_npc_likeability NPC_allan 2>>
     Ahora es su turno, sus mofletes se tornan rojizos, sus ojos se agrandan y se queda boquiabierto, pero sin pronunciar ningún sonido.
     Allan: “...”
@@ -2837,7 +2836,8 @@ No aguantaba más, verle liarse intentando arreglar un malentendido que no ha oc
     <<endif>>
     Allan: “Sí, voy a buscar las entradas que las tenía en el bolsillo”
     <<Act Allan sprt_allan_neutral>>
-    Se palpa ambos bolsillos delanteros con las manos varias veces, parece que no encuentra lo que buscaba porque cada vez se pone más nervioso y preocupado, mete las manos en los bolsillos y nada, pasa el turno a los traseros y se calma.
+    Se palpa ambos bolsillos delanteros con las manos varias veces, parece que no encuentra lo que buscaba porque cada vez se pone más nervioso y preocupado.
+    Mete las manos en los bolsillos y nada, pasa el turno a los traseros y se calma.
     Allan: “¡Aquí están!”
     Acerca su mano hacia mí con ímpetu, en ella tiene dos entradas.
     {$name}: “Perfecto, entonces démonos prisa que he leído que es muy amplio”
@@ -2922,7 +2922,7 @@ Allan: “¿Estás [select value={$gender} M="seguro" F="segura" NB="segure"/]? 
 <<elseif get_player_mainCharacter() == "S">>
    //<<Act {$name} sprt_he_shy>>
 <<endif>>
-Por un instante en mi mente se forma esa imagen del Allan y me sonrojo.
+Por un instante en mi mente se forma esa imagen de Allan y me sonrojo.
 -> Intento flirtear con él.
     <<Add_npc_likeability NPC_allan -2>>
     {$name}: “Bueno, y qué habría de malo en eso.” Le guiño.
