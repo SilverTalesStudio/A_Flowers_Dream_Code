@@ -10,7 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Sophie_lunes_sem1>>
+<<jump Cita_Ethan_sem2>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -7641,7 +7642,7 @@ Cómodos y fascinados con esta nueva calidez.
 <<StopAudioAll>>
 <<HideAll>>
 <<Scene bg_calle_noche_placeholder>>
-<<<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 Ya ha terminado la película. Ha estado muy bien, pero la original siempre será mejor.
@@ -7665,7 +7666,7 @@ Es en ese momento, cuando voy a sacar la bufanda de mi bolso, que me doy cuenta 
 Si yo pensaba que cuando salimos de la sala nos habíamos separado.
 Parece ser que nuestras manos se volvieron a encontrar de forma natural al realizar el camino de vuelta.
 Con razón esa mano no estaba congelada.
-<<Act Ethan sprt_ethan_placeholder right bottom015 white>>
+<<Act Ethan sprt_ethan_neutral right bottom015 white>>
 Ethan: “¿Pasa algo, [select value={$gender} M="príncipe" F="princesa" NB="noble"/]?”
 ¿Qué le digo? Es que quería coger la bufanda, pero no quiero soltar tu sedosa y cálida mano.
 ¡No! No digas eso, {$name}.
@@ -7683,9 +7684,9 @@ Abuela: “Cómo olvidarlo jajaja.”
 <<Hide Abuelo>>
 <<Hide Abuela>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_embarrassedleft bottom015 white>>
+    <<Act {$name} sprt_she_embarrassed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_embarrassedl left bottom015 white>>
+    <<Act {$name} sprt_embarrassed left bottom015 white>>
 <<endif>>
 <<Act Ethan sprt_ethan_embarrassed right bottom015 white>>
 Por si no fuera suficiente nuestra propia vergüenza, ese comentario lo único que ha hecho ha sido incrementarla.
