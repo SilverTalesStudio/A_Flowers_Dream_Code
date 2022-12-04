@@ -91,7 +91,7 @@ Chica: "¿Te vas a quedar ahí sin disculparte ni nada?"
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final>>
     <<elseif get_player_mainCharacter() == "S">>
-        <<Act {$name} sprt_he_neutral_final>>
+        <<Act {$name} sprt_he_neutral>>
     <<endif>>
     Solo quería unas disculpas mutuas, nada más. Me descruzo de brazos para soltar la tensión acumulada. 
     Cuando termina de escribir mira una última vez la pantalla y lo guarda en su pantalón. Nuevamente, fija su mirada en la mía. 
@@ -124,7 +124,7 @@ Chica: "¿Te vas a quedar ahí sin disculparte ni nada?"
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final>>
     <<elseif get_player_mainCharacter() == "S">>
-        <<Act {$name} sprt_he_neutral_final>>
+        <<Act {$name} sprt_he_neutral>>
     <<endif>>
     {$name}: “Ya, es que justo hoy estoy a mil cosas. Es mi primer día de trabajo, encima voy tarde y cuando acelero justo pasa esto. Como ves no estoy teniendo el mejor inicio” 
     <<Act Chica sprt_sophie_uncomfortable>>
@@ -339,7 +339,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final>>
     <<elseif get_player_mainCharacter() == "S">>
-        <<Act {$name} sprt_he_neutral_final>>
+        <<Act {$name} sprt_he_neutral>>
     <<endif>>
     {$name}: “Suspiro. Dime, ¿qué te puedo poner?”  
     //Minijuego
@@ -388,7 +388,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final>>
     <<elseif get_player_mainCharacter() == "S">>
-        <<Act {$name} sprt_he_neutral_final>>
+        <<Act {$name} sprt_he_neutral>>
     <<endif>>
     <<Act Chico sprt_ethan_neutral>>
     Silencio. Ambos nos miramos sin saber que decir. Por unos breves instantes aprecio en su mirada nerviosismo y pena.
@@ -482,7 +482,7 @@ No puedo evitar hacer una ligera mueca ante su insistencia.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral_final>>
+    <<Act {$name} sprt_he_neutral>>
 <<endif>>
 {$name}: “¿Quieres algo más?” 
 <<Act Chico sprt_ethan_happy>>
