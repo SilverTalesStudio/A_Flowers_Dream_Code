@@ -251,17 +251,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &124351731 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6798407037274427283, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
-  m_PrefabInstance: {fileID: 409153754}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddcdd604a328c4ab296f048eb7b3a925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &141446799
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +734,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 124351731}
-          m_TargetAssemblyTypeName: Yarn.Unity.LineView, YarnSpinner.Unity
+        - m_Target: {fileID: 1710102694}
+          m_TargetAssemblyTypeName: Yarn.Unity.AlterLineView, Assembly-CSharp
           m_MethodName: OnContinueClicked
           m_Mode: 1
           m_Arguments:
@@ -1519,6 +1508,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2678071618908635071, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: dialogueViews.Array.data[1]
+      value: 
+      objectReference: {fileID: 1710102694}
+    - target: {fileID: 2678071618908635071, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: dialogueViews.Array.data[2]
       value: 
       objectReference: {fileID: 409153763}
@@ -2086,6 +2079,10 @@ PrefabInstance:
       propertyPath: onCharacterTyped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7623331538488894163, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894275030868808514, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_SizeDelta.x
       value: -233.7998
@@ -2111,8 +2108,16 @@ PrefabInstance:
       value: Character Name
       objectReference: {fileID: 0}
     - target: {fileID: 8783212017482056793, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1710102694}
+    - target: {fileID: 8783212017482056793, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCompleteDialogueClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783212017482056793, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Yarn.Unity.AlterLineView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9184206409336196516, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontColor.b
@@ -2133,6 +2138,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 401997026832434953, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
     - {fileID: 4115915426429293206, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+    - {fileID: 6798407037274427283, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
 --- !u!224 &409153755 stripped
 RectTransform:
@@ -2459,6 +2465,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1054663802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 740279678716981507, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+  m_PrefabInstance: {fileID: 409153754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1321363883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2766,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535286267}
   m_CullTransparentMesh: 1
+--- !u!1 &1710102688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1635097231764242, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+  m_PrefabInstance: {fileID: 409153754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1710102690 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 91173634964899698, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+  m_PrefabInstance: {fileID: 409153754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1710102694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710102688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63ac48ead46d7c48898059ff880ee72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1710102690}
+  useFadeEffect: 1
+  fadeInTime: 0
+  fadeOutTime: 0
+  lineText: {fileID: 1054663802}
+  showCharacterNameInLineView: 1
+  characterNameText: {fileID: 988367895}
+  useTypewriterEffect: 1
+  onCharacterTyped:
+    m_PersistentCalls:
+      m_Calls: []
+  typewriterEffectSpeed: 80
+  continueButton: {fileID: 249053511}
+  holdTime: 0
+  autoAdvance: 0
 --- !u!1 &1728109750
 GameObject:
   m_ObjectHideFlags: 0
