@@ -518,6 +518,7 @@ namespace Yarn.Unity
             {
                 continueButton.SetActive(true);
             }
+
         }
     }
 }
