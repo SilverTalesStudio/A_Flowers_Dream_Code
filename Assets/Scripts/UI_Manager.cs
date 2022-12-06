@@ -22,6 +22,7 @@ public class UI_Manager : MonoBehaviour
         PlayerPrefs.SetString("PlayerName", "Alex");
         PlayerPrefs.SetString("PlayerGender", "F");
         PlayerPrefs.SetString("PlayerMainCharacter", "P");
+
     }
     //Lee lo que se escribe dentro del Input Text Field va dentro del OnEndString del gameobject
     // y lo guarda en PlayerPrefs
