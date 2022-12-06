@@ -10,10 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<sobreMinerva yes>>
-
-<<jump Sagrario_miercoles_sem3>>
-//<<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -13026,7 +13023,7 @@ Ya es una habitual, viene todas las semanas y aun así no logro crear una conexi
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_disappointed>>
 <<endif>>
-¿A lo mejor es culpa mía? La verdad es que es mi cliente más exigente en cuanto a los ramos se refiere. Tal vez si me esfuerzo lo suficiente poco se abrirá más conmigo.
+¿A lo mejor es culpa mía? La verdad es que es mi cliente más exigente en cuanto a los ramos se refiere. Tal vez si me esfuerzo lo suficiente se abrirá más conmigo.
 Tampoco debo insistirle mucho, que sea natural. Sí, esa creo que va a ser mi táctica. La próxima vez que venga tengo que clavar el encargo.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -13076,16 +13073,16 @@ Minerva: “Hola, soy Minerva. Sagrario me ha hablado mucho de ti”
 <<endif>>
 {$name}: “¿En serio?”
 Miro a Sagrario y asiente. Vuelvo a dirigirme a Minerva.
-{$name}: “Yo soy {$name}, encantada de conocerla. Sagrario también me ha hablado mucho de usted.”
+{$name}: “Yo soy {$name}, [select value={$gender} M="encantado" F="encantada" NB="encantade"/] de conocerla. Sagrario también me ha hablado mucho de usted.”
 Minerva: “Igualmente.”
 <<Hide Minerva>>
-<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+<<Act Sagrario sprt_sagrario_happy right bottom015 white>>
 Sagrario: “Minerva ha podido volver por fin de Argentina. Después de toda la ayuda que me has dado con tus ramos, me parecía lo mínimo que conocieras a la destinataria de todos tus trabajos.”
 <<Hide Sagrario>>
 <<Act Minerva sprt_minerva_neutral right bottom015 white>>
-Minerva: “¡Oh sí! Tienes muy buena mano con las flores. Yo consideraba que entendía de ellas hasta que Sagrario me empezó a mandar las flores prensadas de tus ramos. Eran preciosos.”
+Minerva: “¡Oh sí! Tienes muy buena mano con las flores. Yo consideraba que entendía de ellas hasta que Sagrario me empezó a mandar las flores prensadas de tus ramos. Eran preciosas.”
 <<Hide Minerva>>
-<<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+<<Act Sagrario sprt_sagrario_happy right bottom015 white>>
 Sagrario: “Y eso que le faltaba información, si llega a saber para qué momento de la carta iba a usar una flor u otra, hubiera sido muchísimo más precisa. No soy capaz de imaginar en que podría haber resultado, cariño.”
 <<Hide Sagrario>>
 <<Act Minerva sprt_minerva_neutral right bottom015 white>>
@@ -13097,7 +13094,7 @@ Verlas juntas después de estar tanto tiempo sin verse, y que se hayan acordado 
    <<Act {$name} sprt_he_sad>>
 <<endif>>
 {$name}: “No sabía que mi trabajo podría llegar a ser tan importante para alguien.”
-Minerva: “Oh querida, no sabes cuánto. Gracias a ti he podido sentir a Sagrario como si estuviera al lado mía mientras leía sus cartas.”
+Minerva: “Oh [select value={$gender} M="querido" F="querida" NB="queride"/], no sabes cuánto. Gracias a ti he podido sentir a Sagrario como si estuviera al lado mía mientras leía sus cartas.”
 Minerva: “Como si hubiera venido ella misma a la otra punta del mundo a darme el ramo.”
 Me sonríe con total sinceridad, y me froto los ojos para parar de llorar. Le devuelvo la sonrisa.
 <<if get_player_mainCharacter() == "P">>
