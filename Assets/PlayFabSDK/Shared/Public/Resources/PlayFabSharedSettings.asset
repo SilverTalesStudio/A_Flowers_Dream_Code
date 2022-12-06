@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: 7C020
   DeveloperSecretKey: K83YQT7CKO95KBRT1XA7FH139837JZGN55F8PQCKGO7N569Z7S
   ProductionEnvironmentUrl: 
-  RequestType: 2
+  RequestType: 0
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000
