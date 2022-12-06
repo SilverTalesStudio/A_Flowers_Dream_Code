@@ -12,10 +12,12 @@ public class PauseVN_Manager : MonoBehaviour
     public void ActivatePause()
     {
         pause.SetActive(true);
+        Time.timeScale = 0;
     }
     public void DeactivatePause()
     {
         pause.SetActive(false);
+
     }
     public void ActivatePopUp()
     {
@@ -35,7 +37,11 @@ public class PauseVN_Manager : MonoBehaviour
     public void Salir()
     {
         Guardar();
+        Time.timeScale = 1f;
         changer.changeScene("Menu");
     }
-    
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
 }
