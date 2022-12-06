@@ -10,6 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
+<<sobreMinerva yes>>
+
 <<jump Sagrario_miercoles_sem3>>
 //<<jump Sophie_lunes_sem1>>
 ===
@@ -9835,7 +9837,6 @@ position: -120,41
 <<HideAll>>
 <<StopAudioAll>>
 <<Scene bg_calle>>
-<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -9858,6 +9859,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
@@ -9874,22 +9876,36 @@ Qué raro, todas las semanas viene y en esta aún no se había pasado. A lo mejo
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 {$name}: “Buenas tardes, Sagrario”
 No ha debido de verme porque se sobresalta y cuando ve mi cara su rostro serio cambia por uno incómodo.
+<<Act Sagrario sprt_sagrario_sad>>
 Sagrario: “Ah eres tú... Hola”
 Nunca la había visto así por lo que me preocupa.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_sad>>
+<<endif>>
 {$name}: “¿Está bien? ¿Le ha pasado algo?”
 Sagrario: “No, no, nada, no te preocupes”
 Intenta retomar el paso, pero la interrumpo. Algo raro pasa aquí y voy a llegar al fondo del asunto.
 {$name}: “¿Segura? ¿No quiere pasar a dentro a hablarlo?”
 Sagrario: “No, gracias”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Venga, si hay confianza, además hace tiempo que no la veo por la tienda. ¿No le apetece comprar un ramo?”
-/////////////////////////////////////////////////////////
-///////////////SAGRARIO ENFADADA/////////////////////////
-/////////////////////////////////////////////////////////
+<<Act Sagrario sprt_sagrario_angry>>
 Sagrario: “¡Ay, para ya!” 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_sad>>
+<<endif>>
 Me callo y se me enfría todo el cuerpo de golpe. Jamás la había visto ponerse así.
 Sagrario: “Mira, no te iba a decir nada, pero estás siendo tan [select value={$gender} M="pesado" F="pesada" NB="pesade"/], [select value={$gender} M="niño" F="niña" NB="niñe"/], que no me voy a callar”
 Sagrario: “No voy más, ni voy a ir más a la tienda por ti”
-Sagrario: “Porque eres muy [select value={$gender} M="male" F="mala" NB="mal"/] florista”
+Sagrario: “Porque eres muy [select value={$gender} M="mal" F="mala" NB="male"/] florista”
 Sagrario: “Los ramos son insuficientes la mayoría de las ocasiones, y puede que para alguien que no tenga idea se lo puedas colar, pero a mí no”
 Sagrario: “Encima, los ramos para mí son muy importantes, no es para decorar un hogar ni nada tan simple. Necesito que tengan calidad”
 Sagrario: “Tú, simplemente no los haces bien”
@@ -9900,15 +9916,24 @@ Sagrario: “No repitas esto con nadie por educación que parece mentira que hay
 <<Move Sagrario offright bottom015 1.0>>
 <<wait 1.0>>
 <<Hide Sagrario>>
-
-Soy incapaz de reaccionar, de moverme, de hablar... Cada frase suya es puñal directo a mi orgullo como trabajadora en este campo. Y no paran, es uno tras otro.
-Cuando termina estoy demasiado [select value={$gender} M="perdido" F="perdida" NB="perdide"/] asimilando todas las críticas que no me entero de que ha marchado y me ha dejado sola mirando al horizonte.
-Recupero mis sentidos tras unos segundos quieta y los sonidos de mi alrededor dejan de sonar amortiguados, ahora si los entiendo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
+Soy incapaz de reaccionar, de moverme, de hablar... Cada frase suya es un puñal directo a mi orgullo como [select value={$gender} M="trabajador" F="trabajadora" NB="trabajadore"/] en este campo. Y no paran, es uno tras otro.
+Cuando termina estoy demasiado [select value={$gender} M="perdido" F="perdida" NB="perdide"/] asimilando todas las críticas que no me entero de que se ha marchado y me ha dejado [select value={$gender} M="solo" F="sola" NB="sole"/] mirando al horizonte.
+Recupero mis sentidos tras unos segundos [select value={$gender} M="quieto" F="quieta" NB="quiete"/] y los sonidos de mi alrededor dejan de sonar amortiguados, ahora si los entiendo.
 Murmullos, ojos que me juzgan, miradas de desprecio, comentarios con repulsa. Los viandantes comentan el espectáculo que acaban de ver, pero para mí más que un espectáculo es un infierno.
 Consciente de mi situación, añado la vergüenza que siento a la pila de sentimientos que voy a tener que confrontar cuando esté [select value={$gender} M="solo" F="sola" NB="sole"/] con mis pensamientos.
 Entro a toda prisa en mi local y giro el cartel para indicar que está cerrado. Voy hasta la silla del mostrador para alejarme de las ventanas y me desplomo en el asiento.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_resignation>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_resignation>>
+<<endif>>
 No puedo evitar que las lágrimas broten. Intento limpiármelas, pero es inútil, no paran de caer.
-Lo único en lo que estaba segura de que era buena haciéndolo, y al final es una mentira. Nada se me da bien.
+Lo único en lo que estaba [select value={$gender} M="seguro" F="segura" NB="segure"/] de que era buena haciéndolo, y al final es una mentira. Nada se me da bien.
 Descubrir que soy inútil con mi hobby de toda la vida, me ha destrozado.
 No sé cómo seguir con esto, lo único que tengo claro, es que por hoy he tenido suficiente, voy a irme a casa a esperar a que todo se enfríe y porque necesito estar lejos de aquí. No quiero estar en la floristería.
 Estoy un rato en la tienda hasta que me recompongo más a menos y salgo para volver pronto a casa.
@@ -9926,6 +9951,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<if get_player_mainCharacter() == "P">>
@@ -9940,11 +9966,23 @@ Con el estómago lleno vuelvo a la floristería. Acercándome al local veo a Sag
 Seguramente quiera entrar así que acelero el paso para alcanzarla.
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 {$name}: “Buenas tardes, Sagrario”
-Se sobresalta, no me ha debido ver venir
+Se sobresalta, no me ha debido ver venir.
 Sagrario: “Ay, qué susto me has dado [select value={$gender} M="niño" F="niña" NB="niñe"/]”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Jajaja perdone, no tenía intención de asustarla”
+<<Act Sagrario sprt_sagrario_happy>>
 Sagrario: “Entre que no estaba atenta a mi alrededor y que mi oído ya no es el que era, no es extraño que haya pasado”
+<<Act Sagrario sprt_sagrario_neutral>>
 Sagrario: “Yendo a otra cosa. ¿Vas a volver a atender ahora?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 {$name}: “¡Sí! Justo acabo de terminar mi descanso”
 Sagrario: “Que bien que he venido entonces. ¿Entramos?”
 {$name}: “Claro, pase, pase”
@@ -9965,46 +10003,105 @@ Sagrario: “Que bien que he venido entonces. ¿Entramos?”
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 {$name}: “Bienvenida de nuevo a Flower’s Dream”
 Sagrario: “Creo que nunca te lo dije, pero me gusta mucho el nombre y el logo de la tienda”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Gracias, se lo encargué a una amiga mía”
+<<Act Sagrario sprt_sagrario_happy>>
 Sagrario: “Pues dile de mi parte que es muy muy bonito”
 {$name}: “Se lo diré, seguro que se pone muy feliz”
 <<if get_infoMinerva() == "yes">>
-    Sagrario: “La verdad es que quería agradecerte por la semana pasada. No solo por el ramo sino también por las semillas. Fue muy buena idea y a mi mujer le encantaron”
+    <<Act Sagrario sprt_sagrario_neutral>>
+    Sagrario: “La verdad es que quería darte las gracias por la semana pasada. No solo por el ramo sino también por las semillas. Fue muy buena idea y a mi mujer le encantaron”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Sagrario: “Ahora sé que tiene una parte de mí con ella, y me hace parecer que no estamos tan lejos”
     ->Desear que se reencuentren
         <<Add_npc_likeability NPC_sagrario 2>>
         {$name}: “Ojalá el día que se reencuentre con su pareja llegue pronto”
         {$name}: “A lo mejor suena un poco entrometido por mi parte, pero me gustaría ver como su historia tiene un final feliz”
+        <<Act Sagrario sprt_sagrario_sad>>
         Sagrario: “Yo también lo espero. Y no te preocupes por eso, no estás siendo [select value={$gender} M="un cotilla molesto" F="una cotilla molesta" NB="une cotilla moleste"/]”
         Sagrario: “Me gusta que te hayas implicado porque desde que te lo conté, haces mejores ramos y ofreces ideas que nunca se me habrían ocurrido. Consigues expresar con flores lo que siento desde el corazón.”
         Sagrario: “Así que gracias por ser tan “[select value={$gender} M="entrometido" F="entrometida" NB="entrometide"/]”. Nos has hecho felices a ambas.”
-        /////////////////////////////////////////////////////////////////////////
-        /////////////////////////////PROTAGONISTA TRISTE/////////////////////////
-        /////////////////////////////////////////////////////////////////////////
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_sad>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_sad>>
+        <<endif>>
         Empiezo a ver borroso y noto como las lágrimas intentan brotar de mis ojos.
         {$name}: “Ah, perdone”
+        <<Act Sagrario sprt_sagrario_neutral>>
         Me froto los ojos para secarlos. 
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
         Sagrario: “Tienes un buen corazón, y no hay suficiente gente así en el mundo. No cambies nunca, [select value={$gender} M="niño" F="niña" NB="niñe"/]”
         Guardo sus palabras en mi corazón y termino de limpiarme para recuperar la compostura. Sigo teniendo un trabajo que hacer.
     ->Darle ánimos
         <<Add_npc_likeability NPC_sagrario 1>>
-        {$name}: “Seguro que su mujer piensa igual, ya verá como faltará mucho para el día en que se vuelvan a ver.”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
+        {$name}: “Seguro que su mujer piensa igual, ya verá como no falta mucho para el día en que se vuelvan a ver.”
+        <<Act Sagrario sprt_sagrario_sad>>
         Sagrario: “Dios te escuche, ya llevo mucho tiempo esperando. Demasiado...”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
         Asiento dándole la razón. Deber ser muy duro estar lejos de la persona que más quieres.
     ->Hacer un chiste sobre la distancia
         <<Add_npc_likeability NPC_sagrario -2>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         {$name}: “Mire el lado bueno, gracias a la distancia seguro que discuten menos. La convivencia al final agota”
         {$name}: “Ya sabe el dicho, lo bueno y breve, dos veces bueno. O algo así creo que era.”
+        <<Act Sagrario sprt_sagrario_angry>>
         Sagrario: “Pamplinas. ¿Quién piensa así? ¿Cómo puede alguien no querer estar siempre que puede con su pareja?”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_disappointed>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_disappointed>>
+        <<endif>>
         {$name}: “Bueno, a ver, es algo que se suele comentar...”
         Sagrario: “Solo un misántropo pensaría así”
         {$name}: “Sí, puede ser...”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “Volviendo al tema del ramo. Entiendo que ha venido para encargar uno ¿no?”
+    <<Act Sagrario sprt_sagrario_neutral>>
     Sagrario: “Entiendes bien. La verdad es que estaba pensando en algo así”
 <<else>>
     Sagrario: “La verdad es que he vuelto porque, definitivamente, tienes buena mano con las flores”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     Sonrío con orgullo. Nada me sienta mejor que me feliciten por mi trabajo, y más viniendo de una cliente habitual.
     Sagrario: “Por eso esta semana vuelvo a estar en tus manos con un encargo, y como siempre, es muy importante para mí.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     {$name}: “No hace falta que diga más, haré todo lo que pueda para que salga un ramo que le guste”
     {$name}: “¿Qué necesita exactamente?”
 <<endif>>
@@ -10073,7 +10170,13 @@ position: -123,-48
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 4>>
 
+<<Act Sagrario sprt_sagrario_happy>>
 Sagrario: “Sabía que había hecho bien en volver. Eres una apuesta segura”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Estoy demasiado [select value={$gender} M="involucrado" F="involucrada" NB="involucrade"/] como para permitirme hacerlo mal. Estoy muy feliz de que le guste”
 Sagrario: “Te esperan grandes cosas si sigues así”
 {$name}: “Gracias”
@@ -10124,8 +10227,14 @@ position: -289,-54
 <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario -2>>
 
+<<Act Sagrario sprt_sagrario_angry>>
 Sagrario: “...”
 Sagrario: “Sinceramente... esperaba más.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 {$name}: “Lo siento mucho, la verdad es que me he puesto muy nerviosa haciéndolo.”
 {$name}: “Lo quería hacer tan bien que al final no he conseguido lo que quería. He dudado mucho.”
 Sagrario: “A lo mejor te he puesto demasiada presión...”
@@ -10154,7 +10263,7 @@ position: -120,41
 
 
 <<Move Sagrario offright bottom015 1.0>>
-<<wait 1.0>>
+<<wait 1.5>>
 <<Hide Sagrario>>
 
 Sagrario sale por la puerta y poco tiempo pasa hasta que llega otro cliente. La verdad es que disfruto mucho más trabajar con los habituales, al final los conoces más y se hace más ameno.
