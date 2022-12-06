@@ -17,6 +17,7 @@ public class DragAndDrop : MonoBehaviour
     public string ffeeling;
     public string fav;
     public string hate;
+    public bool enableClick = true;
     private Quaternion startRotation;
     private Vector3 startScale;
     private Vector3 mousePos;
@@ -50,30 +51,35 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
-
+        if (enableClick)
+        {
             //Mueve la flor seleccionada con el ratón    
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
+        }
+            
  
     }
 
     private void OnMouseDown()
     {
-
+        if(enableClick)
+        {
             //Desactiva el scroll de la lista de flores
             panel.GetComponent<ScrollRect>().enabled = false;
 
             //La flor deja de pertenecer a la lista de flores para poder hacer transformaciones globales sin dependencias
             transform.SetParent(GameObject.Find("MiniGameManager").transform);
 
-        //Agranda la flor para colocarla en el ramo
+            //Agranda la flor para colocarla en el ramo
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
             transform.localScale = new Vector3(5f, 5f, 5f);
-        Debug.Log(transform.rotation.x);
+        }       
     }
     private void OnMouseUp()
     {
-
+        if (enableClick)
+        {
             //Activa el scroll de la lista de flores al soltar la flor
             panel.GetComponent<ScrollRect>().enabled = true;
 
@@ -93,7 +99,7 @@ public class DragAndDrop : MonoBehaviour
                 transform.rotation = startRotation;
                 transform.localScale = startScale;
 
-        }
+            }
             else
             {
                 if (!FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet.Contains(gameObject.name))
@@ -102,6 +108,8 @@ public class DragAndDrop : MonoBehaviour
                 }
             }
         }
+
+     }
       
 }
 
