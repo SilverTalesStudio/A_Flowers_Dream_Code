@@ -16,11 +16,13 @@ public class UI_Login : MonoBehaviour
     {
         AccountsManager.OnLoginFailed.AddListener(LoginFailed);
         AccountsManager.OnLoginSuccess.AddListener(LoginSuccess);
+        AccountsManager.OnRecoverySuccess.AddListener(ResetSuccess);
     }
     private void OnDisable()
     {
         AccountsManager.OnLoginFailed.RemoveListener(LoginFailed);
         AccountsManager.OnLoginSuccess.RemoveListener(LoginSuccess);
+        AccountsManager.OnRecoverySuccess.RemoveListener(ResetSuccess);
 
     }
     void LoginFailed(string error)
@@ -32,6 +34,10 @@ public class UI_Login : MonoBehaviour
     {
         canvasHide.SetActive(false);
         canvasShow.SetActive(true);
+    }
+    void ResetSuccess()
+    {
+        whenTryLogInText.text = "¡Correo de recuperación de contraseña enviado!";
     }
 
     public void UpdateEmail_FromInputField(string email_)
@@ -46,5 +52,9 @@ public class UI_Login : MonoBehaviour
     public void SignIn()
     {
         AccountsManager.instance.LogIn(email, password);
+    }
+    public void ResetPassword()
+    {
+        AccountsManager.instance.RecoverPassword(email);
     }
 }
