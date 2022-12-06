@@ -10,7 +10,6 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-//<<jump Pietro_martes_sem2>>
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -1043,6 +1042,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -1540,6 +1540,7 @@ position: 422,203
 ---
 <<HideAll>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 <<Fade black 1.0 0.0 2.0>>
@@ -1666,6 +1667,7 @@ Sin poder evitarlo, llamo su atención con un gesto exagerado.
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<HideAll>>
+    <<StopAudioAll>>
     <<jump Minijuego_Pietro_jueves_sem1>>
 ===
 title: Minijuego_Pietro_jueves_sem1
@@ -3915,6 +3917,7 @@ position: -368,-504
 
 // set Escenario FLORISTERÍA - MAÑANA 
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 
 <<PlayAudio timbre_puerta_floristeria 0.5>>
 
@@ -3927,6 +3930,11 @@ Un tenue sonido de sorpresa se escapa de mi boca.
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 {$name}: “¡Pietro!”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Al ver sus próximas acciones, suelto un suspiro de cansancio que enseguida se entremezcla con una pequeña risa resignada.
 Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
 De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
@@ -3934,6 +3942,11 @@ Ya parece más suya que mía.
 
 <<set $PietroPinta to get_pintarPietro()>>
 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 
 <<if $PietroPinta == "yes">>
     Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
@@ -3944,24 +3957,29 @@ Ya parece más suya que mía.
     Sagrario: “-la? ¿Hola?”
     Una mano fina y arrugada por la edad inunda mi visión y me saca de mi ensimismamiento.
     Madre mía, ¡menudo día llevo hoy! Mi mente no para de regresar a las nubes.
-    //////////////////////////////////////////////////////////////////////////////
-    ////////////////////Cambiar sprite protagonista a sonrojado///////////////////
-    //////////////////////////////////////////////////////////////////////////////
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_embarrassed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_embarrassed>>
+    <<endif>>
     {$name}: “Lo siento mucho Sagrario, parece que mi mente todavía no se ha despertado del todo.”
     La regañina que anticipaba no llega y una risa entrecortada alcanza mis oídos.
+    <<Act Sagrario sprt_sagrario_happy>>
     Sagrario: “Jajaja. Anda, no hay de que disculparse [select value={$gender} M="niño" F="niña" NB="niñe"/].”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Sagrario: “La verdad es que estás consiguiendo que esta señora tenga una mañana de lo más entretenida.”
+    <<Act Sagrario sprt_sagrario_neutral>>
     Sagrario: “Aunque...”
+    <<Act Sagrario sprt_sagrario_angry>>
     Sagrario se gira para mirar a Pietro. Sus ojos se entrecierran y sus labios se fruncen.
     Sagrario: “Parece que ese jovencito no te va a dejar tener una mañana tranquila.”
     Sagrario: “Ya es la segunda vez que le veo aquí haciendo esto.”
     Mis ojos siguen su mirada y se vuelven a posar en la serena figura de Pietro.
     Antes de que pueda contestar a Sagrario, esta levanta la voz.
-
-    ////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////Shake/////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-
     Sagrario: “¿¡Otra vez vienes aquí a dar más trabajo a {$name}, jovencito!?”
     Doy un pequeño brinco por la sorpresa. No esperaba tanta energía de su parte.
     Pietro como era de esperar no se entera. Ladea ligeramente la cabeza en nuestra dirección, pero tras varios segundos se encoge de hombros y continúa dibujando.
@@ -3969,22 +3987,39 @@ Ya parece más suya que mía.
     Sin embargo, parece que Sagrario no contaba con esto. Por el rabillo del ojo veo como aprieta los puños con fuerza sobre el mostrador.
     Está frunciendo tanto el ceño que se marca una vena en su frente. 
     ->“No pasa nada Sagrario.” 
-    <<Add_npc_likeability NPC_pietro +2>>
+        <<Add_npc_likeability NPC_pietro +2>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         {$name}: No me importa que pinte mientras yo trabajo, pero gracias por preocuparte.”
+        <<Act Sagrario sprt_sagrario_neutral>>
         Poso mi mano suavemente sobre su brazo con la esperanza de calmarla.
         Parece que funciona porque sus puños y cara se relajan. Sonrío para animarla.
-        Sagrario: Suspiro. “Nada niña. Será mejor que te deje continuar con tu día entonces. Nos vemos.”
+        Sagrario: Suspiro. “Nada [select value={$gender} M="niño" F="niña" NB="niñe"/]. Será mejor que te deje continuar con tu día entonces. Nos vemos.”
         <<Move Sagrario offright bottom015 1.0>>
         <<wait 1.5>>
         <<Hide Sagrario>>
     ->“Eso Pietro” 
         <<Add_npc_likeability NPC_pietro -2>>
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_angry>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_angry>>
+        <<endif>>
         {$name}: “Al menos podrías pedir permiso antes de ponerte a pintar de esa manera.”
         Sagrario asiente con fuerza mientras se cruza de brazos dándome la razón.
         Sagrario: “Cierto, ¿no te enseñaron modales, jovencito?”
         Pietro no dice nada ante nuestras palabras. A simple vista parece que no nos ha escuchado como la primera vez que Sagrario le ha hablado, pero sé que no es así.
         Su cuerpo se encoge más sobre el bloc. El sonido del lápiz sobre el papel se vuelve más intenso y fuerte como si estuviera agarrándolo con fuerza.
         Sagrario suspira exhausta. Parece que la interacción le está afectando.
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
+        <<Act Sagrario sprt_sagrario_neutral>>
         Sagrario: “Nada [select value={$gender} M="niño" F="niña" NB="niñe"/], como si no hubiera nadie más aquí. Me voy antes de que me arrepienta de lo que pueda decir.
         Sagrario: “Espero que no te dé más trabajo {$name}. Hasta luego.”
         <<Move Sagrario offright bottom015 1.0>>
@@ -3994,6 +4029,7 @@ Ya parece más suya que mía.
         No digo nada. Prefiero no echar más leña al fuego ni meterme en este tipo de problemas.
         He aprendido a las malas que no me conviene meterme donde no me llaman.
         Sagrario suspira exhausta.
+        <<Act Sagrario sprt_sagrario_neutral>>
         Sagrario: “Bueno, será mejor que me vaya. Espero que no te dé más trabajo. Nos vemos.”
         <<Move Sagrario offright bottom015 1.0>>
         <<wait 1.5>>
@@ -4001,9 +4037,20 @@ Ya parece más suya que mía.
 <<elseif $PietroPinta == "no">>
     Veo como Pietro se acerca al mostrador donde nos encontramos y se sitúa detrás de Sagrario.
     Esta se gira para mirarle sorprendida. Luego muy lentamente se vuelve de nuevo hacia mí y se despide.
+    <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
     Sagrario: “Bueno... Supongo que nos veremos en otro momento.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     No puedo evitar reírme ligeramente ante su cara de asombro. Toso para enmascararlo.
-    Sagrario: “¡Claro! Hasta la próxima Sagrario”
+    {$name}: “¡Claro! Hasta la próxima Sagrario”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     <<Move Sagrario offright bottom015 1.0>>
     <<wait 1.5>>
     <<Hide Sagrario>>
@@ -4015,36 +4062,48 @@ Ya parece más suya que mía.
     <<Act Pietro spt_pietro_neutral right bottom015 white>>
     Pietro: “He venido a liberar aquello que tienes encadenado.”
     ¿Eh? ¿Qué acaba de decir?
-    {$name}: “¿Perdona?
-    <<Move Pietro offright bottom015 1.0>>
-    <<wait 1.5>>
+    {$name}: “¿Perdona?”
     <<Hide Pietro>>
     Ante mi confusión, Sagrario levanta la voz y me ayuda.
     <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
     Sagrario: “Creo que quiere comprar algo [select value={$gender} M="niño" F="niña" NB="niñe"/].”
-    <<Move Sagrario offright bottom015 1.0>>
-    <<wait 1.5>>
     <<Hide Sagrario>>
     Ahhhh. ¡Claro! Tiene sentido ahora que recuerdo la despedida de la última vez que estuvo aquí.
     {$name}: “¿Y qué es lo que quieres exactamente?”
     <<Act Pietro spt_pietro_neutral right bottom015 white>>
     Pietro: “Una Orquídea cara de mono.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Vaya, justo la primera vez que viene a comprar y la flor que quiere no la tengo. Que mal.
     {$name}: “No tengo, lo siento mucho. Es una flor extremadamente difícil de conseguir.”
     Pietro: “Una parra de jade.”
     {$name}: “Tampoco teng-”
     Pietro: “¿Cosmos astrosanguineus?”
     {$name}: “N-”
+    <<Act Pietro spt_pietro_sad>>
     Pietro: Suspiro. “Tsk, como no.”
     <<Move Pietro offright bottom015 1.0>>
     <<wait 1.5>>
     <<Hide Pietro>>
     Cierro la boca y [select value={$gender} M="estupefacto" F="estupefacta" NB="estupefacte"/] veo como Pietro avanza resignado a su rincón y abre el taburete para continuar su dibujo de la amapola del Himalaya.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_angry>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_angry>>
+    <<endif>>
     Tardo unos segundos en procesar lo que acaba de pasar. ¿¡En serio se indigna de esa manera por eso!?
     ¡Si todas las flores que me ha pedido son especímenes rarísimos y no me ha dejado ni justificarme! 
     Con la boca abierta y el ceño fruncido, miro a Pietro [select value={$gender} M="molesto" F="molesta" NB="moleste"/]. Una risa entrecortada invade la floristería.
     Es Sagrario que parece ser la única que ha disfrutado de este intercambio.
-    <<Act Sagrario sprt_sagrario_neutral right bottom015 white>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Act Sagrario sprt_sagrario_happy right bottom015 white>>
     Sagrario: “Sabía que me tenía que quedar a ver esto.”
     Sus palabras hacen que mi molestia aumente ligeramente.
     Sagrario: “Anda no te enfades {$name}. Mucho ánimo, lo vas a necesitar.”
@@ -4056,9 +4115,19 @@ Ya parece más suya que mía.
 
 <<PlayAudio timbre_puerta_floristeria 0.5>>
 La puerta se cierra y veo como Sagrario huele el ramo que me acaba de comprar mientras avanza por la calle. Sonrío.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 Estiro mis brazos agarrotados de realizar tantos pedidos tan pronto en la mañana y cierro sin darme cuenta los ojos por el alivio.
 El suave sonido del lápiz sobre papel hace que mi mente se relaje todavía más. Y encima el sol de hora punta entra por la ventana y hace que el ambiente se sienta cálido.
 Ahh... Podría dormirme ahora mismo.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 ¡No {$name}! Abro los ojos y me enderezo con rapidez. Venga que cada vez queda menos.
 Con envidia veo como Pietro continua su dibujo con diligencia. ¡Yo también tengo que seguir!
 Asiento y preparo nuevos envoltorios para los próximos ramos.  
@@ -4069,25 +4138,36 @@ Asiento y preparo nuevos envoltorios para los próximos ramos.
 <<wait 2.0>>
 <<Scene bg_floristeria>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_disappointed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_disappointed left bottom015 white>>
 <<endif>>
 Uff, menuda hora más intensa. Me paso un pañuelo por la frente para aliviarla de la tenue capa de sudor que ha aparecido por el continuo trabajo.
 Como se nota que es la hora punta. Las voces de la gente en la calle me dan la razón.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Y no solo yo he estado trabajando sin parar, Pietro tampoco se ha despegado del taburete en ningún momento.
 Umm, ¿me pregunto si debería decirle lo que pienso?
 ->”Hola Pietro, ¿podría ver qué estás pintando?”
     <<Add_npc_likeability NPC_pietro +2>>
     <<Act Pietro spt_pietro_neutral right bottom015 white>>
     Tan rápido como un rayo Pietro cubre con su cuerpo el contenido del bloc. 
-    Me siento realmente confundida. No habría esperado esta reacción teniendo en cuenta su personalidad.
+    Me siento realmente [select value={$gender} M="confundido" F="confundida" NB="confundide"/]. No habría esperado esta reacción teniendo en cuenta su personalidad.
     Me inclino para poder ver sus ojos tras la cortina de flequillo que los oculta.  
     ->Insistes. “Anda Pietro, no seas tímido, seguro que está genial.”
         <<Add_npc_likeability NPC_pietro -2>>
+        <<Act Pietro spt_pietro_thinking>>
         Pietro: “...” 
         Mis hombros caen por el peso que se ha generado en el ambiente.
-        Parece que mis palabras no han tenido el efecto que esperaba.  
+        Parece que mis palabras no han tenido el efecto que esperaba. 
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_sad>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_sad>>
+        <<endif>> 
         Observo con tristeza como Pietro levanta la cabeza y adquiere un semblante pensativo con la vista clavada en un punto de la pared. 
         Su cara es completamente inexpresiva. 
     ->“Lo siento Pietro, no era mi intención presionarte. Olvídalo.”
@@ -4096,37 +4176,70 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
         ¿¡Por qué siempre tengo que meter las narices dónde no me llaman!? 
         Jugueteo con los dedos de mis manos mientras espero a que Pietro rompa el silencio. 
         ¡Por favor, di algo! 
+        <<Act Pietro spt_pietro_shy>>
         Pietro: “No... No pasa nada {$name}.” 
         Esas simples palabras junto con su melodiosa voz me tranquilizan.  
-        ///////////////////////////////////////////////////////////////////
-        //////////Poner sprite de pietro sonrojado/////////////////////////
-        ///////////////////////////////////////////////////////////////////
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_embarrassed>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_embarrassed>>
+        <<endif>>
         Sonrío ante su muestra sincera.  
+    <<Act Pietro spt_pietro_shy>>
     Pietro: “Yo... No creo que su perfección sea la adecuada todavía.” 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Pietro: “No me gustaría que tus ojos vieran algo inacabado, con defectos.”
     Pietro: “Bueno ni tú ni nadie.”
     Vaya... Que palabras tan duras. He tenido suerte de escuchar su última frase gracias al silencio actual de la tienda.
     Para lo mucho que parece que Pietro ama el arte no parece que disfrute en su proceso. 
     No puedo evitar entristecerme. 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_sad>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_sad>>
+    <<endif>>
     ->{$name}: “Entiendo cómo te sientes, a mí me pasa algo parecido con mis ramos.”
         {$name}: “Siempre quiero dar lo mejor de mí para ver la sonrisa de mis clientes.”
         {$name}: “Si logro hacerlos mínimamente felices ya me siento [select value={$gender} M="ganador" F="ganadora" NB="ganadore"/].”
         {$name}:  “Y puede que el ramo a veces no sea perfecto, pero lo importante es entender sus sentimientos y transmitirles mi esfuerzo.”
         A medida que mis palabras fluyen de mi boca, los ojos de Pietro se van agrandando cada vez más.
         Vaya, parece que he logrado tener un efecto en él, aunque no sabría si bueno o malo.
+        <<Act Pietro spt_pietro_thinking>>
         Pietro: “La felicidad de los demás, eh...”
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_neutral_final>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_neutral>>
+        <<endif>>
         Con una mano en la barbilla, Pietro entra en su característico estado pensativo. 
         Sí, definitivamente parece que le han afectado esas palabras. No quiero interrumpir sus pensamientos, pero está comenzando a preocuparme. 
         {$name}: “Entonces Pietro...” 
+        <<Act Pietro spt_pietro_neutral>>
         Pietro: “¡Tal vez sea eso!” 
         Completamente vigorizado por la conclusión que haya alcanzado, Pietro vuelve a concentrarse en su dibujo pintando con trazos rápidos y precisos. 
         No sé por qué, pero esta vez no me siento [select value={$gender} M="molesto" F="molesta" NB="moleste"/] ante su concentración. 
     ->{$name}: “No te preocupes Pietro, todo es un proceso.
         {$name}: “No es necesario que sea perfecto ahora. Lo importante es que te estas esforzando al máximo y al final llegarás.”
+        <<Act Pietro spt_pietro_happy>>
         Pietro sonríe cerrando los ojos.
         Pietro: “Gracias por tu consejo, {$name}” 
+        <<if get_player_mainCharacter() == "P">>
+            <<Act {$name} sprt_she_happy>>
+        <<elseif get_player_mainCharacter() == "S">>
+            <<Act {$name} sprt_he_happy>>
+        <<endif>>
         Sonrío ante su gratitud, pero hay algo que me impide sentirme completamente [select value={$gender} M="satisfecho" F="satisfecha" NB="satisfeche"/].
         Es como si no hubiera dicho todo lo que de verdad siente. Como si estuviera intentando ocultarlo tras esos párpados cerrados.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
+    <<Act Pietro spt_pietro_neutral>>
     No han pasado muchos minutos tras la conversación cuando Pietro se levanta y comienza a recoger sus cosas.
     Pietro: “Creo que es hora de que me vaya. Tengo un sitio al que acudir. Mis disculpas.” 
     {$name}: “No es necesario que te disculpes Pietro. No pasa nada.”
@@ -4145,9 +4258,16 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
     Me muevo con lentitud, como [select value={$gender} M="dormido" F="dormida" NB="dormide"/] y al llegar a la mitad de la floristería mi mirada se posa en algo que se encuentra en el suelo.
     Un papel. Se le debe de haber caído a Pietro con las prisas. 
     Con una mano algo temblorosa lo recojo y abro mis ojos ante lo que encuentro. Un clavel amarillo. 
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Decepción y...
     Desprecio.
     No quiero pensar en la razón de este dibujo, aunque en el fondo mi corazón lo sepa. 
+    <<HideAll>>
+    <<StopAudioAll>>
     <<jump Cita_martes_sem2>>
 ===
 
@@ -4212,15 +4332,28 @@ position: -123,-48
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro 3>>
 
+<<Act Pietro spt_pietro_happy>>
 Pietro: “Creo que el equilibrio de color y formas es simplemente maravilloso. Perfecto.” 
 Otra vez con el tema de la perfección... 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Gracias! Simplemente me he inspirado en lo que me habías dicho y en lo que conozco de ti.” 
 {$name}: “Me alegro de que te guste." 
 Pietro: “Toma el dinero.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Calculo lo que le debo de cambio mientras Pietro sigue admirando el arreglo. 
 {$name}: “Aquí tienes Pietro.” 
+<<Act Pietro spt_pietro_thinking>>
 Pietro: “¿Qué es esto?” 
 {$name}: “La vuelta.” 
+<<Act Pietro spt_pietro_neutral>>
 Pietro: “No es necesario. Simplemente te he dado aquello que considero que merecen estas bellas flores.” 
 {$name}: “Pues muchas gracias, Pietro.” 
 
@@ -4242,8 +4375,14 @@ position: 45,-49
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro 1>>
 
+<<Act Pietro spt_pietro_thinking>>
 Pietro: “Umm...” 
 Pietro: “Está bien, aunque creo que se podría mejorar el contraste de colores para que la combinación fuera más interesante.” 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Vaya, no he acertado del todo.
 Pietro: “No pasa nada, la próxima vez te traeré unos apuntes de teoría de color para que sea perfecto.” 
 Otra vez con el tema de la perfección... 
@@ -4269,8 +4408,14 @@ position: -289,-54
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro -3>>
 
+<<Act Pietro spt_pietro_thinking>>
 Pietro: “...”
 Pietro: Suspiro. “No se puede lograr nada más imperfecto ni queriendo.” 
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_sad>>
+<<endif>>
 ¿¡Tan mal está!? 
 Pietro tan crítico como siempre.
 Pietro: “Qué se le va a hacer, tendré que ver cómo mejorarlo en casa.” 
@@ -4312,8 +4457,12 @@ No dejará de llamar mi atención el hecho de que me llame por mi nombre.
 title: Cita_martes_sem2
 position: -120,41
 ---
+<<HideAll>>
+<<StopAudioAll>>
 <<Fade black 1.0 0.0 2.0>>
+<<wait 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 Entrelazo los dedos y empujo las manos hacia delante para estirar los brazos y la espalda. A pesar de que me haya acostumbrado ya la rutina de trabajo no quita que siga siendo dura.
@@ -4325,7 +4474,9 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     Tras un rato de esperar a que llegue un último cliente, nadie hace acto de presencia. El reloj marca el fin de la jornada y me pongo manos a la obra a recoger el local.
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
+    <<StopAudioAll>>
     <<Scene bg_calle_noche_placeholder>>
+    <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
     <<Fade black 1.0 0.0 2.0>>
     <<wait 2.0>>
     Termino en poco rato, echo el cierre y me pongo en marcha, vuelta a casa. En el trayecto voy repasando lo ocurrido en los capítulos anteriores de la serie. ¡Qué ganas de saber lo que ocurre!
@@ -9925,7 +10076,7 @@ position: -143,644
 ---
 <<HideAll>>
 <<Scene bg_calle>>
-<<StopAudio >>
+<<StopAudioAll>>
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<Fade black 1.0 0.0 2.0>>
 
@@ -9959,8 +10110,10 @@ title: Final_malo_Pietro
 position: -143,644
 ---
 <<HideAll>>
+<<StopAudioAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_calle>>
+<<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -9978,9 +10131,19 @@ Pero para mi gran pesar nada me resulta familiar.
 Mientras caminaba mi mente ha comenzado a vagar por las nubes y sin darme cuenta he debido de tomar un giro incorrecto.
 Sé que debería de conocer mejor la zona, pero en este casi mes que llevo aquí tampoco me ha dado tiempo a descubrir todo.
 Si salgo de mi ruta habitual me pierdo, justo como ha pasado ahora.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 De verdad {$name}, siempre la tienes que liar de alguna manera.
 ¡Y encima tengo que abrir la floristería!
 Llevándome las manos a la cabeza intento buscar a alguien a quién preguntar.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 La calle en la que está la tienda es una de las zonas comerciales de la ciudad, seguramente si se lo digo a alguien me puedan dar direcciones y con ello podré arreglar esto.
 ¡Bien pensado!
 Algo más [select value={$gender} M="calmado" F="calmada" NB="calmade"/] y con este plan en mente, camino por un callejón que desemboca en una calle bastante amplia y llena de puestos pequeños.
@@ -9996,6 +10159,11 @@ Al acercarme más, puedo observar más elementos familiares, bloc de dibujo, tab
 Me quedo con la boca abierta.
 ¡Yo preguntándome estos días donde se había metido y estaba aquí!
 Para mi sorpresa, noto cierta punzada de dolor en mi corazón.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Que esté dibujando otras flores aparte de las mías se siente como una traición.
 <<if get_pintarPietro() == "no">>
     Pero sé que no tengo derecho a sentirme así porque yo siempre le he tratado muy mal cuando venía a la tienda a pintar.
@@ -10011,6 +10179,11 @@ Que esté dibujando otras flores aparte de las mías se siente como una traició
     Haciéndome sentir como fuera de lugar, sin control, de forma similar a Jacob.
 <<endif>>
 Al final conseguí lo que buscaba.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_sad>>
+<<elseif get_player_mainCharacter() == "S">>
+   <<Act {$name} sprt_he_sad>>
+<<endif>>
 ¿Pero por qué entonces sigo sintiendo este dolor?
 ¿No era al final lo que quería? ¿Poder trabajar en la floristería sin problemas?
 Con ojos tristes, observo a Pietro dibujar intentando encontrar una respuesta.
@@ -10030,20 +10203,21 @@ Hombre: “Espero que cuando las termines me dejes exponerlas aquí para que las
 Espero silencio de su parte ya [select value={$gender} M="acostumbrado" F="acostumbrada" NB="acostumbrade"/] a ello, pero para mi sorpresa es todo lo contrario.
 <<Hide {$name}>>
 <<Act Hombre sprt_chico left bottom015 white>>
-<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Act Pietro spt_pietro_happy right bottom015 white>>
 Pietro: “Por supuesto, señor. Sería lo mínimo de mi parte por dejarme pintar aquí todos estos días.”
 Hombre: “Gracias, Pietro.”
 <<Hide Hombre>>
 <<Hide Pietro>>
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_sad left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_sad left bottom015 white>>
 <<endif>>
 Con esas palabras revoloteando de fondo, doy media vuelta y abandono la escena antes de que nadie me vea.
 La razón de mi llegada al puesto olvidada, simplemente con una sensación de vacío y culpabilidad en el pecho a pesar de haber logrado lo que pensaba que quería.
 
 <<HideAll>>
+<<StopAudioAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<jump Encuentro_ex_viernes_sem3>>
@@ -10067,22 +10241,44 @@ position: -143,644
 <<endif>>
 
 Al final llegué a la floristería antes de lo esperado y he podido decorarla con algunas luces que pedí el otro día a vientoexpress.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 ¡Ha quedado más mona de lo que ya era!
 Aunque tampoco he podido disfrutar mucho de ello porque pronto llegaron varios clientes madrugadores.
 Debo admitir que me sorprendí bastante porque los viernes la gente suele llegar a partir de las diez de la mañana.
 Supongo que todo el mundo está emocionado por el fin de semana.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Ahora que lo pienso, ¿no me dijeron que iba a haber un festival medieval? Tal vez sea por eso.
-//Campanillas
+
+<<PlayAudio timbre_puerta_floristeria 0.5>>
+
 Aquí llega otro cliente.
 {$name}: “Hola, bienvenido a...”
 {$name}: “¡Pietro!”
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Hola! Hacía mucho que no te veía.”
 {$name}: “¿Qué te trae por aquí? ¿De nuevo a seguir pintando?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 A diferencia de muchas otras veces, especialmente al inicio de sus visitas, esta vez mi comentario es completamente sincero.
 Ya me he acostumbrado a las visitas habituales de Pietro, tanto que ya incluso me resulta raro no tener su compañía cerca.
 El sonido del lápiz sobre el papel y el saber que hay alguien más en la floristería trabajando junto a mí me hacen sentir [select value={$gender} M="acompañado" F="acompañada" NB="acompañade"/].
-Ahora soy yo la que le busco para sorpresa de todos.
+Ahora soy yo [select value={$gender} M="el" F="la" NB="le"/] que le busco para sorpresa de todos.
 Me encantaría poder avisar de esto a mi yo de hace dos semanas, le habría ahorrado todo el nerviosismo.
 Pietro: “Buenos días, {$name}.”
 Pietro: “Estas en lo cierto. Hoy cuando me he despertado he podido ver las nubes a través de la ventana.”
@@ -10092,11 +10288,13 @@ Puede que me haya acostumbrado a su compañía, pero su forma de expresarse ya e
 Qué tendrá que ver el color de las nubes con pintar. ¿No son siempre blancas?
 ->“¿Pero qué relación hay entre ambas cosas?”
     <<Add_npc_likeability NPC_pietro 1>>
+    <<Act Pietro spt_pietro_thinking>>
     Pietro: “No entiendo tu confusión, {$name}.”
     Ah, no me ha entendido.
     {$name}: “Perdón si no me he explicado bien.”
     {$name}: “Decía que no entiendo por qué el blanco de ...”
     Pietro: “No, {$name}. No hace falta que lo repitas, te he entendido.”
+    <<Act Pietro spt_pietro_neutral>>
     {$name}: “¿Entonces qué problema hay?”
     Pietro: “No entiendo qué es lo que no entiendes cuando es tan claro.”
     Pietro: “Hoy el color blanco de las nubes era prácticamente perfecto, rozando el 100% de luminosidad.”
@@ -10106,40 +10304,70 @@ Qué tendrá que ver el color de las nubes con pintar. ¿No son siempre blancas?
     Qué forma más curiosa de ver la vida.
 ->“Que cosas más raras dices siempre Pietro.”
     <<Add_npc_likeability NPC_pietro -1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Muchas veces me cuesta entender tu forma de pensar jajaja.”
     Intento hacer una pequeña broma, pero parece que Pietro no lo ve de ese modo.
+    <<Act Pietro spt_pietro_angry>>
     Pietro: “A lo mejor [select value={$gender} M="el" F="la" NB="le"/] que tienes un problema eres tú y por es no lo entiendes.”
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_disappointed>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_disappointed>>
+    <<endif>>
     Auch, me siento como [select value={$gender} M="un tonto" F="una tonta" NB="une tonte"/].
     Aunque a lo mejor me lo merecía por decir esas cosas.
+    <<Act Pietro spt_pietro_neutral>>
 ->No decir nada.
     Pensándolo mejor creo que no voy a preguntar.
     Siento mucha curiosidad, pero conociendo a Pietro veo que inicia un seminario sobre el color de las nubes y sus diferentes texturas en mitad de la floristería.
 Cambiando de tema o más bien de pensamiento.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Debo admitir que últimamente veo a Pietro diferente, más contento, con otro brillo en los ojos.
 ¿Habrá pasado algo?
 Antes de poder dudar sobre si preguntarle, Pietro me sorprende acercándose más al mostrador y mirándome fijamente a los ojos.
 Espero pacientemente a que diga algo.
 Vale, ya han pasado como tres minutos y todavía nada. Me estoy empezando a poner un poco [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/].
-///////////////////////////////////////////////////////////
-///////////////////PETRO TÍMIDO////////////////////////////
-///////////////////////////////////////////////////////////
+<<Act Pietro spt_pietro_shy>>
 Pietro: “En el nombre del arte y de mi corazón, quería darte las gracias por tu generosidad, {$name}.” 
 {$name}: “¿Cómo?”
 {$name}: “No entiendo, ¿qué he hecho exactamente?”
 Pietro: “Dejarme representar estas bellas flores en tu tienda.”
 Ahhhh, ¡con que se refería a eso!
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “No es nada Pietro.”
 ->Preguntar por sus dibujos.
     <<Add_npc_likeability NPC_pietro 1>>
     {$name}: “Aunque...”
     {$name}: “Debo admitir que me haría mucha ilusión poder ver algún dibujo tuyo.”
     Ya está, lo he dicho.
+    <<Act Pietro spt_pietro_happy>>
     Observo a Pietro de reojo y para mi asombro, este me devuelve la mirada feliz.
-->No decir nada.
     Pietro: “Por supuesto, {$name}. Sería todo un honor poder mostrarte mis ilustraciones.”
     Pietro: “Es lo mínimo que puedo hacer por tu generosidad.”
+->No decir nada.
+    <<Act Pietro spt_pietro_happy>>
 Pietro: “Con tu permiso voy a proceder a continuar dibujando antes de que pierda la inspiración.”
 {$name}: “Claro, Pietro. ¡Mucho ánimo!”
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Pietro>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Yo a seguir trabajando.
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -10152,6 +10380,7 @@ Me giro para ver cómo va Pietro y me sorprendo al ver que ya está recogiendo s
 Por lo general, suele quedarse algo más en la tienda.
 Me entristezco un poco ante esto.
 Cuando pienso que ya va a irse, este se acerca al mostrador.
+<<Act Pietro spt_pietro_neutral right bottom015 white>>
 {$name}: “¿Vienes a por flores para pintar antes de irte?”
 Pietro: “Sí, pero también quería hablar un rato contigo.”
 Eso es nuevo.
@@ -10165,42 +10394,74 @@ Y lo más importante de todo...
 Sacudo la cabeza. No te vayas por las ramas, {$name}.
 ->Alegrarse.
     <<Add_npc_likeability NPC_pietro 1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “Me alegro mucho, Pietro.”
     {$name}: “No sé qué será, pero el saber que yo y mi tienda te hemos podido ayudar en algo me hace muy feliz.”
     {$name}: “Al final para mí la tienda también ha sido como una especie de refugio.”
+    <<Act Pietro spt_pietro_thinking>>
     Durante unos instantes, Pietro me mira ensimismado.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_neutral_final>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_neutral>>
+    <<endif>>
     Pietro: “Lo sabía.”
     Pietro: “Al igual que la floristería tu aura es completamente pura y cálida.”
     ¿¡Otra vez el tema de las auras!?
     Voy a tener que investigar para poder hablar con Pietro sobre ello.
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     No puedo evitar soltar una pequeña risita ante el pensamiento.
 ->Insistir.
     <<Add_npc_likeability NPC_pietro -1>>
+    <<if get_player_mainCharacter() == "P">>
+        <<Act {$name} sprt_she_happy>>
+    <<elseif get_player_mainCharacter() == "S">>
+        <<Act {$name} sprt_he_happy>>
+    <<endif>>
     {$name}: “No es nada, Pietro.”
     {$name}: “¿Pero podría saber de qué se trata?”
     {$name}: “Me da mucha curiosidad.”
+    <<Act Pietro spt_pietro_sad>>
     Pietro: “No, lo siento. Todavía no estoy preparado y no sé si puedo confiar del todo en ti.”
+    <<Act Pietro spt_pietro_neutral>>
     Vaya, parece que he intentado dar un paso de más y me he tropezado.
     {$name}: “No pasa nada, lo entiendo.”
 ->No decir nada. 
 {$name}: “Ya sabes que puedes venir aquí las veces que quieras.”
 {$name}: “Ya eres uno más aquí, casi como mi ayudante jajaja.”
+<<Act Pietro spt_pietro_happy>>
 Pietro: “Gracias, {$name}.”
 Pietro: “De ahora en adelante no buscaré ser perfecto, sino sentirme bien con lo que hago y asombrar a mis espectadores igual que haces tú.”
 Pietro: “Eres mi modelo a seguir.”
-//////////////////////////////////////////////////////
-//////////////////PROTAGONISTA SONROJADA//////////////
-//////////////////////////////////////////////////////
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_embarrassed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_embarrassed>>
+<<endif>>
 No sabía que Pietro pensaba así de mí.
 {$name}: “Gracias.” 
 Pietro: “Por ello, quería regalarte esto.”
 Me quedo [select value={$gender} M="perplejo" F="perpleja" NB="perpleje"/] al ver que Pietro me da el dibujo de la amapola del Himalaya que había estado pintando desde su primer día aquí.
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “¡Es increíble Pietro!”
 {$name}: “No sabes la ilusión que me hace poder verlo, tenía muchas ganas.”
 {$name}: “¡Y encima tiene dedicatoria!”
 Pietro: “Jajaja, no es nada. Ahora entiendo cómo te sientes al entregar los ramos.”
 ¿Pietro se ha reído?
 El detalle que acaba de tener conmigo me ha emocionado mucho.
+<<Act Pietro spt_pietro_neutral>>
 Pietro: “Bueno, será mejor que no me entretenga más. Tengo que ir a entregar unos papeles importantes.”
 Pietro: “¿Podría pedir un nuevo ramo?”
 {$name}: “Claro, dime qué quieres.”
@@ -10272,7 +10533,13 @@ position: -123,-48
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_pietro 4>>
 
+<<Act Pietro spt_pietro_happy>>
 Pietro: “Perfecto, como siempre. Está claro que eres [select value={$gender} M="el" F="la" NB="le"/] mejor florista de la zona.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_happy>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_happy>>
+<<endif>>
 {$name}: “Me alegro de que te guste. Tienes unos gustos muy exquisitos, así que me siento muy [select value={$gender} M="orgulloso" F="orgullosa" NB="orgullose"/] de ello.”
 Pietro: “Deberías, no cualquiera tiene este talento.”
 Pietro: “Aquí tienes el dinero y quédate con el cambio.”
@@ -10297,6 +10564,11 @@ position: 45,-49
 <<Add_npc_likeability NPC_pietro 1>>
 
 Pietro: “Mucho encanto, pero poca técnica. Podría mejorarse.”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 {$name}: “Lo siento, parece que no estaba igual de [select value={$gender} M="inspirado" F="inspirada" NB="inspirade"/] que tú.”
 Pietro: “No pasa nada, no está tan mal del todo, solo presenta pequeñas imperfecciones.”
 {$name}: “La próxima vez estará a la altura.”
@@ -10317,10 +10589,15 @@ position: -289,-54
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Act Pietro spt_pietro_angry right bottom015 white>>
 <<Add_npc_likeability NPC_pietro -2>>
 
 Pietro: “¿De verdad qué no podías haberlo hecho mejor?”
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_disappointed>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_disappointed>>
+<<endif>>
 Pietro: “He visto los ramos que has entregado en la mañana y eran mil veces mejor que este.”
 {$name}: “Lo siento...”
 Pietro: Suspiro. “Qué se va a hacer, ya está hecho.”
@@ -10352,6 +10629,7 @@ Pietro: “Vendré a verte pronto, {$name}.”
 <<Hide Pietro>>
 
 <<HideAll>>
+<<StopAudioAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
@@ -12361,7 +12639,7 @@ Sin embargo, eso es lo que le hace único y al final te acabas acostumbrando.
 Si lo comparo con cómo fue el primer día que nos conocimos, y como fue la última vez que hablamos, la diferencia es abismal, ahora se ha abierto mucho más conmigo.
 Incluso se lleva mejor con Sagrario, de tanto coincidir los dos han llegado a un entendimiento común. 
 Da igual que Pietro haga el comentario más filosófico y ocultista que  hayas escuchado, que si está Sagrario lo va a entender.
-Ahora lo considero un buen amigo mío, y creo que el piensa lo mismo. Sonrío sola en el pasillo pensando en qué será lo próximo que me enseñe Pietro. Algo más bonito que los cuadros que tienen aquí seguro.
+Ahora lo considero un buen amigo mío, y creo que el piensa lo mismo. Sonrío [select value={$gender} M="solo" F="sola" NB="sole"/] en el pasillo pensando en qué será lo próximo que me enseñe Pietro. Algo más bonito que los cuadros que tienen aquí seguro.
 ¿A lo mejor podría darle mi teléfono para poder hablar más a menudo? La verdad es que me fascina cómo plasma las flores a través de su arte, es otra visión y enfoque totalmente nuevos.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -12388,17 +12666,21 @@ position: -143,644
 <<set $name to get_player_name()>>
 
 <<if get_player_mainCharacter() == "P">>
-    <<Act {$name} sprt_she_neutral_final left bottom015 white>>
+    <<Act {$name} sprt_she_happy left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
+    <<Act {$name} sprt_he_happy left bottom015 white>>
 <<endif>>
-
 ¡Genial! Parece que los esquejes de la cala han enraizado bien y están creciendo adecuadamente. Van a quedar preciosas cuando den flor. Vuelvo a colocar la maceta en sitio.
-//Campanillas
+<<PlayAudio timbre_puerta_floristeria 0.5>>
+<<if get_player_mainCharacter() == "P">>
+    <<Act {$name} sprt_she_neutral_final>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Act {$name} sprt_he_neutral>>
+<<endif>>
 Oigo la puerta, pero para evitar que la maceta se caiga ocupa toda mi atención, así que no me giro a saludar.
 {$name}: “¡Bienvenido a A Flower’s Dream! En seguida le atiendo.”
 Coloco la maceta y ya puedo enfocarme en quien ha entrado.
-<<Act Pietro spt_pietro_neutral right bottom015 white>>
+<<Act Pietro spt_pietro_happy right bottom015 white>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -12415,7 +12697,7 @@ Ahora dibuja más atrevido, sin importar si hay trazadas erróneas, es más libr
 {$name}: “¡Hola Pietro!”
 Pietro: “Buenos días, {$name}”
 {$name}: “¿Vienes buscando un ramo? Pues espera que saque las cosas que estaba con unos esquejes y no tengo lo de los ramos listos.”
-Pietro: “No... Hoy no vengo buscando satisfacer los deseos de Apolo.  ”
+Pietro: “No... Hoy no vengo buscando satisfacer los deseos de Apolo.”
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -12423,22 +12705,26 @@ Pietro: “No... Hoy no vengo buscando satisfacer los deseos de Apolo.  ”
 <<endif>>
 No entiendo muy bien a qué se refiere con Apolo, pero supongo que lo que quiere no es un ramo. Además, se le ve atrapado en su cabeza, no sé si quisiera contarme algo.
 {$name}: “¿Y eso? ¿Ha pasado algo?”
+<<Act Pietro spt_pietro_shy>>
 Pietro: “La verdad es que he venido a agradecerte a ti. Como la luna que ilumina y vigila a los desamparados en la noche para guiarlos en silencio, sé que has estado [select value={$gender} M="atento" F="atenta" NB="atente"/] a cómo desarrollaba mi arte”
 Pietro: “Escuchar tus consejos sintonizar con mis ideas creativas y empaparme de la energía que desprendes al hablar de la flora que habita en este mundo me hecho ver que tenía una visión errada del arte”
 Pietro: “Creía que estaba haciendo lo correcto, que era un fiel enviado del arte luchando contra los gigantes inconscientes de la belleza. Pero tan solo era un idiota engañado que luchaba contra molinos.”
 Así que él mismo se ha dado cuenta de que se estaba autolimitando. Sé lo que se siente cuando te manipulan para pensar que debes hacer una cosa y que te la creas, aunque en un principio vaya en contra de tu pasión. 
-Así que sonrío por ver que por fin ha salido de esas ataduras. ¿Qué se las habrá generado?
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_happy>>
 <<endif>>
+Así que sonrío por ver que por fin ha salido de esas ataduras. ¿Qué se las habrá generado?
 {$name}: “Es genial que te hayas liberado, Pietro. No sé mucho de arte, pero sé que ahora estás dibujando lo que realmente quieres. ¿Quién te había dicho lo contrario?”
+<<Act Pietro spt_pietro_angry>>
 Pietro: “Ignorantes que se denominaban a sí mismos como expertos de las artes plásticas durante mi época del instituto. Jamás debí hacerles caso”
+<<Act Pietro spt_pietro_happy>>
 Pietro: “La situación actual es que gracias a ti he recuperado el amor a mi pasión, que había sido mancillada por ellos. Por eso traigo una gran noticia que contarte”
 Pietro: “Para seguir explorando mis sueños, me he inscrito en una universidad de bellas artes.”
 {$name}: “¡Eso es genial Pietro! ¡Estoy super [select value={$gender} M="contento" F="contenta" NB="contente"/] por ti!”
 {$name}: “Enhorabuena. Seguro que es una experiencia increíble y aprendes un montón”
+<<Act Pietro spt_pietro_sad>>
 A pesar de lo positivo de la noticia, el rostro de Pietro se pone triste.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -12461,6 +12747,7 @@ Esto no puede ser el fin, puede que ya no nos vayamos a ver tanto, pero quiero m
 {$name}: “Pietro, no hables como si fuera el fin de todo.”
 {$name}: “Estoy [select value={$gender} M="seguro" F="segura" NB="segure"/] de que podemos hacer algo para mantener el contacto. ¿No crees que el esfuerzo merecería la pena?”
 Pietro: “Sí, tienes razón. La conexión que existe entre nuestras auras no puede ser desechada, sería un despropósito.”
+<<Act Pietro spt_pietro_neutral>>
 Pietro: “¿Qué tal si te doy mi número de teléfono?”
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -12478,19 +12765,20 @@ Extiende una hoja hacia mí y cuando lo cojo veo que es un dibujo precioso sobre
     <<Act {$name} sprt_he_happy>>
 <<endif>>
 {$name}: “Es muy bonito, Pietro. Muchas gracias”
+<<Act Pietro spt_pietro_happy>>
 Pietro: “Sabía que ibas a apreciarlo. Ahora sí que he de abandonar esta tienda.”
 Pietro: “Te avisaré cuando los designios del tiempo y las responsabilidades me permitan volver a visitarte.”
 {$name}: “Estaré esperando a ese momento con ganas. Mucho ánimo con esta nueva etapa de tu vida, Pietro.”
 Pietro: “De nuevo, te lo agradezco a ti. Adiós”
+<<Move Pietro offright bottom015 1.0>>
+<<wait 1.0>>
+<<Hide Pietro>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_sad>>
 <<elseif get_player_mainCharacter() == "S">>
    <<Act {$name} sprt_he_sad>>
 <<endif>>
 {$name}: “Adiós, Pietro.”
-<<Move Pietro offright bottom015 1.0>>
-<<wait 1.0>>
-<<Hide Pietro>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
 <<elseif get_player_mainCharacter() == "S">>
