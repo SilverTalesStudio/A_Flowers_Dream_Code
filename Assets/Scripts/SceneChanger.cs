@@ -19,7 +19,7 @@ public class SceneChanger : MonoBehaviour
 
     public void loadStartedVN()
     {
-        if (PlayerPrefs.HasKey("nodeSaved"))
+        if (PlayerPrefs.HasKey("nodeSaved") && PlayerPrefs.HasKey("YarnBasicSave"))
         {
            playVN();
         }

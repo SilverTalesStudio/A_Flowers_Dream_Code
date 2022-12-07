@@ -17,12 +17,15 @@ public class UI_Login : MonoBehaviour
         AccountsManager.OnLoginFailed.AddListener(LoginFailed);
         AccountsManager.OnLoginSuccess.AddListener(LoginSuccess);
         AccountsManager.OnRecoverySuccess.AddListener(ResetSuccess);
+        AccountsManager.OnUserDataGetted.AddListener(SetGameSaveState);
     }
     private void OnDisable()
     {
         AccountsManager.OnLoginFailed.RemoveListener(LoginFailed);
         AccountsManager.OnLoginSuccess.RemoveListener(LoginSuccess);
         AccountsManager.OnRecoverySuccess.RemoveListener(ResetSuccess);
+        AccountsManager.OnUserDataGetted.RemoveListener(SetGameSaveState);
+
 
     }
     void LoginFailed(string error)
@@ -34,10 +37,18 @@ public class UI_Login : MonoBehaviour
     {
         canvasHide.SetActive(false);
         canvasShow.SetActive(true);
+        AccountsManager.instance.GetUserData("UserData");
     }
     void ResetSuccess()
     {
         whenTryLogInText.text = "¡Correo de recuperación de contraseña enviado!";
+    }
+
+    void SetGameSaveState(string value)
+    {
+        Debug.Log("GameState"+value);
+        SaveState userSave = JsonUtility.FromJson<SaveState>(value);
+        userSave.setPlayerPrefs();
     }
 
     public void UpdateEmail_FromInputField(string email_)

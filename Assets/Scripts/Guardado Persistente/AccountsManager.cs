@@ -18,6 +18,9 @@ public class AccountsManager : MonoBehaviour
     public static UnityEvent<string> OnCreateFailed = new UnityEvent<string>();
     public static UnityEvent OnRecoverySuccess = new UnityEvent();
     //public static UnityEvent<string> OnCreateFailed = new UnityEvent<string>();
+
+    public static UnityEvent<string> OnUserDataGetted = new UnityEvent<string>();
+
     public static string playFabId;
 
     private void Awake()
@@ -98,6 +101,38 @@ public class AccountsManager : MonoBehaviour
             }
             
             );
+    }
+
+    public void GetUserData(string key)
+    {
+        Debug.Log("Entra en GetUserData");
+        PlayFabClientAPI.GetUserData(
+            new GetUserDataRequest()
+            {
+                PlayFabId = playFabId,
+                Keys = new  List<string>()
+                { key
+                }
+            },
+            response =>
+            {
+                if (response.Data.ContainsKey(key))
+                {
+                    Debug.Log("GetUserData whit data" + response);
+                    OnUserDataGetted.Invoke( response.Data[key].Value);
+                }
+                else
+                {
+                    Debug.Log("GetUserData withput data" + response);
+
+                    OnUserDataGetted.Invoke(null);
+                }
+            }, 
+            error =>
+            {
+                Debug.Log("Not GetUserData"+error.ErrorMessage);
+            }
+        );
     }
 
 }

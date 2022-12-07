@@ -21,6 +21,9 @@ position: -678,-304
 <<Scene bg_calle>>
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 // Audio puerta
+<<set $gender to get_player_gender()>>
+<<set $name to get_player_name()>>
+
 
 //Audio calle ambiente loop
 //<<PlayAudio ambient_birds 0.5 loop>>

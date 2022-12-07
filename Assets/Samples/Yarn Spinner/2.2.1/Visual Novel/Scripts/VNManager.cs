@@ -55,17 +55,14 @@ public class VNManager : DialogueViewBase
 			//YarnProjectLoaded = false;
 
 			//Inicializa el startNode
-			if (PlayerPrefs.GetString("nodeSaved").Length > 1)
+			if (PlayerPrefs.GetString("nodeSaved").Length > 1 && PlayerPrefs.GetString("YarnBasicSave").Length > 1)
 			{
-				Debug.Log("entra en el getstring");
-				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+				runner.LoadStateFromPlayerPrefs();
 				startNodeManually = PlayerPrefs.GetString("nodeSaved");
 				
 			}
 			else
 			{
-				Debug.Log("entra en el else");
-				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
 
 				startNodeManually = "Semana1";
 			}
