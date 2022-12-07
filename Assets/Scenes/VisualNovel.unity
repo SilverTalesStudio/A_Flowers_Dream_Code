@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 409153756}
+  GuardarBtn: {fileID: 0}
   pause: {fileID: 236622440}
   changer: {fileID: 141446801}
   popUp: {fileID: 1016654942}

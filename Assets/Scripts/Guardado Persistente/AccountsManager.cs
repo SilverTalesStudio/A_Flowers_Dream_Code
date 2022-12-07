@@ -18,6 +18,7 @@ public class AccountsManager : MonoBehaviour
     public static UnityEvent<string> OnCreateFailed = new UnityEvent<string>();
     public static UnityEvent OnRecoverySuccess = new UnityEvent();
     //public static UnityEvent<string> OnCreateFailed = new UnityEvent<string>();
+    public static string playFabId;
 
     private void Awake()
     {
@@ -63,6 +64,7 @@ public class AccountsManager : MonoBehaviour
              },
              response =>
              {
+                 playFabId = response.PlayFabId;
                  OnLoginSuccess.Invoke();
              },
             error =>
