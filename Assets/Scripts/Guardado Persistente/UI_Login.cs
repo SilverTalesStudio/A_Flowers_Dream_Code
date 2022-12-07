@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 
 public class UI_Login : MonoBehaviour
 {
     [SerializeField] TMP_Text whenTryLogInText;
     [SerializeField] GameObject canvasHide;
     [SerializeField] GameObject canvasShow;
+    [SerializeField] Button CargaBTN;
     string email;
     string password;
 
@@ -37,6 +38,7 @@ public class UI_Login : MonoBehaviour
     {
         canvasHide.SetActive(false);
         canvasShow.SetActive(true);
+        CargaBTN.interactable = true;
         AccountsManager.instance.GetUserData("UserData");
     }
     void ResetSuccess()

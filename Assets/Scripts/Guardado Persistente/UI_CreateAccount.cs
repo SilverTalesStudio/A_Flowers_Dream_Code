@@ -28,7 +28,7 @@ public class UI_CreateAccount : MonoBehaviour
     }
     void CreateAccountSuccess()
     {
-        whenTryCreateText.text = "Cuenta creada con éxito";
+        whenTryCreateText.text = "Cuenta creada con éxito, ya puedes iniciar sesión";
     }
     public void UpdateEmail_FromInputField(string email_)
     {

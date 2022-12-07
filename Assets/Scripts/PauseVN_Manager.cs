@@ -62,10 +62,10 @@ public class PauseVN_Manager : MonoBehaviour
              PlayerPrefs.GetString("NPC_sagrario")
 
             );
-        Debug.Log(saveCurrentGameState.PjName);
-        Debug.Log(saveCurrentGameState.nodeSaved);
+       // Debug.Log(saveCurrentGameState.PjName);
+       // Debug.Log(saveCurrentGameState.nodeSaved);
         string json= JsonUtility.ToJson(saveCurrentGameState);
-        Debug.Log("CURRENT GAME STATE"+json);
+       // Debug.Log("CURRENT GAME STATE"+json);
         SetUserData("UserData",json);
         yield return 0;
     }
