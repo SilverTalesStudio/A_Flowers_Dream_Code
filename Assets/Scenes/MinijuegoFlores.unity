@@ -2867,6 +2867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 1332395565}
   changer: {fileID: 973356954}
+  GuardarBtn: {fileID: 1492164223}
   popUp: {fileID: 2080822651}
 --- !u!1 &976897823
 GameObject:

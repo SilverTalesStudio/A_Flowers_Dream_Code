@@ -42,7 +42,7 @@ public class VNManager : DialogueViewBase
 		public AudioSource genericAudioSource; // local prefab, used for instantiating sounds
 
 		// big lists to keep track of all instantiated objects
-		List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
+		public List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
 
 		// store sprite references for "actors" (characters, etc.)
@@ -54,22 +54,35 @@ public class VNManager : DialogueViewBase
 		void Awake () {
 			//YarnProjectLoaded = false;
 
-			//Inicializa el startNode
-			if (PlayerPrefs.GetString("nodeSaved").Length > 1)
+			//Carga por el nodo que tocaba o si es partida nueva empieza desde el principio
+			if (PlayerPrefs.GetString("nodeSaved").Length > 1 && PlayerPrefs.GetString("YarnBasicSave").Length > 1)
 			{
-				Debug.Log("entra en el getstring");
-				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
+				runner.LoadStateFromPlayerPrefs();
 				startNodeManually = PlayerPrefs.GetString("nodeSaved");
-				
+
 			}
 			else
 			{
-				Debug.Log("entra en el else");
-				Debug.Log(PlayerPrefs.GetString("nodeSaved"));
-
+				//Inicializa el startNode
 				startNodeManually = "Semana1";
 			}
+			Debug.Log("Previa a stratNode: "+startNodeManually);
 			runner.startNode = startNodeManually;
+
+
+
+			//chequear musica
+
+			if (PlayerPrefs.GetString("nodeSaved").Length > 1 && PlayerPrefs.GetString("YarnBasicSave").Length > 1)
+			{
+				string jsonMusic = PlayerPrefs.GetString("currentMusic");
+				Debug.Log(jsonMusic);
+				MusicSet musicaCarga = JsonUtility.FromJson<MusicSet>(jsonMusic);
+				PlayAudio(musicaCarga.soundName, musicaCarga.volume, musicaCarga.loop);
+
+			}
+
+
 			// manually add all Yarn command handlers, so that we don't
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
@@ -244,6 +257,7 @@ public class VNManager : DialogueViewBase
 			PlayerPrefs.SetString("clienteActual", nombreCliente); 
 			Debug.Log(runner.CurrentNodeName);
 			PlayerPrefs.SetString("currentMinigame", runner.CurrentNodeName);
+			runner.SaveStateToPlayerPrefs();
 			SceneChanger.nextOrder = nombreCliente;
 			//Se llama con PlayerPrefs.GetString("clienteActual");
 
@@ -491,23 +505,62 @@ public class VNManager : DialogueViewBase
             }
 			
 			// detect loop setting
-			bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
-			
-			// instantiate AudioSource and configure it (don't use
-			// AudioSource.PlayOneShot because we also want the option to
-			// use <<StopAudio>> and interrupt it)
-			var newAudioSource = Instantiate<AudioSource>( genericAudioSource, genericAudioSource.transform.parent );
-			newAudioSource.name = audioClip.name;
-			newAudioSource.clip = audioClip;
-			newAudioSource.volume *= volume;
-			newAudioSource.loop = shouldLoop;
-			newAudioSource.Play();
-			sounds.Add(newAudioSource);
+			bool shouldLoop = loop.Contains("loop") || loop.Contains("true");
 
-			// if it doesn't loop, let's set a max lifetime for this sound
-			if ( shouldLoop == false ) {
-				StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
+            
+
+			//Si suena loop significa que es música de fondo
+			if (shouldLoop) {
+				MusicSet musicaAct = new MusicSet(soundName, volume, loop);
+				string json = JsonUtility.ToJson(musicaAct);
+				Debug.Log(json);
+			PlayerPrefs.SetString("currentMusic", json);	
 			}
+
+
+			
+			//check if its already playing that loop sound
+			if (!sounds.Exists(t => t.name == soundName))
+			{
+
+				// instantiate AudioSource and configure it (don't use
+				// AudioSource.PlayOneShot because we also want the option to
+				// use <<StopAudio>> and interrupt it)
+				var newAudioSource = Instantiate<AudioSource>(genericAudioSource, genericAudioSource.transform.parent);
+				newAudioSource.name = audioClip.name;
+				newAudioSource.clip = audioClip;
+				newAudioSource.volume *= volume;
+				newAudioSource.loop = shouldLoop;
+				newAudioSource.Play();
+				sounds.Add(newAudioSource);
+				// if it doesn't loop, let's set a max lifetime for this sound
+				if (shouldLoop == false)
+				{
+					StartCoroutine(SetDestroyTime(newAudioSource, audioClip.length));
+				}
+            }
+            else
+            {
+
+				if (shouldLoop == false)
+				{
+
+					// instantiate AudioSource and configure it (don't use
+					// AudioSource.PlayOneShot because we also want the option to
+					// use <<StopAudio>> and interrupt it)
+					var newAudioSource = Instantiate<AudioSource>(genericAudioSource, genericAudioSource.transform.parent);
+					newAudioSource.name = audioClip.name;
+					newAudioSource.clip = audioClip;
+					newAudioSource.volume *= volume;
+					newAudioSource.loop = shouldLoop;
+					newAudioSource.Play();
+					sounds.Add(newAudioSource);
+					StartCoroutine(SetDestroyTime(newAudioSource, audioClip.length));
+				}
+            }
+
+
+			
 		}
 
 		/// <summary>stops sound playback based on sound name, whether it's
@@ -892,3 +945,14 @@ public class VNManager : DialogueViewBase
     }
 
 } // end namespace
+class MusicSet{
+	public string soundName;
+	public float volume;
+	public string loop;
+	public MusicSet(string soundName_, float volume_, string loop_)
+    {
+		soundName = soundName_;
+		volume = volume_;
+		loop = loop_;
+    }
+}

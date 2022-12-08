@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
     public ToggleGroup toggleGroup;
     public ToggleGroup personajesGroup;
 
+
     private void Awake()
     {
         PlayerPrefs.DeleteAll();
@@ -82,5 +83,5 @@ public class UI_Manager : MonoBehaviour
 
 
     }
-   
+
 }
