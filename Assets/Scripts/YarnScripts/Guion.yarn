@@ -424,7 +424,7 @@ position: -675,-215
 <<Save_node_to_jump_back Salida_minijuego_Ethan_lunes_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Ethan>>
+<<Go_to_minigame Ethan false>>
 ===
 title: Salida_minijuego_Ethan_lunes_sem1
 position: -688,-141
@@ -699,7 +699,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Allan_miercoles_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Allan>>
+<<Go_to_minigame Allan false>>
 ===
 title: Salida_minijuego_Allan_miercoles_sem1
 position: -118,-144
@@ -877,7 +877,7 @@ position: -139,238
 <<Save_node_to_jump_back Salida_minijuego_Sagrario_miercoles_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sagrario>>
+<<Go_to_minigame Sagrario false>>
 ===
 title: Salida_minijuego_Sagrario_miercoles_sem1
 position: -138,341
@@ -1423,7 +1423,7 @@ position: 430,-112
 <<Save_node_to_jump_back Salida_minijuego_Sophie_jueves_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sophie>>
+<<Go_to_minigame Sophie false>>
 ===
 title: Salida_minijuego_Sophie_jueves_sem1
 position: 426,-38
@@ -1686,7 +1686,7 @@ position: 422,273
 <<Save_node_to_jump_back Salida_minijuego_Pietro_jueves_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Pietro>>
+<<Go_to_minigame Pietro false>>
 ===
 title: Salida_minijuego_Pietro_jueves_sem1
 position: 424,345
@@ -2155,7 +2155,7 @@ position: 976,-214
 <<Save_node_to_jump_back Salida_minijuego_Ethan_viernes_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Ethan>>
+<<Go_to_minigame Ethan false>>
 ===
 title: Salida_minijuego_Ethan_viernes_sem1
 position: 975,-140
@@ -2446,7 +2446,7 @@ position: 976,205
 <<Save_node_to_jump_back Salida_minijuego_Sophie_viernes_sem1>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sophie>>
+<<Go_to_minigame Sophie false>>
 ===
 title: Salida_minijuego_Sophie_viernes_sem1
 position: 978,287
@@ -3803,7 +3803,7 @@ position: 976,205
 <<wait 2.0>>
 <<StopAudioAll>>
 //Funcion de salto a minijuego
-<<Go_to_minigame Sagrario>>
+<<Go_to_minigame Sagrario false>>
 ===
 
 title: Salida_minijuego_Sagrario_martes_sem2
@@ -4383,7 +4383,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Pietro_martes_sem2>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Pietro>>
+<<Go_to_minigame Pietro false>>
 ===
 
 title: Salida_minijuego_Pietro_martes_sem2
@@ -5126,7 +5126,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Sophie_miercoles_sem2>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sophie>>
+<<Go_to_minigame Sophie false>>
 ===
 
 title: Salida_minijuego_Sophie_miercoles_sem2
@@ -5359,6 +5359,7 @@ position: -143,644
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene bg_floristeria>>
+<<PlayAudio Musica_floristeria 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
@@ -5522,14 +5523,14 @@ title: Minijuego_Ethan_miercoles_sem2
 position: -125,-234
 ---
 <<HideAll>>
+<<StopAudioAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
-<<StopAudioAll>>
 //Se guarda el proximo nodo para ir despues del minijuego
 <<Save_node_to_jump_back Salida_minijuego_Ethan_miercoles_sem2>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Ethan>>
+<<Go_to_minigame Ethan true>>
 ===
 
 title: Salida_minijuego_Ethan_miercoles_sem2
@@ -5551,15 +5552,15 @@ Con delicadeza sostengo el ramo en alto para que Ethan pueda apreciar mejor sus 
 
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
-<<jump Minijuego_bien_Ethan_miercoles_sem2>>
+    <<jump Minijuego_bien_Ethan_miercoles_sem2>>
 <<endif>>
 
 <<if $resultado == "regular">>
-<<jump Minijuego_regular_Ethan_miercoles_sem2>>
+    <<jump Minijuego_regular_Ethan_miercoles_sem2>>
 <<endif>>
 
 <<if $resultado == "mal">>
-<<jump Minijuego_mal_Ethan_miercoles_sem2>>
+    <<jump Minijuego_mal_Ethan_miercoles_sem2>>
 <<endif>>
 ===
 
@@ -6201,7 +6202,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Allan_jueves_sem2>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Allan>>
+<<Go_to_minigame Allan false>>
 ===
 
 title: Salida_minijuego_Allan_jueves_sem2
@@ -8374,7 +8375,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Sophie_lunes_sem3>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sophie>>
+<<Go_to_minigame Sophie false>>
 ===
 
 title: Salida_minijuego_Sophie_lunes_sem3
@@ -8850,7 +8851,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Allan_lunes_sem3>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Allan>>
+<<Go_to_minigame Allan false>>
 ===
 
 title: Salida_minijuego_Allan_lunes_sem3
@@ -9644,7 +9645,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Ethan_miercoles_sem3>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Ethan>>
+<<Go_to_minigame Ethan false>>
 ===
 
 title: Salida_minijuego_Ethan_miercoles_sem3
@@ -10117,7 +10118,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Sagrario_miercoles_sem3>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Sagrario>>
+<<Go_to_minigame Sagrario false>>
 ===
 
 title: Salida_minijuego_Sagrario_miercoles_sem3
@@ -10685,7 +10686,7 @@ position: -125,-234
 <<Save_node_to_jump_back Salida_minijuego_Pietro_viernes_sem3>>
 
 //Funcion de salto a minijuego
-<<Go_to_minigame Pietro>>
+<<Go_to_minigame Pietro false>>
 ===
 
 title: Salida_minijuego_Pietro_viernes_sem3

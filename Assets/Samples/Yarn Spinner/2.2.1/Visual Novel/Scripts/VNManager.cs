@@ -91,7 +91,7 @@ public class VNManager : DialogueViewBase
 			//Propios
 			//Propios
 			runner.AddCommandHandler<string, int>("Add_npc_likeability", AddToLikeability);
-			runner.AddCommandHandler<string>("Go_to_minigame", GoToMinigame);
+			runner.AddCommandHandler<string, string>("Go_to_minigame", GoToMinigame);
 			runner.AddCommandHandler<string>("Save_node_to_jump_back", SaveNextNodeToJumpBack);
 			runner.AddCommandHandler("Plans_To_Zero", PlansToZero);
 			runner.AddCommandHandler("the_end", TheEnd);
@@ -250,11 +250,13 @@ public class VNManager : DialogueViewBase
 			PlayerPrefs.SetString(keyVar, json);
 		}
 
-		public void GoToMinigame(string nombreCliente)
+		public void GoToMinigame(string nombreCliente, string pedidoFijo)
 		{
 			Debug.Log("Entra en go to minigame");
 			Debug.Log(nombreCliente);
-			PlayerPrefs.SetString("clienteActual", nombreCliente); 
+			Debug.Log(pedidoFijo);
+			PlayerPrefs.SetString("clienteActual", nombreCliente);
+			PlayerPrefs.SetString("fijo", pedidoFijo);
 			Debug.Log(runner.CurrentNodeName);
 			PlayerPrefs.SetString("currentMinigame", runner.CurrentNodeName);
 			runner.SaveStateToPlayerPrefs();
@@ -264,7 +266,6 @@ public class VNManager : DialogueViewBase
 
 			// SceneChanger.changeScene("MinijuegoFlores");
 		}
-
 		public void AddCitaFinal(string cita)
         {
 			Debug.Log("Entra en AddCitaFinal");

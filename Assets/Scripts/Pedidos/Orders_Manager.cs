@@ -9,6 +9,7 @@ public class Orders_Manager : MonoBehaviour
 
     //Variable del personaje que hace el pedido
     private string character;
+    private string fijo;
 
     //Variable del pedido
     private int order;
@@ -52,6 +53,7 @@ public class Orders_Manager : MonoBehaviour
         //Longitud máxima de los pedidos 288 caracteres con espacios incluidos
 
         string cliente = PlayerPrefs.GetString("clienteActual");
+        string pedidoFijo = PlayerPrefs.GetString("fijo");
 
         character = cliente;
         ActivateCharacterImage(character);
@@ -63,9 +65,17 @@ public class Orders_Manager : MonoBehaviour
         {
             SophieOrder(order);
         }
-        else if(character == "Ethan")
+        else if (character == "Ethan")
         {
-            EthanOrder(order);
+            if (pedidoFijo == "true")
+            {
+                EthanOrder(8);
+            }
+            else
+            {
+                EthanOrder(order);
+            }
+
         }
         else if(character == "Allan")
         {
