@@ -52,6 +52,7 @@ public class Orders_Manager : MonoBehaviour
         //Longitud máxima de los pedidos 288 caracteres con espacios incluidos
 
         string cliente = PlayerPrefs.GetString("clienteActual");
+
         character = cliente;
         ActivateCharacterImage(character);
 
@@ -158,7 +159,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 7:
-                text_order = "Necesito un ramo para agradecerle a mi hermana una cosa. ¿Qué por qué? Yo no tengo que darte explicaciones. Simplemente ponme el ramo. Ah, y no te olvides de incluir alguna flor azul.";
+                text_order = "Necesito un ramo para agradecerle a mi hermana una cosa. ¿Que por qué? Yo no tengo que darte explicaciones. Simplemente ponme el ramo. Ah, y no te olvides de incluir alguna flor azul.";
                 text_orderSummary = "- Necesito un ramo para agradecerle a mi hermana una cosa.                                    - Ah, y no te olvides de incluir alguna flor azul.";
                 clienteDelPedido = "Sophie";
                 colorDelPedido = "Azul";
@@ -218,7 +219,7 @@ public class Orders_Manager : MonoBehaviour
                 colorDelPedido = "Rojo";
                 sentimientoDelPedido = "Seducción, amor secreto";
                 noColorDelPedido1 = "Blanco";
-                noSentimientoDelPedido2 = "Pureza del corazón";
+                noSentimientoDelPedido1 = "Pureza del corazón";
 
                 break;
 
@@ -229,12 +230,12 @@ public class Orders_Manager : MonoBehaviour
                 colorDelPedido = "Morado";
                 sentimientoDelPedido = "Seducción, amor secreto";
                 noColorDelPedido1 = "Azul";
-                noSentimientoDelPedido2 = "Pureza del corazón";
+                noSentimientoDelPedido1 = "Pureza del corazón";
                 break;
 
             case 3:
-                text_order = "Hay una chica que no para de perseguirme, pero a mí no me gusta. ¿Se te ocurre algo para decirle que solo quiero ser su amigo? Si puede ser me gustaría que el ramo también incluyera alguna flor de color rosa, ¿me harías ese favor?";
-                text_orderSummary = "- ¿Se te ocurre algo para decirle que solo quiero ser su amigo?                            - Si puede ser me gustaría que el ramo también incluyera alguna flor de color rosa.";
+                text_order = "Hay una chica que no para de perseguirme, pero a mí no me gusta. ¿Se te ocurre algo para decirle que solo quiero ser su amigo? Si puede ser, me gustaría que el ramo también incluyera alguna flor de color rosa, ¿me harías ese favor?";
+                text_orderSummary = "- ¿Se te ocurre algo para decirle que solo quiero ser su amigo?                            - Si puede ser, me gustaría que el ramo también incluyera alguna flor de color rosa.";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Rosa";
                 sentimientoDelPedido = "Amistad";
@@ -257,12 +258,12 @@ public class Orders_Manager : MonoBehaviour
 
             case 5:
                 text_order = "Hoy tengo una cita y necesito un ramo. Tienes alguna flor que sirva para decir “¿No te dolió cuando caíste del cielo?”. Es que me gustaría impresionarla, pero está cansada de escuchar mis piropos. También querría que el ramo incluyera alguna flor de un color poco habitual.";
-                text_orderSummary = "- Tienes alguna flor que sirva para decir “¿No te dolió cuando caíste del cielo?”                                  - También querría que el ramo incluyera alguna flor de un color poco habitual.";
+                text_orderSummary = "- Es que me gustaría impresionarla, pero está cansada de escuchar mis piropos.                                - También querría que el ramo incluyera alguna flor de un color poco habitual.";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Azul";
-                sentimientoDelPedido = "Amor eterno, amor verdadero";
+                sentimientoDelPedido = "Seducción, amor secreto";
                 noColorDelPedido1 = "Morado";
-                noSentimientoDelPedido1 = "Amistad";
+                noSentimientoDelPedido1 = "Pureza del corazón";
                 break;
 
             case 6:
@@ -298,7 +299,7 @@ public class Orders_Manager : MonoBehaviour
 
             case 9:
                 text_order = "Vengo por un ramo. He quedado con una chica y me gustaría agradecerle que me haya dado otra oportunidad para explicar un malentendido. ¿Puedes hacer que el ramo tenga alguna flor blanca? Es su color favorito.";
-                text_orderSummary = "- Me gustaría agradecerle que me haya dado otra oportunidad para explicar un malentendido.                                    - ¿Puedes hacer que el ramo tenga alguna flor blanca ?";
+                text_orderSummary = "- Me gustaría agradecerle que me haya dado otra oportunidad para explicar un malentendido.                                    - ¿Puedes hacer que el ramo tenga alguna flor blanca?";
                 clienteDelPedido = "Ethan";
                 colorDelPedido = "Blanco";
                 sentimientoDelPedido = "Agradecimiento y gratitud";
@@ -465,7 +466,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 3:
-                text_order = "Me gustaría hacer un bodegón con flores al estilo postimpresionista que refleje la pureza del corazón. Umm. ¿Tienes girasoles? ¿No? Vaya, es una pena….. Me conformo entonces con alguna flor azul. Me tendré que inspirar en “La noche estrellada” en lugar de en “Los girasoles” de Van Gogh.";
+                text_order = "Me gustaría hacer un bodegón con flores al estilo postimpresionista que refleje la pureza del corazón. Umm. ¿Tienes girasoles? ¿No? Me conformo entonces con alguna flor azul. Me tendré que inspirar en “La noche estrellada” en lugar de en “Los girasoles” de Van Gogh.";
                 text_orderSummary = "- Me gustaría hacer un bodegón con flores al estilo postimpresionista que refleje la pureza del corazón.                                    - Me conformo entonces con alguna flor azul.";
                 clienteDelPedido = "Pietro";
                 colorDelPedido = "Azul";
@@ -485,7 +486,7 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 5:
-                text_order = "Hoy me apetece pintar un ramo que transmita agradecimiento. Ah, y que tenga alguna flor morada. No morada, sino malva, es muy importante. Si no es así no podré pintarlo con un estilo realista de manera adecuada, y eso sería un problema.";
+                text_order = "Hoy me apetece pintar un ramo que transmita agradecimiento. Ah, y que tenga alguna flor morada. Es muy importante. Si no es así no podré pintarlo con un estilo realista de manera adecuada, y eso sería un problema.";
                 text_orderSummary = "- Hoy me apetece pintar un ramo que transmita agradecimiento.                                    - Ah, y que tenga alguna flor morada.";
                 clienteDelPedido = "Pietro";
                 colorDelPedido = "Morado";
@@ -586,8 +587,8 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 4:
-                text_order = "Me gustaría comprar un ramo que hiciera feliz a todo aquel que lo viera. Ah, sí (que cabeza tengo). También quisiera que tuviera alguna flor rosa si no es mucha molestia.";
-                text_orderSummary = "- Me gustaría comprar un ramo que hiciera feliz a todo aquel que lo viera.                                    - También quisiera que tuviera alguna flor rosa si no es mucha molestia.";
+                text_order = "Me gustaría comprar un ramo que hiciera feliz a todo aquel que lo viera. Ah, sí (que cabeza tengo). También quisiera que tuviera alguna flor rosa, si no es mucha molestia.";
+                text_orderSummary = "- Me gustaría comprar un ramo que hiciera feliz a todo aquel que lo viera.                                    - También quisiera que tuviera alguna flor rosa, si no es mucha molestia.";
                 clienteDelPedido = "Sagrario";
                 colorDelPedido = "Rosa";
                 sentimientoDelPedido = "Felicidad, alegría, confianza";
@@ -616,12 +617,12 @@ public class Orders_Manager : MonoBehaviour
                 break;
 
             case 7:
-                text_order = "Me gustaría comprar un ramo. ¿Podrías hacer que transmitiera pureza? También quisiera añadirle alguna flor roja, si no es mucha molestia.";
-                text_orderSummary = "- ¿Podrías hacer que transmitiera pureza?                                    - También quisiera añadirle alguna flor roja, si no es mucha molestia.";
+                text_order = "Me gustaría comprar un ramo. ¿Podrías hacer que transmitiera pureza? También quisiera añadirle alguna flor blanca, si no es mucha molestia.";
+                text_orderSummary = "- ¿Podrías hacer que transmitiera pureza?                                    - También quisiera añadirle alguna flor blanca, si no es mucha molestia.";
                 clienteDelPedido = "Sagrario";
-                colorDelPedido = "Rojo";
+                colorDelPedido = "Blanco";
                 sentimientoDelPedido = "Pureza del corazón";
-                noColorDelPedido1 = "Blanco";
+                noColorDelPedido1 = "Rojo";
                 noSentimientoDelPedido1 = "Seducción, amor secreto";
                 break;
 
