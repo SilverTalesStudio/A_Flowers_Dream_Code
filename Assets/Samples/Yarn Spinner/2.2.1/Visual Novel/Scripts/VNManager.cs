@@ -42,7 +42,7 @@ public class VNManager : DialogueViewBase
 		public AudioSource genericAudioSource; // local prefab, used for instantiating sounds
 
 		// big lists to keep track of all instantiated objects
-		List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
+		public List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
 
 		// store sprite references for "actors" (characters, etc.)
@@ -518,18 +518,19 @@ public class VNManager : DialogueViewBase
 			}
 
 
-			// instantiate AudioSource and configure it (don't use
-			// AudioSource.PlayOneShot because we also want the option to
-			// use <<StopAudio>> and interrupt it)
-			var newAudioSource = Instantiate<AudioSource>( genericAudioSource, genericAudioSource.transform.parent );
-			newAudioSource.name = audioClip.name;
-			newAudioSource.clip = audioClip;
-			newAudioSource.volume *= volume;
-			newAudioSource.loop = shouldLoop;
-
+			
 			//check if its already playing that loop sound
-			if (!(newAudioSource.loop ==true && sounds.Contains(newAudioSource)))
+			if (!sounds.Exists(t => t.name == soundName))
 			{
+
+				// instantiate AudioSource and configure it (don't use
+				// AudioSource.PlayOneShot because we also want the option to
+				// use <<StopAudio>> and interrupt it)
+				var newAudioSource = Instantiate<AudioSource>(genericAudioSource, genericAudioSource.transform.parent);
+				newAudioSource.name = audioClip.name;
+				newAudioSource.clip = audioClip;
+				newAudioSource.volume *= volume;
+				newAudioSource.loop = shouldLoop;
 				newAudioSource.Play();
 				sounds.Add(newAudioSource);
 				// if it doesn't loop, let's set a max lifetime for this sound
@@ -537,7 +538,26 @@ public class VNManager : DialogueViewBase
 				{
 					StartCoroutine(SetDestroyTime(newAudioSource, audioClip.length));
 				}
-			}
+            }
+            else
+            {
+
+				if (shouldLoop == false)
+				{
+
+					// instantiate AudioSource and configure it (don't use
+					// AudioSource.PlayOneShot because we also want the option to
+					// use <<StopAudio>> and interrupt it)
+					var newAudioSource = Instantiate<AudioSource>(genericAudioSource, genericAudioSource.transform.parent);
+					newAudioSource.name = audioClip.name;
+					newAudioSource.clip = audioClip;
+					newAudioSource.volume *= volume;
+					newAudioSource.loop = shouldLoop;
+					newAudioSource.Play();
+					sounds.Add(newAudioSource);
+					StartCoroutine(SetDestroyTime(newAudioSource, audioClip.length));
+				}
+            }
 
 
 			
