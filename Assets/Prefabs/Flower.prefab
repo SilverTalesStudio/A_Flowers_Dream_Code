@@ -90,6 +90,7 @@ MonoBehaviour:
   ffeeling: Sinceridad
   fav: Ethan
   hate: 
+  enableClick: 1
 --- !u!222 &6038569840525824511
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class PauseMF_Manager : MonoBehaviour
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if (f.name != "FlowerBase")
-                f.GetComponent<BoxCollider2D>().enabled = false;
+                f.GetComponent<DragAndDrop>().enableClick = false;
         }
     }
     public void DeactivatePause()
@@ -42,7 +42,7 @@ public class PauseMF_Manager : MonoBehaviour
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if (f.name != "FlowerBase")
-                f.GetComponent<BoxCollider2D>().enabled = true;
+                f.GetComponent<DragAndDrop>().enableClick = true;
         }
     }
     public void GuardarEnMF()
