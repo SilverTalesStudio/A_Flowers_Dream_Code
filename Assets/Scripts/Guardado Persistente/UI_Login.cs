@@ -36,9 +36,8 @@ public class UI_Login : MonoBehaviour
     }
     void LoginSuccess()
     {
-        canvasHide.SetActive(false);
-        canvasShow.SetActive(true);
-        CargaBTN.interactable = true;
+        whenTryLogInText.text = "Sesión iniciada con éxito";
+        PlayerPrefs.SetInt("Guest", 1); //1 -> true
         AccountsManager.instance.GetUserData("UserData");
     }
     void ResetSuccess()
@@ -48,9 +47,17 @@ public class UI_Login : MonoBehaviour
 
     void SetGameSaveState(string value)
     {
-        Debug.Log("GameState"+value);
+        canvasHide.SetActive(false);
+        canvasShow.SetActive(true);
+        // Debug.Log("GameState"+value);
         SaveState userSave = JsonUtility.FromJson<SaveState>(value);
         userSave.setPlayerPrefs();
+
+        if (userSave.nodeSaved!=null)
+        {
+
+            CargaBTN.interactable = true;
+        }
     }
 
     public void UpdateEmail_FromInputField(string email_)
@@ -69,5 +76,10 @@ public class UI_Login : MonoBehaviour
     public void ResetPassword()
     {
         AccountsManager.instance.RecoverPassword(email);
+    }
+
+    public void setJugarInvitado()
+    {
+        PlayerPrefs.SetInt("Guest", 0); //0 -> false
     }
 }

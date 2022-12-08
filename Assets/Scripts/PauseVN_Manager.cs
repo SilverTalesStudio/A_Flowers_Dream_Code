@@ -2,15 +2,29 @@ using PlayFab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class PauseVN_Manager : MonoBehaviour
 {
     [SerializeField] DialogueRunner runner;
-    [SerializeField] GameObject GuardarBtn;
+    [SerializeField] Button GuardarBtn;
     public GameObject pause;
     public SceneChanger changer;
     public GameObject popUp;
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("Guest")==0)
+        {
+            GuardarBtn.interactable = false;
+        }
+        else
+        {
+            GuardarBtn.interactable = true;
+        }
+    }
+
     public void ActivatePause()
     {
         pause.SetActive(true);
@@ -39,7 +53,7 @@ public class PauseVN_Manager : MonoBehaviour
     IEnumerator Guardar_Coroutine()
     {
         yield return 0;
-        Debug.Log("Entra guardar corrutina");
+       // Debug.Log("Entra guardar corrutina");
         PlayerPrefs.SetString("nodeSaved", runner.CurrentNodeName);
         runner.SaveStateToPlayerPrefs();
         while (!PlayerPrefs.HasKey("YarnBasicSave"))
@@ -53,7 +67,7 @@ public class PauseVN_Manager : MonoBehaviour
             PlayerPrefs.GetString("PlayerMainCharacter"),
             PlayerPrefs.GetString("nodeSaved"),
             PlayerPrefs.GetString("Planes"),
-            "none",
+             PlayerPrefs.GetString("currentMusic"),
             PlayerPrefs.GetString("YarnBasicSave"),
             PlayerPrefs.GetString("NPC_allan"),
            PlayerPrefs.GetString("NPC_sophie"),

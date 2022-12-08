@@ -14,12 +14,13 @@ public class SceneChanger : MonoBehaviour
     public void playVN()
     {
         Loading.SetActive(true);
+
         SceneManager.LoadScene("VisualNovel");
     }
 
     public void loadStartedVN()
     {
-        if (PlayerPrefs.HasKey("nodeSaved") && PlayerPrefs.HasKey("YarnBasicSave"))
+        if (PlayerPrefs.HasKey("nodeSaved"))
         {
            playVN();
         }

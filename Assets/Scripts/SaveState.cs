@@ -43,7 +43,7 @@ public class SaveState
             PlayerPrefs.SetString("PlayerMainCharacter", PjCharacter);
           PlayerPrefs.SetString("nodeSaved", nodeSaved);
             PlayerPrefs.SetString("Planes", planes_Finde);
-             //Playerprefs musica
+           PlayerPrefs.SetString("currentMusic", musicaActual);
           PlayerPrefs.SetString("YarnBasicSave", varsInYarnJSON);
          PlayerPrefs.SetString("NPC_allan", npcAllan);
           PlayerPrefs.SetString("NPC_sophie", npcSophie);
