@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
     public void playVN()
     {
         Loading.SetActive(true);
+
         SceneManager.LoadScene("VisualNovel");
     }
 
