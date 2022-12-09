@@ -20,7 +20,7 @@ public class FlowersManager : MonoBehaviour
         {
             foreach (string f in FlowersInMenu.GetComponent<FlowersSpawnList>()._flowers)
             {
-                GameObject.Find(f + "(Clone)").GetComponent<BoxCollider2D>().enabled = false;
+                GameObject.Find(f + "(Clone)").GetComponent<PolygonCollider2D>().enabled = false;
             }
         }
     }
@@ -32,7 +32,7 @@ public class FlowersManager : MonoBehaviour
  
         foreach (string f in FlowersInMenu.GetComponent<FlowersSpawnList>()._flowers)
         {
-            GameObject.Find(f + "(Clone)").GetComponent<BoxCollider2D>().enabled = true;
+            GameObject.Find(f + "(Clone)").GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
 
