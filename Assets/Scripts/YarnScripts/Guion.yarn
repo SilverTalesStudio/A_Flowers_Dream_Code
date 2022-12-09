@@ -2994,7 +2994,7 @@ Tras sacar el paraguas y colocarlo sobre mí, extiendo la mano para agarrarle el
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week1_she_allan>>
+<<Scene illus_week1_allan_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<if get_player_mainCharacter() == "P">>
@@ -3293,7 +3293,7 @@ Antes de que pueda procesar la razón de su preocupación, mi expresión toma un
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week1_she_ethan>>
+<<Scene illus_week1_ethan_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 ¡Su cara se encuentra demasiado cerca de la mía!
@@ -6602,19 +6602,19 @@ Pero calcula mal, y mi risa se corta en seco cuando su mano se resbala y planta 
 <<Fade black 0.0 1.0 1.0>>
 <<wait 1.0>>
 <<StopAudioAll>>
-<<HideAll>>
+//<<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week1_she_allan>>//////////////AQUI ILLUS_WEEK2_SHE_ALLAN
-<<Fade black 1.0 0.0 1.0>>
-<<wait 3.0>>
+//<<Scene illus_week1_she_allan>>//////////////AQUI ILLUS_WEEK2_SHE_ALLAN
+//<<Fade black 1.0 0.0 1.0>>
+//<<wait 3.0>>
 En esta posición me puedo fijar más en las facciones de su cara y en esos profundos ojos miel clavados sobre los míos. ¿Estará haciendo él lo mismo?
 Sé que debería decir algo para salir de esta situación, pero quiero alargar este momento todo lo que pueda, quiero disfrutar de esta cercanía y calidez disponible solo entre Allan y yo ahora.
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 <<StopAudioAll>>
 <<HideAll>>
-<<PlayAudio murmullo_bar  0.4 loop>>
-<<Scene botanico_placeholder>>
+<<PlayAudio murmullo_bar 0.4 loop>>
+<<Scene bg_bar_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 <<wait 2.0>>
 <<Act Camarero sprt_camarero right bottom015 white>>
@@ -7359,7 +7359,7 @@ Hago lo que me ordena.
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio musica_momento_sinceridad 0.4 loop>>
-//<<Scene illus_week2_she_sophie>>---FALTA ILLUS WEEK2 SHE SOPHIE
+<<Scene illus_week2_sophie_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida .
@@ -7823,7 +7823,7 @@ Ethan me dirige una mirada entre sorprendido y asustado. Se me escapa una peque�
 <<wait 1.5>>
 <<StopAudioAll>>
 <<HideAll>>
-<<Scene illus_week2_she_ethan>>
+<<Scene illus_week2_ethan_fem>>
 <<PlayAudio murmullo_voces_en_teatro 0.2 loop>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
@@ -12254,7 +12254,7 @@ El beso comienza desesperado como si fuera algo efímero, pero cuando acaricio s
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_she_sophie>>
+<<Scene illus_week3_sophie_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<Scene bg_festival>>
@@ -12479,7 +12479,7 @@ Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura u
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_she_allan>>
+<<Scene illus_week3_allan_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>> 
 <<Scene bg_parajeNatural>> 
@@ -12729,7 +12729,7 @@ Entonces, un sonido estridente me sobresalta, pero antes de que pueda ver qué h
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_ethan>>//////////////AQUI ILLUS_WEEK2_SHE_ALLAN
+<<Scene illus_week3_ethan_fem>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<if get_player_mainCharacter() == "P">>
