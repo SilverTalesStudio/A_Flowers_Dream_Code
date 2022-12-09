@@ -10,7 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
 
-<<jump Sophie_lunes_sem1>>
+<<jump Pietro_viernes_sem3>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -1132,7 +1133,7 @@ Tras varios minutos de duda en los que me remuevo en el sitio por la incomodidad
     <<Act Pietro spt_pietro_angry right bottom015 white>>
     Pietro: <b> “Tsk. Me llamo Pietro” </b> 
     <<Act Pietro spt_pietro_neutral>>
-    {$name}: <b> “...[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/] 
+    {$name}: <b> “...[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/]” </b>  
     Vuelvo a sentirme [select value={$gender} M="indignado" F="indignada" NB="indignade"/] ante su clara molestia. Por lo menos ahora tengo un nombre que asociar a este pintor tan peculiar.  
 -> {$name}: “Disculpa... No puedo evitar sentir curiosidad por lo que estás haciendo”  
     <<Add_npc_likeability NPC_pietro 2>>
@@ -1563,7 +1564,7 @@ Tampoco me da tiempo a estar mucho con él porque en cuanto escucho las campanas
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
-Para mi gran sorpresa, la persona que acaba de entrar en la floristería es un reciente conocido. Un <b> “cliente” </b> muy artístico que vino ayer mismo a la tienda, aunque no sé si debería de llamarle así. 
+Para mi gran sorpresa, la persona que acaba de entrar en la floristería es un reciente conocido. Un “cliente” muy artístico que vino ayer mismo a la tienda, aunque no sé si debería de llamarle así. 
 El enigmático y peculiar artista, Pietro. Al igual que ayer, viene con su característica ropa holgada y sus zuecos. Un momento... ¿Eso que trae bajo su brazo es un taburete plegable?  
 
 Sin poder evitarlo, llamo su atención con un gesto exagerado.  
@@ -1704,7 +1705,7 @@ position: 424,345
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Pietro spt_pietro_neutral right bottom015 white>>
-{$name}: "Aquí tienes."
+{$name}: <b> “Aquí tienes.” </b>
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -4019,12 +4020,13 @@ position: -368,-504
 <<StopAudioAll>>
 <<HideAll>>
 <<Fade black 1.0 0.0 2.0>>
+<<Scene bg_floristeria>>
 <<wait 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
 // set Escenario FLORISTERÍA - MAÑANA 
-<<Scene bg_floristeria>>
+
 <<PlayAudio Musica_floristeria 0.4 loop>>
 
 <<PlayAudio timbre_puerta_floristeria 0.5>>
@@ -4048,6 +4050,7 @@ Cómo no... Ya estaba tardando en regresar a pintar de nuevo.
 De verdad, parece que voy a tener que plantearme seriamente si venderle la floristería o alquilarle la trastienda para que se quede a vivir aquí.
 Ya parece más suya que mía. 
 
+
 <<set $PietroPinta to get_pintarPietro()>>
 
 <<if get_player_mainCharacter() == "P">>
@@ -4055,6 +4058,7 @@ Ya parece más suya que mía.
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral>>
 <<endif>>
+
 
 <<if $PietroPinta == "yes">>
     Sin mediar ninguna otra palabra, mis ojos siguen inconscientemente la figura de Pietro.
@@ -4101,7 +4105,7 @@ Ya parece más suya que mía.
         <<elseif get_player_mainCharacter() == "S">>
             <<Act {$name} sprt_he_happy>>
         <<endif>>
-        {$name}: No me importa que pinte mientras yo trabajo, pero gracias por preocuparte.” </b>
+        {$name}: <b> “No me importa que pinte mientras yo trabajo, pero gracias por preocuparte.” </b>
         <<Act Sagrario sprt_sagrario_neutral>>
         Poso mi mano suavemente sobre su brazo con la esperanza de calmarla.
         Parece que funciona porque sus puños y cara se relajan. Sonrío para animarla.
@@ -4449,7 +4453,7 @@ Otra vez con el tema de la perfección...
     <<Act {$name} sprt_he_happy>>
 <<endif>>
 {$name}: <b> “¡Gracias! Simplemente me he inspirado en lo que me habías dicho y en lo que conozco de ti.” </b> 
-{$name}: <b> “Me alegro de que te guste." 
+{$name}: <b> “Me alegro de que te guste.” </b> 
 Pietro: <b> “Toma el dinero.” </b>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
