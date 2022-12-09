@@ -33,6 +33,8 @@ public class DragAndDrop : MonoBehaviour
         FlowerBase = GameObject.Find("FlowerBase");
         gameObject.transform.SetParent(FlowersList);
         transform.localScale = FlowerBase.transform.localScale;
+        gameObject.AddComponent<PolygonCollider2D>();
+        flowerCol = GetComponent<PolygonCollider2D>();
     }
 
     private void Start()
@@ -73,7 +75,7 @@ public class DragAndDrop : MonoBehaviour
 
             //Agranda la flor para colocarla en el ramo
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
-            transform.localScale = new Vector3(5f, 5f, 5f);
+            transform.localScale = new Vector3(50f, 50f, 50f);
         }       
     }
     private void OnMouseUp()

@@ -173,7 +173,7 @@ public class BouquetDelivery : MonoBehaviour
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if(f.name != "FlowerBase")
-                f.GetComponent<BoxCollider2D>().enabled = false;
+                f.GetComponent<PolygonCollider2D>().enabled = false;
         }
     }
 
@@ -185,7 +185,7 @@ public class BouquetDelivery : MonoBehaviour
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if (f.name != "FlowerBase")
-                f.GetComponent<BoxCollider2D>().enabled = true;
+                f.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
 

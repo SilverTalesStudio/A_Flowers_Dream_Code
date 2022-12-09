@@ -109,6 +109,7 @@ public class FlowersSpawnList : MonoBehaviour
             */
             spriteName = (i + 1).ToString();
             FlowerPrefab.GetComponent<Image>().sprite = Resources.Load<Sprite>("Flowers/" + spriteName);
+            FlowerPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flowers/" + spriteName);
             FlowerPrefab.GetComponent<Image>().preserveAspect = true;
             Instantiate(FlowerPrefab, new Vector3(xPos, yPos, zPos), FlowerPrefab.transform.localRotation);
             _flowers.Add(FlowerPrefab.name);
