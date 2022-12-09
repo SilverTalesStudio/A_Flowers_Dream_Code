@@ -2994,14 +2994,18 @@ Tras sacar el paraguas y colocarlo sobre mí, extiendo la mano para agarrarle el
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week1_allan_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week1_allan_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week1_allan_masc>>
+<<endif>>
+
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_shy left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_neutral left bottom015 white>>
-    //<<Act {$name} sprt_he_shy left bottom015 white>>
+    <<Act {$name} sprt_he_shy left bottom015 white>>
 <<endif>>
 En cuanto se cubre bajo él, entiendo lo que decía, para que quepamos los dos tenemos que estar muy cerca el uno del otro. Mi cara a escasos centímetros de su pecho, mi corazón se acelera. 
 <<if get_player_mainCharacter() == "P">>
@@ -3293,7 +3297,11 @@ Antes de que pueda procesar la razón de su preocupación, mi expresión toma un
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week1_ethan_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week1_ethan_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week1_ethan_masc>>
+<<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 ¡Su cara se encuentra demasiado cerca de la mía!
@@ -7359,7 +7367,11 @@ Hago lo que me ordena.
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio musica_momento_sinceridad 0.4 loop>>
-<<Scene illus_week2_sophie_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week2_sophie_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week2_sophie_masc>>
+<<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 Con una mano me sujeta la mano que le he ofrecido, y con la otra, me quita los cristales y cura la herida .
@@ -7498,7 +7510,7 @@ Debo admitir que me quería ver bien y, a diferencia de la última vez, parte de
 Es cierto que creo que estoy empezando a sentir algo por él. 
 Y encima la cita en el cine.
 Inconscientemente mi mente empieza a llenarse de escenas de películas románticas.
-¿Pasará algo así? Cita_Ethan_sem2
+¿Pasará algo así? 
 Conociendo a Ethan seguro que intenta algo, pero no sabría distinguir entre un gesto real o algo a lo que está acostumbrado.
 Este último pensamiento me entristece un poco, pero no voy a dejar que me arruine el día.
 Vamos a ver cómo se desenvuelve todo.
@@ -7823,7 +7835,11 @@ Ethan me dirige una mirada entre sorprendido y asustado. Se me escapa una peque�
 <<wait 1.5>>
 <<StopAudioAll>>
 <<HideAll>>
-<<Scene illus_week2_ethan_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week2_ethan_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week2_ethan_masc>>
+<<endif>>
 <<PlayAudio murmullo_voces_en_teatro 0.2 loop>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
@@ -12254,7 +12270,11 @@ El beso comienza desesperado como si fuera algo efímero, pero cuando acaricio s
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_sophie_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week3_sophie_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week3_sophie_masc>>
+<<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<Scene bg_festival>>
@@ -12479,7 +12499,11 @@ Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura u
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_allan_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week3_allan_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week3_allan_masc>>
+<<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>> 
 <<Scene bg_parajeNatural>> 
@@ -12729,7 +12753,11 @@ Entonces, un sonido estridente me sobresalta, pero antes de que pueda ver qué h
 <<StopAudioAll>>
 <<HideAll>>
 <<PlayAudio music_romantic 0.4 loop>>
-<<Scene illus_week3_ethan_fem>>
+<<if get_player_mainCharacter() == "P">>
+    <<Scene illus_week3_ethan_fem>>
+<<elseif get_player_mainCharacter() == "S">>
+    <<Scene illus_week3_ethan_masc>>
+<<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
 <<if get_player_mainCharacter() == "P">>
