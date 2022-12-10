@@ -8,8 +8,9 @@ public class AfinityOrder : MonoBehaviour
 {
     static List<NPC_stats> npcList;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("START AFIFNIT");
         npcList = new List<NPC_stats>();
         
         npcList.Add(NPC_stats.GetNPC_Stats("NPC_sagrario"));
@@ -18,13 +19,14 @@ public class AfinityOrder : MonoBehaviour
         npcList.Add(NPC_stats.GetNPC_Stats("NPC_ethan"));
         npcList.Add(NPC_stats.GetNPC_Stats("NPC_sophie"));
         
-
+        
         //Testing
-       /* npcList.Add(new NPC_stats("NPC_sagrario_prueba","Sagrario",-3));
-        npcList.Add(new NPC_stats("NPC_pietro_prueba", "Pietro", 8));
+        /*
+        npcList.Add(new NPC_stats("NPC_sagrario_prueba","Sagrario",-3));
+        npcList.Add(new NPC_stats("NPC_pietro_prueba", "Pietro", -200));
         npcList.Add(new NPC_stats("NPC_allan_prueba", "Allan", 20));
-        npcList.Add(new NPC_stats("NPC_ethan_prueba", "Ethan", -5));
-        npcList.Add(new NPC_stats("NPC_sophie_prueba", "Sophie", 2));
+        npcList.Add(new NPC_stats("NPC_ethan_prueba", "Ethan", -170));
+        npcList.Add(new NPC_stats("NPC_sophie_prueba", "Sophie", 50));
        */
        // Debug.Log(npcList.Last().name);
     }
@@ -33,7 +35,7 @@ public class AfinityOrder : MonoBehaviour
     [YarnFunction("get_last_node")]
     public static string getLastNode()
     {
-
+        Debug.Log("Cantidad de finales neturs/buenos: "+npcList.Count);
         npcList=npcList.OrderByDescending(x => x.likeability).ToList();
         string lastNode = npcList.Last().name;
         Debug.Log(npcList.Last().name);
@@ -51,6 +53,23 @@ public class AfinityOrder : MonoBehaviour
         if (npcList.Count > 0)
         {
             npcList.RemoveAt(npcList.Count - 1);
+        }
+    }
+    [YarnCommand("remove_bad_ends")]
+    public static void removeBadEnds()
+    {
+        Debug.Log("Remove bad ends");
+        List<NPC_stats> badEndsIdx = new List<NPC_stats>();
+        for (int i = 0; i < npcList.Count; i++)
+        {
+            if (npcList[i].likeability<-100)
+            {
+                badEndsIdx.Add(npcList[i]);
+            }
+        }
+        for (int i = 0; i < badEndsIdx.Count; i++)
+        {
+            npcList.RemoveAll(x => x.keyVar == badEndsIdx[i].keyVar);
         }
     }
 }

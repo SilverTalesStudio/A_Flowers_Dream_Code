@@ -9,8 +9,8 @@ position: -612,-485
 
 
 <<LeisteLibroEthanMartes null>>
-
-<<jump Sophie_lunes_sem1>>
+ 
+ <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -8083,6 +8083,7 @@ position: -143,644
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_sophie -150>>
 
 
 Aprovecho que la floristería está libre para salir del mostrador y recolocar el escaparate. Llevaba un tiempo queriendo cambiar las flores de exposición, pero antes no sabía por qué cambiarlas.
@@ -8125,6 +8126,7 @@ position: -143,644
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_sophie -150>>
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -8673,6 +8675,8 @@ position: -143,644
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_allan -150>>
+
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -9187,6 +9191,7 @@ position: -143,644
 <<Scene bg_floristeria>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_ethan -150>>
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -9862,6 +9867,7 @@ position: -120,41
 <<Fade black 1.0 0.0 2.0>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -9882,9 +9888,9 @@ position: -143,644
 <<HideAll>>
 <<Scene bg_calle>>
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
-
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_sagrario -150>>
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -10346,6 +10352,7 @@ position: -143,644
 <<PlayAudio muchedumbre_ambiente_calle 0.4 loop>>
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
+<<Add_npc_likeability NPC_sophie -150>>
 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -12802,6 +12809,7 @@ Comenzamos a bajar la colina aferrados de la mano. Ahora nos tenemos el uno al o
 title: Nexo_Semana4
 position: -143,644
 ---
+<<remove_bad_ends>>
 <<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
 <<set $AfinidadEthan to get_npc_likeability("NPC_ethan")>>
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
@@ -12812,18 +12820,18 @@ position: -143,644
 <<if get_nodes_left() > 1>>
     <<if get_last_node() == "Sagrario">>
         <<if $AfinidadSagrario >= 15>>
-        <<remove_last_node>>
+            <<remove_last_node>>
             <<jump Final_bueno_Sagrario>>
         <<else>>
-        <<remove_last_node>>
+            <<remove_last_node>>
             <<jump Final_neutro_Sagrario>>
         <<endif>>
     <<elseif get_last_node() == "Pietro">>
         <<if $AfinidadPietro >= 15>>
-        <<remove_last_node>>
+            <<remove_last_node>>
             <<jump Final_bueno_Pietro>>
         <<else>>
-        <<remove_last_node>>
+            <<remove_last_node>>
             <<jump Final_neutro_Pietro>>
         <<endif>>
     <<elseif get_last_node() == "Allan">>
@@ -13073,7 +13081,7 @@ Tampoco debo insistirle mucho, que sea natural. Sí, esa creo que va a ser mi t�
 <<endif>>
 Con determinación comienzo a hacer arreglos florares para ponerlos en el escaparate. Además, me sirven para practicar y probar nuevos conceptos y mezclas.
 Estos momentos en los que hago ramos para mí son en los que más exploro mi creatividad así que debo aprovecharlos al máximo hasta que venga alguien.
-{$name}: ¡Vamos {$name}!
+{$name}: <b> “¡Vamos {$name}!” </b>
 
 <<StopAudioAll>>
 <<HideAll>>
