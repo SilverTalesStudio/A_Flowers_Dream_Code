@@ -80,7 +80,7 @@ public class TutorialManager : MonoBehaviour
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if (f.name != "FlowerBase")
-                f.GetComponent<DragAndDrop>().enableClick = false;
+                f.GetComponent<DragAndDrop>().enableClick = true;
         }
         gameObject.SetActive(false);
     }
