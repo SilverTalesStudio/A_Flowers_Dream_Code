@@ -442,7 +442,7 @@ position: -688,-141
 <<endif>>
 <<set $resultado to get_minigame_result()>>
 
-{$name}: "Aquí tienes"
+{$name}: <b> “Aquí tienes.” </b> 
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -781,7 +781,7 @@ Cliente: <b> “Está bien. Gracias” </b>
 {$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
 Le cojo el dinero y le doy el ramo. 
 Cliente: <b> “Otro día me pasaré, que he visto que tienes mucha variedad de flores” </b> 
-{$name}: "Genial entonces. Hasta la próxima.” </b> 
+{$name}: <b> “Genial entonces. Hasta la próxima.” </b> 
 Cliente: <b> “¡Adiós!” </b> 
 <<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
 ===
@@ -1236,7 +1236,7 @@ Paseo por la calle mientras recuerdo los cruces y curvas que estoy atravesando p
 Mi objetivo de hoy es ir al super. No sabes lo que te falta hasta que lo necesitas. Ayer me di cuenta de que me faltan objetos básicos de papelería para tener a mano en la floristería.  
 [select value={$gender} M="Estresado" F="Estresada" NB="Estresade"/] por tener todo lo necesario para el tratamiento de flores y plantas, no me fijé en nada más y solo cogí los instrumentos específicos de florista. 
 No pasa nada, este paseo me viene bien. Entre la mudanza y el trabajo no he podido disfrutar del motivo por el que me mudé aquí. La ciudad.  
-Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo suficiente para estar bien comunicada en cuanto a medios de transporte, y lo más importante, 
+Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo suficiente para estar bien comunicada en cuanto a medios de transporte y lo más importante.
 Muchas calles peatonales y bien cuidadas, por lo que no hay ajetreo de ruido por coches además de lo que contaminan. 
 Doy la vuelta a la esquina y tras la terraza de la primera cafetería de la calle, diviso el reconocible logo de la cadena de supermercados. Esquivo las mesas del establecimiento y accedo a mi destino. 
 <<Fade black 0.0 1.0 2.0>>
@@ -1276,10 +1276,10 @@ La tensión de la tela donde botones y ojales se conocen lo confirma.
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
--> {$name}: <b> “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?” </b> 
+-> {$name}: “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?”
     <<Add_npc_likeability NPC_allan 2>>
     Cliente: <b> “Ese soy ya jajaja” </b> 
--> {$name}: <b> “Te conozco de algo, ¿cierto?” </b> 
+-> {$name}: “Te conozco de algo, ¿cierto?” 
     <<Add_npc_likeability NPC_allan -2>>
     Cliente: <b> “El chico de los Lirios de sapo, ¿recuerdas?” </b> 
     {$name}: <b> “Ahhh sí, es verdad” </b> 
@@ -1289,8 +1289,8 @@ Cliente: <b> “¡AH! Es verdad, entre los nervios y las prisas se me pasó comp
 <<Hide Cliente>>
 {$name}: <b> “[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/] de saber por fin tu nombre jajaja, ya te puedo cambiar en el contacto. Yo me llamo {$name}.” </b> 
 Allan: <b> “¿Cómo me tenías apuntado? Espera no me lo digas. Es algo relacionado con los Lirios de sapo ¿no? ” </b>
--> {$name}: <b> “Tin tin tin, acertaste” </b> 
--> {$name}: <b> “Podría decirte que es sobre las Pasifloras, pero te estaría mintiendo” </b> 
+-> {$name}: “Tin tin tin, acertaste” 
+-> {$name}: “Podría decirte que es sobre las Pasifloras, pero te estaría mintiendo”
 Allan: <b> “Lo suponía, es un nombre muy característico la verdad, así que te entiendo” </b> 
 Allan: <b> “Por cierto, ¿necesitas ayuda? Es que te he visto dudando mucho con los rotuladores” </b> 
 {$name}: <b> “Pues sí, yo venía buscando algo polivalente que me sirviera para escribir en tarjetas, folios, cartulinas... ” </b> 
@@ -1298,11 +1298,11 @@ Allan: <b> “Por cierto, ¿necesitas ayuda? Es que te he visto dudando mucho co
 Allan: <b> “Si quieres una recomendación, yo cogería estos dos” </b> 
 Allan: <b> “Coger uno que sirva para todo es imposible, y si te lo venden como tal no solo te están mintiendo, sino que además te estarán cobrando a precio de oro algo que no es verdad.” </b> 
 Allan: <b> “Estos dos en cambio, abarcan juntos todas las necesidades que vas a tener, y te sigue saliendo mucho más barato que el otro, aun siendo dos.” </b> 
--> {$name}: <b> “Creo que, aun así, voy a coger el primero que he visto” </b> 
+-> {$name}: “Creo que, aun así, voy a coger el primero que he visto”
     <<Add_npc_likeability NPC_allan -2>>
     {$name}: <b> “Entiendo lo que dices, pero aun así prefiero uno para todo. Lo voy a llevar siempre encima, y así no tengo que andar pensando en nada más” </b> 
     Allan: <b> “Bueno, eres tú la que se va a gastar el dinero así que coge el que prefieras” </b> 
--> {$name}: <b> “¡Tienes razón! Se nota que sabes de esto, muchas gracias” </b> 
+-> {$name}: “¡Tienes razón! Se nota que sabes de esto, muchas gracias” 
     <<Add_npc_likeability NPC_allan 2>>
     Allan: <b> “Ya verás como no te arrepentirás” </b> 
 {$name}: <b> “Bueno, voy a seguir con la lista que esto solo era lo primero que tenía que comprar” </b> 
@@ -1337,7 +1337,7 @@ Le cojo del brazo para que para de hablar.
     <<Act Allan sprt_allan_neutral>>
     Allan: <b> “Vale, pues avisame cuando lo sepas” </b> 
     {$name}: <b> “Claro, no te preocupes” </b> 
--> {$name}: <b> “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado” </b> 
+-> {$name}: “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado”
     //[3][plan rechazado -] 
     <<Add_npc_likeability NPC_allan -1>>
     <<Act Allan sprt_allan_shy_frustrated>>
