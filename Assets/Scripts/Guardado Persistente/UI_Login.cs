@@ -54,7 +54,7 @@ public class UI_Login : MonoBehaviour
     {
         whenTryLogInText.text = "Sesión iniciada con éxito";
         loading.SetActive(true);
-        PlayerPrefs.SetInt("Guest", 1); //1 -> true
+        PlayerPrefs.SetInt("Guest", 0); //0 -> no invitado
         AccountsManager.instance.GetUserData("UserData");
     }
     void ResetSuccess()
@@ -98,6 +98,9 @@ public class UI_Login : MonoBehaviour
 
     public void setJugarInvitado()
     {
-        PlayerPrefs.SetInt("Guest", 0); //0 -> false
+        Debug.Log("settea invitado");
+        PlayerPrefs.SetInt("Guest", 1); //0 -> true
+        Debug.Log("Is guest? " + PlayerPrefs.GetInt("Guest"));
+
     }
 }

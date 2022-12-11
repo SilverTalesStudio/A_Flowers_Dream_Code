@@ -15,13 +15,15 @@ public class PauseVN_Manager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Is guest? " + PlayerPrefs.GetInt("Guest"));
+
         if (PlayerPrefs.GetInt("Guest")==0)
         {
-            GuardarBtn.interactable = false;
+            GuardarBtn.interactable = true;
         }
         else
         {
-            GuardarBtn.interactable = true;
+            GuardarBtn.interactable = false;
         }
     }
 
