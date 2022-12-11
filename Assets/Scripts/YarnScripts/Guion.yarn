@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
  
- <<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -278,7 +278,7 @@ Desconocida: <b> “¡Tú! ¿No habrás visto a un chico muy descarado y sin ver
 ¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... 
 Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
 
--> {$name}: <b> “No sé si puede ser la persona a quien buscas...” </b> 
+-> {$name}: “No sé si puede ser la persona a quien buscas...”
     <<Add_npc_likeability NPC_ethan -1>>
     {$name}: ...pero alguien ha entrado y se ha escondido detrás del mostrador
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. 
@@ -334,7 +334,8 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     Cruzo los brazos ante su respuesta [select value={$gender} M="indignado" F="indignada" NB="indignade"/]. ¿Cómo puede comportarse así después de la que ha montado y las palabras que me dijo?  
     {$name}: <b> “Bueno, pues si te encuentras bien es mejor que te vayas. Yo tengo mucho trabajo que hacer” </b>  
     Me mira con un puchero.  
-    Chico: <b> “¿Te comportas así conmigo después de tu traición? Debería ser yo el molesto. Además, por lo que puedo ver no tienes mucho trabajo que hacer, más bien deberías agradecer mi compañía” </b>  
+    Chico: <b> “¿Te comportas así conmigo después de tu traición? Debería ser yo el molesto.” </b>  
+    Chico: <b> “Además, por lo que puedo ver no tienes mucho trabajo que hacer, más bien deberías agradecer mi compañía” </b>  
     Mi ceño se frunce más. Al ver que no me retracto, suelta un suspiro y sale del mostrador para dejarme pasar.  
     Chico: <b> “Suspiro. No te pongas así [select value={$gender} M="guapo" F="guapa" NB="guape"/]. Venga, ya que estoy aquí deja que compre algo” </b> 
     No puedo evitar suspirar de cansancio ante su actitud, pero a pesar de todo sigue siendo mi primer cliente y debo atenderle.
@@ -346,7 +347,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     {$name}: <b> “Suspiro. Dime, ¿qué te puedo poner?” </b>  
     //Minijuego
     <<jump Minijuego_Ethan_lunes_sem1>> 
--> {$name}: <b> “... No, lo siento” </b> 
+-> {$name}: “... No, lo siento” 
     <<Add_npc_likeability NPC_ethan 2>>
     {$name}: <b> “No me suena haber visto entrar a nadie con esa descripción aquí” </b>
     Ante mi declaración, la mujer me mira con desconfianza. Vuelve a inspeccionar con ojo crítico la floristería.  
@@ -664,15 +665,18 @@ Cliente: <b> “¿Sabías que los Lirios de sapo se llaman en realidad Tricyrtis
 Cliente: <b> “Porque suele tener los nectarios tan hinchados que se parecen a eso. Siempre me hacen este tipo de nombres. En español queda extraño, pero como es en griego pues queda bien ¿no?” </b>
 Mientras habla de plantas toda su cara se ilumina y sus ojos brillan. Es una sensación que conozco bien. Una actitud que aparece cuando hablas de algo que te encanta con alguien que te va a escuchar. 
 Y cuando toca hablar de flores, no pienso decepcionar.
-{$name}: <b> “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda. Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda” </b>
+{$name}: <b> “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda.” </b>
+{$name}: <b> “Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda” </b>
 Cliente: <b> “Exacto, suficiente con decir Lirio de sapo. No he querido decir el nombre en griego por si no lo conocías, pero claro que lo sabes, eres florista después de todo.” </b> 
 {$name}: <b> “Claro y además me apasionan, no solo porque trabaje de ello, siempre fueron hobby para mí.” </b>
-Cliente: <b> “¡A mí también! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño. La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” </b> 
+Cliente: <b> “¡A mí también! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño.” </b>  
+Cliente: <b> “La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” </b> 
 {$name}: <b> “Te entiendo perfectamente. Antes no podía dar rienda suelta a comprar todas las macetas que quería, pero ahora que no tengo límites estoy aprovechando a tener las que siempre quise” </b>
 Con mi comentario, la conversación se vuelve incómoda y el ambiente se tensa un poco. No debería haber dicho algo negativo con lo alegre que estaba siendo la charla. 
 Sintiéndome [select value={$gender} M="encerrado" F="encerrada" NB="encerrade"/] continúo la conversación cambiando de tema antes de que él hable. No tengo ni fuerza ni ganas de responder a lo que sé que me va a preguntar. 
 {$name}: <b> “Respecto a las flores que decías, lamentablemente no las tengo ahora mismo.” </b>
-{$name}: <b> “Sé que son increíbles, pero he abierto hace poco y esas solo se suelen pedir para encargos muy concretos, por lo que al no ser tan rentables para el día a día no me puedo permitir tenerlas siempre disponibles.” </b>
+{$name}: <b> “Sé que son increíbles, pero he abierto hace poco y esas solo se suelen pedir para encargos muy concretos” </b>
+{$name}: <b> “Al no ser tan rentables para el día a día, no me puedo permitir tenerlas siempre disponibles.” </b>
 {$name}: <b> “Lo siento mucho.” </b>
 <<Act Cliente sprt_allan_shy_sad>>
 La mala noticia le entristece, pero no tanto como pensaba. Es una decepción controlada, como si hubiera sabido que esto iba a pasar.
@@ -917,12 +921,12 @@ position: 38,445
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
+<<Act Anciana sprt_sagrario_happy right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 3>>
 No me ha dado mucha información. Es más, lo que me ha dicho parecía que fuera para enmascarar el motivo real. Pero bueno creo que lo he hecho muy bien para la información que tenía. 
 Le muestro el resultado con toda mi ilusión. 
 {$name}: <b> “Aquí tiene. ¿Qué le parece?” </b> 
-<<Act Sagrario sprt_sagrario_happy>>
+
 Anciana: <b> “Es... perfecto... No sé cómo lo has hecho para darme justo lo que necesitaba solo con lo que te he dicho” </b> 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
