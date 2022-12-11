@@ -12341,7 +12341,7 @@ Sophie: <b> “¿Qué? ¡No! Lo he hecho porque quería, me gustas {$name}. Pens
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_embarrassed>>
 <<endif>>
-{$name}: <b> “¡Y así es! Sophie me gustas mucho. Ahora mismo soy la persona  más feliz del mundo por tenerte conmigo” </b>
+{$name}: <b> “¡Y así es! Sophie me gustas mucho. Ahora mismo soy la persona más feliz del mundo por tenerte conmigo” </b>
 Parece imposible que alguien pueda ruborizarse más, pero Sophie desafía los límites.
 Sophie: <b> “Yo... siento lo mismo” </b>
 Estoy muy feliz de escuchar su respuesta. Sé que Sophie no es la persona que más expresa sus sentimientos del mundo, por eso valoro mucho que me diga esto.
@@ -12349,6 +12349,7 @@ Entrelazo su brazo con el mío y le agarro la mano mientras la miro con una sonr
 {$name}: <b> “¿Volvemos a la feria?” </b>
 Sophie: <b> “Vale” </b>
 Caminamos [select value={$gender} M="juntos" F="juntas" NB="juntes"/] sin despegarnos en ningún momento. No puedo esperar a ver que me depara el futuro con ella.
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12562,7 +12563,7 @@ Extiende la palma de su mano bocarriba, coloca la mía encima y las entrelazamos
 Continuamos el resto de la ruta mucho más cercanos que antes. Jugueteamos empujándonos con suavidad por el camino. 
 Ahora no hay temor al rechazo, expresamos libremente nuestros sentimientos.
 Es un día perfecto, no puedo estar más feliz con mi decisión. A partir de aquí solo tengo ganas de ver que me depara el futuro con él.
-
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
@@ -12830,6 +12831,7 @@ Cuando logramos separarnos, me percato de que nos hemos perdido los fuegos artif
 Este momento con Ethan ha sido mejor que eso, un momento corazón a corazón.
 Comenzamos a bajar la colina aferrados de la mano. Ahora nos tenemos el uno al otro.
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
