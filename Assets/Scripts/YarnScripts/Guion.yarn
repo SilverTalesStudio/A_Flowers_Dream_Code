@@ -7,12 +7,10 @@ position: -612,-485
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-<<Add_npc_likeability NPC_allan 100>>
+
 <<LeisteLibroEthanMartes null>>
 
-<<jump cita_Allan_sem3>> 
- 
-//<<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -6629,7 +6627,7 @@ Cojo el ticket antes de que vea Allan el precio, saco dos billetes de 20.
 <<endif>>
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 Allan: <b> “Ey, ¿qué intentas? Déjame ver cuánto es, pagamos a medias” </b>
-Ignorándole, meto el dinero en el cuenco y se lo ofrezco al camarero que lo coge y se lo lleva. Sólo queda esperar a las vueltas.
+Ignorándole, meto el dinero en el cuenco y se lo ofrezco al camarero que lo coge y se lo lleva. Sólo queda esperar al cambio.
 Allan: <b> “{$name}, en serio, dime cuanto es” </b>
 {$name}: <b> “No es nada” </b>
 Me acerco el ticket al pecho para distanciarlo de él.
@@ -6662,7 +6660,7 @@ Sé que debería decir algo para salir de esta situación, pero quiero alargar e
 <<wait 2.0>>
 <<Act Camarero sprt_camarero right bottom015 white>>
 Camarero: <b> “Ejem” </b> Tose sobre su puño.
-Camarero: <b> “Aquí tienes las vueltas” </b>
+Camarero: <b> “Aquí tienes el cambio” </b>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_shy left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -6761,7 +6759,7 @@ Siempre tengo un mal despertar, pero hoy no quería que se me pegaran las sában
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Limón sprt_limon right center white>>
+<<Act Limón sprt_limon right lowercenter white>>
 Limón: <b> “¡Miaaauu!” </b>
 {$name}: <b> “Bueno días Limón, como hoy no duermo hasta tarde no ha hecho falta que me saltaras encima para despertarme, ¿eh?” </b>
 Limón: <b> “Miau” </b>
@@ -6783,7 +6781,8 @@ Mientras friego los platos mi móvil empieza a sonar. Me seco las manos y cojo e
 Leah: <b> “Vaya, vaya. Otra vez me ha tocado llamar a mí” </b>
 {$name}: <b> “Perdóname Leah, se me ha vuelto a pasar...” </b>
 Leah: <b> “Menos mal que ya nos conocemos, y sabía que te iba a pasar” </b>
-Leah: <b> “Al menos durante la semana hemos podido hablar por quésapp. Aunque, más que hablar, ha sido un monólogo mío contándote absolutamente todas mis movidas por pequeñas que fueran jajaja” </b>
+Leah: <b> “Al menos durante la semana hemos podido hablar por quésapp.” </b>
+Leah: <b> “Aunque, más que hablar, ha sido un monólogo mío contándote absolutamente todas mis movidas por pequeñas que fueran jajaja” </b>
 {$name}: <b> “Y me gusta que me las cuentes, así estamos al día, aunque no nos veamos” </b>
 {$name}: <b> “Bueno, realmente tú me tienes al día, no al revés. No he podido hablar mucho” </b>
 Leah: <b> “Ojo, ¿significa eso que tienes algo interesante que contarme? ¡Qué alivio que te haya llamado! Porque tiene pinta de que me vas a decir cosas jugosas.” </b>
@@ -8227,7 +8226,7 @@ Sophie: <b> “Tsk, y pensar que en algún momento quise conocer más a [select 
 Sophie: <b> “Bah, que desperdicio” </b>
 <<Move Sophie offright bottom015 1.0>>
 <<wait 1.0>>
-<<Hide Sophie>>
+<<Hide Sophie>>Sophie_lunes_sem3
 Con esto se gira y camina hacia la puerta menos violentamente después de haberlo soltado todo conmigo.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_resignation>>
@@ -8376,7 +8375,7 @@ Sophie: <b> “Buenos días {$name}” </b>
 <<endif>>
 <<Act Sophie sprt_sophie_neutral>>
 {$name}: <b> “¿Quieres que te ponga hoy un ramo?” </b>
-Sophie: <b> “Pues sí, ¿recuerdas que te dije que los ramos eran para mi hermana? Necesito otro para y este es muy importante...” </b>
+Sophie: <b> “Pues sí, ¿recuerdas que te dije que los ramos eran para mi hermana? Necesito otro para mi hermana y este es muy importante para mí...” </b>
 Creo que ya tengo la suficiente confianza con Sophie para preguntarle.
 <<StopAudioAll>>
 <<PlayAudio musica_momento_sinceridad 0.4 loop>>
@@ -8387,10 +8386,11 @@ Sophie: Suspira. <b> “Puede que tengas razón...” </b>
 Sophie: <b> “Mi hermana...” </b>
 <<Act Sophie sprt_sophie_sad>>
 Sophie: <b> “No está bien.  Está en el hospital de manera indefinida por ahora y no la dejan salir más que al patio de allí” </b>
-Sophie: <b> “Estoy todo el tiempo que puedo con ella, los enfermeros incluso me tratan como si viviera en allí” </b>
+Sophie: <b> “Estoy todo el tiempo que puedo con ella, los enfermeros incluso me tratan como si viviera allí” </b>
 Sophie: <b> “Pero da igual todo lo que haga que nada cambia, aún no sabe cómo solucionar su enfermedad” </b>
 <<Act Sophie sprt_sophie_sobbing>>
-Sophie: <b> “No te imaginas la impotencia que siento al ver a mi hermana tumbada en la cama del hospital sin poder hacer nada, sin entender qué le pasa, sin saber cómo calmar su dolor cuando le dan episodios” </b>
+Sophie: <b> “No te imaginas la impotencia que siento al ver a mi hermana tumbada en la cama del hospital” </b>
+Sophie: <b> “Sin poder hacer nada, sin entender qué le pasa, sin saber cómo calmar su dolor cuando le dan episodios” </b>
 Sophie: <b> “Sólo puedo abrazarla y susurrarle al oído que todo va a estar bien, que no está sola. Los ataques no duran mucho rato, pero la paz no es muy duradera.” </b>
 Sophie: <b> “Y si eso no fuese suficiente, lo peor es esperar a que suceda el siguiente. Saber que más tarde volverá el dolor.” </b>
 Sophie: <b> “Todos los días lucha para aguantar y seguir adelante, para que los médicos por fin den con la tecla correcta. ¿No se merece mi hermana que todo le salga bien?” </b>
@@ -8403,7 +8403,7 @@ Sophie: Suspira. <b> “Y, aun así, no saben nada todavía...” </b>
 <<endif>>
 {$name}: <b> “Lamento muchísimo todo lo que está pasando tu hermana, nadie se merece sufrir así, y menos siendo tan joven” </b>
 {$name}: <b> “¿Es posible que aún puedan descubrir su enfermedad?” </b>
-Sophie: <b> “Le van a hacer por la tarde una prueba nueva en el hospital y es posible que de una vez por toda descubran qué le pasa de una vez por todas.” </b>
+Sophie: <b> “Le van a hacer por la tarde una prueba nueva en el hospital y es posible que de una vez por toda descubran qué le pasa.” </b>
 Sophie: <b> “Diría que no me quedan fuerzas para ilusionarme más, pero sería mentira. Siempre que haya posibilidades de que mi hermana se recuperase, me aferraré a ellas con todo mi ser.” </b>
 Sophie: <b> “Por eso el ramo de hoy es tan importante, quiero que antes de que la duerman para la prueba y después de que despierte, huela y vea el ramo que le he regalado.” </b>
 Sophie: <b> “Para que esté acompañada mientras no me dejen entrar los enfermeros. Para que no se sienta sola.” </b>
@@ -8416,6 +8416,7 @@ Sophie: <b> “Para que esté acompañada mientras no me dejen entrar los enferm
 {$name}: <b> “Con lo fuerte que es tu hermana, confía en que será capaz de superarlo todo.” </b>
 Sophie: <b> “Sí... Eso espero.” </b>
 {$name}: <b> “Dime qué tenías pensado y me pongo manos a la obra” </b>
+<<StopAudioAll>>
 
 <<jump Minijuego_Sophie_lunes_sem3>>
 ===
@@ -8558,7 +8559,8 @@ position: -120,41
 {$name}: <b> “Por cierto, pensando en tu hermana se me había ocurrido que esto os podría gustar a las dos” </b>
 Saco un pequeño sobre con el logo de la floristería y se lo extiendo para que lo coja.
 Sophie: <b> “¿Qué es?” </b>
-{$name}: <b> “Son semillas de tulipán. Como me has dicho que tu hermana pasa mucho tiempo en el hospital, se me ha ocurrido que tener que cuidar unas flores podría ayudarle a hacer su día más entretenido” </b>
+{$name}: <b> “Son semillas de tulipán.” </b>
+{$name}: <b> “Como me has dicho que tu hermana pasa mucho tiempo en el hospital, se me ha ocurrido que tener que cuidar unas flores podría ayudarle a hacer su día más entretenido” </b>
 {$name}: <b> “Y ver crecer una planta con el esfuerzo que le has dedicado es muy satisfactorio” </b>
 Sophie: <b> “Es muy buena idea, casi me molesta que no haya caído yo en ella para hacerla.” </b>
 Sophie: <b> “¿Cuánto es el sobre?” </b>
@@ -8571,7 +8573,7 @@ Sophie: <b> “Je... Ahora va a tener más ganas de conocerte después de esto.�
    <<Act {$name} sprt_he_shy>>
 <<endif>>
 {$name}: <b> “¿Me conoce?” </b>
-Sophie: <b> “Sí, alguna vez le he hablado de ti, aparte de lo de la discusión” </b>.
+Sophie: <b> “Sí, alguna vez le he hablado de ti, aparte de lo de la discusión.” </b>
 ->Responder [select value={$gender} M="emocionado" F="emocionada" NB="emocionade"/]
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_happy>>
@@ -8689,7 +8691,7 @@ position: -143,644
 Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. 
 No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
 <<PlayAudio timbre_puerta_floristeria 0.5>>
-[select value={$gender} M="Ensimismado" F="Ensimismada" NB="Ensimismade"/] con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
+Ensimismada con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
 {$name}: <b> “¡Un segundo! Le atiendo ahora en cuanto termine con esto.” </b>
 <<if get_npc_likeability("NPC_allan") <= -10>>
     <<jump Allan_final_malo>>
@@ -8992,8 +8994,9 @@ position: 45,-49
 <<Act Allan sprt_allan_neutral right bottom015 white>>
 <<Add_npc_likeability NPC_allan 1>>
 
-Allan: <b> “Gracias por el ramo, es justo lo que necesito. No es que destaque en nada realmente, pero muchas veces es mejor un ramo bien equilibrado, que arriesgar y que quede descompensado.” </b>
-{$name}: <b> “Ya, puede que haya pecado de [select value={$gender} M="conservador" F="conservadora" NB="conservadore"/] en este ramo, pero quería que saliera bien” </b>
+Allan: <b> “Gracias por el ramo, es justo lo que necesito.” </b> 
+Allan: <b> “No es que destaque en nada realmente, pero muchas veces es mejor un ramo bien equilibrado, que arriesgar y que quede descompensado.” </b>
+{$name}: <b> “Ya, puede que haya pecado de conservadora en este ramo, pero quería que saliera bien” </b>
 {$name}: <b> “Después de todo eres un buen amigo, y no quiero que salgas de aquí con un mal ramo.” </b>
 Al escuchar mis palabras sonríe ampliamente.
 Allan: <b> “Aprecio un montón tu intención. No te preocupes que va a cumplir perfectamente su propósito” </b>
@@ -9069,7 +9072,7 @@ Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. H
     {$name}: <b> “La pena es que no tengo coche así que no puedo ir” </b> 
     <<Act Allan sprt_allan_shy_lookingdown>>
     Allan: <b> “Yo te puedo llevar si quieres. Tengo coche.” </b>
-    Allan: <b> “De hecho, en un principio había pensado comentártelo para que fuéramos [select value={$gender} M="juntos" F="juntos" NB="juntes"/]...” </b>
+    Allan: <b> “De hecho, en un principio había pensado comentártelo para que fuéramos juntos...” </b>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_shy>>
     <<elseif get_player_mainCharacter() == "S">>
@@ -9078,7 +9081,8 @@ Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. H
     {$name}: <b> “Me gusta mucho la idea.” </b>
     <<Act Allan sprt_allan_shy_lookingforward>>
     Allan: <b> “Se me había ocurrido que podríamos ir este domingo.” </b>
-    Allan: <b> “Justo en la ciudad hay un festival este fin de semana, y la verdad es que ese tipo de eventos me agobia. Mi calle pilla cerca de la celebración, así que en fechas así intento salir afuera.” </b>
+    Allan: <b> “Justo en la ciudad hay un festival este fin de semana, y la verdad es que ese tipo de eventos me agobia.” </b>
+    Allan: <b> “Mi calle pilla cerca de la celebración, así que en fechas así intento salir afuera.” </b>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_neutral_final>>
     <<elseif get_player_mainCharacter() == "S">>
@@ -9642,7 +9646,7 @@ Ethan: <b> “¿Es que no puedo venir simplemente a ver a mi persona favorita?�
 {$name}: <b> “Por cierto Ethan, ¿al final pudiste encontrar a alguien con quién ir a ver la película?” </b>
 Ethan: <b> “Sí, me encontré a una amiga de camino al cine y se apuntó toda emocionada.” </b>
 Ethan: <b> “Casi no tuve ni que insistir jajaja.” </b>
-Sí, sí, una <b> [select value={$gender} M="“amigo”" F="“amiga”" NB="“amigue”"/] </b>. Tiene pinta de que era una de sus admiradoras.
+Sí, sí, una <b> “amiga” </b>. Tiene pinta de que era una de sus admiradoras.
 Siempre le siguen a todos lados.
 {$name}: <b> “Me alegro entonces. Me sentí un poco mal de no haber podido quedar contigo.” </b>
 {$name}: <b> “Pero al menos pudiste disfrutar de la película jajaja. ¿Qué tal estuvo?” </b>
@@ -10295,7 +10299,7 @@ Sagrario: <b> “Sinceramente... esperaba más.” </b>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_disappointed>>
 <<endif>>
-{$name}: <b> “Lo siento mucho, la verdad es que me he puesto muy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] haciéndolo.” </b>
+{$name}: <b> “Lo siento mucho, la verdad es que me he puesto muy nerviosa haciéndolo.” </b>
 {$name}: <b> “Lo quería hacer tan bien que al final no he conseguido lo que quería. He dudado mucho.” </b>
 Sagrario: <b> “A lo mejor te he puesto demasiada presión...” </b>
 Sagrario: <b> “Por lo menos parte del ramo es rescatable, así que sigo pudiéndolo usar para mis cosas.” </b>
@@ -10943,7 +10947,7 @@ Pero Jacob es como un depredador al acecho. Nunca ha dejado de perseguirme.
 
 <<Act Jacob sprt_jacob_smile>>
 Jacob: <b> “Ha sido difícil encontrarte, pero tengo mis métodos...” </b>
-Jacob: <b> “Ahora déjate de comportarte como [select value={$gender} M="un niño" F="uan niña" NB="une niñe"/], y vuelve a casa. Si te comportas no tendré en cuenta esta rabieta” </b>
+Jacob: <b> “Ahora deja de comportarte como [select value={$gender} M="un niño" F="una niña" NB="une niñe"/], y vuelve a casa. Si te comportas no tendré en cuenta esta rabieta” </b>
 {$name}: <b> “¡Déjame en paz!” </b>
 Del miedo no puedo moverme, él aprovecha que estoy [select value={$gender} M="petrificado" F="petrificada" NB="petrificade"/] para acercarse rápidamente y agarrarme violentamente del brazo.
 {$name}: <b> “¡NO!” </b>
@@ -11023,7 +11027,7 @@ Su expresión completamente seria y peligrosa.
 Ethan: <b> “Qué trates a {$name} de esa manera me repugna. [select value={$gender} M="Él" F="Ella" NB="Elle"/] solo piensa en el bien de los demás.” </b>
 Ethan se inclina sobre él.
 Cuando sus caras están a escasos centímetros parece que algo hace clic en la mente de Jacob.
-<<Act Jacob sprt_jacob_smile>>
+<<Act Jacob sprt_jacob_smile center bottom015 white>>
 Jacob: <b> “Ahh... Ya veo” </b>
 Jacob: <b> “Así que me has sustituido por este tipo, ¿eh?” </b>
 Jacob: <b> “No sabes estar [select value={$gender} M="solo" F="sola" NB="sole"/], siempre necesitas depender de alguien” </b>
@@ -11319,13 +11323,12 @@ Clavo mis ojos temblorosos en Sophie. Está enfadada y mira fijamente como me ti
     <<Act Jacob sprt_jacob_angry>>
     Jacob: <b> “¡Ey! No te entrometas. Es una conversación privada entre mi [select value={$gender} M="novio" F="novia" NB="novie"/] y yo” </b>
     <<Hide Jacob>>
-    <<Act Sophie sprt_sophie_neutral right bottom015 white>>
+    <<Act Sophie sprt_sophie_angry center bottom015 white>>
     Sophie: <b> “Como si es tu hermana, te ha dicho que la sueltes así que eso vas a hacer” </b>
     Noto como Sophie le aprieta mucho más fuerte que antes y cuando nota que Jacob afloja su agarre tira de él para alejarlo de mí.
 ->No involucrarla
     No puedo meter a Sophie en esto, es mi problema y yo debería arreglarlo, no arrastrarla conmigo.
     Busca una respuesta en mis ojos, algo que le diga cómo actuar, pero yo desvío la mirada.
-    <<Hide Sophie>>
     <<Act Jacob sprt_jacob_neutral right bottom015 white>> 
     Jacob: <b> “¿No ves que estas interrumpiendo una conversación privada? Vete de aquí” </b>
     <<if get_player_mainCharacter() == "P">>
@@ -11350,7 +11353,7 @@ Clavo mis ojos temblorosos en Sophie. Está enfadada y mira fijamente como me ti
 <<endif>>
 Se queda a mi lado, un poco delante mía para interponerse entre ambos.
 Gira su cabeza para comprobar mi estado. Ahora que no estoy en contacto con él, me siento más [select value={$gender} M="seguro" F="segura" NB="segure"/]. Sophie ve mi actitud algo más calmada y es suficiente para ella, vuelve a enfocarse en Jacob.
-<<Act Jacob sprt_jacob_smile>>
+<<Act Jacob sprt_jacob_smile right bottom015 white>>
 Jacob: <b> “Ahh... Ya veo” </b>
 Jacob: <b> “Así que me has sustituido por esta tipa, ¿eh?” </b>
 Jacob: <b> “No sabes estar [select value={$gender} M="solo" F="sola" NB="sole"/], siempre necesitas depender de alguien” </b>
@@ -11537,7 +11540,7 @@ Allan: <b> “Oí los gritos desde fuera. ¿Ha ocurrido algo?” </b>
     Antes de terminar la frase, Allan ya está corriendo hacia mí.
     Allan: <b> “¡Ey!¡¿Qué crees que estás haciendo?!” </b>
     <<Act Jacob sprt_jacob_angry>>
-    Jacob: <b> “No te entrometas. Es una conversación privada entre mi [select value={$gender} M="novio" F="novia" NB="novie"/] y yo.” </b>
+    Jacob: <b> “No te entrometas. Es una conversación privada entre mi novia y yo.” </b>
     Allan: <b> “Me da igual, te ha dicho que la sueltes.” </b>
     Allan posa su mano en el hombro de Jacob y empieza a hacer presión.
 ->No involucrarle
@@ -11558,8 +11561,7 @@ Allan: <b> “Oí los gritos desde fuera. ¿Ha ocurrido algo?” </b>
     Noto como Allan aprieta más fuerte el brazo de Jacob. En todo momento de reojo me mira para comprobar mi estado.
 <<Act Jacob sprt_jacob_furious>>
 Jacob: <b> “¿Qué te crees que estás haciendo?” </b>
-Parece que Allan ha hecho la suficiente fuerza para hacerle daño.
-Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
+Parece que Allan ha hecho la suficiente fuerza para hacerle daño. Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_sad>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11567,7 +11569,7 @@ Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de 
 <<endif>>
 Jacob le observa fijamente e hincha el pecho intentando intimarle, pero no funciona. Entre la diferencia de altura y de físico que existe entre los dos, a ojos de un extraño, el esfuerzo de Jacob es patético.
 Allan ni siquiera le presta tanta atención, sigue atento a mí. Jacob se da cuenta de esto y adquiere una postura burlona.
-<<Act Jacob sprt_jacob_smile>>
+<<Act Jacob sprt_jacob_smile center bottom015 white>>
 Jacob: <b> “Ahh... Ya veo” </b>
 Jacob: <b> “Así que me has sustituido por este tipo, ¿eh?” </b>
 Jacob: <b> “No sabes estar [select value={$gender} M="solo" F="sola" NB="sole"/], siempre necesitas depender de alguien” </b>
@@ -11577,7 +11579,7 @@ Jacob cambia su enfoque y pasa a dirigirse a Allan.
 Jacob: <b> “Tú, no sé qué te habrá dicho, pero deberías alejarte de [select value={$gender} M="él" F="ella" NB="elle"/]. Te manipula y te encierra para que tu vida gire en torno a cuidarle y protegerle.” </b>
 Jacob: <b> “Y cuando le apetece considera que <b> “le agobias” </b> y que estás siendo tóxico y te abandona.” </b>
 Jacob: <b> “Va a hacer lo mismo contigo. Así que deja que me encargue, yo sé tratar con [select value={$gender} M="él" F="ella" NB="elle"/].” </b>
-¿Cómo puede decir esas cosas de mí? Agarro a Allan de la manga para que me vea y le miro [select value={$gender} M="desesperado" F="desesperada" NB="desesperade"/].
+¿Cómo puede decir esas cosas de mí? Agarro a Allan de la manga para que me vea y la miro desesperada.
 {$name}: <b> “¡Eso es mentira! Yo no soy así, tienes que creerme a mí no a mi ex por favor” </b>
 Allan asiente instantáneamente. La seguridad que tiene a la hora de confiar en mí me reconforta tanto que es mi ancla a la realidad en este momento.
 Jacob: <b> “¿Ves? Está intentando dejarme a mí de malo.” </b>
@@ -11668,8 +11670,7 @@ Su cara es pura preocupación y nervios. La determinación de antes ha desaparec
 <<endif>>
 Comienzo a llorar.
 {$name}: <b> “Pensé que por fin había escapado de él, que ya no lo tenía que sufrir más. Y ha venido a mi floristería y me ha dicho esas... cosas... yo...” </b>
-Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase.
-Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
+Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase. Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
 Tras un rato así soy capaz de recomponerme y parar de llorar. Allan rompe el abrazo y lentamente me sujeta con ambas manos el brazo que previamente agarraba Jacob.
 Allan: <b> “¿Me dejas verlo?” </b>
 <<if get_player_mainCharacter() == "P">>
@@ -11684,7 +11685,7 @@ Allan: <b> “Se va a volver un moratón, pero no llegará a más” </b>
 {$name}: <b> “Gracias por todo, Allan. No tenías por qué involucrarte y aun así lo has hecho.” </b>
 Allan: <b> “¿Cómo me iba a quedar parado mientras te denigraba de esa manera? Si me hubiera pasado a mí, hubiera querido que me ayudaran, así que eso he hecho” </b>
 {$name}: <b> “Ya, pero no sabías nada de mi relación con él, puede que otra persona hubiera pensado que era una conversación normal entre los dos...” </b>
-Allan: <b> “Eso no era una conversación normal, nadie debería de aguantar eso. Además, te he visto, estabas [select value={$gender} M="aterrado" F="aterrada" NB="aterrade"/]. Nunca te había visto así, tenía que actuar.” </b>
+Allan: <b> “Eso no era una conversación normal, nadie debería de aguantar eso. Además, te he visto, estabas aterrada. Nunca te había visto así, tenía que actuar.” </b>
 {$name}: <b> “Muchas gracias... Me alegro de haberte conocido, Allan.” </b>
 Me sonríe cálidamente mientras me mira a los ojos.
 Allan: <b> “Yo también me alegro de que haberte conocido. Eres una persona muy importante para mí” </b>.
@@ -11793,7 +11794,7 @@ Los paquetes restantes de la mudanza no pueden ser, porque ya me avisaron de que
 
 Suena una notificación en mi teléfono y lo cojo sin darle mucha importancia. Hasta que veo varios mensajes de quéssap y me fijo en el remitente.
 <<citaFin null>>
-<<if get_npc_likeability("NPC_allan") >= 15 or get_npc_likeability("NPC_sophie") >= 15 or get_npc_likeability("NPC_ethan") >= 15>>
+<<if has_Ethan_Plan() ==true or has_Sophie_Plan() ==true or has_Allan_Plan() ==true>>
     <<StopAudioAll>>
     <<jump con_plan_sem3>>
 <<else>>
@@ -11858,8 +11859,7 @@ position: -143,644
 <<endif>>
 
 {$name}: <b> “¡Es verdad! ¡Se me había olvidado completamente!” </b>
-<<Act Limón sprt_limon right center white>>
-<<PlayAudio maullo_gato 1.0>>
+<<Act Limón sprt_limon right lowercenter white>>
 Limón: <b> “¡Miauu!” </b>
 Me sorprende desde el respaldo del sofá, debe haber subido saltando desde atrás.
 <<if get_player_mainCharacter() == "P">>
@@ -11869,7 +11869,6 @@ Me sorprende desde el respaldo del sofá, debe haber subido saltando desde atrá
 <<endif>>
 {$name}: <b> “No, Limón, no me refería a ti” </b>
 {$name}: <b> “Cómo me voy a olvidar de ti si todo el rato me pides mimos” </b>
-<<PlayAudio maullo_gato 1.0>>
 Limón: <b> “Miau” </b>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final>>
@@ -11881,15 +11880,13 @@ El gato salta del respaldo a mi regazo haciéndome daño al caer sobre mí, pero
 Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de mí, hecho una bola.
 {$name}: <b> “¿Qué hago, Limón? No me acordaba de que tenía planes mañana.” </b>
 
-<<if get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_ethan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
+<<if has_Ethan_Plan() == true && has_Sophie_Plan() == true && has_Allan_Plan() == true>>
     {$name}: <b> “De hecho, me pidieron quedar Allan, Sophie e Ethan. Los tres para mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirle a todos que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
     {$name}: <b> “¿Tú qué harías, Limón?” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “¿Miau?” </b>
     {$name}: <b> “No sé para qué te pregunto, si lo máximo que has salido es al balcón” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “Miauu...” </b>
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11947,15 +11944,13 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<jump cita_Allan_sem3>>
-<<elseif get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
+<<elseif has_Sophie_Plan() ==true && has_Allan_Plan() ==true>>
     {$name}: <b> “Ay, es verdad, fueron Sophie y Allan los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
     {$name}: <b> “¿Tú qué harías Limón?” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “¿Miau?” </b>
     {$name}: <b> “No sé para qué te pregunto si lo máximo que has salido es al balcón” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “Miauu...” </b>
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -11985,15 +11980,13 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<else>>
         <<jump cita_Allan_sem3>>
     <<endif>>
-<<elseif get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_ethan") >= 15 >>
+<<elseif has_Ethan_Plan() ==true && has_Allan_Plan() ==true>>
     {$name}: <b> “Ay, es verdad, fueron Ethan y Allan los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
     {$name}: <b> “¿Tú qué harías Limón?” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “¿Miau?” </b>
     {$name}: <b> “No sé para qué te pregunto si lo máximo que has salido es al balcón” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “Miauu...” </b>
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -12025,15 +12018,13 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<jump cita_Allan_sem3>>
         <<Add_npc_likeability NPC_allan 30>>
     <<endif>>
-<<elseif get_npc_likeability("NPC_ethan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
+<<elseif has_Ethan_Plan() ==true && has_Sophie_Plan() ==true>>
     {$name}: <b> “Ay, es verdad, fueron Ethan y Sophie los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
     {$name}: <b> “¿Tú qué harías Limón?” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “¿Miau?” </b>
     {$name}: <b> “No sé para qué te pregunto si lo máximo que has salido es al balcón” </b>
-    <<PlayAudio maullo_gato 1.0>>
     Limón: <b> “Miauu...” </b>
     <<Hide Limón>>
     Indignado se gira para mirar hacia otro lado.
@@ -12063,7 +12054,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<else>>
         <<jump cita_Sophie_sem3>>
     <<endif>>
-<<elseif get_npc_likeability("NPC_sophie") >= 15>>
+<<elseif has_Sophie_Plan() ==true>>
     <<citaFin Sophie>>
     <<Add_npc_likeability NPC_sophie 30>>
     <<set $nombreCita to get_date()>>
@@ -12081,7 +12072,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Sophie_sem3>>
-<<elseif get_npc_likeability("NPC_allan") >= 15>>
+<<elseif has_Allan_Plan() ==true>>
     <<citaFin Allan>>
     <<Add_npc_likeability NPC_allan 30>>
     <<set $nombreCita to get_date()>>
@@ -12099,7 +12090,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Allan_sem3>>
-<<elseif get_npc_likeability("NPC_ethan") >= 15>>
+<<elseif has_Ethan_Plan() ==true>>
     <<citaFin Ethan>>
     <<Add_npc_likeability NPC_ethan 30>>
     <<set $nombreCita to get_date()>>
@@ -12350,7 +12341,7 @@ Sophie: <b> “¿Qué? ¡No! Lo he hecho porque quería, me gustas {$name}. Pens
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_embarrassed>>
 <<endif>>
-{$name}: <b> “¡Y así es! Sophie me gustas mucho. Ahora mismo soy la persona  más feliz del mundo por tenerte conmigo” </b>
+{$name}: <b> “¡Y así es! Sophie me gustas mucho. Ahora mismo soy la persona más feliz del mundo por tenerte conmigo” </b>
 Parece imposible que alguien pueda ruborizarse más, pero Sophie desafía los límites.
 Sophie: <b> “Yo... siento lo mismo” </b>
 Estoy muy feliz de escuchar su respuesta. Sé que Sophie no es la persona que más expresa sus sentimientos del mundo, por eso valoro mucho que me diga esto.
@@ -12358,11 +12349,12 @@ Entrelazo su brazo con el mío y le agarro la mano mientras la miro con una sonr
 {$name}: <b> “¿Volvemos a la feria?” </b>
 Sophie: <b> “Vale” </b>
 Caminamos [select value={$gender} M="juntos" F="juntas" NB="juntes"/] sin despegarnos en ningún momento. No puedo esperar a ver que me depara el futuro con ella.
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<jump Prev_Nexo_Semana4>>
+<<jump Nexo_Semana4>>
 ===
 
 title: cita_Allan_sem3
@@ -12408,7 +12400,7 @@ Allan: <b> “Llegamos en quince minutos así que en nada estamos.” </b>
 <<endif>>
 <<Act Allan sprt_allan_neutral>>
 ¿Cómo de bonito será el camino que vamos a hacer allí? Sólo queda esperar a verlo.
-Aún estoy algo [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] por lo que pasó ayer, pero ir al monte con Allan es lo que necesito para despejarme.  
+Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo que necesito para despejarme.  
 <<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
 <<set $AfinidadEthan to get_npc_likeability("NPC_ethan")>>
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
@@ -12419,7 +12411,7 @@ Aún estoy algo [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/
     <<elseif get_player_mainCharacter() == "S">>
         <<Act {$name} sprt_he_disappointed>>
     <<endif>>
-    No puedo dejar de darle vueltas. Pasé mucho miedo, pero me siento más [select value={$gender} M="seguro" F="segura" NB="segure"/] a su lado. 
+    No puedo dejar de darle vueltas. Pasé mucho miedo, pero me siento más segura a su lado. 
     {$name}: <b> “Oye Allan” </b>
     Allan: <b> “¿Sí?” </b>
     {$name}: <b> “Muchas gracias otra vez por lo de ayer. No sé qué habría hecho sin ti.” </b>
@@ -12563,7 +12555,7 @@ Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura u
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_embarrassed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_embarrassed left bottom015 white>>
+    <<Act {$name} sprt_he_embarrassed>>
 <<endif>>
 <<Act Allan sprt_allan_shy_lookingforward right bottom015 white>>
 Cuando nos separamos estamos ambos sonrojados, pero esta vez es Allan quien toma la iniciativa.  
@@ -12571,12 +12563,12 @@ Extiende la palma de su mano bocarriba, coloca la mía encima y las entrelazamos
 Continuamos el resto de la ruta mucho más cercanos que antes. Jugueteamos empujándonos con suavidad por el camino. 
 Ahora no hay temor al rechazo, expresamos libremente nuestros sentimientos.
 Es un día perfecto, no puedo estar más feliz con mi decisión. A partir de aquí solo tengo ganas de ver que me depara el futuro con él.
-
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<jump Prev_Nexo_Semana4>>
+<<jump Nexo_Semana4>>
 ===
 
 title: cita_Ethan_sem3
@@ -12839,18 +12831,11 @@ Cuando logramos separarnos, me percato de que nos hemos perdido los fuegos artif
 Este momento con Ethan ha sido mejor que eso, un momento corazón a corazón.
 Comenzamos a bajar la colina aferrados de la mano. Ahora nos tenemos el uno al otro.
 
+<<StopAudioAll>>
 <<HideAll>>
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<jump Prev_Nexo_Semana4>>
-===
-title: Prev_Nexo_Semana4
-position: -143,644
----
-<<StopAudioAll>>
-<<HideAll>>
-<<update_ends>>
 <<jump Nexo_Semana4>>
 ===
 title: Nexo_Semana4
@@ -13247,7 +13232,7 @@ Además, el dinero que me van a pagar compensa el cierre de estos dos días.
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_happy>>
 <<endif>>
-Y no podría estar más [select value={$gender} M="ilusionado" F="ilusionada" NB="ilusionade"/]. ¡Me han pedido arreglos florales para una boda!
+Y no podría estar más ilusionada. ¡Me han pedido arreglos florales para una boda!
 Saber que mis flores van a ser las protagonistas de un día tan importante me emociona.
 Qué bonito es el amor...
 Mi mente inconscientemente forma la cara de Ethan en mi mente. Si hay alguien que sepa más de romance es él.
