@@ -10,7 +10,7 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
  
- <<jump Sophie_lunes_sem1>>
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -278,7 +278,7 @@ Desconocida: <b> “¡Tú! ¿No habrás visto a un chico muy descarado y sin ver
 ¿Un chico? Observo de reojo el mostrador ¿Estará ocultándose de esta mujer? ¿Debería delatarle o debería ayudarle? No sé quién es o cuáles son sus intenciones... 
 Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], asiento y vuelvo a dirigirme a la mujer para darle mi respuesta. 
 
--> {$name}: <b> “No sé si puede ser la persona a quien buscas...” </b> 
+-> {$name}: “No sé si puede ser la persona a quien buscas...”
     <<Add_npc_likeability NPC_ethan -1>>
     {$name}: ...pero alguien ha entrado y se ha escondido detrás del mostrador
     Ante mi declaración, la mujer aprieta los dientes y con grandes zancadas se acerca al mostrador de la floristería. 
@@ -334,7 +334,8 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     Cruzo los brazos ante su respuesta [select value={$gender} M="indignado" F="indignada" NB="indignade"/]. ¿Cómo puede comportarse así después de la que ha montado y las palabras que me dijo?  
     {$name}: <b> “Bueno, pues si te encuentras bien es mejor que te vayas. Yo tengo mucho trabajo que hacer” </b>  
     Me mira con un puchero.  
-    Chico: <b> “¿Te comportas así conmigo después de tu traición? Debería ser yo el molesto. Además, por lo que puedo ver no tienes mucho trabajo que hacer, más bien deberías agradecer mi compañía” </b>  
+    Chico: <b> “¿Te comportas así conmigo después de tu traición? Debería ser yo el molesto.” </b>  
+    Chico: <b> “Además, por lo que puedo ver no tienes mucho trabajo que hacer, más bien deberías agradecer mi compañía” </b>  
     Mi ceño se frunce más. Al ver que no me retracto, suelta un suspiro y sale del mostrador para dejarme pasar.  
     Chico: <b> “Suspiro. No te pongas así [select value={$gender} M="guapo" F="guapa" NB="guape"/]. Venga, ya que estoy aquí deja que compre algo” </b> 
     No puedo evitar suspirar de cansancio ante su actitud, pero a pesar de todo sigue siendo mi primer cliente y debo atenderle.
@@ -346,7 +347,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     {$name}: <b> “Suspiro. Dime, ¿qué te puedo poner?” </b>  
     //Minijuego
     <<jump Minijuego_Ethan_lunes_sem1>> 
--> {$name}: <b> “... No, lo siento” </b> 
+-> {$name}: “... No, lo siento” 
     <<Add_npc_likeability NPC_ethan 2>>
     {$name}: <b> “No me suena haber visto entrar a nadie con esa descripción aquí” </b>
     Ante mi declaración, la mujer me mira con desconfianza. Vuelve a inspeccionar con ojo crítico la floristería.  
@@ -441,7 +442,7 @@ position: -688,-141
 <<endif>>
 <<set $resultado to get_minigame_result()>>
 
-{$name}: "Aquí tienes"
+{$name}: <b> “Aquí tienes.” </b> 
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -664,15 +665,18 @@ Cliente: <b> “¿Sabías que los Lirios de sapo se llaman en realidad Tricyrtis
 Cliente: <b> “Porque suele tener los nectarios tan hinchados que se parecen a eso. Siempre me hacen este tipo de nombres. En español queda extraño, pero como es en griego pues queda bien ¿no?” </b>
 Mientras habla de plantas toda su cara se ilumina y sus ojos brillan. Es una sensación que conozco bien. Una actitud que aparece cuando hablas de algo que te encanta con alguien que te va a escuchar. 
 Y cuando toca hablar de flores, no pienso decepcionar.
-{$name}: <b> “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda. Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda” </b>
+{$name}: <b> “Sí, siempre hacen lo mismo. En otro idioma queda mejor. Lo mismo pasa con hirta que significa peluda.” </b>
+{$name}: <b> “Por el revés de los pétalos la superficie da una sensación peluda. Ya has visto que aquí obviamos el peluda” </b>
 Cliente: <b> “Exacto, suficiente con decir Lirio de sapo. No he querido decir el nombre en griego por si no lo conocías, pero claro que lo sabes, eres florista después de todo.” </b> 
 {$name}: <b> “Claro y además me apasionan, no solo porque trabaje de ello, siempre fueron hobby para mí.” </b>
-Cliente: <b> “¡A mí también! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño. La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” </b> 
+Cliente: <b> “¡A mí también! No en la parte de trabajar de ello claro, pero siempre me han gustado desde pequeño.” </b>  
+Cliente: <b> “La primera compra que hice cuando me independicé fueron unos cactus pequeños, antes que cualquier mueble jejeje” </b> 
 {$name}: <b> “Te entiendo perfectamente. Antes no podía dar rienda suelta a comprar todas las macetas que quería, pero ahora que no tengo límites estoy aprovechando a tener las que siempre quise” </b>
 Con mi comentario, la conversación se vuelve incómoda y el ambiente se tensa un poco. No debería haber dicho algo negativo con lo alegre que estaba siendo la charla. 
 Sintiéndome [select value={$gender} M="encerrado" F="encerrada" NB="encerrade"/] continúo la conversación cambiando de tema antes de que él hable. No tengo ni fuerza ni ganas de responder a lo que sé que me va a preguntar. 
 {$name}: <b> “Respecto a las flores que decías, lamentablemente no las tengo ahora mismo.” </b>
-{$name}: <b> “Sé que son increíbles, pero he abierto hace poco y esas solo se suelen pedir para encargos muy concretos, por lo que al no ser tan rentables para el día a día no me puedo permitir tenerlas siempre disponibles.” </b>
+{$name}: <b> “Sé que son increíbles, pero he abierto hace poco y esas solo se suelen pedir para encargos muy concretos” </b>
+{$name}: <b> “Al no ser tan rentables para el día a día, no me puedo permitir tenerlas siempre disponibles.” </b>
 {$name}: <b> “Lo siento mucho.” </b>
 <<Act Cliente sprt_allan_shy_sad>>
 La mala noticia le entristece, pero no tanto como pensaba. Es una decepción controlada, como si hubiera sabido que esto iba a pasar.
@@ -777,7 +781,7 @@ Cliente: <b> “Está bien. Gracias” </b>
 {$name}: Creo que podría haberlo hecho mejor, pero parece que cumple. Pero bueno lo hecho, hecho está. 
 Le cojo el dinero y le doy el ramo. 
 Cliente: <b> “Otro día me pasaré, que he visto que tienes mucha variedad de flores” </b> 
-{$name}: "Genial entonces. Hasta la próxima.” </b> 
+{$name}: <b> “Genial entonces. Hasta la próxima.” </b> 
 Cliente: <b> “¡Adiós!” </b> 
 <<jump Fin_ramas_minijuego_Allan_miercoles_sem1>>
 ===
@@ -917,12 +921,12 @@ position: 38,445
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-<<Act Anciana sprt_sagrario_neutral right bottom015 white>>
+<<Act Anciana sprt_sagrario_happy right bottom015 white>>
 <<Add_npc_likeability NPC_sagrario 3>>
 No me ha dado mucha información. Es más, lo que me ha dicho parecía que fuera para enmascarar el motivo real. Pero bueno creo que lo he hecho muy bien para la información que tenía. 
 Le muestro el resultado con toda mi ilusión. 
 {$name}: <b> “Aquí tiene. ¿Qué le parece?” </b> 
-<<Act Sagrario sprt_sagrario_happy>>
+
 Anciana: <b> “Es... perfecto... No sé cómo lo has hecho para darme justo lo que necesitaba solo con lo que te he dicho” </b> 
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
@@ -1232,7 +1236,7 @@ Paseo por la calle mientras recuerdo los cruces y curvas que estoy atravesando p
 Mi objetivo de hoy es ir al super. No sabes lo que te falta hasta que lo necesitas. Ayer me di cuenta de que me faltan objetos básicos de papelería para tener a mano en la floristería.  
 [select value={$gender} M="Estresado" F="Estresada" NB="Estresade"/] por tener todo lo necesario para el tratamiento de flores y plantas, no me fijé en nada más y solo cogí los instrumentos específicos de florista. 
 No pasa nada, este paseo me viene bien. Entre la mudanza y el trabajo no he podido disfrutar del motivo por el que me mudé aquí. La ciudad.  
-Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo suficiente para estar bien comunicada en cuanto a medios de transporte, y lo más importante, 
+Fue la elección perfecta. Precios de alquiler asequibles, no muy grande pero lo suficiente para estar bien comunicada en cuanto a medios de transporte y lo más importante.
 Muchas calles peatonales y bien cuidadas, por lo que no hay ajetreo de ruido por coches además de lo que contaminan. 
 Doy la vuelta a la esquina y tras la terraza de la primera cafetería de la calle, diviso el reconocible logo de la cadena de supermercados. Esquivo las mesas del establecimiento y accedo a mi destino. 
 <<Fade black 0.0 1.0 2.0>>
@@ -1272,10 +1276,10 @@ La tensión de la tela donde botones y ojales se conocen lo confirma.
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
--> {$name}: <b> “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?” </b> 
+-> {$name}: “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?”
     <<Add_npc_likeability NPC_allan 2>>
     Cliente: <b> “Ese soy ya jajaja” </b> 
--> {$name}: <b> “Te conozco de algo, ¿cierto?” </b> 
+-> {$name}: “Te conozco de algo, ¿cierto?” 
     <<Add_npc_likeability NPC_allan -2>>
     Cliente: <b> “El chico de los Lirios de sapo, ¿recuerdas?” </b> 
     {$name}: <b> “Ahhh sí, es verdad” </b> 
@@ -1285,8 +1289,8 @@ Cliente: <b> “¡AH! Es verdad, entre los nervios y las prisas se me pasó comp
 <<Hide Cliente>>
 {$name}: <b> “[select value={$gender} M="Encantado" F="Encantada" NB="Encantade"/] de saber por fin tu nombre jajaja, ya te puedo cambiar en el contacto. Yo me llamo {$name}.” </b> 
 Allan: <b> “¿Cómo me tenías apuntado? Espera no me lo digas. Es algo relacionado con los Lirios de sapo ¿no? ” </b>
--> {$name}: <b> “Tin tin tin, acertaste” </b> 
--> {$name}: <b> “Podría decirte que es sobre las Pasifloras, pero te estaría mintiendo” </b> 
+-> {$name}: “Tin tin tin, acertaste” 
+-> {$name}: “Podría decirte que es sobre las Pasifloras, pero te estaría mintiendo”
 Allan: <b> “Lo suponía, es un nombre muy característico la verdad, así que te entiendo” </b> 
 Allan: <b> “Por cierto, ¿necesitas ayuda? Es que te he visto dudando mucho con los rotuladores” </b> 
 {$name}: <b> “Pues sí, yo venía buscando algo polivalente que me sirviera para escribir en tarjetas, folios, cartulinas... ” </b> 
@@ -1294,11 +1298,11 @@ Allan: <b> “Por cierto, ¿necesitas ayuda? Es que te he visto dudando mucho co
 Allan: <b> “Si quieres una recomendación, yo cogería estos dos” </b> 
 Allan: <b> “Coger uno que sirva para todo es imposible, y si te lo venden como tal no solo te están mintiendo, sino que además te estarán cobrando a precio de oro algo que no es verdad.” </b> 
 Allan: <b> “Estos dos en cambio, abarcan juntos todas las necesidades que vas a tener, y te sigue saliendo mucho más barato que el otro, aun siendo dos.” </b> 
--> {$name}: <b> “Creo que, aun así, voy a coger el primero que he visto” </b> 
+-> {$name}: “Creo que, aun así, voy a coger el primero que he visto”
     <<Add_npc_likeability NPC_allan -2>>
     {$name}: <b> “Entiendo lo que dices, pero aun así prefiero uno para todo. Lo voy a llevar siempre encima, y así no tengo que andar pensando en nada más” </b> 
     Allan: <b> “Bueno, eres tú la que se va a gastar el dinero así que coge el que prefieras” </b> 
--> {$name}: <b> “¡Tienes razón! Se nota que sabes de esto, muchas gracias” </b> 
+-> {$name}: “¡Tienes razón! Se nota que sabes de esto, muchas gracias” 
     <<Add_npc_likeability NPC_allan 2>>
     Allan: <b> “Ya verás como no te arrepentirás” </b> 
 {$name}: <b> “Bueno, voy a seguir con la lista que esto solo era lo primero que tenía que comprar” </b> 
@@ -1333,7 +1337,7 @@ Le cojo del brazo para que para de hablar.
     <<Act Allan sprt_allan_neutral>>
     Allan: <b> “Vale, pues avisame cuando lo sepas” </b> 
     {$name}: <b> “Claro, no te preocupes” </b> 
--> {$name}: <b> “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado” </b> 
+-> {$name}: “Me gustaría ir, pero la verdad es que ya tengo el fin de semana ocupado”
     //[3][plan rechazado -] 
     <<Add_npc_likeability NPC_allan -1>>
     <<Act Allan sprt_allan_shy_frustrated>>
