@@ -55,7 +55,7 @@ public class Orders_Manager : MonoBehaviour
         string cliente = PlayerPrefs.GetString("clienteActual");
         string pedidoFijo = PlayerPrefs.GetString("fijo");
 
-        character = "Sophie";
+        character = cliente;
         ActivateCharacterImage(character);
 
         order = Random.Range(1, 11);
