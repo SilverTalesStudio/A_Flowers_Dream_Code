@@ -24,7 +24,26 @@ public class UI_CreateAccount : MonoBehaviour
     void CreateAccountFailed(string error)
     {
         whenTryCreateText.gameObject.SetActive(true);
-        whenTryCreateText.text = error;
+        if(password.Length < 6)
+        {
+            whenTryCreateText.text = "La contraseña debe tener más de 6 caracteres";
+        }
+        else if (error == "User not found")
+        {
+            whenTryCreateText.text = "Usuario no encontrado";
+        }
+        else if (error == "Invalid input parameters")
+        {
+            whenTryCreateText.text = "Parámetros introducidos no válidos";
+        }
+        else if (error == "Invalid email address or password")
+        {
+            whenTryCreateText.text = "Email o contraseña inválidos";
+        }
+        else
+        {
+            whenTryCreateText.text = error;
+        }
     }
     void CreateAccountSuccess()
     {

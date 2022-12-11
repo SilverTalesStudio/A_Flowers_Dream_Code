@@ -51,7 +51,7 @@ public class AccountsManager : MonoBehaviour
             },
             error =>
             {
-                Debug.Log(error);
+            
                 OnCreateFailed.Invoke(error.ErrorMessage);
             }
         ); ;

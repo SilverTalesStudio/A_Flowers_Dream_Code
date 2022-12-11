@@ -9,6 +9,7 @@ public class UI_Login : MonoBehaviour
     [SerializeField] TMP_Text whenTryLogInText;
     [SerializeField] GameObject canvasHide;
     [SerializeField] GameObject canvasShow;
+    [SerializeField] GameObject loading;
     [SerializeField] Button CargaBTN;
     string email;
     string password;
@@ -32,11 +33,27 @@ public class UI_Login : MonoBehaviour
     void LoginFailed(string error)
     {
         whenTryLogInText.gameObject.SetActive(true);
-        whenTryLogInText.text = error;
+        if (error =="User not found")
+        {
+            whenTryLogInText.text = "Usuario no encontrado";
+        }
+        else if (error == "Invalid input parameters")
+        {
+            whenTryLogInText.text = "Parámetros introducidos no válidos";
+        }
+        else if (error == "Invalid email address or password")
+        {
+            whenTryLogInText.text = "Email o contraseña inválidos";
+        }
+        else
+        {
+            whenTryLogInText.text = error;
+        }
     }
     void LoginSuccess()
     {
         whenTryLogInText.text = "Sesión iniciada con éxito";
+        loading.SetActive(true);
         PlayerPrefs.SetInt("Guest", 1); //1 -> true
         AccountsManager.instance.GetUserData("UserData");
     }
@@ -48,6 +65,7 @@ public class UI_Login : MonoBehaviour
     void SetGameSaveState(string value)
     {
         canvasHide.SetActive(false);
+        loading.SetActive(false);
         canvasShow.SetActive(true);
         // Debug.Log("GameState"+value);
         SaveState userSave = JsonUtility.FromJson<SaveState>(value);
