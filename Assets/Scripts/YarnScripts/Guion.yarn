@@ -10,7 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
  
-<<jump Sophie_lunes_sem1>>
+<<jump Finde_sem1>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -344,7 +345,7 @@ Ligeramente [select value={$gender} M="decidido" F="decidida" NB="decidide" /], 
     <<elseif get_player_mainCharacter() == "S">>
         <<Act {$name} sprt_he_neutral>>
     <<endif>>
-    {$name}: <b> “Suspiro. Dime, ¿qué te puedo poner?” </b>  
+    {$name}: Suspiro. <b> “Dime, ¿qué te puedo poner?” </b>  
     //Minijuego
     <<jump Minijuego_Ethan_lunes_sem1>> 
 -> {$name}: “... No, lo siento” 
@@ -718,7 +719,7 @@ position: -118,-144
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-{$name}: "Aquí tienes."
+{$name}: <b> “Aquí tienes.” </b> 
 //<<Act Cliente sprt_allan_neutral right bottom015 white>>
 //Saltos a las diferentes ramas
 <<if $resultado == "bien">>
@@ -1278,7 +1279,7 @@ La tensión de la tela donde botones y ojales se conocen lo confirma.
 <<Act Cliente sprt_allan_neutral right bottom015 white>>
 -> {$name}: “Hey, hola. Eres el chico que vino ayer buscando las flores exóticas, ¿no?”
     <<Add_npc_likeability NPC_allan 2>>
-    Cliente: <b> “Ese soy ya jajaja” </b> 
+    Cliente: <b> “Ese soy yo jajaja” </b> 
 -> {$name}: “Te conozco de algo, ¿cierto?” 
     <<Add_npc_likeability NPC_allan -2>>
     Cliente: <b> “El chico de los Lirios de sapo, ¿recuerdas?” </b> 
@@ -1351,7 +1352,7 @@ Voz: <b> “¡¡ALLAN!! ¡¿Quieres venir de una vez?!” </b>
 <<endif>>
 Allan: <b> “Se ve que ya no puedo retrasarlo más. Mucha suerte con tus compras y vamos hablando.” </b> 
 Se despide mientras corre a donde le llaman.
-Allan: <b> “¡Mucha suerte con tu turno!” </b> 
+{$name}: <b> “¡Mucha suerte con tu turno!” </b> 
 <<Move Allan offright bottom015 1.0>>
 <<wait 1.5>>
 <<Hide Allan>>
@@ -1444,7 +1445,7 @@ position: 426,-38
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
-{$name}: "Aquí tienes."
+{$name}: <b> “Aquí tienes.” </b> 
 //Saltos a las diferentes ramas
 
 <<if $resultado == "bien">>
@@ -1531,7 +1532,7 @@ position: 423,125
     <<Act {$name} sprt_he_neutral left bottom015 white>>
 <<endif>>
 <<Act Borde sprt_sophie_neutral right bottom015 white>>
-Borde: <b> “Toma, es el dinero justo así que no me des vueltas” </b> 
+Borde: <b> “Toma, es el dinero justo así que no me des el cambio” </b> 
 <<Move Borde offright bottom015 1.0>>
 <<wait 1.5>>
 <<Hide Borde>>
@@ -1889,7 +1890,7 @@ position: 977,-297
 
 Suspiro. Por fin el turno de mañana está casi completado. Se me está haciendo este día muy largo. Miro de reojo la hora en mi reloj. ¿Estaría mal si hoy inicio el descanso quince minutos antes? 
 Me muerdo el labio [select value={$gender} M="indeciso" F="indecisa" NB="indecise"/]. Umm, creo que no pasa nada por ello, a fin de cuentas, hoy es viernes y esta semana he dado todo de mi parte por la floristería. 
-¡Decidido! Asintiendo feliz y dando pequeños brincos me acerco a la puerta para poner el cartel de <b> “Cerrado por descanso. Vuelvo en quince minutos” </b>.  
+¡Decidido! Asintiendo feliz y dando pequeños brincos me acerco a la puerta para poner el cartel de “Cerrado por descanso. Vuelvo en quince minutos.”  
 
 {$name}: <b> “Ohhh, y encima hoy tengo poke. Creo que he tomado una muy buena decisión jajaja” </b>  
 
@@ -1924,11 +1925,11 @@ Completamente [select value={$gender} M="desorientado" F="desorientada" NB="deso
 
 Todo comienza a dar vueltas y siento que en cualquier momento podría volver a desplomarme. ¿Por qué me está costando tanto moverme y comunicarme? Antes de poder dar un paso hacia el mostrador, Ethan se acerca.  
 
-Ethan: <b> “Ey, ey. ¿Qué estas tratando de hacer? Necesitas descansar después de ese golpe [select value={$gender} M="guapo" F="preciosa" NB="guape"/]  
+Ethan: <b> “Ey, ey. ¿Qué estas tratando de hacer? Necesitas descansar después de ese golpe [select value={$gender} M="guapo" F="preciosa" NB="guape"/]” </b>   
 
 ¿Golpe? ¿Por qué siento que he olvidado algo? Mientras frunzo el ceño pensando, ETHAN pasa uno de mis brazos sobre sus hombros y con el otro me sostiene de la cintura.  
 
-Ethan: [select value={$gender} M="Tranquilo" F="Tranquila" NB="Tranquile"/], solo necesitas descansar un rato” </b>  
+Ethan: <b> “[select value={$gender} M="Tranquilo" F="Tranquila" NB="Tranquile"/], solo necesitas descansar un rato” </b>  
 
 Poco a poco, me ayuda a alcanzar el mostrador y a apoyarme en este.  
 
@@ -1940,7 +1941,7 @@ Algo [select value={$gender} M="relajado" F="relajada" NB="relajade"/] al encont
 
 Al menos poco a poco voy recuperando los sentidos.   
 
-Ethan: <b> “Suspiro. Menudo golpe. Espero no haber estropeado tu linda carita.” </b> 
+Ethan: Suspiro. <b> “Menudo golpe. Espero no haber estropeado tu linda carita.” </b> 
 
 Ethan acerca su rostro al mío. ¿Qué está haciendo? Por reflejo me echo hacia atrás. Su mirada se posa inquisitivamente en mi frente. Antes de poder decirle nada, suspira de alivio y se endereza.  
 
@@ -2026,7 +2027,7 @@ Ethan: <b> “¿Es que no puedo venir simplemente a ver a una de mis personas fa
 <<Act Ethan sprt_ethan_surprisedBad>>
 Ethan: <b> “Un momento, ¿cómo es que sabes mi nombre? ¿¡Me has estado espiando!?” </b> 
 Se acerca a mí y me apunta acusatoriamente a la cara como hice yo con él hace solo unos instantes. Por poco me mete el dedo en el ojo. Por reflejo, lo aparto con un golpecito. 
-{$name}: <b> “Suspiro. Primero: no es por nada, pero apenas nos conocemos. Segundo: tú mismo me diste tu nombre al ponerlo en el contacto cuando metiste tú teléfono en mi móvil sin mi permiso” </b>. 
+{$name}: Suspiro. <b> “Primero: no es por nada, pero apenas nos conocemos. Segundo: tú mismo me diste tu nombre al ponerlo en el contacto cuando metiste tú teléfono en mi móvil sin mi permiso” </b>. 
 No puedo evitar cruzarme de brazos. ¿Y encima me mira con ese puchero como si el indignado aquí fuera él? Tsk.
 <<Act Ethan sprt_ethan_sad>> 
 Ethan: <b> “Bueno, no es como si no lo hubiera intentado. Yo diría que eres tú [select value={$gender} M="el" F="la" NB="el"/] que no quiere conocerme a mí” </b> 
@@ -2596,7 +2597,7 @@ position: 1504,-358
 <<HideAll>>
 
 <<declare $HayCita = false as bool>>
-<<Scene bg_casa_placeholder>>
+
 <<PlayAudio Musica_casa 0.4 loop>>
 <<Fade black 0.0 1.0 0.1>>
 <<set $gender to get_player_gender()>>
@@ -2609,6 +2610,7 @@ Mmm... ¿Está sonando algo? No será nada, hoy no tengo que trabajar, así que 
 No, no me voy a levantar. Ya estoy más [select value={$gender} M="despierto" F="despierta" NB="despierte"/] que [select value={$gender} M="dormido" F="dormida" NB="dormide"/], pero por pura cabezonería me quedo en la cama. Me doy media vuelta, y el ruido para. Sea lo que sea ha comprendido que voy a seguir durmiendo. 
 <<PlayAudio maullo_gato 1.0>>
 //[POM – Golpe sobre la cama, es el gato subiéndose]
+<<Scene bg_casa_placeholder>>
 <<Fade black 1.0 0.0 2.0>>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_neutral_final left bottom015 white>>
@@ -3202,13 +3204,13 @@ Ufffff. Desde que me reí el último día con el nuevo apodo que me puso no ha d
 A quien quiero engañar. En el fondo me resulta gracioso y adorable. Le envío mi respuesta con un emoticono de un girasol corriendo.
 -> {$name}: “No te preocupes, Eros.”
     <<Add_npc_likeability NPC_ethan 2>>
-    Ethan: <b> “¡[select value={$gender} M="Tranquilo flor" F="Tranquila florecita" NB="Tranquile flor"/]! Eso no va a ser necesario. Ya me estoy hidratando yo solo.” </b>
+    {$name}: <b> “No te marchites esperándome o te voy a tener que regar con agua fría.” </b>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_happy>>
     <<elseif get_player_mainCharacter() == "S">>
         <<Act {$name} sprt_he_happy>>
     <<endif>>
-    {$name}: <b> “No te marchites esperándome o te voy a tener que regar con agua fría.” </b>
+    Ethan: <b> “¡[select value={$gender} M="Tranquilo flor" F="Tranquila florecita" NB="Tranquile flor"/]! Eso no va a ser necesario. Ya me estoy hidratando yo solo.” </b>
     Me río a carcajadas. ¿De verdad me acaba de mandar una foto de él tomándose una cerveza? No puedo más.
     {$name}: <b> “¡Genial! Nos vemos ahora.” </b>
     {$name}: <b> “Espero que quede alguna bebida cuando llegue, Eros.” </b>
