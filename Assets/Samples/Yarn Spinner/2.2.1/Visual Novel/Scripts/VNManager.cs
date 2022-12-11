@@ -943,7 +943,7 @@ public class VNManager : DialogueViewBase
 				case "bottom010":
 					return 0.10f;
 				case "bottom015":
-					return 0.08f;
+					return 0.15f;
 				case "bottom020":
 					return 0.20f;
 				case "left":

@@ -10,8 +10,8 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
  
-<<jump Finde_sem1>>
-//<<jump Sophie_lunes_sem1>>
+
+<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -1923,7 +1923,8 @@ Completamente [select value={$gender} M="desorientado" F="desorientada" NB="deso
 
 {$name}: <b> “Perdón... Dame...un...segundo. ¡Ya te atiendo!” </b>  
 
-Todo comienza a dar vueltas y siento que en cualquier momento podría volver a desplomarme. ¿Por qué me está costando tanto moverme y comunicarme? Antes de poder dar un paso hacia el mostrador, Ethan se acerca.  
+Todo comienza a dar vueltas y siento que en cualquier momento podría volver a desplomarme. 
+¿Por qué me está costando tanto moverme y comunicarme? Antes de poder dar un paso hacia el mostrador, Ethan se acerca.  
 
 Ethan: <b> “Ey, ey. ¿Qué estas tratando de hacer? Necesitas descansar después de ese golpe [select value={$gender} M="guapo" F="preciosa" NB="guape"/]” </b>   
 
@@ -1954,7 +1955,7 @@ Esa risita... No suena muy convencida. De hecho, parece que se siente culpable d
 ¡Un momento!  
 
 <<Shake {$name}>>
-{$name}: <b> “¡Pero si fuiste tú el que me golpeaste!” </b>  
+{$name}: <b> “¡Pero si has sido tú el que me ha golpeado!” </b>  
 
 Ignorando el latigazo de dolor que sacude de nuevo mi cabeza, acuso a Ethan con el dedo. ¡Ya recuerdo lo que ha pasado! Miro de nuevo a la puerta, nuestra antigua posición, y puedo ver la prueba del delito. 
 El cartel de aviso de descanso se encuentra olvidado en el suelo. ¡Es cierto! Iba a descansar antes y a comer algo, pero entre el accidente y el dolor ya no tengo ni hambre.
@@ -1992,11 +1993,13 @@ Ya está, definitivamente desde este momento le voy a llamar <b> “Eros” </b>
         <<Act {$name} sprt_he_angry>>
     <<endif>>
     {$name}: <b> “Agradecería que dejarás de intentar ligar conmigo y te tomarás en serio la conversación” </b>
-    Ante mis palabras cortantes, Ethan se queda estático. Claramente no sabe cómo tomar mi reacción, pero entre el dolor y su insistencia no he podido evitarlo. Entiendo que ese es su carácter, pero ¿no puede dejar de coquetear ni en esta situación? De nuevo, sin ningún tipo de filtro le digo lo que pienso. 
-    {$name}: <b> “Me duele muchísimo la cabeza por el golpe y lo único que se te ocurre es soltar una frase <b> “romántica” </b> para arreglarlo” </b> 
+    Ante mis palabras cortantes, Ethan se queda estático. Claramente no sabe cómo tomar mi reacción, pero entre el dolor y su insistencia no he podido evitarlo. 
+    Entiendo que ese es su carácter, pero ¿no puede dejar de coquetear ni en esta situación? De nuevo, sin ningún tipo de filtro le digo lo que pienso. 
+    {$name}: <b> “Me duele muchísimo la cabeza por el golpe y lo único que se te ocurre es soltar una frase “romántica” para arreglarlo” </b> 
     {$name}: <b> “En verdad valoraría mucho más tu sinceridad Ethan” </b> 
     ... 
-    Ethan no dice nada claramente procesando mis palabras. Es como si le hubiera tirado un jarro de agua fría. Su mirada perdida y triste se posa en el suelo. Antes de que pueda descifrar lo que está pensando, agita la cabeza y me vuelve a mirar con su típica sonrisa pícara. Sin embargo, esta no llega a sus ojos. 
+    Ethan no dice nada claramente procesando mis palabras. Es como si le hubiera tirado un jarro de agua fría. 
+    Su mirada perdida y triste se posa en el suelo. Antes de que pueda descifrar lo que está pensando, agita la cabeza y me vuelve a mirar con su típica sonrisa pícara. Sin embargo, esta no llega a sus ojos. 
 -> {$name}: Te ríes a carcajadas.
     <<Add_npc_likeability NPC_ethan 2>>
     <<if get_player_mainCharacter() == "P">>
@@ -2104,7 +2107,7 @@ Ethan: <b> “¡Ostras! Menos mal que me lo has recordado. Tengo ahora una cita 
 Ethan: <b> “¿Es que siempre me tienes que entretener de estas maneras [select value={$gender} M="flor" F="florecita" NB="flor"/]?” </b>
 <<Act Ethan sprt_ethan_neutral>>  
 ¿Florecita? Abro mucho los ojos ante su estupidez, aunque debo admitir que me ha resultado algo adorable. Toso para no reírme. 
-{$name}: <b> “Anda, anda. Dime ya que es lo que quieres antes de que me marchite y no solo yo, también tu <b> “cita” </b> ” </b> 
+{$name}: <b> “Anda, anda. Dime ya que es lo que quieres antes de que me marchite y no solo yo, también tu 'cita' ” </b> 
 Ethan: <b> “No digas eso. Tú eres la flor más bella del jardín con diferencia” </b> 
 Me río ante sus palabras. No puedo evitar soltar una pequeña broma, pero... 
 {$name}: <b> “Si fuese verdad ya me habrías invitado a salir” </b>
@@ -2323,7 +2326,7 @@ Debe ser la primera vez que de entrada me dice algo sin alguna indirecta despect
     <<Act Borde sprt_sophie_uncomfortable>>
     Se acerca lentamente al mostrador y se rasca el moflete levemente mientras desvía la mirada. Elude ser directa conmigo.
     Borde: <b> “Si eh, mira quería comentarte una cosa” </b>
-    {$name}: <b> “¿Es algo sobre el estado de tienda? Porque antes de que digas nada, han venido otros clientes antes y no han tenido ningún problema, así que no necesito críticas destructivas.” </b>
+    {$name}: <b> “¿Es algo sobre el estado de la tienda? Porque antes de que digas nada, han venido otros clientes antes y no han tenido ningún problema, así que no necesito críticas destructivas.” </b>
     Borde: <b> “¿De la floristería? No, no, no es ninguna queja ni nada malo.” </b>
     {$name}: <b> “¿En serio? Bueno pues entonces dime” </b>
     Borde: <b> “Lo siento por cómo me comporté ayer, estuvo mal y no venía a cuento” </b>
@@ -2404,7 +2407,8 @@ Sophie: <b> “Pues no tenía intención de volver, ya me entiendes” </b>
 Sophie: <b> “El caso es que cuando se lo conté no dudó en echarme la bronca a mí, menos mal que su hermana soy yo jajaja.” </b>
 Sophie: <b> “Sé que suena mal, pero es por ella que he venido hoy a disculparme” </b>
 {$name}: <b> “Para poder seguir comprando aquí ¿eh?” </b>
-Sophie: <b> “No, no, nunca fue con esa intención. Simplemente me di cuenta de lo mal que actué, y no quiero que mi hermana se comporté de esa manera en el futuro. Así que ahí tienes la razón” </b>
+Sophie: <b> “No, no, nunca fue con esa intención. Simplemente me di cuenta de lo mal que actué, y no quiero que mi hermana se comporté de esa manera en el futuro.” </b>
+Sophie: <b> “Así que ahí tienes la razón” </b>
 {$name}: <b> “Pues le tendré que dar las gracias a tu hermana por este nuevo comienzo” </b>
 {$name}: <b> “La próxima vez puedes decirle que se pase, para que así ella misma pueda elegir lo que quiere para el ramo” </b>
 <<Act Sophie sprt_sophie_sad>>
@@ -4374,8 +4378,12 @@ Umm, ¿me pregunto si debería decirle lo que pienso?
     <<jump Minijuego_Pietro_martes_sem2>>
 ->“Creo que he tenido demasiada paciencia contigo. Es hora de que te marches ya.” 
     <<Add_npc_likeability NPC_pietro -10>>
+    <<Act Pietro spt_pietro_angry right bottom015 white>>
     Sin decir nada, Pietro se levanta y el golpe seco del bloc que acaba de cerrar recorre la floristería como un eco.
     Antes de que pueda pensar de nuevo en mis palabras, Pietro pasa a mi lado a toda velocidad no sin antes dirigirme una mirada helada.
+    <<Move Pietro offright bottom015 1.0>>
+    <<wait 1.5>>
+    <<Hide Pietro>>
     Me quedo [select value={$gender} M="congelado" F="congelada" NB="congelade"/] en el sitio ante tal intensidad. Un escalofrío recorre mi espalda.
     Siento como si me hubieran regañado y eso que todavía no ha abierto la boca en ningún momento.
     Pero no hace falta que diga nada.
