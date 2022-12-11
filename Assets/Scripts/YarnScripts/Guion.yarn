@@ -2506,7 +2506,7 @@ Sophie: <b> “Sí, me gusta. Muchas gracias.” </b>
 <<Act Sophie sprt_sophie_neutral>>
 {$name}: <b> “No es nada. Espero que sirva para que vuelvas otro día.” </b>
 Sophie: <b> “Por eso no te preocupes, volveré con otro encargo. Aquí tienes el dinero” </b>
-{$name}: <b> “Espera un segundo que te doy las vueltas” </b>
+{$name}: <b> “Espera un segundo que te doy el cambio.” </b>
 Sophie: <b> “No, no, así está bien lo he hecho aposta.” </b>
 No sé muy bien que responderle así que me quedo callada. No me deja mucho tiempo para pensar porque enseguida se despide.
 Sophie: <b> “Entonces... Ya me pasaré otro día” </b>
@@ -2675,7 +2675,8 @@ Leah: <b> “¡Buenos días, {$name}! ¿Qué tal tu primera semana allí? Siento
 Leah: <b> “Eh, no puedes decir eso y cambiar de tema. Lo mío es lo de siempre ya sabes, estudiar, trabajos, tener que cumplir unas expectativas irreales marcadas por mis padres, blah, blah, blah.” </b> 
 Leah: <b> “Pero conocer gente nueva allí sí que es nuevo, así que cuenta, cuenta.” </b>
 
-{$name}: <b> “Vale, vale jajaja. El primer día fue un poco locura, me encontré con una chica super borde, y encima vino otro día con la misma mala actitud, pero el viernes volvimos a hablar y se disculpó así que todo bien.” </b> 
+{$name}: <b> “Vale, vale jajaja. El primer día fue un poco locura” </b> 
+{$name}: <b> “Me encontré con una chica super borde, y encima vino otro día con la misma mala actitud, pero el viernes volvimos a hablar y se disculpó así que todo bien.” </b> 
 {$name}: <b> “Es más, va de dura y borde, pero de lo que he hablado con ella tiene su punto dulce” </b>
 
 Leah: <b> “Me estaba enfadando con la chica ésta, pero parece es buena gente, o mejor porque para que digas que <b> “tiene su punto dulce” </b>... ¿Significa que escucharé más cosas de ella en el futuro?” </b>
