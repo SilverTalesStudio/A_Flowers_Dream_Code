@@ -124,7 +124,7 @@ public class TutorialManager : MonoBehaviour
             case 5:
                 T2Text3.SetActive(false);
                 T2Text4.SetActive(true);
-                CursorClick.transform.position = new Vector3(-10.6f, -0.68f, 0);
+                CursorClick.transform.position = new Vector3(-10.6f, 1.10F, 0);
                 break;
             case 6:
                 T2Text4.SetActive(false);
@@ -249,7 +249,7 @@ public class TutorialManager : MonoBehaviour
                 
                 break;
             case 5:
-                CursorClick.transform.position = new Vector3(-10.6f, -0.68f, 0);
+                CursorClick.transform.position = new Vector3(-10.6f, 1.10f, 0);
                 T2Text4.SetActive(!false);
                 T2Text5.SetActive(!true);                
                 break;
