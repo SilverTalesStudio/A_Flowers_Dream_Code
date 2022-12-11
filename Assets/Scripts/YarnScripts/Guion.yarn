@@ -10,7 +10,6 @@ position: -612,-485
 
 <<LeisteLibroEthanMartes null>>
  
-
 <<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
@@ -1011,7 +1010,7 @@ position: -140,446
 <<Add_npc_likeability NPC_sagrario -3>>
 La información que me ha dado era bastante genérica así que puede que no le guste en absoluto, espero tener suerte y que sea lo que esperaba. 
 Extiendo mi mano con el ramo para acercárselo.  
-<<Act Sagrario sprt_sagrario_sad>>
+<<Act Anciana sprt_sagrario_sad>>
 Anciana: <b> “Mmm... Gracias” </b> 
 Pues no, la suerte no está de mi parte. No he acertado en absoluto con el ramo. Su cara solo muestra decepción. 
 La anciana suspira mientras niega con la cabeza. 
@@ -2797,7 +2796,7 @@ position: 1597,-205
 Ay, no sé por qué, pero estoy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] por el encuentro que se avecina. Miro a través de la ventana del autobús, me fijo en las señales de la carretera, ya queda poco para llegar al jardín botánico. 
 Bajo la vista a mi muñeca y la giro para ver la hora. Genial, voy bien de tiempo, incluso voy a llegar un poco antes.
 Por si acaso voy a revisar que llevo todo una vez más. Abro la mochilita que tengo en mi regazo y compruebo su interior. 
-Vale, llevo las llaves, el móvil, la cartera, y un paraguas  , que luego nunca se sabe. Cierro de nuevo la mochila y escucho el aviso de mi parada. ¡Justo a tiempo!
+Vale, llevo las llaves, el móvil, la cartera, y un paraguas, que luego nunca se sabe. Cierro de nuevo la mochila y escucho el aviso de mi parada. ¡Justo a tiempo!
 En cuanto salgo del vehículo me quedo [select value={$gender} M="embelesado" F="embelesada" NB="embelesade"/] con el edificio que surge frente a mí. La fachada del botánico es preciosa. 
 Incluso yo que no tengo conocimiento alguno de arquitectura, soy capaz de discernir lo increíble de su diseño, aunque no sepa explicar por qué. 
 Inspecciono el edificio de abajo a arriba [select value={$gender} M="fascinado" F="fascinada" NB="fascinade"/], pero cuando mi vista alcanza la zona superior mi expresión se torna amarga.
@@ -2857,7 +2856,8 @@ No aguantaba más, verle liarse intentando arreglar un malentendido que no ha oc
     Aprecia el cambio de tema. Cierra la boca y trata de recomponerse, aunque el rubor se mantiene.
     Allan: <b> “Eh sí claro, vamos ya, tengo las entradas...” </b>
     <<Act Allan sprt_allan_neutral>>
-    Se palpa ambos bolsillos delanteros con las manos varias veces, parece que no encuentra lo que buscaba porque cada vez se pone más nervioso y preocupado, mete las manos en los bolsillos y nada, pasa el turno a los traseros y se calma.
+    Se palpa ambos bolsillos delanteros con las manos varias veces, parece que no encuentra lo que buscaba porque cada vez se pone más nervioso y preocupado.
+    Mete las manos en los bolsillos y nada, pasa el turno a los traseros y se calma.
     Allan: <b> “¡Justo aquí!” </b>
     Acerca su mano hacia mí con ímpetu, en ella tiene dos entradas.
     {$name}: <b> “Perfecto, entonces démonos prisa que he leído que es muy amplio” </b>
@@ -2885,7 +2885,7 @@ No aguantaba más, verle liarse intentando arreglar un malentendido que no ha oc
     Empezamos a andar al interior de la edificación con paso parejo.
 <<Act Allan sprt_allan_happy>>
 Allan: <b> “Y que lo digas. ¡Más de 5500 especies tienen! No todas son flores claro, hay muchos árboles, pero siguen siendo muchas” </b>
-<b> “Mhm” </b> Asiento y le miro  directamente mientras él sigue caminando con la vista al frente.
+<b> “Mhm” </b> Asiento y le miro directamente mientras él sigue caminando con la vista al frente.
 -> {$name}: “Tú también estás guapo”
     <<Add_npc_likeability NPC_allan 2>>
     <<Act Allan sprt_allan_shy_lookingdown>>
@@ -3050,7 +3050,7 @@ Se pone firme como sí de un militar se tratara y me río de su gesto.
     <<Act {$name} sprt_he_neutral>>
 <<endif>>
 {$name}: <b> “Tranquilo soldado, ¿seguimos entonces?” </b>
-Allan: <b> “Sí mi [select value={$gender} M="capitán" F="capitana" NB="capitane"/]
+Allan: <b> “Sí, mi [select value={$gender} M="capitán" F="capitana" NB="capitane"/]” </b>
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_happy>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -4619,7 +4619,8 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     <<PlayAudio timbre_puerta_floristeria 0.5>>
     Mientras planeo mi tarde-noche suenan las campanitas de la entrada. ¿Quién viene tan tarde a una floristería? ¿Tenía que venir justo ahora cuando estoy a punto de cerrar? 
     Suspiro con resignación y me giro para atender al nuevo cliente.
-    En cuanto veo quién es mis ojos se iluminan y una energía renovada inunda mi cuerpo. Me levanto de la silla corriendo, apoyo mis manos en el mostrador y echo el cuerpo hacia delante para verle mejor. Alzo una mano y le saludo alegremente.
+    En cuanto veo quién es mis ojos se iluminan y una energía renovada inunda mi cuerpo.
+    Me levanto de la silla corriendo, apoyo mis manos en el mostrador y echo el cuerpo hacia delante para verle mejor. Alzo una mano y le saludo alegremente.
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_happy left bottom015 white>>
     <<elseif get_player_mainCharacter() == "S">>
@@ -4654,7 +4655,8 @@ Aunque luego voy a tener hambre. ¿Qué podría cenar? ¡Ya sé! Aún tengo el t
     {$name}: <b> “Me alegro de que hayas venido, la verdad es que también me apetecía verte, pero no sabía a qué hora acababas. Y pensé que tal vez preguntarte directamente era demasiado intrusivo” </b>
     Me sonrojo tras confesarle lo que llevo pensando todo el día.
     <<Act Allan sprt_allan_shy_lookingdown>>
-    Allan: <b> “Yo pensé lo mismo, pero el lunes yendo a la tienda me fijé de que tenías el horario en el escaparate. A diferencia del mío, el tuyo es fijo y pensé en venir por estas horas porque supuse que ya no tendrías ningún cliente” </b>
+    Allan: <b> “Yo pensé lo mismo, pero el lunes yendo a la tienda me fijé de que tenías el horario en el escaparate.” </b>
+    Allan: <b> “A diferencia del mío, el tuyo es fijo y pensé en venir por estas horas porque supuse que ya no tendrías ningún cliente” </b>
     Allan: <b> “No quería molestar mientras estuvieras trabajando” </b>
     ¿Puede dejar Allan de ser un amor de persona? No creo que sea posible para él. Siempre está atento a las pequeñas cosas y se esfuerza en hacer que los demás estén siempre cómodos.
     ->“Sí, eso hubiera sido problemático” 
@@ -5318,7 +5320,7 @@ Arquea la ceja sorprendida, realmente no se cree que los escuche. En realidad, n
 Pero a pesar de que otros decidieran por mí que no era mi <b> “estilo” </b> yo he seguido escuchándolos y estando atenta a todos sus nuevos discos.
 {$name}: <b> “Mucho, de hecho, es mi grupo favorito. Sé que no parece de mi rollo pero que puedo hacer, es que me gusta y ya” </b>
 Sophie: <b> “Tranquila, no preguntaba a malas, ni por ti en particular. Es que no es un grupo conocido ni dentro del género, por eso me sorprende que lo conozcas” </b>
-{$name}: <b> “Los descubrí por pura casualidad, un día Spotifu  me recomendó una lista de descubrimiento y dentro de ella una de las canciones era Headbanger y me encantó” </b>
+{$name}: <b> “Los descubrí por pura casualidad, un día Spotifu me recomendó una lista de descubrimiento y dentro de ella una de las canciones era Headbanger y me encantó” </b>
 En cuanto empiezo hablar sobre Useless Misfits sus ojos se iluminan, y otra vez sin querer dejar caer esos muros de tipa dura.
 <<Act Sophie sprt_sophie_happy>>
 Sophie: <b> “Normal, esa canción es de las mejores, aunque mi favorita es Hybrid Times” </b>
@@ -5327,7 +5329,9 @@ Al escuchar el nombre sonríe con complicidad.
 Sophie: <b> “Buena elección” </b>
 <<PlayAudio noti_movil 1.0>>
 <<Act Sophie sprt_sophie_neutral>>
-Se escucha una notificación y de repente su expresión cambia. Actúa veloz, intenta guardar el ramo en la bolsa con dificultad, colocándolo de tal meticulosamente para que no acabe destrozado, tras pelearse un poco con la bolsa lo consigue guardar bien. Ahora con una mano libre, coje su móvil del bolsillo del pantalón y mira la pantalla del mismo.
+Se escucha una notificación y de repente su expresión cambia. 
+Actúa veloz, intenta guardar el ramo en la bolsa con dificultad, colocándolo de tal meticulosamente para que no acabe destrozado. 
+Tras pelearse un poco con la bolsa lo consigue guardar bien. Ahora con una mano libre, coje su móvil del bolsillo del pantalón y mira la pantalla del mismo.
 Sophie: <b> “Te voy a tener que dejar ya” </b>
 {$name}: <b> “No te preocupes, ya otro día seguimos hablando de Useless Misfits” </b>
 Sophie: <b> “Sí, hasta la próxima” </b>
@@ -5630,7 +5634,7 @@ Aunque esto solo ha aumentado todavía más el enigma de esta persona.
 Ethan: <b> “¿Estas de broma? Creo que es de los mejores ramos que me has entregado.” </b>
 Ethan: <b> “Le va a encantar. No puedo esperar por ver su reacción.” </b>
 Con una sonrisa de oreja a oreja, Ethan me entrega el dinero.
-Ethan: <b> “Toma, aquí tienes el dinero. Y antes de que digas nada, no hace falta que me des la vuelta.” </b>
+Ethan: <b> “Toma, aquí tienes el dinero. Y antes de que digas nada, no hace falta que me des el cambio.” </b>
 <<Act Ethan sprt_ethan_wink>>
 Ethan: <b> “Todo tuyo, [select value={$gender} M="príncipe" F="princesa" NB="noble" /].” </b>
 Con eso, Ethan me guiña un ojo y sonríe. 
@@ -6034,8 +6038,9 @@ Sophie: <b> “Volviendo a lo que estábamos hablando, y espero que tomes en cue
 {$name}: <b> “Ahh que guay, ¿la primera vez que los escuchaste fue en un concierto entonces?” </b>
 Sophie: <b> “No, es algo mucho mejor” </b>
 {$name}: <b> “¿En un meet and greet? Pero no sé cómo eso sería mejor que en un concierto” </b>
-Sophie: <b> “No lo vas a adivinar nunca así que aquí va. No es conozca a  Useless Misfits por escuchar alguna canción suya, es que conozco a los integrantes del grupo incluso de antes de que empezaran a tocar.” </b>
-Sophie: <b> “Son amigos míos” </b>
+Sophie: <b> “No lo vas a adivinar nunca así que aquí va. No es conozca a  Useless Misfits por escuchar alguna canción suya.” </b>
+Sophie: <b> “Es que conozco a los integrantes del grupo incluso de antes de que empezaran a tocar.” </b>
+Sophie: <b> “Son amigos míos.” </b>
 ->Gritar de emoción
     <<Add_npc_likeability NPC_sophie -1>>
     <<if get_player_mainCharacter() == "P">>
@@ -6208,7 +6213,8 @@ Allan suspira resignado. Justo termino de comer y le miro [select value={$gender
     Pongo los brazos en jarra para afirmar mi consejo. Se ríe de mi acto y se queda mirándome fijamente perdido en su mente. Tras unos segundos así, hablo y le traigo de vuelta de haya donde estuviese.
 ->Coincidir con él
     <<Add_npc_likeability NPC_allan -2>>
-    {$name}: <b> “Tienes razón, deberíamos agradecer el que tengamos trabajo. Además, no está tan mal, haces tu turno y luego te vas a casa y te olvidas. Hay trabajos mucho más duros tanto física como mentalmente.” </b>
+    {$name}: <b> “Tienes razón, deberíamos agradecer el que tengamos trabajo.” </b>
+    {$name}: <b> “Además, no está tan mal, haces tu turno y luego te vas a casa y te olvidas. Hay trabajos mucho más duros tanto física como mentalmente.” </b>
     {$name}: <b> “Imagínate los que trabajan en la mina. Ellos sí que lo tienen difícil” </b>
     Su expresión se apaga con mis palabras. No sé si esperaba otra cosa, pero yo voy a ser totalmente sincera con lo que pienso.
 {$name}: <b> “Por cierto, ¿querías que te hiciera algún ramo hoy? Como has dicho que es tu descanso y no sé cuánto te queda... Por ir haciéndolo ya” </b>
