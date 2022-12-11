@@ -12,6 +12,7 @@ public class BouquetDelivery : MonoBehaviour
     public GameObject FlowersManager;    
     public GameObject OrdersManager;
     public GameObject Loading;
+    public GameObject Fade;
     private float favPuntos = 0;
     private float colorPuntos = 0;
     private float SentimientoPuntos = 0;
@@ -29,6 +30,15 @@ public class BouquetDelivery : MonoBehaviour
         OrdersManager = GameObject.Find("SceneManager");
     }
 
+    IEnumerator FadeOut()
+    {
+        Loading.SetActive(true);
+        yield return new WaitForSeconds(2);               
+        Fade.SetActive(true);
+        Fade.GetComponent<Animator>().Play("FadeOut");
+        yield return new WaitForSeconds(1);
+        OrdersManager.GetComponent<SceneChanger>().changeScene("VisualNovel");
+    }
     public void EndDelivery()
     {
         if(FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet.Count < 5)
@@ -37,7 +47,7 @@ public class BouquetDelivery : MonoBehaviour
         }
         else
         {
-            Loading.SetActive(true);
+            
             foreach(string f in FlowersManager.GetComponent<FlowersManager>()._flowersInBouquet)
             {
                 // ENVIO DE VARIABLES A VN
@@ -139,10 +149,9 @@ public class BouquetDelivery : MonoBehaviour
             {
                 PlayerPrefs.SetString("resultadoMinijuego", "regular");
             }
-            OrdersManager.GetComponent<SceneChanger>().changeScene("VisualNovel");
+            StartCoroutine(FadeOut());
         }
-    }
-    
+    }    
 
     public void ActivateBouquetDeliveryAlert()
     {

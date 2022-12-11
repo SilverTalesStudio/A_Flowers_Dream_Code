@@ -11,10 +11,15 @@ public class SceneChanger : MonoBehaviour
     public GameObject Loading;
     string curretScene;
 
+    IEnumerator SoundWait(string scene)
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(scene);
+    }
+
     public void playVN()
     {
         Loading.SetActive(true);
-
         SceneManager.LoadScene("VisualNovel");
     }
 
@@ -29,7 +34,7 @@ public class SceneChanger : MonoBehaviour
     //Cambio de escena genérico
     public void changeScene(string scene)
     {
-        SceneManager.LoadScene(scene);
+        StartCoroutine(SoundWait(scene));        
     }
 
     private void Start()
