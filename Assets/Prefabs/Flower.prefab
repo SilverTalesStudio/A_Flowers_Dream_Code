@@ -64,6 +64,8 @@ MonoBehaviour:
   ffeeling: Sinceridad
   fav: Ethan
   hate: 
+  fTotalColor: 6
+  fTotalFeeling: 3
   enableClick: 1
 --- !u!222 &6038569840525824511
 CanvasRenderer:

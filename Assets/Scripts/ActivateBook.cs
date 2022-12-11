@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivateBook : MonoBehaviour
 {
     public GameObject book;
-
+    public GameObject panel;
 
     public void ActivateFlowersBook()
     {
         book.SetActive(true);
-        Time.timeScale = 0;
-
+        //Time.timeScale = 0;
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {
             if (f.name != "FlowerBase")
@@ -22,7 +22,7 @@ public class ActivateBook : MonoBehaviour
     public void DeactivateFlowersBook()
     {
         book.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("Flores"))
         {

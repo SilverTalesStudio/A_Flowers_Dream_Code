@@ -17,6 +17,8 @@ public class DragAndDrop : MonoBehaviour
     public string ffeeling;
     public string fav;
     public string hate;
+    public float fTotalColor;
+    public float fTotalFeeling;
     public bool enableClick = true;
     private Quaternion startRotation;
     private Vector3 startScale;

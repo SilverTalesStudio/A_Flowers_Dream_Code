@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FirstTimeTutorial : MonoBehaviour
 {
+    private static readonly string FirstTimeTuto = "FirstTimeTutorial";
+    private int firstTimeInt;
+    public GameObject Tutorial;
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
-        if (!PlayerPrefs.HasKey("FirstTimeTutorial"))
-        {
-            GameObject.FindGameObjectWithTag("Tutorial").SetActive(true);
-            PlayerPrefs.SetInt("FirstTimeTutorial", 0);
-            PlayerPrefs.Save();
-        }
+        firstTimeInt = PlayerPrefs.GetInt(FirstTimeTuto);
 
+        if(firstTimeInt == 0)
+        {
+            Tutorial.SetActive(true);
+            PlayerPrefs.SetInt(FirstTimeTuto, -1);
+        }
     }
 }

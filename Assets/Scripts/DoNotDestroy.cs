@@ -8,7 +8,7 @@ public class DoNotDestroy : MonoBehaviour
     private void Awake()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("MenuMusic");
-        if(musicObj.Length > 1)
+        if (tag == "MenuMusic" && musicObj.Length > 1)
         {
             Destroy(this.gameObject);
         }
@@ -16,7 +16,7 @@ public class DoNotDestroy : MonoBehaviour
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "VisualNovel" || SceneManager.GetActiveScene().name == "VisualNovel")
+        if(tag == "MenuMusic" && SceneManager.GetActiveScene().name == "VisualNovel")
         {
             Destroy(this.gameObject);
         }

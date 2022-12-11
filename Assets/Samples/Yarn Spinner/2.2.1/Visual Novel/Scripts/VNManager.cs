@@ -534,6 +534,7 @@ public class VNManager : DialogueViewBase
 				newAudioSource.loop = shouldLoop;
 				newAudioSource.Play();
 				sounds.Add(newAudioSource);
+				
 				// if it doesn't loop, let's set a max lifetime for this sound
 				if (shouldLoop == false)
 				{
@@ -552,7 +553,7 @@ public class VNManager : DialogueViewBase
 					var newAudioSource = Instantiate<AudioSource>(genericAudioSource, genericAudioSource.transform.parent);
 					newAudioSource.name = audioClip.name;
 					newAudioSource.clip = audioClip;
-					newAudioSource.volume *= volume;
+					newAudioSource.volume *= volume;				
 					newAudioSource.loop = shouldLoop;
 					newAudioSource.Play();
 					sounds.Add(newAudioSource);
