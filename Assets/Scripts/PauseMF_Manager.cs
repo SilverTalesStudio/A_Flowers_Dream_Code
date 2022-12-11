@@ -14,13 +14,14 @@ public class PauseMF_Manager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Is guest? "+PlayerPrefs.GetInt("Guest"));
         if (PlayerPrefs.GetInt("Guest") == 0)
         {
-            GuardarBtn.interactable = false;
+            GuardarBtn.interactable = true;
         }
         else
         {
-            GuardarBtn.interactable = true;
+            GuardarBtn.interactable = false;
         }
     }
     public void ActivatePause()
@@ -97,7 +98,7 @@ public class PauseMF_Manager : MonoBehaviour
     }
     public void SalirEnMF()
     {
-        GuardarEnMF();
+        //GuardarEnMF();
         changer.changeScene("Menu");
     }
     void SetUserData(string key, string value)

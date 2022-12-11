@@ -8,14 +8,16 @@ public class UI_Manager : MonoBehaviour
    // public Transform dropdownMenu;
     public ToggleGroup toggleGroup;
     public ToggleGroup personajesGroup;
-
+    int invitado;
 
     private void Awake()
     {
+        invitado = PlayerPrefs.GetInt("Guest");
         PlayerPrefs.DeleteAll();
     }
     private void Start()
     {
+        PlayerPrefs.SetInt("Guest",invitado);
         createNPCs();
         new Planes_Finde(false, false, false, false, false, false);
         PlayerPrefs.SetString("nodeSaved", "Semana1");
