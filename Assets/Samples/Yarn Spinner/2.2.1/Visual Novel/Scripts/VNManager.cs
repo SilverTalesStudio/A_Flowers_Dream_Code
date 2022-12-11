@@ -101,7 +101,22 @@ public class VNManager : DialogueViewBase
 			runner.AddCommandHandler<string>("seDejaPintaraPietro", AddPintarPietro);
 			runner.AddCommandHandler<string>("LeisteLibroEthanMartes", AddLibroEthan);
 			runner.AddCommandHandler<string>("conciertoSophieCancelado", AddConciertoSophie);
-			
+			//Ilustraciones
+			runner.AddCommandHandler<string>("AllanIlustracion1FEM", ActiveAllanIllus1FEM);
+			runner.AddCommandHandler<string>("AllanIlustracion2FEM", ActiveAllanIllus2FEM);
+			runner.AddCommandHandler<string>("EthanIlustracion1FEM", ActiveEthanIllus1FEM);
+			runner.AddCommandHandler<string>("EthanIlustracion2FEM", ActiveEthanIllus2FEM);
+			runner.AddCommandHandler<string>("EthanIlustracion3FEM", ActiveEthanIllus3FEM);
+			runner.AddCommandHandler<string>("SophieIlustracion1FEM", ActiveSophieIllus1FEM);
+			runner.AddCommandHandler<string>("SophieIlustracion2FEM", ActiveSophieIllus2FEM);
+			runner.AddCommandHandler<string>("AllanIlustracion1MAS", ActiveAllanIllus1MAS);
+			runner.AddCommandHandler<string>("AllanIlustracion2MAS", ActiveAllanIllus2MAS);
+			runner.AddCommandHandler<string>("EthanIlustracion1MAS", ActiveEthanIllus1MAS);
+			runner.AddCommandHandler<string>("EthanIlustracion2MAS", ActiveEthanIllus2MAS);
+			runner.AddCommandHandler<string>("EthanIlustracion3MAS", ActiveEthanIllus3MAS);
+			runner.AddCommandHandler<string>("SophieIlustracion1MAS", ActiveSophieIllus1MAS);
+			runner.AddCommandHandler<string>("SophieIlustracion2MAS", ActiveSophieIllus2MAS);
+
 			//Ropework framework
 			runner.AddCommandHandler<string>("Scene", DoSceneChange );
 			runner.AddCommandHandler<string,string,string,string,string>("Act", SetActor );
@@ -300,6 +315,95 @@ public class VNManager : DialogueViewBase
 			PlayerPrefs.SetString("conciertoCancelado", concierto);
 			Debug.Log(concierto);
 		}
+
+		//Ilustraciones FEM
+		public void ActiveAllanIllus1FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Allan semana 1 FEM");
+			PlayerPrefs.SetString("AllanIllus1FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveAllanIllus2FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Allan semana 3 FEM");
+			PlayerPrefs.SetString("AllanIllus2FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus1FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 1 FEM");
+			PlayerPrefs.SetString("EthanIllus1FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus2FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 2 FEM");
+			PlayerPrefs.SetString("EthanIllus2FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus3FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 3 FEM");
+			PlayerPrefs.SetString("EthanIllus3FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveSophieIllus1FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Sophie semana 1 FEM");
+			PlayerPrefs.SetString("SophieIllus1FEM", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveSophieIllus2FEM(string activado)
+		{
+			Debug.Log("Activa Ilustración Sophie semana 3 FEM");
+			PlayerPrefs.SetString("SophieIllus2FEM", activado);
+			Debug.Log(activado);
+		}
+
+		//Ilustraciones MAS
+		public void ActiveAllanIllus1MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Allan semana 1 MAS");
+			PlayerPrefs.SetString("AllanIllus1MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveAllanIllus2MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Allan semana 3 MAS");
+			PlayerPrefs.SetString("AllanIllus2MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus1MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 1 MAS");
+			PlayerPrefs.SetString("EthanIllus1MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus2MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 2 MAS");
+			PlayerPrefs.SetString("EthanIllus2MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveEthanIllus3MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Ethan semana 3 MAS");
+			PlayerPrefs.SetString("EthanIllus3MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveSophieIllus1MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Sophie semana 1 MAS");
+			PlayerPrefs.SetString("SophieIllus1MAS", activado);
+			Debug.Log(activado);
+		}
+		public void ActiveSophieIllus2MAS(string activado)
+		{
+			Debug.Log("Activa Ilustración Sophie semana 3 MAS");
+			PlayerPrefs.SetString("SophieIllus2MAS", activado);
+			Debug.Log(activado);
+		}
+
 
 		public void SaveNextNodeToJumpBack(string nextNode)
 		{

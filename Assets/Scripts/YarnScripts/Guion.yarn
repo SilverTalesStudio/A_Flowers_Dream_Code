@@ -2996,8 +2996,10 @@ Tras sacar el paraguas y colocarlo sobre mí, extiendo la mano para agarrarle el
 <<PlayAudio music_romantic 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week1_allan_fem>>
+    <<AllanIlustracion1FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week1_allan_masc>>
+    <<AllanIlustracion1MAS yes>>
 <<endif>>
 
 <<Fade black 1.0 0.0 1.0>>
@@ -3299,8 +3301,10 @@ Antes de que pueda procesar la razón de su preocupación, mi expresión toma un
 <<PlayAudio music_romantic 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week1_ethan_fem>>
+    <<EthanIlustracion1FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week1_ethan_masc>>
+    <<EthanIlustracion1MAS yes>>
 <<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
@@ -7377,8 +7381,10 @@ Hago lo que me ordena.
 <<PlayAudio musica_momento_sinceridad 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week2_sophie_fem>>
+    <<SophieIlustracion1FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week2_sophie_masc>>
+    <<SophieIlustracion1MAS yes>>
 <<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
@@ -7845,8 +7851,10 @@ Ethan me dirige una mirada entre sorprendido y asustado. Se me escapa una peque�
 <<HideAll>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week2_ethan_fem>>
+    <<EthanIlustracion2FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week2_ethan_masc>>
+    <<EthanIlustracion2MAS yes>>
 <<endif>>
 <<PlayAudio murmullo_voces_en_teatro 0.2 loop>>
 <<Fade black 1.0 0.0 1.0>>
@@ -12288,8 +12296,10 @@ El beso comienza desesperado como si fuera algo efímero, pero cuando acaricio s
 <<PlayAudio music_romantic 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week3_sophie_fem>>
+    <<SophieIlustracion2FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week3_sophie_masc>>
+    <<SophieIlustracion2MAS yes>>
 <<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
@@ -12517,8 +12527,10 @@ Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura u
 <<PlayAudio music_romantic 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week3_allan_fem>>
+    <<AllanIlustracion2FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week3_allan_masc>>
+    <<AllanIlustracion2MAS yes>>
 <<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>> 
@@ -12771,8 +12783,10 @@ Entonces, un sonido estridente me sobresalta, pero antes de que pueda ver qué h
 <<PlayAudio music_romantic 0.4 loop>>
 <<if get_player_mainCharacter() == "P">>
     <<Scene illus_week3_ethan_fem>>
+    <<EthanIlustracion3FEM yes>>
 <<elseif get_player_mainCharacter() == "S">>
     <<Scene illus_week3_ethan_masc>>
+    <<EthanIlustracion3MAS yes>>
 <<endif>>
 <<Fade black 1.0 0.0 1.0>>
 <<wait 3.0>>
