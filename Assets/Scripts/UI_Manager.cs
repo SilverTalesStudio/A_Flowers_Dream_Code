@@ -80,7 +80,7 @@ public class UI_Manager : MonoBehaviour
         new NPC_stats("NPC_sagrario","Sagrario",0);
         new NPC_stats("NPC_ethan", "Ethan", 0);
         new NPC_stats("NPC_allan", "Allan", 0);
-        new NPC_stats("NPC_sophie", "Sopie", 0);
+        new NPC_stats("NPC_sophie", "Sophie", 0);
         new NPC_stats("NPC_pietro", "Pietro", 0);
 
 

@@ -7,10 +7,12 @@ position: -612,-485
 <<set $gender to get_player_gender()>>
 <<set $name to get_player_name()>>
 
-
+<<Add_npc_likeability NPC_allan 100>>
 <<LeisteLibroEthanMartes null>>
+
+<<jump cita_Allan_sem3>> 
  
-<<jump Sophie_lunes_sem1>>
+//<<jump Sophie_lunes_sem1>>
 ===
 title: Sophie_lunes_sem1
 position: -678,-304
@@ -8687,7 +8689,7 @@ position: -143,644
 Ay, qué bien va a quedar esta cala aquí. El esqueje está listo y ya salió de él una pequeña raíz del bote donde le tenía. Espero que al pasarlo a la maceta enraíce bien. 
 No creo que dé ningún problema porque en casa me ha crecido sin ningún problema.
 <<PlayAudio timbre_puerta_floristeria 0.5>>
-Ensimismada con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
+[select value={$gender} M="Ensimismado" F="Ensimismada" NB="Ensimismade"/] con mi cala, escucho las campanas de la puerta, pero no veo quién entra.
 {$name}: <b> “¡Un segundo! Le atiendo ahora en cuanto termine con esto.” </b>
 <<if get_npc_likeability("NPC_allan") <= -10>>
     <<jump Allan_final_malo>>
@@ -8991,7 +8993,7 @@ position: 45,-49
 <<Add_npc_likeability NPC_allan 1>>
 
 Allan: <b> “Gracias por el ramo, es justo lo que necesito. No es que destaque en nada realmente, pero muchas veces es mejor un ramo bien equilibrado, que arriesgar y que quede descompensado.” </b>
-{$name}: <b> “Ya, puede que haya pecado de conservadora en este ramo, pero quería que saliera bien” </b>
+{$name}: <b> “Ya, puede que haya pecado de [select value={$gender} M="conservador" F="conservadora" NB="conservadore"/] en este ramo, pero quería que saliera bien” </b>
 {$name}: <b> “Después de todo eres un buen amigo, y no quiero que salgas de aquí con un mal ramo.” </b>
 Al escuchar mis palabras sonríe ampliamente.
 Allan: <b> “Aprecio un montón tu intención. No te preocupes que va a cumplir perfectamente su propósito” </b>
@@ -9067,7 +9069,7 @@ Después de entregarle el ramo aprovecho para estirar la espalda y los brazos. H
     {$name}: <b> “La pena es que no tengo coche así que no puedo ir” </b> 
     <<Act Allan sprt_allan_shy_lookingdown>>
     Allan: <b> “Yo te puedo llevar si quieres. Tengo coche.” </b>
-    Allan: <b> “De hecho, en un principio había pensado comentártelo para que fuéramos juntos...” </b>
+    Allan: <b> “De hecho, en un principio había pensado comentártelo para que fuéramos [select value={$gender} M="juntos" F="juntos" NB="juntes"/]...” </b>
     <<if get_player_mainCharacter() == "P">>
         <<Act {$name} sprt_she_shy>>
     <<elseif get_player_mainCharacter() == "S">>
@@ -9640,7 +9642,7 @@ Ethan: <b> “¿Es que no puedo venir simplemente a ver a mi persona favorita?�
 {$name}: <b> “Por cierto Ethan, ¿al final pudiste encontrar a alguien con quién ir a ver la película?” </b>
 Ethan: <b> “Sí, me encontré a una amiga de camino al cine y se apuntó toda emocionada.” </b>
 Ethan: <b> “Casi no tuve ni que insistir jajaja.” </b>
-Sí, sí, una <b> “amiga” </b>. Tiene pinta de que era una de sus admiradoras.
+Sí, sí, una <b> [select value={$gender} M="“amigo”" F="“amiga”" NB="“amigue”"/] </b>. Tiene pinta de que era una de sus admiradoras.
 Siempre le siguen a todos lados.
 {$name}: <b> “Me alegro entonces. Me sentí un poco mal de no haber podido quedar contigo.” </b>
 {$name}: <b> “Pero al menos pudiste disfrutar de la película jajaja. ¿Qué tal estuvo?” </b>
@@ -10293,7 +10295,7 @@ Sagrario: <b> “Sinceramente... esperaba más.” </b>
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_disappointed>>
 <<endif>>
-{$name}: <b> “Lo siento mucho, la verdad es que me he puesto muy nerviosa haciéndolo.” </b>
+{$name}: <b> “Lo siento mucho, la verdad es que me he puesto muy [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] haciéndolo.” </b>
 {$name}: <b> “Lo quería hacer tan bien que al final no he conseguido lo que quería. He dudado mucho.” </b>
 Sagrario: <b> “A lo mejor te he puesto demasiada presión...” </b>
 Sagrario: <b> “Por lo menos parte del ramo es rescatable, así que sigo pudiéndolo usar para mis cosas.” </b>
@@ -11535,7 +11537,7 @@ Allan: <b> “Oí los gritos desde fuera. ¿Ha ocurrido algo?” </b>
     Antes de terminar la frase, Allan ya está corriendo hacia mí.
     Allan: <b> “¡Ey!¡¿Qué crees que estás haciendo?!” </b>
     <<Act Jacob sprt_jacob_angry>>
-    Jacob: <b> “No te entrometas. Es una conversación privada entre mi novia y yo.” </b>
+    Jacob: <b> “No te entrometas. Es una conversación privada entre mi [select value={$gender} M="novio" F="novia" NB="novie"/] y yo.” </b>
     Allan: <b> “Me da igual, te ha dicho que la sueltes.” </b>
     Allan posa su mano en el hombro de Jacob y empieza a hacer presión.
 ->No involucrarle
@@ -11556,7 +11558,8 @@ Allan: <b> “Oí los gritos desde fuera. ¿Ha ocurrido algo?” </b>
     Noto como Allan aprieta más fuerte el brazo de Jacob. En todo momento de reojo me mira para comprobar mi estado.
 <<Act Jacob sprt_jacob_furious>>
 Jacob: <b> “¿Qué te crees que estás haciendo?” </b>
-Parece que Allan ha hecho la suficiente fuerza para hacerle daño. Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
+Parece que Allan ha hecho la suficiente fuerza para hacerle daño.
+Gracias a esto, Jacob da un paso atrás mientras hace un gesto para quitarse de encima la mano de Allan, se gira para confrontarle a él y en el proceso me libera.
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_sad>>
 <<elseif get_player_mainCharacter() == "S">>
@@ -11574,7 +11577,7 @@ Jacob cambia su enfoque y pasa a dirigirse a Allan.
 Jacob: <b> “Tú, no sé qué te habrá dicho, pero deberías alejarte de [select value={$gender} M="él" F="ella" NB="elle"/]. Te manipula y te encierra para que tu vida gire en torno a cuidarle y protegerle.” </b>
 Jacob: <b> “Y cuando le apetece considera que <b> “le agobias” </b> y que estás siendo tóxico y te abandona.” </b>
 Jacob: <b> “Va a hacer lo mismo contigo. Así que deja que me encargue, yo sé tratar con [select value={$gender} M="él" F="ella" NB="elle"/].” </b>
-¿Cómo puede decir esas cosas de mí? Agarro a Allan de la manga para que me vea y la miro desesperada.
+¿Cómo puede decir esas cosas de mí? Agarro a Allan de la manga para que me vea y le miro [select value={$gender} M="desesperado" F="desesperada" NB="desesperade"/].
 {$name}: <b> “¡Eso es mentira! Yo no soy así, tienes que creerme a mí no a mi ex por favor” </b>
 Allan asiente instantáneamente. La seguridad que tiene a la hora de confiar en mí me reconforta tanto que es mi ancla a la realidad en este momento.
 Jacob: <b> “¿Ves? Está intentando dejarme a mí de malo.” </b>
@@ -11665,7 +11668,8 @@ Su cara es pura preocupación y nervios. La determinación de antes ha desaparec
 <<endif>>
 Comienzo a llorar.
 {$name}: <b> “Pensé que por fin había escapado de él, que ya no lo tenía que sufrir más. Y ha venido a mi floristería y me ha dicho esas... cosas... yo...” </b>
-Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase. Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
+Allan me abraza y coloca mi cabeza en su hombro. Mientras me desahogo él no me interrumpe en ningún momento, ni hace afán de separase.
+Me acaricia la espalda con un patrón repetitivo para calmarme mientras me dice que todo estará bien. 
 Tras un rato así soy capaz de recomponerme y parar de llorar. Allan rompe el abrazo y lentamente me sujeta con ambas manos el brazo que previamente agarraba Jacob.
 Allan: <b> “¿Me dejas verlo?” </b>
 <<if get_player_mainCharacter() == "P">>
@@ -11680,7 +11684,7 @@ Allan: <b> “Se va a volver un moratón, pero no llegará a más” </b>
 {$name}: <b> “Gracias por todo, Allan. No tenías por qué involucrarte y aun así lo has hecho.” </b>
 Allan: <b> “¿Cómo me iba a quedar parado mientras te denigraba de esa manera? Si me hubiera pasado a mí, hubiera querido que me ayudaran, así que eso he hecho” </b>
 {$name}: <b> “Ya, pero no sabías nada de mi relación con él, puede que otra persona hubiera pensado que era una conversación normal entre los dos...” </b>
-Allan: <b> “Eso no era una conversación normal, nadie debería de aguantar eso. Además, te he visto, estabas aterrada. Nunca te había visto así, tenía que actuar.” </b>
+Allan: <b> “Eso no era una conversación normal, nadie debería de aguantar eso. Además, te he visto, estabas [select value={$gender} M="aterrado" F="aterrada" NB="aterrade"/]. Nunca te había visto así, tenía que actuar.” </b>
 {$name}: <b> “Muchas gracias... Me alegro de haberte conocido, Allan.” </b>
 Me sonríe cálidamente mientras me mira a los ojos.
 Allan: <b> “Yo también me alegro de que haberte conocido. Eres una persona muy importante para mí” </b>.
@@ -11789,7 +11793,7 @@ Los paquetes restantes de la mudanza no pueden ser, porque ya me avisaron de que
 
 Suena una notificación en mi teléfono y lo cojo sin darle mucha importancia. Hasta que veo varios mensajes de quéssap y me fijo en el remitente.
 <<citaFin null>>
-<<if has_Ethan_Plan() ==true or has_Sophie_Plan() ==true or has_Allan_Plan() ==true>>
+<<if get_npc_likeability("NPC_allan") >= 15 or get_npc_likeability("NPC_sophie") >= 15 or get_npc_likeability("NPC_ethan") >= 15>>
     <<StopAudioAll>>
     <<jump con_plan_sem3>>
 <<else>>
@@ -11877,7 +11881,7 @@ El gato salta del respaldo a mi regazo haciéndome daño al caer sobre mí, pero
 Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de mí, hecho una bola.
 {$name}: <b> “¿Qué hago, Limón? No me acordaba de que tenía planes mañana.” </b>
 
-<<if has_Ethan_Plan() == true && has_Sophie_Plan() == true && has_Allan_Plan() == true>>
+<<if get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_ethan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
     {$name}: <b> “De hecho, me pidieron quedar Allan, Sophie e Ethan. Los tres para mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirle a todos que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
@@ -11943,7 +11947,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<Fade black 0.0 1.0 2.0>>
         <<wait 2.0>>
         <<jump cita_Allan_sem3>>
-<<elseif has_Sophie_Plan() ==true && has_Allan_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
     {$name}: <b> “Ay, es verdad, fueron Sophie y Allan los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
@@ -11981,7 +11985,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<else>>
         <<jump cita_Allan_sem3>>
     <<endif>>
-<<elseif has_Ethan_Plan() ==true && has_Allan_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_allan") >= 15 && get_npc_likeability("NPC_ethan") >= 15 >>
     {$name}: <b> “Ay, es verdad, fueron Ethan y Allan los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
@@ -12021,7 +12025,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
         <<jump cita_Allan_sem3>>
         <<Add_npc_likeability NPC_allan 30>>
     <<endif>>
-<<elseif has_Ethan_Plan() ==true && has_Sophie_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_ethan") >= 15 && get_npc_likeability("NPC_sophie") >= 15>>
     {$name}: <b> “Ay, es verdad, fueron Ethan y Sophie los que me ofrecieron quedar mañana” </b>
     {$name}: <b> “Agh, no sé qué hacer. No lo pensé mucho al decirles que me lo iba pensar, es que daba por hecho que no iba a poder por lo del paquete” </b>
     {$name}: <b> “Y sólo puedo quedar con uno de ellos...” </b>
@@ -12059,7 +12063,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<else>>
         <<jump cita_Sophie_sem3>>
     <<endif>>
-<<elseif has_Sophie_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_sophie") >= 15>>
     <<citaFin Sophie>>
     <<Add_npc_likeability NPC_sophie 30>>
     <<set $nombreCita to get_date()>>
@@ -12077,7 +12081,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Sophie_sem3>>
-<<elseif has_Allan_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_allan") >= 15>>
     <<citaFin Allan>>
     <<Add_npc_likeability NPC_allan 30>>
     <<set $nombreCita to get_date()>>
@@ -12095,7 +12099,7 @@ Da un par de vueltas hasta que encuentra el ajuste perfecto y se tumba encima de
     <<Fade black 0.0 1.0 2.0>>
     <<wait 2.0>>
     <<jump cita_Allan_sem3>>
-<<elseif has_Ethan_Plan() ==true>>
+<<elseif get_npc_likeability("NPC_ethan") >= 15>>
     <<citaFin Ethan>>
     <<Add_npc_likeability NPC_ethan 30>>
     <<set $nombreCita to get_date()>>
@@ -12358,7 +12362,7 @@ Caminamos [select value={$gender} M="juntos" F="juntas" NB="juntes"/] sin despeg
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<jump Nexo_Semana4>>
+<<jump Prev_Nexo_Semana4>>
 ===
 
 title: cita_Allan_sem3
@@ -12404,7 +12408,7 @@ Allan: <b> “Llegamos en quince minutos así que en nada estamos.” </b>
 <<endif>>
 <<Act Allan sprt_allan_neutral>>
 ¿Cómo de bonito será el camino que vamos a hacer allí? Sólo queda esperar a verlo.
-Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo que necesito para despejarme.  
+Aún estoy algo [select value={$gender} M="nervioso" F="nerviosa" NB="nerviose"/] por lo que pasó ayer, pero ir al monte con Allan es lo que necesito para despejarme.  
 <<set $AfinidadAllan to get_npc_likeability("NPC_allan")>>
 <<set $AfinidadEthan to get_npc_likeability("NPC_ethan")>>
 <<set $AfinidadSophie to get_npc_likeability("NPC_sophie")>>
@@ -12415,7 +12419,7 @@ Aún estoy algo nerviosa por lo que pasó ayer, pero ir al monte con Allan es lo
     <<elseif get_player_mainCharacter() == "S">>
         <<Act {$name} sprt_he_disappointed>>
     <<endif>>
-    No puedo dejar de darle vueltas. Pasé mucho miedo, pero me siento más segura a su lado. 
+    No puedo dejar de darle vueltas. Pasé mucho miedo, pero me siento más [select value={$gender} M="seguro" F="segura" NB="segure"/] a su lado. 
     {$name}: <b> “Oye Allan” </b>
     Allan: <b> “¿Sí?” </b>
     {$name}: <b> “Muchas gracias otra vez por lo de ayer. No sé qué habría hecho sin ti.” </b>
@@ -12559,7 +12563,7 @@ Allan se inclina y nuestros labios conectan. El beso es un instante, pero dura u
 <<if get_player_mainCharacter() == "P">>
     <<Act {$name} sprt_she_embarrassed left bottom015 white>>
 <<elseif get_player_mainCharacter() == "S">>
-    <<Act {$name} sprt_he_embarrassed>>
+    <<Act {$name} sprt_he_embarrassed left bottom015 white>>
 <<endif>>
 <<Act Allan sprt_allan_shy_lookingforward right bottom015 white>>
 Cuando nos separamos estamos ambos sonrojados, pero esta vez es Allan quien toma la iniciativa.  
@@ -12572,7 +12576,7 @@ Es un día perfecto, no puedo estar más feliz con mi decisión. A partir de aqu
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
-<<jump Nexo_Semana4>>
+<<jump Prev_Nexo_Semana4>>
 ===
 
 title: cita_Ethan_sem3
@@ -12839,6 +12843,14 @@ Comenzamos a bajar la colina aferrados de la mano. Ahora nos tenemos el uno al o
 <<Fade black 0.0 1.0 2.0>>
 <<wait 2.0>>
 
+<<jump Prev_Nexo_Semana4>>
+===
+title: Prev_Nexo_Semana4
+position: -143,644
+---
+<<StopAudioAll>>
+<<HideAll>>
+<<update_ends>>
 <<jump Nexo_Semana4>>
 ===
 title: Nexo_Semana4
@@ -13235,7 +13247,7 @@ Además, el dinero que me van a pagar compensa el cierre de estos dos días.
 <<elseif get_player_mainCharacter() == "S">>
     <<Act {$name} sprt_he_happy>>
 <<endif>>
-Y no podría estar más ilusionada. ¡Me han pedido arreglos florales para una boda!
+Y no podría estar más [select value={$gender} M="ilusionado" F="ilusionada" NB="ilusionade"/]. ¡Me han pedido arreglos florales para una boda!
 Saber que mis flores van a ser las protagonistas de un día tan importante me emociona.
 Qué bonito es el amor...
 Mi mente inconscientemente forma la cara de Ethan en mi mente. Si hay alguien que sepa más de romance es él.

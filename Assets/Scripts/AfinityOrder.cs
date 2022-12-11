@@ -72,5 +72,14 @@ public class AfinityOrder : MonoBehaviour
             npcList.RemoveAll(x => x.keyVar == badEndsIdx[i].keyVar);
         }
     }
+    [YarnCommand("update_ends")]
+    public static void UpdateEnds()
+    {
+        npcList[0] = NPC_stats.GetNPC_Stats("NPC_sagrario");
+        npcList[1] = NPC_stats.GetNPC_Stats("NPC_pietro");
+        npcList[2] = NPC_stats.GetNPC_Stats("NPC_allan");
+        npcList[3] = NPC_stats.GetNPC_Stats("NPC_ethan");
+        npcList[4] = NPC_stats.GetNPC_Stats("NPC_sophie");
+    }
 }
 
